@@ -18,6 +18,6 @@ Based on the [Spacegray](https://github.com/kkga/spacegray) theme for Sublime Te
 ![image](Screens/ipynb_oceans16_input.png)
 
 ## IPython Notebook Example Output
-![image](Screens/ipynb_oceans16_input.png)
+![image](Screens/ipynb_oceans16_output.png)
 
 ** Screenshots are with my new favorite monospace font [__Source Code Pro__](https://github.com/adobe/Source-Code-Pro). **
