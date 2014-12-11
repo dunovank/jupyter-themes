@@ -9,7 +9,7 @@ and the default Spacegray color scheme for Sublime Text by [Gadzhi Kharkharov](h
 Based on the [Spacegray](https://github.com/kkga/spacegray) theme for Sublime Text and the [Base16](https://github.com/chriskempson/base16) Ocean Dark color scheme.
 
 ## Sublime Text 3 Spacegray - Ocean Dark 
-![image](subl3_spacegray_ocean_dark.png)
+![image](Screens/subl3_spacegray_ocean_dark.png)
 
 ## IPython Notebook Home
 ![image](Screens/Home.png)
