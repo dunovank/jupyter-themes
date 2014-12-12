@@ -35,7 +35,7 @@ ipython profile create oceans16
 cp custom.* ~/.ipython/profile_oceans16/static/custom/
 ```
 
-### Start a new notebook session using oceans16 profile
+#### start a new notebook session using oceans16 profile
 ```sh
 ipython notebook --profile=oceans16
 ```
