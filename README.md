@@ -22,7 +22,21 @@ and the default Spacegray color scheme for Sublime Text by [Gadzhi Kharkharov](h
 
 ## Install:
 
-#### From inside the cloned oceans16 repo:
+#### find your ipython profile dir
 ```sh
-cp custom.css ~/.ipython/profile_default/static/custom/custom.css
+#(usually ~/.ipython/profile_default/)
+ipython locate profile default
 ```
+
+#### make a new ipython profile and copy over custom.css/js files
+```sh
+ipython profile create oceans16        
+#### From inside the cloned oceans16 repo:
+cp custom.* ~/.ipython/profile_oceans16/static/custom/
+```
+
+### Start a new notebook session using oceans16 profile
+```sh
+ipython notebook --profile=oceans16
+```
+
