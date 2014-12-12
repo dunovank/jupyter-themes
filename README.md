@@ -18,7 +18,7 @@ and the default Spacegray color scheme for Sublime Text by [Gadzhi Kharkharov](h
 ### IPython Notebook Example Output
 ![image](Screens/ipynb_oceans16_output.png)
 
-- Font: [__Source Code Pro__](https://github.com/adobe/Source-Code-Pro)
+- [__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) font (.ttf) included in "oceans16/Fonts/"
 
 ## Install:
 
