@@ -1,7 +1,7 @@
 Oceans16
 ==========
 
-## Dark-ify your IPython Notebooks!
+## Theme-ify your IPython Notebooks!
 
 This theme is essentially a mash-up of the Ocean Dark/Light IPyNB Themes by [Nikhil Sonnad](https://github.com/nsonnad/base16-ipython-notebook) and the Spacegray Ocean color schemes for Sublime Text by [Gadzhi Kharkharov](https://github.com/kkga/spacegray), which are both constructed using the original [Base16 color scheme](https://github.com/chriskempson/base16) by [Chris Kempson](https://github.com/chriskempson). General notebook and code cell layout are adapted from [this](https://github.com/panditarevolution/ipythonNotebook_customs/blob/master/monokai/custom.css) theme by [panditarevolution](https://github.com/panditarevolution). 
 
@@ -45,4 +45,4 @@ cp oceans16L.css ~/.ipython/profile_oceans16L/static/custom/custom.css
 ```sh
 ipython notebook --profile=oceans16D
 ```
-
+#### mmmm so theme-y...
