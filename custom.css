@@ -48,8 +48,8 @@ div.navbar-inner.container { background:#2b303b; border:0px;}
 div.navbar .nav>li>a {color:#858ea1;}
 div.navbar .nav>li>a:hover {color:#2c85f7;}
 
-.navbar-nav > li.open > a { background-color:#eff1f5 !important; color: #ffffff !important; }
-.nav > li.active > a { background-color: #eff1f5 !important; color:#ffffff !important; }
+.navbar-nav > li.open > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
+.nav > li.active > a { background-color: #eff1f5 !important; color:#356cb4 !important; }
 .dropdown-menu { background-color: #eff1f5 !important; 
     margin-left: 0px; 
     margin-right: 0px; 
@@ -92,7 +92,7 @@ div.navbar-inner a {
     font-weight: bold;
     border:0px;}
 .btn:hover {
-    background-color: #DBDBDB !important;
+    background-color: #FFFFFF !important;
     color: #356cb4;
     border:0px;}
 ul.dropdown-menu {    
