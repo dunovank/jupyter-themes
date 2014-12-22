@@ -33,14 +33,14 @@ div#header {
 span#notebook_name.ui-state-hover {
     color: #ffffff;
 
-    background: #973c45; /* Old browsers */
-    background: -moz-linear-gradient(top,  #973c45 0%, #973c45 44%, #973c45 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#973c45), color-stop(44%,#973c45), color-stop(100%,#973c45)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #973c45 0%,#973c45 44%,#973c45 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #973c45 0%,#973c45 44%,#973c45 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #973c45 0%,#973c45 44%,#973c45 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #973c45 0%,#973c45 44%,#973c45 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#973c45', endColorstr='#973c45',GradientType=0 ); /* IE6-9 */    
+    background: #347864; /* Old browsers */
+    background: -moz-linear-gradient(top,  #347864 0%, #347864 44%, #347864 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#347864), color-stop(44%,#347864), color-stop(100%,#347864)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #347864 0%,#347864 44%,#347864 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #347864 0%,#347864 44%,#347864 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #347864 0%,#347864 44%,#347864 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #347864 0%,#347864 44%,#347864 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#347864', endColorstr='#347864',GradientType=0 ); /* IE6-9 */    
 }
 
 div#notebook {border-top: none;}
@@ -55,9 +55,9 @@ div.navbar .nav>li>a:hover {color:#DBDBDB;}
     margin-right: 0px; 
     border: 0px; 
     border-radius: 0px;}
-.dropdown-menu > li > a { color:  #627187 !important; margin-left: 0px; margin-right: 0px;}
+.dropdown-menu > li > a { color: #4f5b66 !important; margin-left: 0px; margin-right: 0px;}
 .dropdown-menu > li > a:hover { 
-    background: #356cb4 !important; 
+    background: #347864 !important; 
     margin-left: 0px; 
     margin-right: 0px; 
     color: #ffffff !important; 
@@ -68,6 +68,8 @@ div.navbar .nav>li>a:hover {color:#DBDBDB;}
 .dropdown-menu > li.disabled > a:hover { 
     background-color: #eff1f5 !important; 
     color: #a7adba !important; }
+.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#347864;background-image:-moz-linear-gradient(top, #347864, #347864);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#347864), to(#347864));background-image:-webkit-linear-gradient(top, #347864, #347864);background-image:-o-linear-gradient(top, #347864, #347864);background-image:linear-gradient(to bottom, #347864, #347864);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#347864;background-image:-moz-linear-gradient(top, #347864, #347864);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#347864), to(#347864));background-image:-webkit-linear-gradient(top, #347864, #347864);background-image:-o-linear-gradient(top, #347864, #347864);background-image:linear-gradient(to bottom, #347864, #347864);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
 
 div#menubar
 .navbar-inner { border: 0px; box-shadow: none; background:#2b303b; background-image: none;}
@@ -142,13 +144,13 @@ div.output_stderr pre {color: #dfe1e8;}
 .cm-s-ipython div.CodeMirror-selected {background: #3d424f !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #333946; border-right: 0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #515568;}
-.cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #f59d6a !important;}
+.cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #fd971f !important;}
 .cm-s-ipython span.cm-comment {color: #6c7089; font-style: normal;}
 .cm-s-ipython span.cm-atom {color: #d08770;}
 .cm-s-ipython span.cm-number {color: #d08770;}
 .cm-s-ipython span.cm-property, .cm-s-ipython span.cm-attribute {color: #87b394;}
 .cm-s-ipython span.cm-keyword {color: #b48ead; font-weight: normal;}
-.cm-s-ipython span.cm-string {color: #8fc198; font-weight: normal;}
+.cm-s-ipython span.cm-string {color: #8fc198; font-weight: normal;} /* Base16 original #a3be8c*/
 .cm-s-ipython span.cm-operator {color: #d08770; font-weight: normal;}
 .cm-s-ipython span.cm-builtin {color: #cb7d7e; font-weight: normal;}
 .cm-s-ipython span.cm-boolean {color: #d08770;}
@@ -159,8 +161,10 @@ div.output_stderr pre {color: #dfe1e8;}
 .cm-s-ipython span.cm-bracket {color: #dfe1e8;}
 .cm-s-ipython span.cm-tag {color: #cb7d7e;}
 .cm-s-ipython span.cm-link {color: #be9db8;}
-.cm-s-ipython .CodeMirror-matchingbracket { text-decoration: blink; font-weight: bold; color: #70ca8b !important;}
 
+.cm-s-ipython .CodeMirror-matchingbracket { text-decoration: blink; font-weight: bold; color: #70ca8b !important; }
+.cm-s-ipython .CodeMirror-nonmatchingbracket { text-decoration: blink; font-weight: bold; color: #bf616a !important; }
+.cm-s-ipython span.cm-qualifier { color: #bf616a; }
 
 div.cell {border: medium solid #3d424f; padding: 0px; border-radius: 0px;}
 div.cell.selected {border: medium solid #439c82; padding: 0px; border-radius: 0px;}
@@ -220,9 +224,10 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     background-color: #d4d8e0;
     color: #2b303b;}
 div.btn.output_collapsed { 
-    background: #484c5d;
-    color: #d4d8e0;
-    font-weight: bolder;
+    background: #347864;
+    color: #ffffff;
+    font-size: 22;
+    font-weight: bold;
     border-radius: 0px;     
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
