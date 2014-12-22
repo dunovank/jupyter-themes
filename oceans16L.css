@@ -1,11 +1,11 @@
 /*
 
-	Name:       Oceans16 Light
-	Author:     Kyle Dunovan (http://github.com/dunovank)
+    Name:       Oceans16 Light
+    Author:     Kyle Dunovan (http://github.com/dunovank)
 
-	Original Color Scheme by Gadzhi Kharkharov (https://github.com/kkga/spacegray)
-	CodeMirror & NB Style adapted from panditarevolution (https://github.com/panditarevolution/ipythonNotebook_customs)
-	CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
+    Original Color Scheme by Gadzhi Kharkharov (https://github.com/kkga/spacegray)
+    CodeMirror & NB Style adapted from panditarevolution (https://github.com/panditarevolution/ipythonNotebook_customs)
+    CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
     Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
 
 */
@@ -46,8 +46,8 @@ span#notebook_name.ui-state-hover {
 
 div#notebook {border-top: none;}
 div.navbar-inner.container { background:#a8afbd; border:0px;}
-div.navbar .nav>li>a {color: #627187;}
-div.navbar .nav>li>a:hover {color: #ffffff;}
+div.navbar .nav>li>a {color: #4b5058;}
+div.navbar .nav>li>a:hover {color: #356cb4;}
 
 .navbar-nav > li.open > a { background-color:#eff1f5 !important; color: #ffffff !important; }
 .nav > li.active > a { background-color: #eff1f5 !important; color:#ffffff !important; }
@@ -75,7 +75,7 @@ div.navbar .nav>li>a:hover {color: #ffffff;}
 
 div#menubar
 .navbar-inner { border: 0px; box-shadow: none; background:#a8afbd; background-image: none;}
-.navbar-text {color: #627187;; font-weight: bold;}
+.navbar-text {color: #30333d; font-weight: bold;}
 div.navbar-inner.navbar-nobg {
     border: 0px; background: #a8afbd;}
 div#maintoolbar .toolbar-inner {background:#a8afbd;}
@@ -95,7 +95,7 @@ div.navbar-inner a {
     border:0px;}
 .btn:hover {
     background-color: #ffffff !important;
-    color: #30333d;
+    color: #356cb4;
     border:0px;}
 ul.dropdown-menu {    
     overflow: visible;
@@ -183,25 +183,25 @@ div.prompt.input_prompt {
     font-weight: bold;
     color: #c3c8d1;
     background-color: #98a2b2;
-    width: 5.2em;}
+    width: 5.5em;}
 
 div.output_wrapper {
-    background-color: #ffffff; /*#d0d6e1;*/
+    background-color: #ffffff; 
     margin-bottom: 0em;
-    margin-top: 0;
+    margin-top: 0em;
     border: 0px;}
 div.prompt.output_prompt {
     font-family: Source Code Pro;
     color: #dfe1e8;
-    background-color: #ffffff; /*#d0d6e1;*/
-    width: 5.1em;
+    background-color: #ffffff;
+    width: .5em;
     padding-top: 1em;
     margin: 0px; 
     border: 0px;}
 div.out_prompt_overlay.prompt {
-    width: 5em;
+    width: .5em;
     padding-left: 6px;
-    padding-right: 7px;
+    padding-right: 8px;
     border: 0px;
     color: #2b303b;
     background-color: #ffffff; /*#d0d6e1;*/
@@ -211,7 +211,7 @@ div.out_prompt_overlay.prompt {
 
 div.out_prompt_overlay.prompt:hover {
     padding-left: 6px;
-    padding-right: 7px;
+    padding-right: 8px;
     background-color: #ffffff; /*#d0d6e1;*/
     box-shadow: #6e788c 4px 4px 6px 2px inset;
     -webkit-border-radius: 0px;
