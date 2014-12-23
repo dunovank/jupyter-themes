@@ -46,7 +46,7 @@ span#notebook_name.ui-state-hover {
 div#notebook {border-top: none;}
 div.navbar-inner.container { background: #2b303b; border:0px; }
 div.navbar .nav>li>a { color: #858ea1; }
-div.navbar .nav>li>a:hover { color: #2c85f7; }
+div.navbar .nav>li>a:hover { color: #356cb4; }
 
 .navbar-nav > li.open > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
 .nav > li.active > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
