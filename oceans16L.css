@@ -12,15 +12,16 @@
 
 body {background-color: #a8afbd;}
 
-a {color: #627187; font-family: Helvetica, sans-serif; font-size: 16; font-weight: bold;}
+a {color: #627187; font-family: 'Helvetica', sans-serif; font-size: 11pt; font-weight: normal;}
 
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt {
-  font-family: 'Source Code Pro', font-size:14px monospace !important;}
+  font-family: 'Source Code Pro', monospace; font-size: 11pt;}
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
-.toolbar_info, .list-container {color: #a8afbd;}
+.toolbar_info {color: #a8afbd; font-size: 9pt; text-shadow: none !important;}
+.list-container {color: #a8afbd; font-size: 12pt;  text-shadow: none !important;}
 .breadcrumb>li {text-shadow:0 0px 0; color: #627187;}
 div.list_container a:hover {color: #ffffff;}
 div#header {
@@ -46,8 +47,8 @@ span#notebook_name.ui-state-hover {
 
 div#notebook {border-top: none;}
 div.navbar-inner.container { background:#a8afbd; border:0px;}
-div.navbar .nav>li>a {color: #4b5058;}
-div.navbar .nav>li>a:hover {color: #356cb4;}
+div.navbar .nav>li>a {color: #606e82; font-family: 'Helvetica', sans-serif; font-size: 12pt; font-weight: normal;}
+div.navbar .nav>li>a:hover {color: #ffffff;}
 
 .navbar-nav > li.open > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
 .nav > li.active > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
@@ -75,27 +76,28 @@ div.navbar .nav>li>a:hover {color: #356cb4;}
 
 div#menubar
 .navbar-inner { border: 0px; box-shadow: none; background:#a8afbd; background-image: none;}
-.navbar-text {color: #30333d; font-weight: bold;}
+.navbar-text {color: #4f5b66; font-family: 'Helvetica', sans-serif; font-size: 9pt; font-weight: normal;}
 div.navbar-inner.navbar-nobg {
     border: 0px; background: #a8afbd;}
 div#maintoolbar .toolbar-inner {background:#a8afbd;}
 div.navbar-inner a {
     font-family: 'Helvetica', ! important; 
-    font-size: 14; font-weight: bold;
+    font-size: 10pt; font-weight: normal;
     text-shadow: none !important;}
 .btn {
     color: #30333d;
     padding: 1px;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 3px; /* */
+    padding-right: 3px; /* */
     background: #79879c;
     text-shadow: none;
-    font-size:12;
+    font-size:10pt;
     font-weight: bold;
-    border:0px;}
+    border:0px
+    !important; }
 .btn:hover {
     background-color: #ffffff !important;
-    color: #356cb4;
+    color: #2c85f7;
     border:0px;}
 ul.dropdown-menu {    
     overflow: visible;
@@ -109,7 +111,7 @@ div.rendered_html code {
     font-size: 12pt;
     background-color: #ffffff;
     color: #272a32;
-    line-height: 125%;}
+    line-height: 130%;}
 div.text_cell {
     max-width: 200%;}
 div.text_cell_render h1,
@@ -141,7 +143,7 @@ div.output_stderr pre {color:#d0d6e1;}
 .cm-s-ipython.CodeMirror {background: #eff1f5; color: #4f5b66; font-weight: normal;}
 .cm-s-ipython div.CodeMirror-selected {background: #dfe1e7 !important;}/* Base16 original #c1c6d0*/
 .cm-s-ipython .CodeMirror-gutters {background: #b6bcc8; border-right: 0px; border-radius:0px;}
-.cm-s-ipython .CodeMirror-linenumber {color: #a0a7b7;}
+.cm-s-ipython .CodeMirror-linenumber {color: #99a1b2 !important;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #2c85f7 !important;}
 .cm-s-ipython span.cm-comment {color: #a7adba; font-style: normal;}
 .cm-s-ipython span.cm-atom {color: #b48ead;}
@@ -174,16 +176,18 @@ div.cell.edit_mode {border: medium solid #757f92; padding: 0px;border-radius: 0p
 
 
 div.input_area {
-    margin-bottom: 0;
+    margin-bottom: 0px;
     border: 0px;
     border-radius: 0px;}
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
-    font-family: Source Code Pro;
-    font-weight: bold;
-    color: #c3c8d1;
+    font-family: 'Source Code Pro';
+    font-weight: normal;
+    color: #5a6874;
     background-color: #98a2b2;
-    width: 5.5em;}
+    width: 5.5em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;}
 
 div.output_wrapper {
     background-color: #ffffff; 
