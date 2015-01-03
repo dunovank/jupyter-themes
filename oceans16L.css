@@ -166,7 +166,7 @@ div.output_stderr pre {color:#d0d6e1;}
 .cm-s-ipython span.cm-storage {color: #b48ead;}
 .cm-s-ipython span.cm-support {color: #96b5b4;}
 
-.cm-s-ipython .CodeMirror-matchingbracket { text-decoration: blink; font-weight: bold; color: #2c85f7 !important; }
+.cm-s-ipython .CodeMirror-matchingbracket { text-decoration: blink; font-weight: bold; color: #00ca57 !important; }
 .cm-s-ipython .CodeMirror-nonmatchingbracket { text-decoration: blink; font-weight: bold; color: #bf616a !important; }
 .cm-s-ipython span.cm-qualifier { color: #bf616a; }
 

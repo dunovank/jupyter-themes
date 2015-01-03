@@ -150,9 +150,9 @@ div.output_stderr pre {color: #dfe1e8;}
 .cm-s-ipython span.cm-attribute {color: #cb7d7e;}
 .cm-s-ipython span.cm-keyword {color: #b48ead; font-weight: normal;}
 .cm-s-ipython span.cm-string {color: #8fc198; font-weight: normal;} /* Base16 original #a3be8c*/
-.cm-s-ipython span.cm-operator {color: #d08770; font-weight: normal;}
-.cm-s-ipython span.cm-builtin {color: #cb7d7e; font-weight: normal;}
-.cm-s-ipython span.cm-boolean {color: #cb7d7e;}
+.cm-s-ipython span.cm-operator {color: #bf616a; font-weight: normal;}
+.cm-s-ipython span.cm-builtin {color: #bf616a; font-weight: normal;}
+.cm-s-ipython span.cm-boolean {color: #bf616a;}
 .cm-s-ipython span.cm-variable {color: #dfe1e8;}
 .cm-s-ipython span.cm-variable-2 {color: #cb7d7e; font-weight: normal;}
 .cm-s-ipython span.cm-variable-3 { color: #6c71c4; }
