@@ -35,7 +35,7 @@ div#header {
 span#notebook_name.ui-state-hover {
     color: #ffffff;
 
-    background: #347864; /* Old browsers */
+    background: #356cb4; /* Old browsers */
     background: -moz-linear-gradient(top,  #356cb4 0%, #356cb4 44%, #356cb4 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#356cb4), color-stop(44%,#356cb4), color-stop(100%,#356cb4)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* Chrome10+,Safari5.1+ */
