@@ -47,18 +47,15 @@
  * @class customjs
  * @static
  */
- // Example for custom.js
-
-// we want strict javascript that fails on ambiguous syntax
 
 // activate extensions only after Notebook is initialized
 require(["base/js/events"], function (events) {
     $([IPython.events]).on("app_initialized.NotebookApp", function () {
-    
-     * all exentensions from IPython-notebook-extensions, uncomment to activate
-    
+
+     // all exentensions from IPython-notebook-extensions, uncomment to activate
+
     IPython.Cell.options_default.cm_config.lineNumbers = true;
-    /*
+
     "use strict"
     var add_edit_shortcuts = {
             'Alt-c' : {
@@ -91,9 +88,9 @@ require(["base/js/events"], function (events) {
                 }
             },
     };
-    
+
     IPython.keyboard_manager.edit_shortcuts.add_shortcuts(add_edit_shortcuts);
     IPython.keyboard_manager.command_shortcuts.add_shortcuts(add_command_shortcuts);
-    */
+
     });
 });

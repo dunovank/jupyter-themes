@@ -16,6 +16,7 @@ a {color: #627187; font-family: 'Helvetica', sans-serif; font-size: 11pt; font-w
 
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt {
   font-family: 'Source Code Pro', monospace; font-size: 11pt;}
+
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
 
@@ -39,10 +40,10 @@ span#notebook_name.ui-state-hover {
     background: -moz-linear-gradient(top,  #356cb4 0%, #356cb4 44%, #356cb4 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#356cb4), color-stop(44%,#356cb4), color-stop(100%, #356cb4)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#356cb4', endColorstr='#356cb4',GradientType=0 ); /* IE6-9 */    
+    background: -o-linear-gradient(top, #356cb4 0%,#356cb4 44%,#356cb4 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #356cb4 0%,#356cb4 44%,#356cb4 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #356cb4 0%,#356cb4 44%,#356cb4 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#356cb4', endColorstr='#356cb4',GradientType=0 ); /* IE6-9 */
 }
 
 div#notebook {border-top: none;}
@@ -52,23 +53,23 @@ div.navbar .nav>li>a:hover {color: #ffffff;}
 
 .navbar-nav > li.open > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
 .nav > li.active > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
-.dropdown-menu { background-color: #eff1f5 !important; 
-    margin-left: 0px; 
-    margin-right: 0px; 
-    border: 0px; 
+.dropdown-menu { background-color: #eff1f5 !important;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 0px;
     border-radius: 0px;}
 .dropdown-menu > li > a { color: #4f5b66 !important; margin-left: 0px; margin-right: 0px;}
-.dropdown-menu > li > a:hover { 
-    background: #356cb4 !important; 
-    margin-left: 0px; 
-    margin-right: 0px; 
-    color: #ffffff !important; 
+.dropdown-menu > li > a:hover {
+    background: #356cb4 !important;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #ffffff !important;
     border:0px !important; }
-.dropdown-menu > li.disabled > a { 
-    background-color: #eff1f5 !important; 
+.dropdown-menu > li.disabled > a {
+    background-color: #eff1f5 !important;
     color:#a7adba !important; }
-.dropdown-menu > li.disabled > a:hover { 
-    background-color: #eff1f5 !important; 
+.dropdown-menu > li.disabled > a:hover {
+    background-color: #eff1f5 !important;
     color: #a7adba !important; }
 .dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#356cb4;background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to bottom, #356cb4, #356cb4);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
 .dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#356cb4;background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to bottom, #356cb4, #356cb4);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
@@ -81,7 +82,7 @@ div.navbar-inner.navbar-nobg {
     border: 0px; background: #a8afbd;}
 div#maintoolbar .toolbar-inner {background:#a8afbd;}
 div.navbar-inner a {
-    font-family: 'Helvetica', ! important; 
+    font-family: 'Helvetica', ! important;
     font-size: 10pt; font-weight: normal;
     text-shadow: none !important;}
 .btn {
@@ -99,7 +100,7 @@ div.navbar-inner a {
     background-color: #ffffff !important;
     color: #2c85f7;
     border:0px;}
-ul.dropdown-menu {    
+ul.dropdown-menu {
     overflow: visible;
     position: absolute;}
 
@@ -124,11 +125,11 @@ div.text_cell_render h6 {
     font-weight: 300;
     color: #ffffff;}
 
+/* text in output area (i.e. print some_list) */
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px  #65737e solid;
-  color: #65737e;
-}
-div.text_cell_render, div.output_html {color: #697088;}
+  border: 1px #1e2429 solid;
+  color: #1e2429;}
+div.text_cell_render, div.output_html {color: #1e2429;}
 
 span.ansiblack {color: #1e2429;}
 span.ansiblue {color: #3f5790;}
@@ -151,7 +152,7 @@ div.output_stderr pre {color:#d0d6e1;}
 .cm-s-ipython span.cm-property {color: #d08770;}
 .cm-s-ipython span.cm-attribute {color: #bf616a;}
 .cm-s-ipython span.cm-keyword {color: #b48ead; font-weight: normal;}
-.cm-s-ipython span.cm-string {color: #6daf5b; font-weight: normal;} /* Base16 original #a3be8c*/
+.cm-s-ipython span.cm-string {color: #a3be8c; font-weight: normal;}
 .cm-s-ipython span.cm-operator {color:#bf616a; font-weight: normal;}
 .cm-s-ipython span.cm-builtin {color: #bf616a; font-weight: normal;}
 .cm-s-ipython span.cm-boolean {color: #bf616a;}
@@ -160,15 +161,16 @@ div.output_stderr pre {color:#d0d6e1;}
 .cm-s-ipython span.cm-variable-3 { color: #6c71c4; }
 .cm-s-ipython span.cm-def {color: #a4b8cb; font-weight: normal;}
 .cm-s-ipython span.cm-error {background: #bf616a; color: #a7adba;}
-.cm-s-ipython span.cm-bracket {color: #dfe1e8;}
+.cm-s-ipython span.cm-bracket {color: #697987;}
 .cm-s-ipython span.cm-tag {color: #b48ead;}
 .cm-s-ipython span.cm-link {color: #b48ead;}
 .cm-s-ipython span.cm-storage {color: #b48ead;}
 .cm-s-ipython span.cm-support {color: #96b5b4;}
 
-.cm-s-ipython .CodeMirror-matchingbracket { text-decoration: blink; font-weight: bold; color: #00ca57 !important; }
-.cm-s-ipython .CodeMirror-nonmatchingbracket { text-decoration: blink; font-weight: bold; color: #bf616a !important; }
-.cm-s-ipython span.cm-qualifier { color: #bf616a; }
+div.CodeMirror span.CodeMirror-matchingbracket { color: #4f5b66; }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #4f5b66; }
+.cm-s-ipython .CodeMirror-matchingbracket { background: rgba(119, 177, 216, .7) !important;}
+.cm-s-ipython .CodeMirror-nonmatchingbracket { background: rgba(220, 100, 90, .7) !important;}
 
 div.cell {border: medium solid #757f92; padding: 0px; border-radius: 0px;}
 div.cell.selected {border: medium solid #356cb4; padding: 0px; border-radius: 0px;}
@@ -190,7 +192,7 @@ div.prompt.input_prompt {
     margin-bottom: 0px;}
 
 div.output_wrapper {
-    background-color: #ffffff; 
+    background-color: #ffffff;
     margin-bottom: 0em;
     margin-top: 0em;
     border: 0px;}
@@ -200,7 +202,7 @@ div.prompt.output_prompt {
     background-color: #ffffff;
     width: .5em;
     padding-top: 1em;
-    margin: 0px; 
+    margin: 0px;
     border: 0px;}
 div.out_prompt_overlay.prompt {
     width: .5em;
@@ -224,14 +226,14 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     margin-left: none;
     padding-top: 1em;
     padding-bottom: 0.5em;
-    margin-top: 8px; 
+    margin-top: 8px;
     background-color: #ffffff; /*#d0d6e1;*/
     color: #2b303b;}
-div.btn.output_collapsed { 
+div.btn.output_collapsed {
     background: #356cb4;
     color: #ffffff;
     font-size: 22;
     font-weight: bold;
-    border-radius: 0px;     
+    border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
