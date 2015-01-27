@@ -107,6 +107,7 @@ ul.dropdown-menu {
 /* Formatting code in text, code*/
 .CodeMirror pre {
     font-family: 'Source Code Pro', monospace;}
+
 /* Formatting code in markdown cells */
 div.rendered_html code {
     font-size: 12pt;
@@ -129,7 +130,8 @@ div.text_cell_render h6 {
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
   border: 1px #1e2429 solid;
   color: #1e2429;}
-div.text_cell_render, div.output_html {color: #1e2429;}
+div.output_html {color: #1e2429;}
+div.text_cell_render {color:  #ffffff; background-color: #b6bcc8;}
 
 span.ansiblack {color: #1e2429;}
 span.ansiblue {color: #3f5790;}
