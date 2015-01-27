@@ -16,7 +16,6 @@ a {color: #627187; font-family: 'Helvetica', sans-serif; font-size: 11pt; font-w
 
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt {
   font-family: 'Source Code Pro', monospace; font-size: 11pt;}
-
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
 
@@ -46,6 +45,7 @@ span#notebook_name.ui-state-hover {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#356cb4', endColorstr='#356cb4',GradientType=0 ); /* IE6-9 */
 }
 
+
 div#notebook {border-top: none;}
 div.navbar-inner.container { background:#a8afbd; border:0px;}
 div.navbar .nav>li>a {color: #606e82; font-family: 'Helvetica', sans-serif; font-size: 12pt; font-weight: normal;}
@@ -71,9 +71,17 @@ div.navbar .nav>li>a:hover {color: #ffffff;}
 .dropdown-menu > li.disabled > a:hover {
     background-color: #eff1f5 !important;
     color: #a7adba !important; }
-.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#356cb4;background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to bottom, #356cb4, #356cb4);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
-.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#356cb4;background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to bottom, #356cb4, #356cb4);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
 
+.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#356cb4;
+  background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));  
+  background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4,  #356cb4);
+  background-repeat:repeat-x;filter:progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
+
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#356cb4;  
+  background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));
+  background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to 
+  bottom, #356cb4, #356cb4); background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3',
+  GradientType=0)}
 
 div#menubar
 .navbar-inner { border: 0px; box-shadow: none; background:#a8afbd; background-image: none;}
@@ -84,7 +92,7 @@ div#maintoolbar .toolbar-inner {background:#a8afbd;}
 div.navbar-inner a {
     font-family: 'Helvetica', ! important;
     font-size: 10pt; font-weight: normal;
-    text-shadow: none !important;}
+    text-shadow: none !important;}    
 .btn {
     color: #30333d;
     padding: 1px;
@@ -107,7 +115,9 @@ ul.dropdown-menu {
 /* Formatting code in text, code*/
 .CodeMirror pre {
     font-family: 'Source Code Pro', monospace;}
-
+div.text_cell_render {
+        color: #eff1f5;
+        background-color: #98a2b2;}
 /* Formatting code in markdown cells */
 div.rendered_html code {
     font-size: 12pt;
@@ -125,13 +135,11 @@ div.text_cell_render h6 {
     font-family: 'Helvetica';
     font-weight: 300;
     color: #ffffff;}
-
 /* text in output area (i.e. print some_list) */
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
   border: 1px #1e2429 solid;
   color: #1e2429;}
 div.output_html {color: #1e2429;}
-div.text_cell_render {color:  #ffffff; background-color: #b6bcc8;}
 
 span.ansiblack {color: #1e2429;}
 span.ansiblue {color: #3f5790;}
@@ -186,10 +194,11 @@ div.input_area {
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
     font-family: 'Source Code Pro';
-    font-weight: normal;
+    font-weight: bold;
+    font-size: 8pt;
     color: #5a6874;
     background-color: #98a2b2;
-    width: 5.5em;
+    width: 0.5em;
     padding-bottom: 0px;
     margin-bottom: 0px;}
 
@@ -208,19 +217,19 @@ div.prompt.output_prompt {
     border: 0px;}
 div.out_prompt_overlay.prompt {
     width: .5em;
-    padding-left: 6px;
-    padding-right: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
     border: 0px;
     color: #2b303b;
-    background-color: #ffffff; /*#d0d6e1;*/
+    background-color: #ffffff;
     border-radius:0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
 
 div.out_prompt_overlay.prompt:hover {
-    padding-left: 6px;
-    padding-right: 8px;
-    background-color: #ffffff; /*#d0d6e1;*/
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: #ffffff;
     box-shadow: #6e788c 4px 4px 6px 2px inset;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
@@ -229,7 +238,7 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     padding-top: 1em;
     padding-bottom: 0.5em;
     margin-top: 8px;
-    background-color: #ffffff; /*#d0d6e1;*/
+    background-color: #ffffff;
     color: #2b303b;}
 div.btn.output_collapsed {
     background: #356cb4;

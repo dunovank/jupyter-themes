@@ -21,7 +21,7 @@ div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
 .toolbar_info {color: #858ea1; font-size: 9pt; text-shadow: none !important; }
-.list_container {color: #858ea1; font-size: 11pt; text-shadow: none !important; }
+.list_container {color: #858ea1; font-size: 12pt; text-shadow: none !important; }
 .breadcrumb>li {text-shadow:0 0px 0; color:#858ea1;}
 div.list_container a:hover {color:#dddddd;}
 div#header {
@@ -47,7 +47,7 @@ span#notebook_name.ui-state-hover {
 
 div#notebook {border-top: none;}
 div.navbar-inner.container { background:#2b303b; border:0px;}
-div.navbar .nav>li>a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 11pt; font-weight: normal;}
+div.navbar .nav>li>a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 12pt; font-weight: normal;}
 div.navbar .nav>li>a:hover {color: #dddddd;}
 
 .navbar-nav > li.open > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
@@ -70,12 +70,21 @@ div.navbar .nav>li>a:hover {color: #dddddd;}
 .dropdown-menu > li.disabled > a:hover {
     background-color: #eff1f5 !important;
     color: #a7adba !important; }
-.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#356cb4;background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to bottom, #356cb4, #356cb4);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
-.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#356cb4;background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to bottom, #356cb4, #356cb4);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
 
-div#menubar
+.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#356cb4;
+  background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));  
+  background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4,  #356cb4);
+  background-repeat:repeat-x;filter:progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
+
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#356cb4;  
+  background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));
+  background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to 
+  bottom, #356cb4, #356cb4); background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3',
+  GradientType=0)}
+
+.div#menubar
 .navbar-inner { border: 0px; box-shadow: none; background:#2b303b; background-image: none;}
-.navbar-text {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 10pt; font-weight: normal;}
+.navbar-text {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 9pt; font-weight: normal;}
 div.navbar-inner.navbar-nobg {
     border: 0px; background: #2b303b;}
 div#maintoolbar .toolbar-inner {background:#2b303b;}
@@ -101,17 +110,21 @@ ul.dropdown-menu {
     overflow: visible;
     position: absolute;}
 
-/* Formatting code in text, code*/
 .CodeMirror pre {
     font-family: 'Source Code Pro', monospace;}
 /* Formatting code in markdown cells */
 div.rendered_html code {
     font-size: 12pt;
-    background-color: #ffffff;
-    color: #3d424f;
+    color: #356cb4;
+    background-color: #dfe1e8
     line-height: 130%;}
+/* Formatting code in markdown cells */
+div.text_cell_render {
+        color: #d4d8e0;
+        background-color: #495164;}/*#3e4555*/
 div.text_cell {
-    max-width: 100%;}
+    max-width: 100%;
+    color: #ffffff;}
 div.text_cell_render h1,
 div.text_cell_render h2,
 div.text_cell_render h3,
@@ -121,13 +134,13 @@ div.text_cell_render h6 {
     font-family: 'Helvetica';
     font-weight: 300;
     color: #ffffff;}
-
 /* text in output area (i.e. print some_list) */
+div.output_html {color: #1e2429;}
+/* Formatting code in text, code*/
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
   border: 1px #1e2429 solid;
   color: #1e2429;}
-div.text_cell_render, div.output_html {color: #1e2429;}
-
+  
 span.ansiblack {color: #1e2429;}
 span.ansiblue {color: #3f5790;}
 span.ansigray {color: #4c5361;}
@@ -158,11 +171,12 @@ div.output_stderr pre {color: #dfe1e8;}
 .cm-s-ipython span.cm-variable-3 { color: #6c71c4; }
 .cm-s-ipython span.cm-def {color: #a4b8cb; font-weight: normal;}
 .cm-s-ipython span.cm-error {background: #cb7d7e; color: #a7adba;}
-.cm-s-ipython span.cm-bracket {color: #dfe1e8;}
+.cm-s-ipython span.cm-bracket {color: #c0c5ce;}
 .cm-s-ipython span.cm-tag {color: #b48ead;}
 .cm-s-ipython span.cm-link {color: #b48ead;}
 .cm-s-ipython span.cm-storage {color: #b48ead;}
 .cm-s-ipython span.cm-support {color: #96b5b4;}
+.cm-s-ipython span.cm-qualifier { color: #bf616a; }
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #c0c5ce; }
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #c0c5ce; }
@@ -180,10 +194,11 @@ div.input_area {
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
     font-family: 'Source Code Pro';
-    font-weight: normal;
+    font-weight: bold;
+    font-size: 8pt;
     color: #7d879b;
     background-color: #495164;
-    width: 5.5em;
+    width: 0.5em;
     padding-bottom: 0px;
     margin-bottom: 0px;}
 
@@ -196,14 +211,14 @@ div.prompt.output_prompt {
     font-family: Source Code Pro;
     color: #858ea1;
     background-color: #d4d8e0;
-    width: .5em;
+    width: 0.0em;
     padding-top: 1em;
     margin: 0px;
     border: 0px;}
 div.out_prompt_overlay.prompt {
-    width: .5em;
-    padding-left: 6px;
-    padding-right: 8px;
+    width: 0.0em;
+    padding-left: 4px;
+    padding-right: 4px;
     border: 0px;
     color: #2b303b;
     background-color: #d4d8e0;
@@ -212,8 +227,8 @@ div.out_prompt_overlay.prompt {
     -moz-border-radius: 0px;}
 
 div.out_prompt_overlay.prompt:hover {
-    padding-left: 6px;
-    padding-right: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
     background-color: #d4d8e0;
     box-shadow: #6e788c 4px 4px 6px 2px inset;
     -webkit-border-radius: 0px;
