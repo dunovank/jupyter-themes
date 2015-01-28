@@ -34,7 +34,6 @@ div#header {
 /* Formatting Notebook Name */
 span#notebook_name.ui-state-hover {
     color: #ffffff;
-
     background: #356cb4; /* Old browsers */
     background: -moz-linear-gradient(top,  #356cb4 0%, #356cb4 44%, #356cb4 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#356cb4), color-stop(44%,#356cb4), color-stop(100%, #356cb4)); /* Chrome,Safari4+ */
@@ -90,20 +89,19 @@ div.navbar-inner.navbar-nobg {
     border: 0px; background: #a8afbd;}
 div#maintoolbar .toolbar-inner {background:#a8afbd;}
 div.navbar-inner a {
-    font-family: 'Helvetica', ! important;
+    font-family: 'Helvetica', !important;
     font-size: 10pt; font-weight: normal;
     text-shadow: none !important;}    
 .btn {
     color: #30333d;
     padding: 1px;
-    padding-left: 3px; /* */
-    padding-right: 3px; /* */
+    padding-left: 3px; 
+    padding-right: 3px;
     background: #79879c;
     text-shadow: none;
     font-size:10pt;
     font-weight: bold;
-    border:0px
-    !important; }
+    border:0px !important; }
 .btn:hover {
     background-color: #ffffff !important;
     color: #2c85f7;
@@ -116,8 +114,8 @@ ul.dropdown-menu {
 .CodeMirror pre {
     font-family: 'Source Code Pro', monospace;}
 div.text_cell_render {
-        color: #eff1f5;
-        background-color: #98a2b2;}
+        color: #ffffff;
+        background-color: #aeb6c3;}
 /* Formatting code in markdown cells */
 div.rendered_html code {
     font-size: 12pt;
@@ -153,8 +151,8 @@ div.output_stderr pre {color:#d0d6e1;}
 
 .cm-s-ipython.CodeMirror {background: #eff1f5; color: #4f5b66; font-weight: normal;}
 .cm-s-ipython div.CodeMirror-selected {background: #dfe1e7 !important;}/* Base16 original #c1c6d0*/
-.cm-s-ipython .CodeMirror-gutters {background: #b6bcc8; border-right: 0px; border-radius:0px;}
-.cm-s-ipython .CodeMirror-linenumber {color: #99a1b2 !important;}
+.cm-s-ipython .CodeMirror-gutters {background: #aeb6c3; border-right: 0px; border-radius:0px;}
+.cm-s-ipython .CodeMirror-linenumber {color: #858ea1 !important;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #2c85f7 !important;}
 .cm-s-ipython span.cm-comment {color: #a7adba; font-style: normal;}
 .cm-s-ipython span.cm-atom {color: #b48ead;}
@@ -195,10 +193,10 @@ div.input_area {
 div.prompt.input_prompt {
     font-family: 'Source Code Pro';
     font-weight: bold;
-    font-size: 8pt;
+    font-size: 10pt;
     color: #5a6874;
     background-color: #98a2b2;
-    width: 0.5em;
+    width: 0.0em;
     padding-bottom: 0px;
     margin-bottom: 0px;}
 
@@ -208,17 +206,17 @@ div.output_wrapper {
     margin-top: 0em;
     border: 0px;}
 div.prompt.output_prompt {
-    font-family: Source Code Pro;
+    font-family: 'Source Code Pro';
     color: #dfe1e8;
     background-color: #ffffff;
-    width: .5em;
+    width: 0.0em;
     padding-top: 1em;
     margin: 0px;
     border: 0px;}
 div.out_prompt_overlay.prompt {
-    width: .5em;
-    padding-left: 4px;
-    padding-right: 4px;
+    width: 0.0em;
+    padding-left: 2px;
+    padding-right: 3px;
     border: 0px;
     color: #2b303b;
     background-color: #ffffff;
@@ -227,10 +225,10 @@ div.out_prompt_overlay.prompt {
     -moz-border-radius: 0px;}
 
 div.out_prompt_overlay.prompt:hover {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 2px;
+    padding-right: 3px;
     background-color: #ffffff;
-    box-shadow: #6e788c 4px 4px 6px 2px inset;
+    box-shadow: #b6bcc8 4px 4px 6px 2px inset;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {

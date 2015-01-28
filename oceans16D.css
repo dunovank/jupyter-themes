@@ -1,13 +1,10 @@
 /*
-
     Name:       Oceans16 Dark
     Author:     Kyle Dunovan (http://github.com/dunovank)
-
     Original Color Scheme by Gadzhi Kharkharov (https://github.com/kkga/spacegray)
     CodeMirror & NB Style adapted from panditarevolution (https://github.com/panditarevolution/ipythonNotebook_customs)
     CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
     Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
-
 */
 
 body {background-color: #2b303b;}
@@ -70,28 +67,27 @@ div.navbar .nav>li>a:hover {color: #dddddd;}
 .dropdown-menu > li.disabled > a:hover {
     background-color: #eff1f5 !important;
     color: #a7adba !important; }
-
 .dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#356cb4;
   background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));  
   background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4,  #356cb4);
   background-repeat:repeat-x;filter:progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
-
 .dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#356cb4;  
   background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));
   background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to 
   bottom, #356cb4, #356cb4); background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3',
   GradientType=0)}
 
-.div#menubar
+div#menubar
 .navbar-inner { border: 0px; box-shadow: none; background:#2b303b; background-image: none;}
 .navbar-text {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 9pt; font-weight: normal;}
 div.navbar-inner.navbar-nobg {
     border: 0px; background: #2b303b;}
 div#maintoolbar .toolbar-inner {background:#2b303b;}
 div.navbar-inner a {
-    font-family: 'Helvetica', ! important;
+    font-family: 'Helvetica', !important;
     font-size: 10pt; font-weight: normal;
-    text-shadow: none !important;}
+    text-shadow: none !important;}    
+
 .btn {
     color: #30333d;
     padding: 1px;
@@ -116,12 +112,13 @@ ul.dropdown-menu {
 div.rendered_html code {
     font-size: 12pt;
     color: #356cb4;
-    background-color: #dfe1e8
+    background-color: #dfe1e8;
     line-height: 130%;}
 /* Formatting code in markdown cells */
 div.text_cell_render {
         color: #d4d8e0;
-        background-color: #495164;}/*#3e4555*/
+        background-color: #545d73;}/*#3e4555*/
+
 div.text_cell {
     max-width: 100%;
     color: #ffffff;}
@@ -195,10 +192,10 @@ div.input_area {
 div.prompt.input_prompt {
     font-family: 'Source Code Pro';
     font-weight: bold;
-    font-size: 8pt;
+    font-size: 10pt;
     color: #7d879b;
     background-color: #495164;
-    width: 0.5em;
+    width: 0.0em;
     padding-bottom: 0px;
     margin-bottom: 0px;}
 
@@ -208,7 +205,7 @@ div.output_wrapper {
     margin-top: 0;
     border: 0px;}
 div.prompt.output_prompt {
-    font-family: Source Code Pro;
+    font-family: 'Source Code Pro';
     color: #858ea1;
     background-color: #d4d8e0;
     width: 0.0em;
@@ -217,8 +214,8 @@ div.prompt.output_prompt {
     border: 0px;}
 div.out_prompt_overlay.prompt {
     width: 0.0em;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 2px;
+    padding-right: 3px;
     border: 0px;
     color: #2b303b;
     background-color: #d4d8e0;
@@ -227,8 +224,8 @@ div.out_prompt_overlay.prompt {
     -moz-border-radius: 0px;}
 
 div.out_prompt_overlay.prompt:hover {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 2px;
+    padding-right: 3px;
     background-color: #d4d8e0;
     box-shadow: #6e788c 4px 4px 6px 2px inset;
     -webkit-border-radius: 0px;
