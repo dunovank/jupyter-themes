@@ -228,7 +228,7 @@ div.out_prompt_overlay.prompt:hover {
     padding-left: 2px;
     padding-right: 3px;
     background-color: #ffffff;
-    box-shadow: #b6bcc8 4px 4px 6px 2px inset;
+    box-shadow: #c3c7d1 4px 4px 6px 2px inset;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {

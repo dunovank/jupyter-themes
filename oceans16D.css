@@ -200,14 +200,14 @@ div.prompt.input_prompt {
     margin-bottom: 0px;}
 
 div.output_wrapper {
-    background-color: #d4d8e0;
+    background-color:#c3c7d1;
     margin-bottom: 0em;
     margin-top: 0;
     border: 0px;}
 div.prompt.output_prompt {
     font-family: 'Source Code Pro';
     color: #858ea1;
-    background-color: #d4d8e0;
+    background-color: #c3c7d1;
     width: 0.0em;
     padding-top: 1em;
     margin: 0px;
@@ -218,7 +218,7 @@ div.out_prompt_overlay.prompt {
     padding-right: 3px;
     border: 0px;
     color: #2b303b;
-    background-color: #d4d8e0;
+    background-color: #c3c7d1;
     border-radius:0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
@@ -226,8 +226,8 @@ div.out_prompt_overlay.prompt {
 div.out_prompt_overlay.prompt:hover {
     padding-left: 2px;
     padding-right: 3px;
-    background-color: #d4d8e0;
-    box-shadow: #6e788c 4px 4px 6px 2px inset;
+    background-color: #c3c7d1;
+    box-shadow: #8b94a6 4px 4px 6px 2px inset;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
@@ -235,7 +235,7 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     padding-top: 1em;
     padding-bottom: 0.5em;
     margin-top: 8px;
-    background-color: #d4d8e0;
+    background-color: #c3c7d1;
     color: #2b303b;}
 div.btn.output_collapsed {
     background: #356cb4;
