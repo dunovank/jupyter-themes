@@ -147,12 +147,12 @@ span.ansipurple {color: #563951;}
 span.ansired {color: #973d46;}
 span.ansiyellow {color: #a25a47;}
 div.output_stderr {background-color: #973d46;}
-div.output_stderr pre {color:#d0d6e1;}
+div.output_stderr pre {color:#4f5b66;}
 
 .cm-s-ipython.CodeMirror {background: #eff1f5; color: #4f5b66; font-weight: normal;}
 .cm-s-ipython div.CodeMirror-selected {background: #dfe1e7 !important;}/* Base16 original #c1c6d0*/
 .cm-s-ipython .CodeMirror-gutters {background: #aeb6c3; border-right: 0px; border-radius:0px;}
-.cm-s-ipython .CodeMirror-linenumber {color: #858ea1 !important;}
+.cm-s-ipython .CodeMirror-linenumber {color: #939bac !important;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #2c85f7 !important;}
 .cm-s-ipython span.cm-comment {color: #a7adba; font-style: normal;}
 .cm-s-ipython span.cm-atom {color: #b48ead;}

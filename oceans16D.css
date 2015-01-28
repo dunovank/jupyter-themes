@@ -146,7 +146,7 @@ span.ansipurple {color: #563951;}
 span.ansired {color: #973d46;}
 span.ansiyellow {color: #a25a47;}
 div.output_stderr {background-color: #973d46;}
-div.output_stderr pre {color: #dfe1e8;}
+div.output_stderr pre {color: #3e4555;}
 
 .cm-s-ipython.CodeMirror {background: #2b303b; color: #c0c5ce; font-weight: normal;}
 .cm-s-ipython div.CodeMirror-selected {background: #3d424f !important;}
