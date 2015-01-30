@@ -129,7 +129,7 @@ div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
     font-family: 'Helvetica';
-    font-weight: 500;
+    font-weight: 300;
     color: #ffffff;}
 /* text in output area (i.e. print some_list) */
 div.output_html {color: #1e2429;}
