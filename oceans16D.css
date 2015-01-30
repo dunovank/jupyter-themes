@@ -7,7 +7,7 @@
     Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
 */
 
-body {background-color: #2b303b;}
+body {background-color:#2b303b;}
 
 a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 11pt; font-weight: normal !important; }
 
@@ -117,7 +117,7 @@ div.rendered_html code {
 /* Formatting code in markdown cells */
 div.text_cell_render {
         color: #d4d8e0;
-        background-color: #545d73;}/*#3e4555*/
+        background-color: #333947;}/*#3e4555*/
 
 div.text_cell {
     max-width: 100%;
@@ -129,7 +129,7 @@ div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
     font-family: 'Helvetica';
-    font-weight: 300;
+    font-weight: 500;
     color: #ffffff;}
 /* text in output area (i.e. print some_list) */
 div.output_html {color: #1e2429;}
@@ -150,7 +150,7 @@ div.output_stderr pre {color: #3e4555;}
 
 .cm-s-ipython.CodeMirror {background: #2b303b; color: #c0c5ce; font-weight: normal;}
 .cm-s-ipython div.CodeMirror-selected {background: #3d424f !important;}
-.cm-s-ipython .CodeMirror-gutters {background: #3e4555; border: 0px; border-radius:0px;}
+.cm-s-ipython .CodeMirror-gutters {background: #333947; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #515a6f !important;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #2c85f7 !important;}
 .cm-s-ipython span.cm-comment {color: #515a6f; font-style: normal;}
@@ -167,7 +167,7 @@ div.output_stderr pre {color: #3e4555;}
 .cm-s-ipython span.cm-variable-2 {color: #cb7d7e; font-weight: normal;}
 .cm-s-ipython span.cm-variable-3 { color: #6c71c4; }
 .cm-s-ipython span.cm-def {color: #a4b8cb; font-weight: normal;}
-.cm-s-ipython span.cm-error {background: #cb7d7e; color: #a7adba;}
+.cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .7) !important;}
 .cm-s-ipython span.cm-bracket {color: #c0c5ce;}
 .cm-s-ipython span.cm-tag {color: #b48ead;}
 .cm-s-ipython span.cm-link {color: #b48ead;}
@@ -177,24 +177,25 @@ div.output_stderr pre {color: #3e4555;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #c0c5ce; }
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #c0c5ce; }
-.cm-s-ipython .CodeMirror-matchingbracket { background: rgba(53, 108, 180, .8) !important;}
-.cm-s-ipython .CodeMirror-nonmatchingbracket { background: rgba(191, 97, 106, .8) !important;}
+.cm-s-ipython .CodeMirror-matchingbracket { background: rgba(53, 108, 180, .7) !important;}
+.cm-s-ipython .CodeMirror-nonmatchingbracket { background: rgba(191, 97, 106, .7) !important;}
 
-div.cell {border: medium solid #393f4e; padding: 0px; border-radius: 0px;}
+div.cell {border: medium solid #485165; padding: 0px; border-radius: 0px;}
 div.cell.selected {border: medium solid #356cb4; padding: 0px; border-radius: 0px;}
-div.cell.edit_mode {border: medium solid #393f4e; padding: 0px;border-radius: 0px;}
+div.cell.edit_mode {border: medium solid #485165; padding: 0px;border-radius: 0px;}
 
 div.input_area {
     margin-bottom: 0px;
     border: 0px;
     border-radius: 0px;}
+
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
     font-family: 'Source Code Pro';
     font-weight: bold;
     font-size: 10pt;
     color: #7d879b;
-    background-color: #495164;
+    background-color: #3b4252;
     width: 0.0em;
     padding-bottom: 0px;
     margin-bottom: 0px;}
@@ -238,9 +239,10 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     background-color: #c3c7d1;
     color: #2b303b;}
 div.btn.output_collapsed {
-    background: #356cb4;
-    color: #ffffff;
-    font-size: 22;
+    background: rgba(53, 108, 180, .7);
+    background-image: none;
+    color: #2b303b;
+    font-size: 20;
     font-weight: bold;
     border-radius: 0px;
     -webkit-border-radius: 0px;

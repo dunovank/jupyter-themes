@@ -1,18 +1,15 @@
 /*
-
-    Name:       Oceans16 Light
+    Name:       Oceans16 Dark
     Author:     Kyle Dunovan (http://github.com/dunovank)
-
     Original Color Scheme by Gadzhi Kharkharov (https://github.com/kkga/spacegray)
     CodeMirror & NB Style adapted from panditarevolution (https://github.com/panditarevolution/ipythonNotebook_customs)
     CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
     Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
-
 */
 
-body {background-color: #a8afbd;}
+body {background-color:#22252d;}
 
-a {color: #627187; font-family: 'Helvetica', sans-serif; font-size: 11pt; font-weight: normal;}
+a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 11pt; font-weight: normal !important; }
 
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt {
   font-family: 'Source Code Pro', monospace; font-size: 11pt;}
@@ -20,13 +17,13 @@ div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.promp
 div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
-.toolbar_info {color: #a8afbd; font-size: 9pt; text-shadow: none !important;}
-.list-container {color: #a8afbd; font-size: 12pt;  text-shadow: none !important;}
-.breadcrumb>li {text-shadow:0 0px 0; color: #627187;}
-div.list_container a:hover {color: #ffffff;}
+.toolbar_info {color: #858ea1; font-size: 9pt; text-shadow: none !important; }
+.list_container {color: #858ea1; font-size: 12pt; text-shadow: none !important; }
+.breadcrumb>li {text-shadow:0 0px 0; color:#858ea1;}
+div.list_container a:hover {color:#dddddd;}
 div#header {
-    background-color: #a8afbd;
-    color: #545f70;
+    background-color: #22252d;
+    color: #FFFFFF;
     height: 3.2em;
     border: 0px;}
 
@@ -34,21 +31,21 @@ div#header {
 /* Formatting Notebook Name */
 span#notebook_name.ui-state-hover {
     color: #ffffff;
+
     background: #356cb4; /* Old browsers */
     background: -moz-linear-gradient(top,  #356cb4 0%, #356cb4 44%, #356cb4 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#356cb4), color-stop(44%,#356cb4), color-stop(100%, #356cb4)); /* Chrome,Safari4+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#356cb4), color-stop(44%,#356cb4), color-stop(100%,#356cb4)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #356cb4 0%,#356cb4 44%,#356cb4 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #356cb4 0%,#356cb4 44%,#356cb4 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #356cb4 0%,#356cb4 44%,#356cb4 100%); /* W3C */
+    background: -o-linear-gradient(top,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#356cb4', endColorstr='#356cb4',GradientType=0 ); /* IE6-9 */
 }
 
-
 div#notebook {border-top: none;}
-div.navbar-inner.container { background:#a8afbd; border:0px;}
-div.navbar .nav>li>a {color: #545f70; font-family: 'Helvetica', sans-serif; font-size: 12pt; font-weight: normal;}
-div.navbar .nav>li>a:hover {color: #ffffff;}
+div.navbar-inner.container { background:#22252d; border:0px;}
+div.navbar .nav>li>a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 12pt; font-weight: normal;}
+div.navbar .nav>li>a:hover {color: #dddddd;}
 
 .navbar-nav > li.open > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
 .nav > li.active > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
@@ -70,12 +67,10 @@ div.navbar .nav>li>a:hover {color: #ffffff;}
 .dropdown-menu > li.disabled > a:hover {
     background-color: #eff1f5 !important;
     color: #a7adba !important; }
-
 .dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#356cb4;
   background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));  
   background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4,  #356cb4);
   background-repeat:repeat-x;filter:progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
-
 .dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#356cb4;  
   background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));
   background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to 
@@ -83,47 +78,50 @@ div.navbar .nav>li>a:hover {color: #ffffff;}
   GradientType=0)}
 
 div#menubar
-.navbar-inner { border: 0px; box-shadow: none; background:#a8afbd; background-image: none;}
-.navbar-text {color: #4f5b66; font-family: 'Helvetica', sans-serif; font-size: 9pt; font-weight: normal;}
+.navbar-inner { border: 0px; box-shadow: none; background:#22252d; background-image: none;}
+.navbar-text {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 9pt; font-weight: normal;}
 div.navbar-inner.navbar-nobg {
-    border: 0px; background: #a8afbd;}
-div#maintoolbar .toolbar-inner {background:#a8afbd;}
+    border: 0px; background: #22252d;}
+div#maintoolbar .toolbar-inner {background:#22252d;}
 div.navbar-inner a {
     font-family: 'Helvetica', !important;
     font-size: 10pt; font-weight: normal;
     text-shadow: none !important;}    
+
 .btn {
     color: #30333d;
     padding: 1px;
-    padding-left: 3px; 
-    padding-right: 3px;
-    background: #79879c;
+    padding-left: 3px; /* */
+    padding-right: 3px; /* */
+    background: #858ea1;
     text-shadow: none;
-    font-size:10pt;
+    font-size: 10pt;
     font-weight: bold;
-    border:0px !important; }
+    border: 0px !important; }
 .btn:hover {
-    background-color: #ffffff !important;
+    background-color: #FFFFFF !important;
     color: #2c85f7;
     border:0px;}
 ul.dropdown-menu {
     overflow: visible;
     position: absolute;}
 
-/* Formatting code in text, code*/
 .CodeMirror pre {
     font-family: 'Source Code Pro', monospace;}
-div.text_cell_render {
-        color: #545f70;
-        background-color: #aeb6c3;}
 /* Formatting code in markdown cells */
 div.rendered_html code {
     font-size: 12pt;
-    background-color: #ffffff;
-    color: #272a32;
+    color: #356cb4;
+    background-color: #dfe1e8;
     line-height: 130%;}
+/* Formatting code in markdown cells */
+div.text_cell_render {
+        color: #d4d8e0;
+        background-color: #545d73;}/*#3e4555*/
+
 div.text_cell {
-    max-width: 200%;}
+    max-width: 100%;
+    color: #ffffff;}
 div.text_cell_render h1,
 div.text_cell_render h2,
 div.text_cell_render h3,
@@ -132,13 +130,14 @@ div.text_cell_render h5,
 div.text_cell_render h6 {
     font-family: 'Helvetica';
     font-weight: 300;
-    color: #545f70;}
+    color: #ffffff;}
 /* text in output area (i.e. print some_list) */
+div.output_html {color: #1e2429;}
+/* Formatting code in text, code*/
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
   border: 1px #1e2429 solid;
   color: #1e2429;}
-div.output_html {color: #1e2429;}
-
+  
 span.ansiblack {color: #1e2429;}
 span.ansiblue {color: #3f5790;}
 span.ansigray {color: #4c5361;}
@@ -147,68 +146,69 @@ span.ansipurple {color: #563951;}
 span.ansired {color: #973d46;}
 span.ansiyellow {color: #a25a47;}
 div.output_stderr {background-color: #973d46;}
-div.output_stderr pre {color:#4f5b66;}
+div.output_stderr pre {color: #3e4555;}
 
-.cm-s-ipython.CodeMirror {background: #eff1f5; color: #4f5b66; font-weight: normal;}
-.cm-s-ipython div.CodeMirror-selected {background: #dfe1e7 !important;}/* Base16 original #c1c6d0*/
-.cm-s-ipython .CodeMirror-gutters {background: #aeb6c3; border-right: 0px; border-radius:0px;}
-.cm-s-ipython .CodeMirror-linenumber {color: #7a889c !important;}
+.cm-s-ipython.CodeMirror {background: #2b303b; color: #c0c5ce; font-weight: normal;}
+.cm-s-ipython div.CodeMirror-selected {background: #3d424f !important;}
+.cm-s-ipython .CodeMirror-gutters {background: #303643; border: 0px; border-radius:0px;}
+.cm-s-ipython .CodeMirror-linenumber {color: #515a6f !important;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #2c85f7 !important;}
-.cm-s-ipython span.cm-comment {color: #a7adba; font-style: normal;}
-.cm-s-ipython span.cm-atom {color: #a4769c;}
-.cm-s-ipython span.cm-number {color: #ca775d;}
-.cm-s-ipython span.cm-property {color: #ca775d;}
-.cm-s-ipython span.cm-attribute {color: #b84f59;}
-.cm-s-ipython span.cm-keyword {color: #a4769c; font-weight: normal;}
-.cm-s-ipython span.cm-string {color: #66aa7d; font-weight: normal;}/*#a3be8c*/
-.cm-s-ipython span.cm-operator {color:#b84f59; font-weight: normal;}
-.cm-s-ipython span.cm-builtin {color: #b84f59; font-weight: normal;}
-.cm-s-ipython span.cm-boolean {color: #b84f59;}
-.cm-s-ipython span.cm-variable {color: #4f5b66;}
-.cm-s-ipython span.cm-variable-2 {color: #b84f59; font-weight: normal;}
+.cm-s-ipython span.cm-comment {color: #515a6f; font-style: normal;}
+.cm-s-ipython span.cm-atom {color: #b48ead;}
+.cm-s-ipython span.cm-number {color: #d08770;}
+.cm-s-ipython span.cm-property {color: #d08770;}
+.cm-s-ipython span.cm-attribute {color: #cb7d7e;}
+.cm-s-ipython span.cm-keyword {color: #b48ead; font-weight: normal;}
+.cm-s-ipython span.cm-string {color: #8fc198; font-weight: normal;}
+.cm-s-ipython span.cm-operator {color: #bf616a; font-weight: normal;}
+.cm-s-ipython span.cm-builtin {color: #bf616a; font-weight: normal;}
+.cm-s-ipython span.cm-boolean {color: #bf616a;}
+.cm-s-ipython span.cm-variable {color: #c0c5ce;}
+.cm-s-ipython span.cm-variable-2 {color: #cb7d7e; font-weight: normal;}
 .cm-s-ipython span.cm-variable-3 { color: #6c71c4; }
-.cm-s-ipython span.cm-def {color: #849fb8; font-weight: normal;}
-.cm-s-ipython span.cm-error {color: #4f5b66; background: rgba(220, 100, 90, .6) !important;}
-.cm-s-ipython span.cm-bracket {color: #697987;}
-.cm-s-ipython span.cm-tag {color: #a4769c;}
-.cm-s-ipython span.cm-link {color: #a4769c;}
-.cm-s-ipython span.cm-storage {color: #a4769c;}
+.cm-s-ipython span.cm-def {color: #a4b8cb; font-weight: normal;}
+.cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .7) !important;}
+.cm-s-ipython span.cm-bracket {color: #c0c5ce;}
+.cm-s-ipython span.cm-tag {color: #b48ead;}
+.cm-s-ipython span.cm-link {color: #b48ead;}
+.cm-s-ipython span.cm-storage {color: #b48ead;}
 .cm-s-ipython span.cm-support {color: #96b5b4;}
+.cm-s-ipython span.cm-qualifier { color: #bf616a; }
 
-div.CodeMirror span.CodeMirror-matchingbracket { color: #4f5b66; }
-div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #4f5b66; }
-.cm-s-ipython .CodeMirror-matchingbracket { background: rgba(119, 177, 216, .6) !important;}
-.cm-s-ipython .CodeMirror-nonmatchingbracket { background: rgba(220, 100, 90, .6) !important;}
+div.CodeMirror span.CodeMirror-matchingbracket { color: #c0c5ce; }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #c0c5ce; }
+.cm-s-ipython .CodeMirror-matchingbracket { background: rgba(53, 108, 180, .7) !important;}
+.cm-s-ipython .CodeMirror-nonmatchingbracket { background: rgba(191, 97, 106, .7) !important;}
 
-div.cell {border: medium solid #757f92; padding: 0px; border-radius: 0px;}
+div.cell {border: medium solid #22252d; margin: 7px; border-radius: 0px;}
 div.cell.selected {border: medium solid #356cb4; padding: 0px; border-radius: 0px;}
-div.cell.edit_mode {border: medium solid #757f92; padding: 0px;border-radius: 0px;}
-
+div.cell.edit_mode {border: medium solid #22252d; margin: 7px;border-radius: 0px;}
 
 div.input_area {
     margin-bottom: 0px;
     border: 0px;
     border-radius: 0px;}
+
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
     font-family: 'Source Code Pro';
     font-weight: bold;
     font-size: 10pt;
-    color: #5a6874;
-    background-color: #98a2b2;
+    color: #7d879b;
+    background-color: #3b4252;
     width: 0.0em;
     padding-bottom: 0px;
     margin-bottom: 0px;}
 
 div.output_wrapper {
-    background-color: #ffffff;
+    background-color:#c3c7d1;
     margin-bottom: 0em;
-    margin-top: 0em;
+    margin-top: 0;
     border: 0px;}
 div.prompt.output_prompt {
     font-family: 'Source Code Pro';
-    color: #dfe1e8;
-    background-color: #ffffff;
+    color: #858ea1;
+    background-color: #c3c7d1;
     width: 0.0em;
     padding-top: 1em;
     margin: 0px;
@@ -219,7 +219,7 @@ div.out_prompt_overlay.prompt {
     padding-right: 3px;
     border: 0px;
     color: #2b303b;
-    background-color: #ffffff;
+    background-color: #c3c7d1;
     border-radius:0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
@@ -227,8 +227,8 @@ div.out_prompt_overlay.prompt {
 div.out_prompt_overlay.prompt:hover {
     padding-left: 2px;
     padding-right: 3px;
-    background-color: #ffffff;
-    box-shadow: #c3c7d1 4px 4px 6px 2px inset;
+    background-color: #c3c7d1;
+    box-shadow: #8b94a6 4px 4px 6px 2px inset;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
@@ -236,7 +236,7 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     padding-top: 1em;
     padding-bottom: 0.5em;
     margin-top: 8px;
-    background-color: #ffffff;
+    background-color: #c3c7d1;
     color: #2b303b;}
 div.btn.output_collapsed {
     background: rgba(53, 108, 180, .7);
