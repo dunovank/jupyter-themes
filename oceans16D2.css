@@ -90,9 +90,8 @@ div.navbar-inner a {
 
 .btn {
     color: #30333d;
-    padding: 1px;
-    padding-left: 3px; /* */
-    padding-right: 3px; /* */
+    padding-left: 2px; /* */
+    padding-right: 2px; /* */
     background: #858ea1;
     text-shadow: none;
     font-size: 10pt;
@@ -117,7 +116,7 @@ div.rendered_html code {
 /* Formatting code in markdown cells */
 div.text_cell_render {
         color: #d4d8e0;
-        background-color: #545d73;}/*#3e4555*/
+        background-color: #2b303b;}
 
 div.text_cell {
     max-width: 100%;
@@ -129,7 +128,7 @@ div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
     font-family: 'Helvetica';
-    font-weight: 300;
+    font-weight: 200;
     color: #ffffff;}
 /* text in output area (i.e. print some_list) */
 div.output_html {color: #1e2429;}
