@@ -27,7 +27,6 @@ div#header {
     height: 3.2em;
     border: 0px;}
 
-
 /* Formatting Notebook Name */
 span#notebook_name.ui-state-hover {
     color: #ffffff;
@@ -49,6 +48,10 @@ div.navbar .nav>li>a:hover {color: #dddddd;}
 
 .navbar-nav > li.open > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
 .nav > li.active > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
+div.kernel_indicator.indicator_area {
+        color: #3f5790;
+}
+
 .dropdown-menu { background-color: #eff1f5 !important;
     margin-left: 0px;
     margin-right: 0px;
@@ -137,14 +140,29 @@ div.output_html {color: #1e2429;}
   border: 1px #1e2429 solid;
   color: #1e2429;}
 
-span.ansiblack {color: #1e2429;}
-span.ansiblue {color: #3f5790;}
-span.ansigray {color: #4c5361;}
-span.ansigreen {color: #347864;}
-span.ansipurple {color: #563951;}
-span.ansired {color: #973d46;}
-span.ansiyellow {color: #a25a47;}
-div.output_stderr {background-color: #973d46;}
+
+div#pager pre {
+    color: #c0c5ce !important;
+    background-color: #22252d !important;
+}
+
+    .notification_widget {
+    font-size: 16;
+    border: 0px;
+    font-weight: bold !important;
+    color: #ffffff !important;
+    background: #3f5790 !important;
+}
+
+span.ansiblack {color: #2a2e36;}
+span.ansiblue {color: #002c58;}
+span.ansigray {color: #2a2e36;}
+span.ansigreen {color: #014a11;}
+span.ansipurple {color: #3c0784;}
+span.ansired {color: #7b0c17;}
+span.ansiyellow {color: #01595f;}
+span.ansicyan {color: #912c01;}
+div.output_stderr {background-color: #7b0c17;}
 div.output_stderr pre {color: #3e4555;}
 
 .cm-s-ipython.CodeMirror {background: #2b303b; color: #c0c5ce; font-weight: normal;}
@@ -183,6 +201,7 @@ div.cell {border: medium solid #485165; padding: 0px; border-radius: 0px;}
 div.cell.selected {border: medium solid #356cb4; padding: 0px; border-radius: 0px;}
 div.cell.edit_mode {border: medium solid #485165; padding: 0px;border-radius: 0px;}
 
+
 div.input_area {
     margin-bottom: 0px;
     border: 0px;
@@ -202,44 +221,49 @@ div.prompt.input_prompt {
 div.prompt.output_prompt {
     font-family: 'Source Code Pro';
     color: #858ea1;
-    background-color: #a4aeb8;
-    width: 0.0em;
+    background-color: #858ea1;
+    width: 1em;
+    padding-left:0px;
+    padding-right:10px;
     padding-top: 1em;
     margin: 0px;
     border: 0px;}
+
 div.out_prompt_overlay.prompt {
-    width: 0.0em;
-    padding-left: 2px;
-    padding-right: 3px;
+    width: 1em;
+    padding-left:0px;
+    padding-right:10px;
     border: 0px;
     color: #2b303b;
-    background-color: #a4aeb8;
+    background-color: #858ea1;
     border-radius:0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
 
 div.out_prompt_overlay.prompt:hover {
-    padding-left: 2px;
-    padding-right: 3px;
-    background-color: #a4aeb8;
-    box-shadow:#7d879b 4px 4px 6px 2px inset;
+    padding-left:0px;
+    padding-right:10px;
+    background-color: #858ea1;
+    box-shadow:#515a6f 4px 4px 6px 2px inset;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;}
 
 div.output_wrapper {
-    background-color:#a4aeb8;
+    padding-left: 0px;
+    background-color:#858ea1;
     margin-bottom: 0em;
     margin-top: 0;
     border: 0px;}
+
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
-    margin-left: none;
     padding-top: 1em;
     padding-bottom: 0.5em;
     margin-top: 8px;
-    background-color: #a4aeb8;
+    background-color: #858ea1;
     color: #2b303b;}
 div.btn.output_collapsed {
     background: rgba(53, 108, 180, .7);
+    padding-right:10px;
     background-image: none;
     color: #2b303b;
     font-size: 20;

@@ -1,0 +1,9 @@
+span.ansiblack {color: #1e2429;}
+span.ansiblue {color: #3f5790;}
+span.ansigray {color: #4c5361;}
+span.ansigreen {color: #347864;}
+span.ansipurple {color: #563951;}
+span.ansired {color: #973d46;}
+span.ansiyellow {color: #a25a47;}
+div.output_stderr {background-color: #973d46;}
+div.output_stderr pre {color: #3e4555;}
