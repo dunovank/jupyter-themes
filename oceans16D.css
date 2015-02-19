@@ -201,7 +201,6 @@ div.cell {border: medium solid #485165; padding: 0px; border-radius: 0px;}
 div.cell.selected {border: medium solid #356cb4; padding: 0px; border-radius: 0px;}
 div.cell.edit_mode {border: medium solid #485165; padding: 0px;border-radius: 0px;}
 
-
 div.input_area {
     margin-bottom: 0px;
     border: 0px;
@@ -214,7 +213,7 @@ div.prompt.input_prompt {
     font-size: 10pt;
     color: #7d879b;
     background-color: #3b4252;
-    width: 0.0em;
+    width: .5em;
     padding-bottom: 0px;
     margin-bottom: 0px;}
 
@@ -224,32 +223,31 @@ div.prompt.output_prompt {
     background-color: #858ea1;
     width: 1em;
     padding-left:0px;
-    padding-right:10px;
+    padding-right:8px;
     padding-top: 1em;
     margin: 0px;
     border: 0px;}
 
 div.out_prompt_overlay.prompt {
     width: 1em;
-    padding-left:0px;
-    padding-right:10px;
-    border: 0px;
+    padding-left: 0px;
+    padding-right:4px;
     color: #2b303b;
     background-color: #858ea1;
-    border-radius:0px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;}
+    border-radius:6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;}
 
 div.out_prompt_overlay.prompt:hover {
     padding-left:0px;
-    padding-right:10px;
+    padding-right: 4px;
+    border-radius: 6px;
     background-color: #858ea1;
-    box-shadow:#515a6f 4px 4px 6px 2px inset;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;}
+    box-shadow:#515a6f 4px 4px 5px 2px inset;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;}
 
 div.output_wrapper {
-    padding-left: 0px;
     background-color:#858ea1;
     margin-bottom: 0em;
     margin-top: 0;
