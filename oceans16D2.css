@@ -198,7 +198,6 @@ div.cell {border: medium solid #22252d; margin: 4px; border-radius: 0px;}
 div.cell.selected {border: medium solid #356cb4; padding: 0px; border-radius: 0px;}
 div.cell.edit_mode {border: medium solid #22252d; margin: 4px; border-radius: 0px;}
 
-
 div.input_area {
     margin-bottom: 0px;
     border: 0px;
