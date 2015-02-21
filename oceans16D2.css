@@ -19,7 +19,8 @@ div#ipython_notebook {display: none;}
 /* INTRO PAGE */
 .toolbar_info {color: #858ea1; font-size: 9pt; text-shadow: none !important; }
 .list_container {color: #858ea1; font-size: 12pt; text-shadow: none !important; }
-.breadcrumb>li {text-shadow:0 0px 0; color:#858ea1;}
+.list_container>li {text-shadow: 0 0px 0; color:#858ea1;}
+.breadcrumb>li {text-shadow: 0 0px 0; color:#858ea1;}
 div.list_container a:hover {color:#dddddd;}
 div#header {
     background-color: #22252d;
@@ -194,9 +195,9 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #c0c5ce; }
 .cm-s-ipython .CodeMirror-matchingbracket { background: rgba(53, 108, 180, .7) !important;}
 .cm-s-ipython .CodeMirror-nonmatchingbracket { background: rgba(191, 97, 106, .7) !important;}
 
-div.cell {border: medium solid #22252d; margin: 4px; border-radius: 0px;}
+div.cell {border: medium solid #22252d; padding: 0px; border-radius: 0px;}
 div.cell.selected {border: medium solid #356cb4; padding: 0px; border-radius: 0px;}
-div.cell.edit_mode {border: medium solid #22252d; margin: 4px; border-radius: 0px;}
+div.cell.edit_mode {border: medium solid #22252d; padding: 0px; border-radius: 0px;}
 
 div.input_area {
     margin-bottom: 0px;
@@ -219,10 +220,12 @@ div.prompt.output_prompt {
     color: #858ea1;
     background-color: #858ea1;
     width: 1em;
+    margin: 0px;
+    margin-bottom: 8px;
     padding-left:0px;
     padding-right:8px;
     padding-top: 1em;
-    margin: 0px;
+    padding-bottom: 1em;
     border: 0px;}
 
 div.out_prompt_overlay.prompt {
@@ -231,9 +234,9 @@ div.out_prompt_overlay.prompt {
     padding-right:4px;
     color: #2b303b;
     background-color: #858ea1;
-    border-radius:6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;}
+    border-radius:4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;}
 
 div.out_prompt_overlay.prompt:hover {
     padding-left:0px;
@@ -241,8 +244,8 @@ div.out_prompt_overlay.prompt:hover {
     border-radius: 6px;
     background-color: #858ea1;
     box-shadow:#515a6f 4px 4px 5px 2px inset;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;}
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;}
 
 div.output_wrapper {
     background-color:#858ea1;
@@ -252,7 +255,7 @@ div.output_wrapper {
 
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
     padding-top: 1em;
-    padding-bottom: 0.5em;
+    margin-bottom: 8px;
     margin-top: 8px;
     background-color: #858ea1;
     color: #2b303b;}

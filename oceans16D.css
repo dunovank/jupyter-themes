@@ -17,15 +17,18 @@ div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.promp
 div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
-.toolbar_info {color: #858ea1; font-size: 9pt; text-shadow: none !important; }
-.list_container {color: #858ea1; font-size: 12pt; text-shadow: none !important; }
+.toolbar_info {color: #858ea1; font-size: 10pt; border: 0; text-shadow: none !important; }
+.list_container {color: #858ea1; font-size: 12pt; border: 0; text-shadow: none !important; }
 .breadcrumb>li {text-shadow:0 0px 0; color:#858ea1;}
-div.list_container a:hover {color:#dddddd;}
+div.list_container a:hover {color: #dddddd;}
+
+span#save_widget {color: #dee3ec;}
+
 div#header {
     background-color: #2b303b;
     color: #FFFFFF;
     height: 3.2em;
-    border: 0px;}
+    border: 0 !important;}
 
 /* Formatting Notebook Name */
 span#notebook_name.ui-state-hover {
@@ -48,9 +51,6 @@ div.navbar .nav>li>a:hover {color: #dddddd;}
 
 .navbar-nav > li.open > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
 .nav > li.active > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
-div.kernel_indicator.indicator_area {
-        color: #3f5790;
-}
 
 .dropdown-menu { background-color: #eff1f5 !important;
     margin-left: 0px;
@@ -92,18 +92,18 @@ div.navbar-inner a {
     text-shadow: none !important;}
 
 .btn {
-    color: #30333d;
-    padding-left: 2px; /* */
-    padding-right: 2px; /* */
+    color: #2b303b;
+    padding-left: 3px;
+    padding-right: 3px;
     background: #858ea1;
     text-shadow: none;
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: bold;
-    border: 0px !important; }
+    border: 0 !important; }
 .btn:hover {
-    background-color: #FFFFFF !important;
-    color: #2c85f7;
-    border:0px;}
+    background-color: #ffffff !important;
+    color: #356cb4;
+    border:0 !important;}
 ul.dropdown-menu {
     overflow: visible;
     position: absolute;}
@@ -151,7 +151,7 @@ div#pager pre {
     border: 0px;
     font-weight: bold !important;
     color: #ffffff !important;
-    background: #3f5790 !important;
+    background: #356cb4 !important;
 }
 
 span.ansiblack {color: #2a2e36;}
