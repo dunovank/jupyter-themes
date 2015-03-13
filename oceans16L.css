@@ -44,7 +44,6 @@ span#notebook_name.ui-state-hover {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#356cb4', endColorstr='#356cb4',GradientType=0 ); /* IE6-9 */
 }
 
-
 div#notebook {border-top: none;}
 div.navbar-inner.container { background:#a8afbd; border:0px;}
 div.navbar .nav>li>a {color: #545f70; font-family: 'Helvetica', sans-serif; font-size: 12pt; font-weight: normal;}
@@ -72,13 +71,13 @@ div.navbar .nav>li>a:hover {color: #ffffff;}
     color: #a7adba !important; }
 
 .dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#356cb4;
-  background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));  
+  background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));
   background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4,  #356cb4);
   background-repeat:repeat-x;filter:progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
 
-.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#356cb4;  
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#356cb4;
   background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));
-  background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to 
+  background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to
   bottom, #356cb4, #356cb4); background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3',
   GradientType=0)}
 
@@ -91,11 +90,11 @@ div#maintoolbar .toolbar-inner {background:#a8afbd;}
 div.navbar-inner a {
     font-family: 'Helvetica', !important;
     font-size: 10pt; font-weight: normal;
-    text-shadow: none !important;}    
+    text-shadow: none !important;}
 .btn {
     color: #30333d;
     padding: 1px;
-    padding-left: 3px; 
+    padding-left: 3px;
     padding-right: 3px;
     background: #79879c;
     text-shadow: none;
@@ -168,7 +167,7 @@ div.output_stderr pre {color:#4f5b66;}
 .cm-s-ipython span.cm-variable-2 {color: #b84f59; font-weight: normal;}
 .cm-s-ipython span.cm-variable-3 { color: #6c71c4; }
 .cm-s-ipython span.cm-def {color: #849fb8; font-weight: normal;}
-.cm-s-ipython span.cm-error {color: #4f5b66; background: rgba(220, 100, 90, .6) !important;}
+.cm-s-ipython span.cm-error {color: #4f5b66; background: rgba(191, 97, 106, .7) !important;}
 .cm-s-ipython span.cm-bracket {color: #697987;}
 .cm-s-ipython span.cm-tag {color: #806682;}
 .cm-s-ipython span.cm-link {color: #806682;}
@@ -177,12 +176,12 @@ div.output_stderr pre {color:#4f5b66;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #4f5b66; }
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #4f5b66; }
-.cm-s-ipython .CodeMirror-matchingbracket { background: rgba(119, 177, 216, .6) !important;}
-.cm-s-ipython .CodeMirror-nonmatchingbracket { background: rgba(220, 100, 90, .6) !important;}
+.cm-s-ipython .CodeMirror-matchingbracket { background: rgba(53, 108, 180, .6) !important;}
+.cm-s-ipython .CodeMirror-nonmatchingbracket { background: rgba(191, 97, 106, .7) !important;}
 
-div.cell {border: medium solid #757f92; padding: 0px; border-radius: 0px;}
+div.cell {border: medium solid #a8afbd; padding: 0px; border-radius: 0px;}
 div.cell.selected {border: medium solid #356cb4; padding: 0px; border-radius: 0px;}
-div.cell.edit_mode {border: medium solid #757f92; padding: 0px;border-radius: 0px;}
+div.cell.edit_mode {border: medium solid #a8afbd; padding: 0px;border-radius: 0px;}
 
 
 div.input_area {
@@ -239,7 +238,7 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     background-color: #edeef2;
     color: #2b303b;}
 div.btn.output_collapsed {
-    background: rgba(53, 108, 180, .7);
+    background: rgba(53, 108, 180, .9);
     background-image: none;
     color: #2b303b;
     font-size: 20;
