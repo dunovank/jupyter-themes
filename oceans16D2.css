@@ -9,17 +9,17 @@
 
 body {background-color: #22252d;}
 
-a {color: #858ea1; font-family: sans-serif; font-size: 11pt; font-weight: normal !important; }
+a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 13pt; font-weight: normal !important; }
 
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt {
-  font-family: monospace; font-size: 11pt;}
+  font-family:'Source Code Pro', monospace; font-size: 11pt;}
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
-.toolbar_info {color: #858ea1; font-size: 10pt; border: 0; text-shadow: none !important; }
-.list_container {color: #858ea1; font-size: 12pt; border: 0; text-shadow: none !important; }
-.breadcrumb>li {text-shadow:0 0px 0; color:#858ea1;}
+.toolbar_info {color: #858ea1; font-size: 11pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
+.list_container {color: #858ea1; font-size: 13pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
+.breadcrumb>li {text-shadow:0 0px 0; color:#858ea1; font-family: 'Helvetica', sans-serif; }
 div.list_container a:hover {color: #dee3ec;}
 
 span#save_widget {color: #dee3ec;}
@@ -46,7 +46,7 @@ span#notebook_name.ui-state-hover {
 
 div#notebook {border-top: none;}
 div.navbar-inner.container { background:#22252d; border:0px;}
-div.navbar .nav>li>a {color: #858ea1; font-family: sans-serif; font-size: 12pt; font-weight: normal;}
+div.navbar .nav>li>a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 13pt; font-weight: normal;}
 div.navbar .nav>li>a:hover {color: #ffffff;}
 
 .navbar-nav > li.open > a { background-color: #eff1f5 !important; color: #356cb4 !important; }
@@ -82,27 +82,27 @@ div.navbar .nav>li>a:hover {color: #ffffff;}
 
 div#menubar
 .navbar-inner { border: 0px; box-shadow: none; background:#22252d; background-image: none;}
-.navbar-text {color: #858ea1; font-family: sans-serif; font-size: 10pt; font-weight: normal;}
+.navbar-text {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 13pt; font-weight: normal;}
 div.navbar-inner.navbar-nobg {
     border: 0px; background: #22252d;}
 div#maintoolbar .toolbar-inner {background:#22252d;}
 div.navbar-inner a {
-    font-family: sans-serif;
-    font-size: 10pt; font-weight: normal;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 11pt; font-weight: normal;
     text-shadow: none !important;}
 
 .btn {
     color: #22252d;
-    font-size: 10pt;
+    font-size: 12pt;
     padding-left: 3px;
     padding-right: 3px;
     background: #858ea1;
     text-shadow: none;
-    font-weight: bold;
+    font-weight: normal;
     border: 0 !important; }
 .btn-group > .btn-mini {
-    font-size: 8pt;
-    font-weight: bold;
+    font-size: 10pt;
+    font-weight: normal;
     text-shadow: none;
     border: 0 !important;}
 .btn:hover {
@@ -113,8 +113,9 @@ div.navbar-inner a {
 ul.dropdown-menu {
     overflow: visible;
     position: absolute;}
+/* Formatting code in text, code*/
 .CodeMirror pre {
-    font-family: monospace;}
+    font-family: 'Source Code Pro', monospace;}
 /* Formatting code in markdown cells */
 div.rendered_html code {
     font-size: 12pt;
@@ -134,7 +135,7 @@ div.text_cell_render h3,
 div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
-    font-family: sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-weight: 250;
     color: #ffffff;}
 /* text in output area (i.e. print some_list) */
@@ -208,8 +209,8 @@ div.input_area {
     border-radius: 0px;}
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
-    font-family: monospace;
-    font-weight: bold;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: normal;
     font-size: 10pt;
     color: #7d879b;
     background-color: #3b4252;
