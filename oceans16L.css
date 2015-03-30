@@ -22,15 +22,24 @@ div#ipython_notebook {display: none;}
 /* INTRO PAGE */
 .toolbar_info {color: #a8afbd; font-size: 9pt; text-shadow: none !important;}
 .list-container {color: #a8afbd; font-size: 12pt;  text-shadow: none !important;}
+.list_container a {color: #a8afbd; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
 .breadcrumb>li {text-shadow:0 0px 0; color: #627187;}
 div.list_container a:hover {color: #ffffff;}
 div#header {
     background-color: #a8afbd;
     color: #545f70;
-    height: 3.2em;
-    border: 0px;}
-
-
+    height: 2.8em;
+    margin-bottom:none;
+    border: 0 !important;}
+div.navbar .nav > li > a {
+    background: #A8AFBD;
+    color: #545f70;
+    font-family: sans-serif;
+    padding-bottom: 6px;
+}
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
 /* Formatting Notebook Name */
 span#notebook_name.ui-state-hover {
     color: #ffffff;
@@ -48,9 +57,13 @@ div#notebook {border-top: none;}
 div.navbar-inner.container { background:#a8afbd; border:0px;}
 div.navbar .nav>li>a {color: #545f70; font-family: 'Helvetica', sans-serif; font-size: 12pt; font-weight: normal;}
 div.navbar .nav>li>a:hover {color: #ffffff;}
+.navbar-text {color: #545f70; font-family: sans-serif; font-size: 10pt; font-weight: normal;}
+.navbar-nav > li.open > a { background-color: #edeef2 !important; font-family: sans-serif; font-size: 13pt; color: #356cb4 !important; }
+.nav > li.active > a { background-color: #edeef2 !important; font-family: sans-serif; font-size: 13pt; color: #356cb4 !important; }
+div.navbar-inner a { font-family: 'Helvetica', !important; font-size: 12pt; font-weight: normal; text-shadow: none !important;}
 
-.navbar-nav > li.open > a { background-color: #edeef2 !important; color: #356cb4 !important; }
-.nav > li.active > a { background-color: #edeef2 !important; color: #356cb4 !important; }
+
+
 .dropdown-menu { background-color: #edeef2 !important;
     margin-left: 0px;
     margin-right: 0px;
@@ -83,7 +96,7 @@ div.navbar .nav>li>a:hover {color: #ffffff;}
 
 div#menubar
 .navbar-inner { border: 0px; box-shadow: none; background:#a8afbd; background-image: none;}
-.navbar-text {color: #4f5b66; font-family: 'Helvetica', sans-serif; font-size: 9pt; font-weight: normal;}
+.navbar-text {color: #545f70; font-family: 'Helvetica', sans-serif; font-size: 9pt; font-weight: normal;}
 div.navbar-inner.navbar-nobg {
     border: 0px; background: #a8afbd;}
 div#maintoolbar .toolbar-inner {background:#a8afbd;}
@@ -109,33 +122,56 @@ ul.dropdown-menu {
     overflow: visible;
     position: absolute;}
 
-/* Formatting code in text, code*/
 .CodeMirror pre {
-    font-family: 'Source Code Pro', monospace;}
-div.text_cell_render {
-        color: #4f5b66;
-        background-color: #edeef2;}
+    font-family: 'Source Code Pro', monospace; 
+    font-weight: normal;
+}
 /* Formatting code in markdown cells */
-div.rendered_html code {
-    font-size: 12pt;
-    background-color: #edeef2;
-    color: #272a32;
-    line-height: 130%;}
-div.text_cell {
-    max-width: 200%;}
+.rendered_html pre, .rendered_html code {
+    border: 0px none;
+    background-color: #E2E3EA;
+    color: #545f70;
+    line-height: 130%;    
+    padding: 0px;
+}
+div.text_cell_render {
+    color: #545f70;
+    background: #e2e3ea;
+}
+
+div.text_cell pre {
+    max-width: 100%;
+    color: #2c85f7;
+}
+    
+div#kernel_indicator.indicator_area {
+    color: #4BAB5C;
+}
+div#modal_indicator.indicator_area {
+    color: #2c85f7;
+}
+
 div.text_cell_render h1,
 div.text_cell_render h2,
 div.text_cell_render h3,
 div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
-    font-family: 'Helvetica';
-    font-weight: 200;
-    color: #4f5b66;}
+    font-family: 'Helvetica', sans-serif;
+    font-weight:200;
+    color: #545f70;
+}
+    
 /* text in output area (i.e. print some_list) */
+div.output_html {color: #1e2429;}
+
+/* Formatting code in text, code*/
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px #1e2429 solid;
-  color: #1e2429;}
+  border: 1px #a4b8cb solid;
+  color: #356cb4;
+  background-color: #e2e3ea !important;
+  align-content: left !important;
+}
 div.output_html {color: #1e2429;}
 
 span.ansiblack {color: #1e2429;}
