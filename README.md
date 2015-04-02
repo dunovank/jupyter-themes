@@ -8,20 +8,14 @@ This theme is essentially a mash-up of the Ocean Dark/Light IPyNB Themes by [Nik
 ### IPython Notebook Home
 ![image](Screens/home.png)
 
+### IPython Notebook Fullscreen View
+![image](Screens/ipynb_oceans16_input.png)
+
 ### Python code in Oceans16 Dark  
 ![image](Screens/oceans16D_close-up.png)
 
 ### Python code in Oceans16 Light
 ![image](Screens/oceans16L_close-up.png)
-
-### IPython Notebook Home
-![image](Screens/home_main.png)
-
-### IPython Notebook Fullscreen View
-![image](Screens/ipynb_oceans16_input.png)
-
-### IPython Notebook Example Output
-![image](Screens/ipynb_oceans16_output.png)
 
 - [__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) font (.ttf) included in "oceans16/Fonts/"
 
