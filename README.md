@@ -5,6 +5,9 @@ Oceans16
 
 This theme is essentially a mash-up of the Ocean Dark/Light IPyNB Themes by [Nikhil Sonnad](https://github.com/nsonnad/base16-ipython-notebook) and the Spacegray Ocean color schemes for Sublime Text by [Gadzhi Kharkharov](https://github.com/kkga/spacegray), which are both constructed using the original [Base16 color scheme](https://github.com/chriskempson/base16) by [Chris Kempson](https://github.com/chriskempson). General notebook and code cell layout are adapted from [this](https://github.com/panditarevolution/ipythonNotebook_customs/blob/master/monokai/custom.css) theme by [panditarevolution](https://github.com/panditarevolution). 
 
+### IPython Notebook Home
+![image](Screens/home.png)
+
 ### Python code in Oceans16 Dark  
 ![image](Screens/oceans16D_close-up.png)
 
