@@ -123,7 +123,7 @@ ul.dropdown-menu {
     position: absolute;}
 
 .CodeMirror pre {
-    font-family: 'Source Code Pro', monospace; 
+    font-family: 'Source Code Pro', monospace;
     font-weight: normal;
 }
 /* Formatting code in markdown cells */
@@ -131,7 +131,7 @@ ul.dropdown-menu {
     border: 0px none;
     background-color: #E2E3EA;
     color: #545f70;
-    line-height: 130%;    
+    line-height: 130%;
     padding: 0px;
 }
 div.text_cell_render {
@@ -143,7 +143,7 @@ div.text_cell pre {
     max-width: 100%;
     color: #2c85f7;
 }
-    
+
 div#kernel_indicator.indicator_area {
     color: #4BAB5C;
 }
@@ -161,7 +161,7 @@ div.text_cell_render h6 {
     font-weight:200;
     color: #545f70;
 }
-    
+
 /* text in output area (i.e. print some_list) */
 div.output_html {color: #1e2429;}
 
@@ -190,25 +190,25 @@ div.output_stderr pre {color:#4f5b66;}
 .cm-s-ipython .CodeMirror-linenumber {color: #7a889c !important;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #2c85f7 !important;}
 .cm-s-ipython span.cm-comment {color: #7a889c; font-style: normal;}
-.cm-s-ipython span.cm-atom {color: #806682;}
-.cm-s-ipython span.cm-number {color: #c4674a;}
-.cm-s-ipython span.cm-property {color: #c4674a;}
-.cm-s-ipython span.cm-attribute {color: #b84f59;}
-.cm-s-ipython span.cm-keyword {color: #806682; font-weight: normal;}
+.cm-s-ipython span.cm-atom {color: #5a5fbd;}
+.cm-s-ipython span.cm-number {color: #c85135;}
+.cm-s-ipython span.cm-property {color: #c85135;}
+.cm-s-ipython span.cm-attribute {color: #b33b46;}
+.cm-s-ipython span.cm-keyword {color: #5a5fbd; font-weight: normal;}
 .cm-s-ipython span.cm-string {color: #539771; font-weight: normal;}/*#a3be8c*/
-.cm-s-ipython span.cm-operator {color:#b84f59; font-weight: normal;}
-.cm-s-ipython span.cm-builtin {color: #b84f59; font-weight: normal;}
-.cm-s-ipython span.cm-boolean {color: #b84f59;}
+.cm-s-ipython span.cm-operator {color:#356cb4; font-weight: normal;}
+.cm-s-ipython span.cm-builtin {color: #b33b46; font-weight: normal;}
+.cm-s-ipython span.cm-boolean {color: #b33b46;}
 .cm-s-ipython span.cm-variable {color: #4f5b66;}
-.cm-s-ipython span.cm-variable-2 {color: #b84f59; font-weight: normal;}
-.cm-s-ipython span.cm-variable-3 { color: #6c71c4; }
-.cm-s-ipython span.cm-def {color: #849fb8; font-weight: normal;}
+.cm-s-ipython span.cm-variable-2 {color: #b33b46; font-weight: normal;}
+.cm-s-ipython span.cm-variable-3 { color: #5a5fbd; }
+.cm-s-ipython span.cm-def {color: #356cb4; font-weight: normal;}
 .cm-s-ipython span.cm-error {color: #4f5b66; background: rgba(191, 97, 106, .7) !important;}
 .cm-s-ipython span.cm-bracket {color: #697987;}
-.cm-s-ipython span.cm-tag {color: #806682;}
-.cm-s-ipython span.cm-link {color: #806682;}
-.cm-s-ipython span.cm-storage {color: #806682;}
-.cm-s-ipython span.cm-support {color: #96b5b4;}
+.cm-s-ipython span.cm-tag {color: #5a5fbd;}
+.cm-s-ipython span.cm-link {color: #5a5fbd;}
+.cm-s-ipython span.cm-storage {color: #5a5fbd;}
+.cm-s-ipython span.cm-support {color: #356cb4;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #4f5b66; }
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #4f5b66; }
@@ -220,63 +220,82 @@ div.cell.selected {border: medium solid #356cb4; padding: 0px; border-radius: 0p
 div.cell.edit_mode {border: medium solid #a8afbd; padding: 0px;border-radius: 0px;}
 
 
+div.prompt {
+    padding: 0.4em;
+    margin: 0px;
+    font-family: monospace;
+    text-align: left;
+    line-height: 1.21429em;
+    min-width: 11ex;
+    font-size: 9pt;
+}
+
 div.input_area {
     margin-bottom: 0px;
     border: 0px;
     border-radius: 0px;}
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
-    font-family: 'Source Code Pro';
+    font-family: 'Source Code Pro', monospace;
     font-weight: bold;
-    font-size: 10pt;
+    font-size: 9pt;
     color: #5a6874;
     background-color: #98a2b2;
-    width: 0.0em;
+    width: 1em;
     padding-bottom: 0px;
     margin-bottom: 0px;}
 
-div.output_wrapper {
+div.prompt.output_prompt {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
     background-color: #edeef2;
+    font-size: 9pt;
+    width: 1em;
+    margin-bottom: 8px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: 0px;}
+div.out_prompt_overlay.prompt {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    font-size: 9pt;
+    width: 1em;
+    margin-bottom: 8px;
+    background-color: #edeef2;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;}
+div.out_prompt_overlay.prompt:hover {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    font-size: 9pt;
+    width: 1em;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background-color: #edeef2;
+    box-shadow:#c3c7d1 4px 4px 6px 4px inset;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;}
+
+div.output_wrapper {
+    background-color:#edeef2;
     margin-bottom: 0em;
     margin-top: 0em;
     border: 0px;}
-div.prompt.output_prompt {
-    font-family: 'Source Code Pro';
-    color: #dfe1e8;
-    background-color: #edeef2;
-    width: 0.0em;
-    padding-top: 1em;
-    margin: 0px;
-    border: 0px;}
-div.out_prompt_overlay.prompt {
-    width: 0.0em;
-    padding-left: 2px;
-    padding-right: 3px;
-    border: 0px;
-    color: #2b303b;
-    background-color: #edeef2;
-    border-radius:0px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;}
-
-div.out_prompt_overlay.prompt:hover {
-    padding-left: 2px;
-    padding-right: 3px;
-    background-color: #edeef2;
-    box-shadow: #c3c7d1 4px 4px 6px 2px inset;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;}
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
-    margin-left: none;
     padding-top: 1em;
-    padding-bottom: 0.5em;
+    margin-bottom: 8px;
     margin-top: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
     background-color: #edeef2;
     color: #2b303b;}
+
 div.btn.output_collapsed {
-    background: rgba(53, 108, 180, .9);
+    background: rgba(53, 108, 180, .7);
+    padding-right:10px;
     background-image: none;
-    color: #2b303b;
+    color: #22252d;
     font-size: 20;
     font-weight: bold;
     border-radius: 0px;
