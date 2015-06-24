@@ -9,19 +9,18 @@
 
 body {background-color: #22252d;}
 
-a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 12pt; font-weight: normal !important; }
+a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 14pt; font-weight: normal !important; }
 
-div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt {
-    font-family:'Source Code Pro', monospace; font-size: 11pt;}
+div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt {font-family:'Source Code Pro', monospace; font-size: 12pt;}
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
-.toolbar_info {color: #858ea1; font-size: 9pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
+.toolbar_info {color: #858ea1; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
 .list_container {color: #858ea1; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
 .breadcrumb>li {text-shadow:0 0px 0; color:#858ea1; font-family: 'Helvetica', sans-serif; }
-.list_container a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
-div.list_container a:hover {color: #dee3ec;}
+.list_container a {color: #858ea1; font-family: 'Helvetica', sans-serif; font-size: 13pt; border: 0; text-shadow: none !important; }
+div.list_container a:hover {color: #dee3ec;}f7ca88
 span#save_widget {color: #dee3ec;}
 .item_icon {color: #356cb4;}
 ul.breadcrumb i.icon-home {
@@ -35,17 +34,24 @@ ul.breadcrumb i.icon-home {
 div#header {
     background-color: #22252d;
     color: #FFFFFF;
-    height: 2.8em;
+    height: 2.1em;
+    padding-top:1em;
     margin-bottom:none;
+    padding-bottom:none;
     border: 0 !important;}
 .navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
+
+/* comment out this line to bring the toolbar back */
+div#maintoolbar, div#header {display: none !important;}
+
+
 /* Formatting Notebook Name */
 span#notebook_name.ui-state-hover {
     color: #ffffff;
     background: #356cb4; /* Old browsers */
-    background: -moz-linear-gradient(top,  #356cb4 0%, #356cb4 44%, #356cb4 100%); /* FF3.6+ */
+    background: -moz-linear-gradient(top, #356cb4 0%, #356cb4 44%, #356cb4 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#356cb4), color-stop(44%,#356cb4), color-stop(100%,#356cb4)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(top,  #356cb4 0%,#356cb4 44%,#356cb4 100%); /* Opera 11.10+ */
@@ -56,54 +62,70 @@ span#notebook_name.ui-state-hover {
 
 div#notebook {border-top: none;}
 div.navbar-inner.container { background: #22252d; border:0px; font-weight: normal; }
-div.navbar .nav>li>a { background: #22252d; color: #858ea1; font-family: sans-serif; padding-bottom: 6px; }
+div.navbar .nav>li>a { background: #22252d; color: #858ea1; font-family: sans-serif; padding-bottom: 5px; }
 div.navbar .nav>li>a:hover {color: #ffffff;}
-.navbar-nav > li.open > a { font-family: sans-serif; font-size: 13pt; background-color: #eff1f5; color: #356cb4 !important; }
-.nav > li.active > a { font-family: sans-serif; font-size: 13pt; background-color: #eff1f5; color: #356cb4 !important; }
+.navbar-nav > li.open > a { font-family: sans-serif; font-size: 14pt; background-color: #eff1f5; color: #356cb4 !important; }
+.nav > li.active > a { font-family: sans-serif; font-size: 14pt; background-color: #eff1f5; color: #356cb4 !important; }
 div#menubar
-.navbar {margin-bottom: none;}
+.navbar {margin-bottom:0px; padding-bottom:0px;padding-top:8px;}
 .navbar-inner { border: 0px; font-family: sans-serif; box-shadow: none; background: #22252d; background-image: none;}
-.navbar-text {color: #858ea1; font-family: sans-serif; font-size: 10pt; font-weight: normal;}
+.navbar-text {color: #858ea1; font-family: sans-serif; font-size: 14pt; font-weight: normal;}
 div.navbar-inner.navbar-nobg { border: 0px; background: #22252d;}
 div#maintoolbar .toolbar-inner {background:#22252d;}
-div.navbar-inner a { font-family: 'Helvetica', !important; font-size: 12pt; font-weight: normal; text-shadow: none !important;}
+div.navbar-inner a { font-family: 'Helvetica', !important; font-size: 13pt; font-weight: normal; text-shadow: none !important;}
 
 
-
-
-.dropdown-menu { background-color: #eff1f5 !important; margin-left: 0px; margin-right: 0px; border: 0px; border-radius: 0px;}
-.dropdown-menu > li > a { color: #333947 !important; margin-left: 0px; margin-right: 0px; font-family: sans-serif; font-size: 11pt; font-weight: normal;}
+.dropdown-menu { background-color: #eff1f5 !important; margin-left: 0px; margin-right: 0px; border: 0px; border-radius: 0px;  font-family: sans-serif; font-size: 13pt;}
+.dropdown-menu > li > a { color: #333947 !important; margin-left: 0px; margin-right: 0px; font-family: sans-serif; font-size: 12pt; font-weight: normal;}
 .dropdown-menu > li > a:hover { background: #356cb4 !important; margin-left: 0px; margin-right: 0px; color: #ffffff !important; border:0px !important; }
 .dropdown-menu > li.disabled > a { background-color: #eff1f5 !important; color:#a7adba !important; }
 .dropdown-menu > li.disabled > a:hover { background-color: #eff1f5 !important; color: #a7adba !important; }
-.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#356cb4;
-  background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));
-  background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4,  #356cb4);
-  background-repeat:repeat-x;filter:progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#356cb4', GradientType=0)}
-.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#356cb4;
-  background-image:-moz-linear-gradient(top, #356cb4, #356cb4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));
-  background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);background-image:-o-linear-gradient(top, #356cb4, #356cb4);background-image:linear-gradient(to
-  bottom, #356cb4, #356cb4); background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#356cb4', endColorstr='#356cb4',
-  GradientType=0)}
+.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;
+        color:#fff;background-color:#356cb4; background-image:-moz-linear-gradient(top, #356cb4, #356cb4);
+        background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#356cb4), to(#356cb4));
+        background-image:-webkit-linear-gradient(top, #356cb4, #356cb4);
+        background-image:-o-linear-gradient(top, #356cb4,  #356cb4);background-repeat:repeat-x; filter:progid:
+        DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#356cb4', GradientType=0)}
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff; text-decoration:none; outline:0; background-color:
+        #356cb4; background-image:-moz-linear-gradient(top, #356cb4, #356cb4);
+        background-image:-webkit-gradient(linear, 0 0, 0 100%,from(#356cb4),to(#356cb4));
+        background-image: -webkit-linear-gradient(top, #356cb4, #356cb4);
+        background-image:-o-linear-gradient(top, #356cb4, #356cb4);
+        background-image: linear-gradient(to bottom, #356cb4, #356cb4); background-repeat:repeat-x;
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#356cb4', endColorstr='#356cb4', GradientType=0)}
 
 .btn {
-    color: #3D4A65;
-    font-size: 11pt;
-    font-weight: bold;
-    background: #ABB2C2;
+    color: #181F2F;
+    font-size: 8pt;
+    background: #858ea1;
     text-shadow: none;
     font-family: sans-serif;
-    border: 0px none !important;
+    border: medium none !important;
+    line-height:11pt;
+    box-shadow: none !important;
 }
 .btn-group > .btn-mini {
     text-shadow: none;
-    font-size: 9pt;
-    font-weight: bold;
+    font-size: 8pt;
+    font-weight: medium;
     font-family: sans-serif;
-    border: 0 !important;}
+    border: none !important;
+    box-shadow: none; }
+.btn-group > .btn:last-child, .btn-group > .dropdown-toggle {
+    border-radius: 1px;
+    line-height: 11pt;
+}
+.btn-group > .btn:first-child {
+    margin-left: 0px;
+    padding-right: 3pt;
+    padding-left: 3pt;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 3px;
+}
 .btn:hover {
-    background-color: #ffffff !important;
-    color: #2c85f7;
+    background-color: #eeeeee !important;
+    color: #356cb4;
     border:0 !important;}
 ul.dropdown-menu {
     overflow: visible;
@@ -116,7 +138,7 @@ ul.dropdown-menu {
     font-weight: normal;
 }
 .rendered_html pre, .rendered_html code {
-    font-size: 11pt;
+    font-size: 13pt;
     color: #d4d8e0;
     line-height: 130%;
     background: #2b303b;
@@ -164,7 +186,7 @@ div#pager pre {
     background: #2b303b !important;
 }
 .notification_widget {
-    font-size: 16;
+    font-size: 12pt;
     border: 0px;
     font-weight: bold !important;
     color: #ffffff !important;
@@ -182,31 +204,32 @@ span.ansicyan {color: #912c01;}
 div.output_stderr {background-color: #7b0c17;}
 div.output_stderr pre {color: #3e4555;}
 
-.cm-s-ipython.CodeMirror {background: #2b303b; color: #c0c5ce; font-weight: normal;}
+.cm-s-ipython.CodeMirror {background: #2b303b; color: #c0c5ce; font-weight: medium; font-size:12pt !important;}
 .cm-s-ipython div.CodeMirror-selected {background: rgba(76, 85, 104, 0.65) !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #303643; border: 0px; border-radius:0px;}
-.cm-s-ipython .CodeMirror-linenumber {color: #515a6f !important;}
+.cm-s-ipython .CodeMirror-linenumber {color: #515a6f !important; font-size:11pt;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #2c85f7 !important;}
 .cm-s-ipython span.cm-comment {color: #515a6f; font-style: normal !important;}
 .cm-s-ipython span.cm-atom {color: #b48ead;}
 .cm-s-ipython span.cm-number {color: #d08770;}
-.cm-s-ipython span.cm-property {color: #d08770;}
-.cm-s-ipython span.cm-attribute {color: #cb7d7e;}
+.cm-s-ipython span.cm-property {color: #7aa6cf;}
+.cm-s-ipython span.cm-attribute {color: #cd7578;}
 .cm-s-ipython span.cm-keyword {color: #b48ead; font-weight: normal;}
 .cm-s-ipython span.cm-string {color: #8fc198; font-weight: normal;}
-.cm-s-ipython span.cm-operator {color: #bf616a; font-weight: normal;}
-.cm-s-ipython span.cm-builtin {color: #bf616a; font-weight: normal;}
-.cm-s-ipython span.cm-boolean {color: #bf616a;}
+.cm-s-ipython span.cm-operator {color: #679ac8; font-weight: normal;}
+.cm-s-ipython span.cm-builtin {color:#cd7578; font-weight: normal;}
+.cm-s-ipython span.cm-boolean {color: #cd7578;}
 .cm-s-ipython span.cm-variable {color: #c0c5ce;}
 .cm-s-ipython span.cm-variable-2 {color: #cb7d7e; font-weight: normal;}
-.cm-s-ipython span.cm-def {color: #a4b8cb; font-weight: normal;}
+.cm-s-ipython span.cm-def {color: #e3c08e;  font-weight: normal;}
 .cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .7) !important; }
-.cm-s-ipython span.cm-bracket { color: #c0c5ce; }
-.cm-s-ipython span.cm-tag {color: #b48ead;}
+.cm-s-ipython span.cm-bracket { color:#a0c0dd;}
+.cm-s-ipython span.cm-tag {color: #679ac8;}
 .cm-s-ipython span.cm-link {color: #b48ead;}
-.cm-s-ipython span.cm-storage {color: #b48ead;}
-.cm-s-ipython span.cm-support {color: #96b5b4;}
-.cm-s-ipython span.cm-qualifier { color: #bf616a; }
+.cm-s-ipython span.cm-storage {color: #679ac8;}
+.cm-s-ipython span.cm-support {color: #679ac8;}
+.cm-s-ipython span.cm-qualifier { color: #679ac8;}
+.cm-s-ipython span.cm-property {color:#679ac8;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #c0c5ce; }
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #c0c5ce; }
@@ -218,12 +241,12 @@ div.cell.selected {border: medium solid #356cb4; padding: 0px; border-radius: 0p
 div.cell.edit_mode {border: medium solid #22252d; padding: 0px; border-radius: 0px;}
 
 div.prompt {
-    padding: 0.4em;
+    padding: 0.3em;
     margin: 0px;
     font-family: monospace;
     text-align: left;
     line-height: 1.21429em;
-    min-width: 11ex;
+    min-width: 10ex;
     font-size: 9pt;
 }
 
