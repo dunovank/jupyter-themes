@@ -95,41 +95,45 @@ div.navbar-inner a { font-family: 'Helvetica', !important; font-size: 13pt; font
         filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#356cb4', endColorstr='#356cb4', GradientType=0)}
 
 .btn {
-    color: #181F2F;
-    font-size: 8pt;
-    background: #858ea1;
+    color: #858ea1;
+    font-size: 10pt;
+    font-weight: bold;
+    background: #22252d;
+    background-color: #22252d;
+    background-image: none;
     text-shadow: none;
     font-family: sans-serif;
-    border: medium none !important;
-    line-height:11pt;
+    border: 0px none !important;
     box-shadow: none !important;
 }
 .btn-group > .btn-mini {
     text-shadow: none;
-    font-size: 8pt;
-    font-weight: medium;
+    font-size: 9pt;
+    color: #858ea1;
+    background: #22252d;
+    background-color: #22252d;
+    background-image: none;
+    font-weight: bold;
     font-family: sans-serif;
-    border: none !important;
-    box-shadow: none; }
-.btn-group > .btn:last-child, .btn-group > .dropdown-toggle {
-    border-radius: 1px;
-    line-height: 11pt;
-}
-.btn-group > .btn:first-child {
-    margin-left: 0px;
-    padding-right: 3pt;
-    padding-left: 3pt;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-radius: 3px;
+    border: 0 !important;
+    box-shadow: none !important;
 }
 .btn:hover {
-    background-color: #eeeeee !important;
+    text-shadow: none;
     color: #356cb4;
-    border:0 !important;}
+    background: #22252d;
+    background-color: #22252d;
+    background-image: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+    
 ul.dropdown-menu {
-    overflow: visible;
-    position: absolute;}
+  overflow: visible;
+  position: absolute;
+}
 
 
 /* Formatting code in text, code*/
@@ -246,8 +250,8 @@ div.prompt {
     font-family: monospace;
     text-align: left;
     line-height: 1.21429em;
-    min-width: 10ex;
-    font-size: 9pt;
+    min-width: 11ex;
+    font-size: 9.5pt;
 }
 
 div.input_area {
@@ -269,6 +273,7 @@ div.prompt.output_prompt {
     font-family: 'Source Code Pro', monospace;
     font-weight: bold;
     background-color: #7d879b;
+    color: #7d879b;
     font-size: 9pt;
     width: 1em;
     margin-bottom: 8px;
