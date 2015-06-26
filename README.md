@@ -3,16 +3,16 @@ Oceans16
 
 ## Theme-ify your IPython Notebooks!
 
-This theme is essentially a mash-up of the Ocean Dark/Light IPyNB Themes by [Nikhil Sonnad](https://github.com/nsonnad/base16-ipython-notebook) and the Spacegray Ocean color schemes for Sublime Text by [Gadzhi Kharkharov](https://github.com/kkga/spacegray), which are both constructed using the original [Base16 color scheme](https://github.com/chriskempson/base16) by [Chris Kempson](https://github.com/chriskempson). General notebook and code cell layout are adapted from [this](https://github.com/panditarevolution/ipythonNotebook_customs/blob/master/monokai/custom.css) theme by [panditarevolution](https://github.com/panditarevolution). 
+This theme is essentially a mash-up of the Ocean Dark/Light IPyNB Themes by [Nikhil Sonnad](https://github.com/nsonnad/base16-ipython-notebook) and the Spacegray Ocean color schemes for Sublime Text by [Gadzhi Kharkharov](https://github.com/kkga/spacegray), which are both constructed using the original [Base16 color scheme](https://github.com/chriskempson/base16) by [Chris Kempson](https://github.com/chriskempson). General notebook and code cell layout are adapted from [this](https://github.com/panditarevolution/ipythonNotebook_customs/blob/master/monokai/custom.css) theme by [panditarevolution](https://github.com/panditarevolution).
 
 ### IPython Notebook Home
-![image](Screens/home.png)
+![image](https://github.com/dunovank/oceans16-ipynb/raw/master/Screens/home.png)
 
 ### IPython Notebook Fullscreen View
-![image](Screens/ipynb_oceans16_input.png)
+![image](https://github.com/dunovank/oceans16-ipynb/raw/master/Screens/ipynb_oceans16_input.png)
 
 ### Python code in Oceans16 Dark  
-![image](Screens/oceans16D_close-up.png)
+![image](https://github.com/dunovank/oceans16-ipynb/raw/master/Screens/oceans16D_close-up.png)
 
 ### Python code in Oceans16 Light
 ![image](Screens/oceans16L_close-up.png)
