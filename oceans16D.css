@@ -31,6 +31,11 @@ ul.breadcrumb i.icon-home {
     margin-right: 2px;
     color: #4BAB5C;
 }
+
+.list_container > div {
+    border-bottom: 1px solid rgba(53, 87, 120, 0.55);
+}
+
 div#header {
     background-color: #22252d;
     color: #858ea1;
@@ -118,7 +123,7 @@ div.navbar-inner a { font-family: 'Helvetica', !important; font-size: 13pt; font
     background-image: none;
     text-shadow: none;
     font-family: sans-serif;
-    border: 0px none !important;
+    border: 0 none !important;
     box-shadow: none !important;
 }
 .btn-group > .btn-mini {
@@ -133,9 +138,25 @@ div.navbar-inner a { font-family: 'Helvetica', !important; font-size: 13pt; font
     border: 0 !important;
     box-shadow: none !important;
 }
+
+
 .btn:hover {
+    color: #2c6abc;
+    font-size: 11pt;
+    font-weight: bold;
+    background: #22252d;
+    background-color: #22252d;
+    background-image: none;
     text-shadow: none;
-    color: #356cb4;
+    font-family: sans-serif;
+    border: 0 none !important;
+    box-shadow: none !important;
+}
+
+.btn-group > .btn-mini:hover {
+    text-shadow: none;
+    font-size: 10pt;
+    color: #dc443a;
     background: #22252d;
     background-color: #22252d;
     background-image: none;
