@@ -141,7 +141,7 @@ div.navbar-inner a { font-family: 'Helvetica', !important; font-size: 13pt; font
 
 
 .btn:hover {
-    color: #2c6abc;
+    color: #4BAB5C;
     font-size: 11pt;
     font-weight: bold;
     background: #22252d;
@@ -269,13 +269,13 @@ div.output_stderr pre {color: #3e4555;}
 .cm-s-ipython span.cm-number {color: #d08770;}
 .cm-s-ipython span.cm-property {color: #73a6d6;}
 .cm-s-ipython span.cm-attribute {color: #cd7578;}
-.cm-s-ipython span.cm-keyword {color: #a88fc1; font-weight: normal;} /*b48ead;*/
+.cm-s-ipython span.cm-keyword {color: #a88fc1; font-weight: normal;}
 .cm-s-ipython span.cm-string {color: #8fc198; font-weight: normal;}
 .cm-s-ipython span.cm-operator {color: #73a6d6; font-weight: normal;}
 .cm-s-ipython span.cm-builtin {color: #cd7578; font-weight: normal;}
 .cm-s-ipython span.cm-boolean {color: #cd7578;}
 .cm-s-ipython span.cm-variable {color: #c0c5ce;}
-.cm-s-ipython span.cm-def {color: #73a6d6; font-weight: normal;} /*#7aa6cf;*/
+.cm-s-ipython span.cm-def {color: #73a6d6; font-weight: normal;}
 .cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .7) !important; }
 .cm-s-ipython span.cm-tag {color: #73a6d6;} /*#679ac88*/
 .cm-s-ipython span.cm-link {color: #a88fc1;}
