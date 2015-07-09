@@ -191,7 +191,7 @@ div.output_stderr {background-color: #cc6666;}
 div.output_stderr pre {color: #c0c5ce;}
 
 .cm-s-ipython.CodeMirror {background: #2b303b; color: #c0c5ce; font-size:13pt !important;}
-.cm-s-ipython div.CodeMirror-selected {background: rgba(76, 85, 104, 0.65) !important;}
+.cm-s-ipython div.CodeMirror-selected {background: rgba(76, 85, 104, 0.35) !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #303643; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #515a6f !important; font-size:11pt;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #2c85f7 !important;}
@@ -238,7 +238,7 @@ div.prompt {
     font-family: monospace;
     text-align: left;
     line-height: 1.21429em;
-    min-width: 11ex;
+    min-width: 12ex;
     font-size: 9.5pt;
 }
 
@@ -249,6 +249,7 @@ div.input_area {
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
     font-family: 'Source Code Pro', monospace;
+    border-right: 2px solid rgba(53, 108, 180, .2);
     font-weight: bold;
     font-size: 9pt;
     color: #515a6f;
