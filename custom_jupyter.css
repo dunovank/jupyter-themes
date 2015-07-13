@@ -156,29 +156,20 @@ div.output_html {color: #1e2429;}
 }
 
 .ipython_tooltip {
-    max-width: 800px;
-    animation: 400ms ease 0s normal none 1 running fadeIn;
-    vertical-align: middle;
-    overflow: visible;
-    border: 1px solid #1e2429;
-    outline: medium none;
-    padding: 3px 3px 3px 7px;
-    margin: 0px;
-    font-family: monospace;
-    min-height: 80px;
+    border: 2px solid #356cb4;
     box-shadow: none;
     border-radius: 2px;
     position: absolute;
     z-index: 1000;
-    background-color: rgb(34, 37, 45);
+    background-color: #303643;
 }
 
 .ipython_tooltip .tooltiptext pre {
     border: 0px none;
     border-radius: 0px;
     font-size: 100%;
-    background-color: rgb(34, 37, 45);
-    color: rgb(164, 184, 203);
+    background-color: #303643;
+    color: #c0c5ce;
 }
 
 div.text_cell_render h1,
@@ -206,10 +197,12 @@ div.output_html {color: #a4b8cb;}
 
 
 span.ansiblack {color: #282a2e;}
-span.ansiblue {color: #8abeb7;}
+span.ansiblue {color: #53a6d6;}
 span.ansigray {color: #b4b7b4;}
-span.ansigreen {color: #b5bd68;}
-span.ansipurple {color: #b294bb;}
+span.ansigreen {color: #5ec06f;}
+span.ansipurple {color: #be8fc1;}
+span.ansiorange {color: #d08770;}
+span.ansicyan {color: #69beb7;}
 span.ansired {color: #cc6666;}
 span.ansiyellow {color: #f0c674;}
 
