@@ -155,6 +155,32 @@ div.output_html {color: #1e2429;}
     background-image: none;
 }
 
+.ipython_tooltip {
+    max-width: 800px;
+    animation: 400ms ease 0s normal none 1 running fadeIn;
+    vertical-align: middle;
+    overflow: visible;
+    border: 1px solid #1e2429;
+    outline: medium none;
+    padding: 3px 3px 3px 7px;
+    margin: 0px;
+    font-family: monospace;
+    min-height: 80px;
+    box-shadow: none;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgb(34, 37, 45);
+}
+
+.ipython_tooltip .tooltiptext pre {
+    border: 0px none;
+    border-radius: 0px;
+    font-size: 100%;
+    background-color: rgb(34, 37, 45);
+    color: rgb(164, 184, 203);
+}
+
 div.text_cell_render h1,
 div.text_cell_render h2,
 div.text_cell_render h3,
