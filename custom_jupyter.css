@@ -39,14 +39,19 @@ div.notebook_list_header {
       background: #22252d;
 
 }
-
+.rendered_html pre, .rendered_html code {
+    font-size: 12pt;
+    color: #d4d8e0;
+    line-height: 100%;
+    background: #2b303b;
+}
 .list_container > div {
     border-bottom: 1px solid rgba(53, 87, 120, 0.55);
     font-size: 13pt;
 }
 
 body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica", Helvetica, Arial, sans-serif;
     font-size: 12pt;
     line-height: 1.42857;
     color: #858ea1;
@@ -68,7 +73,7 @@ body {
 }
 
 .CodeMirror pre {
-  font-family: 'Source Code Pro' monospace;
+  font-family: 'Source Code Pro', monospace;
   font-size: 13pt;
 }
 
@@ -167,9 +172,27 @@ div.output_html {color: #1e2429;}
 .ipython_tooltip .tooltiptext pre {
     border: 0px none;
     border-radius: 0px;
-    font-size: 100%;
     background-color: #303643;
     color: #c0c5ce;
+}
+
+/* Formatting code in markdown cells */
+div.text_cell_render {
+    font-family: 'Helvetica', sans-serif;
+    background: #2b303b;
+    font-weight: 310;
+    color: #627996;
+}
+
+/* Formatting code in markdown cells */
+div.text_cell_render pre {
+    color: #627996;
+    background-color: #2b303b;
+}
+
+div.text_cell {
+    max-width: 100%;
+    color: #627996;
 }
 
 div.text_cell_render h1,
@@ -179,9 +202,11 @@ div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
     font-family: 'Helvetica', sans-serif;
-    font-weight:200;
-    color: #a4b8cb;}
-
+    background: #2b303b;
+    font-weight: 300;
+    color: #627996;
+    line-height: 80%;
+}
 
 /* text in output area (i.e. print some_list) */
 div.output_html {color: #a4b8cb;}
@@ -195,18 +220,16 @@ div.output_html {color: #a4b8cb;}
 }
 
 
-
 span.ansiblack {color: #282a2e;}
-span.ansiblue {color: #53a6d6;}
+span.ansiblue {color: #6ea3d4;}
 span.ansigray {color: #b4b7b4;}
-span.ansigreen {color: #5ec06f;}
+span.ansigreen {color: #8bc198;}
 span.ansipurple {color: #be8fc1;}
-span.ansiorange {color: #d08770;}
-span.ansicyan {color: #69beb7;}
-span.ansired {color: #cc6666;}
-span.ansiyellow {color: #f0c674;}
+span.ansicyan {color: #7bc6c0;}
+span.ansiyellow {color: #ddbf86;}
+span.ansired {color: #d07979;}
 
-div.output_stderr {background-color: #cc6666;}
+div.output_stderr {background-color: #d07979;}
 div.output_stderr pre {color: #c0c5ce;}
 
 .cm-s-ipython.CodeMirror {background: #2b303b; color: #c0c5ce; font-size:13pt !important;}
