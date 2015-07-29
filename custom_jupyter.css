@@ -286,33 +286,33 @@ div.output_stderr {background-color: #DB797C;}
 div.output_stderr pre {color: #C6CAD2;}
 
 .cm-s-ipython.CodeMirror {background: #2F3541; color: #C6CAD2; font-size:13pt !important;}
-.cm-s-ipython div.CodeMirror-selected {background: rgba(76, 85, 104, 0.45) !important;}
+.cm-s-ipython div.CodeMirror-selected {background: rgba(76, 85, 104, 0.65) !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #393F4F; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #5A647B !important; font-size: 11pt;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
 .cm-s-ipython span.cm-comment {color: #5A647B; font-style: normal !important;}
 .cm-s-ipython span.cm-atom {color: #BD9FD0;}
 .cm-s-ipython span.cm-number {color: #e59c88;}
-.cm-s-ipython span.cm-property {color: #84B3E9;}
+.cm-s-ipython span.cm-property {color: #77ABE7;}
 .cm-s-ipython span.cm-attribute {color: #E08D90;}
 .cm-s-ipython span.cm-keyword {color: #BD9FD0; font-weight: normal;}
 .cm-s-ipython span.cm-string {color: #8FC198; font-weight: normal;}
-.cm-s-ipython span.cm-operator {color: #84B3E9; font-weight: normal;}
+.cm-s-ipython span.cm-operator {color: #77ABE7; font-weight: normal;}
 .cm-s-ipython span.cm-builtin {color: #E08D90; font-weight: normal;}
 .cm-s-ipython span.cm-boolean {color: #E08D90;}
 .cm-s-ipython span.cm-variable {color: #C6CAD2;}
 .cm-s-ipython span.cm-variable-2 {color: #BD9FD0;}
 
-.cm-s-ipython span.cm-def {color: #84B3E9; font-weight: normal;}
+.cm-s-ipython span.cm-def {color: #77ABE7; font-weight: normal;}
 .cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .3) !important;}
 .cm-s-ipython span.cm-tag {color: #v;}
 .cm-s-ipython span.cm-link {color: #E08D90;}
 .cm-s-ipython span.cm-storage {color: #BD9FD0;}
 .cm-s-ipython span.cm-entity {color: #E08D90;}
 .cm-s-ipython span.cm-class {color: #DDD7A3;}
-.cm-s-ipython span.cm-support {color: #84B3E9;}
-.cm-s-ipython span.cm-qualifier {color: #84B3E9;}
-.cm-s-ipython span.cm-property {color: #84B3E9;}
+.cm-s-ipython span.cm-support {color: #77ABE7;}
+.cm-s-ipython span.cm-qualifier {color: #77ABE7;}
+.cm-s-ipython span.cm-property {color: #77ABE7;}
 
 
 
