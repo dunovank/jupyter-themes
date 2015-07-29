@@ -276,10 +276,10 @@ div.output_html {color: #a4b8cb;}
 span.ansiblack {color: #2b303b;}
 span.ansiblue {color: #6ea3d4;}
 span.ansigray {color: #b4b7b4;}
-span.ansigreen {color: #8bc198;}
+span.ansigreen {color: #8fc198;}
 span.ansipurple {color: #be8fc1;}
 span.ansicyan {color: #7bc6c0;}
-span.ansiyellow {color: #ddbf86;}
+span.ansiyellow {color: #DDD7A3;}
 span.ansired {color: #DB797C;}
 
 div.output_stderr {background-color: #DB797C;}
@@ -296,7 +296,7 @@ div.output_stderr pre {color: #C6CAD2;}
 .cm-s-ipython span.cm-property {color: #84B3E9;}
 .cm-s-ipython span.cm-attribute {color: #E08D90;}
 .cm-s-ipython span.cm-keyword {color: #BD9FD0; font-weight: normal;}
-.cm-s-ipython span.cm-string {color: #9CCEA9; font-weight: normal;}
+.cm-s-ipython span.cm-string {color: #8FC198; font-weight: normal;}
 .cm-s-ipython span.cm-operator {color: #84B3E9; font-weight: normal;}
 .cm-s-ipython span.cm-builtin {color: #E08D90; font-weight: normal;}
 .cm-s-ipython span.cm-boolean {color: #E08D90;}
@@ -305,11 +305,11 @@ div.output_stderr pre {color: #C6CAD2;}
 
 .cm-s-ipython span.cm-def {color: #84B3E9; font-weight: normal;}
 .cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .3) !important;}
-.cm-s-ipython span.cm-tag {color: #84B3E9;}
+.cm-s-ipython span.cm-tag {color: #v;}
 .cm-s-ipython span.cm-link {color: #E08D90;}
 .cm-s-ipython span.cm-storage {color: #BD9FD0;}
 .cm-s-ipython span.cm-entity {color: #E08D90;}
-.cm-s-ipython span.cm-class {color: #e4dda6;}
+.cm-s-ipython span.cm-class {color: #DDD7A3;}
 .cm-s-ipython span.cm-support {color: #84B3E9;}
 .cm-s-ipython span.cm-qualifier {color: #84B3E9;}
 .cm-s-ipython span.cm-property {color: #84B3E9;}
