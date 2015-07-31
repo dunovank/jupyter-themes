@@ -59,7 +59,6 @@ require(["base/js/events"], function (events) {
                 /*
                 * all exentensions from IPython-notebook-extensions, uncomment to activate
                 */
-
             IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-k', function (event) {
                   IPython.notebook.move_cell_up();
                   return false;

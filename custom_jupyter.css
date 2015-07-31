@@ -76,7 +76,7 @@ div.notebook_list_header {
     font-size: 12pt;
     color: #7d8ca8;
     line-height: 100%;
-    background: #2F3541;
+    background: #303845;
 }
 body {
     font-family: "Helvetica", Helvetica, Arial, sans-serif;
@@ -141,7 +141,7 @@ div.output_html {color: #1e2429;}
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
   border: 1px #a4b8cb solid;
   color: #a4b8cb;
-  background-color: #2F3541 !important;
+  background-color: #303845 !important;
   align-content: left !important;
 }
 .navbar-default {
@@ -203,26 +203,26 @@ div.output_html {color: #1e2429;}
     border-radius: 2px;
     position: absolute;
     z-index: 1000;
-    background-color: #393F4F;
+    background-color: #39414F;
 }
 
 .ipython_tooltip .tooltiptext pre {
     border: 0px none;
     border-radius: 0px;
-    background-color: #393F4F;
+    background-color: #39414F;
     color: #CFD2D9;
 }
 /* Formatting code in markdown cells */
 div.text_cell_render {
     font-family: 'Helvetica', sans-serif;
-    background: #2F3541;
+    background: #303845;
     font-weight: 310;
     color: #7d8ca8;
 }
 /* Formatting code in markdown cells */
 div.text_cell_render pre {
     color: #7d8ca8;
-    background-color: #2F3541;
+    background-color: #303845;
 }
 div.text_cell {
     max-width: 100%;
@@ -235,7 +235,7 @@ div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
     font-family: 'Helvetica', sans-serif;
-    background: #2F3541;
+    background: #303845;
     font-weight: 300;
     color: #7d8ca8;
     line-height: 80%;
@@ -248,13 +248,13 @@ div.output_html {color: #a4b8cb;}
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
   border: 1px #a4b8cb solid;
   color: #a4b8cb;
-  background-color: #393F4F !important;
+  background-color: #39414F !important;
   align-content: left !important;
 }
 .dropdown-menu {
-    border: 1px solid #393F4F;
-    background-color: #393F4F;
-    background: #393F4F;
+    border: 1px solid #39414F;
+    background-color: #39414F;
+    background: #39414F;
     box-shadow: none;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -263,15 +263,15 @@ div.output_html {color: #a4b8cb;}
     text-align: left;
 }
 .dropdown-menu:hover{
-    background-color: #393F4F;
-    border: 1px solid #393F4F;
+    background-color: #39414F;
+    border: 1px solid #39414F;
     box-shadow: none;
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
 .dropdown-menu > li > a {
-    border: 1px solid #393F4F;
+    border: 1px solid #39414F;
     display: block;
     padding: none;
     clear: both;
@@ -280,16 +280,16 @@ div.output_html {color: #a4b8cb;}
     line-height: 1.42857;
     color: #7d8ca8;
     white-space: nowrap;
-    background-color: #393F4F;
-    background: #393F4F;
+    background-color: #39414F;
+    background: #39414F;
 }
 .dropdown-menu > li > a:hover {
     background-clip: padding-box;
-    background-color: #393F4F;
-    border: 1px solid #393F4F;
+    background-color: #39414F;
+    border: 1px solid #39414F;
     color: #2c85f7;
     padding: none;
-    background: #393F4F;
+    background: #39414F;
 }
 .dropdown-menu .divider {
     height: 2px;
@@ -315,9 +315,9 @@ span.ansired {color: #DB797C;}
 div.output_stderr {background-color: #DB797C;}
 div.output_stderr pre {color: #C6CAD2;}
 
-.cm-s-ipython.CodeMirror {background: #2F3541; color: #C6CAD2; font-size:13pt !important;}
+.cm-s-ipython.CodeMirror {background: #303845; color: #C6CAD2; font-size:13pt !important;}
 .cm-s-ipython div.CodeMirror-selected {background: rgba(76, 85, 104, 0.65) !important;}
-.cm-s-ipython .CodeMirror-gutters {background: #393F4F; border: 0px; border-radius:0px;}
+.cm-s-ipython .CodeMirror-gutters {background: #39414F; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #5A647B !important; font-size: 11pt;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
 .cm-s-ipython span.cm-comment {color: #5A647B; font-style: normal !important;}
@@ -375,11 +375,11 @@ div.input_area {
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
     font-family: 'Source Code Pro', monospace;
-    border-right: 2px solid rgba(53, 108, 180, .2);
+    border-right: 2px solid rgba(53, 108, 180, .4);
     font-weight: bold;
     font-size: 9.5pt;
     color: #5A647B;
-    background-color: #2F3541;
+    background-color: #303845;
     width: 1em;
     padding-bottom: 0px;
     margin-bottom: 0px;
@@ -388,14 +388,13 @@ div.prompt.input_prompt {
 div.prompt.output_prompt {
     font-family: 'Source Code Pro', monospace;
     font-weight: bold;
-    background-color: #393F4F;
-    color: #393F4F;
+    background-color: #39414F;
+    color: #39414F;
     font-size: 9.5pt;
     width: 1em;
     margin-bottom: 8px;
     padding-top: 1em;
     padding-bottom: 1em;
-    border: 0px;
 }
 div.out_prompt_overlay.prompt {
     font-family: 'Source Code Pro', monospace;
@@ -403,7 +402,7 @@ div.out_prompt_overlay.prompt {
     font-size: 9.5pt;
     width: 1em;
     margin-bottom: 8px;
-    background-color: #393F4F;
+    background-color: #39414F;
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -415,14 +414,14 @@ div.out_prompt_overlay.prompt:hover {
     width: 1em;
     border-radius: 4px;
     margin-bottom: 8px;
-    background-color: #393F4F;
-    box-shadow: #2F3541 2px 2px 6px 4px inset;
+    background-color: #39414F;
+    box-shadow: #303845 2px 2px 6px 4px inset;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
 
 div.output_wrapper {
-    background-color:#393F4F;
+    background-color:#39414F;
     margin-bottom: 0em;
     margin-top: 0em;
     border: 0px;
@@ -433,7 +432,7 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     margin-top: 8px;
     margin-left: 8px;
     margin-right: 8px;
-    background-color: #393F4F;
+    background-color: #39414F;
     color: #CFD2D9;
 }
 
