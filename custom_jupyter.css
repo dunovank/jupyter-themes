@@ -55,6 +55,47 @@ div.notebook_list_header {
     border: 2px solid rgba(53, 87, 120, 0.55);
     box-shadow: none;
 }
+.dropdown-menu {
+    border: 1px solid rgba(53, 87, 120, 0.95);
+    background-color: #39414F;
+    background: #39414F;
+    box-shadow: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    list-style: outside none none;
+    font-size: 12pt;
+    text-align: left;
+}
+.dropdown-menu:hover{
+    background-color: #39414F;
+    border: 1px solid rgba(53, 87, 120, 0.95);
+    box-shadow: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.modal-content {
+    position: relative;
+    background-color: #39414F;
+    border: 1px solid rgba(53, 87, 120, 0.15);
+    border-radius: 3px;
+    box-shadow: 0px 3px 9px rgba(53, 87, 120, 0.25);
+    background-clip: padding-box;
+    outline: 0px none;
+}
+.dropdown-header {
+    display: block;
+    padding: 3px 20px;
+    font-size: 12pt;
+    line-height: 1.42857;
+    color: #3572C6;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid rgba(53, 87, 120, 0.95);
+    min-height: 16.4286px;
+}
 #running .panel-group .panel .panel-heading {
     background-color: #262931;
     padding: 4px 7px;
@@ -174,7 +215,7 @@ div.output_html {color: #1e2429;}
 .btn-group > .btn-mini {
     color: #7d8ca8;
     background: #262931;
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: normal;
     border: 0 none !important;
     box-shadow: none !important;
@@ -251,25 +292,52 @@ div.output_html {color: #a4b8cb;}
   background-color: #39414F !important;
   align-content: left !important;
 }
-.dropdown-menu {
-    border: 1px solid #39414F;
-    background-color: #39414F;
-    background: #39414F;
-    box-shadow: none;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    list-style: outside none none;
-    font-size: 11pt;
-    text-align: left;
+
+button.close {
+    padding: 0px;
+    cursor: pointer;
+    background: transparent none repeat scroll 0% 0%;
+    border: 0px none;
 }
-.dropdown-menu:hover{
-    background-color: #39414F;
-    border: 1px solid #39414F;
+.close {
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    color: #3572C6;
+    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
+    opacity: 0.3;
+}
+.close:hover {
+    color: #0095ff;
+    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
+    opacity: 0.9;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: 13pt;
+    line-height: 1.6;
+    color: #6ea3d4;
+    background-color: #303845;
+    background-image: none;
+    border: 1px solid rgba(53, 87, 120, 0.95);
+    border-radius: 2px;
     box-shadow: none;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
 
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid rgba(53, 87, 120, 0.95);
+}
+.input-form-control:hover:active {
+      background-color:  rgba(53, 87, 120, 0.95);
+      selected:  rgba(53, 87, 120, 0.95);
+}
 .dropdown-menu > li > a {
     border: 1px solid #39414F;
     display: block;
@@ -295,14 +363,12 @@ div.output_html {color: #a4b8cb;}
     height: 2px;
     margin: 8px 0px;
     overflow: hidden;
-    background-color: rgba(53, 87, 120, 0.85);
-}
-.dropdown-menu > .disabled > a {
-    color: #5A647B;
+    background-color: rgba(53, 87, 120, 0.95);
 }
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
     color: #5A647B;
 }
+
 span.ansiblack {color: #2b303b;}
 span.ansiblue {color: #6ea3d4;}
 span.ansigray {color: #b4b7b4;}
@@ -316,7 +382,7 @@ div.output_stderr {background-color: #DB797C;}
 div.output_stderr pre {color: #C6CAD2;}
 
 .cm-s-ipython.CodeMirror {background: #303845; color: #C6CAD2; font-size:13pt !important;}
-.cm-s-ipython div.CodeMirror-selected {background: rgba(76, 85, 104, 0.65) !important;}
+.cm-s-ipython div.CodeMirror-selected {background: #3C4555 !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #39414F; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #5A647B !important; font-size: 11pt;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
