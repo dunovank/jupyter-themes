@@ -27,13 +27,13 @@ div#ipython_notebook {display: none;}
 .item_icon {color: #2c85f7;}
 
 div.list_container a:hover {color: #2c85f7;}
-div.list_container :hover {
-      background-color: #262931;
-      color: #2c85f7;
-}
 .list_header {
     font-weight: normal;
-    background-color: #262931;
+    background-color: #2A2F3C;
+}
+div.list_container :hover {
+    background-color: #2A2F3C;
+    color: #2c85f7;
 }
 div.notebook_list_header {
       background: #262931;
@@ -243,6 +243,7 @@ div.output_html {color: #1e2429;}
     text-shadow: none;
     vertical-align: 0px;
 }
+
 .btn-group > .btn-mini {
     color: #7d8ca8;
     background: #262931;
