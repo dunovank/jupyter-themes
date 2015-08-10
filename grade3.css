@@ -1,0 +1,488 @@
+/*
+    Name:       Happy16 Light
+    Author:     Kyle Dunovan (http://github.com/dunovank)
+*/
+
+body {background-color: #f6f6f6;}
+
+a {color: #2c2c2c; font-family: 'Helvetica', sans-serif; }
+div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Source Code Pro', monospace; font-size: 12pt;}
+
+/* Hiding the ipython log */
+div#ipython_notebook {display: none;}
+
+
+/* INTRO PAGE */
+.toolbar_info {color: #4c4c4c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
+.list_container {color: #4c4c4c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
+.breadcrumb>li {text-shadow:0 0px 0; color:#4c4c4c; font-family: 'Helvetica', sans-serif; font-size: 12pt}
+.list_container a {color: #4c4c4c; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
+
+.item_icon {color: #ee8713;}
+div.list_container a:hover {color: #ee8713;}
+div#tree-selector.btn-group.dropdown {
+      background-color: rgba(184, 184, 184, 0.10);
+      background: rgba(184, 184, 184, 0.10);
+}
+.btn-group>.btn+.dropdown-toggle {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+div.list_container :hover {
+    background-color: rgba(184, 184, 184, 0.05);
+    color: #3a3a3a;
+}
+div.notebook_list_header {
+    background: rgba(184, 184, 184, 0.05);
+}
+.dropdown-menu {
+    background-color: #eeeeee;
+    background: #eeeeee;
+    border: thin solid #dbdbdb;
+    box-shadow: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    list-style: outside none none;
+    font-size: 12pt;
+    text-align: left;
+}
+.dropdown-menu:hover{
+    background-color: #eeeeee;
+    border: thin solid #dbdbdb;
+    box-shadow: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.dropdown-header {
+    display: block;
+    padding: 3px 20px;
+    font-size: 12pt;
+    line-height: 1.42857;
+    color: #2c2c2c;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+.dropdown-menu > li > a {
+    display: block;
+    padding: none;
+    clear: both;
+    background-color: #eeeeee;
+    background: #eeeeee;
+    background-clip: padding-box;
+    font-weight: normal;
+    line-height: 1.42857;
+    color: #2c2c2c;
+    white-space: nowrap;
+}
+.dropdown-menu > li > a:hover {
+    background-clip: padding-box;
+    color: #000000;
+    padding: none;
+    background: #dbdbdb;
+}
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 8px 0px;
+    overflow: hidden;
+    background-color: #dddddd;
+}
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+    color: #aaaaaa;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #f6f6f6;
+    min-height: 16.4286px;
+}
+.modal-content {
+    position: relative;
+    background-color: #f6f6f6;
+    border: 1px solid #808080;
+    border-radius: 3px;
+    box-shadow: 0px 3px 9px #808080;
+    background-clip: padding-box;
+    outline: 0px none;
+}
+.panel {
+    line-height: 22px;
+    fontsize: 12px;
+    margin-bottom: 18px;
+    background-color: #f6f6f6;
+    color: #2c2c2c;
+    box-shadow: none;
+}
+#running .panel-group .panel .panel-heading {
+    background-color: #f6f6f6;
+    padding: 4px 7px;
+    line-height: 22px;
+}
+#running .panel-group .panel .panel-heading a:hover {
+    color: #ee8713;
+}
+#running .panel-group .panel .panel-body .list_container .list_item {
+    border-bottom: 1px solid rgba(224, 224, 224, 0.55);
+}
+#project_name > .breadcrumb {
+    font-weight: normal;
+    color: #ee8713;
+
+}
+.rendered_html pre, .rendered_html code {
+    font-size: 12pt;
+    color: #2c2c2c;
+    line-height: 100%;
+    background: #dfdfdf;
+}
+body {
+    font-family: "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+    line-height: 1.42857;
+    color: #2c2c2c;
+}
+#kernel_indicator {
+    float: right !important;
+    color: #ee8713;
+}
+#kernel_indicator .kernel_indicator_name {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13pt;
+}
+#modal_indicator {
+    float: right !important;
+    color: #ee8713;
+
+}
+.CodeMirror pre {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 13pt;
+}
+
+.notebook_app {
+    background-color: #ffffff;
+}
+.notebook_app #header {
+    box-shadow: none !important;
+}
+#notebook-container {
+    padding: 15px;
+    background-color: #ffffff;
+    min-height: 0px;
+    box-shadow: none;
+}
+#header {
+    box-shadow: none;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 100;
+}
+#header-container {
+    padding-bottom: 5px;
+    display: none !important;
+    box-shadow: none;
+}
+#header .header-bar {
+    background: #ffffff;
+}
+div#maintoolbar {
+    display: none !important;
+}
+/* text in output area (i.e. print some_list) */
+div.output_html {color: #1e2429;}
+
+/* Formatting code in text, code*/
+.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
+  border: 1px #4c4c4c; solid;
+  color: #4c4c4c;
+  background-color: #ffffff !important;
+  align-content: left !important;
+}
+.navbar-default {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #4c4c4c;
+    font-size: 13pt;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #000000;
+    background-color: rgba(184, 184, 184, 0.15);
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #000000;
+    background-color: rgba(184, 184, 184, 0.15);
+}
+.btn {
+    color: #4c4c4c;
+    background: #f6f6f6;
+    font-size: 12pt;
+    font-weight: normal;
+    border: 0 none !important;
+    box-shadow: none !important;
+    text-shadow: none;
+    vertical-align: 0px;
+}
+
+.btn-group > .btn-mini {
+    color: #4c4c4c;
+    background: #f6f6f6;
+    font-size: 11pt;
+    font-weight: normal;
+    border: 0 none !important;
+    box-shadow: none !important;
+    text-shadow: none;
+}
+.btn:hover {
+    color: #ee8713;
+    background: #f6f6f6;
+    background-color: #f6f6f6;
+    background-image: none;
+}
+.btn-group > .btn-mini:hover {
+    color: #ee8713;
+    background: #f6f6f6;
+    background-color: #f6f6f6;
+    background-image: none;
+}
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ipython_tooltip {
+    border: 2px solid #4c4c4c;
+    box-shadow: none;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 1000;
+    background-color: #dddddd;
+}
+
+.ipython_tooltip .tooltiptext pre {
+    border: 0px none;
+    border-radius: 0px;
+    background-color: #dddddd;
+    color: #4c4c4c;
+}
+/* Formatting code in markdown cells */
+div.text_cell_render {
+    font-family: 'Helvetica', sans-serif;
+    background: #eeeeee;
+    font-weight: 310;
+    color: #4c4c4c;
+}
+/* Formatting code in markdown cells */
+div.text_cell_render pre {
+    color: #4c4c4c;
+    background-color: #eeeeee;
+}
+div.text_cell {
+    max-width: 100%;
+    color: #4c4c4c;
+}
+div.text_cell_render h1,
+div.text_cell_render h2,
+div.text_cell_render h3,
+div.text_cell_render h4,
+div.text_cell_render h5,
+div.text_cell_render h6 {
+    font-family: 'Helvetica', sans-serif;
+    background: #eeeeee;
+    font-weight: 300;
+    color: #4c4c4c;
+    line-height: 80%;
+}
+
+/* text in output area (i.e. print some_list) */
+div.output_html {color: #4c4c4c;}
+
+/* Formatting code in text, code*/
+.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
+  border: 1px #4c4c4c solid;
+  color: #4c4c4c;
+  background-color: #eeeeee !important;
+  align-content: left !important;
+}
+
+button.close {
+    padding: 0px;
+    cursor: pointer;
+    background: transparent none repeat scroll 0% 0%;
+    border: 0px none;
+}
+.close {
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    color: #3572C6;
+    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
+    opacity: 0.3;
+}
+.close:hover {
+    color: #3572C6;
+    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
+    opacity: 0.9;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: 13pt;
+    line-height: 1.6;
+    color: #4c4c4c;
+    background-color: #eeeeee;
+    background-image: none;
+    border: 1px solid rgba(53, 87, 120, 0.95);
+    border-radius: 2px;
+    box-shadow: none;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid rgba(184, 184, 184, 0.75);
+}
+.input-form-control:hover:active {
+      background-color: rgba(184, 184, 184, 0.75);
+      selected: rgba(184, 184, 184, 0.75);
+}
+
+span.ansiblack {color: #2b303b;}
+span.ansiblue {color: #154ba1;}
+span.ansigray {color: #b4b7b4;}
+span.ansigreen {color: #2d6836;}
+span.ansipurple {color: #483d8b;}
+span.ansicyan {color: #1592a2;}
+span.ansiyellow {color: #92a215;}
+span.ansired {color: #b82a18;}
+
+div.output_stderr {background-color: #DB797C;}
+div.output_stderr pre {color: #000000;}
+
+.cm-s-ipython.CodeMirror {background: #eeeeee; color: #000000; font-size:13pt !important;}
+.cm-s-ipython div.CodeMirror-selected {background: #dddddd !important;}
+.cm-s-ipython .CodeMirror-gutters {background: #bbbbbb; border: 0px; border-radius:0px;}
+.cm-s-ipython .CodeMirror-linenumber {color: #666666 !important; font-size: 11pt;}
+.cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
+.cm-s-ipython span.cm-comment {color: #808080; font-style: italic !important;}
+.cm-s-ipython span.cm-atom {color: #853bc5;}
+.cm-s-ipython span.cm-number {color: #eb6a1a;}
+.cm-s-ipython span.cm-property {color: #dc143c;}
+.cm-s-ipython span.cm-attribute {color: #dc143c;}
+.cm-s-ipython span.cm-keyword {color: #853bc5; font-weight: normal;}
+.cm-s-ipython span.cm-string {color: #009f05; font-weight: normal;}
+.cm-s-ipython span.cm-operator {color: #3d6be6; font-weight: normal;}
+.cm-s-ipython span.cm-builtin {color: #dc143c; font-weight: normal;}
+.cm-s-ipython span.cm-variable {color: #000000;}
+.cm-s-ipython span.cm-variable-2 {color: #dc143c;}
+
+.cm-s-ipython span.cm-def {color: #3d6be6; font-weight: normal;}
+.cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .3) !important;}
+.cm-s-ipython span.cm-tag {color: #853bc5;}
+.cm-s-ipython span.cm-link {color: #eb6a1a;}
+.cm-s-ipython span.cm-storage {color: #3d6be6;}
+.cm-s-ipython span.cm-entity {color: #dc143c;}
+.cm-s-ipython span.cm-class {color: #f2d943;}
+.cm-s-ipython span.cm-support {color: #dc143c;}
+.cm-s-ipython span.cm-qualifier {color: #dc143c;}
+
+
+
+div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .3); !important ; }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; }
+.cm-s-ipython .CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .3)  !important; }
+.cm-s-ipython .CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important; }
+
+
+div.cell { border: medium solid #ffffff; padding: 0px; border-radius: 0px; }
+div.cell.selected { border: medium solid #ffa43b; padding: 0px; border-radius: 0px; }
+.edit_mode div.cell.selected {border: medium solid rgba(53, 114, 198, .3) !important; padding: 0px; border-radius: 0px; }
+div.cell.edit_mode {border: medium solid rgba(53, 114, 198, .3) !important; padding: 0px; border-radius: 0px;}
+
+div.prompt {
+    padding: 0.3em;
+    margin: 0px;
+    font-family: monospace;
+    text-align: left;
+    line-height: 1.21429em;
+    min-width: 13ex;
+    font-size: 9.5pt;
+}
+
+div.input_area {
+    margin-bottom: 0px;
+    border: 0px;
+    border-radius: 0px;
+}
+/*Input and output cells formatting*/
+div.prompt.input_prompt {
+    font-family: 'Source Code Pro', monospace;
+    border-right: 1px solid rgba(240, 147, 43, .5);
+    font-weight: bold;
+    font-size: 9.5pt;
+    color: #aaaaaa;
+    background-color: #eeeeee;
+    width: 1em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+div.prompt.output_prompt {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #ffffff;
+    font-size: 9.5pt;
+    width: 1em;
+    margin-bottom: 8px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+div.out_prompt_overlay.prompt {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    font-size: 9.5pt;
+    width: 1em;
+    margin-bottom: 8px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+div.out_prompt_overlay.prompt:hover {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    font-size: 9.5pt;
+    width: 1em;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background-color: #ffffff;
+    box-shadow: #eeeeee 2px 2px 6px 4px inset;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+div.output_wrapper {
+    background-color:#ffffff;
+    margin-bottom: 0em;
+    margin-top: 0em;
+    border: 0px;
+}
+div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
+    padding-top: 1em;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+div.output_area pre {
+    color: #000000;
+    font-size: 12pt;
+}

@@ -370,36 +370,6 @@ button.close {
       background-color:  rgba(53, 87, 120, 0.95);
       selected:  rgba(53, 87, 120, 0.95);
 }
-.dropdown-menu > li > a {
-    border: 1px solid #39414F;
-    display: block;
-    padding: none;
-    clear: both;
-    background-clip: padding-box;
-    font-weight: normal;
-    line-height: 1.42857;
-    color: #7d8ca8;
-    white-space: nowrap;
-    background-color: #39414F;
-    background: #39414F;
-}
-.dropdown-menu > li > a:hover {
-    background-clip: padding-box;
-    background-color: #39414F;
-    border: 1px solid #39414F;
-    color: #2c85f7;
-    padding: none;
-    background: #39414F;
-}
-.dropdown-menu .divider {
-    height: 2px;
-    margin: 8px 0px;
-    overflow: hidden;
-    background-color: rgba(53, 87, 120, 0.95);
-}
-.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
-    color: #5A647B;
-}
 
 span.ansiblack {color: #2b303b;}
 span.ansiblue {color: #6ea3d4;}
@@ -429,7 +399,7 @@ div.output_stderr pre {color: #C6CAD2;}
 .cm-s-ipython span.cm-builtin {color: #E08D90; font-weight: normal;}
 .cm-s-ipython span.cm-boolean {color: #E08D90;}
 .cm-s-ipython span.cm-variable {color: #C6CAD2;}
-.cm-s-ipython span.cm-variable-2 {color: #BD9FD0;}
+.cm-s-ipython span.cm-variable-2 {color: #E08D90;}
 
 .cm-s-ipython span.cm-def {color: #77ABE7; font-weight: normal;}
 .cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .3) !important;}
