@@ -2,7 +2,7 @@
 
 
 Oceans16 theme is a take on the popular the Ocean Dark IPyNB theme ([Nikhil Sonnad](https://github.com/nsonnad/base16-ipython-notebook)).
-Grade3 was is a spinoff of the python syntax theme used by [nixCraft](http://www.cyberciti.biz/faq/python-sleep-command-syntax-example/)
+Grade3 is a spinoff of the python syntax theme used by [nixCraft](http://www.cyberciti.biz/faq/python-sleep-command-syntax-example/)
 
 ### Oceans16 Notebook
 ![image](https://github.com/dunovank/oceans16-ipynb/raw/master/Screens/oceans16_nb.png)
