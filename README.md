@@ -13,7 +13,7 @@ Grade3 is a spinoff of the python syntax theme used by [nixCraft](http://www.cyb
 ##Grade3 Syntax
 ![image](https://github.com/dunovank/oceans16-ipynb/raw/master/Screens/grade3.png)
 
-[__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) font (.ttf) included in "oceans16/Fonts/"
+[__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) font (.ttf) included in Fonts dir"
 
 ## Install
 ```sh
