@@ -6,7 +6,7 @@
 body {background-color: #f9f9f9;}
 
 a {color: #2c2c2c; font-family: 'Helvetica', sans-serif; }
-div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Source Code Pro', monospace; font-size: 12pt;}
+div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 12pt;}
 
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
@@ -154,7 +154,7 @@ body {
 
 }
 .CodeMirror pre {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Hack', monospace;
   font-size: 13pt;
 }
 
@@ -201,10 +201,15 @@ div.output_html {color: #1e2429;}
     background-color: #f9f9f9;
     border-color: #f9f9f9;
 }
-
+#menubar .navbar {
+    border-top: 1px;
+    border-radius: 0 0 2px 2px;
+    margin-bottom: 0;
+    margin-top: 8px;
+}
 .navbar-default .navbar-nav > li > a {
     color: #4c4c4c;
-    font-size: 13pt;
+    font-size: 14pt;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #000000;
@@ -420,7 +425,7 @@ div.input_area {
 }
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Hack', monospace;
     border-right: 1px solid rgba(240, 147, 43, .5);
     font-weight: bold;
     font-size: 9.5pt;
@@ -432,7 +437,7 @@ div.prompt.input_prompt {
 }
 
 div.prompt.output_prompt {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Hack', monospace;
     font-weight: bold;
     background-color: #ffffff;
     color: #ffffff;
@@ -443,7 +448,7 @@ div.prompt.output_prompt {
     padding-bottom: 1em;
 }
 div.out_prompt_overlay.prompt {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Hack', monospace;
     font-weight: bold;
     font-size: 9.5pt;
     width: 1em;
@@ -454,7 +459,7 @@ div.out_prompt_overlay.prompt {
     -moz-border-radius: 4px;
 }
 div.out_prompt_overlay.prompt:hover {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Hack', monospace;
     font-weight: bold;
     font-size: 9.5pt;
     width: 1em;

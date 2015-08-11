@@ -11,29 +11,29 @@
 
 body {background-color: #262931;}
 
-a {color: #7d8ca8; font-family: 'Helvetica', sans-serif; }
-div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Source Code Pro', monospace; font-size: 12pt;}
+a {color: #8997b0; font-family: 'Helvetica', sans-serif; }
+div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 12pt;}
 
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
 
 
 /* INTRO PAGE */
-.toolbar_info {color: #7d8ca8; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
-.list_container {color: #7d8ca8; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
-.breadcrumb>li {text-shadow:0 0px 0; color:#7d8ca8; font-family: 'Helvetica', sans-serif; font-size: 12pt}
-.list_container a {color: #7d8ca8; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
+.toolbar_info {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
+.list_container {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
+.breadcrumb>li {text-shadow:0 0px 0; color:#8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt}
+.list_container a {color: #8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
 
 .item_icon {color: #2c85f7;}
 
-div.list_container a:hover {color: #2c85f7;}
+div.list_container a:hover {color: #eeeeee;}
 .list_header {
     font-weight: normal;
     background-color: #2A2F3C;
 }
 div.list_container :hover {
     background-color: #2A2F3C;
-    color: #2c85f7;
+    color: #eeeeee;
 }
 div.notebook_list_header {
       background: #262931;
@@ -51,7 +51,7 @@ div.notebook_list_header {
     fontsize: 12px;
     margin-bottom: 18px;
     background-color: #262931;
-    color: #7d8ca8;
+    color: #8997b0;
     border: 2px solid rgba(53, 87, 120, 0.55);
     box-shadow: none;
 }
@@ -100,7 +100,7 @@ div.notebook_list_header {
     background-clip: padding-box;
     font-weight: normal;
     line-height: 1.42857;
-    color: #7d8ca8;
+    color: #8997b0;
     white-space: nowrap;
     background-color: #39414F;
     background: #39414F;
@@ -109,7 +109,7 @@ div.notebook_list_header {
     background-clip: padding-box;
     background-color: #39414F;
     border: 1px solid #39414F;
-    color: #2c85f7;
+    color: #eeeeee;
     padding: none;
     background: #39414F;
 }
@@ -146,7 +146,7 @@ div.notebook_list_header {
 }
 .rendered_html pre, .rendered_html code {
     font-size: 12pt;
-    color: #7d8ca8;
+    color: #8997b0;
     line-height: 100%;
     background: #303845;
 }
@@ -154,7 +154,7 @@ body {
     font-family: "Helvetica", Helvetica, Arial, sans-serif;
     font-size: 12pt;
     line-height: 1.42857;
-    color: #7d8ca8;
+    color: #8997b0;
 }
 
 #kernel_indicator {
@@ -173,7 +173,7 @@ body {
 }
 
 .CodeMirror pre {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Hack', monospace;
   font-size: 13pt;
 }
 
@@ -220,10 +220,15 @@ div.output_html {color: #1e2429;}
     background-color: #262931;
     border-color: #262931;
 }
-
+#menubar .navbar {
+    border-top: 1px;
+    border-radius: 0 0 2px 2px;
+    margin-bottom: 0;
+    margin-top: 8px;
+}
 .navbar-default .navbar-nav > li > a {
-    color: #7d8ca8;
-    font-size: 13pt;
+    color: #8997b0;
+    font-size: 14pt;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #ffffff;
@@ -234,7 +239,7 @@ div.output_html {color: #1e2429;}
     background-color: rgba(53, 108, 180, .5);
 }
 .btn {
-    color: #7d8ca8;
+    color: #8997b0;
     background: #262931;
     font-size: 12pt;
     font-weight: normal;
@@ -245,7 +250,7 @@ div.output_html {color: #1e2429;}
 }
 
 .btn-group > .btn-mini {
-    color: #7d8ca8;
+    color: #8997b0;
     background: #262931;
     font-size: 11pt;
     font-weight: normal;
@@ -290,16 +295,16 @@ div.text_cell_render {
     font-family: 'Helvetica', sans-serif;
     background: #303845;
     font-weight: 310;
-    color: #7d8ca8;
+    color: #8997b0;
 }
 /* Formatting code in markdown cells */
 div.text_cell_render pre {
-    color: #7d8ca8;
+    color: #8997b0;
     background-color: #303845;
 }
 div.text_cell {
     max-width: 100%;
-    color: #7d8ca8;
+    color: #8997b0;
 }
 div.text_cell_render h1,
 div.text_cell_render h2,
@@ -310,7 +315,7 @@ div.text_cell_render h6 {
     font-family: 'Helvetica', sans-serif;
     background: #303845;
     font-weight: 300;
-    color: #7d8ca8;
+    color: #8997b0;
     line-height: 80%;
 }
 
@@ -442,7 +447,7 @@ div.input_area {
 }
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Hack', monospace;
     border-right: 2px solid rgba(53, 108, 180, .4);
     font-weight: bold;
     font-size: 9.5pt;
@@ -454,7 +459,7 @@ div.prompt.input_prompt {
 }
 
 div.prompt.output_prompt {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Hack', monospace;
     font-weight: bold;
     background-color: #39414F;
     color: #39414F;
@@ -465,7 +470,7 @@ div.prompt.output_prompt {
     padding-bottom: 1em;
 }
 div.out_prompt_overlay.prompt {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Hack', monospace;
     font-weight: bold;
     font-size: 9.5pt;
     width: 1em;
@@ -476,7 +481,7 @@ div.out_prompt_overlay.prompt {
     -moz-border-radius: 4px;
 }
 div.out_prompt_overlay.prompt:hover {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Hack', monospace;
     font-weight: bold;
     font-size: 9.5pt;
     width: 1em;
