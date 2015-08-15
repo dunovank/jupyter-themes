@@ -1,0 +1,515 @@
+/*
+    Name:       Oceans16 Dark
+    Author:     Kyle Dunovan (http://github.com/dunovank)
+    Original Color Scheme by Gadzhi Kharkharov (https://github.com/kkga/spacegray)
+    CodeMirror & NB Style adapted from panditarevolution (https://github.com/panditarevolution/ipythonNotebook_customs)
+    CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
+    Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+*/
+
+
+
+body {background-color: #262931;}
+
+a {color: #8997b0; font-family: 'Helvetica', sans-serif; }
+div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 12pt;}
+
+/* Hiding the ipython log */
+div#ipython_notebook {display: none;}
+
+
+/* INTRO PAGE */
+.toolbar_info {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
+.list_container {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
+.breadcrumb>li {text-shadow:0 0px 0; color:#8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt}
+.list_container a {color: #8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
+
+.item_icon {color: #2c85f7;}
+
+div.list_container a:hover {color: #eeeeee;}
+.list_header {
+    font-weight: normal;
+    background-color: #2A2F3C;
+}
+div.list_container :hover {
+    background-color: #2A2F3C;
+    color: #eeeeee;
+}
+div.notebook_list_header {
+      background: #262931;
+
+}
+.list_container > div {
+    border-bottom: 1px solid rgba(53, 87, 120, 0.55);
+    font-size: 12pt;
+}
+.panel-default {
+    border-color: rgba(53, 87, 120, 0.55);
+}
+.panel {
+    line-height: 22px;
+    fontsize: 12px;
+    margin-bottom: 18px;
+    background-color: #262931;
+    color: #8997b0;
+    border: 2px solid rgba(53, 87, 120, 0.55);
+    box-shadow: none;
+}
+.dropdown-menu {
+    border: 1px solid rgba(53, 87, 120, 0.95);
+    background-color: #39414F;
+    background: #39414F;
+    box-shadow: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    list-style: outside none none;
+    font-size: 12pt;
+    text-align: left;
+}
+.dropdown-menu:hover{
+    background-color: #39414F;
+    border: 1px solid rgba(53, 87, 120, 0.95);
+    box-shadow: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.modal-content {
+    position: relative;
+    background-color: #39414F;
+    border: 1px solid rgba(53, 87, 120, 0.15);
+    border-radius: 3px;
+    box-shadow: 0px 3px 9px rgba(53, 87, 120, 0.25);
+    background-clip: padding-box;
+    outline: 0px none;
+}
+.dropdown-header {
+    display: block;
+    padding: 3px 20px;
+    font-size: 12pt;
+    line-height: 1.42857;
+    color: #5c6b89;
+    text-decoration: underline;
+    text-decoration-color: rgba(53, 87, 120, 0.95);
+    white-space: nowrap;
+}
+.dropdown-menu > li > a {
+    border: 1px solid #39414F;
+    display: block;
+    padding: none;
+    clear: both;
+    background-clip: padding-box;
+    font-weight: normal;
+    line-height: 1.42857;
+    color: #8997b0;
+    white-space: nowrap;
+    background-color: #39414F;
+    background: #39414F;
+}
+.dropdown-menu > li > a:hover {
+    background-clip: padding-box;
+    background-color: #39414F;
+    border: 1px solid #39414F;
+    color: #eeeeee;
+    padding: none;
+    background: #39414F;
+}
+.dropdown-menu .divider {
+    height: 2px;
+    margin: 8px 0px;
+    overflow: hidden;
+    background-color: rgba(53, 87, 120, 0.95);
+}
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+    color: #5A647B;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid rgba(53, 87, 120, 0.95);
+    min-height: 16.4286px;
+}
+#running .panel-group .panel .panel-heading {
+    background-color: #262931;
+    padding: 4px 7px;
+    line-height: 22px;
+}
+#running .panel-group .panel .panel-heading a:hover {
+    color: #2c85f7;
+}
+#running .panel-group .panel .panel-body .list_container .list_item {
+    border-bottom: 1px solid rgba(53, 87, 120, 0.55);
+}
+
+#project_name > .breadcrumb {
+    font-weight: normal;
+    color: #2c85f7;
+
+}
+.rendered_html pre, .rendered_html code {
+    font-size: 12pt;
+    color: #8997b0;
+    line-height: 100%;
+    background: #303845;
+}
+body {
+    font-family: "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+    line-height: 1.42857;
+    color: #8997b0;
+}
+
+#kernel_indicator {
+    float: right !important;
+    color: #2c85f7;
+}
+#kernel_indicator .kernel_indicator_name {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13pt;
+}
+#modal_indicator {
+    float: right !important;
+    color: #2c85f7;
+
+}
+
+.CodeMirror pre {
+  font-family: 'Hack', monospace;
+  font-size: 13pt;
+}
+
+.notebook_app {
+    background-color: #262931;
+}
+.notebook_app #header {
+    box-shadow: none !important;
+}
+#notebook-container {
+    padding: 15px;
+    background-color: #262931;
+    min-height: 0px;
+    box-shadow: none;
+}
+#header {
+    box-shadow: none;
+    background-color: #262931;
+    position: relative;
+    z-index: 100;
+}
+#header-container {
+    padding-bottom: 5px;
+    display: none !important;
+    box-shadow: none;
+}
+#header .header-bar {
+    background: #262931;
+}
+div#maintoolbar {
+    display: none !important;
+}
+/* text in output area (i.e. print some_list) */
+div.output_html {color: #1e2429;}
+
+/* Formatting code in text, code*/
+.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
+  border: 1px #a4b8cb solid;
+  color: #a4b8cb;
+  background-color: #303845 !important;
+  align-content: left !important;
+}
+.navbar-default {
+    background-color: #262931;
+    border-color: #262931;
+}
+#menubar .navbar {
+    border-top: 1px;
+    border-radius: 0 0 2px 2px;
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #8997b0;
+    font-size: 14pt;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+    background-color: rgba(53, 108, 180, .5);
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #ffffff;
+    background-color: rgba(53, 108, 180, .5);
+}
+.btn {
+    color: #8997b0;
+    background: #262931;
+    font-size: 12pt;
+    font-weight: normal;
+    border: 0 none !important;
+    box-shadow: none !important;
+    text-shadow: none;
+    vertical-align: 0px;
+}
+
+.btn-group > .btn-mini {
+    color: #8997b0;
+    background: #262931;
+    font-size: 11pt;
+    font-weight: normal;
+    border: 0 none !important;
+    box-shadow: none !important;
+    text-shadow: none;
+}
+.btn:hover {
+    color: #2c85f7;
+    background: #262931;
+    background-color: #262931;
+    background-image: none;
+}
+.btn-group > .btn-mini:hover {
+    color: #2c85f7;
+    background: #262931;
+    background-color: #262931;
+    background-image: none;
+}
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ipython_tooltip {
+    border: 2px solid #3572C6;
+    box-shadow: none;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 1000;
+    background-color: #39414F;
+}
+
+.ipython_tooltip .tooltiptext pre {
+    border: 0px none;
+    border-radius: 0px;
+    background-color: #39414F;
+    color: #CFD2D9;
+}
+/* Formatting code in markdown cells */
+div.text_cell_render {
+    font-family: 'Helvetica', sans-serif;
+    background: #303845;
+    font-weight: 310;
+    color: #8997b0;
+}
+/* Formatting code in markdown cells */
+div.text_cell_render pre {
+    color: #8997b0;
+    background-color: #303845;
+}
+div.text_cell {
+    max-width: 100%;
+    color: #8997b0;
+}
+div.text_cell_render h1,
+div.text_cell_render h2,
+div.text_cell_render h3,
+div.text_cell_render h4,
+div.text_cell_render h5,
+div.text_cell_render h6 {
+    font-family: 'Helvetica', sans-serif;
+    background: #303845;
+    font-weight: 300;
+    color: #8997b0;
+    line-height: 80%;
+}
+
+/* text in output area (i.e. print some_list) */
+div.output_html {color: #a4b8cb;}
+
+/* Formatting code in text, code*/
+.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
+  border: 1px #a4b8cb solid;
+  color: #a4b8cb;
+  background-color: #39414F !important;
+  align-content: left !important;
+}
+
+button.close {
+    padding: 0px;
+    cursor: pointer;
+    background: transparent none repeat scroll 0% 0%;
+    border: 0px none;
+}
+.close {
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    color: #3572C6;
+    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
+    opacity: 0.3;
+}
+.close:hover {
+    color: #0095ff;
+    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
+    opacity: 0.9;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: 13pt;
+    line-height: 1.6;
+    color: #6ea3d4;
+    background-color: #303845;
+    background-image: none;
+    border: 1px solid rgba(53, 87, 120, 0.95);
+    border-radius: 2px;
+    box-shadow: none;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid rgba(53, 87, 120, 0.95);
+}
+.input-form-control:hover:active {
+      background-color:  rgba(53, 87, 120, 0.95);
+      selected:  rgba(53, 87, 120, 0.95);
+}
+
+span.ansiblack {color: #2b303b;}
+span.ansiblue {color: #6ea3d4;}
+span.ansigray {color: #b4b7b4;}
+span.ansigreen {color: #8fc198;}
+span.ansipurple {color: #be8fc1;}
+span.ansicyan {color: #7bc6c0;}
+span.ansiyellow {color: #DDD7A3;}
+span.ansired {color: #DB797C;}
+
+div.output_stderr {background-color: #DB797C;}
+div.output_stderr pre {color: #C6CAD2;}
+
+.cm-s-ipython.CodeMirror {background: #303845; color: #CECAD2; font-size:13pt !important;}
+.cm-s-ipython div.CodeMirror-selected {background: #3C4555 !important;}
+.cm-s-ipython .CodeMirror-gutters {background: #39414F; border: 0px; border-radius:0px;}
+.cm-s-ipython .CodeMirror-linenumber {color: #5A647B !important; font-size: 11pt;}
+.cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
+.cm-s-ipython span.cm-comment {color: #6F7998; font-style: italic !important;}
+.cm-s-ipython span.cm-atom {color: #D8A3F9;}
+.cm-s-ipython span.cm-number {color: #FFAD8B;}
+.cm-s-ipython span.cm-property {color: #83BDFF;}
+.cm-s-ipython span.cm-attribute {color: #E08D90;}
+.cm-s-ipython span.cm-keyword {color: #D8A3F9; font-weight: normal;}
+.cm-s-ipython span.cm-string {color: #8DD39A; font-weight: normal;}
+.cm-s-ipython span.cm-operator {color: #83BDFF; font-weight: normal;}
+.cm-s-ipython span.cm-builtin {color: #F98E93; font-weight: normal;}
+.cm-s-ipython span.cm-boolean {color: #F98E93;}
+.cm-s-ipython span.cm-variable {color: #CECAD2;}
+.cm-s-ipython span.cm-variable-2 {color: #F98E93;}
+
+.cm-s-ipython span.cm-def {color: #83BDFF; font-weight: normal;}
+.cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .3) !important;}
+.cm-s-ipython span.cm-tag {color: #v;}
+.cm-s-ipython span.cm-link {color: #F98E93;}
+.cm-s-ipython span.cm-storage {color: #D8A3F9;}
+.cm-s-ipython span.cm-entity {color: #F98E93;}
+.cm-s-ipython span.cm-class {color: #EFE9B4;}
+.cm-s-ipython span.cm-support {color: #83BDFF;}
+.cm-s-ipython span.cm-qualifier {color: #83BDFF;}
+.cm-s-ipython span.cm-property {color: #83BDFF;}
+
+
+
+div.CodeMirror span.CodeMirror-matchingbracket { color: #eeeeee; background: rgba(53, 108, 180, .75) !important ; }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #eeeeee; background: rgba(191, 97, 106, .65) !important ; }
+.cm-s-ipython .CodeMirror-matchingbracket { color: #eeeeee; background: rgba(53, 108, 180, .75)  !important; }
+.cm-s-ipython .CodeMirror-nonmatchingbracket { color: #eeeeee; background: rgba(191, 97, 106, .65) !important; }
+
+
+div.cell { border: medium solid #262931; padding: 0px; border-radius: 0px; }
+div.cell.selected { border: medium solid #3572C6; padding: 0px; border-radius: 0px; }
+.edit_mode div.cell.selected {border: medium solid rgba(53, 108, 180, .45) !important; padding: 0px; border-radius: 0px; }
+div.cell.edit_mode {border: medium solid rgba(53, 108, 180, .45) !important; padding: 0px; border-radius: 0px;}
+
+div.prompt {
+    padding: 0.3em;
+    margin: 0px;
+    font-family: monospace;
+    text-align: left;
+    line-height: 1.21429em;
+    min-width: 13ex;
+    font-size: 9.5pt;
+}
+
+div.input_area {
+    margin-bottom: 0px;
+    border: 0px;
+    border-radius: 0px;
+}
+/*Input and output cells formatting*/
+div.prompt.input_prompt {
+    font-family: 'Hack', monospace;
+    border-right: 2px solid rgba(53, 108, 180, .4);
+    font-weight: bold;
+    font-size: 9.5pt;
+    color: #5A647B;
+    background-color: #303845;
+    width: 1em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+div.prompt.output_prompt {
+    font-family: 'Hack', monospace;
+    font-weight: bold;
+    background-color: #39414F;
+    color: #39414F;
+    font-size: 9.5pt;
+    width: 1em;
+    margin-bottom: 8px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+div.out_prompt_overlay.prompt {
+    font-family: 'Hack', monospace;
+    font-weight: bold;
+    font-size: 9.5pt;
+    width: 1em;
+    margin-bottom: 8px;
+    background-color: #39414F;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+div.out_prompt_overlay.prompt:hover {
+    font-family: 'Hack', monospace;
+    font-weight: bold;
+    font-size: 9.5pt;
+    width: 1em;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background-color: #39414F;
+    box-shadow: #303845 2px 2px 6px 4px inset;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+div.output_wrapper {
+    background-color:#39414F;
+    margin-bottom: 0em;
+    margin-top: 0em;
+    border: 0px;
+}
+div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
+    padding-top: 1em;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: #39414F;
+    color: #CFD2D9;
+}
+
+div.output_area pre {
+    color: #CFD2D9;
+    font-size: 12pt;
+}
