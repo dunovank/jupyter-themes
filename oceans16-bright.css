@@ -396,26 +396,26 @@ div.output_stderr pre {color: #C6CAD2;}
 .cm-s-ipython span.cm-comment {color: #6F7998; font-style: italic !important;}
 .cm-s-ipython span.cm-atom {color: #D8A3F9;}
 .cm-s-ipython span.cm-number {color: #FFAD8B;}
-.cm-s-ipython span.cm-property {color: #83BDFF;}
-.cm-s-ipython span.cm-attribute {color: #E08D90;}
+.cm-s-ipython span.cm-property {color: #59BAFF;}
+.cm-s-ipython span.cm-attribute {color: #FF9095;}
 .cm-s-ipython span.cm-keyword {color: #D8A3F9; font-weight: normal;}
 .cm-s-ipython span.cm-string {color: #8DD39A; font-weight: normal;}
-.cm-s-ipython span.cm-operator {color: #83BDFF; font-weight: normal;}
-.cm-s-ipython span.cm-builtin {color: #F98E93; font-weight: normal;}
-.cm-s-ipython span.cm-boolean {color: #F98E93;}
+.cm-s-ipython span.cm-operator {color: #59BAFF; font-weight: normal;}
+.cm-s-ipython span.cm-builtin {color: #FF9095; font-weight: normal;}
+.cm-s-ipython span.cm-boolean {color: #FF9095;}
 .cm-s-ipython span.cm-variable {color: #CECAD2;}
-.cm-s-ipython span.cm-variable-2 {color: #F98E93;}
+.cm-s-ipython span.cm-variable-2 {color: #FF9095;}
 
-.cm-s-ipython span.cm-def {color: #83BDFF; font-weight: normal;}
+.cm-s-ipython span.cm-def {color: #59BAFF; font-weight: normal;}
 .cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .3) !important;}
-.cm-s-ipython span.cm-tag {color: #v;}
-.cm-s-ipython span.cm-link {color: #F98E93;}
+.cm-s-ipython span.cm-tag {color: #59BAFF;}
+.cm-s-ipython span.cm-link {color: #FF9095;}
 .cm-s-ipython span.cm-storage {color: #D8A3F9;}
-.cm-s-ipython span.cm-entity {color: #F98E93;}
-.cm-s-ipython span.cm-class {color: #EFE9B4;}
-.cm-s-ipython span.cm-support {color: #83BDFF;}
-.cm-s-ipython span.cm-qualifier {color: #83BDFF;}
-.cm-s-ipython span.cm-property {color: #83BDFF;}
+.cm-s-ipython span.cm-entity {color: #FF9095;}
+.cm-s-ipython span.cm-class {color: #F4ECA9;}
+.cm-s-ipython span.cm-support {color: #59BAFF;}
+.cm-s-ipython span.cm-qualifier {color: #59BAFF;}
+.cm-s-ipython span.cm-property {color: #59BAFF;}
 
 
 
