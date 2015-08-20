@@ -1,7 +1,7 @@
 ## Theme-ify your Jupyter Notebooks!
 
 ###Oceans16 Notebook
-Oceans16 theme is a take on the popular the Ocean Dark IPyNB theme ([Nikhil Sonnad](https://github.com/nsonnad/base16-ipython-notebook)).
+Oceans16 theme is a take on the popular Ocean Dark IPyNB theme ([Nikhil Sonnad](https://github.com/nsonnad/base16-ipython-notebook)).
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/oceans16_nb.png?raw=true)
 
 ###Grade3 Notebook
@@ -18,7 +18,7 @@ Bright variant of Oceans16 theme
 ###Grade3 Syntax
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/grade3.png?raw=true)
 
-[__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) font (.ttf) included in Fonts dir"
+[__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) &  [__Hack__](https://github.com/chrissimpkins/Hack) fonts (.ttf) included in Fonts dir"
 
 ## Pick one and install
 ```sh

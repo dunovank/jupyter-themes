@@ -436,10 +436,9 @@ div.prompt {
     font-family: monospace;
     text-align: left;
     line-height: 1.21429em;
-    min-width: 13ex;
+    min-width: 11ex;
     font-size: 9.5pt;
 }
-
 div.input_area {
     margin-bottom: 0px;
     border: 0px;
@@ -457,7 +456,6 @@ div.prompt.input_prompt {
     padding-bottom: 0px;
     margin-bottom: 0px;
 }
-
 div.prompt.output_prompt {
     font-family: 'Hack', monospace;
     font-weight: bold;
@@ -476,23 +474,22 @@ div.out_prompt_overlay.prompt {
     width: 1em;
     margin-bottom: 8px;
     background-color: #39414F;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
 }
 div.out_prompt_overlay.prompt:hover {
     font-family: 'Hack', monospace;
     font-weight: bold;
-    font-size: 9.5pt;
+    font-size: 9pt;
     width: 1em;
-    border-radius: 4px;
+    border-radius: 2px;
     margin-bottom: 8px;
     background-color: #39414F;
     box-shadow: #303845 2px 2px 6px 4px inset;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
 }
-
 div.output_wrapper {
     background-color:#39414F;
     margin-bottom: 0em;
@@ -508,8 +505,16 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     background-color: #39414F;
     color: #CFD2D9;
 }
-
 div.output_area pre {
     color: #CFD2D9;
     font-size: 12pt;
+}
+div.output_subarea {
+    overflow-x: auto;
+    padding: 1.0em;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    flex: 1;
+    max-width: calc(100% - 14ex);
 }
