@@ -20,6 +20,15 @@ Bright variant of Oceans16 theme
 
 [__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) &  [__Hack__](https://github.com/chrissimpkins/Hack) fonts (.ttf) included in Fonts dir"
 
+###Instructions for Restoring the Toolbar
+By default, these themes hide the toolbar. If you find the notebook toolbar useful, you can restore it by commenting out (or permanently deleting) the following lines of code in the css file (around lines 20 - 40 depending on which theme you install)
+
+```css
+div#maintoolbar {
+display: none !important;
+}
+```
+
 ## Pick one and install
 ```sh
 # oceans16

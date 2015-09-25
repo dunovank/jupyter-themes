@@ -23,8 +23,18 @@ div#ipython_notebook {display: none;}
 .list_container {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
 .breadcrumb>li {text-shadow:0 0px 0; color:#8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt}
 .list_container a {color: #8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
-
 .item_icon {color: #2c85f7;}
+
+
+/*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+*****************************************
+ COMMENT THIS LINE OUT TO RESTORE TOOLBAR
+*****************************************
+ <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
+
+div#maintoolbar {
+    display: none !important;
+}
 
 div.list_container a:hover {color: #eeeeee;}
 .list_header {
@@ -37,8 +47,9 @@ div.list_container :hover {
 }
 div.notebook_list_header {
       background: #262931;
-
 }
+
+/* PANELS // LISTS // DROPDOWN MENUS*/
 .list_container > div {
     border-bottom: 1px solid rgba(53, 87, 120, 0.55);
     font-size: 12pt;
@@ -202,9 +213,6 @@ body {
 }
 #header .header-bar {
     background: #262931;
-}
-div#maintoolbar {
-    display: none !important;
 }
 /* text in output area (i.e. print some_list) */
 div.output_html {color: #1e2429;}
