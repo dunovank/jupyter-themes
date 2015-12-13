@@ -5,9 +5,10 @@ Author: miraculixx at github.com
 import argparse
 from glob import glob
 import os
+import sys
 
 INSTALL_PATH = '~/.ipython/{profile}/static/custom/'
-THEMES_PATH = os.path.dirname(os.path.abspath(__file__))
+THEMES_PATH = os.path.expanduser('~/.jupyter-themes')
 DEFAULT_PROFILE = 'profile_default' 
 
 def get_themes():
@@ -83,6 +84,7 @@ def main():
     args = parser.parse_args()
     if args.list:
         themes = get_themes()
+        print "Themes in %s" % THEMES_PATH
         print '\n'.join(themes)
         exit(0)
     if args.theme:
