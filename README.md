@@ -40,15 +40,16 @@ $ pip install git+https://git@github.com:dunovank/jupyter-themes.git
 ```sh
 # list themes
 $ jupyter-theme -l
+Themes in ~/.jupyter-themes
 grade3
 oceans16
 ansi-colors
 oceans16-bright
 # install a theme without toolbar
-jupyter-theme -t grade3
+$ jupyter-theme -t grade3
 # install a theme with toolbar enabled
-jupyter-theme -T -t grade3
+$ jupyter-theme -T -t grade3
 # reset to default
- jupyter-theme -r
+$ jupyter-theme -r
 ```
 #### mmmm so theme-y...
