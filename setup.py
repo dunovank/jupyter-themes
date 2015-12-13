@@ -32,7 +32,7 @@ setup(
     ],
     entry_points={
       'console_scripts': [
-        'jupyter-theme = themeselect:main',
+        'jupyter-theme = jupyterthemes:main',
     ],
 }
 )
