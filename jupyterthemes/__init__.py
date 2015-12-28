@@ -41,7 +41,7 @@ def install_path(profile=None, jupyter=True):
               install_path(profile=profile, jupyter=False)
     return actual_path
 
-def install_theme(name, profile=None, toolbar=False, jupyter=True):
+def install_theme(name, profile=None, toolbar=False, jupyter=True, verbose=1):
     """ copy given theme to theme.css and import css in custom.css """
     from sh import cp  # @UnresolvedImport (annotation for pydev)
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
@@ -52,8 +52,10 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
     customcss_path = '%s/custom.css' % target_path
     cp(source_path, themecss_path)
     cp(source_path, customcss_path)
+
+    if verbose:
+        print "Installing %s at %s" % (name, target_path)
     # -- check if theme import is already there, otherwise add it
-    print "Installing %s at %s" % (name, target_path)
     with open('%s/custom.css' % target_path, 'r+a') as customcss:
         if not 'theme.css' in ' '.join(customcss.readlines()):
             customcss.seek(0, os.SEEK_END)
@@ -68,10 +70,10 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
             themefile.seek(0)
             themefile.writelines(lines)
             themefile.truncate()
-    elif not jupyter:
+    elif not jupyter or verbose:
         print "Toolbar is disabled. Set -T to enable"
 
-def reset_default(profile=None, jupyter=True):
+def reset_default(profile=None, jupyter=True, verbose=1):
     """ remove theme.css import """
     actual_path = install_path(profile, jupyter)
     from sh import cp  # @UnresolvedImport (annotation for pydev)
@@ -84,7 +86,7 @@ def reset_default(profile=None, jupyter=True):
           os.remove(old)
     except Exception:
           pass
-    if not jupyter:
+    if not jupyter or verbose:
         print "Reset theme for profile %s at %s" % (profile or DEFAULT_PROFILE,
                                                 actual_path)
 
@@ -118,9 +120,9 @@ def main():
             print "Theme %s not found. Available: %s" % (args.theme,
                                                          ' '.join(themes))
             exit(1)
-        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=args.jupyter)
-        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=False)
+        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=args.jupyter, verbose=0)
+        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=False, verbose=1)
         exit(0)
     if args.reset:
-        reset_default(profile=args.profile, jupyter=args.jupyter)
-        reset_default(profile=args.profile, jupyter=False)
+        reset_default(profile=args.profile, jupyter=args.jupyter, verbose=0)
+        reset_default(profile=args.profile, jupyter=False, verbose=1)
