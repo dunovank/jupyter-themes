@@ -70,7 +70,7 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True, verbose=1):
             themefile.seek(0)
             themefile.writelines(lines)
             themefile.truncate()
-    elif not jupyter or verbose:
+    elif verbose:
         print "Toolbar is disabled. Set -T to enable"
 
 def reset_default(profile=None, jupyter=True, verbose=1):
@@ -86,7 +86,7 @@ def reset_default(profile=None, jupyter=True, verbose=1):
           os.remove(old)
     except Exception:
           pass
-    if not jupyter or verbose:
+    if verbose:
         print "Reset theme for profile %s at %s" % (profile or DEFAULT_PROFILE,
                                                 actual_path)
 
