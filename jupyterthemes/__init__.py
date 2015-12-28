@@ -69,7 +69,7 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
 def reset_default(profile=None, jupyter=True):
     """ remove theme.css import """
     actual_path = install_path(profile, jupyter)
-    cp('%s/custom.css' % actual_path, '%s/custom_old.css' % actual_path))
+    cp('%s/custom.css' % actual_path, '%s/custom_old.css' % actual_path)
     os.remove('%s/custom.css' % actual_path)
     if not jupyter:
         print "Reset theme for profile %s at %s" % (profile or DEFAULT_PROFILE,
