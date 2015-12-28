@@ -8,31 +8,39 @@ import os
 import sys
 
 INSTALL_PATH = '~/.ipython/{profile}/static/custom/'
+INSTALL_JPATH = '~/.jupyter/custom/'
+
 THEMES_PATH = os.path.expanduser('~/.jupyter-themes')
-DEFAULT_PROFILE = 'profile_default' 
+DEFAULT_PROFILE = 'profile_default'
 
 def get_themes():
     """ return list of available themes """
     path = THEMES_PATH
-    themes = [os.path.basename(theme).replace('.css', '') 
+    themes = [os.path.basename(theme).replace('.css', '')
               for theme in glob('%s/*.css' % path)]
     return themes
 
-def install_path(profile=None):
+def install_path(profile=None, jupyter=True):
     """ return install path for profile, exits if profile does not exists """
-    profile = profile or DEFAULT_PROFILE 
-    actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
-    actual_path = actual_path.format(profile=profile)
+
+    if jupyter:
+          actual_path = os.path.expanduser(os.path.join(INSTALL_JPATH))
+          return actual_path
+    else:
+          actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
+          profile = profile or DEFAULT_PROFILE
+          actual_path = actual_path.format(profile=profile)
     if not os.path.exists(actual_path):
-        print "Profile %s does not exist at %s" % (profile, actual_path) 
+        print "Profile %s does not exist at %s" % (profile, actual_path)
         exit(1)
     return actual_path
 
-def install_theme(name, profile=None, toolbar=False):
+def install_theme(name, profile=None, toolbar=False, jupyter=True):
     """ copy given theme to theme.css and import css in custom.css """
     from sh import cp  # @UnresolvedImport (annotation for pydev)
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
-    target_path = install_path(profile)
+
+    target_path = install_path(profile, jupyter)
     # -- install theme
     themecss_path = '%s/theme.css' % target_path
     cp(source_path, themecss_path)
@@ -47,38 +55,41 @@ def install_theme(name, profile=None, toolbar=False):
         print "Enabling toolbar"
         with open(themecss_path, 'rs+w') as themefile:
             # TODO do some proper css rewrite
-            lines = (line.replace('div#maintoolbar', 'div#maintoolbar_active') 
+            lines = (line.replace('div#maintoolbar', 'div#maintoolbar_active')
                                   for line in themefile.readlines())
             themefile.seek(0)
             themefile.writelines(lines)
             themefile.truncate()
     else:
         print "Toolbar is disabled. Set -T to enable"
-          
-def reset_default(profile=None):
+
+def reset_default(profile=None, jupyter=True):
     """ remove theme.css import """
-    actual_path = install_path(profile)
+    actual_path = install_path(profile, jupyter)
     with open('%s/custom.css' % actual_path, 'r+w') as customcss:
-        lines = (line for line in customcss.readlines() 
+        lines = (line for line in customcss.readlines()
                  if 'theme.css' not in line)
         customcss.seek(0)
         customcss.writelines(lines)
         customcss.truncate()
-    print "Reset theme for profile %s at %s" % (profile or DEFAULT_PROFILE, 
+    print "Reset theme for profile %s at %s" % (profile or DEFAULT_PROFILE,
                                                 actual_path)
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-t', "--theme", action='store', 
+    parser.add_argument('-t', "--theme", action='store',
                         help="the name of the theme to install")
-    parser.add_argument('-l', "--list", action='store_true', 
+    parser.add_argument('-l', "--list", action='store_true',
                         help="list available themes")
-    parser.add_argument('-r', "--reset", action='store_true', 
+    parser.add_argument('-r', "--reset", action='store_true',
                         help="reset to default theme")
     parser.add_argument('-T', "--toolbar", action='store_true',
-                        default=False, 
+                        default=False,
                         help="if specified will enable the toolbar")
-    parser.add_argument('-p', "--profile", action='store', 
+    parser.add_argument('-J', "--jupyter", action='store_true',
+                        default=True,
+                        help="install for jupyter (ipython 4.X+)")
+    parser.add_argument('-p', "--profile", action='store',
                         default=DEFAULT_PROFILE,
                         help="set the profile, defaults to %s" % DEFAULT_PROFILE)
     args = parser.parse_args()
@@ -90,11 +101,10 @@ def main():
     if args.theme:
         themes = get_themes()
         if args.theme not in themes:
-            print "Theme %s not found. Available: %s" % (args.theme, 
+            print "Theme %s not found. Available: %s" % (args.theme,
                                                          ' '.join(themes))
             exit(1)
-        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar) 
+        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=args.jupyter)
         exit(0)
     if args.reset:
-        reset_default(profile=args.profile)
-        
+        reset_default(profile=args.profile, jupyter=args.jupyter)
