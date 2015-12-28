@@ -43,7 +43,6 @@ $ jupyter-theme -l
 Themes in ~/.jupyter-themes
 grade3
 oceans16
-ansi-colors
 oceans16-bright
 
 # install theme (-t) for ipython/jupyter version > 3.x (-J)
