@@ -72,18 +72,18 @@ def install_theme(name, profile=None, toolbar=False, jupyter=False):
                 # TODO do some proper css rewrite
                 lines = (line.replace('div#maintoolbar', 'div#maintoolbar_active')
                                   for line in themefile.readlines())
-              themefile.seek(0)
-              themefile.writelines(lines)
-              themefile.truncate()
+                themefile.seek(0)
+                themefile.writelines(lines)
+                themefile.truncate()
         else:
             print "Toolbar is disabled. Set -T to enable"
 
 
 def reset_default(profile=None, jupyter=False):
     """ remove theme.css import """
-    paths = install_path(profile, jupyter)
     from sh import cp  # @UnresolvedImport (annotation for pydev)
 
+    paths = install_path(profile, jupyter)
     for i, actual_path in enumerate(paths):
         old = '%s/%s.css' % (actual_path, 'custom')
         old_save = '%s/%s.css' % (actual_path, 'custom_old')
