@@ -33,7 +33,8 @@ def install_path(profile=None, jupyter=True):
           actual_path = actual_path.format(profile=profile)
           if not os.path.exists(actual_path):
               print "Profile %s does not exist at %s" % (profile, actual_path)
-              exit(1)
+              os.makedirs(actual_path)
+              #exit(1)
     return actual_path
 
 def install_theme(name, profile=None, toolbar=False, jupyter=True):
