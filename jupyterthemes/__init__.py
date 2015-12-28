@@ -25,6 +25,7 @@ def install_path(profile=None, jupyter=True):
 
     if jupyter:
           actual_path = os.path.expanduser(os.path.join(INSTALL_JPATH))
+          print actual_path
           return actual_path
     else:
           actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
@@ -33,6 +34,7 @@ def install_path(profile=None, jupyter=True):
     if not os.path.exists(actual_path):
         print "Profile %s does not exist at %s" % (profile, actual_path)
         exit(1)
+    print actual_path
     return actual_path
 
 def install_theme(name, profile=None, toolbar=False, jupyter=True):
@@ -43,7 +45,9 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
     target_path = install_path(profile, jupyter)
     # -- install theme
     themecss_path = '%s/theme.css' % target_path
+    customcss_path = '%s/custom.css' % target_path
     cp(source_path, themecss_path)
+    cp(source_path, customcss_path)
     # -- check if theme import is already there, otherwise add it
     print "Installing %s at %s" % (name, target_path)
     with open('%s/custom.css' % target_path, 'r+a') as customcss:
