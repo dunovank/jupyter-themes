@@ -6,6 +6,7 @@ import argparse
 from glob import glob
 import os
 import sys
+import subprocess
 
 INSTALL_PATH = '~/.ipython/{profile}/static/custom'
 INSTALL_JPATH = '~/.jupyter/custom'
@@ -21,74 +22,78 @@ def get_themes():
     return themes
 
 def install_path(profile=None, jupyter=True):
-    """ return install path for profile, exits if profile does not exists """
+    """ return install path for profile, creates profile if profile does not exist """
+
+    paths = []
+    if profile != None:
+    actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
+    if not 'profile_' in profile:
+          profile = 'profile_'+profile
+    profile = profile or DEFAULT_PROFILE
+    actual_path = actual_path.format(profile=profile)
+    if not os.path.exists(actual_path):
+        print "Profile %s does not exist at %s" % (profile, actual_path)
+        print "creating profile: %s" % profile
+        subprocess.call(['ipython', 'profile', 'create', profile])
+        install_path(profile=profile, jupyter=jupyter)
+    paths.append(actual_path)
 
     if jupyter:
-          actual_path = os.path.expanduser(os.path.join(INSTALL_JPATH))
-          if not os.path.exists(actual_path):
-                os.makedirs(actual_path)
-    else:
-          import subprocess
-          actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
-          if not 'profile_' in profile:
-                profile = 'profile_'+profile
-          profile = profile or DEFAULT_PROFILE
-          actual_path = actual_path.format(profile=profile)
-          if not os.path.exists(actual_path):
-              print "Profile %s does not exist at %s" % (profile, actual_path)
-              print "creating profile: %s" % profile
-              subprocess.call(['ipython', 'profile', 'create', profile])
-              install_path(profile=profile, jupyter=False)
-    return actual_path
+        actual_jpath = os.path.expanduser(os.path.join(INSTALL_JPATH))
+        if not os.path.exists(actual_jpath):
+            os.makedirs(actual_jpath)
+        paths.append(actual_jpath)
 
-def install_theme(name, profile=None, toolbar=False, jupyter=True, verbose=1):
+    return paths
+
+def install_theme(name, profile=None, toolbar=False, jupyter=False):
     """ copy given theme to theme.css and import css in custom.css """
     from sh import cp  # @UnresolvedImport (annotation for pydev)
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
 
-    target_path = install_path(profile, jupyter)
-    # -- install theme
-    themecss_path = '%s/theme.css' % target_path
-    customcss_path = '%s/custom.css' % target_path
-    cp(source_path, themecss_path)
-    cp(source_path, customcss_path)
+    paths = install_path(profile, jupyter)
+    for i, target_path in enumerate(paths):
+        # -- install theme
+        themecss_path = '%s/theme.css' % target_path
+        customcss_path = '%s/custom.css' % target_path
+        cp(source_path, themecss_path)
+        cp(source_path, customcss_path)
 
-    if verbose:
         print "Installing %s at %s" % (name, target_path)
-    # -- check if theme import is already there, otherwise add it
-    with open('%s/custom.css' % target_path, 'r+a') as customcss:
-        if not 'theme.css' in ' '.join(customcss.readlines()):
-            customcss.seek(0, os.SEEK_END)
-            customcss.write("\n@import url('theme.css');")
-    # -- enable toolbar if requested
-    if toolbar:
-        print "Enabling toolbar"
-        with open(themecss_path, 'rs+w') as themefile:
-            # TODO do some proper css rewrite
-            lines = (line.replace('div#maintoolbar', 'div#maintoolbar_active')
-                                  for line in themefile.readlines())
-            themefile.seek(0)
-            themefile.writelines(lines)
-            themefile.truncate()
-    elif verbose:
-        print "Toolbar is disabled. Set -T to enable"
+        # -- check if theme import is already there, otherwise add it
+        with open(customcss_path, 'r+a') as customcss:
+            if not 'theme.css' in ' '.join(customcss.readlines()):
+                customcss.seek(0, os.SEEK_END)
+                customcss.write("\n@import url('theme.css');")
 
-def reset_default(profile=None, jupyter=True, verbose=1):
+        # -- enable toolbar if requested
+        if toolbar:
+            print "Enabling toolbar"
+            with open(themecss_path, 'rs+w') as themefile:
+                # TODO do some proper css rewrite
+                lines = (line.replace('div#maintoolbar', 'div#maintoolbar_active')
+                                  for line in themefile.readlines())
+              themefile.seek(0)
+              themefile.writelines(lines)
+              themefile.truncate()
+        else:
+            print "Toolbar is disabled. Set -T to enable"
+
+
+def reset_default(profile=None, jupyter=False):
     """ remove theme.css import """
-    actual_path = install_path(profile, jupyter)
+    paths = install_path(profile, jupyter)
     from sh import cp  # @UnresolvedImport (annotation for pydev)
-    #old = '%s/custom.css' % actual_path
-    #oldsave = '%s/custom_old.css' % actual_path
-    old = '%s/%s.css' % (actual_path, 'custom')
-    old_save = '%s/%s.css' % (actual_path, 'custom_old')
-    try:
-          cp(old, old_save)
-          os.remove(old)
-    except Exception:
-          pass
-    if verbose:
-        print "Reset theme for profile %s at %s" % (profile or DEFAULT_PROFILE,
-                                                actual_path)
+
+    for i, actual_path in enumerate(paths):
+        old = '%s/%s.css' % (actual_path, 'custom')
+        old_save = '%s/%s.css' % (actual_path, 'custom_old')
+        try:
+              cp(old, old_save)
+              os.remove(old)
+              print "Reset default theme here: %s" % actual_path
+        except Exception:
+              pass
 
 def main():
     parser = argparse.ArgumentParser()
@@ -120,9 +125,7 @@ def main():
             print "Theme %s not found. Available: %s" % (args.theme,
                                                          ' '.join(themes))
             exit(1)
-        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=args.jupyter, verbose=0)
-        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=False, verbose=1)
+        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=args.jupyter)
         exit(0)
     if args.reset:
-        reset_default(profile=args.profile, jupyter=args.jupyter, verbose=0)
-        reset_default(profile=args.profile, jupyter=False, verbose=1)
+        reset_default(profile=args.profile, jupyter=args.jupyter)
