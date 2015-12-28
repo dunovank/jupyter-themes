@@ -25,7 +25,6 @@ def install_path(profile=None, jupyter=True):
     """ return install path for profile, creates profile if profile does not exist """
 
     paths = []
-    if profile != None:
     actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
     if not 'profile_' in profile:
           profile = 'profile_'+profile
