@@ -92,7 +92,7 @@ def reset_default(profile=None, jupyter=True):
               os.remove(old)
               print "Reset default theme here: %s" % actual_path
         except Exception:
-              print "Already set to default theme in %s" % actual path
+              print "Already set to default theme in %s" % actual_path
               pass
 
 def main():
