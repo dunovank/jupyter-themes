@@ -32,7 +32,7 @@ display: none !important;
 ## install jupyter-themes
 
 ```sh
-$ pip install git+https://git@github.com:dunovank/jupyter-themes.git
+$ pip install git+https://github.com/dunovank/jupyter-themes.git
 ```
 
 ## Pick a theme and install
