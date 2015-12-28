@@ -29,13 +29,27 @@ display: none !important;
 }
 ```
 
-## Pick one and install
+## install jupyter-themes
+
 ```sh
-# oceans16
-cp oceans16.css ~/.ipython/profile_default/static/custom/custom.css
-# oceans16-bright
-cp oceans16-bright.css ~/.ipython/profile_default/static/custom/custom.css
-# grade3
-cp grade3.css ~/.ipython/profile_default/static/custom/custom.css
+$ pip install git+https://git@github.com:dunovank/jupyter-themes.git
+```
+
+## Pick a theme and install
+
+```sh
+# list themes
+$ jupyter-theme -l
+Themes in ~/.jupyter-themes
+grade3
+oceans16
+ansi-colors
+oceans16-bright
+# install a theme without toolbar
+$ jupyter-theme -t grade3
+# install a theme with toolbar enabled
+$ jupyter-theme -T -t grade3
+# reset to default
+$ jupyter-theme -r
 ```
 #### mmmm so theme-y...
