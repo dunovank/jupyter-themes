@@ -7,7 +7,7 @@ from glob import glob
 import os
 import sys
 
-INSTALL_PATH = '~/.ipython/{profile}/static/custom/'
+INSTALL_PATH = '~/.ipython/{profile}/static/custom'
 INSTALL_JPATH = '~/.jupyter/custom'
 
 THEMES_PATH = os.path.expanduser('~/.jupyter-themes')
