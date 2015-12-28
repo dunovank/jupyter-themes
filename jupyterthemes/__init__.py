@@ -21,7 +21,7 @@ def get_themes():
               for theme in glob('%s/*.css' % path)]
     return themes
 
-def install_path(profile=None, jupyter=True):
+def install_path(profile=None, jupyter=False):
     """ return install path for profile, creates profile if profile does not exist """
 
     paths = []
@@ -84,7 +84,7 @@ def reset_default(profile=None, jupyter=False):
     from sh import cp  # @UnresolvedImport (annotation for pydev)
 
     paths = install_path(profile, jupyter)
-    for i, actual_path in enumerate(paths):
+    for actual_path in paths:
         old = '%s/%s.css' % (actual_path, 'custom')
         old_save = '%s/%s.css' % (actual_path, 'custom_old')
         try:
