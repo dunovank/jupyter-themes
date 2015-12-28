@@ -45,11 +45,13 @@ grade3
 oceans16
 ansi-colors
 oceans16-bright
-# install a theme without toolbar
+# install theme (-t) for ipython/jupyter version > 4.x (-J)
+$ jupyter-theme -J -t grade3
+# install a theme (-t) without toolbar
 $ jupyter-theme -t grade3
-# install a theme with toolbar enabled
+# install a theme (-t) with toolbar (-T) enabled
 $ jupyter-theme -T -t grade3
-# reset to default
+# reset (-r) to default
 $ jupyter-theme -r
 ```
 #### mmmm so theme-y...

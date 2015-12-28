@@ -25,16 +25,15 @@ def install_path(profile=None, jupyter=True):
 
     if jupyter:
           actual_path = os.path.expanduser(os.path.join(INSTALL_JPATH))
-          print actual_path
-          return actual_path
+          if not os.path.exists(actual_path):
+                os.makedirs(actual_path)
     else:
           actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
           profile = profile or DEFAULT_PROFILE
           actual_path = actual_path.format(profile=profile)
-    if not os.path.exists(actual_path):
-        print "Profile %s does not exist at %s" % (profile, actual_path)
-        exit(1)
-    print actual_path
+          if not os.path.exists(actual_path):
+              print "Profile %s does not exist at %s" % (profile, actual_path)
+              exit(1)
     return actual_path
 
 def install_theme(name, profile=None, toolbar=False, jupyter=True):
@@ -76,7 +75,8 @@ def reset_default(profile=None, jupyter=True):
         customcss.seek(0)
         customcss.writelines(lines)
         customcss.truncate()
-    print "Reset theme for profile %s at %s" % (profile or DEFAULT_PROFILE,
+    if not jupyter:
+        print "Reset theme for profile %s at %s" % (profile or DEFAULT_PROFILE,
                                                 actual_path)
 
 def main():
@@ -97,6 +97,7 @@ def main():
                         default=DEFAULT_PROFILE,
                         help="set the profile, defaults to %s" % DEFAULT_PROFILE)
     args = parser.parse_args()
+
     if args.list:
         themes = get_themes()
         print "Themes in %s" % THEMES_PATH
