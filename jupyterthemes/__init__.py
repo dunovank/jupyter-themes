@@ -71,10 +71,15 @@ def reset_default(profile=None, jupyter=True):
     """ remove theme.css import """
     actual_path = install_path(profile, jupyter)
     from sh import cp  # @UnresolvedImport (annotation for pydev)
-    old = '%s/custom.css' % actual_path
-    oldsave = '%s/custom_old.css' % actual_path
-    cp(old, oldsave)
-    os.remove(old)
+    #old = '%s/custom.css' % actual_path
+    #oldsave = '%s/custom_old.css' % actual_path
+    old = glob('%s/%s.css' % (actual_path, 'custom'))[0]
+    old_save = glob('%s/%s.css' % (actual_path, 'custom_old'))[0]
+    try:
+          cp(old, old_save)
+          os.remove(old)
+    except Exception:
+          pass
     if not jupyter:
         print "Reset theme for profile %s at %s" % (profile or DEFAULT_PROFILE,
                                                 actual_path)
