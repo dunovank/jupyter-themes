@@ -87,7 +87,7 @@ def main():
                         default=False,
                         help="if specified will enable the toolbar")
     parser.add_argument('-J', "--jupyter", action='store_true',
-                        default=True,
+                        default=False,
                         help="install for jupyter (ipython 4.X+)")
     parser.add_argument('-p', "--profile", action='store',
                         default=DEFAULT_PROFILE,
