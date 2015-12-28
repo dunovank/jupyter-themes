@@ -45,13 +45,22 @@ grade3
 oceans16
 ansi-colors
 oceans16-bright
-# install theme (-t) for ipython/jupyter version > 4.x (-J)
+
+# install theme (-t) for ipython/jupyter version > 3.x (-J)
 $ jupyter-theme -J -t grade3
+
 # install a theme (-t) without toolbar
 $ jupyter-theme -t grade3
+
 # install a theme (-t) with toolbar (-T) enabled
 $ jupyter-theme -T -t grade3
-# reset (-r) to default
+
+# reset (-r) to default for ipython/jupyter version <= 2.x
+# renames custom.css in in ~/.ipython/{profile}/static/custom/ to custom_old.css
 $ jupyter-theme -r
+
+# reset (-r) to default for ipython/jupyter version > 3.x (-J)
+# renames custom.css in ~/.jupyter/custom/ (and ~/.ipython/../custom) to custom_old.css
+$ jupyter-theme -J -r
 ```
 #### mmmm so theme-y...
