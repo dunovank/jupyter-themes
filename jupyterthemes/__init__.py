@@ -73,8 +73,8 @@ def reset_default(profile=None, jupyter=True):
     from sh import cp  # @UnresolvedImport (annotation for pydev)
     #old = '%s/custom.css' % actual_path
     #oldsave = '%s/custom_old.css' % actual_path
-    old = glob('%s/%s.css' % (actual_path, 'custom'))[0]
-    old_save = glob('%s/%s.css' % (actual_path, 'custom_old'))[0]
+    old = glob('%s/%s.css' % (actual_path, 'custom'))
+    old_save = glob('%s/%s.css' % (actual_path, 'custom_old'))
     try:
           cp(old, old_save)
           os.remove(old)
