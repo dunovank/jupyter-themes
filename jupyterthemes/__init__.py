@@ -28,13 +28,17 @@ def install_path(profile=None, jupyter=True):
           if not os.path.exists(actual_path):
                 os.makedirs(actual_path)
     else:
+          import subprocess
           actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
+          if not 'profile_' in profile:
+                profile = 'profile_'+profile
           profile = profile or DEFAULT_PROFILE
           actual_path = actual_path.format(profile=profile)
           if not os.path.exists(actual_path):
               print "Profile %s does not exist at %s" % (profile, actual_path)
-              os.makedirs(actual_path)
-              #exit(1)
+              print "creating profile: %s" % profile
+              subprocess.call(['ipython', 'profile', 'create', profile])
+              install_path(profile=profile, jupyter=False)
     return actual_path
 
 def install_theme(name, profile=None, toolbar=False, jupyter=True):
