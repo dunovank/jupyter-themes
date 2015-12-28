@@ -21,7 +21,7 @@ def get_themes():
               for theme in glob('%s/*.css' % path)]
     return themes
 
-def install_path(profile=None, jupyter=False):
+def install_path(profile=None, jupyter=True):
     """ return install path for profile, creates profile if profile does not exist """
 
     paths = []
@@ -45,7 +45,7 @@ def install_path(profile=None, jupyter=False):
 
     return paths
 
-def install_theme(name, profile=None, toolbar=False, jupyter=False):
+def install_theme(name, profile=None, toolbar=False, jupyter=True):
     """ copy given theme to theme.css and import css in custom.css """
     from sh import cp  # @UnresolvedImport (annotation for pydev)
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
@@ -79,7 +79,7 @@ def install_theme(name, profile=None, toolbar=False, jupyter=False):
             print "Toolbar is disabled. Set -T to enable"
 
 
-def reset_default(profile=None, jupyter=False):
+def reset_default(profile=None, jupyter=True):
     """ remove theme.css import """
     from sh import cp  # @UnresolvedImport (annotation for pydev)
 
@@ -92,6 +92,7 @@ def reset_default(profile=None, jupyter=False):
               os.remove(old)
               print "Reset default theme here: %s" % actual_path
         except Exception:
+              print "Already set to default theme in %s" % actual path
               pass
 
 def main():
