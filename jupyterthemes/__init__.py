@@ -105,6 +105,8 @@ def main():
                                                          ' '.join(themes))
             exit(1)
         install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=args.jupyter)
+        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=False)
         exit(0)
     if args.reset:
         reset_default(profile=args.profile, jupyter=args.jupyter)
+        reset_default(profile=args.profile, jupyter=False)
