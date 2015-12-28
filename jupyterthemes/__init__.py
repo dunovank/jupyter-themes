@@ -63,18 +63,14 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
             themefile.seek(0)
             themefile.writelines(lines)
             themefile.truncate()
-    else:
+    elif not jupyter:
         print "Toolbar is disabled. Set -T to enable"
 
 def reset_default(profile=None, jupyter=True):
     """ remove theme.css import """
     actual_path = install_path(profile, jupyter)
-    with open('%s/custom.css' % actual_path, 'r+w') as customcss:
-        lines = (line for line in customcss.readlines()
-                 if 'theme.css' not in line)
-        customcss.seek(0)
-        customcss.writelines(lines)
-        customcss.truncate()
+    cp('%s/custom.css' % actual_path, '%s/custom_old.css' % actual_path))
+    os.remove('%s/custom.css' % actual_path)
     if not jupyter:
         print "Reset theme for profile %s at %s" % (profile or DEFAULT_PROFILE,
                                                 actual_path)
