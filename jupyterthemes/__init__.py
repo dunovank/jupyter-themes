@@ -8,7 +8,7 @@ from glob import glob
 import os
 import sys
 import subprocess
-ipython_HOME = '~/.ipython/{profile}
+ipython_HOME = '~/.ipython/{profile}'
 INSTALL_PATH = '~/.ipython/{profile}/static/custom'
 INSTALL_JPATH = '~/.jupyter/custom'
 
