@@ -1,6 +1,7 @@
 """
 Juypiter theme installer
 Author: miraculixx at github.com
+# MODIFIED by dunovank at github.com
 """
 import argparse
 from glob import glob
@@ -26,9 +27,9 @@ def install_path(profile=None, jupyter=True):
 
     paths = []
     actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
+    profile = profile or DEFAULT_PROFILE
     if not 'profile_' in profile:
           profile = 'profile_'+profile
-    profile = profile or DEFAULT_PROFILE
     actual_path = actual_path.format(profile=profile)
     if not os.path.exists(actual_path):
         print "Profile %s does not exist at %s" % (profile, actual_path)
