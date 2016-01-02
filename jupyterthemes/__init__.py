@@ -24,13 +24,15 @@ def get_themes():
 
 def install_path(profile=None, jupyter=True):
     """ return install path for profile, creates profile if profile does not exist """
-
+    print profile
     paths = []
     actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
     if not 'profile_' in profile:
           profile = 'profile_'+profile
+    print profile
     profile = profile or DEFAULT_PROFILE
     actual_path = actual_path.format(profile=profile)
+    print actual_path
     if not os.path.exists(actual_path):
         print "Profile %s does not exist at %s" % (profile, actual_path)
         print "creating profile: %s" % profile
@@ -50,8 +52,8 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
     """ copy given theme to theme.css and import css in custom.css """
     from sh import cp  # @UnresolvedImport (annotation for pydev)
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
-
     paths = install_path(profile, jupyter)
+
     for i, target_path in enumerate(paths):
         # -- install theme
         themecss_path = '%s/theme.css' % target_path
