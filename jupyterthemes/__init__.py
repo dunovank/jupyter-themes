@@ -13,7 +13,7 @@ INSTALL_PATH = '~/.ipython/{profile}/static/custom'
 INSTALL_JPATH = '~/.jupyter/custom'
 
 THEMES_PATH = os.path.expanduser('~/.jupyter-themes')
-DEFAULT_PROFILE = 'profile_default'
+DEFAULT_PROFILE = 'default'
 
 def get_themes():
     """ return list of available themes """
@@ -29,7 +29,7 @@ def install_path(profile=None, jupyter=True):
     actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
     print profile
     profile = profile or DEFAULT_PROFILE
-    actual_path = actual_path.format(profile=profile)
+    actual_path = actual_path.format(profile='profile_'+profile)
     print actual_path
     if not os.path.exists(actual_path):
         print "Profile %s does not exist at %s" % (profile, actual_path)
