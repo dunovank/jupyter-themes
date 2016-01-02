@@ -27,8 +27,6 @@ def install_path(profile=None, jupyter=True):
     print profile
     paths = []
     actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
-    if not 'profile_' in profile:
-          profile = 'profile_'+profile
     print profile
     profile = profile or DEFAULT_PROFILE
     actual_path = actual_path.format(profile=profile)
@@ -75,7 +73,6 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
                 # TODO do some proper css rewrite
                 lines = (line.replace('div#maintoolbar', 'div#maintoolbar_active')
                                   for line in themefile.readlines())
-                print lines
                 themefile.seek(0)
                 themefile.writelines(lines)
                 themefile.truncate()
