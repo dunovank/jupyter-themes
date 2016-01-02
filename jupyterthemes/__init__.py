@@ -8,7 +8,7 @@ from glob import glob
 import os
 import sys
 import subprocess
-ipython_HOME = '~/.ipython/{profile}'
+IPHOME_PATH = '~/.ipython/{profile}'
 INSTALL_PATH = '~/.ipython/{profile}/static/custom'
 INSTALL_JPATH = '~/.jupyter/custom'
 
@@ -27,6 +27,7 @@ def install_path(profile=None, jupyter=True):
     print profile
     paths = []
     actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
+    actual_home = os.path.expanduser(os.path.join(IPHOME_PATH))
     print profile
     profile = profile or DEFAULT_PROFILE
     actual_path = actual_path.format(profile='profile_'+profile)
@@ -35,9 +36,9 @@ def install_path(profile=None, jupyter=True):
         print "Profile %s does not exist at %s" % (profile, actual_path)
         print "creating profile: %s" % profile
         subprocess.call(['ipython', 'profile', 'create', profile])
-        ipython_HOME = os.path.expanduser(os.path.join(ipython_HOME)).format(profile=profile)
-        os.makedirs('/'.join([ipython_HOME, 'static']))
-        os.makedirs('/'.join([ipython_HOME, 'static', 'custom']))
+        if not os.path.exists('/'.join([actual_home, 'static'])):
+             os.makedirs('/'.join([actual_home, 'static']))
+             os.makedirs('/'.join([actual_home, 'static', 'custom']))
         install_path(profile=profile, jupyter=jupyter)
     paths.append(actual_path)
 
