@@ -75,6 +75,7 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
                 # TODO do some proper css rewrite
                 lines = (line.replace('div#maintoolbar', 'div#maintoolbar_active')
                                   for line in themefile.readlines())
+                print lines
                 themefile.seek(0)
                 themefile.writelines(lines)
                 themefile.truncate()
