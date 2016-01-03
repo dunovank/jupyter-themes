@@ -26,25 +26,26 @@ def install_path(profile=None, jupyter=True):
     """ return install path for profile, creates profile if profile does not exist """
     import shutil
     paths = []
-
-    home_path = os.path.expanduser(os.path.join(IPY_HOME))
     profile = profile or DEFAULT_PROFILE
+    home_path = os.path.expanduser(os.path.join(IPY_HOME))
     profile_path = home_path.format(profile='profile_'+profile)
 
     if not os.path.exists(profile_path):
+        custom_path = '/'.join([profile_path, 'static', 'custom'])
         print "Profile %s does not exist at %s" % (profile, home_path)
         print "creating profile: %s" % profile
         subprocess.call(['ipython', 'profile', 'create', profile])
         try:
              shutil.copytree('/'.join([home_path, 'profile_default', 'static/']), '/'.join([profile_path, 'static/']))
         except Exception:
-             if not os.path.exists('/'.join([profile_path, 'static', 'custom'])):
+             if not os.path.exists(custom_path):
                    os.makedirs('/'.join([profile_path, 'static']))
                    os.makedirs('/'.join([profile_path, 'static', 'custom']))
         else:
              print "No ipython config files (~/.ipython/profile_default/static/custom/)"
              print "try again after running ipython, closing & refreshing your terminal session"
-    paths.append(actual_path)
+             
+    paths.append(custom_path)
 
     if jupyter:
         actual_jpath = os.path.expanduser(os.path.join(INSTALL_JPATH))
