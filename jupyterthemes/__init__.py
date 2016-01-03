@@ -24,21 +24,24 @@ def get_themes():
 
 def install_path(profile=None, jupyter=True):
     """ return install path for profile, creates profile if profile does not exist """
-    print profile
+    import shutil
     paths = []
-    actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
-    actual_home = os.path.expanduser(os.path.join(IPHOME_PATH))
-    print profile
+
+    actual_path = os.path.expanduser(os.path.join(IPHOME_PATH))
+    #actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
+    #actual_home = os.path.expanduser(os.path.join(IPHOME_PATH))
     profile = profile or DEFAULT_PROFILE
     actual_path = actual_path.format(profile='profile_'+profile)
-    print actual_path
+
     if not os.path.exists(actual_path):
         print "Profile %s does not exist at %s" % (profile, actual_path)
         print "creating profile: %s" % profile
         subprocess.call(['ipython', 'profile', 'create', profile])
-        if not os.path.exists('/'.join([actual_home, 'static'])):
-             os.makedirs('/'.join([actual_home, 'static']))
-             os.makedirs('/'.join([actual_home, 'static', 'custom']))
+        '/'.join([actual_path, 'static', 'custom'])
+        if not os.path.exists('/'.join([actual_path, 'static', 'custom'])):
+             os.makedirs('/'.join([actual_path, 'static']))
+             os.makedirs('/'.join([actual_path, 'static', 'custom']))
+
         install_path(profile=profile, jupyter=jupyter)
     paths.append(actual_path)
 
