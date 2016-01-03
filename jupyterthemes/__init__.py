@@ -8,8 +8,8 @@ from glob import glob
 import os
 import sys
 import subprocess
-IPHOME_PATH = '~/.ipython/{profile}'
-INSTALL_PATH = '~/.ipython/{profile}/static/custom'
+IPY_HOME = '~/.ipython/{profile}'
+INSTALL_IPATH = '~/.ipython/{profile}/static/custom'
 INSTALL_JPATH = '~/.jupyter/custom'
 
 THEMES_PATH = os.path.expanduser('~/.jupyter-themes')
@@ -27,22 +27,23 @@ def install_path(profile=None, jupyter=True):
     import shutil
     paths = []
 
-    actual_path = os.path.expanduser(os.path.join(IPHOME_PATH))
-    #actual_path = os.path.expanduser(os.path.join(INSTALL_PATH))
-    #actual_home = os.path.expanduser(os.path.join(IPHOME_PATH))
+    home_path = os.path.expanduser(os.path.join(IPY_HOME))
     profile = profile or DEFAULT_PROFILE
-    actual_path = actual_path.format(profile='profile_'+profile)
+    profile_path = actual_path.format(profile='profile_'+profile)
 
-    if not os.path.exists(actual_path):
-        print "Profile %s does not exist at %s" % (profile, actual_path)
+    if not os.path.exists(profile_path):
+        print "Profile %s does not exist at %s" % (profile, home_path)
         print "creating profile: %s" % profile
         subprocess.call(['ipython', 'profile', 'create', profile])
-        '/'.join([actual_path, 'static', 'custom'])
-        if not os.path.exists('/'.join([actual_path, 'static', 'custom'])):
-             os.makedirs('/'.join([actual_path, 'static']))
-             os.makedirs('/'.join([actual_path, 'static', 'custom']))
-
-        install_path(profile=profile, jupyter=jupyter)
+        try:
+             shutil.copytree('/'.join([home_path, 'profile_default', 'static/']), '/'.join([profile_path, 'static/']))
+        except Exception:
+             if not os.path.exists('/'.join([profile_path, 'static', 'custom'])):
+                   os.makedirs('/'.join([profile_path, 'static']))
+                   os.makedirs('/'.join([profile_path, 'static', 'custom']))
+        else:
+             print "No ipython config files (~/.ipython/profile_default/static/custom/)"
+             print "try again after running ipython, closing & refreshing your terminal session"
     paths.append(actual_path)
 
     if jupyter:
