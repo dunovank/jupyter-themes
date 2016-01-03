@@ -29,7 +29,7 @@ def install_path(profile=None, jupyter=True):
 
     home_path = os.path.expanduser(os.path.join(IPY_HOME))
     profile = profile or DEFAULT_PROFILE
-    profile_path = actual_path.format(profile='profile_'+profile)
+    profile_path = home_path.format(profile='profile_'+profile)
 
     if not os.path.exists(profile_path):
         print "Profile %s does not exist at %s" % (profile, home_path)
