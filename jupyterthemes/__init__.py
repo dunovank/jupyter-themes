@@ -71,7 +71,7 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
 
         print("Installing %s at %s" % (name, target_path))
         # -- check if theme import is already there, otherwise add it
-        with open(customcss_path, 'r+a') as customcss:
+        with open(customcss_path, 'r+') as customcss:
             if not 'theme.css' in ' '.join(customcss.readlines()):
                 customcss.seek(0, os.SEEK_END)
                 customcss.write("\n@import url('theme.css');")
@@ -79,7 +79,7 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
         # -- enable toolbar if requested
         if toolbar:
             print("Enabling toolbar")
-            with open(themecss_path, 'rs+w') as themefile:
+            with open(themecss_path, 'r+') as themefile:
                 # TODO do some proper css rewrite
                 lines = (line.replace('div#maintoolbar', 'div#maintoolbar_active')
                                   for line in themefile.readlines())
