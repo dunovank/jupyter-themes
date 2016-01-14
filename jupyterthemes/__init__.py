@@ -7,11 +7,11 @@ import argparse
 from glob import glob
 import os
 import sys
+import shutil
 import subprocess
 IPY_HOME = '~/.ipython/{profile}'
 INSTALL_IPATH = '~/.ipython/{profile}/static/custom'
 INSTALL_JPATH = '~/.jupyter/custom'
-
 THEMES_PATH = os.path.expanduser('~/.jupyter-themes')
 DEFAULT_PROFILE = 'default'
 
@@ -24,7 +24,7 @@ def get_themes():
 
 def install_path(profile=None, jupyter=True):
     """ return install path for profile, creates profile if profile does not exist """
-    import shutil
+
     paths = []
     profile = profile or DEFAULT_PROFILE
     home_path = os.path.expanduser(os.path.join(IPY_HOME))
@@ -57,7 +57,7 @@ def install_path(profile=None, jupyter=True):
 
 def install_theme(name, profile=None, toolbar=False, jupyter=True):
     """ copy given theme to theme.css and import css in custom.css """
-    from sh import cp  # @UnresolvedImport (annotation for pydev)
+    #from sh import cp  # @UnresolvedImport (annotation for pydev)
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path(profile, jupyter)
 
@@ -65,8 +65,10 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
         # -- install theme
         themecss_path = '%s/theme.css' % target_path
         customcss_path = '%s/custom.css' % target_path
-        cp(source_path, themecss_path)
-        cp(source_path, customcss_path)
+        #cp(source_path, themecss_path)
+        #cp(source_path, customcss_path)
+        shutil.copy(source_path, themecss_path)
+        shutil.copy(source_path, customcss_path)
 
         print "Installing %s at %s" % (name, target_path)
         # -- check if theme import is already there, otherwise add it
@@ -91,14 +93,15 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
 
 def reset_default(profile=None, jupyter=True):
     """ remove theme.css import """
-    from sh import cp  # @UnresolvedImport (annotation for pydev)
+    #from sh import cp  # @UnresolvedImport (annotation for pydev)
 
     paths = install_path(profile, jupyter)
     for actual_path in paths:
         old = '%s/%s.css' % (actual_path, 'custom')
         old_save = '%s/%s.css' % (actual_path, 'custom_old')
         try:
-              cp(old, old_save)
+              shutil.copy(old, old_save)
+              #cp(old, old_save)
               os.remove(old)
               print "Reset default theme here: %s" % actual_path
         except Exception:
