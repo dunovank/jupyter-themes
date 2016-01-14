@@ -9,11 +9,13 @@ import os
 import sys
 import shutil
 import subprocess
+
 IPY_HOME = '~/.ipython/{profile}'
 INSTALL_IPATH = '~/.ipython/{profile}/static/custom'
 INSTALL_JPATH = '~/.jupyter/custom'
 THEMES_PATH = os.path.expanduser('~/.jupyter-themes')
 DEFAULT_PROFILE = 'default'
+
 
 def get_themes():
     """ return list of available themes """
@@ -21,6 +23,7 @@ def get_themes():
     themes = [os.path.basename(theme).replace('.css', '')
               for theme in glob('%s/*.css' % path)]
     return themes
+
 
 def install_path(profile=None, jupyter=True):
     """ return install path for profile, creates profile if profile does not exist """
@@ -32,8 +35,9 @@ def install_path(profile=None, jupyter=True):
     custom_path = '/'.join([profile_path, 'static', 'custom'])
 
     if not os.path.exists(profile_path):
-        print "Profile %s does not exist at %s" % (profile, home_path)
+
         print "creating profile: %s" % profile
+        print("Profile %s does not exist at %s" % (profile, home_path))
         subprocess.call(['ipython', 'profile', 'create', profile])
         try:
              shutil.copytree('/'.join([home_path, 'profile_default', 'static/']), '/'.join([profile_path, 'static/']))
@@ -44,9 +48,7 @@ def install_path(profile=None, jupyter=True):
         else:
              print "No ipython config files (~/.ipython/profile_default/static/custom/)"
              print "try again after running ipython, closing & refreshing your terminal session"
-
     paths.append(custom_path)
-
     if jupyter:
         actual_jpath = os.path.expanduser(os.path.join(INSTALL_JPATH))
         if not os.path.exists(actual_jpath):
@@ -57,7 +59,7 @@ def install_path(profile=None, jupyter=True):
 
 def install_theme(name, profile=None, toolbar=False, jupyter=True):
     """ copy given theme to theme.css and import css in custom.css """
-    #from sh import cp  # @UnresolvedImport (annotation for pydev)
+
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path(profile, jupyter)
 
@@ -65,8 +67,6 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
         # -- install theme
         themecss_path = '%s/theme.css' % target_path
         customcss_path = '%s/custom.css' % target_path
-        #cp(source_path, themecss_path)
-        #cp(source_path, customcss_path)
         shutil.copy(source_path, themecss_path)
         shutil.copy(source_path, customcss_path)
 
@@ -93,15 +93,12 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
 
 def reset_default(profile=None, jupyter=True):
     """ remove theme.css import """
-    #from sh import cp  # @UnresolvedImport (annotation for pydev)
-
     paths = install_path(profile, jupyter)
     for actual_path in paths:
         old = '%s/%s.css' % (actual_path, 'custom')
         old_save = '%s/%s.css' % (actual_path, 'custom_old')
         try:
               shutil.copy(old, old_save)
-              #cp(old, old_save)
               os.remove(old)
               print "Reset default theme here: %s" % actual_path
         except Exception:
@@ -135,8 +132,8 @@ def main():
     if args.theme:
         themes = get_themes()
         if args.theme not in themes:
-            print "Theme %s not found. Available: %s" % (args.theme,
-                                                         ' '.join(themes))
+            print("Theme %s not found. Available: %s" % (args.theme,
+                                                         ' '.join(themes)))
             exit(1)
         install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, jupyter=args.jupyter)
         exit(0)
