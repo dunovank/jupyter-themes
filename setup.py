@@ -35,9 +35,6 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    install_requires=[
-        'sh', # shell commands
-    ],
     entry_points={
       'console_scripts': [
         'jupyter-theme = jupyterthemes:main',
