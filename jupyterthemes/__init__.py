@@ -36,7 +36,7 @@ def install_path(profile=None, jupyter=True):
 
     if not os.path.exists(profile_path):
 
-        print "creating profile: %s" % profile
+        print("creating profile: %s" % profile)
         print("Profile %s does not exist at %s" % (profile, home_path))
         subprocess.call(['ipython', 'profile', 'create', profile])
         try:
@@ -46,8 +46,8 @@ def install_path(profile=None, jupyter=True):
                    os.makedirs('/'.join([profile_path, 'static']))
                    os.makedirs('/'.join([profile_path, 'static', 'custom']))
         else:
-             print "No ipython config files (~/.ipython/profile_default/static/custom/)"
-             print "try again after running ipython, closing & refreshing your terminal session"
+             print("No ipython config files (~/.ipython/profile_default/static/custom/)")
+             print("try again after running ipython, closing & refreshing your terminal session")
     paths.append(custom_path)
     if jupyter:
         actual_jpath = os.path.expanduser(os.path.join(INSTALL_JPATH))
@@ -70,17 +70,17 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
         shutil.copy(source_path, themecss_path)
         shutil.copy(source_path, customcss_path)
 
-        print "Installing %s at %s" % (name, target_path)
+        print("Installing %s at %s" % (name, target_path))
         # -- check if theme import is already there, otherwise add it
-        with open(customcss_path, 'r+a') as customcss:
+        with open(customcss_path, 'a+') as customcss:
             if not 'theme.css' in ' '.join(customcss.readlines()):
                 customcss.seek(0, os.SEEK_END)
                 customcss.write("\n@import url('theme.css');")
 
         # -- enable toolbar if requested
         if toolbar:
-            print "Enabling toolbar"
-            with open(themecss_path, 'rs+w') as themefile:
+            print("Enabling toolbar")
+            with open(themecss_path, 'w+') as themefile:
                 # TODO do some proper css rewrite
                 lines = (line.replace('div#maintoolbar', 'div#maintoolbar_active')
                                   for line in themefile.readlines())
@@ -88,7 +88,7 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
                 themefile.writelines(lines)
                 themefile.truncate()
         else:
-            print "Toolbar is disabled. Set -T to enable"
+            print("Toolbar is disabled. Set -T to enable")
 
 
 def reset_default(profile=None, jupyter=True):
@@ -100,9 +100,9 @@ def reset_default(profile=None, jupyter=True):
         try:
               shutil.copy(old, old_save)
               os.remove(old)
-              print "Reset default theme here: %s" % actual_path
+              print("Reset default theme here: %s" % actual_path)
         except Exception:
-              print "Already set to default theme in %s" % actual_path
+              print("Already set to default theme in %s" % actual_path)
               pass
 
 def main():
@@ -126,8 +126,8 @@ def main():
 
     if args.list:
         themes = get_themes()
-        print "Themes in %s" % THEMES_PATH
-        print '\n'.join(themes)
+        print("Themes in %s" % THEMES_PATH)
+        print('\n'.join(themes))
         exit(0)
     if args.theme:
         themes = get_themes()
