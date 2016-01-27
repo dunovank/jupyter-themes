@@ -173,6 +173,7 @@ body {
 }
 .notebook_app #header {
     box-shadow: none !important;
+    background-color: #f9f9f9;
 }
 #notebook-container {
     padding: 15px;

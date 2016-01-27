@@ -85,8 +85,8 @@ require(["base/js/events"], function (events) {
 
             IPython.load_extensions('notify');
             IPython.Cell.options_default.cm_config.lineWrapping = true;
-            IPython.CodeCell.options_default['cm_config']['indentUnit'] = 6;
-            IPython.CodeCell.options_default['cm_config']['tabSize'] = 6;
+            IPython.CodeCell.options_default['cm_config']['indentUnit'] = 4;
+            IPython.CodeCell.options_default['cm_config']['tabSize'] = 4;
 
       });
 });
