@@ -47,46 +47,46 @@
  * @class customjs
  * @static
  */
- // Example for custom.js
+// Example for custom.js
 
 // we want strict javascript that fails on ambiguous syntax
 "using strict";
 // activate extensions only after Notebook is initialized
 
-require(["base/js/events"], function (events) {
+require(["base/js/events"], function(events) {
 
-      $([IPython.events]).on("app_initialized.NotebookApp", function () {
-                /*
-                * all exentensions from IPython-notebook-extensions, uncomment to activate
-                */
-            IPython.keyboard_manager.command_shortcuts.add_shortcut('cmd-k', function (event) {
-                  IPython.notebook.move_cell_up();
-                  return false;
-            });
+    $([IPython.events]).on("app_initialized.NotebookApp", function() {
+        /*
+        IPython.keyboard_manager.command_shortcuts.add_shortcut('cmd-k', function (event) {
+              IPython.notebook.move_cell_up();
+              return false;
+        });
 
-            IPython.keyboard_manager.command_shortcuts.add_shortcut('cmd-j', function (event) {
-                  IPython.notebook.move_cell_down();
-                  return false;
-            });
+        IPython.keyboard_manager.command_shortcuts.add_shortcut('cmd-j', function (event) {
+              IPython.notebook.move_cell_down();
+              return false;
+        });
+        */
+        IPython.tab_as_tab_everywhere = function(use_tabs) {
+            if (use_tabs === undefined) {
+                use_tabs = true;
+            }
 
-            IPython.tab_as_tab_everywhere = function(use_tabs) {
-                  if (use_tabs === undefined) {
-                  use_tabs = true;
-                  }
+            // apply setting to all current CodeMirror instances
+            IPython.notebook.get_cells().map(
+                function(c) {
+                    return c.code_mirror.options.indentWithTabs = use_tabs;
+                }
+            );
+            // make sure new CodeMirror instances created in the future also use this setting
+            CodeMirror.defaults.indentWithTabs = use_tabs;
+        };
 
-                  // apply setting to all current CodeMirror instances
-                  IPython.notebook.get_cells().map(
-                  function(c) {  return c.code_mirror.options.indentWithTabs=use_tabs;  }
-                  );
-                  // make sure new CodeMirror instances created in the future also use this setting
-                  CodeMirror.defaults.indentWithTabs=use_tabs;
+        IPython.load_extensions('notify');
+        IPython.Cell.options_default.cm_config.lineWrapping = true;
+        IPython.CodeCell.options_default['cm_config']['indentUnit'] = 4;
+        IPython.CodeCell.options_default['cm_config']['tabSize'] = 4;
+        IPython.CodeCell.options_default['cm_config']['lineWrapping'] = true;
 
-                  };
-
-            IPython.load_extensions('notify');
-            IPython.Cell.options_default.cm_config.lineWrapping = true;
-            IPython.CodeCell.options_default['cm_config']['indentUnit'] = 4;
-            IPython.CodeCell.options_default['cm_config']['tabSize'] = 4;
-
-      });
+    });
 });

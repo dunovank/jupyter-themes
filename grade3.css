@@ -413,8 +413,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: 
 
 div.cell { border: medium solid #f9f9f9; padding: 0px; border-radius: 0px; }
 div.cell.selected { border: medium solid #ffa43b; padding: 0px; border-radius: 0px; }
-.edit_mode div.cell.selected {border: medium solid rgba(53, 114, 198, .3) !important; padding: 0px; border-radius: 0px; }
-div.cell.edit_mode {border: medium solid rgba(53, 114, 198, .3) !important; padding: 0px; border-radius: 0px;}
+.edit_mode div.cell.selected {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px; }
+div.cell.edit_mode {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px;}
 
 div.prompt {
     padding: 0.3em;

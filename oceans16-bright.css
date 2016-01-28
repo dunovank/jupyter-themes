@@ -437,8 +437,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #eeeeee; background: 
 
 div.cell { border: medium solid #262931; padding: 0px; border-radius: 0px; }
 div.cell.selected { border: medium solid #3572C6; padding: 0px; border-radius: 0px; }
-.edit_mode div.cell.selected {border: medium solid rgba(53, 108, 180, .45) !important; padding: 0px; border-radius: 0px; }
-div.cell.edit_mode {border: medium solid rgba(53, 108, 180, .45) !important; padding: 0px; border-radius: 0px;}
+.edit_mode div.cell.selected {border: medium solid #39485b !important; padding: 0px; border-radius: 0px; }
+div.cell.edit_mode {border: medium solid #39485b !important; padding: 0px; border-radius: 0px;}
 
 div.prompt {
     padding: 0.3em;
