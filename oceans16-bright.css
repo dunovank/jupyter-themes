@@ -46,7 +46,7 @@ div.list_container :hover {
     color: #eeeeee;
 }
 div.notebook_list_header {
-      background: #262931;
+    background: #262931;
 }
 
 /* PANELS // LISTS // DROPDOWN MENUS*/
@@ -215,6 +215,7 @@ body {
 #header .header-bar {
     background: #262931;
 }
+
 /* text in output area (i.e. print some_list) */
 div.output_html {color: #1e2429;}
 
