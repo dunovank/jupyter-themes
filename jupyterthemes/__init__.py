@@ -11,10 +11,11 @@ import argparse
 import subprocess
 from glob import glob
 
-IPY_HOME = '~/.ipython/{profile}'
-INSTALL_IPATH = '~/.ipython/{profile}/static/custom'
-INSTALL_JPATH = '~/.jupyter/custom'
-THEMES_PATH = os.path.expanduser('~/.jupyter-themes')
+HOME = os.path.expanduser('~')
+IPY_HOME = HOME + '/.ipython/{profile}'
+INSTALL_IPATH = HOME + '/.ipython/{profile}/static/custom'
+INSTALL_JPATH = HOME + '/.jupyter/custom'
+THEMES_PATH = HOME + '/.jupyter-themes'
 DEFAULT_PROFILE = 'default'
 
 
