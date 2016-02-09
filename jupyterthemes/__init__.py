@@ -88,9 +88,9 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
                 # TODO do some proper css rewrite
                 lines = (line.replace('div#maintoolbar {display: none !important;}', '/*div#maintoolbar {display: none !important;}*/')
                          for line in cssfile.readlines())
-                cssfile.seek(0)
+                cssfile.seek(27)
                 cssfile.writelines(lines)
-                cssfile.truncate()
+                #cssfile.truncate()
         else:
             print("Toolbar is disabled. Set -T to enable")
 
