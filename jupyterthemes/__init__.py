@@ -92,7 +92,7 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
                     for line in old_file:
                         cssfile.write(line.replace('div#maintoolbar {display: none !important;}', '/*div#maintoolbar {display: none !important;}*/'))
             os.close(fh)
-            os.remove(file_path)
+            os.remove(customcss_path)
             shutil.move(abs_path, customcss_path)
 
         else:
