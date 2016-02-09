@@ -29,15 +29,12 @@ $ pip install git+https://github.com/dunovank/jupyter-themes.git
 ## Pick a theme and install
 
 ```sh
-# list themes
+# list themes (located in ~/.jupyter-themes)
 $ jupyter-theme -l
-Themes in ~/.jupyter-themes
-grade3
-oceans16
-oceans16-bright
 
-# install theme (-t) for ipython/jupyter version > 3.x (-J)
-$ jupyter-theme -J -t grade3
+# install theme (-t) for jupyter nb
+# theme names: oceans16 | oceans16-bright | grade3
+$ jupyter-theme -t grade3
 
 # install a theme (-t) without toolbar
 $ jupyter-theme -t grade3
@@ -45,12 +42,7 @@ $ jupyter-theme -t grade3
 # install a theme (-t) with toolbar (-T) enabled
 $ jupyter-theme -T -t grade3
 
-# reset (-r) to default for ipython/jupyter version <= 2.x
-# renames custom.css in in ~/.ipython/{profile}/static/custom/ to custom_old.css
+# reset (-r) to default for jupyter theme
 $ jupyter-theme -r
-
-# reset (-r) to default for ipython/jupyter version > 3.x (-J)
-# renames custom.css in ~/.jupyter/custom/ (and ~/.ipython/../custom) to custom_old.css
-$ jupyter-theme -J -r
 ```
 #### mmmm so theme-y...
