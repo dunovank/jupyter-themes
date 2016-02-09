@@ -84,13 +84,13 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
         # -- enable toolbar if requested
         if toolbar:
             print("Enabling toolbar")
-            with open(themecss_path, 'w+') as themefile:
+            with open(customcss_path, 'w+') as cssfile:
                 # TODO do some proper css rewrite
                 lines = (line.replace('div#maintoolbar {display: none !important;}', '/*div#maintoolbar {display: none !important;}*/')
-                         for line in themefile.readlines())
-                themefile.seek(0)
-                themefile.writelines(lines)
-                themefile.truncate()
+                         for line in cssfile.readlines())
+                cssfile.seek(0)
+                cssfile.writelines(lines)
+                cssfile.truncate()
         else:
             print("Toolbar is disabled. Set -T to enable")
 
