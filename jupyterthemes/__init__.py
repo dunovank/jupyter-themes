@@ -85,7 +85,6 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
         if toolbar:
             from tempfile import mkstemp
             print("Enabling toolbar")
-
             fh, abs_path = mkstemp()
             with open(abs_path, 'w') as cssfile:
                 with open(customcss_path) as old_file:

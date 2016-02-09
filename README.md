@@ -20,16 +20,6 @@ Bright variant of Oceans16 theme
 
 [__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) &  [__Hack__](https://github.com/chrissimpkins/Hack) fonts (.ttf) included in Fonts dir"
 
-###Instructions for Restoring the Toolbar
-
-*Currently the command line arguments for restoring the toolbar are broken. Working on a fix, but in the meantime, please use this method to restore the toolbar*
-
-By default, these themes hide the toolbar. If you find the notebook toolbar useful, you can restore it by commenting out (or permanently deleting) the following lines of code in the css file (on line 27)
-
-```css
-div#maintoolbar {display: none !important;}
-```
-
 ## install jupyter-themes
 
 ```sh
