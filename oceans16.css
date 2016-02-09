@@ -1,13 +1,7 @@
 /*
     Name:       Oceans16 Dark
     Author:     Kyle Dunovan (http://github.com/dunovank)
-    Original Color Scheme by Gadzhi Kharkharov (https://github.com/kkga/spacegray)
-    CodeMirror & NB Style adapted from panditarevolution (https://github.com/panditarevolution/ipythonNotebook_customs)
-    CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
-    Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
 */
-
-
 
 body {background-color: #262931;}
 
@@ -17,7 +11,6 @@ div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.promp
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
 
-
 /* INTRO PAGE */
 .toolbar_info {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
 .list_container {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
@@ -25,15 +18,13 @@ div#ipython_notebook {display: none;}
 .list_container a {color: #8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
 .item_icon {color: #2c85f7;}
 
-/*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
-*****************************************
- COMMENT THIS LINE OUT TO RESTORE TOOLBAR
-*****************************************
- <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
+ /*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+ *****************************************
+  COMMENT THIS LINE OUT TO RESTORE TOOLBAR
+ *****************************************
+  <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
 
-div#maintoolbar {
-    display: none !important;
-}
+ div#maintoolbar {display: none !important;}
 
 
 div.list_container a:hover {color: #eeeeee;}

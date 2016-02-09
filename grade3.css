@@ -11,7 +11,6 @@ div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.promp
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
 
-
 /* INTRO PAGE */
 .toolbar_info {color: #4c4c4c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
 .list_container {color: #4c4c4c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
@@ -25,9 +24,7 @@ div#ipython_notebook {display: none;}
 *****************************************
  <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
 
-div#maintoolbar {
-    display: none !important;
-}
+div#maintoolbar {display: none !important;}
 
 div.list_container a:hover {color: #ee8713;}
 div#tree-selector.btn-group.dropdown {

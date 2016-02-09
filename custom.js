@@ -56,17 +56,17 @@
 require(["base/js/events"], function(events) {
 
     $([IPython.events]).on("app_initialized.NotebookApp", function() {
-        /*
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('cmd-k', function (event) {
+        
+        IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-k', function (event) {
               IPython.notebook.move_cell_up();
               return false;
         });
 
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('cmd-j', function (event) {
+        IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-j', function (event) {
               IPython.notebook.move_cell_down();
               return false;
         });
-        */
+
         IPython.tab_as_tab_everywhere = function(use_tabs) {
             if (use_tabs === undefined) {
                 use_tabs = true;
