@@ -83,14 +83,18 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
 
         # -- enable toolbar if requested
         if toolbar:
+            from tempfile import mkstemp
             print("Enabling toolbar")
-            with open(customcss_path, 'w+') as cssfile:
-                # TODO do some proper css rewrite
-                lines = (line.replace('div#maintoolbar {display: none !important;}', '/*div#maintoolbar {display: none !important;}*/')
-                         for line in cssfile.readlines())
-                cssfile.seek(27)
-                cssfile.writelines(lines)
-                #cssfile.truncate()
+
+            fh, abs_path = mkstemp()
+            with open(abs_path, 'w') as cssfile:
+                with open(customcss_path) as old_file:
+                    for line in old_file:
+                        cssfile.write(line.replace('div#maintoolbar {display: none !important;}', '/*div#maintoolbar {display: none !important;}*/'))
+            os.close(fh)
+            os.remove(file_path)
+            shutil.move(abs_path, customcss_path)
+
         else:
             print("Toolbar is disabled. Set -T to enable")
 
