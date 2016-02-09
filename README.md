@@ -36,9 +36,6 @@ $ jupyter-theme -l
 # theme names: oceans16 | oceans16-bright | grade3
 $ jupyter-theme -t grade3
 
-# install a theme (-t) without toolbar
-$ jupyter-theme -t grade3
-
 # install a theme (-t) with toolbar (-T) enabled
 $ jupyter-theme -T -t grade3
 
