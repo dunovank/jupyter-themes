@@ -10,6 +10,7 @@ import shutil
 import argparse
 import subprocess
 from glob import glob
+from tempfile import mkstemp
 
 HOME = os.path.expanduser('~')
 IPY_HOME = HOME + '/.ipython/{profile}'
@@ -17,7 +18,9 @@ INSTALL_IPATH = HOME + '/.ipython/{profile}/static/custom'
 INSTALL_JPATH = HOME + '/.jupyter/custom'
 THEMES_PATH = HOME + '/.jupyter-themes'
 DEFAULT_PROFILE = 'default'
-
+DEFAULT_FONTSIZE=13
+DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
+DEFAULT_FONTSIZE_STRING=".cm-s-ipython.CodeMirror {font-size: %dpt !important;}" % DEFAULT_FONTSIZE
 
 def get_themes():
     """ return list of available themes """
@@ -61,12 +64,12 @@ def install_path(profile=None):
     return paths
 
 
-def install_theme(name, profile=None, toolbar=False):
+def install_theme(name, profile=None, toolbar=False, fontsize=13):
     """ copy given theme to theme.css and import css in custom.css """
 
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path(profile)
-
+    FONTSIZE_STRING=".cm-s-ipython.CodeMirror {font-size: %dpt !important;}" % fontsize
     for i, target_path in enumerate(paths):
         # -- install theme
         themecss_path = '%s/theme.css' % target_path
@@ -81,21 +84,22 @@ def install_theme(name, profile=None, toolbar=False):
                 customcss.seek(0, os.SEEK_END)
                 customcss.write("\n@import url('theme.css');")
 
-        # -- enable toolbar if requested
-        if toolbar:
-            from tempfile import mkstemp
-            print("Enabling toolbar")
-            fh, abs_path = mkstemp()
-            with open(abs_path, 'w') as cssfile:
-                with open(customcss_path) as old_file:
-                    for line in old_file:
-                        cssfile.write(line.replace('div#maintoolbar {display: none !important;}', '/*div#maintoolbar {display: none !important;}*/'))
-            os.close(fh)
-            os.remove(customcss_path)
-            shutil.move(abs_path, customcss_path)
-
-        else:
-            print("Toolbar is disabled. Set -T to enable")
+        fh, abs_path = mkstemp()
+        with open(abs_path, 'w') as cssfile:
+            with open(customcss_path) as old_file:
+                for line in old_file:
+                    if toolbar:
+                        print("Enabling toolbar")
+                        # -- enable toolbar if requested
+                        RESTORE_TOOLBAR='/*'+DEFAULT_TOOLBAR_STRING+'*/'
+                        cssfile.write(line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR))
+                    else:
+                        print("Toolbar is disabled. Set -T to enable")
+                    # -- set CodeCell fontsize
+                    cssfile.write(line.replace(DEFAULT_FONTSIZE_STRING, FONTSIZE_STRING))
+        os.close(fh)
+        os.remove(customcss_path)
+        shutil.move(abs_path, customcss_path)
 
 
 def reset_default(profile=None):
@@ -115,6 +119,8 @@ def reset_default(profile=None):
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument('-f', "--fontsize", action='store',
+                        default=13, help='set the fontsize in code cells')
     parser.add_argument('-t', "--theme", action='store',
                         help="the name of the theme to install")
     parser.add_argument('-l', "--list", action='store_true',
@@ -137,10 +143,9 @@ def main():
     if args.theme:
         themes = get_themes()
         if args.theme not in themes:
-            print("Theme %s not found. Available: %s" % (args.theme,
-                                                         ' '.join(themes)))
+            print("Theme %s not found. Available: %s" % (args.theme, ' '.join(themes)))
             exit(1)
-        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar)
+        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, fontsize=args.fontsize)
         exit(0)
     if args.reset:
         reset_default(profile=args.profile)

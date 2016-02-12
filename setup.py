@@ -1,9 +1,7 @@
 from glob import glob
 import os
-
 from setuptools import setup, find_packages
 from jupyterthemes import THEMES_PATH
-
 
 README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 
