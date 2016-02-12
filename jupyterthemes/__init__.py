@@ -18,9 +18,10 @@ INSTALL_IPATH = HOME + '/.ipython/{profile}/static/custom'
 INSTALL_JPATH = HOME + '/.jupyter/custom'
 THEMES_PATH = HOME + '/.jupyter-themes'
 DEFAULT_PROFILE = 'default'
-DEFAULT_FONTSIZE='13'
+DEFAULT_FONTSIZE='12'
 DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
-DEFAULT_FONTSIZE_STRING=".cm-s-ipython.CodeMirror {font-size:%spt !important;}" % DEFAULT_FONTSIZE
+DEFAULT_FONTSIZE_STRING1=".cm-s-ipython.CodeMirror {font-size:%spt !important;}" % DEFAULT_FONTSIZE
+DEFAULT_FONTSIZE_STRING2="div.CodeMirror pre {font-size:%spt !important;}" % DEFAULT_FONTSIZE
 
 def get_themes():
     """ return list of available themes """
@@ -63,12 +64,14 @@ def install_path(profile=None):
     return paths
 
 
-def install_theme(name, profile=None, update_properties=False, toolbar=False, fontsize='13'):
+def install_theme(name, profile=None, update_properties=False, toolbar=False, fontsize='12'):
     """ copy given theme to theme.css and import css in custom.css """
 
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path(profile)
-    FONTSIZE_STRING=".cm-s-ipython.CodeMirror {font-size:%spt !important;}" % fontsize
+    FONTSIZE_STRING1=".cm-s-ipython.CodeMirror {font-size:%spt !important;}" % fontsize
+    FONTSIZE_STRING2="div.CodeMirror pre {font-size:%spt !important;}" % fontsize
+
     for i, target_path in enumerate(paths):
         # -- install theme
         themecss_path = '%s/theme.css' % target_path
@@ -92,7 +95,8 @@ def install_theme(name, profile=None, update_properties=False, toolbar=False, fo
                             RESTORE_TOOLBAR='/*'+DEFAULT_TOOLBAR_STRING+'*/'
                             cssfile.write(line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR))
                         # -- set CodeCell fontsize
-                        cssfile.write(line.replace(DEFAULT_FONTSIZE_STRING, FONTSIZE_STRING))
+                        cssfile.write(line.replace(DEFAULT_FONTSIZE_STRING1, FONTSIZE_STRING1))
+                        cssfile.write(line.replace(DEFAULT_FONTSIZE_STRING2, FONTSIZE_STRING2))
             os.close(fh)
             os.remove(customcss_path)
             shutil.move(abs_path, customcss_path)
@@ -116,7 +120,7 @@ def reset_default(profile=None):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', "--fontsize", action='store',
-                        default='13', help='set the fontsize in code cells')
+                        default='12', help='set the fontsize in code cells')
     parser.add_argument('-t', "--theme", action='store',
                         help="the name of the theme to install")
     parser.add_argument('-l', "--list", action='store_true',

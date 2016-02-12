@@ -6,7 +6,7 @@
 body {background-color: #262931;}
 
 a {color: #8997b0; font-family: 'Helvetica', sans-serif; }
-div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 12pt;}
+div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; }
 
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
@@ -416,8 +416,8 @@ div.output_stderr pre {color: #D0D4E6;}
 .cm-s-ipython span.cm-support {color: #59BAFF;}
 .cm-s-ipython span.cm-qualifier {color: #59BAFF;}
 .cm-s-ipython span.cm-property {color: #59BAFF;}
-.cm-s-ipython.CodeMirror {font-size:13pt !important;}
-
+.cm-s-ipython.CodeMirror {font-size:12pt !important;}
+div.CodeMirror pre {font-size:12pt !important;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #eeeeee; background: rgba(53, 108, 180, .75) !important ; }
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #eeeeee; background: rgba(191, 97, 106, .3) !important ; }
