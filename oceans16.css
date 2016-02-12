@@ -387,7 +387,7 @@ span.ansired {color: #DB797C;}
 div.output_stderr {background-color: #DB797C;}
 div.output_stderr pre {color: #D0D4E6;}
 
-.cm-s-ipython.CodeMirror {background: #303845; color: #D0D4E6 !important;}
+.cm-s-ipython.CodeMirror {background: #303845; color: #D0D4E6; font-size:13pt !important;}
 .cm-s-ipython div.CodeMirror-selected {background: #3C4555 !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #39414F; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #5A647B !important; font-size: 11pt;}
@@ -415,7 +415,6 @@ div.output_stderr pre {color: #D0D4E6;}
 .cm-s-ipython span.cm-support {color: #77ABE7;}
 .cm-s-ipython span.cm-qualifier {color: #77ABE7;}
 .cm-s-ipython span.cm-property {color: #77ABE7;}
-.cm-s-ipython.CodeMirror {font-size:12pt !important;}
 div.CodeMirror pre {font-size:12pt !important;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #eeeeee; background: rgba(53, 108, 180, .75) !important ; }

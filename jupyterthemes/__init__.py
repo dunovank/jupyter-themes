@@ -20,8 +20,7 @@ THEMES_PATH = HOME + '/.jupyter-themes'
 DEFAULT_PROFILE = 'default'
 DEFAULT_FONTSIZE='12'
 DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
-DEFAULT_FONTSIZE_STRING1=".cm-s-ipython.CodeMirror {font-size:%spt !important;}" % DEFAULT_FONTSIZE
-DEFAULT_FONTSIZE_STRING2="div.CodeMirror pre {font-size:%spt !important;}" % DEFAULT_FONTSIZE
+DEFAULT_FONTSIZE_STRING="div.CodeMirror pre {font-size:%spt !important;}" % DEFAULT_FONTSIZE
 
 def get_themes():
     """ return list of available themes """
@@ -69,8 +68,7 @@ def install_theme(name, profile=None, update_properties=False, toolbar=False, fo
 
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path(profile)
-    FONTSIZE_STRING1=".cm-s-ipython.CodeMirror {font-size:%spt !important;}" % fontsize
-    FONTSIZE_STRING2="div.CodeMirror pre {font-size:%spt !important;}" % fontsize
+    FONTSIZE_STRING="div.CodeMirror pre {font-size:%spt !important;}" % fontsize
 
     for i, target_path in enumerate(paths):
         # -- install theme
@@ -95,8 +93,7 @@ def install_theme(name, profile=None, update_properties=False, toolbar=False, fo
                             RESTORE_TOOLBAR='/*'+DEFAULT_TOOLBAR_STRING+'*/'
                             cssfile.write(line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR))
                         # -- set CodeCell fontsize
-                        cssfile.write(line.replace(DEFAULT_FONTSIZE_STRING1, FONTSIZE_STRING1))
-                        cssfile.write(line.replace(DEFAULT_FONTSIZE_STRING2, FONTSIZE_STRING2))
+                        cssfile.write(line.replace(DEFAULT_FONTSIZE_STRING, FONTSIZE_STRING))
             os.close(fh)
             os.remove(customcss_path)
             shutil.move(abs_path, customcss_path)
