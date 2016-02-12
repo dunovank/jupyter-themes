@@ -89,12 +89,9 @@ def install_theme(name, profile=None, toolbar=False, fontsize=13):
             with open(customcss_path) as old_file:
                 for line in old_file:
                     if toolbar:
-                        print("Enabling toolbar")
                         # -- enable toolbar if requested
                         RESTORE_TOOLBAR='/*'+DEFAULT_TOOLBAR_STRING+'*/'
                         cssfile.write(line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR))
-                    else:
-                        print("Toolbar is disabled. Set -T to enable")
                     # -- set CodeCell fontsize
                     cssfile.write(line.replace(DEFAULT_FONTSIZE_STRING, FONTSIZE_STRING))
         os.close(fh)
@@ -145,7 +142,11 @@ def main():
         if args.theme not in themes:
             print("Theme %s not found. Available: %s" % (args.theme, ' '.join(themes)))
             exit(1)
-        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, fontsize=args.fontsize)
+        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, fontsize=int(args.fontsize))
         exit(0)
+    if args.toolbar:
+        print("Enabling toolbar")
+    else:
+        print("Toolbar is disabled. Set -T to enable")
     if args.reset:
         reset_default(profile=args.profile)
