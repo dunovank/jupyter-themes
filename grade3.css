@@ -399,6 +399,8 @@ div.output_stderr pre {color: #000000;}
 .cm-s-ipython span.cm-class {color: #e22978;}
 .cm-s-ipython span.cm-support {color: #de143d;}
 .cm-s-ipython span.cm-qualifier {color: #de143d;}
+
+/* Set CodeCell font-size*/
 div.CodeMirror pre {font-size:12pt !important;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .3); !important ; }

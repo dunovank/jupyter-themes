@@ -116,10 +116,8 @@ def reset_default(profile=None):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-f', "--fontsize", action='store',
-                        default='12', help='set the fontsize in code cells')
     parser.add_argument('-t', "--theme", action='store',
-                        help="the name of the theme to install")
+                        help="name of the theme to install")
     parser.add_argument('-l', "--list", action='store_true',
                         help="list available themes")
     parser.add_argument('-r', "--reset", action='store_true',
@@ -127,6 +125,8 @@ def main():
     parser.add_argument('-T', "--toolbar", action='store_true',
                         default=False,
                         help="if specified will enable the toolbar")
+    parser.add_argument('-f', "--fontsize", action='store',
+                        default='12', help='set the CodeCell font-size')
     parser.add_argument('-p', "--profile", action='store',
                         default=DEFAULT_PROFILE,
                         help="set the profile, defaults to %s" % DEFAULT_PROFILE)
@@ -150,7 +150,6 @@ def main():
             print("Toolbar is disabled. Set -T to enable")
         if args.fontsize!=DEFAULT_FONTSIZE:
             update=True
-
         install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, fontsize=str(args.fontsize), update_properties=update)
         exit(0)
     if args.toolbar:
