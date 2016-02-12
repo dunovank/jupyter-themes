@@ -18,9 +18,9 @@ INSTALL_IPATH = HOME + '/.ipython/{profile}/static/custom'
 INSTALL_JPATH = HOME + '/.jupyter/custom'
 THEMES_PATH = HOME + '/.jupyter-themes'
 DEFAULT_PROFILE = 'default'
-DEFAULT_FONTSIZE=13
+DEFAULT_FONTSIZE='13'
 DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
-DEFAULT_FONTSIZE_STRING=".cm-s-ipython.CodeMirror {font-size: %dpt !important;}" % DEFAULT_FONTSIZE
+DEFAULT_FONTSIZE_STRING=".cm-s-ipython.CodeMirror {font-size: %spt !important;}" % DEFAULT_FONTSIZE
 
 def get_themes():
     """ return list of available themes """
@@ -44,8 +44,7 @@ def install_path(profile=None):
         print("Profile %s does not exist at %s" % (profile, home_path))
         subprocess.call(['ipython', 'profile', 'create', profile])
         try:
-            shutil.copytree(
-                '/'.join([home_path, 'profile_default', 'static/']), '/'.join([profile_path, 'static/']))
+            shutil.copytree('/'.join([home_path, 'profile_default', 'static/']), '/'.join([profile_path, 'static/']))
         except Exception:
             if not os.path.exists(custom_path):
                 os.makedirs('/'.join([profile_path, 'static']))
@@ -64,12 +63,12 @@ def install_path(profile=None):
     return paths
 
 
-def install_theme(name, profile=None, toolbar=False, fontsize=13):
+def install_theme(name, profile=None, toolbar=False, fontsize='13'):
     """ copy given theme to theme.css and import css in custom.css """
 
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path(profile)
-    FONTSIZE_STRING=".cm-s-ipython.CodeMirror {font-size: %dpt !important;}" % fontsize
+    FONTSIZE_STRING=".cm-s-ipython.CodeMirror {font-size: %spt !important;}" % fontsize
     for i, target_path in enumerate(paths):
         # -- install theme
         themecss_path = '%s/theme.css' % target_path
@@ -83,7 +82,6 @@ def install_theme(name, profile=None, toolbar=False, fontsize=13):
             if not 'theme.css' in ' '.join(customcss.readlines()):
                 customcss.seek(0, os.SEEK_END)
                 customcss.write("\n@import url('theme.css');")
-
         fh, abs_path = mkstemp()
         with open(abs_path, 'w') as cssfile:
             with open(customcss_path) as old_file:
@@ -117,7 +115,7 @@ def reset_default(profile=None):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', "--fontsize", action='store',
-                        default=13, help='set the fontsize in code cells')
+                        default='13', help='set the fontsize in code cells')
     parser.add_argument('-t', "--theme", action='store',
                         help="the name of the theme to install")
     parser.add_argument('-l', "--list", action='store_true',
@@ -140,9 +138,9 @@ def main():
     if args.theme:
         themes = get_themes()
         if args.theme not in themes:
-            print("Theme %s not found. Available: %s" % (args.theme, ' '.join(themes)))
+            print("Theme %s not found. Available: %s"%(args.theme, ' '.join(themes)))
             exit(1)
-        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, fontsize=int(args.fontsize))
+        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, fontsize=str(args.fontsize))
         exit(0)
     if args.toolbar:
         print("Enabling toolbar")
