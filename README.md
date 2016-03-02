@@ -11,14 +11,10 @@ Grade3 is a spinoff of the python syntax theme used by [nixCraft](http://www.cyb
 ###Oceans16 Syntax
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/oceans16.png?raw=true)
 
-###Oceans16-Bright Syntax
-Bright variant of Oceans16 theme
-![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/oceans16-bright.png?raw=true)
-
 ###Grade3 Syntax
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/grade3.png?raw=true)
 
-###Space-Legos Syntax
+###Space-Legos Syntax (NEW!)
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/space-legos.png?raw=true)
 
 [__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) &  [__Hack__](https://github.com/chrissimpkins/Hack) fonts (.ttf) included in Fonts dir"
@@ -36,7 +32,7 @@ $ pip install git+https://github.com/dunovank/jupyter-themes.git
 $ jupyter-theme -l
 
 # install theme (-t) for jupyter nb
-# theme names: oceans16 | oceans16-bright | grade3 | space-legos
+# theme names: oceans16 | grade3 | space-legos
 $ jupyter-theme -t grade3
 
 # install a theme (-t) with toolbar (-T) enabled
