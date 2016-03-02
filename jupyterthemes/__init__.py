@@ -18,9 +18,9 @@ INSTALL_IPATH = HOME + '/.ipython/{profile}/static/custom'
 INSTALL_JPATH = HOME + '/.jupyter/custom'
 THEMES_PATH = HOME + '/.jupyter-themes'
 DEFAULT_PROFILE = 'default'
-DEFAULT_FONTSIZE='12'
+DEFAULT_FONTSIZE='11'
 DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
-DEFAULT_FONTSIZE_STRING="div.CodeMirror pre {font-size:%spt !important;}" % DEFAULT_FONTSIZE
+DEFAULT_FONTSIZE_STRING="div.CodeMirror pre {font-size: %spt !important;}" % DEFAULT_FONTSIZE
 
 def get_themes():
     """ return list of available themes """
@@ -91,9 +91,10 @@ def install_theme(name, profile=None, update_properties=False, toolbar=False, fo
                         if toolbar:
                             # -- enable toolbar if requested
                             RESTORE_TOOLBAR='/*'+DEFAULT_TOOLBAR_STRING+'*/'
-                            cssfile.write(line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR))
+                            line = line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR)
                         # -- set CodeCell fontsize
-                        cssfile.write(line.replace(DEFAULT_FONTSIZE_STRING, FONTSIZE_STRING))
+                        line = line.replace(DEFAULT_FONTSIZE_STRING, FONTSIZE_STRING)
+                        cssfile.write(line)
             os.close(fh)
             os.remove(customcss_path)
             shutil.move(abs_path, customcss_path)

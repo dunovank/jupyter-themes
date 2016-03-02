@@ -6,7 +6,7 @@
 body {background-color: #f9f9f9;}
 
 a {color: #303030; font-family: 'Helvetica', sans-serif; }
-div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 12pt;}
+div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 11pt;}
 
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
@@ -16,14 +16,20 @@ div#ipython_notebook {display: none;}
 .list_container {color: #4c4c4c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
 .breadcrumb>li {text-shadow:0 0px 0; color:#4c4c4c; font-family: 'Helvetica', sans-serif; font-size: 12pt}
 .list_container a {color: #4c4c4c; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
-.item_icon {color: #ee8713;}
+.item_icon {color: #2c85f7;}
+.running_notebook_icon:before {
+    color: #41D79C !important;
+}
+.item_buttons .running-indicator {
+    padding-top: 4px;
+    color: #41D79C;
+}
 
 /*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
 *****************************************
- COMMENT THIS LINE OUT TO RESTORE TOOLBAR
+COMMENT THIS LINE OUT TO RESTORE TOOLBAR
 *****************************************
- <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
-
+<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
 div#maintoolbar {display: none !important;}
 
 div.list_container a:hover {color: #ee8713;}
@@ -214,7 +220,7 @@ div.output_html {color: #1e2429;}
 }
 .navbar-default .navbar-nav > li > a {
     color: #4c4c4c;
-    font-size: 14pt;
+    font-size: 13pt;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #000000;
@@ -302,7 +308,7 @@ div.text_cell_render h6 {
     background: #ececed;
     font-weight: 300;
     color: #4c4c4c;
-    line-height: 100%;
+    line-height: 90%;
 }
 
 /* text in output area (i.e. print some_list) */
@@ -361,6 +367,16 @@ button.close {
       selected: rgba(184, 184, 184, 0.75);
 }
 
+/* TOOLTIP DIMENSIONS */
+div#tooltip.ipython_tooltip {
+    max-width: 900px;
+}
+div.tooltiptext.bigtooltip {
+    overflow: auto;
+    height: 400px;
+    width: 900px;
+}
+
 span.ansiblack {color: #2b303b;}
 span.ansiblue {color: #154ba1;}
 span.ansigray {color: #b4b7b4;}
@@ -373,7 +389,7 @@ span.ansired {color: #b82a18;}
 div.output_stderr {background-color: #DB797C;}
 div.output_stderr pre {color: #000000;}
 
-.cm-s-ipython.CodeMirror {background: #ebebeb; color: #303030; font-size:13pt !important;}
+.cm-s-ipython.CodeMirror {background: #ebebeb; color: #303030;}
 .cm-s-ipython div.CodeMirror-selected {background: #D3D4D7 !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #cccccc; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #666666 !important; font-size: 11pt;}
@@ -401,7 +417,8 @@ div.output_stderr pre {color: #000000;}
 .cm-s-ipython span.cm-qualifier {color: #de143d;}
 
 /* Set CodeCell font-size*/
-div.CodeMirror pre {font-size:12pt !important;}
+div.CodeMirror pre {font-size: 11pt !important;}
+div.CodeMirror pre {line-height: 1.5 !important;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .3); !important ; }
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; }
