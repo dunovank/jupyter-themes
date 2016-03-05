@@ -521,7 +521,7 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
 }
 div.output_area pre {
     color: #CFD2D9;
-    font-size: 12pt;
+    font-size: 10pt;
 }
 div.output_subarea {
     overflow-x: auto;
