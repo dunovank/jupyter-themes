@@ -38,11 +38,8 @@ $ jupyter-theme -t grade3
 # install a theme (-t) with toolbar (-T) enabled
 $ jupyter-theme -T -t grade3
 
-# install a theme (-t) and set font-size (-fs), default value is 11
-$ jupyter-theme -fs 12 -t grade3
-
-# install a theme (-t) and set font (-f), default is Hack (see Fonts dir)
-$ jupyter-theme -f Hack -t grade3
+# ...set font (-f) and font-size (-fs), defaults are Hack and 11
+$ jupyter-theme -t grade3 -f Source-Code-Pro -fs 12
 
 # reset (-r) to default for jupyter theme
 $ jupyter-theme -r
