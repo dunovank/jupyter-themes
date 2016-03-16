@@ -18,9 +18,10 @@ INSTALL_IPATH = HOME + '/.ipython/{profile}/static/custom'
 INSTALL_JPATH = HOME + '/.jupyter/custom'
 THEMES_PATH = HOME + '/.jupyter-themes'
 DEFAULT_PROFILE = 'default'
+DEFAULT_FONT='Hack'
 DEFAULT_FONTSIZE='11'
 DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
-DEFAULT_FONTSIZE_STRING="div.CodeMirror pre {font-size: %spt !important;}" % DEFAULT_FONTSIZE
+DEFAULT_FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %spt;}" % (DEFAULT_FONT, DEFAULT_FONTSIZE)
 
 def get_themes():
     """ return list of available themes """
@@ -63,12 +64,12 @@ def install_path(profile=None):
     return paths
 
 
-def install_theme(name, profile=None, update_properties=False, toolbar=False, fontsize='12'):
+def install_theme(name, profile=None, update_properties=False, toolbar=False, fontsize='12', font='Hack'):
     """ copy given theme to theme.css and import css in custom.css """
 
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path(profile)
-    FONTSIZE_STRING="div.CodeMirror pre {font-size:%spt !important;}" % fontsize
+    FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %spt;}" % (font, fontsize)
 
     for i, target_path in enumerate(paths):
         # -- install theme
@@ -92,8 +93,8 @@ def install_theme(name, profile=None, update_properties=False, toolbar=False, fo
                             # -- enable toolbar if requested
                             RESTORE_TOOLBAR='/*'+DEFAULT_TOOLBAR_STRING+'*/'
                             line = line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR)
-                        # -- set CodeCell fontsize
-                        line = line.replace(DEFAULT_FONTSIZE_STRING, FONTSIZE_STRING)
+                        # -- set CodeCell font and fontsize
+                        line = line.replace(DEFAULT_FONT_STRING, FONT_STRING)
                         cssfile.write(line)
             os.close(fh)
             os.remove(customcss_path)
@@ -126,8 +127,10 @@ def main():
     parser.add_argument('-T', "--toolbar", action='store_true',
                         default=False,
                         help="if specified will enable the toolbar")
-    parser.add_argument('-f', "--fontsize", action='store',
+    parser.add_argument('-fs', "--fontsize", action='store',
                         default='12', help='set the CodeCell font-size')
+    parser.add_argument('-f', "--font", action='store',
+                        default='Hack', help='set the CodeCell font')
     parser.add_argument('-p', "--profile", action='store',
                         default=DEFAULT_PROFILE,
                         help="set the profile, defaults to %s" % DEFAULT_PROFILE)
@@ -151,7 +154,7 @@ def main():
             print("Toolbar is disabled. Set -T to enable")
         if args.fontsize!=DEFAULT_FONTSIZE:
             update=True
-        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, fontsize=str(args.fontsize), update_properties=update)
+        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, fontsize=str(args.fontsize), font=str(args.font), update_properties=update)
         exit(0)
     if args.toolbar:
         print("Enabling toolbar")

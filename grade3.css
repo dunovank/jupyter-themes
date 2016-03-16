@@ -166,11 +166,6 @@ body {
     color: #ee8713;
 
 }
-.CodeMirror pre {
-  font-family: 'Hack', monospace;
-  font-size: 13pt;
-}
-
 .notebook_app {
     background-color: #f9f9f9;
 }

@@ -173,14 +173,7 @@ body {
 #modal_indicator {
     float: right !important;
     color: #2c85f7;
-
 }
-
-.CodeMirror pre {
-  font-family: 'Hack', monospace;
-  font-size: 13pt;
-}
-
 .notebook_app {
     background-color: #262931;
 }
