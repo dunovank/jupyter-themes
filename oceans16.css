@@ -18,11 +18,11 @@ div#ipython_notebook {display: none;}
 .list_container a {color: #8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
 .item_icon {color: #2c85f7;}
 .running_notebook_icon:before {
-    color: #41D79C !important;
+    color: #02ac65 !important;
 }
 .item_buttons .running-indicator {
     padding-top: 4px;
-    color: #41D79C;
+    color: #02ac65;
 }
 
 /*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
