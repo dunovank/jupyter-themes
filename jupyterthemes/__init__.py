@@ -100,9 +100,6 @@ def main():
                         default='12', help='set the CodeCell font-size')
     parser.add_argument('-f', "--font", action='store',
                         default='Hack', help='set the CodeCell font')
-    parser.add_argument('-p', "--profile", action='store',
-                        default=DEFAULT_PROFILE,
-                        help="set the profile, defaults to %s" % DEFAULT_PROFILE)
     args = parser.parse_args()
 
     if args.list:

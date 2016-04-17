@@ -22,26 +22,26 @@ Grade3 is a spinoff of the python syntax theme used by [nixCraft](http://www.cyb
 ## install jupyter-themes
 
 ```sh
-$ pip install git+https://github.com/dunovank/jupyter-themes.git
+pip install git+https://github.com/dunovank/jupyter-themes.git
 ```
 
 ## Pick a theme and install
 
 ```sh
 # list themes (located in ~/.jupyter-themes)
-$ jupyter-theme -l
+jupyter-theme -l
 
 # install theme (-t) for jupyter nb
 # theme names: oceans16 | grade3 | space-legos
-$ jupyter-theme -t grade3
+jupyter-theme -t grade3
 
 # install a theme (-t) with toolbar (-T) enabled
-$ jupyter-theme -T -t grade3
+jupyter-theme -T -t grade3
 
 # ...set font (-f) and font-size (-fs), defaults are Hack and 11
-$ jupyter-theme -t grade3 -f Source-Code-Pro -fs 12
+jupyter-theme -t grade3 -f Source-Code-Pro -fs 12
 
 # reset (-r) to default for jupyter theme
-$ jupyter-theme -r
+jupyter-theme -r
 ```
 #### mmmm so theme-y...
