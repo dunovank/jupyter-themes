@@ -13,11 +13,9 @@ from glob import glob
 from tempfile import mkstemp
 
 HOME = os.path.expanduser('~')
-IPY_HOME = HOME + '/.ipython/{profile}'
-INSTALL_IPATH = HOME + '/.ipython/{profile}/static/custom'
 INSTALL_JPATH = HOME + '/.jupyter/custom'
 THEMES_PATH = HOME + '/.jupyter-themes'
-DEFAULT_PROFILE = 'default'
+
 DEFAULT_FONT='Hack'
 DEFAULT_FONTSIZE='11'
 DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
@@ -31,29 +29,8 @@ def get_themes():
     return themes
 
 
-def install_path(profile=None):
+def install_path(paths=[]):
     """ return install path for profile, creates profile if profile does not exist """
-
-    paths = []
-    profile = profile or DEFAULT_PROFILE
-    home_path = os.path.expanduser(os.path.join(IPY_HOME))
-    profile_path = home_path.format(profile='profile_' + profile)
-    custom_path = '/'.join([profile_path, 'static', 'custom'])
-
-    if not os.path.exists(profile_path):
-        print("creating profile: %s" % profile)
-        print("Profile %s does not exist at %s" % (profile, home_path))
-        subprocess.call(['ipython', 'profile', 'create', profile])
-        try:
-            shutil.copytree('/'.join([home_path, 'profile_default', 'static/']), '/'.join([profile_path, 'static/']))
-        except Exception:
-            if not os.path.exists(custom_path):
-                os.makedirs('/'.join([profile_path, 'static']))
-                os.makedirs('/'.join([profile_path, 'static', 'custom']))
-        else:
-            print("No ipython config files (~/.ipython/profile_default/static/custom/)")
-            print("try again after running ipython, closing & refreshing your terminal session")
-    paths.append(custom_path)
 
     #install to ~/.jupyter/custom
     actual_jpath = os.path.expanduser(os.path.join(INSTALL_JPATH))
@@ -64,46 +41,38 @@ def install_path(profile=None):
     return paths
 
 
-def install_theme(name, profile=None, update_properties=False, toolbar=False, fontsize='12', font='Hack'):
+def install_theme(name, toolbar=False, fontsize='12', font='Hack'):
     """ copy given theme to theme.css and import css in custom.css """
 
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
-    paths = install_path(profile)
+    paths = install_path()
     FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %spt;}" % (font, fontsize)
 
     for i, target_path in enumerate(paths):
         # -- install theme
-        themecss_path = '%s/theme.css' % target_path
         customcss_path = '%s/custom.css' % target_path
-        shutil.copy(source_path, themecss_path)
         shutil.copy(source_path, customcss_path)
-
         print("Installing %s at %s" % (name, target_path))
-        # -- check if theme import is already there, otherwise add it
-        with open(customcss_path, 'a+') as customcss:
-            if not 'theme.css' in ' '.join(customcss.readlines()):
-                customcss.seek(0, os.SEEK_END)
-                customcss.write("\n@import url('theme.css');")
-        if update_properties:
-            fh, abs_path = mkstemp()
-            with open(abs_path, 'w') as cssfile:
-                with open(customcss_path) as old_file:
-                    for line in old_file:
-                        if toolbar:
-                            # -- enable toolbar if requested
-                            RESTORE_TOOLBAR='/*'+DEFAULT_TOOLBAR_STRING+'*/'
-                            line = line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR)
-                        # -- set CodeCell font and fontsize
-                        line = line.replace(DEFAULT_FONT_STRING, FONT_STRING)
-                        cssfile.write(line)
-            os.close(fh)
-            os.remove(customcss_path)
-            shutil.move(abs_path, customcss_path)
+        fh, abs_path = mkstemp()
+        with open(abs_path, 'w') as cssfile:
+            with open(customcss_path) as old_file:
+                for line in old_file:
+                    if toolbar:
+                        print("Enabling toolbar")
+                        # -- enable toolbar if requested
+                        RESTORE_TOOLBAR='/*'+DEFAULT_TOOLBAR_STRING+'*/'
+                        line = line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR)
+                    # -- set CodeCell font and fontsize
+                    line = line.replace(DEFAULT_FONT_STRING, FONT_STRING)
+                    cssfile.write(line)
+        os.close(fh)
+        os.remove(customcss_path)
+        shutil.move(abs_path, customcss_path)
 
 
-def reset_default(profile=None):
+def reset_default():
     """ remove theme.css import """
-    paths = install_path(profile)
+    paths = install_path()
     for actual_path in paths:
         old = '%s/%s.css' % (actual_path, 'custom')
         old_save = '%s/%s.css' % (actual_path, 'custom_old')
@@ -136,7 +105,6 @@ def main():
                         help="set the profile, defaults to %s" % DEFAULT_PROFILE)
     args = parser.parse_args()
 
-    update=False
     if args.list:
         themes = get_themes()
         print("Themes in %s" % THEMES_PATH)
@@ -147,18 +115,7 @@ def main():
         if args.theme not in themes:
             print("Theme %s not found. Available: %s"%(args.theme, ' '.join(themes)))
             exit(1)
-        if args.toolbar:
-            update=True
-            print("Enabling toolbar")
-        else:
-            print("Toolbar is disabled. Set -T to enable")
-        if args.fontsize!=DEFAULT_FONTSIZE:
-            update=True
-        install_theme(args.theme, profile=args.profile, toolbar=args.toolbar, fontsize=str(args.fontsize), font=str(args.font), update_properties=update)
+        install_theme(args.theme, toolbar=args.toolbar, fontsize=str(args.fontsize), font=str(args.font))
         exit(0)
-    if args.toolbar:
-        print("Enabling toolbar")
-    else:
-        print("Toolbar is disabled. Set -T to enable")
     if args.reset:
-        reset_default(profile=args.profile)
+        reset_default()
