@@ -3,6 +3,7 @@ Juypiter theme installer
 Author: miraculixx at github.com
 # MODIFIED by dunovank at github.com
 """
+
 from __future__ import print_function
 
 import os
@@ -14,6 +15,7 @@ from tempfile import mkstemp
 
 HOME = os.path.expanduser('~')
 INSTALL_JPATH = HOME + '/.jupyter/custom'
+NBCONFIG_PATH = HOME + '/.jupyter/nbconfig'
 THEMES_PATH = HOME + '/.jupyter-themes'
 
 DEFAULT_FONT='Hack'
@@ -30,7 +32,8 @@ def get_themes():
 
 
 def install_path(paths=[]):
-    """ return install path for profile, creates profile if profile does not exist """
+    """ return install path for profile, creates profile if profile does not exist
+    """
 
     #install to ~/.jupyter/custom
     actual_jpath = os.path.expanduser(os.path.join(INSTALL_JPATH))
@@ -42,7 +45,8 @@ def install_path(paths=[]):
 
 
 def install_theme(name, toolbar=False, fontsize='12', font='Hack'):
-    """ copy given theme to theme.css and import css in custom.css """
+    """ copy given theme to theme.css and import css in custom.css
+    """
 
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path()
@@ -70,8 +74,34 @@ def install_theme(name, toolbar=False, fontsize='12', font='Hack'):
         shutil.move(abs_path, customcss_path)
 
 
+def edit_config(linewrap=False, iu=4):
+    """ toggle linewrapping and set size of indent unit
+        with notebook.json config file in ~/.jupyter/nbconfig/
+    """
+    if linewrap:
+        lw='true'
+    else:
+        lw='false'
+
+    PARAMS_STRING = '{{\n{:<2}"CodeCell": {{\
+    \n{:<4}"cm_config": {{\
+    \n{:<6}"indentUnit": {},\
+    \n{:<6}"lineWrapping": {}\
+    \n{:<4}}}\n{:<2}}},\
+    \n{:<2}"nbext_hide_incompat": false\n}}'.format('','','', iu,'',lw,'','','')
+
+    actual_config_path = os.path.expanduser(os.path.join(NBCONFIG_PATH))
+    if not os.path.exists(actual_config_path):
+        os.makedirs(actual_config_path)
+
+    config_file_path = '%s/notebook.json' % actual_config_path
+    with open(config_file_path, 'w+') as cfile:
+        cfile.write(PARAMS_STRING)
+
+
 def reset_default():
-    """ remove theme.css import """
+    """ remove theme.css import
+    """
     paths = install_path()
     for actual_path in paths:
         old = '%s/%s.css' % (actual_path, 'custom')
@@ -93,6 +123,7 @@ def main():
                         help="list available themes")
     parser.add_argument('-r', "--reset", action='store_true',
                         help="reset to default theme")
+    # notebook options
     parser.add_argument('-T', "--toolbar", action='store_true',
                         default=False,
                         help="if specified will enable the toolbar")
@@ -100,6 +131,12 @@ def main():
                         default='12', help='set the CodeCell font-size')
     parser.add_argument('-f', "--font", action='store',
                         default='Hack', help='set the CodeCell font')
+    # nb config options
+    parser.add_argument('-lw', "--linewrap", action='store_true',
+                        default=False,
+                        help="if specified will enable linewrapping in code cells")
+    parser.add_argument('-iu', "--indentunit", action='store',
+                        default='4', help="set indent unit for code cells")
     args = parser.parse_args()
 
     if args.list:
@@ -114,5 +151,7 @@ def main():
             exit(1)
         install_theme(args.theme, toolbar=args.toolbar, fontsize=str(args.fontsize), font=str(args.font))
         exit(0)
-    if args.reset:
+    if args.linewrap or args.indentunit!='4':
+        edit_config(linewrap=args.linewrap, iu=str(args.indentunit))
+    elif args.reset:
         reset_default()
