@@ -18,7 +18,7 @@ Grade3 is a spinoff of the python syntax theme used by [nixCraft](http://www.cyb
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/space-legos.png?raw=true)
 
 ### Fonts
-[__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) &  [__Hack__](https://github.com/chrissimpkins/Hack) fonts (.ttf) included in Fonts dir"
+[__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) &  [__Hack__](https://github.com/chrissimpkins/Hack) fonts (.ttf) included in Fonts dir
 
 ### Install jupyter-themes w/ pip
 ```sh
@@ -45,8 +45,9 @@ jupyter-theme -r
 ```
 
 #### Experimental
-***use with caution***: will overwrite any modifications
-you've made to your ~/.jupyter/nbconfig/notebook.json file
+***use with caution if you have already modified
+your ~/.jupyter/nbconfig/notebook.json file***
+
 ```sh
 # enable linewrapping in code cells
 jupyter-theme -t grade3 -lw
