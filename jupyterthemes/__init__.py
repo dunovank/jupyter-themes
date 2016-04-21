@@ -5,6 +5,7 @@ Author: miraculixx at github.com
 """
 
 from __future__ import print_function
+from jupyter_core.paths import jupyter_config_dir
 
 import os
 import shutil
@@ -13,10 +14,11 @@ import subprocess
 from glob import glob
 from tempfile import mkstemp
 
+jnb_config_dir = jupyter_config_dir()
 HOME = os.path.expanduser('~')
-INSTALL_JPATH = HOME + '/.jupyter/custom'
-NBCONFIG_PATH = HOME + '/.jupyter/nbconfig'
-THEMES_PATH = HOME + '/.jupyter-themes'
+INSTALL_JPATH = os.path.join(jnb_config_dir, 'custom')
+NBCONFIG_PATH = os.path.join(jnb_config_dir, 'nbconfig')
+THEMES_PATH = os.path.join(HOME, '.jupyter-themes')
 
 DEFAULT_FONT='Hack'
 DEFAULT_FONTSIZE='11'
@@ -100,18 +102,20 @@ def edit_config(linewrap=False, iu=4):
 
 
 def reset_default():
-    """ remove theme.css import
-    """
-    paths = install_path()
-    for actual_path in paths:
-        old = '%s/%s.css' % (actual_path, 'custom')
-        old_save = '%s/%s.css' % (actual_path, 'custom_old')
+    """ remove custom.css import"""
+    from jupyter_core.paths import jupyter_data_dir
+    jnb_cached = os.path.join(jupyter_data_dir(), 'nbextensions')
+
+    paths = [INSTALL_JPATH, jnb_cached]
+    for fpath in paths:
+        old = '%s/%s.css' % (fpath, 'custom')
+        old_save = '%s/%s.css' % (fpath, 'custom_old')
         try:
             shutil.copy(old, old_save)
             os.remove(old)
-            print("Reset default theme here: %s" % actual_path)
+            print("Reset default theme here: %s" % fpath)
         except Exception:
-            print("Already set to default theme in %s" % actual_path)
+            print("Already set to default theme in %s" % fpath)
             pass
 
 

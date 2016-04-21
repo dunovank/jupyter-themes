@@ -1,7 +1,5 @@
 ## Theme-ify your Jupyter Notebooks!
 
-#### CAUTION: currently a bug preventing the default Jupyter NB theme from being restored after installing any of the themes below (i.e. don't install until further notice)
-
 ### Oceans16 Notebook
 Oceans16 theme is a take on the popular Ocean Dark IPyNB theme ([Nikhil Sonnad](https://github.com/nsonnad/base16-ipython-notebook)).
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/oceans16_nb.png?raw=true)
