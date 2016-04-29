@@ -133,7 +133,7 @@ def main():
                         default=False,
                         help="if specified will enable the toolbar")
     parser.add_argument('-fs', "--fontsize", action='store',
-                        default=12, help='set the CodeCell font-size')
+                        default=11, help='set the CodeCell font-size')
     parser.add_argument('-f', "--font", action='store',
                         default='Hack', help='set the CodeCell font')
     # nb config options
