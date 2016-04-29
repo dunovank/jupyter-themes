@@ -160,7 +160,7 @@ def main():
         if args.theme not in themes:
             print("Theme %s not found. Available: %s"%(args.theme, ' '.join(themes)))
             exit(1)
-        install_theme(args.theme, toolbar=args.toolbar, fontsize=int(args.fontsize), font="'"+args.font+"'"))
+        install_theme(args.theme, toolbar=args.toolbar, fontsize=int(args.fontsize), font="'"+args.font+"'")
         exit(0)
     if args.linewrap or args.indentunit!='4':
         edit_config(linewrap=args.linewrap, iu=str(args.indentunit))
