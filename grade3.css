@@ -98,7 +98,7 @@ div.list_container :hover {
     line-height: 1.35;
     white-space: nowrap;
     background: #ededed;
-    background-color: #ededed;
+    background-color: rgba(184, 184, 184, 0.30);
 }
 .dropdown-menu .divider {
     height: 2px;
@@ -430,7 +430,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: 
 
 
 div.cell { border: medium solid #f9f9f9; padding: 0px; border-radius: 0px; }
-div.cell.selected { border: medium solid #ffa43b; padding: 0px; border-radius: 0px; }
+div.cell.selected { border: medium solid #ee8713; padding: 0px; border-radius: 0px; }
 .edit_mode div.cell.selected {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px; }
 div.cell.edit_mode {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px;}
 

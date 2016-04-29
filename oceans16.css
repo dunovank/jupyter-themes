@@ -32,16 +32,25 @@ COMMENT THIS LINE OUT TO RESTORE TOOLBAR
 <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
 div#maintoolbar {display: none !important;}
 
-div.list_container a:hover {color: #eeeeee;}
+div.list_container a:hover {color: #ececec;}
 .list_header {
     font-weight: normal;
     background-color: #2A2F3C;
-}
-div.list_container:hover {
-    background-color: #2A2F3C;
-    color: #eeeeee;
+    color: #8997b0;
 }
 
+div#notebook_list_header.row.list_header {
+    background-color: #2A2F3C;
+}
+
+ul#selector-menu.dropdown-menu > li > a {
+    padding: none;
+}
+div.list_item:hover {
+    background-color: rgba(53, 87, 120, 0.25);
+    color: #ececec;
+}
+/* PANELS // LISTS // DROPDOWN MENUS*/
 .list_container > div {
     border-bottom: 1px solid rgba(53, 87, 120, 0.55);
     font-size: 12pt;
@@ -87,7 +96,7 @@ div.list_container:hover {
 }
 .dropdown-header {
     display: block;
-    padding: 5px 15px;
+    padding: 0px 10px;
     font-size: 12pt;
     line-height: 1.35;
     color: #5c6b89;
