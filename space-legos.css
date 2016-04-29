@@ -38,7 +38,7 @@ div.list_container a:hover {color: #EEEEEE;}
     background-color: #242B2F;
 }
 div.list_container :hover {
-    background-color: #242B2F;
+    background-color: #02ac65;
     color: #FFFFFF;
 }
 div.notebook_list_header {
@@ -426,8 +426,9 @@ div.output_stderr pre {color: #D0D4E6;}
 .cm-s-ipython span.cm-property {color: #6EA3D4;}
 
 /* Set CodeCell font-size*/
-div.CodeMirror pre {font-size: 11pt !important;}
+/*div.CodeMirror pre {font-size: 11pt !important;}*/
 div.CodeMirror pre {line-height: 1.5 !important;}
+div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #EEEEEE; background: rgba(37, 176, 125, 0.5) !important ; }
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #EEEEEE; background: rgba(191, 97, 106, .5) !important ; }

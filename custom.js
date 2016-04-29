@@ -57,12 +57,12 @@ require(["base/js/events"], function(events) {
 
     $([IPython.events]).on("app_initialized.NotebookApp", function() {
 
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-k', function (event) {
+        IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-shift-k', function (event) {
               IPython.notebook.move_cell_up();
               return false;
         });
 
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-j', function (event) {
+        IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-shift-j', function (event) {
               IPython.notebook.move_cell_down();
               return false;
         });

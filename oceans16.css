@@ -16,7 +16,7 @@ div#ipython_notebook {display: none;}
 .list_container {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
 .breadcrumb>li {text-shadow:0 0px 0; color:#8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt}
 .list_container a {color: #8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
-.item_icon {color: #2c85f7;}
+.item_icon {color: #3572C6;}
 .running_notebook_icon:before {
     color: #02ac65 !important;
 }
@@ -37,14 +37,11 @@ div.list_container a:hover {color: #eeeeee;}
     font-weight: normal;
     background-color: #2A2F3C;
 }
-div.list_container :hover {
+div.list_container:hover {
     background-color: #2A2F3C;
     color: #eeeeee;
 }
-div.notebook_list_header {
-      background: #262931;
 
-}
 .list_container > div {
     border-bottom: 1px solid rgba(53, 87, 120, 0.55);
     font-size: 12pt;
@@ -61,24 +58,6 @@ div.notebook_list_header {
     border: 2px solid rgba(53, 87, 120, 0.55);
     box-shadow: none;
 }
-.dropdown-menu {
-    border: 1px solid rgba(53, 87, 120, 0.95);
-    background-color: #39414F;
-    background: #39414F;
-    box-shadow: none;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    list-style: outside none none;
-    font-size: 12pt;
-    text-align: left;
-}
-.dropdown-menu:hover{
-    background-color: #39414F;
-    border: 1px solid rgba(53, 87, 120, 0.95);
-    box-shadow: none;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
 .modal-content {
     position: relative;
     background-color: #39414F;
@@ -88,39 +67,65 @@ div.notebook_list_header {
     background-clip: padding-box;
     outline: 0px none;
 }
+.dropdown-menu {
+    border: 2px solid #39414F;
+    background-color: #39414F;
+    background: #39414F;
+    box-shadow: none;
+    padding: none;
+    list-style: outside none none;
+    font-size: 12pt;
+    text-align: left;
+    vertical-align: center;
+}
+.dropdown-menu:hover {
+    background-color: #39414F;
+    border: 2px solid rgba(53, 87, 120, 0.95);
+    box-shadow: none;
+    padding: none;
+    vertical-align: center;
+}
 .dropdown-header {
     display: block;
-    padding: 3px 20px;
+    padding: 5px 15px;
     font-size: 12pt;
-    line-height: 1.42857;
+    line-height: 1.35;
     color: #5c6b89;
     text-decoration: underline;
     text-decoration-color: rgba(53, 87, 120, 0.95);
     white-space: nowrap;
 }
 .dropdown-menu > li > a {
+    font-size: 12pt;
     border: 1px solid #39414F;
     display: block;
     padding: none;
     clear: both;
     background-clip: padding-box;
     font-weight: normal;
-    line-height: 1.42857;
+    line-height: 1.35;
     color: #8997b0;
     white-space: nowrap;
     background-color: #39414F;
     background: #39414F;
 }
 .dropdown-menu > li > a:hover {
+    font-size: 12pt;
     background-clip: padding-box;
-    background: rgba(53, 87, 120, 0.95);
     border: 1px solid #39414F;
     color: #eeeeee;
     padding: none;
+    display: block;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.35;
+    white-space: nowrap;
+    background-color: rgba(53, 87, 120, 0.95);
+    background: rgba(53, 87, 120, 0.95);
 }
 .dropdown-menu .divider {
     height: 2px;
-    margin: 8px 0px;
+    margin: 3px 0px;
     overflow: hidden;
     background-color: rgba(53, 87, 120, 0.95);
 }
@@ -223,7 +228,7 @@ div.output_html {color: #1e2429;}
 }
 .navbar-default .navbar-nav > li > a {
     color: #8997b0;
-    font-size: 13pt;
+    font-size: 14pt;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #ffffff;
@@ -423,8 +428,9 @@ div.output_stderr pre {color: #D0D4E6;}
 .cm-s-ipython span.cm-property {color: #77ABE7;}
 
 /* Set CodeCell font-size*/
-div.CodeMirror pre {font-size: 11pt !important;}
+/*div.CodeMirror pre {font-size: 11pt !important;}*/
 div.CodeMirror pre {line-height: 1.5 !important;}
+div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #eeeeee; background: rgba(53, 108, 180, .75) !important ; }
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #eeeeee; background: rgba(191, 97, 106, .3) !important ; }

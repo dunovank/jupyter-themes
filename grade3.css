@@ -12,17 +12,17 @@ div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.promp
 div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
-.toolbar_info {color: #4c4c4c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
+.toolbar_info {color: #2c2c2c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
 .list_container {color: #4c4c4c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
-.breadcrumb>li {text-shadow:0 0px 0; color:#4c4c4c; font-family: 'Helvetica', sans-serif; font-size: 12pt}
+.breadcrumb>li {text-shadow:0 0px 0; color:#2c2c2c; font-family: 'Helvetica', sans-serif; font-size: 12pt}
 .list_container a {color: #4c4c4c; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
 .item_icon {color: #2c85f7;}
 .running_notebook_icon:before {
-    color: #02ac65 !important;
+    color: #ee8713 !important;
 }
 .item_buttons .running-indicator {
     padding-top: 4px;
-    color: #02ac65;
+    color: #ee8713;
 }
 
 /*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
@@ -32,73 +32,81 @@ COMMENT THIS LINE OUT TO RESTORE TOOLBAR
 <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
 div#maintoolbar {display: none !important;}
 
-div.list_container a:hover {color: #ee8713;}
-div#tree-selector.btn-group.dropdown {
-      background-color: rgba(184, 184, 184, 0.10);
-      background: rgba(184, 184, 184, 0.10);
-}
-.btn-group>.btn+.dropdown-toggle {
-    padding-left: 8px;
-    padding-right: 8px;
+div.list_container a:hover {color: #2c2c2c;}
+
+.list_header {
+    font-weight: normal;
+    background-color: #ececec;
+    color: #4c4c4c;
 }
 div.list_container :hover {
-    background-color: rgba(184, 184, 184, 0.05);
-    color: #3a3a3a;
+    background: #ececec;
+    color: #2c2c2c;
 }
-div.notebook_list_header {
-    background: rgba(184, 184, 184, 0.05);
-}
+
 .dropdown-menu {
-    background-color: #ececed;
-    background: #ececed;
-    border: thin solid #dbdbdb;
+    border: 2px solid rgba(184, 184, 184, 0.15);
+    background-color: #efefef;
+    background: #efefef;
     box-shadow: none;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: none;
     list-style: outside none none;
     font-size: 12pt;
     text-align: left;
+    vertical-align: center;
 }
 .dropdown-menu:hover{
-    background-color: #ececed;
-    border: thin solid #dbdbdb;
+    background-color: #efefef;
+    border: 2px solid rgba(184, 184, 184, 0.30);
     box-shadow: none;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: none;
+    vertical-align: center;
 }
 .dropdown-header {
     display: block;
-    padding: 3px 20px;
+    padding: 5px 15px;
     font-size: 12pt;
-    line-height: 1.42857;
-    color: #2c2c2c;
+    line-height: 1.35;
+    color: #4c4c4c;
     text-decoration: underline;
+    text-decoration-color: rgba(184, 184, 184, 0.30);
     white-space: nowrap;
 }
 .dropdown-menu > li > a {
+    font-size: 12pt;
+    border: 1px solid #efefef;
     display: block;
     padding: none;
     clear: both;
-    background-color: #ececed;
-    background: #ececed;
     background-clip: padding-box;
     font-weight: normal;
-    line-height: 1.42857;
-    color: #2c2c2c;
+    line-height: 1.35;
+    color: #4c4c4c;
     white-space: nowrap;
+    background-color: #efefef;
+    background: #efefef;
 }
 .dropdown-menu > li > a:hover {
+    font-size: 12pt;
+    border: 1px solid #ededed;
     background-clip: padding-box;
-    color: #000000;
+    color: #2c2c2c;
     padding: none;
-    background: #dbdbdb;
+    display: block;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.35;
+    white-space: nowrap;
+    background: #ededed;
+    background-color: #ededed;
 }
 .dropdown-menu .divider {
-    height: 1px;
-    margin: 8px 0px;
+    height: 2px;
+    margin: 3px 0px;
     overflow: hidden;
     background-color: #dddddd;
 }
+
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
     color: #aaaaaa;
 }
@@ -215,15 +223,15 @@ div.output_html {color: #1e2429;}
 }
 .navbar-default .navbar-nav > li > a {
     color: #4c4c4c;
-    font-size: 13pt;
+    font-size: 14pt;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #000000;
-    background-color: rgba(184, 184, 184, 0.15);
+    background-color: rgba(184, 184, 184, 0.19);
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     color: #000000;
-    background-color: rgba(184, 184, 184, 0.15);
+    background-color: rgba(184, 184, 184, 0.19);
 }
 .btn {
     color: #4c4c4c;
@@ -235,7 +243,6 @@ div.output_html {color: #1e2429;}
     text-shadow: none;
     vertical-align: 0px;
 }
-
 .btn-group > .btn-mini {
     color: #4c4c4c;
     background: #f9f9f9;
@@ -328,13 +335,13 @@ button.close {
     font-size: 22px;
     font-weight: bold;
     line-height: 1;
-    color: #3572C6;
-    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
+    color: #ee8713;
+    text-shadow: 0px 1px 0px rgba(240, 147, 43, .2);
     opacity: 0.3;
 }
 .close:hover {
-    color: #3572C6;
-    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
+    color: #ee8713;
+    text-shadow: 0px 1px 0px rgba(240, 147, 43, .2);
     opacity: 0.9;
 }
 .form-control {
@@ -347,7 +354,7 @@ button.close {
     color: #4c4c4c;
     background-color: #ececed;
     background-image: none;
-    border: 1px solid rgba(53, 87, 120, 0.95);
+    border: 1px solid rgba(240, 147, 43, .8);
     border-radius: 2px;
     box-shadow: none;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
@@ -412,8 +419,9 @@ div.output_stderr pre {color: #000000;}
 .cm-s-ipython span.cm-qualifier {color: #de143d;}
 
 /* Set CodeCell font-size*/
-div.CodeMirror pre {font-size: 11pt !important;}
+/*div.CodeMirror pre {font-size: 11pt !important;}*/
 div.CodeMirror pre {line-height: 1.5 !important;}
+div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .3); !important ; }
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; }
