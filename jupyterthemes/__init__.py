@@ -53,13 +53,7 @@ def install_theme(name, toolbar=False, fontsize=12, font="'Hack'"):
 
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path()
-    print(font)
-    print(fontsize)
-    print(type(font))
-    print(type(fontsize))
-
     FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %dpt;}" % (font, fontsize)
-    print(FONT_STRING)
 
     for i, target_path in enumerate(paths):
         # -- install theme
