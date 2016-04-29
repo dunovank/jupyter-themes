@@ -28,6 +28,7 @@ pip install git+https://github.com/dunovank/jupyter-themes.git
 ### How to...
 ```sh
 # list available themes (located in ~/.jupyter-themes)
+# can call with "jupyter-themes" or "jt" interchangeably
 jt -l
 
 # install a theme (to ~/.jupyter/custom/)

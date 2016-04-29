@@ -444,7 +444,7 @@ div.input_area {
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
     font-family: 'Hack', monospace;
-    border-right: 1px solid rgba(240, 147, 43, .5);
+    border-right: 2px solid rgba(240, 147, 43, .4);
     font-weight: bold;
     font-size: 9.5pt;
     color: #aaaaaa;
