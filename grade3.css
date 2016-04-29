@@ -484,7 +484,7 @@ div.out_prompt_overlay.prompt:hover {
     border-radius: 4px;
     margin-bottom: 8px;
     background-color: #ffffff;
-    box-shadow: #ececed 2px 2px 6px 4px inset;
+    box-shadow: #aaaaaa 2px 2px 6px 4px inset;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
