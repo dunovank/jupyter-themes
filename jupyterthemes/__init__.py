@@ -20,7 +20,7 @@ INSTALL_JPATH = os.path.join(jnb_config_dir, 'custom')
 NBCONFIG_PATH = os.path.join(jnb_config_dir, 'nbconfig')
 THEMES_PATH = os.path.join(HOME, '.jupyter-themes')
 
-DEFAULT_FONT='Hack'
+DEFAULT_FONT="'Hack'"
 DEFAULT_FONTSIZE=11
 DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
 
@@ -47,13 +47,19 @@ def install_path(paths=[]):
     return paths
 
 
-def install_theme(name, toolbar=False, fontsize='12', font='Hack'):
+def install_theme(name, toolbar=False, fontsize=12, font="'Hack'"):
     """ copy given theme to theme.css and import css in custom.css
     """
 
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path()
+    print font
+    print fontsize
+    print type(font)
+    print type(fontsize)
+
     FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %dpt;}" % (font, fontsize)
+    print FONT_STRING
 
     for i, target_path in enumerate(paths):
         # -- install theme
@@ -154,7 +160,7 @@ def main():
         if args.theme not in themes:
             print("Theme %s not found. Available: %s"%(args.theme, ' '.join(themes)))
             exit(1)
-        install_theme(args.theme, toolbar=args.toolbar, fontsize=int(args.fontsize), font=str(args.font))
+        install_theme(args.theme, toolbar=args.toolbar, fontsize=int(args.fontsize), font="'"+args.font+"'"))
         exit(0)
     if args.linewrap or args.indentunit!='4':
         edit_config(linewrap=args.linewrap, iu=str(args.indentunit))
