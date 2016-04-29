@@ -21,9 +21,10 @@ NBCONFIG_PATH = os.path.join(jnb_config_dir, 'nbconfig')
 THEMES_PATH = os.path.join(HOME, '.jupyter-themes')
 
 DEFAULT_FONT='Hack'
-DEFAULT_FONTSIZE='11'
+DEFAULT_FONTSIZE=11
 DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
-DEFAULT_FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %spt;}" % (DEFAULT_FONT, DEFAULT_FONTSIZE)
+
+DEFAULT_FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %dpt;}" % (DEFAULT_FONT, DEFAULT_FONTSIZE)
 
 def get_themes():
     """ return list of available themes """
@@ -52,7 +53,7 @@ def install_theme(name, toolbar=False, fontsize='12', font='Hack'):
 
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path()
-    FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %spt;}" % (font, fontsize)
+    FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %dpt;}" % (font, fontsize)
 
     for i, target_path in enumerate(paths):
         # -- install theme
@@ -132,7 +133,7 @@ def main():
                         default=False,
                         help="if specified will enable the toolbar")
     parser.add_argument('-fs', "--fontsize", action='store',
-                        default='12', help='set the CodeCell font-size')
+                        default=12, help='set the CodeCell font-size')
     parser.add_argument('-f', "--font", action='store',
                         default='Hack', help='set the CodeCell font')
     # nb config options
@@ -153,7 +154,7 @@ def main():
         if args.theme not in themes:
             print("Theme %s not found. Available: %s"%(args.theme, ' '.join(themes)))
             exit(1)
-        install_theme(args.theme, toolbar=args.toolbar, fontsize=str(args.fontsize), font=str(args.font))
+        install_theme(args.theme, toolbar=args.toolbar, fontsize=args.fontsize, font=str(args.font))
         exit(0)
     if args.linewrap or args.indentunit!='4':
         edit_config(linewrap=args.linewrap, iu=str(args.indentunit))
