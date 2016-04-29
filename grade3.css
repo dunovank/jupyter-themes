@@ -45,7 +45,7 @@ div.list_container :hover {
 }
 
 .dropdown-menu {
-    border: 2px solid rgba(184, 184, 184, 0.15);
+    border: 2px solid rgba(184, 184, 184, 0.25);
     background-color: #efefef;
     background: #efefef;
     box-shadow: none;
@@ -57,7 +57,7 @@ div.list_container :hover {
 }
 .dropdown-menu:hover{
     background-color: #efefef;
-    border: 2px solid rgba(184, 184, 184, 0.30);
+    border: 2px solid rgba(184, 184, 184, 0.40);
     box-shadow: none;
     padding: none;
     vertical-align: center;
@@ -69,7 +69,7 @@ div.list_container :hover {
     line-height: 1.35;
     color: #4c4c4c;
     text-decoration: underline;
-    text-decoration-color: rgba(184, 184, 184, 0.30);
+    text-decoration-color: rgba(184, 184, 184, 0.40);
     white-space: nowrap;
 }
 .dropdown-menu > li > a {
@@ -98,7 +98,7 @@ div.list_container :hover {
     line-height: 1.35;
     white-space: nowrap;
     background: #ededed;
-    background-color: rgba(184, 184, 184, 0.30);
+    background-color: rgba(184, 184, 184, 0.40);
 }
 .dropdown-menu .divider {
     height: 2px;
