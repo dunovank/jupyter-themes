@@ -28,20 +28,20 @@ pip install git+https://github.com/dunovank/jupyter-themes.git
 ### How to...
 ```sh
 # list available themes (located in ~/.jupyter-themes)
-jupyter-theme -l
+jt -l
 
 # install a theme (to ~/.jupyter/custom/)
 # theme names: oceans16 | grade3 | space-legos
-jupyter-theme -t grade3
+jt -t grade3
 
 # install a theme with toolbar (-T) enabled
-jupyter-theme -T -t grade3
+jt -T -t grade3
 
 # set font (-f) and font-size (-fs) (defaults are Hack and 11)
-jupyter-theme -t grade3 -f Source-Code-Pro -fs 12
+jt -t grade3 -f Source-Code-Pro -fs 12
 
 # restore (-r) default theme
-jupyter-theme -r
+jt -r
 ```
 
 #### Experimental
@@ -50,10 +50,10 @@ your ~/.jupyter/nbconfig/notebook.json file***
 
 ```sh
 # enable linewrapping in code cells
-jupyter-theme -t grade3 -lw
+jt -t grade3 -lw
 
 # adjust size of indent unit (default=4)
-jupyter-theme -t grade3 -iu 6
+jt -t grade3 -iu 6
 ```
 
 #### mmmm so theme-y...

@@ -40,6 +40,7 @@ setup(
     entry_points={
         'console_scripts': [
             'jupyter-theme = jupyterthemes:main',
+            'jt = jupyterthemes:main',
         ],
     }
 )
