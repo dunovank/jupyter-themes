@@ -14,7 +14,7 @@ def themefiles():
 
 setup(
     name='jupyter-themes',
-    version='0.1',
+    version='0.2',
     packages=find_packages(),
     data_files=[(THEMES_PATH, themefiles())],
     include_package_data=True,
