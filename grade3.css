@@ -13,16 +13,30 @@ div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
 .toolbar_info {color: #2c2c2c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
-.list_container {color: #4c4c4c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
+.list_container {color: #2c2c2c; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
 .breadcrumb>li {text-shadow:0 0px 0; color:#2c2c2c; font-family: 'Helvetica', sans-serif; font-size: 12pt}
-.list_container a {color: #4c4c4c; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
-.item_icon {color: #2c85f7;}
+.list_container a {color: #2c2c2c; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
+.item_icon {color: #3572C6;}
+.item_buttons .kernel-name {
+    color: #3572C6;
+}
 .running_notebook_icon:before {
     color: #ee8713 !important;
 }
 .item_buttons .running-indicator {
     padding-top: 4px;
     color: #ee8713;
+}
+.nav-tabs > li > a:hover {
+    color: #ee8713;
+    background: transparent;
+    background-color: transparent;
+    background-image: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #000000;
+    background: #fefefe;;
+    background-color: #fefefe;;
 }
 
 /*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
@@ -31,21 +45,29 @@ COMMENT THIS LINE OUT TO RESTORE TOOLBAR
 *****************************************
 <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
 div#maintoolbar {display: none !important;}
-
-div.list_container a:hover {color: #2c2c2c;}
-
 .list_header {
     font-weight: normal;
-    background-color: #ececec;
+    background-color: transparent;
     color: #4c4c4c;
 }
-div.list_container :hover {
-    background: #ececec;
-    color: #2c2c2c;
+div.list_container a:hover {color: #000000;}
+div.list_item:hover {
+    background-color: #f0f0f0;
+}
+ul#selector-menu.dropdown-menu > li > a {
+    background: #efefef;
+    background-color: #efefef;
+    padding: none;
+}
+ul#selector-menu.dropdown-menu > li > a:hover {
+    background: #efefef;
+    background-color: rgba(184, 184, 184, 0.30);
+    padding: none;
 }
 
+/* PANELS // LISTS // DROPDOWN MENUS*/
 .dropdown-menu {
-    border: 2px solid rgba(184, 184, 184, 0.25);
+    border: 2px solid rgba(184, 184, 184, 0.40);
     background-color: #efefef;
     background: #efefef;
     box-shadow: none;
@@ -64,9 +86,9 @@ div.list_container :hover {
 }
 .dropdown-header {
     display: block;
-    padding: 5px 15px;
+    padding: 0px 15px;
     font-size: 12pt;
-    line-height: 1.35;
+    line-height: 1.5;
     color: #4c4c4c;
     text-decoration: underline;
     text-decoration-color: rgba(184, 184, 184, 0.40);
@@ -74,13 +96,13 @@ div.list_container :hover {
 }
 .dropdown-menu > li > a {
     font-size: 12pt;
-    border: 1px solid #efefef;
+    border: 0px solid #efefef;
     display: block;
     padding: none;
     clear: both;
     background-clip: padding-box;
     font-weight: normal;
-    line-height: 1.35;
+    line-height: 1.5;
     color: #4c4c4c;
     white-space: nowrap;
     background-color: #efefef;
@@ -88,17 +110,17 @@ div.list_container :hover {
 }
 .dropdown-menu > li > a:hover {
     font-size: 12pt;
-    border: 1px solid #ededed;
+    border: 0px solid rgba(184, 184, 184, 0.30);
     background-clip: padding-box;
-    color: #2c2c2c;
+    color: #000000;
     padding: none;
     display: block;
     clear: both;
     font-weight: normal;
-    line-height: 1.35;
+    line-height: 1.5;
     white-space: nowrap;
-    background: #ededed;
-    background-color: rgba(184, 184, 184, 0.40);
+    background: #efefef;
+    background-color: rgba(184, 184, 184, 0.30);
 }
 .dropdown-menu .divider {
     height: 2px;
@@ -146,7 +168,6 @@ div.list_container :hover {
 #project_name > .breadcrumb {
     font-weight: normal;
     color: #ee8713;
-
 }
 .rendered_html pre, .rendered_html code {
     font-size: 12pt;
@@ -235,7 +256,8 @@ div.output_html {color: #1e2429;}
 }
 .btn {
     color: #4c4c4c;
-    background: #f9f9f9;
+    background: transparent;
+    background-color: transparent;
     font-size: 12pt;
     font-weight: normal;
     border: 0 none !important;
@@ -245,8 +267,10 @@ div.output_html {color: #1e2429;}
 }
 .btn-group > .btn-mini {
     color: #4c4c4c;
-    background: #f9f9f9;
+    background: transparent;
+    background-color: transparent;
     font-size: 11pt;
+    border-radius: 2px;
     font-weight: normal;
     border: 0 none !important;
     box-shadow: none !important;
@@ -254,20 +278,48 @@ div.output_html {color: #1e2429;}
 }
 .btn:hover {
     color: #ee8713;
-    background: #f9f9f9;
-    background-color: #f9f9f9;
+    background: transparent;
+    background-color: transparent;
     background-image: none;
 }
 .btn-group > .btn-mini:hover {
     color: #ee8713;
-    background: #f9f9f9;
-    background-color: #f9f9f9;
+    background: transparent;
+    background-color: transparent;
     background-image: none;
 }
 .btn-group, .btn-group-vertical {
+    background: transparent;
+    background-color: transparent;
     position: relative;
     display: inline-block;
     vertical-align: middle;
+}
+.btn-group, .btn-group-vertical:hover {
+    color: #ee8713;
+    background: transparent;
+    background-color: transparent;
+    background-image: none;
+    border-radius: 2px;
+}
+btn-group, .btn-default.btn-xs:hover {
+    color: #ee8713;
+    background: transparent;
+    background-color: transparent;
+    background-image: none;
+}
+.alternate_upload .btn-upload {
+    padding: 1px 5px;
+    line-height: 1.5;
+    height: 26px;
+    background: transparent;
+    display: inline-block;
+}
+.alternate_upload .btn-upload:hover {
+    color: #ee8713;
+    background: transparent;
+    background-color: transparent;
+    background-image: none;
 }
 .ipython_tooltip {
     border: 2px solid #4c4c4c;
@@ -365,8 +417,8 @@ button.close {
     border-top: 1px solid rgba(184, 184, 184, 0.75);
 }
 .input-form-control:hover:active {
-      background-color: rgba(184, 184, 184, 0.75);
-      selected: rgba(184, 184, 184, 0.75);
+    background-color: rgba(184, 184, 184, 0.75);
+    selected: rgba(184, 184, 184, 0.75);
 }
 
 /* TOOLTIP DIMENSIONS */

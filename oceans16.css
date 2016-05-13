@@ -17,6 +17,9 @@ div#ipython_notebook {display: none;}
 .breadcrumb>li {text-shadow:0 0px 0; color:#8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt}
 .list_container a {color: #8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
 .item_icon {color: #3572C6;}
+.item_buttons .kernel-name {
+    color: #3572C6;
+}
 .running_notebook_icon:before {
     color: #02ac65 !important;
 }
@@ -35,21 +38,20 @@ div#maintoolbar {display: none !important;}
 div.list_container a:hover {color: #ececec;}
 .list_header {
     font-weight: normal;
-    background-color: #2A2F3C;
+    background-color: #262931;
     color: #8997b0;
 }
-
 div#notebook_list_header.row.list_header {
-    background-color: #2A2F3C;
+    background-color: #262931;
 }
-
 ul#selector-menu.dropdown-menu > li > a {
     padding: none;
 }
 div.list_item:hover {
-    background-color: rgba(53, 87, 120, 0.25);
-    color: #ececec;
+    background-color: rgba(53, 87, 120, 0.08);
 }
+
+
 /* PANELS // LISTS // DROPDOWN MENUS*/
 .list_container > div {
     border-bottom: 1px solid rgba(53, 87, 120, 0.55);
@@ -77,7 +79,7 @@ div.list_item:hover {
     outline: 0px none;
 }
 .dropdown-menu {
-    border: 2px solid #39414F;
+    border: 2px solid rgba(53, 87, 120, 0.95);
     background-color: #39414F;
     background: #39414F;
     box-shadow: none;
@@ -98,21 +100,21 @@ div.list_item:hover {
     display: block;
     padding: 0px 10px;
     font-size: 12pt;
-    line-height: 1.35;
-    color: #5c6b89;
+    line-height: 1.5;
+    color: #8997b0;
     text-decoration: underline;
     text-decoration-color: rgba(53, 87, 120, 0.95);
     white-space: nowrap;
 }
 .dropdown-menu > li > a {
     font-size: 12pt;
-    border: 1px solid #39414F;
+    border: 0px solid #39414F;
     display: block;
     padding: none;
     clear: both;
     background-clip: padding-box;
     font-weight: normal;
-    line-height: 1.35;
+    line-height: 1.5;
     color: #8997b0;
     white-space: nowrap;
     background-color: #39414F;
@@ -121,16 +123,16 @@ div.list_item:hover {
 .dropdown-menu > li > a:hover {
     font-size: 12pt;
     background-clip: padding-box;
-    border: 1px solid #39414F;
+    border: 0px solid rgba(53, 87, 120, 0.90);
     color: #eeeeee;
     padding: none;
     display: block;
     clear: both;
     font-weight: normal;
-    line-height: 1.35;
+    line-height: 1.5;
     white-space: nowrap;
-    background-color: rgba(53, 87, 120, 0.95);
-    background: rgba(53, 87, 120, 0.95);
+    background-color: rgba(53, 87, 120, 0.90);
+    background: rgba(53, 87, 120, 0.90);
 }
 .dropdown-menu .divider {
     height: 2px;
@@ -249,7 +251,8 @@ div.output_html {color: #1e2429;}
 }
 .btn {
     color: #8997b0;
-    background: #262931;
+    background: transparent;
+    background-color: transparent;
     font-size: 12pt;
     font-weight: normal;
     border: 0 none !important;
@@ -260,7 +263,8 @@ div.output_html {color: #1e2429;}
 
 .btn-group > .btn-mini {
     color: #8997b0;
-    background: #262931;
+    background: transparent;
+    background-color: transparent;
     font-size: 11pt;
     font-weight: normal;
     border: 0 none !important;
@@ -269,20 +273,22 @@ div.output_html {color: #1e2429;}
 }
 .btn:hover {
     color: #2c85f7;
-    background: #262931;
-    background-color: #262931;
+    background: transparent;
+    background-color: transparent;
     background-image: none;
 }
 .btn-group > .btn-mini:hover {
     color: #2c85f7;
-    background: #262931;
-    background-color: #262931;
+    background: transparent;
+    background-color: transparent;
     background-image: none;
 }
 .btn-group, .btn-group-vertical {
     position: relative;
     display: inline-block;
     vertical-align: middle;
+    background: transparent;
+    background-color: transparent;
 }
 .ipython_tooltip {
     border: 2px solid #3572C6;
