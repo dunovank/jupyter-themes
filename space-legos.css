@@ -363,7 +363,12 @@ button.close {
     box-shadow: none;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
-
+.list_item input:not([type="checkbox"]) {
+    margin-right: 0px;
+    padding-right: 0px;
+    height: 50%;
+    width: 35%;
+}
 .modal-footer {
     padding: 15px;
     text-align: right;

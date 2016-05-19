@@ -8,7 +8,7 @@ body {background-color: #262931;}
 a {color: #8997b0; font-family: 'Helvetica', sans-serif; }
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 11pt;}
 
-/* Hiding the ipython log */
+/* Hiding the ipython log */in
 div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
@@ -367,7 +367,7 @@ button.close {
 }
 .form-control {
     display: block;
-    width: 100%;
+    width: 110%;
     height: 32px;
     padding: 6px 12px;
     font-size: 13pt;
@@ -380,7 +380,12 @@ button.close {
     box-shadow: none;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
-
+.list_item input:not([type="checkbox"]) {
+    margin-right: 0px;
+    padding-right: 0px;
+    height: 50%;
+    width: 35%;
+}
 .modal-footer {
     padding: 15px;
     text-align: right;
