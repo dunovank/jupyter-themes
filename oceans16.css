@@ -383,8 +383,8 @@ button.close {
 .list_item input:not([type="checkbox"]) {
     margin-right: 0px;
     padding-right: 0px;
-    height: 50%;
-    width: 35%;
+    height: 80%;
+    width: 30%;
 }
 .modal-footer {
     padding: 15px;
