@@ -454,7 +454,7 @@ div.output_stderr pre {color: #000000;}
 .cm-s-ipython .CodeMirror-gutters {background: #cccccc; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #666666 !important; font-size: 11pt;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
-.cm-s-ipython span.cm-comment {color: #707070; font-style: italic; text-transform: uppercase !important;}
+.cm-s-ipython span.cm-comment {color: #707070; font-style: italic !important;}
 .cm-s-ipython span.cm-atom {color: #653bc5;}
 .cm-s-ipython span.cm-number {color: #eb6a1a;}
 .cm-s-ipython span.cm-property {color: #de143d;}
