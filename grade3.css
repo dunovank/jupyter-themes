@@ -3,7 +3,7 @@
     Author:     Kyle Dunovan (http://github.com/dunovank)
 */
 
-body {background-color: #f9f9f9;}
+body {background-color: #fcfcfc;}
 
 a {color: #303030; font-family: 'Helvetica', sans-serif; }
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 11pt;}
@@ -34,7 +34,7 @@ div#ipython_notebook {display: none;}
     background-image: none;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    color: #000000;
+    color: #222222;
     background: #fefefe;;
     background-color: #fefefe;;
 }
@@ -50,7 +50,7 @@ div#maintoolbar {display: none !important;}
     background-color: transparent;
     color: #4c4c4c;
 }
-div.list_container a:hover {color: #000000;}
+div.list_container a:hover {color: #222222;}
 div.list_item:hover {
     background-color: #f0f0f0;
 }
@@ -86,7 +86,7 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 }
 .dropdown-header {
     display: block;
-    padding: 0px 15px;
+    padding: 0px 10px;
     font-size: 12pt;
     line-height: 1.5;
     color: #4c4c4c;
@@ -112,7 +112,7 @@ ul#selector-menu.dropdown-menu > li > a:hover {
     font-size: 12pt;
     border: 0px solid rgba(184, 184, 184, 0.30);
     background-clip: padding-box;
-    color: #000000;
+    color: #222222;
     padding: none;
     display: block;
     clear: both;
@@ -134,12 +134,12 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 }
 .modal-header {
     padding: 15px;
-    border-bottom: 1px solid #f9f9f9;
+    border-bottom: 1px solid #fcfcfc;
     min-height: 16.4286px;
 }
 .modal-content {
     position: relative;
-    background-color: #f9f9f9;
+    background-color: #fcfcfc;
     border: 1px solid #808080;
     border-radius: 3px;
     box-shadow: 0px 3px 9px #808080;
@@ -150,12 +150,12 @@ ul#selector-menu.dropdown-menu > li > a:hover {
     line-height: 22px;
     fontsize: 12px;
     margin-bottom: 18px;
-    background-color: #f9f9f9;
+    background-color: #fcfcfc;
     color: #2c2c2c;
     box-shadow: none;
 }
 #running .panel-group .panel .panel-heading {
-    background-color: #f9f9f9;
+    background-color: #fcfcfc;
     padding: 4px 7px;
     line-height: 22px;
 }
@@ -196,21 +196,21 @@ body {
 
 }
 .notebook_app {
-    background-color: #f9f9f9;
+    background-color: #fcfcfc;
 }
 .notebook_app #header {
     box-shadow: none !important;
-    background-color: #f9f9f9;
+    background-color: #fcfcfc;
 }
 #notebook-container {
     padding: 15px;
-    background-color: #f9f9f9;
+    background-color: #fcfcfc;
     min-height: 0px;
     box-shadow: none;
 }
 #header {
     box-shadow: none;
-    background-color: #f9f9f9;
+    background-color: #fcfcfc;
     position: relative;
     z-index: 100;
 }
@@ -220,7 +220,7 @@ body {
     box-shadow: none;
 }
 #header .header-bar {
-    background: #f9f9f9;
+    background: #fcfcfc;
 }
 /* text in output area (i.e. print some_list) */
 div.output_html {color: #1e2429;}
@@ -229,12 +229,12 @@ div.output_html {color: #1e2429;}
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
   border: 1px #4c4c4c; solid;
   color: #4c4c4c;
-  background-color: #f9f9f9 !important;
+  background-color: #fcfcfc !important;
   align-content: left !important;
 }
 .navbar-default {
-    background-color: #f9f9f9;
-    border-color: #f9f9f9;
+    background-color: #fcfcfc;
+    border-color: #fcfcfc;
 }
 #menubar .navbar {
     border-top: 1px;
@@ -247,11 +247,11 @@ div.output_html {color: #1e2429;}
     font-size: 14pt;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #000000;
+    color: #222222;
     background-color: rgba(184, 184, 184, 0.19);
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #000000;
+    color: #222222;
     background-color: rgba(184, 184, 184, 0.19);
 }
 .btn {
@@ -449,7 +449,7 @@ span.ansired {color: #b82a18;}
 div.output_stderr {background-color: #DB797C;}
 div.output_stderr pre {color: #000000;}
 
-.cm-s-ipython.CodeMirror {background: #ebebeb; color: #303030;}
+.cm-s-ipython.CodeMirror {background: #efefef; color: #303030;}
 .cm-s-ipython div.CodeMirror-selected {background: #D3D4D7 !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #cccccc; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #666666 !important; font-size: 11pt;}
@@ -484,7 +484,7 @@ div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
 div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .4) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
 
-div.cell { border: medium solid #f9f9f9; padding: 0px; border-radius: 0px; }
+div.cell { border: medium solid #fcfcfc; padding: 0px; border-radius: 0px; }
 div.cell.selected { border: medium solid #ee8713; padding: 0px; border-radius: 0px; }
 .edit_mode div.cell.selected {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px; }
 div.cell.edit_mode {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px;}
