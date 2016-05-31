@@ -27,6 +27,22 @@ div#ipython_notebook {display: none;}
     padding-top: 4px;
     color: #02ac65;
 }
+.nav-tabs > li > a:hover {
+    color: #eeeeee;
+    background: #262931;
+    background-color:rgba(53, 108, 180, 0.2);
+    border-color: transparent;
+    background-image: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #eeeeee;
+    background: #262931;
+    border-color: transparent;
+    background-color:rgba(53, 108, 180, 0.5);
+}
+.nav-tabs {
+    border-bottom: 1px solid rgba(53, 108, 180, 0.5);
+}
 
 /*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
 *****************************************
@@ -35,7 +51,7 @@ COMMENT THIS LINE OUT TO RESTORE TOOLBAR
 <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
 div#maintoolbar {display: none !important;}
 
-div.list_container a:hover {color: #ececec;}
+div.list_container a:hover {color: #b7bfce;}
 .list_header {
     font-weight: normal;
     background-color: #262931;
@@ -48,17 +64,17 @@ ul#selector-menu.dropdown-menu > li > a {
     padding: none;
 }
 div.list_item:hover {
-    background-color: rgba(53, 87, 120, 0.08);
+    background-color:rgba(53, 108, 180, 0.05);
 }
 
 
 /* PANELS // LISTS // DROPDOWN MENUS*/
 .list_container > div {
-    border-bottom: 1px solid rgba(53, 87, 120, 0.55);
+    border-bottom: 1px solid rgba(53, 108, 180, 0.2);
     font-size: 12pt;
 }
 .panel-default {
-    border-color: rgba(53, 87, 120, 0.55);
+    border-color: rgba(53, 108, 180, 0.1);
 }
 .panel {
     line-height: 22px;
@@ -66,24 +82,23 @@ div.list_item:hover {
     margin-bottom: 18px;
     background-color: #262931;
     color: #8997b0;
-    border: 2px solid rgba(53, 87, 120, 0.55);
+    border: 0px;
     box-shadow: none;
 }
 .modal-content {
     position: relative;
     background-color: #39414F;
-    border: 1px solid rgba(53, 87, 120, 0.15);
+    border: 1px solid rgba(53, 108, 180, 0.15);
     border-radius: 3px;
-    box-shadow: 0px 3px 9px rgba(53, 87, 120, 0.25);
+    box-shadow: 0px 3px 9px rgba(53, 108, 180, 0.25);
     background-clip: padding-box;
     outline: 0px none;
 }
 .dropdown-menu {
-    border: 2px solid rgba(53, 87, 120, 0.95);
+    border: none;
     background-color: #39414F;
     background: #39414F;
     box-shadow: none;
-    padding: none;
     list-style: outside none none;
     font-size: 12pt;
     text-align: left;
@@ -91,9 +106,8 @@ div.list_item:hover {
 }
 .dropdown-menu:hover {
     background-color: #39414F;
-    border: 2px solid rgba(53, 87, 120, 0.95);
+    border: none;
     box-shadow: none;
-    padding: none;
     vertical-align: center;
 }
 .dropdown-header {
@@ -103,49 +117,51 @@ div.list_item:hover {
     line-height: 1.5;
     color: #8997b0;
     text-decoration: underline;
-    text-decoration-color: rgba(53, 87, 120, 0.95);
+    text-decoration-color: rgba(53, 108, 180, 0.5);
     white-space: nowrap;
 }
 .dropdown-menu > li > a {
     font-size: 12pt;
-    border: 0px solid #39414F;
+    border: none;
     display: block;
-    padding: none;
     clear: both;
-    background-clip: padding-box;
     font-weight: normal;
     line-height: 1.5;
-    color: #8997b0;
+    color: #b7bfce;
     white-space: nowrap;
     background-color: #39414F;
     background: #39414F;
 }
 .dropdown-menu > li > a:hover {
     font-size: 12pt;
-    background-clip: padding-box;
-    border: 0px solid rgba(53, 87, 120, 0.90);
+    border: none;
     color: #eeeeee;
-    padding: none;
     display: block;
     clear: both;
     font-weight: normal;
     line-height: 1.5;
     white-space: nowrap;
-    background-color: rgba(53, 87, 120, 0.90);
-    background: rgba(53, 87, 120, 0.90);
+    background-color: rgba(53, 108, 180, 0.5);
+    background: rgba(53, 108, 180, 0.5);
 }
 .dropdown-menu .divider {
     height: 2px;
     margin: 3px 0px;
     overflow: hidden;
-    background-color: rgba(53, 87, 120, 0.95);
+    background-color: rgba(53, 108, 180, 0.5);
 }
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+    font-weight: normal;
     color: #5A647B;
+    padding: none;
+    display: block;
+    clear: both;
+    line-height: 1.5;
+    white-space: nowrap;
 }
 .modal-header {
     padding: 15px;
-    border-bottom: 1px solid rgba(53, 87, 120, 0.95);
+    border-bottom: 1px solid rgba(53, 108, 180, 0.5);
     min-height: 16.4286px;
 }
 #running .panel-group .panel .panel-heading {
@@ -157,7 +173,7 @@ div.list_item:hover {
     color: #2c85f7;
 }
 #running .panel-group .panel .panel-body .list_container .list_item {
-    border-bottom: 1px solid rgba(53, 87, 120, 0.55);
+    border-bottom: 1px solid rgba(53, 108, 180, 0.5);
 }
 
 #project_name > .breadcrumb {
@@ -222,8 +238,8 @@ div.output_html {color: #1e2429;}
 
 /* Formatting code in text, code*/
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px #a4b8cb solid;
-  color: #a4b8cb;
+  border: 1px #8997b0 solid;
+  color: #8997b0;
   background-color: #303845 !important;
   align-content: left !important;
 }
@@ -242,13 +258,20 @@ div.output_html {color: #1e2429;}
     font-size: 14pt;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #ffffff;
+    color: #eeeeee;
     background-color: rgba(53, 108, 180, .5);
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #ffffff;
-    background-color: rgba(53, 108, 180, .5);
+    color: #eeeeee;
+    background-color: rgba(53, 108, 180, 0.5);
+    border-color: rgba(53, 108, 180, 0.5);
 }
+
+.btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+    color: #eeeeee;
+    background-color: rgba(53, 108, 180, 0.5);
+}
+
 .btn {
     color: #8997b0;
     background: transparent;
@@ -256,11 +279,10 @@ div.output_html {color: #1e2429;}
     font-size: 12pt;
     font-weight: normal;
     border: 0 none !important;
+    border-radius: 2px;
     box-shadow: none !important;
     text-shadow: none;
-    vertical-align: 0px;
 }
-
 .btn-group > .btn-mini {
     color: #8997b0;
     background: transparent;
@@ -268,28 +290,49 @@ div.output_html {color: #1e2429;}
     font-size: 11pt;
     font-weight: normal;
     border: 0 none !important;
+    border-radius: 2px;
     box-shadow: none !important;
     text-shadow: none;
 }
 .btn:hover {
-    color: #2c85f7;
+    color: #eeeeee;
     background: transparent;
-    background-color: transparent;
+    background-color: rgba(53, 108, 180, 0.5);
     background-image: none;
 }
 .btn-group > .btn-mini:hover {
-    color: #2c85f7;
+    color: #b7bfce;
     background: transparent;
-    background-color: transparent;
+    background-color: rgba(53, 108, 180, 0.5);
     background-image: none;
 }
+.btn-xs, .btn-group-xs > .btn {
+    display: table-row-group;
+}
 .btn-group, .btn-group-vertical {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
     background: transparent;
     background-color: transparent;
 }
+.alternate_upload .btn-upload {
+    padding: 1px 5px;
+    line-height: 1.5;
+    height: 26px;
+    background: transparent;
+    display: inline-block;
+}
+.alternate_upload .btn-upload:hover {
+    color: #eeeeee;
+    background: transparent;
+    background-color: rgba(53, 108, 180, 0.5);
+    background-image: none;
+}
+
+.btn-default.active:hover, .btn-default:active:focus, .btn-default.active:focus, .btn-default:active.focus, .btn-default.active.focus {
+    color: #eeeeee;
+    background-color: rgba(53, 108, 180, 0.5);
+    border-color: rgba(53, 108, 180, 0.5);
+}
+
 .ipython_tooltip {
     border: 2px solid #3572C6;
     box-shadow: none;
@@ -298,7 +341,6 @@ div.output_html {color: #1e2429;}
     z-index: 1000;
     background-color: #39414F;
 }
-
 .ipython_tooltip .tooltiptext pre {
     border: 0px none;
     border-radius: 0px;
@@ -357,12 +399,12 @@ button.close {
     font-weight: bold;
     line-height: 1;
     color: #3572C6;
-    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
+    text-shadow: 0px 1px 0px rgba(53, 108, 180, 0.05);
     opacity: 0.3;
 }
 .close:hover {
     color: #0095ff;
-    text-shadow: 0px 1px 0px rgba(53, 87, 120, 0.2);
+    text-shadow: 0px 1px 0px rgba(53, 108, 180, 0.05);
     opacity: 0.9;
 }
 .form-control {
@@ -375,7 +417,7 @@ button.close {
     color: #6ea3d4;
     background-color: #303845;
     background-image: none;
-    border: 1px solid rgba(53, 87, 120, 0.95);
+    border: 1px solid rgba(53, 108, 180, 0.5);
     border-radius: 2px;
     box-shadow: none;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
@@ -389,11 +431,11 @@ button.close {
 .modal-footer {
     padding: 15px;
     text-align: right;
-    border-top: 1px solid rgba(53, 87, 120, 0.95);
+    border-top: 1px solid rgba(53, 108, 180, 0.5);
 }
 .input-form-control:hover:active {
-      background-color:  rgba(53, 87, 120, 0.95);
-      selected:  rgba(53, 87, 120, 0.95);
+    background-color:  rgba(53, 108, 180, 0.5);
+    selected:  rgba(53, 108, 180, 0.5);
 }
 
 /* TOOLTIP DIMENSIONS */
@@ -458,8 +500,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #ffffff; background: 
 
 div.cell { border: medium solid #262931; padding: 0px; border-radius: 0px; }
 div.cell.selected { border: medium solid #3572C6; padding: 0px; border-radius: 0px; }
-.edit_mode div.cell.selected {border: medium solid #39485b !important; padding: 0px; border-radius: 0px; }
-div.cell.edit_mode {border: medium solid #39485b !important; padding: 0px; border-radius: 0px;}
+.edit_mode div.cell.selected {border: medium solid #33517c !important; padding: 0px; border-radius: 0px; }
+div.cell.edit_mode {border: medium solid #33517c !important; padding: 0px; border-radius: 0px;}
 
 div.prompt {
     padding: 0.3em;
