@@ -99,22 +99,23 @@ div.list_item:hover {
     background-color: #39414F;
     background: #39414F;
     box-shadow: none;
+    padding: 2px 0;
     list-style: outside none none;
     font-size: 12pt;
     text-align: left;
-    vertical-align: center;
+    vertical-align: middle;
 }
 .dropdown-menu:hover {
     background-color: #39414F;
     border: none;
     box-shadow: none;
-    vertical-align: center;
+    vertical-align: middle;
 }
 .dropdown-header {
     display: block;
     padding: 0px 10px;
     font-size: 12pt;
-    line-height: 1.5;
+    line-height: 1.7;
     color: #8997b0;
     text-decoration: underline;
     text-decoration-color: rgba(53, 108, 180, 0.5);
@@ -125,9 +126,10 @@ div.list_item:hover {
     border: none;
     display: block;
     clear: both;
+    padding-top: 4px;
     font-weight: normal;
     line-height: 1.5;
-    color: #b7bfce;
+    color: #8997b0;
     white-space: nowrap;
     background-color: #39414F;
     background: #39414F;
@@ -135,6 +137,7 @@ div.list_item:hover {
 .dropdown-menu > li > a:hover {
     font-size: 12pt;
     border: none;
+    padding-top: 4px;
     color: #eeeeee;
     display: block;
     clear: both;
@@ -146,9 +149,17 @@ div.list_item:hover {
 }
 .dropdown-menu .divider {
     height: 2px;
+    padding: 0px;
     margin: 3px 0px;
     overflow: hidden;
     background-color: rgba(53, 108, 180, 0.5);
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: 0px;
+    margin-left: -1px;
+    padding: 1px 0;
 }
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
     font-weight: normal;
