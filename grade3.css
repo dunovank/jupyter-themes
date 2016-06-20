@@ -3,7 +3,7 @@
     Author:     Kyle Dunovan (http://github.com/dunovank)
 */
 
-body {background-color: #fcfcfc;}
+body {background-color: #fefefe;}
 
 a {color: #303030; font-family: 'Helvetica', sans-serif; }
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 11pt;}
@@ -21,29 +21,29 @@ div#ipython_notebook { display: none; }
     color: #3572C6;
 }
 .running_notebook_icon:before {
-    color: #ee8713 !important;
+    color: #ff8132 !important;
 }
 .item_buttons .running-indicator {
     padding-top: 4px;
-    color: #ee8713;
+    color: #ff8132;
 }
 .nav-tabs > li > a:hover {
     color: #222222;
     background: #fefefe;
     background-color: #fefefe;
     background-image: none;
-    border: 1px solid #ee8713;
+    border: 1px solid #ff8132;
     border-bottom-color: #fefefe;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     color: #222222;
     background: #fefefe;
     background-color: #fefefe;
-    border: 1px solid #ee8713;
+    border: 1px solid #ff8132;
     border-bottom-color: #fefefe;
 }
 .nav-tabs {
-    border-bottom: 1px solid #ee8713;
+    border-bottom: 1px solid #ff8132;
 }
 
 /*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
@@ -59,7 +59,7 @@ div#maintoolbar {display: none !important;}
 }
 div.list_container a:hover {color: #222222;}
 div.list_item:hover {
-    background-color: rgba(184, 184, 184, 0.12);
+    background-color: rgba(184, 184, 184, 0.10);
 }
 ul#selector-menu.dropdown-menu > li > a {
     background: #efefef;
@@ -67,7 +67,7 @@ ul#selector-menu.dropdown-menu > li > a {
 }
 ul#selector-menu.dropdown-menu > li > a:hover {
     background: #efefef;
-    background-color: rgba(184, 184, 184, 0.20);
+    background-color: rgba(184, 184, 184, 0.10);
 }
 
 /* PANELS // LISTS // DROPDOWN MENUS*/
@@ -101,7 +101,7 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 .dropdown-menu > li > a {
     font-size: 12pt;
     display: block;
-    padding-top: 4px;
+    padding-top: 5px;
     clear: both;
     font-weight: normal;
     line-height: 1.5;
@@ -113,7 +113,7 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 .dropdown-menu > li > a:hover {
     font-size: 12pt;
     color: #111111;
-    padding-top: 4px;
+    padding-top: 5px;
     display: block;
     clear: both;
     font-weight: normal;
@@ -124,7 +124,7 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 }
 .dropdown-menu .divider {
     height: 2px;
-    margin: 3px 0px;
+    margin: 0px 0px;
     overflow: hidden;
     background-color: #dddddd;
 }
@@ -140,12 +140,12 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 }
 .modal-header {
     padding: 15px;
-    border-bottom: 1px solid #fcfcfc;
+    border-bottom: 1px solid #fefefe;
     min-height: 16.4286px;
 }
 .modal-content {
     position: relative;
-    background-color: #fcfcfc;
+    background-color: #fefefe;
     border: 1px solid #808080;
     border-radius: 3px;
     box-shadow: 0px 3px 9px #808080;
@@ -156,24 +156,24 @@ ul#selector-menu.dropdown-menu > li > a:hover {
     line-height: 22px;
     fontsize: 12px;
     margin-bottom: 18px;
-    background-color: #fcfcfc;
+    background-color: #fefefe;
     color: #2c2c2c;
     box-shadow: none;
 }
 #running .panel-group .panel .panel-heading {
-    background-color: #fcfcfc;
+    background-color: #fefefe;
     padding: 4px 7px;
     line-height: 22px;
 }
 #running .panel-group .panel .panel-heading a:hover {
-    color: #ee8713;
+    color: #ff8132;
 }
 #running .panel-group .panel .panel-body .list_container .list_item {
     border-bottom: 1px solid rgba(224, 224, 224, 0.55);
 }
 #project_name > .breadcrumb {
     font-weight: normal;
-    color: #ee8713;
+    color: #ff8132;
 }
 .rendered_html pre, .rendered_html code {
     font-size: 12pt;
@@ -189,7 +189,7 @@ body {
 }
 #kernel_indicator {
     float: right !important;
-    color: #ee8713;
+    color: #ff8132;
 }
 #kernel_indicator .kernel_indicator_name {
     padding-left: 5px;
@@ -198,25 +198,25 @@ body {
 }
 #modal_indicator {
     float: right !important;
-    color: #ee8713;
+    color: #ff8132;
 
 }
 .notebook_app {
-    background-color: #fcfcfc;
+    background-color: #fefefe;
 }
 .notebook_app #header {
     box-shadow: none !important;
-    background-color: #fcfcfc;
+    background-color: #fefefe;
 }
 #notebook-container {
     padding: 15px;
-    background-color: #fcfcfc;
+    background-color: #fefefe;
     min-height: 0px;
     box-shadow: none;
 }
 #header {
     box-shadow: none;
-    background-color: #fcfcfc;
+    background-color: #fefefe;
     position: relative;
     z-index: 100;
 }
@@ -226,7 +226,7 @@ body {
     box-shadow: none;
 }
 #header .header-bar {
-    background: #fcfcfc;
+    background: #fefefe;
 }
 /* text in output area (i.e. print some_list) */
 div.output_html {color: #1e2429;}
@@ -235,12 +235,12 @@ div.output_html {color: #1e2429;}
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
   border: 1px #4c4c4c; solid;
   color: #4c4c4c;
-  background-color: #fcfcfc !important;
+  background-color: #fefefe !important;
   align-content: left !important;
 }
 .navbar-default {
-    background-color: #fcfcfc;
-    border-color: #fcfcfc;
+    background-color: #fefefe;
+    border-color: #fefefe;
 }
 #menubar .navbar {
     border-top: 1px;
@@ -409,12 +409,12 @@ button.close {
     font-size: 22px;
     font-weight: bold;
     line-height: 1;
-    color: #ee8713;
+    color: #ff8132;
     text-shadow: 0px 1px 0px rgba(240, 147, 43, .2);
     opacity: 0.3;
 }
 .close:hover {
-    color: #ee8713;
+    color: #ff8132;
     text-shadow: 0px 1px 0px rgba(240, 147, 43, .2);
     opacity: 0.9;
 }
@@ -455,33 +455,32 @@ span.ansigray {color: #b4b7b4;}
 span.ansigreen {color: #2d6836;}
 span.ansipurple {color: #483d8b;}
 span.ansicyan {color: #1592a2;}
-span.ansiyellow {color: #92a215;}
+span.ansiyellow {color: #ee8713;}
 span.ansired {color: #b82a18;}
 
 div.output_stderr {background-color: #DB797C;}
 div.output_stderr pre {color: #000000;}
 
-.cm-s-ipython.CodeMirror {background: #efefef; color: #303030;}
+.cm-s-ipython.CodeMirror {background: #f0f0f0; color: #303030;}
 .cm-s-ipython div.CodeMirror-selected {background: #D3D4D7 !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #cccccc; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #666666 !important; font-size: 11pt;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
 .cm-s-ipython span.cm-comment {color: #707070; font-style: italic !important;}
-.cm-s-ipython span.cm-atom {color: #653bc5;}
-.cm-s-ipython span.cm-number {color: #eb6a1a;}
+.cm-s-ipython span.cm-atom {color: #055be0;}
+.cm-s-ipython span.cm-number {color: #ff8132;}
 .cm-s-ipython span.cm-property {color: #de143d;}
 .cm-s-ipython span.cm-attribute {color: #de143d;}
 .cm-s-ipython span.cm-keyword {color: #653bc5; font-weight: normal;}
-.cm-s-ipython span.cm-string {color: #007f00; font-weight: normal;}
-.cm-s-ipython span.cm-operator {color: #055be0; font-weight: normal;}
-.cm-s-ipython span.cm-builtin {color: #de143d; font-weight: normal;}
+.cm-s-ipython span.cm-string {color: #069c00; }
+.cm-s-ipython span.cm-operator {color: #055be0; }
+.cm-s-ipython span.cm-builtin {color: #de143d; }
 .cm-s-ipython span.cm-variable {color: #000000;}
-.cm-s-ipython span.cm-variable-2 {color: #de143d;}
 
-.cm-s-ipython span.cm-def {color: #055be0; font-weight: normal;}
+.cm-s-ipython span.cm-def {color: #e22978; font-weight: normal;}
 .cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .3) !important;}
-.cm-s-ipython span.cm-tag {color: #653bc5;}
-.cm-s-ipython span.cm-link {color: #eb6a1a;}
+.cm-s-ipython span.cm-tag {color: #e22978;}
+.cm-s-ipython span.cm-link {color: #ff8132;}
 .cm-s-ipython span.cm-storage {color: #055be0;}
 .cm-s-ipython span.cm-entity {color: #de143d;}
 .cm-s-ipython span.cm-class {color: #e22978;}
@@ -496,8 +495,8 @@ div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
 div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .4) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
 
-div.cell { border: medium solid #fcfcfc; padding: 0px; border-radius: 0px; }
-div.cell.selected { border: medium solid #ee8713; padding: 0px; border-radius: 0px; }
+div.cell { border: medium solid #fefefe; padding: 0px; border-radius: 0px; }
+div.cell.selected { border: medium solid #ff8132; padding: 0px; border-radius: 0px; }
 .edit_mode div.cell.selected {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px; }
 div.cell.edit_mode {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px;}
 
@@ -520,7 +519,7 @@ div.input_area {
 div.prompt.input_prompt {
     font-family: 'Hack', monospace;
     border-right: 2px solid rgba(240, 147, 43, .4);
-    font-weight: bold;
+    font-weight: normal;
     font-size: 9.5pt;
     color: #aaaaaa;
     background-color: #ececed;

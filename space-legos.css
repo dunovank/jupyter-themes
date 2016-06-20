@@ -461,7 +461,7 @@ div.input_area {
 div.prompt.input_prompt {
     font-family: 'Hack', monospace;
     border-right: 2px solid #57B690;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 9.5pt;
     color: #57B690;
     background-color: #363D44;

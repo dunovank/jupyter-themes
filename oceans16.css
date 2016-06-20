@@ -96,8 +96,8 @@ div.list_item:hover {
 }
 .dropdown-menu {
     border: none;
-    background-color: #39414F;
-    background: #39414F;
+    background-color: #444d5e;
+    background: #444d5e;
     box-shadow: none;
     padding: 2px 0;
     list-style: outside none none;
@@ -106,7 +106,7 @@ div.list_item:hover {
     vertical-align: middle;
 }
 .dropdown-menu:hover {
-    background-color: #39414F;
+    background-color: #444d5e;
     border: none;
     box-shadow: none;
     vertical-align: middle;
@@ -126,18 +126,18 @@ div.list_item:hover {
     border: none;
     display: block;
     clear: both;
-    padding-top: 4px;
+    padding-top: 5px;
     font-weight: normal;
     line-height: 1.5;
     color: #8997b0;
     white-space: nowrap;
-    background-color: #39414F;
-    background: #39414F;
+    background-color: #444d5e;
+    background: #444d5e;
 }
 .dropdown-menu > li > a:hover {
     font-size: 12pt;
     border: none;
-    padding-top: 4px;
+    padding-top: 5px;
     color: #eeeeee;
     display: block;
     clear: both;
@@ -150,7 +150,7 @@ div.list_item:hover {
 .dropdown-menu .divider {
     height: 2px;
     padding: 0px;
-    margin: 3px 0px;
+    margin: 0px 0px;
     overflow: hidden;
     background-color: rgba(53, 108, 180, 0.5);
 }
@@ -345,19 +345,21 @@ div.output_html {color: #1e2429;}
 }
 
 .ipython_tooltip {
-    border: 2px solid #3572C6;
+    border: 1px solid #3572C6;
     box-shadow: none;
     border-radius: 2px;
     position: absolute;
     z-index: 1000;
-    background-color: #39414F;
+    background-color: #444d5e;
 }
 .ipython_tooltip .tooltiptext pre {
     border: 0px none;
     border-radius: 0px;
-    background-color: #39414F;
+    background-color: #444d5e;
     color: #CFD2D9;
 }
+
+
 /* Formatting code in markdown cells */
 div.text_cell_render {
     font-family: 'Helvetica', sans-serif;
@@ -532,7 +534,7 @@ div.input_area {
 div.prompt.input_prompt {
     font-family: 'Hack', monospace;
     border-right: 2px solid rgba(53, 108, 180, .4);
-    font-weight: bold;
+    font-weight: normal;
     font-size: 9.5pt;
     color: #5A647B;
     background-color: #303845;
