@@ -28,14 +28,14 @@ div#ipython_notebook {display: none;}
     color: #02ac65;
 }
 .nav-tabs > li > a:hover {
-    color: #eeeeee;
+    color: #cbd1dc;
     background: #262931;
     background-color:rgba(53, 108, 180, 0.2);
     border-color: transparent;
     background-image: none;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    color: #eeeeee;
+    color: #e9ecf1;
     background: #262931;
     border-color: transparent;
     background-color:rgba(53, 108, 180, 0.5);
@@ -51,7 +51,7 @@ COMMENT THIS LINE OUT TO RESTORE TOOLBAR
 <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
 div#maintoolbar {display: none !important;}
 
-div.list_container a:hover {color: #b7bfce;}
+div.list_container a:hover {color: #cbd1dc;}
 .list_header {
     font-weight: normal;
     background-color: #262931;
@@ -96,26 +96,24 @@ div.list_item:hover {
 }
 .dropdown-menu {
     border: none;
-    background-color: #444d5e;
-    background: #444d5e;
+    background-color: #373e4b;
+    background: #373e4b;
     box-shadow: none;
-    padding: 2px 0;
-    list-style: outside none none;
+    padding: 0px 0;
     font-size: 12pt;
     text-align: left;
     vertical-align: middle;
 }
 .dropdown-menu:hover {
-    background-color: #444d5e;
     border: none;
+    background-color: #373e4b;
     box-shadow: none;
     vertical-align: middle;
 }
 .dropdown-header {
+    font-size: 13pt;
     display: block;
-    padding: 0px 10px;
-    font-size: 12pt;
-    line-height: 1.7;
+    line-height: 1.25;
     color: #8997b0;
     text-decoration: underline;
     text-decoration-color: rgba(53, 108, 180, 0.5);
@@ -123,33 +121,30 @@ div.list_item:hover {
 }
 .dropdown-menu > li > a {
     font-size: 12pt;
-    border: none;
     display: block;
     clear: both;
-    padding-top: 5px;
+    padding: 8px 20px;
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.25;
     color: #8997b0;
     white-space: nowrap;
-    background-color: #444d5e;
-    background: #444d5e;
+    background-color: #373e4b;
+    background: #373e4b;
 }
 .dropdown-menu > li > a:hover {
     font-size: 12pt;
-    border: none;
-    padding-top: 5px;
-    color: #eeeeee;
+    color: #cbd1dc;
     display: block;
     clear: both;
+    padding: 8px 20px;
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.25;
     white-space: nowrap;
     background-color: rgba(53, 108, 180, 0.5);
     background: rgba(53, 108, 180, 0.5);
 }
 .dropdown-menu .divider {
     height: 2px;
-    padding: 0px;
     margin: 0px 0px;
     overflow: hidden;
     background-color: rgba(53, 108, 180, 0.5);
@@ -158,8 +153,8 @@ div.list_item:hover {
     top: 0;
     left: 100%;
     margin-top: 0px;
-    margin-left: -1px;
-    padding: 1px 0;
+    margin-left: 0px;
+    padding-top: 0px;
 }
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
     font-weight: normal;
@@ -269,18 +264,19 @@ div.output_html {color: #1e2429;}
     font-size: 14pt;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #eeeeee;
+    color: #cbd1dc;
     background-color: rgba(53, 108, 180, .5);
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #eeeeee;
+    color: #e9ecf1;
     background-color: rgba(53, 108, 180, 0.5);
     border-color: rgba(53, 108, 180, 0.5);
 }
 
 .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
-    color: #eeeeee;
-    background-color: rgba(53, 108, 180, 0.5);
+    color: #e9ecf1;
+    background-color: rgb(53, 108, 180);
+    border-color: rgb(53, 108, 180);
 }
 
 .btn {
@@ -306,13 +302,13 @@ div.output_html {color: #1e2429;}
     text-shadow: none;
 }
 .btn:hover {
-    color: #eeeeee;
+    color: #cbd1dc;
     background: transparent;
     background-color: rgba(53, 108, 180, 0.5);
     background-image: none;
 }
 .btn-group > .btn-mini:hover {
-    color: #b7bfce;
+    color: #cbd1dc;
     background: transparent;
     background-color: rgba(53, 108, 180, 0.5);
     background-image: none;
@@ -332,31 +328,24 @@ div.output_html {color: #1e2429;}
     display: inline-block;
 }
 .alternate_upload .btn-upload:hover {
-    color: #eeeeee;
+    color: #cbd1dc;
     background: transparent;
     background-color: rgba(53, 108, 180, 0.5);
     background-image: none;
 }
-
-.btn-default.active:hover, .btn-default:active:focus, .btn-default.active:focus, .btn-default:active.focus, .btn-default.active.focus {
-    color: #eeeeee;
-    background-color: rgba(53, 108, 180, 0.5);
-    border-color: rgba(53, 108, 180, 0.5);
-}
-
 .ipython_tooltip {
     border: 1px solid #3572C6;
     box-shadow: none;
     border-radius: 2px;
     position: absolute;
     z-index: 1000;
-    background-color: #444d5e;
+    background-color: #373e4b;
 }
 .ipython_tooltip .tooltiptext pre {
     border: 0px none;
     border-radius: 0px;
-    background-color: #444d5e;
-    color: #CFD2D9;
+    background-color: #373e4b;
+    color: #e9ecf1;
 }
 
 
@@ -507,8 +496,8 @@ div.output_stderr pre {color: #D0D4E6;}
 div.CodeMirror pre {line-height: 1.5 !important;}
 div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
 
-div.CodeMirror span.CodeMirror-matchingbracket { color: #ffffff; background-color: rgb(53, 108, 180) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
-div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #ffffff; background: rgba(191, 97, 106, .5) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
+div.CodeMirror span.CodeMirror-matchingbracket { color: #e9ecf1; background-color: rgb(53, 108, 180) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #e9ecf1; background: rgba(191, 97, 106, .5) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
 
 
 div.cell { border: medium solid #262931; padding: 0px; border-radius: 0px; }

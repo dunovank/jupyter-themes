@@ -3,7 +3,7 @@
     Author:     Kyle Dunovan (http://github.com/dunovank)
 */
 
-body {background-color: #fefefe;}
+body {background-color: #ffffff;}
 
 a {color: #303030; font-family: 'Helvetica', sans-serif; }
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 11pt;}
@@ -29,18 +29,18 @@ div#ipython_notebook { display: none; }
 }
 .nav-tabs > li > a:hover {
     color: #222222;
-    background: #fefefe;
-    background-color: #fefefe;
+    background: #ffffff;
+    background-color: #ffffff;
     background-image: none;
     border: 1px solid #ff8132;
-    border-bottom-color: #fefefe;
+    border-bottom-color: #ffffff;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     color: #222222;
-    background: #fefefe;
-    background-color: #fefefe;
+    background: #ffffff;
+    background-color: #ffffff;
     border: 1px solid #ff8132;
-    border-bottom-color: #fefefe;
+    border-bottom-color: #ffffff;
 }
 .nav-tabs {
     border-bottom: 1px solid #ff8132;
@@ -76,8 +76,7 @@ ul#selector-menu.dropdown-menu > li > a:hover {
     background: #efefef;
     border: 2px solid #dddddd;
     box-shadow: none;
-    padding: 2px 0;
-    list-style: outside none none;
+    padding: 0px 0;
     font-size: 12pt;
     text-align: left;
     vertical-align: middle;
@@ -89,10 +88,9 @@ ul#selector-menu.dropdown-menu > li > a:hover {
     vertical-align: middle;
 }
 .dropdown-header {
+    font-size: 13pt;
     display: block;
-    padding: 0px 10px;
-    font-size: 12pt;
-    line-height: 1.7;
+    line-height: 1.25;
     color: #333333;
     text-decoration: underline;
     text-decoration-color: rgba(184, 184, 184, 0.40);
@@ -101,10 +99,10 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 .dropdown-menu > li > a {
     font-size: 12pt;
     display: block;
-    padding-top: 5px;
     clear: both;
+    padding: 8px 20px;
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.25;
     color: #333333;
     white-space: nowrap;
     background-color: #efefef;
@@ -113,11 +111,11 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 .dropdown-menu > li > a:hover {
     font-size: 12pt;
     color: #111111;
-    padding-top: 5px;
     display: block;
     clear: both;
+    padding: 8px 20px;
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.25;
     white-space: nowrap;
     background: #efefef;
     background-color: rgba(184, 184, 184, 0.30);
@@ -131,21 +129,21 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 .dropdown-submenu > .dropdown-menu {
     top: 0;
     left: 100%;
-    margin-top: 0px;
-    margin-left: -1px;
-    padding: 1px 0;
+    margin-top: -2px;
+    margin-left: 0px;
+    padding-top: 0px;
 }
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
     color: #aaaaaa;
 }
 .modal-header {
     padding: 15px;
-    border-bottom: 1px solid #fefefe;
+    border-bottom: 1px solid #ffffff;
     min-height: 16.4286px;
 }
 .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: #ffffff;
     border: 1px solid #808080;
     border-radius: 3px;
     box-shadow: 0px 3px 9px #808080;
@@ -156,12 +154,12 @@ ul#selector-menu.dropdown-menu > li > a:hover {
     line-height: 22px;
     fontsize: 12px;
     margin-bottom: 18px;
-    background-color: #fefefe;
+    background-color: #ffffff;
     color: #2c2c2c;
     box-shadow: none;
 }
 #running .panel-group .panel .panel-heading {
-    background-color: #fefefe;
+    background-color: #ffffff;
     padding: 4px 7px;
     line-height: 22px;
 }
@@ -202,21 +200,21 @@ body {
 
 }
 .notebook_app {
-    background-color: #fefefe;
+    background-color: #ffffff;
 }
 .notebook_app #header {
     box-shadow: none !important;
-    background-color: #fefefe;
+    background-color: #ffffff;
 }
 #notebook-container {
     padding: 15px;
-    background-color: #fefefe;
+    background-color: #ffffff;
     min-height: 0px;
     box-shadow: none;
 }
 #header {
     box-shadow: none;
-    background-color: #fefefe;
+    background-color: #ffffff;
     position: relative;
     z-index: 100;
 }
@@ -226,7 +224,7 @@ body {
     box-shadow: none;
 }
 #header .header-bar {
-    background: #fefefe;
+    background: #ffffff;
 }
 /* text in output area (i.e. print some_list) */
 div.output_html {color: #1e2429;}
@@ -235,12 +233,12 @@ div.output_html {color: #1e2429;}
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
   border: 1px #4c4c4c; solid;
   color: #4c4c4c;
-  background-color: #fefefe !important;
+  background-color: #ffffff !important;
   align-content: left !important;
 }
 .navbar-default {
-    background-color: #fefefe;
-    border-color: #fefefe;
+    background-color: #ffffff;
+    border-color: #ffffff;
 }
 #menubar .navbar {
     border-top: 1px;
@@ -461,7 +459,7 @@ span.ansired {color: #b82a18;}
 div.output_stderr {background-color: #DB797C;}
 div.output_stderr pre {color: #000000;}
 
-.cm-s-ipython.CodeMirror {background: #f0f0f0; color: #303030;}
+.cm-s-ipython.CodeMirror {background: #ededed; color: #303030;}
 .cm-s-ipython div.CodeMirror-selected {background: #D3D4D7 !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #cccccc; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #666666 !important; font-size: 11pt;}
@@ -475,7 +473,7 @@ div.output_stderr pre {color: #000000;}
 .cm-s-ipython span.cm-string {color: #069c00; }
 .cm-s-ipython span.cm-operator {color: #055be0; }
 .cm-s-ipython span.cm-builtin {color: #de143d; }
-.cm-s-ipython span.cm-variable {color: #000000;}
+.cm-s-ipython span.cm-variable {color: #303030;}
 
 .cm-s-ipython span.cm-def {color: #e22978; font-weight: normal;}
 .cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .3) !important;}
@@ -495,7 +493,7 @@ div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
 div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .4) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
 
-div.cell { border: medium solid #fefefe; padding: 0px; border-radius: 0px; }
+div.cell { border: medium solid #ffffff; padding: 0px; border-radius: 0px; }
 div.cell.selected { border: medium solid #ff8132; padding: 0px; border-radius: 0px; }
 .edit_mode div.cell.selected {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px; }
 div.cell.edit_mode {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px;}
@@ -522,7 +520,7 @@ div.prompt.input_prompt {
     font-weight: normal;
     font-size: 9.5pt;
     color: #aaaaaa;
-    background-color: #ececed;
+    background-color: #ededed;
     width: 1em;
     padding-bottom: 0px;
     margin-bottom: 0px;
