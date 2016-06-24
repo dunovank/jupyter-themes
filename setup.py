@@ -16,7 +16,7 @@ setup(
     packages=find_packages(),
     data_files=[(THEMES_PATH, themefiles())],
     include_package_data=True,
-    package_data={'jupyterthemes': ['sandbox/*.js']},
+    package_data={'jupyterthemes': ['sandbox/*.js', 'styles/*.css']},
     description='Select and install a Jupyter notebook theme',
     long_description=README,
     license='MIT',
