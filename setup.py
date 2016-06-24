@@ -14,7 +14,7 @@ def themefiles():
 
 setup(
     name='jupyter-themes',
-    version='0.1',
+    version='0.2',
     packages=find_packages(),
     data_files=[(THEMES_PATH, themefiles())],
     include_package_data=True,
@@ -29,8 +29,11 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: CSS',
         # replace these appropriately if you are using Python 3
+        'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],

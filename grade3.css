@@ -67,7 +67,7 @@ ul#selector-menu.dropdown-menu > li > a {
 }
 ul#selector-menu.dropdown-menu > li > a:hover {
     background: #efefef;
-    background-color: rgba(184, 184, 184, 0.10);
+    background-color: rgba(184, 184, 184, 0.30);
 }
 
 /* PANELS // LISTS // DROPDOWN MENUS*/
@@ -283,13 +283,13 @@ div.output_html {color: #1e2429;}
 .btn:hover {
     color: #222222;
     background: transparent;
-    background-color: #efefef;
+    background-color: #dddddd;
     background-image: none;
 }
 .btn-group > .btn-mini:hover {
     color: #222222;
     background: transparent;
-    background-color: #efefef;
+    background-color: #dddddd;
     background-image: none;
 }
 .btn-group > .btn-group-vertical {
@@ -309,7 +309,7 @@ div.output_html {color: #1e2429;}
 .btn-group > .btn-default.btn-xs:hover {
     color: #222222;
     background: transparent;
-    background-color: #efefef;
+    background-color: #dddddd;
     background-image: none;
 }
 .alternate_upload .btn-upload {
@@ -322,7 +322,7 @@ div.output_html {color: #1e2429;}
 .alternate_upload .btn-upload:hover {
     color: #222222;
     background: transparent;
-    background-color: #efefef;
+    background-color: #dddddd;
     background-image: none;
 }
 .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
@@ -359,14 +359,14 @@ div.tooltiptext.bigtooltip {
 /* Formatting code in markdown cells */
 div.text_cell_render {
     font-family: 'Helvetica', sans-serif;
-    background: #ececed;
+    background: #ededed;
     font-weight: 310;
     color: #4c4c4c;
 }
 /* Formatting code in markdown cells */
 div.text_cell_render pre {
     color: #4c4c4c;
-    background-color: #ececed;
+    background-color: #ededed;
 }
 div.text_cell {
     max-width: 100%;
