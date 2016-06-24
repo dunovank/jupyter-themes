@@ -23,7 +23,6 @@ THEMES_PATH = os.path.join(HOME, '.jupyter-themes')
 DEFAULT_FONT="'Hack'"
 DEFAULT_FONTSIZE=11
 DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
-
 DEFAULT_FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %dpt;}" % (DEFAULT_FONT, DEFAULT_FONTSIZE)
 
 def get_themes():
@@ -34,24 +33,21 @@ def get_themes():
     return themes
 
 def install_path(paths=[]):
-    """ return install path for profile, creates profile if profile does not exist
+    """ return install path
     """
     #install to ~/.jupyter/custom
     actual_jpath = os.path.expanduser(os.path.join(INSTALL_JPATH))
     if not os.path.exists(actual_jpath):
         os.makedirs(actual_jpath)
     paths.append(actual_jpath)
-
     return paths
 
 def install_theme(name, toolbar=False, fontsize=12, font="'Hack'"):
     """ copy given theme to theme.css and import css in custom.css
     """
-
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
     paths = install_path()
     FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %dpt;}" % (font, fontsize)
-
     for i, target_path in enumerate(paths):
         # -- install theme
         customcss_path = '%s/custom.css' % target_path
@@ -72,7 +68,6 @@ def install_theme(name, toolbar=False, fontsize=12, font="'Hack'"):
         os.close(fh)
         os.remove(customcss_path)
         shutil.move(abs_path, customcss_path)
-
 
 def edit_config(linewrap=False, iu=4):
     """ toggle linewrapping and set size of indent unit
