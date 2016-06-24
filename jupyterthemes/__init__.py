@@ -33,11 +33,9 @@ def get_themes():
               for theme in glob('%s/*.css' % path)]
     return themes
 
-
 def install_path(paths=[]):
     """ return install path for profile, creates profile if profile does not exist
     """
-
     #install to ~/.jupyter/custom
     actual_jpath = os.path.expanduser(os.path.join(INSTALL_JPATH))
     if not os.path.exists(actual_jpath):
@@ -45,7 +43,6 @@ def install_path(paths=[]):
     paths.append(actual_jpath)
 
     return paths
-
 
 def install_theme(name, toolbar=False, fontsize=12, font="'Hack'"):
     """ copy given theme to theme.css and import css in custom.css
@@ -101,7 +98,6 @@ def edit_config(linewrap=False, iu=4):
     with open(config_file_path, 'w+') as cfile:
         cfile.write(PARAMS_STRING)
 
-
 def reset_default():
     """ remove custom.css import"""
     from jupyter_core.paths import jupyter_data_dir
@@ -118,7 +114,6 @@ def reset_default():
         except Exception:
             print("Already set to default theme in %s" % fpath)
             pass
-
 
 def main():
     parser = argparse.ArgumentParser()

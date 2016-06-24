@@ -10,7 +10,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 
 def themefiles():
-    return glob('*.css')
+    return glob('jupyterthemes/styles/*.css')
 
 setup(
     name='jupyter-themes',
@@ -18,17 +18,18 @@ setup(
     packages=find_packages(),
     data_files=[(THEMES_PATH, themefiles())],
     include_package_data=True,
+    package_data={'jupyterthemes': ['sandbox/*.js', 'sandbox/fonts/hack/*.ttf','sandbox/fonts/Hack/*.ttf', 'sandbox/fonts/sourcecodepro/*.ttf', 'styles/*.css', ]},
     description='Select and install a Jupyter notebook theme',
     long_description=README,
+    license='MIT',
     author='dunovank, miraculixx',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: jupyter',
         'Intended Audience :: Developers',
-        'License :: Commercial',  # example license
+        'License :: MIT',
         'Operating System :: OS Independent',
         'Programming Language :: CSS',
-        # replace these appropriately if you are using Python 3
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
@@ -37,9 +38,8 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    install_requires=[
-        # shell commands
-    ],
+    install_requires=[ 'jupyter' ],
+    keywords = ['jupyter', 'ipython', 'notebook', 'themes', 'css'],
     entry_points={
         'console_scripts': [
             'jupyter-theme = jupyterthemes:main',
