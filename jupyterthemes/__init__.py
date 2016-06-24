@@ -3,10 +3,8 @@ Juypiter theme installer
 Author: miraculixx at github.com
 # MODIFIED by dunovank at github.com
 """
-
 from __future__ import print_function
 from jupyter_core.paths import jupyter_config_dir
-
 import os
 import shutil
 import argparse
@@ -19,7 +17,6 @@ HOME = os.path.expanduser('~')
 INSTALL_JPATH = os.path.join(jnb_config_dir, 'custom')
 NBCONFIG_PATH = os.path.join(jnb_config_dir, 'nbconfig')
 THEMES_PATH = os.path.join(HOME, '.jupyter-themes')
-
 DEFAULT_FONT="'Hack'"
 DEFAULT_FONTSIZE=11
 DEFAULT_TOOLBAR_STRING='div#maintoolbar {display: none !important;}'
@@ -32,42 +29,40 @@ def get_themes():
               for theme in glob('%s/*.css' % path)]
     return themes
 
-def install_path(paths=[]):
+def get_install_path():
     """ return install path
     """
     #install to ~/.jupyter/custom
     actual_jpath = os.path.expanduser(os.path.join(INSTALL_JPATH))
     if not os.path.exists(actual_jpath):
         os.makedirs(actual_jpath)
-    paths.append(actual_jpath)
-    return paths
+    return actual_jpath
 
 def install_theme(name, toolbar=False, fontsize=12, font="'Hack'"):
     """ copy given theme to theme.css and import css in custom.css
     """
     source_path = glob('%s/%s.css' % (THEMES_PATH, name))[0]
-    paths = install_path()
+    install_path = get_install_path()
     FONT_STRING="div.CodeMirror pre {font-family: %s, monospace; font-size: %dpt;}" % (font, fontsize)
-    for i, target_path in enumerate(paths):
-        # -- install theme
-        customcss_path = '%s/custom.css' % target_path
-        shutil.copy(source_path, customcss_path)
-        print("Installing %s at %s" % (name, target_path))
-        fh, abs_path = mkstemp()
-        with open(abs_path, 'w') as cssfile:
-            with open(customcss_path) as old_file:
-                for line in old_file:
-                    if toolbar:
-                        print("Enabling toolbar")
-                        # -- enable toolbar if requested
-                        RESTORE_TOOLBAR='/*'+DEFAULT_TOOLBAR_STRING+'*/'
-                        line = line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR)
-                    # -- set CodeCell font and fontsize
-                    line = line.replace(DEFAULT_FONT_STRING, FONT_STRING)
-                    cssfile.write(line)
-        os.close(fh)
-        os.remove(customcss_path)
-        shutil.move(abs_path, customcss_path)
+    # -- install theme
+    customcss_path = '%s/custom.css' % install_path
+    shutil.copy(source_path, customcss_path)
+    print("Installing %s at %s" % (name, install_path))
+    fh, abs_path = mkstemp()
+    with open(abs_path, 'w') as cssfile:
+        with open(customcss_path) as old_file:
+            for line in old_file:
+                if toolbar:
+                    print("Enabling toolbar")
+                    # -- enable toolbar if requested
+                    RESTORE_TOOLBAR='/*'+DEFAULT_TOOLBAR_STRING+'*/'
+                    line = line.replace(DEFAULT_TOOLBAR_STRING,RESTORE_TOOLBAR)
+                # -- set CodeCell font and fontsize
+                line = line.replace(DEFAULT_FONT_STRING, FONT_STRING)
+                cssfile.write(line)
+    os.close(fh)
+    os.remove(customcss_path)
+    shutil.move(abs_path, customcss_path)
 
 def edit_config(linewrap=False, iu=4):
     """ toggle linewrapping and set size of indent unit
@@ -77,18 +72,15 @@ def edit_config(linewrap=False, iu=4):
         lw='true'
     else:
         lw='false'
-
     PARAMS_STRING = '{{\n{:<2}"CodeCell": {{\
     \n{:<4}"cm_config": {{\
     \n{:<6}"indentUnit": {},\
     \n{:<6}"lineWrapping": {}\
     \n{:<4}}}\n{:<2}}},\
     \n{:<2}"nbext_hide_incompat": false\n}}'.format('','','', iu,'',lw,'','','')
-
     actual_config_path = os.path.expanduser(os.path.join(NBCONFIG_PATH))
     if not os.path.exists(actual_config_path):
         os.makedirs(actual_config_path)
-
     config_file_path = '%s/notebook.json' % actual_config_path
     with open(config_file_path, 'w+') as cfile:
         cfile.write(PARAMS_STRING)
@@ -97,7 +89,6 @@ def reset_default():
     """ remove custom.css import"""
     from jupyter_core.paths import jupyter_data_dir
     jnb_cached = os.path.join(jupyter_data_dir(), 'nbextensions')
-
     paths = [INSTALL_JPATH, jnb_cached]
     for fpath in paths:
         old = '%s/%s.css' % (fpath, 'custom')

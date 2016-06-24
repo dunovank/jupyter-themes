@@ -16,11 +16,12 @@ setup(
     packages=find_packages(),
     data_files=[(THEMES_PATH, themefiles())],
     include_package_data=True,
-    package_data={'jupyterthemes': ['sandbox/*.js', 'sandbox/fonts/hack/*.ttf', 'sandbox/fonts/Hack/*.ttf', 'sandbox/fonts/sourcecodepro/*.ttf']},
+    package_data={'jupyterthemes': ['sandbox/*.js']},
     description='Select and install a Jupyter notebook theme',
     long_description=README,
     license='MIT',
     author='dunovank, miraculixx',
+    author_email='dunovank@gmail.com',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: jupyter',

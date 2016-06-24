@@ -17,9 +17,6 @@ Grade3 is a spinoff of the python syntax theme used by [nixCraft](http://www.cyb
 ### Space-Legos Syntax
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/space-legos.png?raw=true)
 
-### Fonts
-[__Source Code Pro__](https://github.com/adobe/Source-Code-Pro) &  [__Hack__](https://github.com/chrissimpkins/Hack) fonts (.ttf) included in Fonts dir
-
 ### Install jupyter-themes w/ pip
 ```sh
 pip install git+https://github.com/dunovank/jupyter-themes.git
