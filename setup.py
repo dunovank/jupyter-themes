@@ -20,6 +20,8 @@ setup(
     description='Select and install a Jupyter notebook theme',
     long_description=README,
     license='MIT',
+    url = = 'https://github.com/dunovank/jupyter-themes/',
+    download_url = 'https://github.com/dunovank/jupyter-themes/tarball/0.2',
     author='dunovank, miraculixx',
     author_email='dunovank@gmail.com',
     classifiers=[
