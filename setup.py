@@ -11,9 +11,9 @@ def themefiles():
     return glob('jupyterthemes/styles/*.css')
 
 setup(
-    name='jupyter-themes',
+    name='jupyterthemes',
     version='0.2',
-    packages=find_packages(),
+    packages=['jupyterthemes'],
     data_files=[(THEMES_PATH, themefiles())],
     include_package_data=True,
     package_data={'jupyterthemes': ['sandbox/*.js', 'styles/*.css']},
