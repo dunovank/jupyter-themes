@@ -17,14 +17,14 @@ Grade3 is a spinoff of the python syntax theme used by [nixCraft](http://www.cyb
 ### Space-Legos Syntax
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/space-legos.png?raw=true)
 
-### Install jupyter-themes w/ pip
+### Install jupyterthemes w/ pip (officially)
 ```sh
 pip install jupyterthemes
 ```
 
 ### How to...
 ```sh
-# list available themes (located in ~/.jupyter-themes)
+# list available themes
 # can call with "jupyter-themes" or "jt" interchangeably
 jt -l
 
