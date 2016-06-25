@@ -19,7 +19,7 @@ Grade3 is a spinoff of the python syntax theme used by [nixCraft](http://www.cyb
 
 ### Install jupyter-themes w/ pip
 ```sh
-pip install git+https://github.com/dunovank/jupyter-themes.git
+pip install jupyterthemes
 ```
 
 ### How to...

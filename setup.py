@@ -26,11 +26,8 @@ setup(
     author_email='dunovank@gmail.com',
     classifiers=[
         'Environment :: Web Environment',
-        'Framework :: jupyter',
         'Intended Audience :: Developers',
-        'License :: MIT',
         'Operating System :: OS Independent',
-        'Programming Language :: CSS',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
