@@ -1,20 +1,15 @@
 from glob import glob
 import os
 from setuptools import setup, find_packages
-from jupyterthemes import THEMES_PATH
 
 README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-def themefiles():
-    return glob('jupyterthemes/styles/*.css')
-
 setup(
     name='jupyterthemes',
-    version='0.2',
+    version='0.3',
     packages=['jupyterthemes'],
-    data_files=[(THEMES_PATH, themefiles())],
     include_package_data=True,
     package_data={'jupyterthemes': ['sandbox/*.js', 'styles/*.css']},
     description='Select and install a Jupyter notebook theme',
