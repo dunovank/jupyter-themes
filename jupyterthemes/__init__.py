@@ -45,7 +45,6 @@ def install_theme(name, toolbar=False, fontsize=12, font="'Hack'"):
         with open(customcss_path) as old_file:
             for line in old_file:
                 if toolbar:
-                    print("Enabling toolbar")
                     # -- enable toolbar if requested
                     restore_toolbar='/*'+default_toolbar_string+'*/'
                     line = line.replace(default_toolbar_string, restore_toolbar)
