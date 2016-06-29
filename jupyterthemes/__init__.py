@@ -1,24 +1,28 @@
 """
 Juypiter theme installer
-Author: miraculixx at github.com
-# MODIFIED by dunovank at github.com
+Author: miraculixx at github.com, dunovank at github.com
 """
 from __future__ import print_function
-from jupyter_core.paths import jupyter_config_dir
-from jupyter_core.paths import jupyter_data_dir
+from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
 import os
 import shutil
 import argparse
-import subprocess
 from glob import glob
 from tempfile import mkstemp
-__version__ = 0.3
+__version__ = 0.3.1
 
 jnb_config_dir = jupyter_config_dir()
 HOME = os.path.expanduser('~')
 install_path = os.path.join(jnb_config_dir, 'custom')
 nbconfig_path = os.path.join(jnb_config_dir, 'nbconfig')
-#THEMES_PATH = os.path.join(HOME, '.jupyter-themes')
+
+# Ensure all install dirs exist
+if not os.path.isdir(jnb_config_dir):
+    os.makedirs(jnb_config_dir)
+if not os.path.isdir(install_path):
+    os.makedirs(install_path)
+if not os.path.isdir(nbconfig_path):
+    os.makedirs(nbconfig_path)
 
 package_dir = os.path.dirname(os.path.realpath(__file__))
 styles_dir = os.path.join(package_dir, 'styles')
@@ -32,7 +36,7 @@ def get_themes():
     return themes
 
 def install_theme(name, toolbar=False, fontsize=12, font="'Hack'"):
-    """ copy given theme to theme.css and import css in custom.css
+    """ copy given styles/<theme name>.css --> ~/.jupyter/custom/custom.css
     """
     source_path = glob('%s/%s.css' % (styles_dir, name))[0]
     font_string="div.CodeMirror pre {font-family: %s, monospace; font-size: %dpt;}" % (font, fontsize)
@@ -115,9 +119,12 @@ def main():
                         default='4', help="set indent unit for code cells")
     args = parser.parse_args()
 
+    if args.reset:
+        reset_default()
+        exit(0)
     if args.list:
         themes = get_themes()
-        print("Themes in %s" % install_path)
+        print("Available Themes")
         print('\n'.join(themes))
         exit(0)
     if args.theme:
@@ -125,9 +132,9 @@ def main():
         if args.theme not in themes:
             print("Theme %s not found. Available: %s"%(args.theme, ' '.join(themes)))
             exit(1)
+        if args.toolbar:
+            print('Enabling Toolbar')
         install_theme(args.theme, toolbar=args.toolbar, fontsize=int(args.fontsize), font="'"+args.font+"'")
         exit(0)
     if args.linewrap or args.indentunit!='4':
         edit_config(linewrap=args.linewrap, iu=str(args.indentunit))
-    elif args.reset:
-        reset_default()
