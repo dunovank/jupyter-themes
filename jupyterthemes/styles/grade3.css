@@ -74,7 +74,7 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 .dropdown-menu {
     background-color: #efefef;
     background: #efefef;
-    border: 2px solid #dddddd;
+    border: 2px solid #e0e0e0;
     box-shadow: none;
     padding: 0px 0;
     font-size: 12pt;
@@ -83,7 +83,7 @@ ul#selector-menu.dropdown-menu > li > a:hover {
 }
 .dropdown-menu:hover {
     background-color: #efefef;
-    border: 2px solid #dddddd;
+    border: 2px solid #e0e0e0;
     box-shadow: none;
     vertical-align: middle;
 }
@@ -117,8 +117,8 @@ ul#selector-menu.dropdown-menu > li > a:hover {
     font-weight: normal;
     line-height: 1.25;
     white-space: nowrap;
-    background: #efefef;
-    background-color: rgba(184, 184, 184, 0.30);
+    background: #e0e0e0;
+    background-color: #e0e0e0;
 }
 .dropdown-menu .divider {
     height: 2px;
@@ -177,7 +177,7 @@ ul#selector-menu.dropdown-menu > li > a:hover {
     font-size: 12pt;
     color: #2c2c2c;
     line-height: 100%;
-    background: #dfdfdf;
+    background: #e0e0e0;
 }
 body {
     font-family: "Helvetica", Helvetica, Arial, sans-serif;
@@ -256,7 +256,13 @@ div.output_html {color: #1e2429;}
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     color: #222222;
-    background-color: #efefef;
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+}
+.btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+    color: #222222;
+    background: #e0e0e0;
+    background-color: #e0e0e0;
 }
 .btn {
     color: #4c4c4c;
@@ -283,13 +289,13 @@ div.output_html {color: #1e2429;}
 .btn:hover {
     color: #222222;
     background: transparent;
-    background-color: #dddddd;
+    background-color: #e0e0e0;
     background-image: none;
 }
 .btn-group > .btn-mini:hover {
     color: #222222;
     background: transparent;
-    background-color: #dddddd;
+    background-color: #e0e0e0;
     background-image: none;
 }
 .btn-group > .btn-group-vertical {
@@ -309,7 +315,7 @@ div.output_html {color: #1e2429;}
 .btn-group > .btn-default.btn-xs:hover {
     color: #222222;
     background: transparent;
-    background-color: #dddddd;
+    background-color: #e0e0e0;
     background-image: none;
 }
 .alternate_upload .btn-upload {
@@ -322,55 +328,68 @@ div.output_html {color: #1e2429;}
 .alternate_upload .btn-upload:hover {
     color: #222222;
     background: transparent;
-    background-color: #dddddd;
+    background-color: #e0e0e0;
     background-image: none;
 }
-.btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
-    color: #222222;
-    background: transparent;
-    background-color: #efefef;
-}
 
+/* TOOLTIP DIMENSIONS */
 .ipython_tooltip {
-    border: 1px solid #aaaaaa;
+    border: 2px solid rgba(240, 147, 43, .5);
     box-shadow: none;
     border-radius: 2px;
     position: absolute;
     z-index: 1000;
-    background-color: #dddddd;
+    font-size: 90%;
+    background-color: #efefef;
     color: #222222;
 }
 .ipython_tooltip .tooltiptext pre {
     border: 0px none;
-    border-radius: 0px;
-    background-color: #dddddd;
+    background-color: #efefef;
     color: #222222;
+    font-size: 90%;
 }
-/* TOOLTIP DIMENSIONS */
 div#tooltip.ipython_tooltip {
-    overflow: auto;
-    max-width: 900px;
+    overflow: wrap;
+    max-width: 825px;
 }
 div.tooltiptext.bigtooltip {
-    overflow: auto;
+    overflow: wrap;
     height: 400px;
-    width: 900px;
+    width: 825px;
 }
 /* Formatting code in markdown cells */
 div.text_cell_render {
-    font-family: 'Helvetica', sans-serif;
-    background: #ededed;
-    font-weight: 310;
+    font-size: 100%;
+    background: #eeeeee;
+    background-color: #eeeeee;
     color: #4c4c4c;
 }
 /* Formatting code in markdown cells */
 div.text_cell_render pre {
     color: #4c4c4c;
-    background-color: #ededed;
+    background: #eeeeee;
+    background-color: #eeeeee;
 }
 div.text_cell {
     max-width: 100%;
     color: #4c4c4c;
+    background: #eeeeee;
+    background-color: #eeeeee;
+}
+div.cell.text_cell.rendered .input_prompt {
+    font-family: 'Hack', monospace;
+    border-right: 2px solid rgba(232, 86, 93, .35);
+    color: #aaaaaa;
+    background-color: #eeeeee;
+    width: 1em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+div.cell.text_cell.rendered.selected {
+    border: medium solid #e8565d;
+    padding: 0px;
+    border-radius: 2px;
 }
 div.text_cell_render h1,
 div.text_cell_render h2,
@@ -379,10 +398,11 @@ div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
     font-family: 'Helvetica', sans-serif;
-    background: #ececed;
-    font-weight: 300;
+    background: #eeeeee;
+    background-color: #eeeeee;
     color: #4c4c4c;
-    line-height: 90%;
+    font-weight: 300;
+    line-height: 110%;
 }
 
 /* text in output area (i.e. print some_list) */
@@ -447,32 +467,32 @@ button.close {
     selected: rgba(184, 184, 184, 0.75);
 }
 
-span.ansiblack {color: #2b303b;}
-span.ansiblue {color: #154ba1;}
-span.ansigray {color: #b4b7b4;}
-span.ansigreen {color: #2d6836;}
-span.ansipurple {color: #483d8b;}
-span.ansicyan {color: #1592a2;}
-span.ansiyellow {color: #ee8713;}
-span.ansired {color: #b82a18;}
+span.ansiblack {color: #333333;}
+span.ansiblue {color: #1e70c7;}
+span.ansigray {color: #656565;}
+span.ansigreen {color: #009e07;}
+span.ansipurple {color: #653bc5;}
+span.ansicyan {color: #009fb7;}
+span.ansiyellow {color: #dc4384;}
+span.ansired {color: #de143d;}
 
-div.output_stderr {background-color: #DB797C;}
+div.output_stderr {background-color: #ebb5b7;}
 div.output_stderr pre {color: #000000;}
 
-.cm-s-ipython.CodeMirror {background: #ededed; color: #303030;}
-.cm-s-ipython div.CodeMirror-selected {background: #D3D4D7 !important;}
-.cm-s-ipython .CodeMirror-gutters {background: #cccccc; border: 0px; border-radius:0px;}
-.cm-s-ipython .CodeMirror-linenumber {color: #666666 !important; font-size: 11pt;}
-.cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
-.cm-s-ipython span.cm-comment {color: #707070; font-style: italic !important;}
+.cm-s-ipython.CodeMirror {background: #eeeeee; color: #303030;  border-radius: 2px; }
+.cm-s-ipython div.CodeMirror-selected {background: #e0e1e3 !important;}
+.cm-s-ipython .CodeMirror-gutters {background: #e0e1e3; border: 0px; border-radius:0px;}
+.cm-s-ipython .CodeMirror-linenumber {color: #aaaaaa !important; font-size: 11pt;}
+.cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #ff711a !important;}
+.cm-s-ipython span.cm-comment {color: #8d8d8d; font-style: italic !important;}
 .cm-s-ipython span.cm-atom {color: #055be0;}
 .cm-s-ipython span.cm-number {color: #ff8132;}
-.cm-s-ipython span.cm-property {color: #de143d;}
+.cm-s-ipython span.cm-property {color: #e22978;}
 .cm-s-ipython span.cm-attribute {color: #de143d;}
-.cm-s-ipython span.cm-keyword {color: #653bc5; font-weight: normal;}
-.cm-s-ipython span.cm-string {color: #069c00; }
-.cm-s-ipython span.cm-operator {color: #055be0; }
-.cm-s-ipython span.cm-builtin {color: #de143d; }
+.cm-s-ipython span.cm-keyword {color: #713bc5; font-weight: normal;}
+.cm-s-ipython span.cm-string {color: #009e07; }
+.cm-s-ipython span.cm-operator {color: #009fb7; }
+.cm-s-ipython span.cm-builtin {color: #e22978; }
 .cm-s-ipython span.cm-variable {color: #303030;}
 
 .cm-s-ipython span.cm-def {color: #e22978; font-weight: normal;}
@@ -480,7 +500,7 @@ div.output_stderr pre {color: #000000;}
 .cm-s-ipython span.cm-tag {color: #e22978;}
 .cm-s-ipython span.cm-link {color: #ff8132;}
 .cm-s-ipython span.cm-storage {color: #055be0;}
-.cm-s-ipython span.cm-entity {color: #de143d;}
+.cm-s-ipython span.cm-entity {color: #e22978;}
 .cm-s-ipython span.cm-class {color: #e22978;}
 .cm-s-ipython span.cm-support {color: #de143d;}
 .cm-s-ipython span.cm-qualifier {color: #de143d;}
@@ -493,10 +513,10 @@ div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
 div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .4) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
 
-div.cell { border: medium solid #ffffff; padding: 0px; border-radius: 0px; }
-div.cell.selected { border: medium solid #ff8132; padding: 0px; border-radius: 0px; }
-.edit_mode div.cell.selected {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px; }
-div.cell.edit_mode {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 0px;}
+div.cell { border: medium solid #ffffff; padding: 0px; border-radius: 2px; }
+div.cell.selected { border: medium solid #ff8132; padding: 0px; border-radius: 2px; }
+.edit_mode div.cell.selected {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 2px; }
+div.cell.edit_mode {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 2px;}
 
 div.prompt {
     padding: 0.3em;
@@ -507,11 +527,15 @@ div.prompt {
     min-width: 11ex;
     font-size: 9.5pt;
 }
-
 div.input_area {
+    background-color: #ffffff;
+    background: #ffffff;
     margin-bottom: 0px;
     border: 0px;
-    border-radius: 0px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
@@ -521,44 +545,43 @@ div.prompt.input_prompt {
     font-size: 9.5pt;
     color: #aaaaaa;
     background-color: #ededed;
-    width: 1em;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
-
 div.prompt.output_prompt {
     font-family: 'Hack', monospace;
-    font-weight: bold;
     background-color: #ffffff;
     color: #ffffff;
     font-size: 9.5pt;
-    width: 1em;
-    margin-bottom: 8px;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 div.out_prompt_overlay.prompt {
     font-family: 'Hack', monospace;
-    font-weight: bold;
     font-size: 9.5pt;
     width: 1em;
-    margin-bottom: 8px;
     background-color: #ffffff;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
+    border-bottom-left-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
 }
 div.out_prompt_overlay.prompt:hover {
     font-family: 'Hack', monospace;
-    font-weight: bold;
     font-size: 9.5pt;
     width: 1em;
-    border-radius: 4px;
-    margin-bottom: 8px;
     background-color: #ffffff;
-    box-shadow: #e2e2e2 2px 2px 6px 4px inset;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
+    box-shadow: #e8e8e8 2px 2px 3px 2px inset;
+    border-bottom-left-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
 }
 
 div.output_wrapper {
@@ -568,11 +591,6 @@ div.output_wrapper {
     border: 0px;
 }
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
-    padding-top: 1em;
-    margin-bottom: 8px;
-    margin-top: 8px;
-    margin-left: 8px;
-    margin-right: 8px;
     background-color: #ffffff;
     color: #000000;
 }
@@ -580,13 +598,40 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
 div.output_area pre {
     color: #000000;
     font-size: 10pt;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 div.output_subarea {
     overflow-x: auto;
-    padding: 1.0em;
+    padding: 1em;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     box-flex: 1;
     flex: 1;
     max-width: calc(100% - 14ex);
+}
+
+/*
+Following courtesy of Sherif Soliman
+at http://sherifsoliman.com
+*/
+div.output.output_scroll {
+    box-shadow: none;
+}
+/*Scroll bars*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #aaaaaa;
+	background: #aaaaaa;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background-color: #dedede;
+    background: #dedede;
 }
