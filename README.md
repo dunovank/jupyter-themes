@@ -1,21 +1,15 @@
 ## Theme-ify your Jupyter Notebooks!
 
-### Oceans16 Notebook
+### Oceans16
 Oceans16 theme is a take on the popular Ocean Dark IPyNB theme ([Nikhil Sonnad](https://github.com/nsonnad/base16-ipython-notebook)).
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/oceans16_nb.png?raw=true)
 
-### Grade3 Notebook
+### Grade3
 Grade3 is a spinoff of the python syntax theme used by [nixCraft](http://www.cyberciti.biz/faq/python-sleep-command-syntax-example/)
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/grade3_nb.png?raw=true)
 
-### Oceans16 Syntax
-![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/oceans16.png?raw=true)
-
-### Grade3 Syntax
-![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/grade3.png?raw=true)
-
-### Space-Legos Syntax
-![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/space-legos.png?raw=true)
+### Test-drive themes before installing
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/dunovank/jupyter-themes)
 
 ### Install jupyterthemes w/ pip (officially)
 ```sh
