@@ -238,16 +238,6 @@ body {
 #header .header-bar {
     background: #262931;
 }
-/* text in output area (i.e. print some_list) */
-div.output_html {color: #1e2429;}
-
-/* Formatting code in text, code*/
-.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px #798daf solid;
-  color: #798daf;
-  background-color: #303845 !important;
-  align-content: left !important;
-}
 .navbar-default {
     background-color: #262931;
     border-color: #262931;
@@ -365,6 +355,7 @@ div.text_cell, div.text_cell_render pre, div.text_cell_render {
     background-color: #303845;
     max-width: 100%;
     color: #798daf;
+    border-radius: 2px;
 }
 div.cell.text_cell.rendered .input_prompt {
     border-right: 2px solid rgba(43, 158, 128, .35);
@@ -377,8 +368,8 @@ div.cell.text_cell.unrendered .input_prompt {
     color: #798daf;
     background: #303845;
     background-color: #303845;
+    border-radius: 2px;
 }
-
 div.cell.text_cell.rendered.selected {
     border: medium solid #268a70;
     padding: 0px;
@@ -471,7 +462,7 @@ div.output_stderr pre {color: #D0D4E6;}
 div.js-error { color: #DB797C; }
 
 .cm-s-ipython.CodeMirror {background: #303845; color: #CDD2E9; border-top-right-radius: 2px; background-color: #303845;}
-.cm-s-ipython div.CodeMirror-selected {background: #3C4555 !important;}
+.cm-s-ipython div.CodeMirror-selected {background: #384151 !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #384151; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #5A647B !important; }
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
@@ -505,7 +496,7 @@ div.js-error { color: #DB797C; }
 /*div.CodeMirror pre {font-size: 11pt !important;}*/
 div.CodeMirror pre {line-height: 1.6 !important;}
 div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
-div.CodeMirror-lines { padding: .5em .4em .3em .4em; }
+div.CodeMirror-lines { padding-bottom: .2em; }
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #e9ecf1; background-color: rgb(53, 108, 180) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #e9ecf1; background: rgba(191, 97, 106, .2) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
@@ -550,7 +541,6 @@ div.input_area {
     background: #262931;
     margin-bottom: 0px;
     border: 0px;
-    margin-top: 2px;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     border-bottom-left-radius: 0px;
@@ -608,10 +598,18 @@ div.output_wrapper {
     margin-bottom: 0em;
     margin-top: 0em;
     border: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
     background-color: #384151;
     color: #CFD2D9;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 div.output_area pre {
     color: #CFD2D9;

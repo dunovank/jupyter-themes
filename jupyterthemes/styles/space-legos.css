@@ -5,17 +5,17 @@
 
 body {background-color: #242B2F;}
 
-a {color: #E3E3E3; font-family: 'Helvetica', sans-serif; }
+a {color: #abb1c2; font-family: 'Helvetica', sans-serif; }
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 11pt;}
 
 /* Hiding the ipython log */
 div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
-.toolbar_info {color: #E3E3E3; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
-.list_container {color: #E3E3E3; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
-.breadcrumb>li {text-shadow:0 0px 0; color:#E3E3E3; font-family: 'Helvetica', sans-serif; font-size: 12pt}
-.list_container a {color: #E3E3E3; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
+.toolbar_info {color: #abb1c2; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
+.list_container {color: #abb1c2; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
+.breadcrumb>li {text-shadow:0 0px 0; color:#abb1c2; font-family: 'Helvetica', sans-serif; font-size: 12pt}
+.list_container a {color: #abb1c2; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
 .item_icon {color: #2c85f7;}
 .running_notebook_icon:before {
     color: #02ac65 !important;
@@ -52,7 +52,7 @@ div.list_container a:hover {color: #FFFFFF;}
 .list_header {
     font-weight: normal;
     background-color: #242B2F;
-    color: #E3E3E3;
+    color: #abb1c2;
 }
 div#notebook_list_header.row.list_header {
     background-color: #242B2F;
@@ -70,9 +70,9 @@ div.list_item:hover {
 
 /* PANELS // LISTS // DROPDOWN MENUS*/
 .dropdown-menu {
-    border: 2px solid rgba(37, 176, 125, 0.5);
-    background-color: #3D3E3E;
-    background: #3D3E3E;
+    border: 2px solid rgba(43, 158, 128, .3);
+    background-color: #3f474f;
+    background: #3f474f;
     box-shadow: none;
     padding: 0px 0;
     font-size: 12pt;
@@ -80,8 +80,8 @@ div.list_item:hover {
     vertical-align: middle;
 }
 .dropdown-menu:hover{
-    background-color: #3D3E3E;
-    border: 2px solid rgba(37, 176, 125, 0.5);
+    background-color: #3f474f;
+    border: 2px solid rgba(43, 158, 128, .3);
     box-shadow: none;
     vertical-align: middle;
 }
@@ -101,10 +101,10 @@ div.list_item:hover {
     padding: 8px 20px;
     font-weight: normal;
     line-height: 1.25;
-    color: #E3E3E3;
+    color: #abb1c2;
     white-space: nowrap;
-    background-color: #3D3E3E;
-    background: #3D3E3E;
+    background-color: #3f474f;
+    background: #3f474f;
 }
 .dropdown-menu > li > a:hover {
     font-size: 12pt;
@@ -130,7 +130,7 @@ div.list_item:hover {
     padding-top: 0px;
 }
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
-    color: #E3E3E3;
+    color: #abb1c2;
 }
 .modal-header {
     padding: 15px;
@@ -139,7 +139,7 @@ div.list_item:hover {
 }
 .modal-content {
     position: relative;
-    background-color: #3D3E3E;
+    background-color: #3f474f;
     border: 2px solid rgba(53, 87, 120, 0.15);
     border-radius: 3px;
     box-shadow: 0px 3px 9px rgba(53, 87, 120, 0.25);
@@ -154,7 +154,7 @@ div.list_item:hover {
     fontsize: 12px;
     margin-bottom: 18px;
     background-color: #242B2F;
-    color: #E3E3E3;
+    color: #abb1c2;
     border: 2px solid rgba(37, 176, 125, 0.3);
     box-shadow: none;
 }
@@ -175,7 +175,7 @@ div.list_item:hover {
 }
 .rendered_html pre, .rendered_html code {
     font-size: 12pt;
-    color: #E3E3E3;
+    color: #abb1c2;
     line-height: 100%;
     background: #333537;
 }
@@ -183,7 +183,7 @@ body {
     font-family: "Helvetica", Helvetica, Arial, sans-serif;
     font-size: 12pt;
     line-height: 1.42857;
-    color: #E3E3E3;
+    color: #abb1c2;
 }
 
 #kernel_indicator {
@@ -198,9 +198,7 @@ body {
 #modal_indicator {
     float: right !important;
     color: #57B690;
-
 }
-
 .notebook_app {
     background-color: #242B2F;
 }
@@ -228,17 +226,6 @@ body {
 #header .header-bar {
     background: #242B2F;
 }
-
-/* text in output area (i.e. print some_list) */
-div.output_html {color: #1e2429;}
-
-/* Formatting code in text, code*/
-.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px #B8C8C8 solid;
-  color: #B8C8C8;
-  background-color: #333537 !important;
-  align-content: left !important;
-}
 .navbar-default {
     background-color: #242B2F;
     border-color: #242B2F;
@@ -250,7 +237,7 @@ div.output_html {color: #1e2429;}
     margin-top: 8px;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #E3E3E3;
+    color: #abb1c2;
     font-size: 13pt;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -269,7 +256,7 @@ div.output_html {color: #1e2429;}
     background-color: #57B690;
 }
 .btn {
-    color: #E3E3E3;
+    color: #abb1c2;
     background: transparent;
     background-color: transparent;
     font-size: 12pt;
@@ -280,7 +267,7 @@ div.output_html {color: #1e2429;}
     text-shadow: none;
 }
 .btn-group > .btn-mini {
-    color: #E3E3E3;
+    color: #abb1c2;
     background: transparent;
     background-color: transparent;
     font-size: 11pt;
@@ -353,19 +340,21 @@ div.text_cell, div.text_cell_render pre, div.text_cell_render {
     background: #363D44;
     background-color: #363D44;
     max-width: 100%;
-    color: #E3E3E3;
+    color: #abb1c2;
+    border-radius: 2px;
 }
 div.cell.text_cell.rendered .input_prompt {
     border-right: 2px solid rgba(43, 158, 128, .35);
-    color: #E3E3E3;
+    color: #abb1c2;
     background: #363D44;
     background-color: #363D44;
 }
 div.cell.text_cell.unrendered .input_prompt {
     border-right: 2px solid rgba(43, 158, 128, .35);
-    color: #E3E3E3;
+    color: #abb1c2;
     background: #363D44;
     background-color: #363D44;
+    border-radius: 2px;
 }
 div.text_cell_render h1,
 div.text_cell_render h2,
@@ -376,7 +365,7 @@ div.text_cell_render h6 {
     font-family: 'Helvetica', sans-serif;
     background: #363D44;
     font-weight: 300;
-    color: #E3E3E3;
+    color: #abb1c2;
     line-height: 90%;
 }
 
@@ -385,9 +374,9 @@ div.output_html {color: #A4B8CB;}
 
 /* Formatting code in text, code*/
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px #A4B8CB solid;
-  color: #A4B8CB;
-  background-color: #3D3E3E !important;
+  border: 1px #abb1c2 solid;
+  color: #abb1c2;
+  background-color: #3f474f !important;
   align-content: left !important;
 }
 
@@ -442,16 +431,6 @@ button.close {
       selected:  rgba(37, 176, 125, 0.8);
 }
 
-/* TOOLTIP DIMENSIONS */
-div#tooltip.ipython_tooltip {
-    max-width: 900px;
-}
-div.tooltiptext.bigtooltip {
-    overflow: auto;
-    height: 400px;
-    width: 900px;
-}
-
 span.ansiblack {color: #222222;}
 span.ansiblue {color: #6EA3D4;}
 span.ansigray {color: #B4B7B4;}
@@ -466,11 +445,11 @@ div.output_stderr pre {color: #D0D4E6;}
 div.js-error { color: #DB797C; }
 
 .cm-s-ipython.CodeMirror {background: #363D44; color: #C0D4E6;}
-.cm-s-ipython div.CodeMirror-selected {background: #3e424a !important;}
+.cm-s-ipython div.CodeMirror-selected {background: #494f58 !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #6F7998; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #C0D4E6 !important;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #41D79C !important;}
-.cm-s-ipython span.cm-comment {color: #636D8A; font-style: italic !important;}
+.cm-s-ipython span.cm-comment {color: #6f7998; font-style: italic !important;}
 .cm-s-ipython span.cm-atom {color: #46B5B7;}
 .cm-s-ipython span.cm-number {color: #86B4F0;}
 .cm-s-ipython span.cm-property {color: #E67DAC;}
@@ -499,15 +478,35 @@ div.js-error { color: #DB797C; }
 /*div.CodeMirror pre {font-size: 11pt !important;}*/
 div.CodeMirror pre {line-height: 1.6 !important;}
 div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
-div.CodeMirror-lines { padding: .5em .4em .3em .4em; }
+div.CodeMirror-lines { padding-bottom: .2em; }
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #ffffff; background: rgba(37, 176, 125, 0.9) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #ffffff; background: rgba(191, 97, 106, .5) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
 
-div.cell { border: medium solid #242B2F; padding: 0px; border-radius: 0px; }
-div.cell.selected { border: medium solid #57B690; padding: 0px; border-radius: 0px; }
-.edit_mode div.cell.selected {border: medium solid #324E48 !important; padding: 0px; border-radius: 0px; }
-div.cell.edit_mode {border: medium solid #242B2F !important; padding: 0px; border-radius: 0px;}
+div.cell {
+    border: medium solid #242B2F;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+div.cell.selected {
+    border: medium solid #57B690;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+.edit_mode div.cell.selected {
+    border: medium solid #324E48 !important;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+div.cell.edit_mode {
+    border: medium solid #242B2F !important;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
 
 div.prompt {
     padding: 0.3em;
@@ -526,67 +525,76 @@ div.input_area {
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
     font-family: 'Hack', monospace;
-    border-right: 2px solid #57B690;
+    border-right: 2px solid rgba(43, 158, 128, .35);
     font-weight: normal;
     font-size: 9.5pt;
+    width: 1em;
     color: #57B690;
     background-color: #363D44;
-    width: 1em;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 div.prompt.output_prompt {
     font-family: 'Hack', monospace;
     font-weight: bold;
-    background-color: #494B4E;
-    color: #494B4E;
     font-size: 9.5pt;
-    width: 1em;
-    margin-bottom: 8px;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    background-color: #3f474f;
+    color: #3f474f;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 div.out_prompt_overlay.prompt {
     font-family: 'Hack', monospace;
-    font-weight: bold;
     font-size: 9.5pt;
     width: 1em;
-    margin-bottom: 8px;
-    background-color: #494B4E;
-    border-radius: 2px;
+    background-color: #3f474f;
+    border-bottom-left-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
 }
 div.out_prompt_overlay.prompt:hover {
     font-family: 'Hack', monospace;
     font-weight: bold;
-    font-size: 9pt;
-    width: 1em;
-    border-radius: 2px;
-    margin-bottom: 8px;
-    background-color: #494B4E;
-    box-shadow: #303030 2px 2px 6px 4px inset;
+    font-size: 9.5pt;
+    background-color: #3f474f;
+    box-shadow: #363D44 1px 1px 3px 3px inset;
+    border-bottom-left-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
 }
 div.output_wrapper {
-    background-color: #494B4E;
+    background-color: #3f474f;
     margin-bottom: 0em;
     margin-top: 0em;
     border: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
-    padding-top: 1em;
-    margin-bottom: 8px;
-    margin-top: 8px;
-    margin-left: 8px;
-    margin-right: 8px;
-    background-color:#494B4E;
+    background-color:#3f474f;
     color: #EEEEEE;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 div.output_area pre {
     color: #EEEEEE;
     font-size: 10pt;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 div.output_subarea {
     overflow-x: auto;

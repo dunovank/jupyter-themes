@@ -368,6 +368,7 @@ div.text_cell, div.text_cell_render pre, div.text_cell_render {
     background: #eeeeee;
     background-color: #eeeeee;
     max-width: 100%;
+    border-radius: 2px;
 }
 div.cell.text_cell.rendered .input_prompt {
     font-family: 'Hack', monospace;
@@ -383,11 +384,13 @@ div.cell.text_cell.unrendered .input_prompt {
     color: #aaaaaa;
     background-color: #eeeeee;
     background-color: #eeeeee;
+    border-radius: 2px;
 }
 div.cell.text_cell.rendered.selected {
     border: medium solid #e8565d;
     padding: 0px;
     border-radius: 2px;
+
 }
 div.text_cell_render h1,
 div.text_cell_render h2,
@@ -508,15 +511,35 @@ div.js-error { color: #de143d; }
 /* Set CodeCell font-size*/
 div.CodeMirror pre {line-height: 1.6 !important;}
 div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
-div.CodeMirror-lines { padding: .5em .4em .3em .4em; }
+div.CodeMirror-lines { padding-bottom: .3em; }
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .4) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
 
-div.cell { border: medium solid #ffffff; padding: 0px; border-radius: 2px; }
-div.cell.selected { border: medium solid #ff8132; padding: 0px; border-radius: 2px; }
-.edit_mode div.cell.selected {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 2px; }
-div.cell.edit_mode {border: medium solid #ffd5bb !important; padding: 0px; border-radius: 2px;}
+div.cell {
+    border: medium solid #ffffff;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+div.cell.selected {
+    border: medium solid #ff8132;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+.edit_mode div.cell.selected {
+    border: medium solid #ffd5bb !important;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+div.cell.edit_mode {
+    border: medium solid #ffd5bb !important;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
 
 div.prompt {
     padding: 0.3em;
@@ -589,10 +612,18 @@ div.output_wrapper {
     margin-bottom: 0em;
     margin-top: 0em;
     border: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
     background-color: #ffffff;
     color: #000000;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 
 div.output_area pre {
