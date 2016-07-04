@@ -611,6 +611,7 @@ div.output_subarea {
 }
 div.widget-area {
     background-color: #3f474f;
+    background: #3f474f;
     page-break-inside: avoid;
     -moz-box-align: stretch;
     box-orient: horizontal;
