@@ -503,24 +503,32 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #e9ecf1; background: 
 
 
 div.cell {
+    background: #303845;
+    background-color: #303845;
     border: medium solid #262931;
     padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
 div.cell.selected {
+    background: #303845;
+    background-color: #303845;
     border: medium solid #3572C6;
     padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
 .edit_mode div.cell.selected {
+    background: #303845;
+    background-color: #303845;
     border: medium solid #33517c !important;
     padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
 div.cell.edit_mode {
+    background: #303845;
+    background-color: #303845;
     border: medium solid #33517c !important;
     padding: 0px;
     border-top-right-radius: 2px;
@@ -541,7 +549,7 @@ div.input_area {
     background: #262931;
     margin-bottom: 0px;
     border: 0px;
-    border-top-left-radius: 2px;
+    border-top-left-radius: 0px;
     border-top-right-radius: 2px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -577,10 +585,9 @@ div.out_prompt_overlay.prompt {
     width: 1em;
     background-color: #384151;
     border-bottom-left-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 div.out_prompt_overlay.prompt:hover {
     font-family: 'Hack', monospace;
@@ -588,7 +595,7 @@ div.out_prompt_overlay.prompt:hover {
     background-color: #384151;
     box-shadow: #303945 1px 1px 3px 3px inset;
     border-bottom-left-radius: 2px;
-    -webkit-border-radius: 2px;
+    -webkit-border-: 2px;
     -moz-border-radius: 2px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;

@@ -9,7 +9,7 @@ import shutil
 import argparse
 from glob import glob
 from tempfile import mkstemp
-__version__ = '0.4.4'
+__version__ = '0.4.5'
 
 jnb_config_dir = jupyter_config_dir()
 HOME = os.path.expanduser('~')

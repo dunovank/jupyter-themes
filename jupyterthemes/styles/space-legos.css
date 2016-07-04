@@ -484,24 +484,32 @@ div.CodeMirror span.CodeMirror-matchingbracket { color: #ffffff; background: rgb
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #ffffff; background: rgba(191, 97, 106, .5) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
 
 div.cell {
+    background: #363D44;
+    background-color: #363D44;
     border: medium solid #242B2F;
     padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
 div.cell.selected {
+    background: #363D44;
+    background-color: #363D44;
     border: medium solid #57B690;
     padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
 .edit_mode div.cell.selected {
+    background-color: #363D44;
+    background: #363D44;
     border: medium solid #324E48 !important;
     padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
 div.cell.edit_mode {
+    background: #363D44;
+    background-color: #363D44;
     border: medium solid #242B2F !important;
     padding: 0px;
     border-top-right-radius: 2px;
@@ -553,8 +561,6 @@ div.out_prompt_overlay.prompt {
     width: 1em;
     background-color: #3f474f;
     border-bottom-left-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
 }
@@ -565,8 +571,6 @@ div.out_prompt_overlay.prompt:hover {
     background-color: #3f474f;
     box-shadow: #363D44 1px 1px 3px 3px inset;
     border-bottom-left-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
 }

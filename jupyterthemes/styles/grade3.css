@@ -517,24 +517,32 @@ div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgb
 div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
 
 div.cell {
+    background: #eeeeee;
+    background-color: #eeeeee;
     border: medium solid #ffffff;
     padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
 div.cell.selected {
+    background: #eeeeee;
+    background-color: #eeeeee;
     border: medium solid #ff8132;
     padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
 .edit_mode div.cell.selected {
+    background: #eeeeee;
+    background-color: #eeeeee;
     border: medium solid #ffd5bb !important;
     padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
 div.cell.edit_mode {
+    background: #eeeeee;
+    background-color: #eeeeee;
     border: medium solid #ffd5bb !important;
     padding: 0px;
     border-top-right-radius: 2px;
@@ -601,8 +609,6 @@ div.out_prompt_overlay.prompt:hover {
     background-color: #ffffff;
     box-shadow: #e8e8e8 2px 2px 3px 2px inset;
     border-bottom-left-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
 }
@@ -625,7 +631,6 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 }
-
 div.output_area pre {
     color: #000000;
     font-size: 10pt;
