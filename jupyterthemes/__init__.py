@@ -97,9 +97,9 @@ def reset_default():
         try:
             shutil.copy(old, old_save)
             os.remove(old)
-            print("Reset default theme here: {0}".format(fpath)
+            print("Reset default theme here: {0}".format(fpath))
         except Exception:
-            print("Already set to default theme in {0}".format(fpath)
+            print("Already set to default theme in {0}".format(fpath))
             pass
 
 def main():
