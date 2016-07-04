@@ -30,7 +30,6 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    install_requires=[ 'jupyter' ],
     keywords=['jupyter', 'ipython', 'notebook', 'themes', 'css'],
     entry_points={
         'console_scripts': [
