@@ -9,7 +9,7 @@ import shutil
 import argparse
 from glob import glob
 from tempfile import mkstemp
-__version__ = '0.4.1'
+__version__ = '0.4.2'
 
 jnb_config_dir = jupyter_config_dir()
 HOME = os.path.expanduser('~')
@@ -32,18 +32,25 @@ default_font_string="div.CodeMirror pre {font-family: 'Hack', monospace; font-si
 def get_themes():
     """ return list of available themes """
     themes = [os.path.basename(theme).replace('.css', '')
-              for theme in glob('%s/*.css' % styles_dir)]
+              for theme in glob('{0}/*.css'.format(styles_dir))]
     return themes
+
+def set_nb_theme(name):
+    """ set theme from within notebook """
+    from IPython.core.display import HTML
+    css_path = glob('{0}/{1}.css'.format(styles_dir, name))[0]
+    customcss = open(css_path, "r").read()
+    return HTML(''.join(['<style> ', customcss, ' </style>']))
 
 def install_theme(name, toolbar=False, fontsize=12, font="'Hack'"):
     """ copy given styles/<theme name>.css --> ~/.jupyter/custom/custom.css
     """
-    source_path = glob('%s/%s.css' % (styles_dir, name))[0]
+    source_path = glob('{0}/{1}.css'.format(styles_dir, name))[0]
     font_string="div.CodeMirror pre {font-family: %s, monospace; font-size: %dpt;}" % (font, fontsize)
     # -- install theme
-    customcss_path = '%s/custom.css' % install_path
+    customcss_path = '{0}/custom.css'.format(install_path)
     shutil.copy(source_path, customcss_path)
-    print("Installing %s at %s" % (name, install_path))
+    print("Installing {0} at {1}".format(name, install_path))
     fh, abs_path = mkstemp()
     with open(abs_path, 'w') as cssfile:
         with open(customcss_path) as old_file:
@@ -85,14 +92,14 @@ def reset_default():
     jnb_cached = os.path.join(jupyter_data_dir(), 'nbextensions')
     paths = [install_path, jnb_cached]
     for fpath in paths:
-        old = '%s/%s.css' % (fpath, 'custom')
-        old_save = '%s/%s.css' % (fpath, 'custom_old')
+        old = '{0}/{1}.css'.format(fpath, 'custom')
+        old_save = '{0}/{1}.css'.format(fpath, 'custom_old')
         try:
             shutil.copy(old, old_save)
             os.remove(old)
-            print("Reset default theme here: %s" % fpath)
+            print("Reset default theme here: {0}".format(fpath)
         except Exception:
-            print("Already set to default theme in %s" % fpath)
+            print("Already set to default theme in {0}".format(fpath)
             pass
 
 def main():
@@ -130,7 +137,7 @@ def main():
     if args.theme:
         themes = get_themes()
         if args.theme not in themes:
-            print("Theme %s not found. Available: %s"%(args.theme, ' '.join(themes)))
+            print("Theme {0} not found. Available: {1}".format(args.theme, ' '.join(themes)))
             exit(1)
         if args.toolbar:
             print('Enabling Toolbar')

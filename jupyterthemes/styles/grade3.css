@@ -1,5 +1,5 @@
 /*
-    Name:       Happy16 Light
+    Name:       Grade3
     Author:     Kyle Dunovan (http://github.com/dunovank)
 */
 
@@ -52,6 +52,7 @@ COMMENT THIS LINE OUT TO RESTORE TOOLBAR
 *****************************************
 <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
 div#maintoolbar {display: none !important;}
+
 .list_header {
     font-weight: normal;
     background-color: transparent;
@@ -59,7 +60,7 @@ div#maintoolbar {display: none !important;}
 }
 div.list_container a:hover {color: #222222;}
 div.list_item:hover {
-    background-color: rgba(184, 184, 184, 0.10);
+    background-color: rgba(184, 184, 184, 0.14);
 }
 ul#selector-menu.dropdown-menu > li > a {
     background: #efefef;
@@ -259,6 +260,8 @@ div.output_html {color: #1e2429;}
     background-color: #e0e0e0;
     border-color: #e0e0e0;
 }
+
+/* BUTTONS */
 .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
     color: #222222;
     background: #e0e0e0;
@@ -358,24 +361,13 @@ div.tooltiptext.bigtooltip {
     height: 400px;
     width: 825px;
 }
+
 /* Formatting code in markdown cells */
-div.text_cell_render {
-    font-size: 100%;
-    background: #eeeeee;
-    background-color: #eeeeee;
-    color: #4c4c4c;
-}
-/* Formatting code in markdown cells */
-div.text_cell_render pre {
+div.text_cell, div.text_cell_render pre, div.text_cell_render {
     color: #4c4c4c;
     background: #eeeeee;
     background-color: #eeeeee;
-}
-div.text_cell {
     max-width: 100%;
-    color: #4c4c4c;
-    background: #eeeeee;
-    background-color: #eeeeee;
 }
 div.cell.text_cell.rendered .input_prompt {
     font-family: 'Hack', monospace;
@@ -385,6 +377,12 @@ div.cell.text_cell.rendered .input_prompt {
     width: 1em;
     padding-bottom: 0px;
     margin-bottom: 0px;
+}
+div.cell.text_cell.unrendered .input_prompt {
+    border-right: 2px solid rgba(43, 158, 128, .35);
+    color: #aaaaaa;
+    background-color: #eeeeee;
+    background-color: #eeeeee;
 }
 div.cell.text_cell.rendered.selected {
     border: medium solid #e8565d;
@@ -398,11 +396,11 @@ div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
     font-family: 'Helvetica', sans-serif;
+    font-weight: lighter;
     background: #eeeeee;
     background-color: #eeeeee;
     color: #4c4c4c;
-    font-weight: 300;
-    line-height: 110%;
+    line-height: 1;
 }
 
 /* text in output area (i.e. print some_list) */

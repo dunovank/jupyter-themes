@@ -1,5 +1,5 @@
 /*
-    Name:       Oceans16 Dark
+    Name:       Space-Legos
     Author:     Kyle Dunovan (http://github.com/dunovank)
 */
 
@@ -24,6 +24,22 @@ div#ipython_notebook {display: none;}
     padding-top: 4px;
     color: #02ac65;
 }
+.nav-tabs > li > a:hover {
+    color: #cbd1dc;
+    background: #242B2F;
+    background-color: rgba(37, 176, 125, 0.2);
+    border-color: transparent;
+    background-image: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #e9ecf1;
+    background: #242B2F;
+    border-color: transparent;
+    background-color: rgba(37, 176, 125, 0.5);
+}
+.nav-tabs {
+    border-bottom: 1px solid rgba(37, 176, 125, 0.5);
+}
 
 /*<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
 *****************************************
@@ -32,23 +48,103 @@ COMMENT THIS LINE OUT TO RESTORE TOOLBAR
 <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>> */
 div#maintoolbar {display: none !important;}
 
-div.list_container a:hover {color: #EEEEEE;}
+div.list_container a:hover {color: #FFFFFF;}
 .list_header {
     font-weight: normal;
     background-color: #242B2F;
+    color: #E3E3E3;
 }
-div.list_container :hover {
-    background-color: #02ac65;
-    color: #FFFFFF;
+div#notebook_list_header.row.list_header {
+    background-color: #242B2F;
 }
-div.notebook_list_header {
-    background: #242B2F;
+ul#selector-menu.dropdown-menu > li > a {
+    padding: none;
+}
+div.list_item:hover {
+    background-color: rgba(37, 176, 125, 0.05);
+}
+.list_container > div {
+    border-bottom: 1px solid rgba(37, 176, 125, 0.25);
+    font-size: 12pt;
 }
 
 /* PANELS // LISTS // DROPDOWN MENUS*/
-.list_container > div {
-    border-bottom: 1px solid rgba(37, 176, 125, 0.4);
+.dropdown-menu {
+    border: 2px solid rgba(37, 176, 125, 0.5);
+    background-color: #3D3E3E;
+    background: #3D3E3E;
+    box-shadow: none;
+    padding: 0px 0;
     font-size: 12pt;
+    text-align: left;
+    vertical-align: middle;
+}
+.dropdown-menu:hover{
+    background-color: #3D3E3E;
+    border: 2px solid rgba(37, 176, 125, 0.5);
+    box-shadow: none;
+    vertical-align: middle;
+}
+.dropdown-header {
+    font-size: 13pt;
+    display: block;
+    line-height: 1.25;
+    color: #333333;
+    text-decoration: underline;
+    text-decoration-color: rgba(37, 176, 125, 0.7);
+    white-space: nowrap;
+}
+.dropdown-menu > li > a {
+    font-size: 12pt;
+    display: block;
+    clear: both;
+    padding: 8px 20px;
+    font-weight: normal;
+    line-height: 1.25;
+    color: #E3E3E3;
+    white-space: nowrap;
+    background-color: #3D3E3E;
+    background: #3D3E3E;
+}
+.dropdown-menu > li > a:hover {
+    font-size: 12pt;
+    background: rgba(37, 176, 125, 0.5);
+    color: #FFFFFF;
+    display: block;
+    clear: both;
+    padding: 8px 20px;
+    font-weight: normal;
+    line-height: 1.25;
+}
+.dropdown-menu .divider {
+    height: 2px;
+    margin: 0px 0px;
+    overflow: hidden;
+    background-color: rgba(37, 176, 125, 0.7);
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -2px;
+    margin-left: 0px;
+    padding-top: 0px;
+}
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+    color: #E3E3E3;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid rgba(37, 176, 125, 0.7);
+    min-height: 16.4286px;
+}
+.modal-content {
+    position: relative;
+    background-color: #3D3E3E;
+    border: 2px solid rgba(53, 87, 120, 0.15);
+    border-radius: 3px;
+    box-shadow: 0px 3px 9px rgba(53, 87, 120, 0.25);
+    background-clip: padding-box;
+    outline: 0px none;
 }
 .panel-default {
     border-color: rgba(37, 176, 125, 0.3);
@@ -61,77 +157,6 @@ div.notebook_list_header {
     color: #E3E3E3;
     border: 2px solid rgba(37, 176, 125, 0.3);
     box-shadow: none;
-}
-.dropdown-menu {
-    border: 1px solid rgba(37, 176, 125, 0.5);
-    background-color: #3D3E3E;
-    background: #3D3E3E;
-    box-shadow: none;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    list-style: outside none none;
-    font-size: 12pt;
-    text-align: left;
-}
-.dropdown-menu:hover{
-    background-color: #3D3E3E;
-    border: 1px solid rgba(37, 176, 125, 0.5);
-    box-shadow: none;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-.modal-content {
-    position: relative;
-    background-color: #3D3E3E;
-    border: 1px solid rgba(53, 87, 120, 0.15);
-    border-radius: 3px;
-    box-shadow: 0px 3px 9px rgba(53, 87, 120, 0.25);
-    background-clip: padding-box;
-    outline: 0px none;
-}
-.dropdown-header {
-    display: block;
-    padding: 3px 20px;
-    font-size: 12pt;
-    line-height: 1.42857;
-    color: #E3E3E3;
-    text-decoration: underline;
-    text-decoration-color: rgba(37, 176, 125, 0.7);
-    white-space: nowrap;
-}
-.dropdown-menu > li > a {
-    border: 1px solid #3D3E3E;
-    display: block;
-    padding: none;
-    clear: both;
-    background-clip: padding-box;
-    font-weight: normal;
-    line-height: 1.42857;
-    color: #E3E3E3;
-    white-space: nowrap;
-    background-color: #3D3E3E;
-    background: #3D3E3E;
-}
-.dropdown-menu > li > a:hover {
-    background-clip: padding-box;
-    background: rgba(37, 176, 125, 0.5);
-    border: 1px solid #3D3E3E;
-    color: #FFFFFF;
-    padding: none;
-}
-.dropdown-menu .divider {
-    height: 2px;
-    margin: 8px 0px;
-    overflow: hidden;
-    background-color: rgba(37, 176, 125, 0.7);
-}
-.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
-    color: #E3E3E3;
-}
-.modal-header {
-    padding: 15px;
-    border-bottom: 1px solid rgba(37, 176, 125, 0.7);
-    min-height: 16.4286px;
 }
 #running .panel-group .panel .panel-heading {
     background-color: #242B2F;
@@ -236,73 +261,111 @@ div.output_html {color: #1e2429;}
     color: #FFFFFF;
     background-color: rgba(37, 176, 125, 0.5);
 }
+
+/* BUTTONS */
+.btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+    color: #cbd1dc;
+    background: #57B690;
+    background-color: #57B690;
+}
 .btn {
     color: #E3E3E3;
-    background: #242B2F;
+    background: transparent;
+    background-color: transparent;
     font-size: 12pt;
     font-weight: normal;
     border: 0 none !important;
+    border-radius: 2px;
     box-shadow: none !important;
     text-shadow: none;
-    vertical-align: 0px;
 }
-
 .btn-group > .btn-mini {
     color: #E3E3E3;
-    background: #242B2F;
+    background: transparent;
+    background-color: transparent;
     font-size: 11pt;
     font-weight: normal;
     border: 0 none !important;
+    border-radius: 2px;
     box-shadow: none !important;
     text-shadow: none;
 }
 .btn:hover {
-    color: #57B690;
-    background: #242B2F;
-    background-color: #242B2F;
+    color: #cbd1dc;
+    background: transparent;
+    background-color: rgba(37, 176, 125, 0.5);
     background-image: none;
 }
 .btn-group > .btn-mini:hover {
-    color: #57B690;
-    background: #242B2F;
-    background-color: #242B2F;
+    color: #cbd1dc;
+    background: transparent;
+    background-color: rgba(37, 176, 125, 0.5);
     background-image: none;
 }
-.btn-group, .btn-group-vertical {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
+.btn-xs, .btn-group-xs > .btn {
+    display: table-row-group;
 }
+.btn-group, .btn-group-vertical {
+    background: transparent;
+    background-color: transparent;
+}
+.alternate_upload .btn-upload {
+    padding: 1px 5px;
+    line-height: 1.5;
+    height: 26px;
+    background: transparent;
+    display: inline-block;
+}
+.alternate_upload .btn-upload:hover {
+    color: #cbd1dc;
+    background: transparent;
+    background-color: rgba(37, 176, 125, 0.5);
+    background-image: none;
+}
+
+/* TOOLTIP DIMENSIONS */
 .ipython_tooltip {
     border: 2px solid #57B690;
     box-shadow: none;
     border-radius: 2px;
     position: absolute;
     z-index: 1000;
-    background-color: #3D3E3E;
+    font-size: 90%;
+    background-color: #363D44;
+}
+.ipython_tooltip .tooltiptext pre {
+    background-color: #363D44;
+    color: #CFD2D9;
+    font-size: 90%;
+}
+div#tooltip.ipython_tooltip {
+    overflow: wrap;
+    max-width: 825px;
+}
+div.tooltiptext.bigtooltip {
+    overflow: wrap;
+    height: 400px;
+    width: 825px;
 }
 
-.ipython_tooltip .tooltiptext pre {
-    border: 0px none;
-    border-radius: 0px;
-    background-color: #3D3E3E;
-    color: #CFD2D9;
-}
 /* Formatting code in markdown cells */
-div.text_cell_render {
-    font-family: 'Helvetica', sans-serif;
-    background: #333537;
-    font-weight: 310;
-    color: #E3E3E3;
-}
-/* Formatting code in markdown cells */
-div.text_cell_render pre {
-    color: #E3E3E3;
-    background-color: #333537;
-}
-div.text_cell {
+div.text_cell, div.text_cell_render pre, div.text_cell_render {
+    background: #363D44;
+    background-color: #363D44;
     max-width: 100%;
     color: #E3E3E3;
+}
+div.cell.text_cell.rendered .input_prompt {
+    border-right: 2px solid rgba(43, 158, 128, .35);
+    color: #E3E3E3;
+    background: #363D44;
+    background-color: #363D44;
+}
+div.cell.text_cell.unrendered .input_prompt {
+    border-right: 2px solid rgba(43, 158, 128, .35);
+    color: #E3E3E3;
+    background: #363D44;
+    background-color: #363D44;
 }
 div.text_cell_render h1,
 div.text_cell_render h2,
@@ -311,7 +374,7 @@ div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
     font-family: 'Helvetica', sans-serif;
-    background: #333537;
+    background: #363D44;
     font-weight: 300;
     color: #E3E3E3;
     line-height: 90%;

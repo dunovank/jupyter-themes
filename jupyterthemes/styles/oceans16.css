@@ -1,21 +1,21 @@
 /*
-    Name:       Oceans16 Dark
+    Name:       Oceans16
     Author:     Kyle Dunovan (http://github.com/dunovank)
 */
 
 body {background-color: #262931;}
 
-a {color: #8997b0; font-family: 'Helvetica', sans-serif; }
+a {color: #798daf; font-family: 'Helvetica', sans-serif; }
 div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {font-family:'Hack', monospace; font-size: 11pt;}
 
 /* Hiding the ipython log */in
 div#ipython_notebook {display: none;}
 
 /* INTRO PAGE */
-.toolbar_info {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
-.list_container {color: #8997b0; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
-.breadcrumb>li {text-shadow:0 0px 0; color:#8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt}
-.list_container a {color: #8997b0; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
+.toolbar_info {color: #798daf; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif; text-shadow: none !important; }
+.list_container {color: #798daf; font-size: 12pt; border: 0; font-family: 'Helvetica', sans-serif;text-shadow: none !important; }
+.breadcrumb>li {text-shadow:0 0px 0; color:#798daf; font-family: 'Helvetica', sans-serif; font-size: 12pt}
+.list_container a {color: #798daf; font-family: 'Helvetica', sans-serif; font-size: 12pt; border: 0; text-shadow: none !important; }
 .item_icon {color: #3572C6;}
 .item_buttons .kernel-name {
     color: #3572C6;
@@ -55,7 +55,7 @@ div.list_container a:hover {color: #cbd1dc;}
 .list_header {
     font-weight: normal;
     background-color: #262931;
-    color: #8997b0;
+    color: #798daf;
 }
 div#notebook_list_header.row.list_header {
     background-color: #262931;
@@ -66,13 +66,12 @@ ul#selector-menu.dropdown-menu > li > a {
 div.list_item:hover {
     background-color:rgba(53, 108, 180, 0.05);
 }
-
-
-/* PANELS // LISTS // DROPDOWN MENUS*/
 .list_container > div {
     border-bottom: 1px solid rgba(53, 108, 180, 0.2);
     font-size: 12pt;
 }
+
+/* PANELS // LISTS // DROPDOWN MENUS*/
 .panel-default {
     border-color: rgba(53, 108, 180, 0.1);
 }
@@ -81,13 +80,13 @@ div.list_item:hover {
     fontsize: 12px;
     margin-bottom: 18px;
     background-color: #262931;
-    color: #8997b0;
+    color: #798daf;
     border: 0px;
     box-shadow: none;
 }
 .modal-content {
     position: relative;
-    background-color: #39414F;
+    background-color: #384151;
     border: 1px solid rgba(53, 108, 180, 0.15);
     border-radius: 3px;
     box-shadow: 0px 3px 9px rgba(53, 108, 180, 0.25);
@@ -114,7 +113,7 @@ div.list_item:hover {
     font-size: 13pt;
     display: block;
     line-height: 1.25;
-    color: #8997b0;
+    color: #798daf;
     text-decoration: underline;
     text-decoration-color: rgba(53, 108, 180, 0.25);
     white-space: nowrap;
@@ -126,7 +125,7 @@ div.list_item:hover {
     padding: 8px 20px;
     font-weight: normal;
     line-height: 1.25;
-    color: #8997b0;
+    color: #798daf;
     white-space: nowrap;
     background-color: #373e4b;
     background: #373e4b;
@@ -188,7 +187,7 @@ div.list_item:hover {
 }
 .rendered_html pre, .rendered_html code {
     font-size: 12pt;
-    color: #8997b0;
+    color: #798daf;
     line-height: 100%;
     background: #303845;
 }
@@ -196,7 +195,7 @@ body {
     font-family: "Helvetica", Helvetica, Arial, sans-serif;
     font-size: 12pt;
     line-height: 1.42857;
-    color: #8997b0;
+    color: #798daf;
 }
 
 #kernel_indicator {
@@ -244,8 +243,8 @@ div.output_html {color: #1e2429;}
 
 /* Formatting code in text, code*/
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px #8997b0 solid;
-  color: #8997b0;
+  border: 1px #798daf solid;
+  color: #798daf;
   background-color: #303845 !important;
   align-content: left !important;
 }
@@ -260,7 +259,7 @@ div.output_html {color: #1e2429;}
     margin-top: 8px;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #8997b0;
+    color: #798daf;
     font-size: 14pt;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -273,14 +272,15 @@ div.output_html {color: #1e2429;}
     border-color: rgb(53, 108, 180);
 }
 
+
+/* BUTTONS */
 .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
     color: #e9ecf1;
     background-color: #3572C6;
     border-color: #3572C6;
 }
-
 .btn {
-    color: #8997b0;
+    color: #798daf;
     background: transparent;
     background-color: transparent;
     font-size: 12pt;
@@ -291,7 +291,7 @@ div.output_html {color: #1e2429;}
     text-shadow: none;
 }
 .btn-group > .btn-mini {
-    color: #8997b0;
+    color: #798daf;
     background: transparent;
     background-color: transparent;
     font-size: 11pt;
@@ -360,34 +360,25 @@ div.tooltiptext.bigtooltip {
 }
 
 /* Formatting code in markdown cells */
-div.text_cell_render {
-    font-size: 100%;
-    background: #303845;
-    background-color: #303845;
-    color: #8997b0;
-}
-/* Formatting code in markdown cells */
-div.text_cell_render pre {
-    color: #8997b0;
-    background: #303845;
-    background-color: #303845;
-}
-div.text_cell {
+div.text_cell, div.text_cell_render pre, div.text_cell_render {
     background: #303845;
     background-color: #303845;
     max-width: 100%;
-    color: #8997b0;
+    color: #798daf;
 }
 div.cell.text_cell.rendered .input_prompt {
-    font-family: 'Hack', monospace;
     border-right: 2px solid rgba(43, 158, 128, .35);
-    color: #8997b0;
+    color: #798daf;
     background: #303845;
     background-color: #303845;
-    width: 1em;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
 }
+div.cell.text_cell.unrendered .input_prompt {
+    border-right: 2px solid rgba(43, 158, 128, .35);
+    color: #798daf;
+    background: #303845;
+    background-color: #303845;
+}
+
 div.cell.text_cell.rendered.selected {
     border: medium solid #268a70;
     padding: 0px;
@@ -400,19 +391,19 @@ div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
     font-family: 'Helvetica', sans-serif;
+    font-weight: lighter;
     background: #303845;
     background-color: #303845;
-    font-weight: 300;
-    color: #8997b0;
-    line-height: 110%;
+    color: #798daf;
+    line-height: 1;
 }
 /* text in output area (i.e. print some_list) */
-div.output_html {color: #8997b0;}
+div.output_html {color: #798daf;}
 /* Formatting code in text, code*/
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px #8997b0 solid;
-  color: #8997b0;
-  background-color: #39414F !important;
+  border: 1px #99a9cb solid;
+  color: #99a9cb;
+  background-color: #384151 !important;
   align-content: left !important;
 }
 button.close {
@@ -467,21 +458,21 @@ button.close {
 }
 
 span.ansiblack {color: #2b303b;}
-span.ansiblue {color: #6ea3d4;}
+span.ansiblue {color: #DB797C;}
 span.ansigray {color: #B4B7B4;}
-span.ansigreen {color: #8FCA9A;}
+span.ansigreen {color: #B5C2D9;}
 span.ansipurple {color: #CAA6EC;}
-span.ansicyan {color: #7BC6C0;}
+span.ansicyan {color: #77ABE7;}
 span.ansiyellow {color: #DDD7A3;}
-span.ansired {color: #DB797C;}
+span.ansired {color: #798daf;}
 
 div.output_stderr {background-color: #DB797C;}
 div.output_stderr pre {color: #D0D4E6;}
 div.js-error { color: #DB797C; }
 
-.cm-s-ipython.CodeMirror {background: #303845; color: #d0d3e6; border-top-right-radius: 2px; background-color: #303845;}
+.cm-s-ipython.CodeMirror {background: #303845; color: #CDD2E9; border-top-right-radius: 2px; background-color: #303845;}
 .cm-s-ipython div.CodeMirror-selected {background: #3C4555 !important;}
-.cm-s-ipython .CodeMirror-gutters {background: #39414F; border: 0px; border-radius:0px;}
+.cm-s-ipython .CodeMirror-gutters {background: #384151; border: 0px; border-radius:0px;}
 .cm-s-ipython .CodeMirror-linenumber {color: #5A647B !important; }
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #0095ff !important;}
 .cm-s-ipython span.cm-comment {color: #667FB1; font-style: italic !important;}
@@ -494,11 +485,11 @@ div.js-error { color: #DB797C; }
 .cm-s-ipython span.cm-operator {color: #77ABE7; font-weight: normal;}
 .cm-s-ipython span.cm-builtin {color: #E39194; font-weight: normal;}
 .cm-s-ipython span.cm-boolean {color: #E39194;}
-.cm-s-ipython span.cm-variable {color: #d0d3e6;}
+.cm-s-ipython span.cm-variable {color: #CDD2E9;}
 .cm-s-ipython span.cm-variable-2 {color: #E39194;}
 
 .cm-s-ipython span.cm-def {color: #77ABE7; font-weight: normal;}
-.cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .3) !important;}
+.cm-s-ipython span.cm-error {background: rgba(191, 97, 106, .1) !important;}
 .cm-s-ipython span.cm-tag {color: #CAA6EC;}
 .cm-s-ipython span.cm-link {color: #E39194;}
 .cm-s-ipython span.cm-storage {color: #CAA6EC;}
@@ -506,8 +497,9 @@ div.js-error { color: #DB797C; }
 .cm-s-ipython span.cm-class {color: #E5DEA5;}
 .cm-s-ipython span.cm-support {color: #77ABE7;}
 .cm-s-ipython span.cm-qualifier {color: #77ABE7;}
-.cm-s-ipython span.cm-property {color: #77ABE7;}
+.cm-s-ipython span.cm-property {color: #7BC6C0;}
 .cm-s-ipython span.cm-meta {color: #7BC6C0; }
+.cm-s-default .cm-header { color: #77ABE7; }
 
 /* Set CodeCell font-size*/
 /*div.CodeMirror pre {font-size: 11pt !important;}*/
@@ -516,13 +508,33 @@ div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
 div.CodeMirror-lines { padding: .5em .4em .3em .4em; }
 
 div.CodeMirror span.CodeMirror-matchingbracket { color: #e9ecf1; background-color: rgb(53, 108, 180) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
-div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #e9ecf1; background: rgba(191, 97, 106, .5) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #e9ecf1; background: rgba(191, 97, 106, .2) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
 
 
-div.cell { border: medium solid #262931; padding: 0px; border-top-right-radius: 2px; border-top-left-radius: 2px; }
-div.cell.selected { border: medium solid #3572C6; padding: 0px; border-top-right-radius: 2px; border-top-left-radius: 2px; }
-.edit_mode div.cell.selected {border: medium solid #33517c !important; padding: 0px; border-top-right-radius: 2px; border-top-left-radius: 2px; }
-div.cell.edit_mode {border: medium solid #33517c !important; padding: 0px; border-top-right-radius: 2px; border-top-left-radius: 2px; }
+div.cell {
+    border: medium solid #262931;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+div.cell.selected {
+    border: medium solid #3572C6;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+.edit_mode div.cell.selected {
+    border: medium solid #33517c !important;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+div.cell.edit_mode {
+    border: medium solid #33517c !important;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
 
 div.prompt {
     padding: 0.3em;
@@ -548,7 +560,7 @@ div.input_area {
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
     font-family: 'Hack', monospace;
-    color: #5A647B;
+    color: #5a6981;
     background-color: #303845;
     font-weight: normal;
     font-size: 9.5pt;
@@ -561,8 +573,8 @@ div.prompt.input_prompt {
 }
 div.prompt.output_prompt {
     font-family: 'Hack', monospace;
-    background-color: #39414F;
-    color: #39414F;
+    background-color: #384151;
+    color: #384151;
     font-size: 9.5pt;
     border-bottom-left-radius: 2px;
     border-top-right-radius: 0px;
@@ -573,7 +585,7 @@ div.out_prompt_overlay.prompt {
     font-family: 'Hack', monospace;
     font-size: 9.5pt;
     width: 1em;
-    background-color: #39414F;
+    background-color: #384151;
     border-bottom-left-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -583,7 +595,7 @@ div.out_prompt_overlay.prompt {
 div.out_prompt_overlay.prompt:hover {
     font-family: 'Hack', monospace;
     font-size: 9.5pt;
-    background-color: #39414F;
+    background-color: #384151;
     box-shadow: #303945 1px 1px 3px 3px inset;
     border-bottom-left-radius: 2px;
     -webkit-border-radius: 2px;
@@ -592,13 +604,13 @@ div.out_prompt_overlay.prompt:hover {
     border-top-left-radius: 0px;
 }
 div.output_wrapper {
-    background-color:#39414F;
+    background-color:#384151;
     margin-bottom: 0em;
     margin-top: 0em;
     border: 0px;
 }
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
-    background-color: #39414F;
+    background-color: #384151;
     color: #CFD2D9;
 }
 div.output_area pre {
