@@ -7,7 +7,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='jupyterthemes',
-    version='0.4.4',
+    version='0.4.6',
     packages=['jupyterthemes'],
     include_package_data=True,
     package_data={'jupyterthemes': ['sandbox/*.js', 'styles/*.css']},

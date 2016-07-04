@@ -108,7 +108,7 @@ div.list_item:hover {
 }
 .dropdown-menu > li > a:hover {
     font-size: 12pt;
-    background: rgba(37, 176, 125, 0.5);
+    background: rgba(37, 176, 125, 0.3);
     color: #FFFFFF;
     display: block;
     clear: both;
@@ -120,7 +120,7 @@ div.list_item:hover {
     height: 2px;
     margin: 0px 0px;
     overflow: hidden;
-    background-color: rgba(37, 176, 125, 0.7);
+    background-color: rgba(37, 176, 125, 0.3);
 }
 .dropdown-submenu > .dropdown-menu {
     top: 0;
@@ -609,6 +609,17 @@ div.output_subarea {
     flex: 1;
     max-width: calc(100% - 14ex);
 }
+div.widget-area {
+    background-color: #3f474f;
+    page-break-inside: avoid;
+    -moz-box-align: stretch;
+    box-orient: horizontal;
+    box-align: stretch;
+    flex-direction: row;
+    align-items: center;
+    align-self: auto;
+}
+
 /*
 Following courtesy of Sherif Soliman
 at http://sherifsoliman.com

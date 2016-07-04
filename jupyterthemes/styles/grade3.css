@@ -648,7 +648,16 @@ div.output_subarea {
     flex: 1;
     max-width: calc(100% - 14ex);
 }
-
+div.widget-area {
+    background-color: #ffffff;
+    page-break-inside: avoid;
+    -moz-box-align: stretch;
+    box-orient: horizontal;
+    box-align: stretch;
+    flex-direction: row;
+    align-items: center;
+    align-self: auto;
+}
 /*
 Following courtesy of Sherif Soliman
 at http://sherifsoliman.com
