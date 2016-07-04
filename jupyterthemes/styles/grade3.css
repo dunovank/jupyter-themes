@@ -478,11 +478,12 @@ span.ansired {color: #de143d;}
 
 div.output_stderr {background-color: #ebb5b7;}
 div.output_stderr pre {color: #000000;}
+div.js-error { color: #de143d; }
 
 .cm-s-ipython.CodeMirror {background: #eeeeee; color: #303030;  border-radius: 2px; }
-.cm-s-ipython div.CodeMirror-selected {background: #e0e1e3 !important;}
-.cm-s-ipython .CodeMirror-gutters {background: #e0e1e3; border: 0px; border-radius:0px;}
-.cm-s-ipython .CodeMirror-linenumber {color: #aaaaaa !important; font-size: 11pt;}
+.cm-s-ipython div.CodeMirror-selected {background: #e0e1e3 !important; }
+.cm-s-ipython .CodeMirror-gutters {background: #e0e1e3; border: 0px; border-radius:0px; }
+.cm-s-ipython .CodeMirror-linenumber {color: #aaaaaa !important; }
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #ff711a !important;}
 .cm-s-ipython span.cm-comment {color: #8d8d8d; font-style: italic !important;}
 .cm-s-ipython span.cm-atom {color: #055be0;}
@@ -491,7 +492,7 @@ div.output_stderr pre {color: #000000;}
 .cm-s-ipython span.cm-attribute {color: #de143d;}
 .cm-s-ipython span.cm-keyword {color: #713bc5; font-weight: normal;}
 .cm-s-ipython span.cm-string {color: #009e07; }
-.cm-s-ipython span.cm-operator {color: #009fb7; }
+.cm-s-ipython span.cm-operator {color: #055be0; }
 .cm-s-ipython span.cm-builtin {color: #e22978; }
 .cm-s-ipython span.cm-variable {color: #303030;}
 
@@ -504,14 +505,15 @@ div.output_stderr pre {color: #000000;}
 .cm-s-ipython span.cm-class {color: #e22978;}
 .cm-s-ipython span.cm-support {color: #de143d;}
 .cm-s-ipython span.cm-qualifier {color: #de143d;}
+.cm-s-ipython span.cm-meta {color: #AA22FF; }
 
 /* Set CodeCell font-size*/
-/*div.CodeMirror pre {font-size: 11pt !important;}*/
-div.CodeMirror pre {line-height: 1.5 !important;}
+div.CodeMirror pre {line-height: 1.6 !important;}
 div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
+div.CodeMirror-lines { padding: .5em .4em .3em .4em; }
 
-div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .4) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
-div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
+div.CodeMirror span.CodeMirror-matchingbracket { color: #000000; background: rgba(53, 114, 198, .4) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #000000; background: rgba(191, 97, 106, .3) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
 
 div.cell { border: medium solid #ffffff; padding: 0px; border-radius: 2px; }
 div.cell.selected { border: medium solid #ff8132; padding: 0px; border-radius: 2px; }

@@ -400,11 +400,12 @@ span.ansired {color: #DB797C;}
 
 div.output_stderr {background-color: #DB797C;}
 div.output_stderr pre {color: #D0D4E6;}
+div.js-error { color: #DB797C; }
 
 .cm-s-ipython.CodeMirror {background: #363D44; color: #C0D4E6;}
 .cm-s-ipython div.CodeMirror-selected {background: #3e424a !important;}
 .cm-s-ipython .CodeMirror-gutters {background: #6F7998; border: 0px; border-radius:0px;}
-.cm-s-ipython .CodeMirror-linenumber {color: #C0D4E6 !important; font-size: 11pt;}
+.cm-s-ipython .CodeMirror-linenumber {color: #C0D4E6 !important;}
 .cm-s-ipython .CodeMirror-cursor {border-left: 2px solid #41D79C !important;}
 .cm-s-ipython span.cm-comment {color: #636D8A; font-style: italic !important;}
 .cm-s-ipython span.cm-atom {color: #46B5B7;}
@@ -429,14 +430,16 @@ div.output_stderr pre {color: #D0D4E6;}
 .cm-s-ipython span.cm-support {color: #6EA3D4;}
 .cm-s-ipython span.cm-qualifier {color: #6EA3D4;}
 .cm-s-ipython span.cm-property {color: #6EA3D4;}
+.cm-s-ipython span.cm-meta {color: #7BC6C0; }
 
 /* Set CodeCell font-size*/
 /*div.CodeMirror pre {font-size: 11pt !important;}*/
-div.CodeMirror pre {line-height: 1.5 !important;}
+div.CodeMirror pre {line-height: 1.6 !important;}
 div.CodeMirror pre {font-family: 'Hack', monospace; font-size: 11pt;}
+div.CodeMirror-lines { padding: .5em .4em .3em .4em; }
 
-div.CodeMirror span.CodeMirror-matchingbracket { color: #ffffff; background: rgba(37, 176, 125, 0.9) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
-div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #ffffff; background: rgba(191, 97, 106, .5) !important ; height: 120%; line-height: 1.5 !important; padding-top: 1px;}
+div.CodeMirror span.CodeMirror-matchingbracket { color: #ffffff; background: rgba(37, 176, 125, 0.9) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: #ffffff; background: rgba(191, 97, 106, .5) !important ; height: 120%; line-height: 1.6 !important; padding-top: 1px;}
 
 div.cell { border: medium solid #242B2F; padding: 0px; border-radius: 0px; }
 div.cell.selected { border: medium solid #57B690; padding: 0px; border-radius: 0px; }
@@ -530,4 +533,27 @@ div.output_subarea {
     box-flex: 1;
     flex: 1;
     max-width: calc(100% - 14ex);
+}
+/*
+Following courtesy of Sherif Soliman
+at http://sherifsoliman.com
+*/
+div.output.output_scroll {
+    box-shadow: none;
+}
+/*Scroll bars*/
+::-webkit-scrollbar {
+    width: 12px;
+
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #495164;
+    background: #495164;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background-color: #464e60;
+    background: #464e60;
 }
