@@ -521,32 +521,40 @@ div.cell {
     background-color: #eeeeee;
     border: medium solid #ffffff;
     padding: 0px;
+    border-top-left-radius: 0px;
     border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 div.cell.selected {
     background: #eeeeee;
     background-color: #eeeeee;
     border: medium solid #ff8132;
     padding: 0px;
+    border-top-left-radius: 0px;
     border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 .edit_mode div.cell.selected {
     background: #eeeeee;
     background-color: #eeeeee;
     border: medium solid #ffd5bb !important;
     padding: 0px;
+    border-top-left-radius: 0px;
     border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 div.cell.edit_mode {
     background: #eeeeee;
     background-color: #eeeeee;
     border: medium solid #ffd5bb !important;
     padding: 0px;
+    border-top-left-radius: 0px;
     border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 div.prompt {
@@ -563,7 +571,7 @@ div.input_area {
     background: #ffffff;
     margin-bottom: 0px;
     border: 0px;
-    border-top-left-radius: 2px;
+    border-top-left-radius: 0px;
     border-top-right-radius: 2px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;

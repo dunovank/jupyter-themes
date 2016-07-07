@@ -507,32 +507,40 @@ div.cell {
     background-color: #303845;
     border: medium solid #262931;
     padding: 0px;
+    border-top-left-radius: 0px;
     border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 div.cell.selected {
     background: #303845;
     background-color: #303845;
     border: medium solid #3572C6;
     padding: 0px;
+    border-top-left-radius: 0px;
     border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 .edit_mode div.cell.selected {
     background: #303845;
     background-color: #303845;
     border: medium solid #33517c !important;
     padding: 0px;
+    border-top-left-radius: 0px;
     border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 div.cell.edit_mode {
     background: #303845;
     background-color: #303845;
     border: medium solid #33517c !important;
     padding: 0px;
+    border-top-left-radius: 0px;
     border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 div.prompt {
@@ -554,7 +562,6 @@ div.input_area {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
-
 /*Input and output cells formatting*/
 div.prompt.input_prompt {
     font-family: 'Hack', monospace;
