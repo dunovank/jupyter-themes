@@ -1,10 +1,11 @@
 ## Theme-ify your Jupyter Notebooks!
-Oceans16           |  Grade3
-:-------------------------:|:-------------------------:
-![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/oceans16_nb.png?raw=true)  |  ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/grade3_nb.png?raw=true)
 
-### Test-drive themes before installing
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/dunovank/jupyter-themes)
+### Oceans16
+![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/oceans16_nb.png?raw=true)
+
+### Grade3
+ [nixCraft](http://www.cyberciti.biz/faq/python-sleep-command-syntax-example/)
+![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/grade3_nb.png?raw=true)
 
 ### Install jupyterthemes w/ pip (officially)
 ```sh

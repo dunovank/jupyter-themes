@@ -7,10 +7,10 @@ from jupyter_core import paths
 import os
 import argparse
 from glob import glob
+import lesscpy
 __version__ = '0.5.0'
 
 package_dir = os.path.dirname(os.path.realpath(__file__))
-#package_dir = '/home/kyle/Dropbox/Git/jthemes'
 jupyter_dir = paths.jupyter_config_dir()
 jupyter_custom = os.path.join(jupyter_dir, 'custom')
 jupyter_config = os.path.join(jupyter_dir, 'nbconfig')
