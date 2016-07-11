@@ -8,7 +8,7 @@ import os
 import argparse
 from glob import glob
 import lesscpy
-__version__ = '0.5.1'
+__version__ = '0.5.4'
 
 package_dir = os.path.dirname(os.path.realpath(__file__))
 jupyter_dir = jpaths.jupyter_config_dir()
