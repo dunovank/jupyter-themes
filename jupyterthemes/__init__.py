@@ -3,15 +3,15 @@ Juypiter theme installer
 Author: dunovank at github.com
 """
 from __future__ import print_function
-from jupyter_core import paths
+from jupyter_core import paths as jpaths
 import os
 import argparse
 from glob import glob
 import lesscpy
-__version__ = '0.5.0'
+__version__ = '0.5.1'
 
 package_dir = os.path.dirname(os.path.realpath(__file__))
-jupyter_dir = paths.jupyter_config_dir()
+jupyter_dir = jpaths.jupyter_config_dir()
 jupyter_custom = os.path.join(jupyter_dir, 'custom')
 jupyter_config = os.path.join(jupyter_dir, 'nbconfig')
 layouts_dir = os.path.join(package_dir, 'layout')
@@ -101,8 +101,9 @@ def edit_config(linewrap=False, iu=4):
 
 def reset_default():
     """ remove custom.css import"""
-    jnb_cached = os.path.join(paths.jupyter_data_dir(), 'nbextensions')
-    paths = [css_fpath, jnb_cached]
+    from jupyter_core.paths import jupyter_data_dir
+    jnb_cached = os.path.join(jupyter_data_dir(), 'nbextensions')
+    paths = [jupyter_custom, jnb_cached]
     for fpath in paths:
         custom = '{0}/{1}.css'.format(fpath, 'custom')
         try:
