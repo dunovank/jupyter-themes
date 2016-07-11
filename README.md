@@ -18,7 +18,7 @@ pip install jupyterthemes
 jt -l
 
 # install a theme (to ~/.jupyter/custom/)
-# theme names: oceans16 | grade3 | space-legos
+# theme names: oceans16 | grade3 | space-legos | chesterish (NEW!)
 jt -t grade3
 
 # install a theme with toolbar (-T) enabled
