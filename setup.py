@@ -15,7 +15,7 @@ setup(
     long_description=README,
     license='MIT',
     url='https://github.com/dunovank/jupyter-themes/',
-    download_url='https://github.com/dunovank/jupyter-themes/tarball/0.5.6',
+    download_url='https://github.com/dunovank/jupyter-themes/tarball/0.5.7',
     author='dunovank',
     author_email='dunovank@gmail.com',
     classifiers=[
