@@ -4,7 +4,6 @@
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/oceans16_nb.png?raw=true)
 
 ### Grade3
- [nixCraft](http://www.cyberciti.biz/faq/python-sleep-command-syntax-example/)
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/Screens/grade3_nb.png?raw=true)
 
 ### Install jupyterthemes w/ pip (officially)
