@@ -1,0 +1,80 @@
+/* grade3 notebook colors */
+@notebook-bg:           #ffffff;
+@notebook-fg:           #2c2c2c;
+@notebook-base:         #efefef;
+
+@selected-bg:           @notebook-base;
+@selected-half:         rgba(184, 184, 184,.35);
+@selected-third:        rgba(184, 184, 184,.25);
+@selected-tenth:        rgba(184, 184, 184,.1);
+@selected-error:        rgba(191, 97, 106, .4);
+@selected-alt:          rgba(232, 86, 93, .35);
+@prompt-line:           rgba(240, 147, 43, .4);
+@matching-bracket:      rgba(53, 108, 180,.3);
+@selected-active:       @selected-half;
+
+@selected-fg:           #222222;
+@selected-fg-bright:    #000000;
+
+@cc-input-bg:           #eeeeee;
+@cc-input-fg:           #303030;
+@cc-output-bg:          #ffffff;
+@cc-output-fg:          #000000;
+@text-cell-fg:          #4c4c4c;
+@unrendered-text:       #ce4d4b;
+
+@tooltip-bg-color:      @notebook-base;
+@tooltip-fg-color:      #222222;
+
+@item-theme:            #ff8132;
+@item-blue:             #3572C6;
+@item-cyan:             @item-theme;
+
+@disabled:              #aaaaaa;
+@scrollbar:             @disabled;
+@scrollbar-inactive:    #dedede;
+@input-prompt:          @disabled;
+@box-shadow:            #e8e8e8;
+@cc-border-command:     @item-theme;
+@cc-border-edit:        #ffd5bb;
+@tc-border:             #e8565d;
+@button-color:          @item-theme;
+@table-color:           @text-cell-fg;
+@table-bg:              @cc-input-bg;
+
+/* grade3 codemirror colors */
+@ansiblack:             #333333;
+@ansiblue:              #1e70c7;
+@ansigray:              #656565;
+@ansigreen:             #009e07;
+@ansipurple:            #653bc5;
+@ansicyan:              #009fb7;
+@ansiyellow:            #dc4384;
+@ansired:               #de143d;
+
+@stderr-bg:             #ebb5b7;
+@stderr-fg:             #000000;
+@js-error:              @ansired;
+
+@cm-selected:           #e0e1e3;
+@cm-gutters:            @cm-selected;
+@cm-linenumber:         @disabled;
+@cm-cursor:             #ff711a;
+@cm-comment:            #8d8d8d;
+@cm-atom:               #055be0;
+@cm-number:             #ff8132;
+@cm-property:           #e22978;
+@cm-attribute:          #de143d;
+@cm-keyword:            #713bc5;
+@cm-string:             #009e07;
+@cm-meta:               #AA22FF;
+@cm-operator:           @cm-atom;
+@cm-builtin:            @cm-property;
+@cm-variable:           @cc-input-fg;
+
+@cm-def:                @cm-property;
+@cm-error:              @selected-error;
+@cm-tag:                @cm-property;
+@cm-link:               @item-theme;
+@cm-storage:            @cm-atom;
+@cm-entity:             @cm-property;
