@@ -8,7 +8,7 @@ import os
 import argparse
 from glob import glob
 import lesscpy
-__version__ = '0.5.1'
+__version__ = '0.5.2'
 
 package_dir = os.path.dirname(os.path.realpath(__file__))
 jupyter_dir = jpaths.jupyter_config_dir()
@@ -86,18 +86,15 @@ def edit_config(linewrap=False, iu=4):
         lw='true'
     else:
         lw='false'
-    PARAMS_string = '{{\n{:<2}"CodeCell": {{\
+    params_string = '{{\n{:<2}"CodeCell": {{\
     \n{:<4}"cm_config": {{\
     \n{:<6}"indentUnit": {},\
     \n{:<6}"lineWrapping": {}\
     \n{:<4}}}\n{:<2}}},\
     \n{:<2}"nbext_hide_incompat": false\n}}'.format('','','', iu,'',lw,'','','')
-    actual_config_path = os.path.expanduser(os.path.join(nbconfig_path))
-    if not os.path.exists(actual_config_path):
-        os.makedirs(actual_config_path)
-    config_file_path = '%s/notebook.json' % actual_config_path
+    config_file_path = os.path.join(jupyter_config, 'notebook.json')
     with open(config_file_path, 'w+') as cfile:
-        cfile.write(PARAMS_string)
+        cfile.write(params_string)
 
 def reset_default():
     """ remove custom.css import"""
