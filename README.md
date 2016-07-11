@@ -1,10 +1,10 @@
 ## Theme-ify your Jupyter Notebooks!
 
 ### Oceans16
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/oceans16_nb.png?raw=true)
+![image](https://github.com/dunovank/jupyter-themes/blob/master/xcreens/oceans16_nb.png?raw=true)
 
 ### Grade3
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/grade3_nb.png?raw=true)
+![image](https://github.com/dunovank/jupyter-themes/blob/master/xcreens/grade3_nb.png?raw=true)
 
 ### Install jupyterthemes w/ pip (officially)
 ```sh
