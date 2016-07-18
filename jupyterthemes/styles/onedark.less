@@ -1,0 +1,86 @@
+/* onedark notebook colors */
+@notebook-bg:           #16191d;
+@notebook-fg:           #a6adba;
+@notebook-base:         #303841;
+
+@selected-bg:           #48a667;
+@selected-half:         rgba(70, 82, 95, .55);
+@selected-third:        rgba(70, 82, 95, .30);
+@selected-tenth:        rgba(70, 82, 95, .15);
+@selected-error:        rgba(192, 57, 67, .3);
+@prompt-line:           rgba(83, 180, 115,.5);
+@tc-prompt:             rgba(53, 114, 198,.5);
+@matching-bracket:      #4780ce;
+@selected-active:       @selected-bg;
+@divider:               rgba(83, 180, 115, .3);
+
+@selected-fg:           #d1d5db;
+@selected-fg-bright:    #eeeff1;
+
+@cc-input-bg:           #282c34;
+@cc-input-fg:           #B5C2D9;
+@cc-output-bg:          @notebook-base;
+@cc-output-fg:          @cc-input-fg;
+@text-cell-fg:          @cc-input-fg;
+@unrendered-text:       @matching-bracket;
+@header-fg:             @unrendered-text;
+
+@tooltip-bg-color:      @notebook-base;
+@tooltip-fg-color:      #CFD2D9;
+
+@item-theme:            @selected-bg;
+@item-blue:             @matching-bracket;
+@item-cyan:             @item-theme;
+
+@disabled:              #5b6270;
+@scrollbar:             #495164;
+@scrollbar-inactive:    #464e60;
+@input-prompt:          @disabled;
+@box-shadow:            #252b32;
+@cc-border-command:     @selected-bg;
+@cc-border-edit:        #61886e;
+@tc-border:             @header-fg;
+@tc-border-edit:        #33517c;
+@button-color:          @selected-bg;
+@table-color:           @cc-input-fg;
+@table-bg:              @cc-output-bg;
+
+/* onedark codemirror colors */
+@ansiblack:             #2b303b;
+@ansiblue:              #DB797C;
+@ansigray:              #B4B7B4;
+@ansigreen:             #B5C2D9;
+@ansipurple:            #CAA6EC;
+@ansicyan:              #77ABE7;
+@ansiyellow:            #DDD7A3;
+@ansired:               #798daf;
+
+@stderr-bg:             #DB797C;
+@stderr-fg:             #D0D4E6;
+@js-error:              @stderr-bg;
+
+@cm-selected:           #2b313a;
+@cm-gutters:            @cm-selected;
+@cm-linenumber:         @disabled;
+@cm-cursor:             #528bff;
+@cm-comment:            #5b6270; //#484e5e;
+@cm-atom:               #61afef; //#5cadf1;
+@cm-number:             #ec9d66;
+@cm-property:           @cm-atom;
+@cm-attribute:          #dc6972;
+@cm-keyword:            #c776df; //#c776df;
+@cm-string:             #94c273; //#8fb36a;
+@cm-meta:               #51b6c3;
+@cm-operator:           #5cadf1;
+@cm-builtin:            @cm-attribute;
+@cm-variable:           @cc-input-fg;
+@cm-variable2:          @cm-attribute;
+@cm-variable3:          @cm-meta;
+
+@cm-def:                @cm-atom;
+@cm-error:              @selected-error;
+@cm-tag:                @cm-atom;
+@cm-link:               @cm-number;
+@cm-storage:            @cm-property;
+@cm-entity:             @cm-property;
+@cm-latex:              #8fb36a;
