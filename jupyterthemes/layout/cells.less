@@ -1,0 +1,268 @@
+/* Contains code for setting appearance of code cells,
+prompts, container width of main notebook page.
+
+Author: Kyle Dunovan (dunovank)
+Website: https://www.github.com/dunovank
+
+*/
+
+
+/********** SET NOTEBOOK, CELL, & OUTPUT FONT SETTINGS *********/
+
+
+body {
+    font-family: @text-cell-font, @text-cell-fontfamily;
+    font-size: 12pt;
+    line-height: 1.45;
+    color: @notebook-fg;
+    background-color: @notebook-bg;
+}
+a {
+    color: @notebook-fg;
+    font-family: @text-cell-font, @text-cell-fontfamily;
+}
+div#notebook,
+div.output_area pre,
+div.output_wrapper,
+div.prompt,
+div.CodeMirror,
+div.CodeMirror pre {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+}
+
+
+/********** CODE CELLS **********/
+
+/********** INPUT AREA **********/
+
+div.cell {
+    padding: 0px;
+    background: @cc-input-bg;
+    background-color: @cc-input-bg;
+    border: medium solid @notebook-bg;
+    align: center;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+div.input_area {
+    background-color: @cc-input-bg;
+    margin-bottom: 0px;
+    border: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+div.cell.selected {
+    background: @cc-input-bg;
+    background-color: @cc-input-bg;
+    border: medium solid @cc-border-command;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+.edit_mode div.cell.selected {
+    background: @cc-input-bg;
+    background-color: @cc-input-bg;
+    border: medium solid @cc-border-edit;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+div.cell.edit_mode {
+    background: @cc-input-bg;
+    background-color: @cc-input-bg;
+    border: medium solid @cc-border-edit;
+    padding: 0px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+
+/********** OUTPUT AREA **********/
+
+div.output_wrapper {
+    background-color:@cc-output-bg;
+    margin-bottom: 0em;
+    margin-top: 0em;
+    border: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
+    background-color: @cc-output-bg;
+    color: @cc-output-fg;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+div.output_area pre {
+    color: @cc-output-fg;
+    font-size: 9.5pt;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+div.output_subarea {
+    overflow-x: auto;
+    padding: 1.0em;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    flex: 1;
+    max-width: calc(100% - 14ex);
+}
+
+
+/********** TEXT & MD CELLS **********/
+
+
+div.text_cell, div.text_cell_render pre, div.text_cell_render {
+    font-family: @text-cell-font, @text-cell-fontfamily;
+    font-size: 100%;
+    line-height: 130%;
+    margin-right: 0px;
+    margin-left: 0px;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    color: @text-cell-fg;
+    border-radius: 2px;
+}
+div.cell.text_cell.rendered.selected {
+    border: medium solid @tc-border;
+    border-radius: 2px;
+}
+div.cell.text_cell.unrendered.selected {
+    border: medium solid @tc-border;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border-radius: 2px;
+}
+div.cell.text_cell.selected {
+    border: medium solid @tc-border;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border-radius: 2px;
+}
+.edit_mode div.cell.text_cell.selected {
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border: medium solid @tc-border-edit;
+    border-radius: 2px;
+}
+div.text_cell.unrendered,
+div.text_cell.unrendered.selected
+div.edit_mode div.text_cell.unrendered {
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border-radius: 2px;
+}
+
+
+/********** RENDERED HTML and TABLES **********/
+
+
+.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
+  font-family: @monofont, monospace;
+  border: 1px @table-color solid;
+  color: @table-color;
+  font-size: 9pt;
+  background-color: @text-cell-bg;
+  background: @text-cell-bg;
+  align-content: left !important;
+}
+.rendered-html pre, .rendered-html code {
+    font-size: 12pt;
+    color: @notebook-fg;
+    line-height: 100%;
+    background: @cc-input-bg;
+}
+div.output_html {
+    color: @table-color;
+}
+
+
+
+/********** PROMPTS **********/
+
+
+div.prompt {
+    padding: 0.3em;
+    margin: 0px;
+    font-family: @monofont, monospace;
+    text-align: left;
+    line-height: 1.21429em;
+    min-width: @prompt-width;
+    font-size: @prompt-fontsize;
+}
+
+
+/********** INPUT PROMPTS **********/
+
+
+div.prompt.input_prompt {
+    font-family: @monofont, monospace;
+    color: @input-prompt;
+    background-color: @cc-input-bg;
+    font-weight: normal;
+    font-size: 9.5pt;
+    width: 1em;
+    border-right: 2px solid @prompt-line;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+div.cell.text_cell.rendered .input_prompt {
+    border-right: 2px solid @text-cell-prompt;
+    min-width: @tc-prompt-width;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+}
+div.cell.text_cell.unrendered .input_prompt {
+    border-right: 2px solid @text-cell-prompt;
+    min-width: @tc-prompt-width;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+}
+
+
+/********** OUTPUT PROMPTS **********/
+
+
+div.prompt.output_prompt {
+    font-family: @monofont, monospace;
+    background-color: @cc-output-bg;
+    color: @cc-output-bg;
+    font-size: 9.5pt;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+div.out_prompt_overlay.prompt {
+    font-family: @monofont, monospace;
+    font-size: 9.5pt;
+    width: 1em;
+    background-color: @cc-output-bg;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+div.out_prompt_overlay.prompt:hover {
+    font-family: @monofont, monospace;
+    font-size: 9.5pt;
+    background-color: @cc-output-bg;
+    box-shadow: @box-shadow 1px 1px 3px 3px inset;
+    border-bottom-left-radius: 2px;
+    -webkit-border-: 2px;
+    -moz-border-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}

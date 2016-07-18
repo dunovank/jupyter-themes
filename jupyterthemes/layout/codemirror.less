@@ -1,0 +1,196 @@
+/*
+
+Code for main syntax highlighting and codemirror properties
+
+Author: Kyle Dunovan (dunovank)
+Website: https://www.github.com/dunovank
+
+*/
+
+/********** CODE MIRROR SETTINGS **********/
+
+/********** ANSI COLORS **********/
+
+span.ansiblack {
+    color: @ansiblack;
+}
+span.ansiblue {
+    color: @ansiblue;
+}
+span.ansigray {
+    color: @ansigray;
+}
+span.ansigreen {
+    color: @ansigreen;
+}
+span.ansipurple {
+    color: @ansipurple;
+}
+span.ansicyan {
+    color: @ansicyan;
+}
+span.ansiyellow {
+    color: @ansiyellow;
+}
+span.ansired {
+    color: @ansired;
+}
+div.output-stderr {
+    background-color: @stderr-bg;
+}
+div.output-stderr pre {
+    color: @stderr-fg;
+}
+div.js-error {
+    color: @js-error;
+}
+
+
+
+/********** CODE CELLS SYNTAX HIGHLIGHTING **********/
+
+
+
+.cm-s-ipython.CodeMirror {
+    background: @cc-input-bg;
+    color: @cc-input-fg;
+    border-radius: 2px;
+}
+.cm-s-ipython div.CodeMirror-selected {
+    background: @cm-selected;
+}
+.cm-s-ipython .CodeMirror-gutters {
+    background: @cm-gutters;
+    border: none;
+    border-radius:0px;
+}
+.cm-s-ipython .CodeMirror-linenumber {
+    color: @cm-linenumber;
+}
+.cm-s-ipython .CodeMirror-cursor {
+    border-left: 2px solid @cm-cursor;
+}
+.cm-s-ipython span.cm-comment {
+    color: @cm-comment;
+    font-style: italic;
+}
+.cm-s-ipython span.cm-atom {
+    color: @cm-atom;
+}
+.cm-s-ipython span.cm-number {
+    color: @cm-number;
+}
+.cm-s-ipython span.cm-property {
+    color: @cm-property;
+}
+.cm-s-ipython span.cm-attribute {
+    color: @cm-attribute;
+}
+.cm-s-ipython span.cm-keyword {
+    color: @cm-keyword;
+    font-weight: normal;
+}
+.cm-s-ipython span.cm-string {
+    color: @cm-string;
+}
+.cm-s-ipython span.cm-meta {
+    color: @cm-meta;
+}
+.cm-s-ipython span.cm-operator {
+    color: @cm-operator;
+}
+.cm-s-ipython span.cm-builtin {
+    color: @cm-builtin;
+}
+.cm-s-ipython span.cm-variable {
+    color: @cm-variable;
+}
+.cm-s-ipython span.cm-variable-2 {
+     color: @cm-variable2;
+ }
+.cm-s-ipython span.cm-variable-3 {
+     color: @cm-variable3;
+ }
+.cm-s-ipython span.cm-def {
+    color: @cm-def;
+    font-weight: normal;
+}
+.cm-s-ipython span.cm-error {
+    background: @cm-error;
+}
+.cm-s-ipython span.cm-tag {
+    color: @cm-tag;
+}
+.cm-s-ipython span.cm-link {
+    color: @cm-link;
+}
+.cm-s-ipython span.cm-storage {
+    color: @cm-storage;
+}
+.cm-s-ipython span.cm-entity {
+    color: @cm-entity;
+}
+div.CodeMirror,
+div.CodeMirror pre {
+    line-height: 1.6 !important;
+    color: @cc-input-fg;
+}
+div.CodeMirror-lines {
+    padding-bottom: .2em;
+}
+div.CodeMirror span.CodeMirror-matchingbracket {
+    color: @selected-fg-bright;
+    background-color: @matching-bracket;
+    height: 120%;
+    line-height: 1.6 !important;
+    padding-top: 1px;
+}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+    color: @selected-fg-bright;
+    background: @selected-error !important ;
+    height: 120%;
+    line-height: 1.6 !important;
+    padding-top: 1px;
+}
+
+
+
+/********** MARKDOWN CELLS SYNTAX HIGHLIGHTING and HEADERS **********/
+
+
+
+div.cell.text_cell .cm-s-default .cm-header {
+    color: @unrendered-text;
+}
+div.cell.text_cell .cm-s-default span.cm-variable-2 {
+    color: @text-cell-fg;
+}
+div.cell.text_cell .cm-s-default span.cm-variable-3 {
+    color: @cm-variable3;
+}
+.cm-s-default span.cm-comment {
+    color: @cm-comment;
+}
+.cm-s-default .cm-tag {
+    color: @cm-latex;
+}
+div.text_cell_render h1 {
+    font-family: 'Open-Sans', sans-serif;
+    text-align: center;
+    font-weight: lighter;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    color: @header-fg;
+}
+div.text_cell_render h2,
+div.text_cell_render h3,
+div.text_cell_render h4,
+div.text_cell_render h5,
+div.text_cell_render h6 {
+    font-family: 'Open-Sans', sans-serif;
+    text-align: left;
+    font-weight: lighter;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    color: @header-fg;
+}
