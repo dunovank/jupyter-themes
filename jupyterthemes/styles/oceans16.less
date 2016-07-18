@@ -1,45 +1,48 @@
 /* oceans16 notebook colors */
 @notebook-bg:           #262931;
-@notebook-fg:           #798daf;
+@notebook-fg:           #899ab8;
 @notebook-base:         #373e4b;
 
 @selected-bg:           #3572C6;
-@selected-half:         rgba(53, 108, 180,.5);
-@selected-third:        rgba(53, 108, 180,.25);
-@selected-tenth:        rgba(53, 108, 180,.1);
+@selected-half:         rgba(88, 98, 119,.45);
+@selected-third:        rgba(88, 98, 119,.30);
+@selected-tenth:        rgba(88, 98, 119,.10);
 @selected-error:        rgba(191, 97, 106,.4);
-@selected-alt:          rgba(43, 158, 128,.3);
-@prompt-line:           @selected-half;
+@prompt-line:           rgba(53, 114, 198,.5);
+@tc-prompt:             rgba(211, 97, 95, .5);
 @matching-bracket:      @selected-bg;
 @selected-active:       @selected-bg;
+@divider:               rgba(53, 114, 198,.3);
 
-@selected-fg:           #cbd1dc;
+@selected-fg:           #D0D4E6;
 @selected-fg-bright:    #e9ecf1;
 
 @cc-input-bg:           #303845;
 @cc-input-fg:           #D0D4E6;
 @cc-output-bg:          #384151;
-@cc-output-fg:          #CFD2D9;
+@cc-output-fg:          @notebook-fg;
 @text-cell-fg:          @notebook-fg;
-@unrendered-text:       #ce4d4b;
+@unrendered-text:       #d97573;
+@header-fg:             @unrendered-text;
 
 @tooltip-bg-color:      #424a5a;
 @tooltip-fg-color:      #CFD2D9;
 
-@item-theme:            #02ac65;
-@item-blue:             #3572C6;
+@item-theme:            #d97573;
+@item-blue:             @matching-bracket;
 @item-cyan:             #2c85f7;
 
 @disabled:              #5A647B;
 @scrollbar:             #495164;
 @scrollbar-inactive:    #464e60;
-@input-prompt:          #5A6981;
+@input-prompt:          @disabled;
 @box-shadow:            #303945;
 @cc-border-command:     @item-blue;
 @cc-border-edit:        #33517c;
-@tc-border:             #268a70;
+@tc-border:             @header-fg;
+@tc-border-edit:        #814c52;
 @button-color:          @item-blue;
-@table-color:           #99a9cb;
+@table-color:           @notebook-fg;
 @table-bg:              @cc-output-bg;
 
 /* oceans16 codemirror colors */
@@ -68,10 +71,11 @@
 @cm-keyword:            @cm-atom;
 @cm-string:             #8FCA9A;
 @cm-meta:               #7BC6C0;
-@cm-operator:           @cm-atom;
+@cm-operator:           @cm-property;
 @cm-builtin:            @cm-attribute;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cm-attribute;
+@cm-variable3:          @cm-meta;
 
 @cm-def:                @cm-property;
 @cm-error:              @selected-error;
@@ -79,3 +83,4 @@
 @cm-link:               @cm-attribute;
 @cm-storage:            @cm-atom;
 @cm-entity:             @cm-attribute;
+@cm-latex:              #8fb36a;

@@ -1,79 +1,55 @@
-body {
+/*
+
+Contains code for general appearance of notebook, toolbars, lists, menus, etc.
+
+Author: Kyle Dunovan (dunovank)
+Website: https://www.github.com/dunovank
+
+*/
+
+
+/********** NOTEBOOK PAGE SETTINGS **********/
+
+.notebook_app {
     background-color: @notebook-bg;
 }
-a {
-    color: @notebook-fg;
-    font-family: 'Helvetica', sans-serif;
+#notebook-container {
+    padding: 0px;
+    background-color: @notebook-bg;
+    min-height: 0px;
+    box-shadow: none;
 }
-div#notebook,
-div.output_area pre,
-div.output_wrapper,
-div.prompt,
-div.CodeMirror,
-div.CodeMirror pre {
-    font-family: @monofont, monospace;
-    font-size: @monofontsize;
+.container {
+    width: @cell-width;
 }
-/* Hiding the ipython log */
-div#ipython_notebook {
-    display: none;
-}
+
+
+/********** FIRST-PAGE TOOLBAR, LIST CONTAINERS, AND NAV TABS *********/
+
 .toolbar_info {
     color: @notebook-fg;
     font-size: 12pt;
     border: none;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Open-Sans', sans-serif;
     text-shadow: none !important;
 }
 .list_container {
     color: @notebook-fg;
     font-size: 12pt;
     border: none;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Open-Sans', sans-serif;
     text-shadow: none !important;
 }
-.breadcrumb>li {
-    color: @notebook-fg;
+.list_container > div {
+    border-bottom: 1px solid @selected-third;
     font-size: 12pt;
-    border: none;
-    font-family: 'Helvetica', sans-serif;
-    text-shadow: none !important;
 }
 .list_container a {
     color: @notebook-fg;
     font-size: 12pt;
     border: none;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Open-Sans', sans-serif;
     text-shadow: none !important;
-}
-.item_icon {
-    color: @item-blue;
-}
-.item_buttons .kernel_name {
-    color: @item-blue;
-}
-.running_notebook_icon:before {
-    color: @item-theme !important;
-}
-.item_buttons .running-indicator {
-    padding-top: 4px;
-    color: @item-theme;
-}
-.nav-tabs > li > a:hover {
-    color: @selected-fg;
-    background: @notebook-bg;
-    background-color: @selected-third;
-    border-color: transparent;
-    background-image: none;
-}
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    color: @selected-fg-bright;
-    background: @notebook-bg;
-    border-color: transparent;
-    background-color: @selected-half;
-}
-.nav-tabs {
-    border-bottom: 1px solid @selected-half;
 }
 div.list_container a:hover {
     color: @selected-fg;
@@ -92,14 +68,52 @@ ul#selector-menu.dropdown-menu > li > a {
 div.list_item:hover {
     background-color: @selected-tenth;
 }
-.list_container > div {
-    border-bottom: 1px solid @selected-third;
+.breadcrumb>li {
+    color: @notebook-fg;
     font-size: 12pt;
+    border: none;
+    font-family: 'Open-Sans', sans-serif;
+    text-shadow: none !important;
+}
+.nav-tabs > li > a:hover {
+    color: @selected-fg;
+    background: @notebook-bg;
+    background-color: @selected-tenth;
+    border-color: transparent;
+    background-image: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: @selected-fg-bright;
+    background: @notebook-bg;
+    border-color: transparent;
+    background-color: @selected-third;
+}
+.nav-tabs {
+    border-bottom: 1px solid @selected-tenth;
 }
 
-/* PANELS // LISTS // DROPDOWN MENUS*/
+
+
+/********** MODAL CONTENT, PANELS, and FORM CONTROL *********/
+
+
+
+.modal-content {
+    position: relative;
+    background-color: @notebook-base;
+    border: 1px solid @selected-third;
+    border-radius: 3px;
+    box-shadow: 0px 3px 9px @selected-third;
+    background-clip: padding-box;
+    outline: 0px none;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid @selected-half;
+    min-height: 16.4286px;
+}
 .panel-default {
-    border-color: @selected-tenth;
+    border-color: @selected-third;
 }
 .panel {
     line-height: 22px;
@@ -110,15 +124,95 @@ div.list_item:hover {
     border: 0px;
     box-shadow: none;
 }
-.modal-content {
-    position: relative;
-    background-color: @notebook-base;
-    border: 1px solid @selected-tenth;
-    border-radius: 3px;
-    box-shadow: 0px 3px 9px @selected-third;
-    background-clip: padding-box;
-    outline: 0px none;
+#running .panel-group .panel .panel-heading {
+    background-color: @notebook-bg;
+    padding: 4px 7px;
+    line-height: 22px;
 }
+#running .panel-group .panel .panel-heading a:hover {
+    color: @item-cyan;
+}
+#running .panel-group .panel .panel-body .list_container .list_item {
+    border-bottom: 1px solid @selected-half;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: 13pt;
+    line-height: 1.6;
+    color: @notebook-fg;
+    background-color: @cc-input-bg;
+    background-image: none;
+    border: 1px solid @selected-third;
+    border-radius: 2px;
+    box-shadow: none;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.list_item input:not([type="checkbox"]) {
+    margin-right: 0px;
+    padding-right: 0px;
+    height: 80%;
+    width: 30%;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid @selected-half;
+}
+.input-form-control:hover:active {
+    background-color:  @selected-tenth;
+    selected:  @selected-tenth;
+}
+
+
+
+/********* ICONS and INDICATORS *********/
+
+
+
+.item_icon {
+    color: @item-blue;
+}
+.item_buttons .kernel_name {
+    color: @item-blue;
+}
+.running_notebook_icon:before {
+    color: @item-theme !important;
+}
+.item_buttons .running-indicator {
+    padding-top: 4px;
+    color: @item-theme;
+}
+#modal_indicator {
+    float: right !important;
+    color: @item-cyan;
+}
+#kernel_indicator {
+    float: right !important;
+    color: @item-cyan;
+}
+#kernel_indicator .kernel_indicator_name {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13pt;
+}
+#project-name > .breadcrumb {
+    font-weight: normal;
+    color: @item-cyan;
+}
+/* Hide IPython/Jupyter Logo */
+div#ipython_notebook {
+    display: none;
+}
+
+
+
+/********* DROPDOWN MENUS *********/
+
+
+
 .dropdown-menu {
     border: 2px solid @selected-third;
     background-color: @notebook-base;
@@ -172,7 +266,7 @@ div.list_item:hover {
     height: 2px;
     margin: 0px 0px;
     overflow: hidden;
-    background-color: @selected-half;
+    background-color: @divider;
 }
 .dropdown-submenu > .dropdown-menu {
     top: 0;
@@ -190,65 +284,16 @@ div.list_item:hover {
     line-height: 1.5;
     white-space: nowrap;
 }
-.modal-header {
-    padding: 15px;
-    border-bottom: 1px solid @selected-half;
-    min-height: 16.4286px;
-}
-#running .panel-group .panel .panel-heading {
-    background-color: @notebook-bg;
-    padding: 4px 7px;
-    line-height: 22px;
-}
-#running .panel-group .panel .panel-heading a:hover {
-    color: @item-cyan;
-}
-#running .panel-group .panel .panel-body .list_container .list_item {
-    border-bottom: 1px solid @selected-half;
-}
 
-#project-name > .breadcrumb {
-    font-weight: normal;
-    color: @item-cyan;
-}
-.rendered-html pre, .rendered-html code {
-    font-size: 12pt;
-    color: @notebook-fg;
-    line-height: 100%;
-    background: @cc-input-bg;
-}
-body {
-    font-family: "Helvetica", Helvetica, Arial, sans-serif;
-    font-size: 12pt;
-    line-height: 1.42857;
-    color: @notebook-fg;
-}
 
-#kernel_indicator {
-    float: right !important;
-    color: @item-cyan;
-}
-#kernel_indicator .kernel_indicator_name {
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 13pt;
-}
-#modal_indicator {
-    float: right !important;
-    color: @item-cyan;
-}
-.notebook_app {
-    background-color: @notebook-bg;
-}
+
+/********** NOTEBOOK PAGE HEADER AND NAVBAR ***********/
+
+
+
 .notebook_app #header {
     box-shadow: none !important;
     background-color: @notebook-bg;
-}
-#notebook-container {
-    padding: 15px;
-    background-color: @notebook-bg;
-    min-height: 0px;
-    box-shadow: none;
 }
 #header {
     box-shadow: none;
@@ -288,7 +333,12 @@ body {
     border-color: @selected-active;
 }
 
-/* BUTTONS */
+
+
+/********** BUTTONS **********/
+
+
+
 .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
     color: @selected-fg-bright;
     background-color: @selected-active;
@@ -348,8 +398,31 @@ body {
     background-color: @selected-half;
     background-image: none;
 }
+button.close {
+    padding: 0px;
+    cursor: pointer;
+    background: transparent none repeat scroll 0% 0%;
+    border: 0px none;
+}
+.close {
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    color: @button-color;
+    text-shadow: 0px 1px 0px @selected-tenth;
+    opacity: 0.3;
+}
+.close:hover {
+    color: @item-cyan;
+    text-shadow: 0px 1px 0px @selected-tenth;
+    opacity: 0.9;
+}
 
-/* TOOLTIP DIMENSIONS */
+
+/********** TOOLTIP DIMENSIONS **********/
+
+
 .ipython_tooltip {
     border: 2px solid @selected-half;
     box-shadow: none;
@@ -374,299 +447,11 @@ div.tooltiptext.bigtooltip {
     width: 825px;
 }
 
-/* Formatting code in markdown cells */
-div.text_cell, div.text_cell_render pre, div.text_cell_render {
-    background: @cc-input-bg;
-    background-color: @cc-input-bg;
-    max-width: 100%;
-    color: @text-cell-fg;
-    border-radius: 2px;
-}
-div.cell.text_cell.rendered .input_prompt {
-    border-right: 2px solid @selected-alt;
-    color: @input-prompt;
-    background: @cc-input-bg;
-    background-color: @cc-input-bg;
-}
-div.cell.text_cell.unrendered .input_prompt {
-    border-right: 2px solid @selected-alt;
-    color: @input-prompt;
-    background: @cc-input-bg;
-    background-color: @cc-input-bg;
-    border-radius: 2px;
-}
-div.cell.text_cell.rendered.selected {
-    border: medium solid @tc-border;
-    padding: 0px;
-    border-radius: 2px;
-}
-.cm-s-default .cm-header {
-    color: @unrendered-text;
-}
-div.text_cell_render h1,
-div.text_cell_render h2,
-div.text_cell_render h3,
-div.text_cell_render h4,
-div.text_cell_render h5,
-div.text_cell_render h6 {
-    font-family: 'Helvetica', sans-serif;
-    font-weight: lighter;
-    background: @cc-input-bg;
-    background-color: @cc-input-bg;
-    color: @text-cell-fg;
-    line-height: 1;
-}
-/* text in output area (i.e. print some_list) */
-div.output_html {
-    color: @table-color;
-}
-/* Formatting code in text, code*/
-.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  border: 1px @table-color solid;
-  color: @table-color;
-  font-size: 10pt;
-  background-color: @table-bg !important;
-  align-content: left !important;
-}
-button.close {
-    padding: 0px;
-    cursor: pointer;
-    background: transparent none repeat scroll 0% 0%;
-    border: 0px none;
-}
-.close {
-    float: right;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 1;
-    color: @button-color;
-    text-shadow: 0px 1px 0px @selected-tenth;
-    opacity: 0.3;
-}
-.close:hover {
-    color: @item-cyan;
-    text-shadow: 0px 1px 0px @selected-tenth;
-    opacity: 0.9;
-}
-.form-control {
-    display: block;
-    width: 100%;
-    height: 32px;
-    padding: 6px 12px;
-    font-size: 13pt;
-    line-height: 1.6;
-    color: #6ea3d4;
-    background-color: @cc-input-bg;
-    background-image: none;
-    border: 1px solid @selected-half;
-    border-radius: 2px;
-    box-shadow: none;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-}
-.list_item input:not([type="checkbox"]) {
-    margin-right: 0px;
-    padding-right: 0px;
-    height: 80%;
-    width: 30%;
-}
-.modal-footer {
-    padding: 15px;
-    text-align: right;
-    border-top: 1px solid @selected-half;
-}
-.input-form-control:hover:active {
-    background-color:  @selected-half;
-    selected:  @selected-half;
-}
 
-span.ansiblack {color: @ansiblack;}
-span.ansiblue {color: @ansiblue;}
-span.ansigray {color: @ansigray;}
-span.ansigreen {color: @ansigreen;}
-span.ansipurple {color: @ansipurple;}
-span.ansicyan {color: @ansicyan;}
-span.ansiyellow {color: @ansiyellow;}
-span.ansired {color: @ansired;}
 
-div.output-stderr {background-color: @stderr-bg;}
-div.output-stderr pre {color: @stderr-fg;}
-div.js-error {color: @js-error;}
+/********** WIDGETS **********/
 
-.cm-s-ipython.CodeMirror {background: @cc-input-bg; color: @cc-input-fg; border-radius: 2px;}
-.cm-s-ipython div.CodeMirror-selected {background: @cm-selected;}
-.cm-s-ipython .CodeMirror-gutters {background: @cm-gutters; border: none; border-radius:0px;}
-.cm-s-ipython .CodeMirror-linenumber {color: @cm-linenumber;}
-.cm-s-ipython .CodeMirror-cursor {border-left: 2px solid @cm-cursor;}
-.cm-s-ipython span.cm-comment {color: @cm-comment; font-style: italic;}
-.cm-s-ipython span.cm-atom {color: @cm-atom;}
-.cm-s-ipython span.cm-number {color: @cm-number;}
-.cm-s-ipython span.cm-property {color: @cm-property;}
-.cm-s-ipython span.cm-attribute {color: @cm-attribute;}
-.cm-s-ipython span.cm-keyword {color: @cm-keyword; font-weight: normal;}
-.cm-s-ipython span.cm-string {color: @cm-string;}
-.cm-s-ipython span.cm-meta {color: @cm-meta;}
-.cm-s-ipython span.cm-operator {color: @cm-operator;}
-.cm-s-ipython span.cm-builtin {color: @cm-builtin;}
-.cm-s-ipython span.cm-variable {color: @cm-variable;}
-.cm-s-ipython span.cm-variable-2 { color: @cm-variable2; }
 
-.cm-s-ipython span.cm-def {color: @cm-def; font-weight: normal;}
-.cm-s-ipython span.cm-error {background: @cm-error;}
-.cm-s-ipython span.cm-tag {color: @cm-tag;}
-.cm-s-ipython span.cm-link {color: @cm-link;}
-.cm-s-ipython span.cm-storage {color: @cm-storage;}
-.cm-s-ipython span.cm-entity {color: @cm-entity;}
-
-div.CodeMirror pre {line-height: 1.6 !important;}
-div.CodeMirror-lines { padding-bottom: .2em; }
-
-div.CodeMirror span.CodeMirror-matchingbracket {
-    color: @selected-fg-bright;
-    background-color: @matching-bracket;
-    height: 120%;
-    line-height: 1.6 !important;
-    padding-top: 1px;
-}
-div.CodeMirror span.CodeMirror-nonmatchingbracket {
-    color: @selected-fg-bright;
-    background: @selected-error !important ;
-    height: 120%;
-    line-height: 1.6 !important;
-    padding-top: 1px;
-}
-div.cell {
-    background: @cc-input-bg;
-    background-color: @cc-input-bg;
-    border: medium solid @notebook-bg;
-    padding: 0px;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
-}
-div.cell.selected {
-    background: @cc-input-bg;
-    background-color: @cc-input-bg;
-    border: medium solid @cc-border-command;
-    padding: 0px;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
-}
-.edit_mode div.cell.selected {
-    background: @cc-input-bg;
-    background-color: @cc-input-bg;
-    border: medium solid @cc-border-edit;
-    padding: 0px;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
-}
-div.cell.edit_mode {
-    background: @cc-input-bg;
-    background-color: @cc-input-bg;
-    border: medium solid @cc-border-edit;
-    padding: 0px;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
-}
-
-div.prompt {
-    padding: 0.3em;
-    margin: 0px;
-    font-family: monospace;
-    text-align: left;
-    line-height: 1.21429em;
-    min-width: 11ex;
-    font-size: 9.5pt;
-}
-div.input_area {
-    background-color: @notebook-bg;
-    background: @notebook-bg;
-    margin-bottom: 0px;
-    border: 0px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 2px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-
-/*Input and output cells formatting*/
-div.prompt.input_prompt {
-    font-family: @monofont, monospace;
-    color: @input-prompt;
-    background-color: @cc-input-bg;
-    font-weight: normal;
-    font-size: 9.5pt;
-    width: 1em;
-    border-right: 2px solid @prompt-line;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-div.prompt.output_prompt {
-    font-family: @monofont, monospace;
-    background-color: @cc-output-bg;
-    color: @cc-output-bg;
-    font-size: 9.5pt;
-    border-bottom-left-radius: 2px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-div.out_prompt_overlay.prompt {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt;
-    width: 1em;
-    background-color: @cc-output-bg;
-    border-bottom-left-radius: 2px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-div.out_prompt_overlay.prompt:hover {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt;
-    background-color: @cc-output-bg;
-    box-shadow: @box-shadow 1px 1px 3px 3px inset;
-    border-bottom-left-radius: 2px;
-    -webkit-border-: 2px;
-    -moz-border-radius: 2px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-}
-div.output_wrapper {
-    background-color:@cc-output-bg;
-    margin-bottom: 0em;
-    margin-top: 0em;
-    border: 0px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-}
-div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
-    background-color: @cc-output-bg;
-    color: @cc-output-fg;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-}
-div.output_area pre {
-    color: @cc-output-fg;
-    font-size: 10pt;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-}
-div.output_subarea {
-    overflow-x: auto;
-    padding: 1.0em;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    flex: 1;
-    max-width: calc(100% - 14ex);
-}
 div.widget-area {
     background-color: @cc-output-bg;
     background: @cc-output-bg;
@@ -679,22 +464,31 @@ div.widget-area {
     align-items: center;
     align-self: auto;
 }
+
+/********** MEDIA **********/
+
 audio, video {
     display: inline;
     vertical-align: middle;
     align-content: center;
-    margin-left: 23%;
+    margin-left: 20%;
 }
-/*
-Following courtesy of Sherif Soliman
-at http://sherifsoliman.com
-*/
+
+
+
+/********** SCROLL BARS **********/
+/* Courtesy of Sherif Soliman */
+/* (http://sherifsoliman.com) */
+
+
+
 div.output.output_scroll {
     box-shadow: none;
 }
-/*Scroll bars*/
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
+    background-color: @selected-third;
+    background: @selected-third;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {

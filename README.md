@@ -13,34 +13,28 @@ pip install jupyterthemes
 
 ### How to...
 ```sh
-# list available themes
 # can call with "jupyter-themes" or "jt" interchangeably
+# list available themes
+# oceans16 | grade3 | spacelegos | chesterish (New!) | onedark (New!)
 jt -l
 
-# install a theme (to ~/.jupyter/custom/)
-# theme names: oceans16 | grade3 | space-legos | chesterish (NEW!)
+# install a theme...
 jt -t grade3
 
-# install a theme with toolbar (-T) enabled
+# ...with toolbar (-T) enabled
 jt -T -t grade3
 
+# ...and adjust the view setting (default: narrow)
+jt -t grade3 -vw wide
+
+# ...with alternate markdown/text-cell layout
+jt -t grade3 -altmd
+
 # set font (-f) and font-size (-fs) (defaults are Hack and 11)
-jt -t grade3 -f Source-Code-Pro -fs 12
+jt -t grade3 -f Source-Code-Pro -fs 10
 
 # restore (-r) default theme
 jt -r
-```
-
-#### Experimental
-***use with caution if you have already modified
-your ~/.jupyter/nbconfig/notebook.json file***
-
-```sh
-# enable linewrapping in code cells
-jt -t grade3 -lw
-
-# adjust size of indent unit (default=4)
-jt -t grade3 -iu 6
 ```
 
 #### mmmm so theme-y...

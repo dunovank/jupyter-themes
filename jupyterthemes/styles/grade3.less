@@ -4,14 +4,15 @@
 @notebook-base:         #efefef;
 
 @selected-bg:           @notebook-base;
-@selected-half:         rgba(184, 184, 184,.35);
-@selected-third:        rgba(184, 184, 184,.25);
-@selected-tenth:        rgba(184, 184, 184,.1);
-@selected-error:        rgba(191, 97, 106, .4);
-@selected-alt:          rgba(232, 86, 93, .35);
-@prompt-line:           rgba(240, 147, 43, .4);
-@matching-bracket:      rgba(53, 108, 180,.3);
+@selected-half:         rgba(180, 180, 180,.30);
+@selected-third:        rgba(180, 180, 180,.25);
+@selected-tenth:        rgba(150, 150, 150,.10);
+@selected-error:        rgba(191, 97, 106, .40);
+@prompt-line:           rgba(240, 147, 43, .40);
+@tc-prompt:             rgba(30, 112, 199, .50);
+@matching-bracket:      rgba(30, 112, 199, .30);
 @selected-active:       @selected-half;
+@divider:               @selected-half;
 
 @selected-fg:           #222222;
 @selected-fg-bright:    #000000;
@@ -21,13 +22,14 @@
 @cc-output-bg:          #ffffff;
 @cc-output-fg:          #000000;
 @text-cell-fg:          #4c4c4c;
-@unrendered-text:       #ce4d4b;
+@unrendered-text:       #1e70c7;
+@header-fg:             @unrendered-text;
 
 @tooltip-bg-color:      @notebook-base;
 @tooltip-fg-color:      #222222;
 
 @item-theme:            #ff8132;
-@item-blue:             #3572C6;
+@item-blue:             #1e70c7;
 @item-cyan:             @item-theme;
 
 @disabled:              #aaaaaa;
@@ -37,10 +39,11 @@
 @box-shadow:            #e8e8e8;
 @cc-border-command:     @item-theme;
 @cc-border-edit:        #ffd5bb;
-@tc-border:             #e8565d;
+@tc-border:             @header-fg;
+@tc-border-edit:        #87b0db;
 @button-color:          @item-theme;
 @table-color:           @text-cell-fg;
-@table-bg:              @cc-input-bg;
+@table-bg:              @notebook-bg;
 
 /* grade3 codemirror colors */
 @ansiblack:             #333333;
@@ -72,6 +75,7 @@
 @cm-builtin:            @cm-property;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cm-attribute;
+@cm-variable3:          @cm-meta;
 
 @cm-def:                @cm-property;
 @cm-error:              @selected-error;
@@ -79,3 +83,4 @@
 @cm-link:               @item-theme;
 @cm-storage:            @cm-atom;
 @cm-entity:             @cm-property;
+@cm-latex:              #009fb7;

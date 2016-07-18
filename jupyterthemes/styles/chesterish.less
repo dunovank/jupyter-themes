@@ -1,45 +1,48 @@
 /* chesterish notebook colors */
 @notebook-bg:           #1e252e;
-@notebook-fg:           #CDD2E9;
-@notebook-base:         #374657;
+@notebook-fg:           #899ab8;
+@notebook-base:         #334056;
 
 @selected-bg:           #009cd1;
-@selected-half:         rgba(0, 175, 234, .4);
-@selected-third:        rgba(0, 175, 234,.15);
-@selected-tenth:        rgba(0, 175, 234,.05);
-@selected-error:        rgba(191, 97, 106, .4);
-@selected-alt:          rgba(37, 176, 125, .3);
-@prompt-line:           @selected-half;
-@matching-bracket:      #049e65;
+@selected-half:         rgba(75, 95, 118,.55);
+@selected-third:        rgba(75, 95, 118,.35);
+@selected-tenth:        rgba(75, 95, 118,.10);
+@selected-error:        rgba(191, 97, 106,.4);
+@prompt-line:           rgba(0, 156, 209, .5);
+@tc-prompt:             rgba(211, 97, 95, .5);
+@matching-bracket:      #3572C6;
 @selected-active:       #007aa4;
+@divider:               rgba(0, 156, 209, .3);
 
 @selected-fg:           #ffffff;
 @selected-fg-bright:    #ffffff;
 
 @cc-input-bg:           #2b3643;
-@cc-input-fg:           #dbe6ec;
-@cc-output-bg:          #384151;
-@cc-output-fg:          #CDD2E9;
+@cc-input-fg:           #CDD2E9;
+@cc-output-bg:          @notebook-base;
+@cc-output-fg:          @cc-input-fg;
 @text-cell-fg:          @notebook-fg;
-@unrendered-text:       #ce4d4b;
+@unrendered-text:       #d97573;
+@header-fg:             @unrendered-text;
 
 @tooltip-bg-color:      #424a5a;
 @tooltip-fg-color:      #CFD2D9;
 
-@item-theme:            @selected-bg;
-@item-blue:             #0095ff;
+@item-theme:            @header-fg;
+@item-blue:             @matching-bracket;
 @item-cyan:             @selected-bg;
 
-@disabled:              #515A6F;
+@disabled:              #546386;
 @scrollbar:             #495164;
 @scrollbar-inactive:    #464e60;
-@input-prompt:          #5A6981;
+@input-prompt:          @disabled;
 @box-shadow:            #303945;
 @cc-border-command:     #008ebf;
 @cc-border-edit:        #005573;
-@tc-border:             @matching-bracket;
+@tc-border:             @header-fg;
+@tc-border-edit:        #814c52;
 @button-color:          @selected-active;
-@table-color:           #99a9cb;
+@table-color:           @notebook-fg;
 @table-bg:              @cc-output-bg;
 
 /* chesterish codemirror colors */
@@ -61,21 +64,23 @@
 @cm-linenumber:         @disabled;
 @cm-cursor:             #0095ff;
 @cm-comment:            #667FB1;
-@cm-atom:               #9dc9eb;
+@cm-atom:               #be86e3;
 @cm-number:             #51c0ef;
 @cm-property:           @cm-atom;
-@cm-attribute:          #fd6678;
+@cm-attribute:          #e17e85;
 @cm-keyword:            #4cb2ff;
-@cm-string:             #00ca8b;
+@cm-string:             #61ba86;
 @cm-meta:               #2dced0;
 @cm-operator:           #00B4FF;
 @cm-builtin:            @cm-attribute;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cm-attribute;
+@cm-variable3:          @cm-meta;
 
-@cm-def:                #ffed8a;
+@cm-def:                #f7e796;
 @cm-error:              @selected-error;
 @cm-tag:                @cm-atom;
 @cm-link:               @cm-number;
 @cm-storage:            @cm-property;
 @cm-entity:             @cm-property;
+@cm-latex:              #8fb36a;

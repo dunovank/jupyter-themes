@@ -8,18 +8,26 @@ import os
 import argparse
 from glob import glob
 import lesscpy
-__version__ = '0.5.8'
+__version__ = '0.6.0'
 
+# juypter config and package dir
 package_dir = os.path.dirname(os.path.realpath(__file__))
 jupyter_dir = jpaths.jupyter_config_dir()
-jupyter_custom = os.path.join(jupyter_dir, 'custom')
-jupyter_config = os.path.join(jupyter_dir, 'nbconfig')
+
+# directories containing theme colors and layout files (.less)
 layouts_dir = os.path.join(package_dir, 'layout')
 styles_dir = os.path.join(package_dir, 'styles')
-
-css_fpath = os.path.join(jupyter_custom, 'custom.css')
 less_tempfile = os.path.join(package_dir, 'temp_file.less')
-less_template = os.path.join(layouts_dir, 'notebook.less')
+
+# layout files for notebook, codemirror, and cells (.less)
+nb_layout = os.path.join(layouts_dir, 'notebook.less')
+cm_layout = os.path.join(layouts_dir, 'codemirror.less')
+cl_layout = os.path.join(layouts_dir, 'cells.less')
+
+# install I/O paths
+jupyter_custom = os.path.join(jupyter_dir, 'custom')
+jupyter_config = os.path.join(jupyter_dir, 'nbconfig')
+css_fpath = os.path.join(jupyter_custom, 'custom.css')
 
 # Ensure all install dirs exist
 if not os.path.isdir(jupyter_dir):
@@ -49,27 +57,6 @@ def make_tempfile(stylecontent):
     with open(less_tempfile, 'w') as f:
         f.write(stylecontent)
 
-def install_theme(theme, font='Hack', fontsize=11, toolbar=False):
-    """ install theme to css_fpath with specified font, fontsize, and toolbar pref
-    """
-    font_string = "@monofont: '{}';\n".format(font)
-    fontsize_string = "@monofontsize: {}pt;\n".format(fontsize)
-    toolbar_string = 'div#maintoolbar {display: none !important;}'
-    if toolbar:
-        print('Enabling Toolbar')
-        toolbar_string = '/*' + toolbar_string + "*/"
-
-    print("Installing {0} at {1}".format(theme, css_fpath))
-    theme_fpath = os.path.join(styles_dir, '{}.less'.format(theme))
-    stylecontent = '@import "styles/{}";\n'.format(theme)
-    stylecontent += font_string
-    stylecontent += fontsize_string
-    stylecontent += toolbar_string+'\n\n'
-    with open(less_template, 'r') as f_template:
-        stylecontent += f_template.read() + '\n'
-    make_tempfile(stylecontent)
-    write_to_css()
-
 def set_nb_theme(theme):
     """ set theme from within notebook """
     from IPython.core.display import HTML
@@ -77,24 +64,6 @@ def set_nb_theme(theme):
     # css_path = glob('{0}/{1}.css'.format(css, name))[0]
     customcss = open(css_fpath, "r").read()
     return HTML(''.join(['<style> ', customcss, ' </style>']))
-
-def edit_config(linewrap=False, iu=4):
-    """ toggle linewrapping and set size of indent unit
-        with notebook.json config file in ~/.jupyter/nbconfig/
-    """
-    if linewrap:
-        lw='true'
-    else:
-        lw='false'
-    params_string = '{{\n{:<2}"CodeCell": {{\
-    \n{:<4}"cm_config": {{\
-    \n{:<6}"indentUnit": {},\
-    \n{:<6}"lineWrapping": {}\
-    \n{:<4}}}\n{:<2}}},\
-    \n{:<2}"nbext_hide_incompat": false\n}}'.format('','','', iu,'',lw,'','','')
-    config_file_path = os.path.join(jupyter_config, 'notebook.json')
-    with open(config_file_path, 'w+') as cfile:
-        cfile.write(params_string)
 
 def reset_default():
     """ remove custom.css import"""
@@ -109,16 +78,87 @@ def reset_default():
         except Exception:
             print("Already set to default theme in {0}".format(fpath))
 
+def set_textcell_font(stylecontent, tcfont_family='sans-serif'):
+    """ set text and markdown cell font and font-family
+    """
+    if tcfont_family == 'sans-serif':
+        tcfont='Open-Sans'
+    else:
+        tcfont = 'Times'
+    stylecontent += '@text-cell-font: "{}"; \n'.format(tcfont)
+    stylecontent += '@text-cell-fontfamily: {}; \n'.format(tcfont_family)
+    return stylecontent
+
+def set_toolbar_pref(stylecontent, toolbar=False):
+    # set toolbar preference
+    toolbar_string = 'div#maintoolbar {display: none !important;}'
+    if toolbar:
+        print('Enabling Toolbar')
+        toolbar_string = '/*' + toolbar_string + "*/"
+    stylecontent += toolbar_string + '\n\n'
+    return stylecontent
+
+def set_cell_layout(stylecontent, view='narrow', altmd=False):
+    """ set general layout and style properties of text and code cells
+    """
+    textcell_bg = '@cc-input-bg'
+    if altmd:
+        # alternative markdown/textcell layout
+        textcell_bg = '@notebook-bg'
+    prompt_width = '11ex'
+    tc_prompt_width = prompt_width
+    cell_width = 'inherit'
+    prompt_fs = '9.5pt'
+    tc_prompt_border = '@tc-prompt'
+    if view=='narrow':
+        prompt_width = '9.5ex'
+        tc_prompt_width = '0ex'
+        cell_width = '900px'
+        prompt_fs = '9pt'
+        tc_prompt_border = textcell_bg
+    stylecontent += '@text-cell-bg: {}; \n'.format(textcell_bg)
+    stylecontent += '@prompt-width: {}; \n'.format(prompt_width)
+    stylecontent += '@tc-prompt-width: {}; \n'.format(tc_prompt_width)
+    stylecontent += '@prompt-fontsize: {}; \n'.format(prompt_fs)
+    stylecontent += '@cell-width: {}; \n'.format(cell_width)
+    stylecontent += '@text-cell-prompt: {}; \n'.format(tc_prompt_border)
+    return stylecontent
+
+def install_theme(theme, font='Hack', fontsize=11, view='narrow', altmd=False, tcfont_family='sans-serif', toolbar=False):
+    """ install theme to css_fpath with specified font, fontsize,
+    md layout, and toolbar pref
+    """
+    # import theme colors and set font properties
+    stylecontent = '@import "styles/{}";\n'.format(theme)
+    stylecontent += '@monofont: "{}"; \n'.format(font)
+    stylecontent += '@monofontsize: {}pt; \n'.format(fontsize)
+    stylecontent = set_cell_layout(stylecontent, view, altmd)
+    stylecontent = set_textcell_font(stylecontent, tcfont_family)
+    stylecontent = set_toolbar_pref(stylecontent, toolbar)
+    # read and append main NOTEBOOK layout .less
+    with open(nb_layout, 'r') as notebook:
+        stylecontent += notebook.read() + '\n'
+    # read and append CODEMIRROR layout .less
+    with open(cm_layout, 'r') as codemirror:
+        stylecontent += codemirror.read() + '\n'
+    # read and append CELL layout .less
+    with open(cl_layout, 'r') as cells:
+        stylecontent += cells.read() + '\n'
+    # write all content to temp less file
+    make_tempfile(stylecontent)
+    # compile less to custom.css and write to install dir
+    write_to_css()
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-t', "--theme", action='store', help="name of the theme to install")
+    parser.add_argument('-altmd', "--altmd", action='store_true', default=False, help="alternative markdown layout")
+    parser.add_argument('-vw', "--view", action='store', default='narrow', help="choose wide or narrow view")
     parser.add_argument('-l', "--list", action='store_true', help="list available themes")
     parser.add_argument('-r', "--reset", action='store_true', help="reset to default theme")
     parser.add_argument('-T', "--toolbar", action='store_true', default=False, help="enable the toolbar")
     parser.add_argument('-fs', "--fontsize", action='store', default=11, help='set the CodeCell font-size')
-    parser.add_argument('-f', "--font", action='store', default='Hack', help='set the CodeCell font')
-    parser.add_argument('-lw', "--linewrap", action='store_true', default=False, help="enable linewrapping")
-    parser.add_argument('-iu', "--indentunit", action='store', default='4', help="set indent unit")
+    parser.add_argument('-f',"--font", action='store', default='Hack', help='set the CodeCell font')
     args = parser.parse_args()
     if args.reset:
         reset_default()
@@ -133,7 +173,7 @@ def main():
         if args.theme not in themes:
             print("Theme {0} not found. Available: {1}".format(args.theme, ' '.join(themes)))
             exit(1)
-        install_theme(args.theme, font=args.font, fontsize=int(args.fontsize), toolbar=args.toolbar)
+        # print feedback
+        print("Installing {0} at {1}".format(args.theme, css_fpath))
+        install_theme(args.theme, font=args.font, fontsize=int(args.fontsize), view=args.view, altmd=args.altmd, toolbar=args.toolbar)
         exit(0)
-    if args.linewrap or args.indentunit!='4':
-        edit_config(linewrap=args.linewrap, iu=str(args.indentunit))

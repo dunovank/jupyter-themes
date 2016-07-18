@@ -1,45 +1,48 @@
 /* space-legos notebook colors */
 @notebook-bg:           #242B2F;
-@notebook-fg:           #C0D4E6;
+@notebook-fg:           #a6adba;
 @notebook-base:         #3F474F;
 
 @selected-bg:           #219b6e;
-@selected-half:         rgba(37, 176, 125,.35);
-@selected-third:        rgba(37, 176, 125,.2);
-@selected-tenth:        rgba(37, 176, 125,.1);
+@selected-half:         rgba(85, 97, 107,.40);
+@selected-third:        rgba(85, 97, 107,.25);
+@selected-tenth:        rgba(85, 97, 107,.12);
 @selected-error:        rgba(191, 97, 106,.2);
-@selected-alt:          rgba(53, 108, 180,.3);
-@prompt-line:           @selected-half;
-@matching-bracket:      @selected-bg;
+@prompt-line:           rgba(33, 155,110,.50);
+@tc-prompt:             rgba(211, 97, 95, .5);
+@matching-bracket:      #3572C6;
 @selected-active:       @selected-bg;
+@divider:               rgba(33, 155,110,.30);
 
 @selected-fg:           #eeeeee;
 @selected-fg-bright:    #ffffff;
 
 @cc-input-bg:           #363D44;
-@cc-input-fg:           #C0D4E6;
+@cc-input-fg:           #B5C2D9;
 @cc-output-bg:          @notebook-base;
-@cc-output-fg:          #EEEEEE;
-@text-cell-fg:          @notebook-fg;
-@unrendered-text:       #ce4d4b;
+@cc-output-fg:          @cc-input-fg;
+@text-cell-fg:          @cc-input-fg;
+@unrendered-text:       #d97573;
+@header-fg:             @unrendered-text;
 
 @tooltip-bg-color:      #424a5a;
 @tooltip-fg-color:      #CFD2D9;
 
 @item-theme:            #57B690;
-@item-blue:             #3572C6;
+@item-blue:             @matching-bracket;
 @item-cyan:             #2c85f7;
 
 @disabled:              #6F7998;
 @scrollbar:             #495164;
 @scrollbar-inactive:    #464e60;
-@input-prompt:          @item-theme;
+@input-prompt:          @disabled;
 @box-shadow:            @cc-input-bg;
 @cc-border-command:     @item-theme;
 @cc-border-edit:        #324E48;
-@tc-border:             @item-blue;
+@tc-border:             @header-fg;
+@tc-border-edit:        #814c52;
 @button-color:          @item-theme;
-@table-color:           @tooltip-fg-color;
+@table-color:           @cc-input-fg;
 @table-bg:              @cc-output-bg;
 
 /* space-legos codemirror colors */
@@ -72,6 +75,7 @@
 @cm-builtin:            @cm-attribute;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cm-attribute;
+@cm-variable3:          @cm-meta;
 
 @cm-def:                #6EA3D4;
 @cm-error:              @selected-error;
@@ -79,6 +83,4 @@
 @cm-link:               @cm-attribute;
 @cm-storage:            #BE8FC1;
 @cm-entity:             @cm-attribute;
-@cm-class:              #F4ECA9;
-@cm-support:            @cm-def;
-@cm-qualifier:          @cm-def;
+@cm-latex:              #8fb36a;
