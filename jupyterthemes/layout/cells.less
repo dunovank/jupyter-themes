@@ -148,7 +148,7 @@ div.edit_mode div.text_cell.unrendered {
 
 
 
-/********** RENDERED HTML and TABLES **********/
+/********** RENDERED HTML, TABLES, and MD CODE BLOCKS **********/
 
 
 
@@ -173,7 +173,13 @@ div.output_html {
     background-color: @cc-output-bg;
     background: @cc-output-bg;
 }
-
+.rendered_html pre, .rendered_html code {
+    border: none;
+    background-color: @text-cell-bg;
+    color: @cc-input-fg;
+    font-size: 95%;
+    padding: 0px;
+}
 
 
 
