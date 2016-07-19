@@ -6,35 +6,9 @@ Website: https://www.github.com/dunovank
 
 */
 
-
-/********** SET NOTEBOOK, CELL, & OUTPUT FONT SETTINGS *********/
-
-
-body {
-    font-family: @text-cell-font, @text-cell-fontfamily;
-    font-size: 12pt;
-    line-height: 1.45;
-    color: @notebook-fg;
-    background-color: @notebook-bg;
-}
-a {
-    color: @notebook-fg;
-    font-family: @text-cell-font, @text-cell-fontfamily;
-}
-div#notebook,
-div.output_area pre,
-div.output_wrapper,
-div.prompt,
-div.CodeMirror,
-div.CodeMirror pre {
-    font-family: @monofont, monospace;
-    font-size: @monofontsize;
-}
-
-
 /********** CODE CELLS **********/
 
-/********** INPUT AREA **********/
+/********** INPUT **********/
 
 div.cell {
     padding: 0px;
@@ -80,7 +54,9 @@ div.cell.edit_mode {
 }
 
 
-/********** OUTPUT AREA **********/
+
+/********** OUTPUT **********/
+
 
 div.output_wrapper {
     background-color:@cc-output-bg;
@@ -102,7 +78,7 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
 }
 div.output_area pre {
     color: @cc-output-fg;
-    font-size: 9.5pt;
+    font-size: 9pt;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 2px;
@@ -110,7 +86,7 @@ div.output_area pre {
 }
 div.output_subarea {
     overflow-x: auto;
-    padding: 1.0em;
+    padding: .8em;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     box-flex: 1;
@@ -119,13 +95,14 @@ div.output_subarea {
 }
 
 
+
 /********** TEXT & MD CELLS **********/
 
 
 div.text_cell, div.text_cell_render pre, div.text_cell_render {
-    font-family: @text-cell-font, @text-cell-fontfamily;
-    font-size: 100%;
-    line-height: 130%;
+    font-family: @text-cell-fontfamily;
+    font-size: @text-cell-fontsize;
+    line-height: 160%;
     margin-right: 0px;
     margin-left: 0px;
     background: @text-cell-bg;
@@ -134,22 +111,26 @@ div.text_cell, div.text_cell_render pre, div.text_cell_render {
     border-radius: 2px;
 }
 div.cell.text_cell.rendered.selected {
+    font-family: @text-cell-fontfamily;
     border: medium solid @tc-border;
     border-radius: 2px;
 }
 div.cell.text_cell.unrendered.selected {
+    font-family: @text-cell-fontfamily;
     border: medium solid @tc-border;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border-radius: 2px;
 }
 div.cell.text_cell.selected {
+    font-family: @text-cell-fontfamily;
     border: medium solid @tc-border;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border-radius: 2px;
 }
 .edit_mode div.cell.text_cell.selected {
+    font-family: @text-cell-fontfamily;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border: medium solid @tc-border-edit;
@@ -158,33 +139,39 @@ div.cell.text_cell.selected {
 div.text_cell.unrendered,
 div.text_cell.unrendered.selected
 div.edit_mode div.text_cell.unrendered {
+    font-family: @text-cell-fontfamily;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border-radius: 2px;
 }
 
 
+
+
 /********** RENDERED HTML and TABLES **********/
 
 
-.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-  font-family: @monofont, monospace;
-  border: 1px @table-color solid;
-  color: @table-color;
-  font-size: 9pt;
-  background-color: @text-cell-bg;
-  background: @text-cell-bg;
-  align-content: left !important;
-}
+
 .rendered-html pre, .rendered-html code {
-    font-size: 12pt;
+    font-size: 9pt;
     color: @notebook-fg;
     line-height: 100%;
     background: @cc-input-bg;
 }
+.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
+    font-family: @monofont, monospace;
+    border: 1px @table-color solid;
+    color: @table-color;
+    font-size: 9pt;
+    background-color: @text-cell-bg;
+    background: @text-cell-bg;
+    align-content: left !important;
+}
 div.output_html {
+    font-size: 9pt;
     color: @table-color;
 }
+
 
 
 
@@ -196,10 +183,11 @@ div.prompt {
     margin: 0px;
     font-family: @monofont, monospace;
     text-align: left;
-    line-height: 1.21429em;
+    line-height: 1.2em;
     min-width: @prompt-width;
     font-size: @prompt-fontsize;
 }
+
 
 
 /********** INPUT PROMPTS **********/
@@ -210,7 +198,7 @@ div.prompt.input_prompt {
     color: @input-prompt;
     background-color: @cc-input-bg;
     font-weight: normal;
-    font-size: 9.5pt;
+    font-size: @prompt-fontsize;
     width: 1em;
     border-right: 2px solid @prompt-line;
     border-top-left-radius: 2px;
@@ -232,14 +220,16 @@ div.cell.text_cell.unrendered .input_prompt {
 }
 
 
+
 /********** OUTPUT PROMPTS **********/
+
 
 
 div.prompt.output_prompt {
     font-family: @monofont, monospace;
     background-color: @cc-output-bg;
     color: @cc-output-bg;
-    font-size: 9.5pt;
+    font-size: @prompt-fontsize;
     border-bottom-left-radius: 2px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
@@ -247,7 +237,7 @@ div.prompt.output_prompt {
 }
 div.out_prompt_overlay.prompt {
     font-family: @monofont, monospace;
-    font-size: 9.5pt;
+    font-size: @prompt-fontsize;
     width: 1em;
     background-color: @cc-output-bg;
     border-bottom-left-radius: 2px;
@@ -257,7 +247,7 @@ div.out_prompt_overlay.prompt {
 }
 div.out_prompt_overlay.prompt:hover {
     font-family: @monofont, monospace;
-    font-size: 9.5pt;
+    font-size: @prompt-fontsize;
     background-color: @cc-output-bg;
     box-shadow: @box-shadow 1px 1px 3px 3px inset;
     border-bottom-left-radius: 2px;

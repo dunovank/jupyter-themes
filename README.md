@@ -24,14 +24,17 @@ jt -t grade3
 # ...with toolbar (-T) enabled
 jt -T -t grade3
 
-# ...and adjust the view setting (default: narrow)
-jt -t grade3 -vw wide
+# ...and adjust cell width [default=950 (pixels)]
+jt -t grade3 -cw 850
 
 # ...with alternate markdown/text-cell layout
 jt -t grade3 -altmd
 
 # set font (-f) and font-size (-fs) (defaults are Hack and 11)
 jt -t grade3 -f Source-Code-Pro -fs 10
+
+# set notebook (-ff) & textcell fontfamily (-tcff) (both default to sans)
+jt -t grade3 -ff serif -tcff serif
 
 # restore (-r) default theme
 jt -r
