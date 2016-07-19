@@ -8,7 +8,7 @@ import os
 import argparse
 from glob import glob
 import lesscpy
-__version__ = '0.7.4'
+__version__ = '0.7.5'
 
 # juypter config and package dir
 package_dir = os.path.dirname(os.path.realpath(__file__))

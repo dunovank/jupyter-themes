@@ -37,7 +37,7 @@ pip install jupyterthemes
 ```sh
 # can call with "jupyter-themes" or "jt" interchangeably
 # list available themes
-# oceans16 | grade3 | spacelegos | chesterish (New!) | onedork (New!)
+# oceans16 | grade3 | chesterish (New!) | onedork (New!)
 jt -l
 
 # install a theme...
