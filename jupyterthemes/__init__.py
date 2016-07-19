@@ -8,7 +8,7 @@ import os
 import argparse
 from glob import glob
 import lesscpy
-__version__ = '0.7.2'
+__version__ = '0.7.3'
 
 # juypter config and package dir
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -85,7 +85,7 @@ def set_font_family(stylecontent, nbfontfamily='sans', tcfontfamily='serif'):
     if nbfontfamily == 'sans':
         nbfont = 'Droid Sans'
         nbfontfamily='sans-serif'
-    elif fontfamily == 'serif':
+    elif nbfontfamily == 'serif':
         nbfont = 'Crimson Text'
     # Text Cell FontFamily
     if tcfontfamily == 'sans':
