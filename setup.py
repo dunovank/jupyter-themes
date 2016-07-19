@@ -7,7 +7,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='jupyterthemes',
-    version='0.7.0',
+    version='0.7.1',
     packages=['jupyterthemes'],
     include_package_data=True,
     package_data={'jupyterthemes': ['sandbox/*.js', 'layout/*.less', 'layout/*.css', 'styles/*.less']},
@@ -15,7 +15,7 @@ setup(
     long_description=README,
     license='MIT',
     url='https://github.com/dunovank/jupyter-themes/',
-    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.7.0',
+    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.7.1',
     author='dunovank',
     author_email='dunovank@gmail.com',
     classifiers=[
