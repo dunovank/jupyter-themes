@@ -8,7 +8,7 @@ import os
 import argparse
 from glob import glob
 import lesscpy
-__version__ = '0.7.6'
+__version__ = '0.7.7'
 
 # juypter config and package dir
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -49,6 +49,7 @@ def write_to_css():
     """ write less-compiled css file to css_fpath in jupyter_dir"""
     os.chdir(package_dir)
     css_content = lesscpy.compile(less_tempfile)
+    css_content += '\n\n'
     return css_content
 
 def make_tempfile(stylecontent):
