@@ -6,10 +6,33 @@
 ### Grade3
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/grade3_nb.png?raw=true)
 
+### New themes and customizable options
+![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tgrade3-altmd-fs10-cw900.png?raw=true)
+```sh
+jt -t grade3 -altmd -fs 10 -cw 900 -tcff serif
+```
+
+![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedark-ffserif-tcffserif.png?raw=true)
+```sh
+jt -t onedark -ff serif -tcff serif
+```
+
+![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedark-cw850-altmd.png?raw=true)
+```sh
+jt -t onedark -cw 850 -altmd
+```
+
+![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-toceans16-altmd-fs10-cw900.png?raw=true)
+```sh
+jt -t oceans16 -altmd -fs 10 -cw900
+```
+
+
 ### Install jupyterthemes w/ pip (officially)
 ```sh
 pip install jupyterthemes
 ```
+
 
 ### How to...
 ```sh
