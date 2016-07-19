@@ -1,16 +1,21 @@
 ## Theme-ify your Jupyter Notebooks!
 
-### Oceans16
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/oceans16_nb.png?raw=true)
-
-### Grade3
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/grade3_nb.png?raw=true)
 
 ### New themes and customizable options
+```sh
+jt -t chesterish -cw 850 -fs 10
+```
+![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tchesterish-cw850-fs10.png?raw=true)
+
 ```sh
 jt -t oceans16 -altmd -fs 10 -cw900
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-toceans16-altmd-fs10-cw900.png?raw=true)
+
+```sh
+jt -t onedark -cw 850 -fs10
+```
+![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedark-cw850-fs10.png?raw=true)
 
 ```sh
 jt -t grade3 -altmd -fs 10 -cw 900 -tcff serif
@@ -21,11 +26,6 @@ jt -t grade3 -altmd -fs 10 -cw 900 -tcff serif
 jt -t onedark -ff serif -tcff serif
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedark-ffserif-tcffserif.png?raw=true)
-
-```sh
-jt -t onedark -cw 850 -altmd
-```
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedark-cw850-altmd.png?raw=true)
 
 
 ### Install jupyterthemes w/ pip (officially)
