@@ -13,9 +13,9 @@ jt -t oceans16 -altmd -fs 10 -cw900
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-toceans16-altmd-fs10-cw900.png?raw=true)
 
 ```sh
-jt -t onedark -cw 850 -fs10
+jt -t onedork -cw 850 -fs 10
 ```
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedark-cw850-fs10.png?raw=true)
+![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-cw850-fs10.png?raw=true)
 
 ```sh
 jt -t grade3 -altmd -fs 10 -cw 900 -tcff serif
@@ -23,9 +23,9 @@ jt -t grade3 -altmd -fs 10 -cw 900 -tcff serif
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tgrade3-altmd-fs10-cw900.png?raw=true)
 
 ```sh
-jt -t onedark -ff serif -tcff serif
+jt -t onedork -ff serif -tcff serif
 ```
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedark-ffserif-tcffserif.png?raw=true)
+![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-ffserif-tcffserif.png?raw=true)
 
 
 ### Install jupyterthemes w/ pip (officially)
@@ -33,12 +33,11 @@ jt -t onedark -ff serif -tcff serif
 pip install jupyterthemes
 ```
 
-
 ### How to...
 ```sh
 # can call with "jupyter-themes" or "jt" interchangeably
 # list available themes
-# oceans16 | grade3 | spacelegos | chesterish (New!) | onedark (New!)
+# oceans16 | grade3 | spacelegos | chesterish (New!) | onedork (New!)
 jt -l
 
 # install a theme...
