@@ -27,11 +27,6 @@ jt -t onedark -cw 850 -altmd
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedark-cw850-altmd.png?raw=true)
 
-```sh
-jt -t oceans16 -altmd -fs 10 -cw900
-```
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-toceans16-altmd-fs10-cw900.png?raw=true)
-
 
 ### Install jupyterthemes w/ pip (officially)
 ```sh
