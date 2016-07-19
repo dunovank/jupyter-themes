@@ -8,7 +8,7 @@ import os
 import argparse
 from glob import glob
 import lesscpy
-__version__ = '0.7.1'
+__version__ = '0.7.2'
 
 # juypter config and package dir
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -78,11 +78,11 @@ def reset_default():
         except Exception:
             print("Already set to default theme in {0}".format(fpath))
 
-def set_font_family(stylecontent, fontfamily='sans', tcfontfamily='serif'):
+def set_font_family(stylecontent, nbfontfamily='sans', tcfontfamily='serif'):
     """ set text and markdown cell font and font-family
     """
     # Notebook FontFamily
-    if fontfamily == 'sans':
+    if nbfontfamily == 'sans':
         nbfont = 'Droid Sans'
         nbfontfamily='sans-serif'
     elif fontfamily == 'serif':
@@ -134,7 +134,7 @@ def set_cell_layout(stylecontent, cellwidth=950, altmd=False):
     stylecontent += '@text-cell-prompt: {}; \n'.format(tc_prompt_border)
     return stylecontent
 
-def install_theme(theme, font='Hack', fontsize=11, cellwidth=950, altmd=False, fontfamily='sans', tcfontfamily='serif', toolbar=False):
+def install_theme(theme, font='Hack', fontsize=11, cellwidth=950, altmd=False, nbfontfamily='sans', tcfontfamily='serif', toolbar=False):
     """ install theme to css_fpath with specified font, fontsize,
     md layout, and toolbar pref
     """
@@ -146,7 +146,7 @@ def install_theme(theme, font='Hack', fontsize=11, cellwidth=950, altmd=False, f
     stylecontent += '@monofont: "{}"; \n'.format(font)
     stylecontent += '@monofontsize: {}pt; \n'.format(fontsize)
     stylecontent = set_cell_layout(stylecontent, cellwidth, altmd)
-    stylecontent = set_font_family(stylecontent, fontfamily, tcfontfamily)
+    stylecontent = set_font_family(stylecontent, nbfontfamily, tcfontfamily)
     stylecontent = set_toolbar_pref(stylecontent, toolbar)
     # read and append main NOTEBOOK layout .less
     with open(nb_layout, 'r') as notebook:
@@ -178,7 +178,7 @@ def main():
     parser.add_argument('-T', "--toolbar", action='store_true', default=False, help="enable the toolbar")
     parser.add_argument('-fs', "--fontsize", action='store', default=11, help='set the CodeCell font-size')
     parser.add_argument('-f',"--font", action='store', default='Hack', help='CodeCell font')
-    parser.add_argument('-ff',"--fontfamily", action='store', default='sans', help='Notebook font-family (sans or serif)')
+    parser.add_argument('-ff',"--nbfontfamily", action='store', default='sans', help='Notebook font-family (sans or serif)')
     parser.add_argument('-tcff',"--tcfontfamily", action='store', default='sans', help='TextCell font-family (sans or serif)')
     args = parser.parse_args()
     if args.reset:
@@ -196,5 +196,5 @@ def main():
             exit(1)
         # print feedback
         print("Installing {0} at {1}".format(args.theme, css_fpath))
-        install_theme(args.theme, font=args.font, fontsize=int(args.fontsize),  fontfamily=args.fontfamily, cellwidth=int(args.cellwidth), altmd=args.altmd, toolbar=args.toolbar, tcfontfamily=args.tcfontfamily)
+        install_theme(args.theme, font=args.font, fontsize=int(args.fontsize),  nbfontfamily=args.nbfontfamily, cellwidth=int(args.cellwidth), altmd=args.altmd, toolbar=args.toolbar, tcfontfamily=args.tcfontfamily)
         exit(0)
