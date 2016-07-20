@@ -9,24 +9,38 @@ Website: https://www.github.com/dunovank
 /********** CODE CELLS **********/
 
 /********** INPUT **********/
-
-div.cell {
-    padding: 0px;
-    background: @cc-input-bg;
-    background-color: @cc-input-bg;
-    border: medium solid @notebook-bg;
-    align: center;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+div#notebook,
+div.output_area pre,
+div.output_wrapper,
+div.CodeMirror,
+div.CodeMirror pre {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    line-height: 170%;
+    color: @cc-input-fg;
+}
+div.CodeMirror-lines {
+    padding-top: .6em;
+    padding-bottom: .6em;
+    padding-left: .5em;
+    padding-right: 1.5em;
 }
 div.input_area {
     background-color: @cc-input-bg;
-    margin-bottom: 0px;
+    padding-right: 1.5em;
     border: 0px;
     border-top-left-radius: 0px;
     border-top-right-radius: 2px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+}
+div.cell {
+    padding: 0px;
+    background: @cc-input-bg;
+    background-color: @cc-input-bg;
+    border: medium solid @notebook-bg;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
 }
 div.cell.selected {
     background: @cc-input-bg;
@@ -59,16 +73,18 @@ div.cell.edit_mode {
 
 
 div.output_wrapper {
-    background-color:@cc-output-bg;
+    background-color: @cc-output-bg;
+    border: 0px;
     margin-bottom: 0em;
     margin-top: 0em;
-    border: 0px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 }
 div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
     background-color: @cc-output-bg;
     color: @cc-output-fg;
     border-top-right-radius: 0px;
@@ -77,8 +93,9 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
     border-bottom-right-radius: 2px;
 }
 div.output_area pre {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
     color: @cc-output-fg;
-    font-size: 9pt;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 2px;
@@ -152,32 +169,28 @@ div.edit_mode div.text_cell.unrendered {
 
 
 
-.rendered-html pre, .rendered-html code {
-    font-size: 9pt;
-    color: @notebook-fg;
-    line-height: 100%;
-    background: @cc-output-bg;
-}
 .rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
     font-family: @monofont, monospace;
+    font-size: @monofontsize;
     border: 1px @table-color solid;
     color: @table-color;
-    font-size: 9pt;
     background-color: @table-bg;
     background: @table-bg;
     align-content: left !important;
 }
 div.output_html {
-    font-size: 9pt;
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
     color: @table-color;
     background-color: @cc-output-bg;
     background: @cc-output-bg;
 }
 .rendered_html pre, .rendered_html code {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
     border: none;
     background-color: @text-cell-bg;
     color: @cc-input-fg;
-    font-size: 95%;
     padding: 0px;
 }
 
@@ -185,29 +198,27 @@ div.output_html {
 
 /********** PROMPTS **********/
 
-
 div.prompt {
-    padding: 0.3em;
-    margin: 0px;
+    padding: .5em;
     font-family: @monofont, monospace;
     text-align: left;
-    line-height: 1.2em;
+    line-height: 170%;
     min-width: @prompt-width;
     font-size: @prompt-fontsize;
 }
-
-
 
 /********** INPUT PROMPTS **********/
 
 
 div.prompt.input_prompt {
+    line-height: 170%;
     font-family: @monofont, monospace;
     color: @input-prompt;
     background-color: @cc-input-bg;
     font-weight: normal;
     font-size: @prompt-fontsize;
-    width: 1em;
+    min-width: @prompt-width;
+    font-size: @prompt-fontsize;
     border-right: 2px solid @prompt-line;
     border-top-left-radius: 2px;
     border-top-right-radius: 0px;
@@ -215,12 +226,14 @@ div.prompt.input_prompt {
     border-bottom-right-radius: 0px;
 }
 div.cell.text_cell.rendered .input_prompt {
+    line-height: 160%;
     border-right: 2px solid @text-cell-prompt;
     min-width: @tc-prompt-width;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
 }
 div.cell.text_cell.unrendered .input_prompt {
+    line-height: 160%;
     border-right: 2px solid @text-cell-prompt;
     min-width: @tc-prompt-width;
     background: @text-cell-bg;
@@ -246,7 +259,8 @@ div.prompt.output_prompt {
 div.out_prompt_overlay.prompt {
     font-family: @monofont, monospace;
     font-size: @prompt-fontsize;
-    width: 1em;
+    min-width: @prompt-width;
+    font-size: @prompt-fontsize;
     background-color: @cc-output-bg;
     border-bottom-left-radius: 2px;
     border-top-right-radius: 0px;

@@ -52,6 +52,8 @@ div.js-error {
 
 
 .cm-s-ipython.CodeMirror {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
     background: @cc-input-bg;
     color: @cc-input-fg;
     border-radius: 2px;
@@ -130,27 +132,13 @@ div.js-error {
 .cm-s-ipython span.cm-entity {
     color: @cm-entity;
 }
-div.CodeMirror,
-div.CodeMirror pre {
-    line-height: 1.6 !important;
-    color: @cc-input-fg;
-}
-div.CodeMirror-lines {
-    padding-bottom: .2em;
-}
 div.CodeMirror span.CodeMirror-matchingbracket {
     color: @selected-fg-bright;
     background-color: @matching-bracket;
-    height: 120%;
-    line-height: 1.6 !important;
-    padding-top: 1px;
 }
 div.CodeMirror span.CodeMirror-nonmatchingbracket {
     color: @selected-fg-bright;
     background: @selected-error !important ;
-    height: 120%;
-    line-height: 1.6 !important;
-    padding-top: 1px;
 }
 
 

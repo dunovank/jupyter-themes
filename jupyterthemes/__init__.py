@@ -8,7 +8,7 @@ import os
 import argparse
 from glob import glob
 import lesscpy
-__version__ = '0.7.7'
+__version__ = '0.7.8'
 
 # juypter config and package dir
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -86,17 +86,23 @@ def set_font_family(stylecontent, nbfontfamily='sans', tcfontfamily='serif'):
     if nbfontfamily == 'sans':
         nbfont = 'Droid Sans'
         nbfontfamily='sans-serif'
+        nbfontsize = '12.5pt'
+        nbfontsize_sub = '11pt'
     elif nbfontfamily == 'serif':
         nbfont = 'Crimson Text'
+        nbfontsize = '14pt'
+        nbfontsize_sub = '12.5pt'
     # Text Cell FontFamily
     if tcfontfamily == 'sans':
         tcfont = 'Droid Sans'
         tcfontfamily='sans-serif'
-        tcfontsize = "105%"
+        tcfontsize = '11.5pt'
     elif tcfontfamily == 'serif':
-        tcfont = 'Libre Baskerville'
-        tcfontsize = "105%"
+        tcfont = 'Crimson Text'
+        tcfontsize = '14pt'
     stylecontent += '@notebook-fontfamily: "{}", {}; \n'.format(nbfont, nbfontfamily)
+    stylecontent += '@nb-fontsize: {}; \n'.format(nbfontsize)
+    stylecontent += '@nb-fontsize-sub: {}; \n'.format(nbfontsize_sub)
     stylecontent += '@text-cell-fontfamily: "{}", {}; \n'.format(tcfont, tcfontfamily)
     stylecontent += '@text-cell-fontsize: {}; \n'.format(tcfontsize)
     return stylecontent
@@ -119,13 +125,13 @@ def set_cell_layout(stylecontent, cellwidth=950, altmd=False):
         # alternative markdown/textcell layout
         textcell_bg = '@notebook-bg'
     tc_prompt_border = '@text-cell-bg'
-    prompt_width = 10.8
-    tc_prompt_width = 5
-    prompt_fs = 8
+    prompt_width = 11
+    tc_prompt_width = 3
+    prompt_fs = 9
     if cellwidth>=950:
-        prompt_width = 11.5
+        prompt_width = 13.5
         tc_prompt_width = prompt_width
-        prompt_fs = 9
+        prompt_fs = 10
         tc_prompt_border = '@tc-prompt'
     stylecontent += '@cell-width: {}px; \n'.format(cellwidth)
     stylecontent += '@prompt-width: {}ex; \n'.format(prompt_width)
@@ -139,6 +145,8 @@ def install_theme(theme, font='Hack', fontsize=11, cellwidth=950, altmd=False, n
     """ install theme to css_fpath with specified font, fontsize,
     md layout, and toolbar pref
     """
+    if int(fontsize)>50 and len(fontsize)>1:
+        fontsize= float('.'.join([fontsize[:-1], fontsize[-1]]))
     css_content = ''
     with open(fonts_css, 'r') as fonts:
         css_content += fonts.read() + '\n'
@@ -152,12 +160,14 @@ def install_theme(theme, font='Hack', fontsize=11, cellwidth=950, altmd=False, n
     # read and append main NOTEBOOK layout .less
     with open(nb_layout, 'r') as notebook:
         stylecontent += notebook.read() + '\n'
-    # read and append CODEMIRROR layout .less
-    with open(cm_layout, 'r') as codemirror:
-        stylecontent += codemirror.read() + '\n'
     # read and append CELL layout .less
     with open(cl_layout, 'r') as cells:
         stylecontent += cells.read() + '\n'
+    # read and append CODEMIRROR layout .less
+    with open(cm_layout, 'r') as codemirror:
+        stylecontent += codemirror.read() + '\n'
+
+
     # write all content to temp less file
     make_tempfile(stylecontent)
     # compile less to custom.css and write to install dir
@@ -197,5 +207,5 @@ def main():
             exit(1)
         # print feedback
         print("Installing {0} at {1}".format(args.theme, css_fpath))
-        install_theme(args.theme, font=args.font, fontsize=int(args.fontsize),  nbfontfamily=args.nbfontfamily, cellwidth=int(args.cellwidth), altmd=args.altmd, toolbar=args.toolbar, tcfontfamily=args.tcfontfamily)
+        install_theme(args.theme, font=args.font, fontsize=args.fontsize,  nbfontfamily=args.nbfontfamily, cellwidth=int(args.cellwidth), altmd=args.altmd, toolbar=args.toolbar, tcfontfamily=args.tcfontfamily)
         exit(0)

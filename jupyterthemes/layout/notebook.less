@@ -11,25 +11,17 @@ Website: https://www.github.com/dunovank
 
 body {
     font-family: @notebook-fontfamily;
-    font-size: 11pt;
+    font-size: @nb-fontsize;
     color: @notebook-fg;
     background-color: @notebook-bg;
+    line-height: 1;
 }
 a {
     color: @notebook-fg;
     font-family: @notebook-fontfamily;
 }
-div#notebook,
-div.output_area pre,
-div.output_wrapper {
-    font-family: @monofont, monospace;
-    font-size: 9pt;
-}
-
-div.CodeMirror,
-div.CodeMirror pre {
-    font-family: @monofont, monospace;
-    font-size: @monofontsize;
+div#notebook {
+    padding-top: 5px;
 }
 
 /********** NOTEBOOK PAGE SETTINGS **********/
@@ -48,7 +40,6 @@ div.CodeMirror pre {
 }
 
 /********** NOTEBOOK PAGE HEADER AND NAVBAR ***********/
-
 
 
 .notebook_app #header {
@@ -71,30 +62,29 @@ div.CodeMirror pre {
 }
 body > #header .header-bar {
     width: 100%;
-    height: 1px;
     background: @notebook-bg;
     margin-bottom: -1px;
 }
 .navbar-default {
+    font-size: @nb-fontsize;
     background-color: @notebook-bg;
     border-color: @notebook-bg;
-    padding-bottom: 0px
+    padding-bottom: 0px;
+    border: 0;
 }
 #menubar {
-    padding-top: 5px;
+    padding-top: 10px;
     background-color: @notebook-bg;
 }
-#menubar .navbar {
-    border-radius: 0px 0px 2px 2px;
+#menubar .navbar, .navbar-default {
+    background-color: @notebook-bg;
     margin-bottom: 0px;
-}
-.navbar-default {
-    background-color: @notebook-bg;
-    background-color: @notebook-bg;
 }
 .navbar-default .navbar-nav > li > a {
     color: @notebook-fg;
-    font-size: 12pt;
+    font-size: @nb-fontsize;
+    display: block;
+    line-height: 1.35;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: @selected-fg;
@@ -118,18 +108,18 @@ body > #header .header-bar {
 }
 .list_container {
     color: @notebook-fg;
-    font-size: 11pt;
+    font-size: @nb-fontsize-sub;
     border: none;
     font-family: @notebook-fontfamily;
     text-shadow: none !important;
 }
 .list_container > div {
     border-bottom: 1px solid @selected-third;
-    font-size: 11pt;
+    font-size: @nb-fontsize-sub;
 }
 .list_container a {
     color: @notebook-fg;
-    font-size: 11pt;
+    font-size: @nb-fontsize-sub;
     border: none;
     font-family: @notebook-fontfamily;
     text-shadow: none !important;
@@ -153,7 +143,7 @@ div.list_item:hover {
 }
 .breadcrumb>li {
     color: @notebook-fg;
-    font-size: 11pt;
+    font-size: @nb-fontsize-sub;
     border: none;
     font-family: @notebook-fontfamily;
     text-shadow: none !important;
@@ -166,14 +156,14 @@ div.list_item:hover {
     background-image: none;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    font-size: 11pt;
+    font-size: @nb-fontsize;
     color: @selected-fg-bright;
     background: @notebook-bg;
     border-color: transparent;
     background-color: @selected-third;
 }
 .nav-tabs {
-    font-size: 11pt;
+    font-size: @nb-fontsize;
     border-bottom: 1px solid @selected-tenth;
 }
 
@@ -201,7 +191,7 @@ div.list_item:hover {
     border-color: @selected-third;
 }
 .panel {
-    font-size: 11pt;
+    font-size: @nb-fontsize-sub;
     margin-bottom: 18px;
     background-color: @notebook-bg;
     color: @notebook-fg;
@@ -214,6 +204,7 @@ div.list_item:hover {
     line-height: 22px;
 }
 #running .panel-group .panel .panel-heading a:hover {
+    font-size: @nb-fontsize-sub;
     color: @item-cyan;
 }
 #running .panel-group .panel .panel-body .list_container .list_item {
@@ -224,7 +215,7 @@ div.list_item:hover {
     width: 100%;
     height: 32px;
     padding: 6px 12px;
-    font-size: 12pt;
+    font-size: @nb-fontsize-sub;
     color: @notebook-fg;
     background-color: @cc-input-bg;
     background-image: none;
@@ -255,7 +246,7 @@ div.list_item:hover {
 
 
 .command_mode .modal_indicator:before {
-    font-size: 10pt;
+    font-size: @nb-fontsize-sub;
 }
 .item_icon {
     color: @item-blue;
@@ -277,6 +268,7 @@ div.list_item:hover {
 #kernel_indicator {
     float: right !important;
     color: @item-cyan;
+    font-size: 13pt;
 }
 #kernel_indicator .kernel_indicator_name {
     padding-left: 5px;
@@ -295,6 +287,7 @@ div#ipython_notebook {
     color: #fff;
     background-color: @item-cyan;
     border-color: @item-cyan;
+    width: 100%;
 }
 
 
@@ -303,48 +296,50 @@ div#ipython_notebook {
 
 
 .dropdown-menu {
+    font-size: @nb-fontsize;
+    box-shadow: none;
+    padding: 0px;
+    text-align: left;
     border: 2px solid @selected-third;
     background-color: @notebook-base;
     background: @notebook-base;
-    box-shadow: none;
-    padding: 0px 0;
-    font-size: 12pt;
-    text-align: left;
+    line-height: 1.35;
 }
 .dropdown-menu:hover {
     border: 2px solid @selected-third;
     background-color: @notebook-base;
     box-shadow: none;
+    line-height: 1.35;
 }
 .dropdown-header {
-    font-size: 12pt;
+    font-size: @nb-fontsize;
     display: block;
-    line-height: 1.25;
     color: @notebook-fg;
     text-decoration: underline;
     text-decoration-color: @selected-third;
     white-space: nowrap;
+    line-height: 1.35;
 }
 .dropdown-menu > li > a {
-    font-size: 11pt;
+    font-size: @nb-fontsize-sub;
     display: block;
     clear: both;
-    padding: 7px 19px;
+    padding: 9px 22px;
     font-weight: normal;
-    line-height: 1.25;
+    line-height: 1.3;
     color: @notebook-fg;
     white-space: nowrap;
     background-color: @notebook-base;
     background: @notebook-base;
 }
 .dropdown-menu > li > a:hover {
-    font-size: 11pt;
+    font-size: @nb-fontsize-sub;
     color: @selected-fg;
     display: block;
     clear: both;
-    padding: 7px 19px;
+    padding: 9px 22px;
     font-weight: normal;
-    line-height: 1.25;
+    line-height: 1.3;
     white-space: nowrap;
     background-color: @selected-third;
     background: @selected-third;
@@ -363,12 +358,13 @@ div#ipython_notebook {
     padding-top: 0px;
 }
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+    font-size: @nb-fontsize-sub;
     font-weight: normal;
     color: @disabled;
     padding: none;
     display: block;
     clear: both;
-    line-height: 1.15;
+    line-height: 1.3;
     white-space: nowrap;
 }
 
@@ -387,18 +383,7 @@ div#ipython_notebook {
     color: @notebook-fg;
     background: transparent;
     background-color: transparent;
-    font-size: 11pt;
-    font-weight: normal;
-    border: 0 none !important;
-    border-radius: 2px;
-    box-shadow: none !important;
-    text-shadow: none;
-}
-.btn-group > .btn-mini {
-    color: @notebook-fg;
-    background: transparent;
-    background-color: transparent;
-    font-size: 10pt;
+    font-size: @nb-fontsize-sub;
     font-weight: normal;
     border: 0 none !important;
     border-radius: 2px;
@@ -410,6 +395,17 @@ div#ipython_notebook {
     background: transparent;
     background-color: @selected-half;
     background-image: none;
+}
+.btn-group > .btn-mini {
+    color: @notebook-fg;
+    background: transparent;
+    background-color: transparent;
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    border: 0 none !important;
+    border-radius: 2px;
+    box-shadow: none !important;
+    text-shadow: none;
 }
 .btn-group > .btn-mini:hover {
     color: @selected-fg;
@@ -518,11 +514,9 @@ audio, video {
 }
 
 
-
 /********** SCROLL BARS **********/
 /* Courtesy of Sherif Soliman */
 /* (http://sherifsoliman.com) */
-
 
 
 div.output.output_scroll {
@@ -530,6 +524,7 @@ div.output.output_scroll {
 }
 ::-webkit-scrollbar {
     width: 9px;
+    height: 8px;
     background-color: @selected-third;
     background: @selected-third;
 }

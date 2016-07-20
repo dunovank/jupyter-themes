@@ -1,16 +1,25 @@
+
+/********** MATHJAX **********/
+/* remove trailing vertical line */
+.MathJax nobr>span.math>span {
+    border: 0 !important;
+};
+
 <script>
     MathJax.Hub.Config({
-                        TeX: {
-                           extensions: ["AMSmath.js"],
-                           equationNumbers: { autoNumber: "AMS", useLabelIds: true}
-                           },
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+        "HTML-CSS": {
+            preferredFont: "STIX",
+            scale: 120,
+            styles: {
+                ".MathJax_Display": {
+                    "text-align": "center",
+                    margin: "1em 0em"
                 },
-                displayAlign: 'center', // Change this to 'center' to center equations.
-                "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 4}}
+                ".MathJax .merror": {
+                    color:   "#3572C6",
+                    "font-size":  "120%"
                 }
-        });
+            }
+        }
+    });
 </script>
