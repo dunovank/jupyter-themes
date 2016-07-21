@@ -8,25 +8,8 @@
  * @namespace IPython
  * @class customjs
  * @static
-
- MathJax.Hub.Config({
-  "HTML-CSS": {
-    availableFonts: [], preferredFont: null, // force Web fonts
-    webFont: "Neo-Euler"
-  }
-});
-
-
-* OR
-
-
-MathJax.Hub.Config({
-  "HTML-CSS": {
-   availableFonts: ["TeX","STIX-Web","Neo-Euler"],
-   preferredFont: "Neo-Euler",
-  }
-});
  */
+
  define([
     'base/js/namespace',
     'base/js/events'

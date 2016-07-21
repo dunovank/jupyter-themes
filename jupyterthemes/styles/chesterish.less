@@ -9,7 +9,6 @@
 @selected-tenth:        rgba(75, 95, 118,.10);
 @selected-error:        rgba(191, 97, 106,.4);
 @prompt-line:           rgba(0, 156, 209, .5);
-@tc-prompt:             rgba(211, 97, 95, .5);
 @matching-bracket:      #3572C6;
 @selected-active:       #007aa4;
 @divider:               rgba(0, 156, 209, .3);
@@ -33,17 +32,21 @@
 @item-cyan:             @selected-bg;
 
 @disabled:              #546386;
-@scrollbar:             #495164;
+@scrollbar:             desaturate(darken(@selected-bg, 2%), 10%);
+@scroll-trough:         lighten(@cc-output-bg, 60%);
 @scrollbar-inactive:    #464e60;
 @input-prompt:          @disabled;
 @box-shadow:            #303945;
-@cc-border-command:     #008ebf;
+@cc-border-selected:    #008ebf;
 @cc-border-edit:        #005573;
-@tc-border:             @header-fg;
+@tc-border-selected:    @header-fg;
 @tc-border-edit:        #814c52;
 @button-color:          @selected-active;
 @table-color:           @notebook-fg;
 @table-bg:              @cc-output-bg;
+@table-border:          @table-color;
+@codeblock-bg:          darken(@text-cell-bg, 3%);
+@codeblock-border:      @codeblock-bg;
 
 /* chesterish codemirror colors */
 @ansiblack:             #2b303b;

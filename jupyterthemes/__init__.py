@@ -8,7 +8,7 @@ import os
 import argparse
 from glob import glob
 import lesscpy
-__version__ = '0.7.8'
+__version__ = '0.8.0'
 
 # juypter config and package dir
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -79,19 +79,19 @@ def reset_default():
         except Exception:
             print("Already set to default theme in {0}".format(fpath))
 
-def set_font_family(stylecontent, nbfontfamily='sans', tcfontfamily='serif'):
+def set_nb_font(stylecontent, nbfontfamily='sans', tcfontfamily='serif'):
     """ set text and markdown cell font and font-family
     """
     # Notebook FontFamily
     if nbfontfamily == 'sans':
         nbfont = 'Droid Sans'
         nbfontfamily='sans-serif'
-        nbfontsize = '12.5pt'
+        nbfontsize = '12pt'
         nbfontsize_sub = '11pt'
     elif nbfontfamily == 'serif':
         nbfont = 'Crimson Text'
-        nbfontsize = '14pt'
-        nbfontsize_sub = '12.5pt'
+        nbfontsize = '13.5pt'
+        nbfontsize_sub = '12pt'
     # Text Cell FontFamily
     if tcfontfamily == 'sans':
         tcfont = 'Droid Sans'
@@ -107,7 +107,16 @@ def set_font_family(stylecontent, nbfontfamily='sans', tcfontfamily='serif'):
     stylecontent += '@text-cell-fontsize: {}; \n'.format(tcfontsize)
     return stylecontent
 
-def set_toolbar_pref(stylecontent, toolbar=False):
+def set_mono_font(stylecontent, font='Hack', fontsize=11):
+    # convert fontsize to float, (& if 105 --> 10.5)
+    if int(fontsize)>50 and len(fontsize)>1:
+        fontsize= float('.'.join([fontsize[:-1], fontsize[-1]]))
+    # define monofont // monofontsize vars
+    stylecontent += '@monofont: "{}"; \n'.format(font)
+    stylecontent += '@monofontsize: {}pt; \n'.format(fontsize)
+    return stylecontent
+
+def toggle_toolbar(stylecontent, toolbar=False):
     """ Hides toolbar if toolbar==False (default)
     """
     toolbar_string = 'div#maintoolbar {display: none !important;}'
@@ -117,66 +126,59 @@ def set_toolbar_pref(stylecontent, toolbar=False):
     stylecontent += toolbar_string + '\n\n'
     return stylecontent
 
-def set_cell_layout(stylecontent, cellwidth=950, altmd=False):
+def style_cells(stylecontent, cellwidth=950, altmd=False):
     """ set general layout and style properties of text and code cells
     """
     textcell_bg = '@cc-input-bg'
     if altmd:
-        # alternative markdown/textcell layout
+        # alt txt/md layout
         textcell_bg = '@notebook-bg'
-    tc_prompt_border = '@text-cell-bg'
-    prompt_width = 11
-    tc_prompt_width = 3
-    prompt_fs = 9
-    if cellwidth>=950:
-        prompt_width = 13.5
-        tc_prompt_width = prompt_width
-        prompt_fs = 10
-        tc_prompt_border = '@tc-prompt'
     stylecontent += '@cell-width: {}px; \n'.format(cellwidth)
-    stylecontent += '@prompt-width: {}ex; \n'.format(prompt_width)
-    stylecontent += '@prompt-fontsize: {}pt; \n'.format(prompt_fs)
     stylecontent += '@text-cell-bg: {}; \n'.format(textcell_bg)
-    stylecontent += '@tc-prompt-width: {}ex; \n'.format(tc_prompt_width)
-    stylecontent += '@text-cell-prompt: {}; \n'.format(tc_prompt_border)
     return stylecontent
 
 def install_theme(theme, font='Hack', fontsize=11, cellwidth=950, altmd=False, nbfontfamily='sans', tcfontfamily='serif', toolbar=False):
     """ install theme to css_fpath with specified font, fontsize,
     md layout, and toolbar pref
     """
-    if int(fontsize)>50 and len(fontsize)>1:
-        fontsize= float('.'.join([fontsize[:-1], fontsize[-1]]))
+    # initialize css_content as empty str
+    # merged with style_content at the end
     css_content = ''
+    # import fonts from googleapis
     with open(fonts_css, 'r') as fonts:
         css_content += fonts.read() + '\n'
-    # import theme colors and set font properties
+
+    # initialize stylecontent & import main colors
     stylecontent = '@import "styles/{}";\n'.format(theme)
-    stylecontent += '@monofont: "{}"; \n'.format(font)
-    stylecontent += '@monofontsize: {}pt; \n'.format(fontsize)
-    stylecontent = set_cell_layout(stylecontent, cellwidth, altmd)
-    stylecontent = set_font_family(stylecontent, nbfontfamily, tcfontfamily)
-    stylecontent = set_toolbar_pref(stylecontent, toolbar)
-    # read and append main NOTEBOOK layout .less
+    # set codecell monofont & fontsize
+    stylecontent = set_mono_font(stylecontent, font, fontsize)
+    # set notebook serif &/or sans-serif font choices
+    stylecontent = set_nb_font(stylecontent, nbfontfamily, tcfontfamily)
+    # define some vars for cell layout
+    stylecontent = style_cells(stylecontent, cellwidth, altmd)
+    # toggle on/off toolbar (hidden by default)
+    stylecontent = toggle_toolbar(stylecontent, toolbar)
+
+    # read-in notebook.less (general nb style)
     with open(nb_layout, 'r') as notebook:
         stylecontent += notebook.read() + '\n'
-    # read and append CELL layout .less
+    # read-in cells.less (cell layous)
     with open(cl_layout, 'r') as cells:
         stylecontent += cells.read() + '\n'
-    # read and append CODEMIRROR layout .less
+    # read-in codemirror.less (syntax-highlighting)
     with open(cm_layout, 'r') as codemirror:
         stylecontent += codemirror.read() + '\n'
-
-
-    # write all content to temp less file
+    # write all stylecontent to package_dir/temp.less
     make_tempfile(stylecontent)
-    # compile less to custom.css and write to install dir
+    # compile temp.less to css code and add to css_content
     css_content += write_to_css()
-    # read and append CELL layout .less
+    # append mathjax css & script to css_content
     with open(mjax_css, 'r') as mathjax:
         css_content += mathjax.read() + '\n'
+    # install css_content to .jupyter/custom/custom.css
     with open(css_fpath, 'w') as f:
         f.write(css_content)
+    # remove temp.less from package_dir
     os.remove(less_tempfile)
 
 def main():

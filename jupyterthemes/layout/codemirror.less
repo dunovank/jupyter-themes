@@ -1,16 +1,28 @@
-/*
+/**************************************************************
 
-Code for main syntax highlighting and codemirror properties
+  CodeMirror syntax highlighting for Code, Txt, & MD Cells
 
-Author: Kyle Dunovan (dunovank)
-Website: https://www.github.com/dunovank
+**************************************************************/
 
-*/
-
-/********** CODE MIRROR SETTINGS **********/
-
+/***************************************/
+/******* CODEMIRROR FONT & LINES *******/
+/***************************************/
+div.CodeMirror,
+div.CodeMirror pre {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    line-height: 170%;
+    color: @cc-input-fg;
+}
+div.CodeMirror-lines {
+    padding-top: .6em;
+    padding-bottom: .6em;
+    padding-left: .5em;
+    padding-right: 1.5em;
+}
+/*********************************/
 /********** ANSI COLORS **********/
-
+/*********************************/
 span.ansiblack {
     color: @ansiblack;
 }
@@ -45,12 +57,39 @@ div.js-error {
     color: @js-error;
 }
 
+/************************************/
+/******** TOOLTIP DIMENSIONS ********/
+/************************************/
+.ipython_tooltip {
+    border: 2px solid @selected-half;
+    background-color: @tooltip-bg-color;
+    border-radius: 2px;
+    overflow: wrap;
+    box-shadow: none;
+    position: absolute;
+    z-index: 1000;
+    font-size: 90%;
+}
+.ipython_tooltip .tooltiptext pre {
+    background-color: @tooltip-bg-color;
+    color: @selected-fg-bright;
+    overflow: wrap;
+    max-width: 800px;
+    font-size: 90%;
+}
+div#tooltip.ipython_tooltip {
+    overflow: wrap;
+    max-width: 800px;
+}
+div.tooltiptext.bigtooltip {
+    overflow: wrap;
+    height: 400px;
+    max-width: 800px;
+}
 
-
-/********** CODE CELLS SYNTAX HIGHLIGHTING **********/
-
-
-
+/*******************************************/
+/****** CODE CELLS SYNTAX HIGHLIGHTING *****/
+/*******************************************/
 .cm-s-ipython.CodeMirror {
     font-family: @monofont, monospace;
     font-size: @monofontsize;
@@ -141,12 +180,9 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     background: @selected-error !important ;
 }
 
-
-
-/********** MARKDOWN CELLS SYNTAX HIGHLIGHTING and HEADERS **********/
-
-
-
+/***********************************************/
+/**** TXT, HEADER, & MD SYNTAX HIGHLIGHTING ****/
+/***********************************************/
 div.cell.text_cell .cm-s-default .cm-header {
     color: @unrendered-text;
 }
@@ -188,7 +224,6 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
 .cm-s-default .cm-selected {
     background: @cm-selected;
 }
-
 div.text_cell_render h1 {
     font-family: @notebook-fontfamily;
     text-align: center;

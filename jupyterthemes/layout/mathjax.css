@@ -1,23 +1,35 @@
+/**********************************
 
-/********** MATHJAX **********/
-/* remove trailing vertical line */
+ MathJax Settings and Style Script
+
+**********************************/
+
+/**********************************/
+/********** MATHJAX CSS ***********/
+/**********************************/
+.MathJax_Display,
 .MathJax nobr>span.math>span {
     border: 0 !important;
-};
-
+    font-size: 14pt !important;
+    text-align: center !important;
+    margin: 0em !important;
+}
+/* Prevents MathJax from jittering */
+/* cell position when cell is selected */
+.MathJax:focus, body :focus .MathJax {
+    display: inline-block !important;
+}
+/**********************************/
+/********* MATHJAX SCRIPT *********/
+/**********************************/
 <script>
     MathJax.Hub.Config({
         "HTML-CSS": {
             preferredFont: "STIX",
-            scale: 120,
+            availableFonts: ["STIX","TeX"],
             styles: {
                 ".MathJax_Display": {
-                    "text-align": "center",
-                    margin: "1em 0em"
-                },
-                ".MathJax .merror": {
-                    color:   "#3572C6",
-                    "font-size":  "120%"
+                    "font-size": "14pt",
                 }
             }
         }

@@ -5,11 +5,10 @@
 
 @selected-bg:           @notebook-base;
 @selected-half:         rgba(180, 180, 180,.30);
-@selected-third:        rgba(180, 180, 180,.20);
-@selected-tenth:        rgba(150, 150, 150,.07);
+@selected-third:        rgba(180, 180, 180,.26);
+@selected-tenth:        rgba(150, 150, 150,.1);
 @selected-error:        rgba(191, 97, 106, .40);
 @prompt-line:           rgba(240, 147, 43, .40);
-@tc-prompt:             rgba(30, 112, 199, .50);
 @matching-bracket:      rgba(30, 112, 199, .30);
 @selected-active:       @selected-half;
 @divider:               @selected-half;
@@ -17,11 +16,11 @@
 @selected-fg:           #222222;
 @selected-fg-bright:    #000000;
 
-@cc-input-bg:           #eeeeee;
+@cc-input-bg:           #efefef;
 @cc-input-fg:           #303030;
 @cc-output-bg:          #ffffff;
-@cc-output-fg:          #000000;
-@text-cell-fg:          #4c4c4c;
+@cc-output-fg:          @cc-input-fg;
+@text-cell-fg:          lighten(@cc-input-fg, 2%);
 @unrendered-text:       #1e70c7;
 @header-fg:             @unrendered-text;
 
@@ -33,17 +32,21 @@
 @item-cyan:             @item-theme;
 
 @disabled:              #aaaaaa;
-@scrollbar:             @disabled;
+@scrollbar:             desaturate(darken(@item-blue, 1%), 20%);
+@scroll-trough:         lighten(@disabled, 15%);
 @scrollbar-inactive:    #dedede;
 @input-prompt:          @disabled;
 @box-shadow:            #e8e8e8;
-@cc-border-command:     @item-theme;
+@cc-border-selected:    @item-theme;
 @cc-border-edit:        #ffd5bb;
-@tc-border:             @header-fg;
+@tc-border-selected:    @header-fg;
 @tc-border-edit:        #87b0db;
 @button-color:          @item-theme;
-@table-color:           @text-cell-fg;
+@table-color:           lighten(@cc-input-fg, 2%);
 @table-bg:              @notebook-bg;
+@table-border:          lighten(@disabled, 4%);
+@codeblock-bg:          @notebook-bg;
+@codeblock-border:      @codeblock-bg;
 
 /* grade3 codemirror colors */
 @ansiblack:             #333333;

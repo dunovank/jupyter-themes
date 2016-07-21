@@ -9,7 +9,6 @@
 @selected-tenth:        rgba(88, 98, 119,.10);
 @selected-error:        rgba(191, 97, 106,.4);
 @prompt-line:           rgba(53, 114, 198,.5);
-@tc-prompt:             rgba(211, 97, 95, .5);
 @matching-bracket:      @selected-bg;
 @selected-active:       @selected-bg;
 @divider:               rgba(53, 114, 198,.3);
@@ -20,8 +19,8 @@
 @cc-input-bg:           #303845;
 @cc-input-fg:           #D0D4E6;
 @cc-output-bg:          #384151;
-@cc-output-fg:          @notebook-fg;
-@text-cell-fg:          @notebook-fg;
+@cc-output-fg:          lighten(@notebook-fg, 15%);
+@text-cell-fg:          lighten(@notebook-fg, 8%);
 @unrendered-text:       #d97573;
 @header-fg:             @unrendered-text;
 
@@ -33,17 +32,21 @@
 @item-cyan:             #2c85f7;
 
 @disabled:              #5A647B;
-@scrollbar:             #495164;
+@scrollbar:             desaturate(darken(@selected-bg, 5%), 5%);
+@scroll-trough:         lighten(@cc-output-bg, 60%);
 @scrollbar-inactive:    #464e60;
 @input-prompt:          @disabled;
 @box-shadow:            #303945;
-@cc-border-command:     @item-blue;
+@cc-border-selected:    @item-blue;
 @cc-border-edit:        #33517c;
-@tc-border:             @header-fg;
+@tc-border-selected:    @header-fg;
 @tc-border-edit:        #814c52;
 @button-color:          @item-blue;
-@table-color:           @notebook-fg;
-@table-bg:              @cc-output-bg;
+@table-color:           @cc-output-fg;
+@table-bg:              lighten(@cc-output-bg, 2%);
+@table-border:          @text-cell-fg;
+@codeblock-bg:          darken(@text-cell-bg, 3%);
+@codeblock-border:      @codeblock-bg;
 
 /* oceans16 codemirror colors */
 @ansiblack:             #2b303b;

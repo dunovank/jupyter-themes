@@ -1,30 +1,13 @@
-/* Contains code for setting appearance of code cells,
-prompts, container width of main notebook page.
+/**************************************************************
 
-Author: Kyle Dunovan (dunovank)
-Website: https://www.github.com/dunovank
+ Cell Input, Output, and Prompt style for Code, Txt, & MD Cells
 
-*/
+**************************************************************/
 
+/********************************/
+/*********** INPUT **************/
+/********************************/
 /********** CODE CELLS **********/
-
-/********** INPUT **********/
-div#notebook,
-div.output_area pre,
-div.output_wrapper,
-div.CodeMirror,
-div.CodeMirror pre {
-    font-family: @monofont, monospace;
-    font-size: @monofontsize;
-    line-height: 170%;
-    color: @cc-input-fg;
-}
-div.CodeMirror-lines {
-    padding-top: .6em;
-    padding-bottom: .6em;
-    padding-left: .5em;
-    padding-right: 1.5em;
-}
 div.input_area {
     background-color: @cc-input-bg;
     padding-right: 1.5em;
@@ -35,17 +18,17 @@ div.input_area {
     border-bottom-right-radius: 0px;
 }
 div.cell {
-    padding: 0px;
     background: @cc-input-bg;
     background-color: @cc-input-bg;
     border: medium solid @notebook-bg;
+    padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
 div.cell.selected {
     background: @cc-input-bg;
     background-color: @cc-input-bg;
-    border: medium solid @cc-border-command;
+    border: medium solid @cc-border-selected;
     padding: 0px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
@@ -66,12 +49,104 @@ div.cell.edit_mode {
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
+/******** TXT & MD CELLS ********/
+div.text_cell,
+div.text_cell_render pre,
+div.text_cell_render {
+    font-family: @text-cell-fontfamily;
+    font-size: @text-cell-fontsize;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    color: @text-cell-fg;
+    border-radius: 2px;
+    line-height: 160% !important;
+}
+div.cell.text_cell.rendered.selected {
+    font-family: @text-cell-fontfamily;
+    border: medium solid @tc-border-selected;
+    line-height: 160% !important;
+    border-radius: 2px;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+}
+div.cell.text_cell.unrendered.selected {
+    font-family: @text-cell-fontfamily;
+    border: medium solid @tc-border-selected;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    line-height: 160% !important;
+    border-radius: 2px;
+}
+div.cell.text_cell.selected {
+    font-family: @text-cell-fontfamily;
+    border: medium solid @tc-border-selected;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    line-height: 160% !important;
+    border-radius: 2px;
+}
+.edit_mode div.cell.text_cell.selected {
+    font-family: @text-cell-fontfamily;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border: medium solid @tc-border-edit;
+    line-height: 160% !important;
+    border-radius: 2px;
+}
+div.text_cell.unrendered,
+div.text_cell.unrendered.selected,
+div.edit_mode div.text_cell.unrendered {
+    font-family: @text-cell-fontfamily;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    line-height: 160% !important;
+    border-radius: 2px;
+}
+/************  TABLES  **********/
+.rendered_html table,
+.rendered_html th,
+.rendered_html tr,
+.rendered_html td {
+    font-family: @monofont, monospace;
+    font-size: 9.5pt !important;
+    line-height: 160% !important;
+    border: 1px @table-border solid;
+    color: @table-color;
+    background-color: @table-bg;
+    background: @table-bg;
+    align-content: left !important;
+}
+/******** CODE BLOCKS **********/
+.rendered_html code {
+    color: @cc-input-fg;
+    padding-top: 5px;
+    background: @codeblock-bg;
+    background-color: @codeblock-bg;
+}
+.rendered_html pre,
+div.text_cell_render pre {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    background: @codeblock-bg;
+    background-color: @codeblock-bg;
+    border: 1px @codeblock-border solid;
+    color: @cc-input-fg;
+    max-width: 85%;
+    border-radius: 2px;
+    line-height: 160% !important;
+    padding: 8.5px;
+}
+pre code {
+    padding: 0;
+}
+.rendered_html * + p {
+    margin-top: .2em;
+}
 
-
-
-/********** OUTPUT **********/
-
-
+/********************************/
+/*********** OUTPUT *************/
+/********************************/
+/********** CODE CELLS **********/
 div.output_wrapper {
     background-color: @cc-output-bg;
     border: 0px;
@@ -82,9 +157,11 @@ div.output_wrapper {
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 }
-div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
+div.output_subarea.output_text.output_stream.output_stdout,
+div.output_subarea.output_text {
     font-family: @monofont, monospace;
-    font-size: @monofontsize;
+    font-size: 9.5pt !important;
+    line-height: 130% !important;
     background-color: @cc-output-bg;
     color: @cc-output-fg;
     border-top-right-radius: 0px;
@@ -94,89 +171,16 @@ div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.ou
 }
 div.output_area pre {
     font-family: @monofont, monospace;
-    font-size: @monofontsize;
+    fofont-size: 9.5pt !important;
+    line-height: 130% !important;
     color: @cc-output-fg;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 }
-div.output_subarea {
-    overflow-x: auto;
-    padding: .8em;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    flex: 1;
-    max-width: calc(100% - 14ex);
-}
-
-
-
-/********** TEXT & MD CELLS **********/
-
-
-div.text_cell, div.text_cell_render pre, div.text_cell_render {
-    font-family: @text-cell-fontfamily;
-    font-size: @text-cell-fontsize;
-    line-height: 160%;
-    margin-right: 0px;
-    margin-left: 0px;
-    background: @text-cell-bg;
-    background-color: @text-cell-bg;
-    color: @text-cell-fg;
-    border-radius: 2px;
-}
-div.cell.text_cell.rendered.selected {
-    font-family: @text-cell-fontfamily;
-    border: medium solid @tc-border;
-    border-radius: 2px;
-}
-div.cell.text_cell.unrendered.selected {
-    font-family: @text-cell-fontfamily;
-    border: medium solid @tc-border;
-    background: @text-cell-bg;
-    background-color: @text-cell-bg;
-    border-radius: 2px;
-}
-div.cell.text_cell.selected {
-    font-family: @text-cell-fontfamily;
-    border: medium solid @tc-border;
-    background: @text-cell-bg;
-    background-color: @text-cell-bg;
-    border-radius: 2px;
-}
-.edit_mode div.cell.text_cell.selected {
-    font-family: @text-cell-fontfamily;
-    background: @text-cell-bg;
-    background-color: @text-cell-bg;
-    border: medium solid @tc-border-edit;
-    border-radius: 2px;
-}
-div.text_cell.unrendered,
-div.text_cell.unrendered.selected
-div.edit_mode div.text_cell.unrendered {
-    font-family: @text-cell-fontfamily;
-    background: @text-cell-bg;
-    background-color: @text-cell-bg;
-    border-radius: 2px;
-}
-
-
-
-
-/********** RENDERED HTML, TABLES, and MD CODE BLOCKS **********/
-
-
-
-.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
-    font-family: @monofont, monospace;
-    font-size: @monofontsize;
-    border: 1px @table-color solid;
-    color: @table-color;
-    background-color: @table-bg;
-    background: @table-bg;
-    align-content: left !important;
+div.output_area {
+    display: -webkit-box;
 }
 div.output_html {
     font-family: @monofont, monospace;
@@ -185,72 +189,88 @@ div.output_html {
     background-color: @cc-output-bg;
     background: @cc-output-bg;
 }
-.rendered_html pre, .rendered_html code {
-    font-family: @monofont, monospace;
-    font-size: @monofontsize;
-    border: none;
-    background-color: @text-cell-bg;
-    color: @cc-input-fg;
-    padding: 0px;
+div.output_subarea {
+    overflow-x: auto;
+    padding: .8em;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    flex: 1;
+    max-width: 90%;
+}
+/*********** WIDGETS ***********/
+div.widget-area {
+    background-color: @cc-output-bg;
+    background: @cc-output-bg;
+    color: @cc-output-fg;
+    page-break-inside: avoid;
+    -moz-box-align: stretch;
+    box-orient: horizontal;
+    box-align: stretch;
+    flex-direction: row;
+    align-items: center;
+    align-self: auto;
+}
+/***********  MEDIA ***********/
+audio, video {
+    display: inline;
+    vertical-align: middle;
+    align-content: center;
+    margin-left: 20%;
 }
 
-
-
-/********** PROMPTS **********/
-
+/***********************************/
+/********** INPUT PROMPTS **********/
+/***********************************/
+/*********** CODE CELLS ************/
 div.prompt {
     padding: .5em;
     font-family: @monofont, monospace;
     text-align: left;
     line-height: 170%;
-    min-width: @prompt-width;
-    font-size: @prompt-fontsize;
+    min-width: 11ex;
+    font-size: 9pt;
 }
-
-/********** INPUT PROMPTS **********/
-
-
 div.prompt.input_prompt {
     line-height: 170%;
     font-family: @monofont, monospace;
     color: @input-prompt;
     background-color: @cc-input-bg;
     font-weight: normal;
-    font-size: @prompt-fontsize;
-    min-width: @prompt-width;
-    font-size: @prompt-fontsize;
+    font-size: 9pt;
+    min-width: 11ex;
+    font-size: 9pt;
     border-right: 2px solid @prompt-line;
     border-top-left-radius: 2px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+/********** TEXT & MD CELLS **********/
 div.cell.text_cell.rendered .input_prompt {
     line-height: 160%;
-    border-right: 2px solid @text-cell-prompt;
-    min-width: @tc-prompt-width;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
+    border-right-color: transparent;
+    min-width: 0ex;
 }
 div.cell.text_cell.unrendered .input_prompt {
     line-height: 160%;
-    border-right: 2px solid @text-cell-prompt;
-    min-width: @tc-prompt-width;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
+    border-right-color: transparent;
+    min-width: 0ex;
+    font-size: 9pt;
 }
-
-
-
+/************************************/
 /********** OUTPUT PROMPTS **********/
-
-
-
+/************************************/
+/************ CODE CELLS ************/
 div.prompt.output_prompt {
     font-family: @monofont, monospace;
     background-color: @cc-output-bg;
     color: @cc-output-bg;
-    font-size: @prompt-fontsize;
+    font-size: 9pt;
     border-bottom-left-radius: 2px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
@@ -258,9 +278,9 @@ div.prompt.output_prompt {
 }
 div.out_prompt_overlay.prompt {
     font-family: @monofont, monospace;
-    font-size: @prompt-fontsize;
-    min-width: @prompt-width;
-    font-size: @prompt-fontsize;
+    font-size: 9pt;
+    min-width: 11ex;
+    font-size: 9pt;
     background-color: @cc-output-bg;
     border-bottom-left-radius: 2px;
     border-top-right-radius: 0px;
@@ -269,7 +289,7 @@ div.out_prompt_overlay.prompt {
 }
 div.out_prompt_overlay.prompt:hover {
     font-family: @monofont, monospace;
-    font-size: @prompt-fontsize;
+    font-size: 9pt;
     background-color: @cc-output-bg;
     box-shadow: @box-shadow 1px 1px 3px 3px inset;
     border-bottom-left-radius: 2px;

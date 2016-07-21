@@ -8,12 +8,12 @@ jt -t chesterish -cw 850 -fs 10
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tchesterish-cw850-fs10.png?raw=true)
 
 ```sh
-jt -t oceans16 -altmd -fs 10 -cw900
+jt -t oceans16 -altmd -fs 10 -cw 900
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-toceans16-altmd-fs10-cw900.png?raw=true)
 
 ```sh
-jt -t onedork -cw 850 -fs 10
+jt -t onedork -fs 10 -cw 850
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-cw850-fs10.png?raw=true)
 

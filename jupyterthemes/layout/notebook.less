@@ -1,14 +1,14 @@
-/*
+/*****************************************************************
 
-Contains code for general appearance of notebook, toolbars, lists, menus, etc.
+ Notebook stylization  (toolbars, lists, menus, scroll & buttons)
 
-Author: Kyle Dunovan (dunovank)
-Website: https://www.github.com/dunovank
+*****************************************************************/
+//COMMENT
 
-*/
-
-/********** SET NOTEBOOK, CELL, & OUTPUT FONT SETTINGS *********/
-
+// asdfasdf
+/********************************************************/
+/****** SET NOTEBOOK, CELL, & OUTPUT FONT SETTINGS ******/
+/********************************************************/
 body {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
@@ -17,88 +17,21 @@ body {
     line-height: 1;
 }
 a {
-    color: @notebook-fg;
     font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    color: @notebook-fg;
 }
 div#notebook {
-    padding-top: 5px;
-}
-
-/********** NOTEBOOK PAGE SETTINGS **********/
-
-.notebook_app {
-    background-color: @notebook-bg;
-}
-#notebook-container {
-    padding: 13px;
-    background-color: @notebook-bg;
-    min-height: 0px;
-    box-shadow: none;
-}
-.container {
-    width: @cell-width;
-}
-
-/********** NOTEBOOK PAGE HEADER AND NAVBAR ***********/
-
-
-.notebook_app #header {
-    box-shadow: none !important;
-    background-color: @notebook-bg;
-    border-bottom: 1px solid @selected-third;
-}
-#header {
-    box-shadow: none;
-    background-color: @notebook-bg;
-}
-#header-container {
-    padding-top: 10px;
-    display: none !important;
-    box-shadow: none;
-}
-#header .header-bar {
-    background: @notebook-bg;
-    background-color: @notebook-bg;
-}
-body > #header .header-bar {
-    width: 100%;
-    background: @notebook-bg;
-    margin-bottom: -1px;
-}
-.navbar-default {
-    font-size: @nb-fontsize;
-    background-color: @notebook-bg;
-    border-color: @notebook-bg;
-    padding-bottom: 0px;
-    border: 0;
-}
-#menubar {
-    padding-top: 10px;
-    background-color: @notebook-bg;
-}
-#menubar .navbar, .navbar-default {
-    background-color: @notebook-bg;
-    margin-bottom: 0px;
-}
-.navbar-default .navbar-nav > li > a {
-    color: @notebook-fg;
-    font-size: @nb-fontsize;
-    display: block;
-    line-height: 1.35;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: @selected-fg;
-    background-color: @selected-third;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: @selected-fg-bright;
-    background-color: @selected-active;
-    border-color: @selected-active;
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    line-height: 170%;
+    color: @cc-input-fg;
 }
 
 
-/********** FIRST-PAGE TOOLBAR, LIST CONTAINERS, AND NAV TABS *********/
-
+/********************************************************/
+/*** OPEN-PAGE TOOLBAR, LIST CONTAINERS, AND NAV TABS ***/
+/********************************************************/
 .toolbar_info {
     color: @notebook-fg;
     font-size: 11pt;
@@ -155,7 +88,9 @@ div.list_item:hover {
     border-color: transparent;
     background-image: none;
 }
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
     font-size: @nb-fontsize;
     color: @selected-fg-bright;
     background: @notebook-bg;
@@ -167,84 +102,89 @@ div.list_item:hover {
     border-bottom: 1px solid @selected-tenth;
 }
 
-
-
-/********** MODAL CONTENT, PANELS, and FORM CONTROL *********/
-
-
-
-.modal-content {
-    position: relative;
-    background-color: @notebook-base;
-    border: 1px solid @selected-third;
-    border-radius: 3px;
-    box-shadow: 0px 3px 9px @selected-third;
-    background-clip: padding-box;
-    outline: 0px none;
+/********************************************************/
+/***************** NOTEBOOK PAGE SETTINGS ***************/
+/********************************************************/
+div#notebook {
+    padding-top: 5px;
 }
-.modal-header {
-    padding: 15px;
-    border-bottom: 1px solid @selected-half;
-    min-height: 16.4286px;
-}
-.panel-default {
-    border-color: @selected-third;
-}
-.panel {
-    font-size: @nb-fontsize-sub;
-    margin-bottom: 18px;
+
+.notebook_app {
     background-color: @notebook-bg;
-    color: @notebook-fg;
-    border: 0px;
+}
+#notebook-container {
+    padding: 13px;
+    background-color: @notebook-bg;
+    min-height: 0px;
     box-shadow: none;
 }
-#running .panel-group .panel .panel-heading {
+.container {
+    width: @cell-width;
+}
+
+/********************************************************/
+/************** NOTEBOOK PAGE HEADER AND NA *************/
+/********************************************************/
+.notebook_app #header {
+    box-shadow: none !important;
     background-color: @notebook-bg;
-    padding: 4px 7px;
-    line-height: 22px;
+    border-bottom: 1px solid @selected-third;
 }
-#running .panel-group .panel .panel-heading a:hover {
-    font-size: @nb-fontsize-sub;
-    color: @item-cyan;
+#header {
+    box-shadow: none;
+    background-color: @notebook-bg;
 }
-#running .panel-group .panel .panel-body .list_container .list_item {
-    border-bottom: 1px solid @selected-half;
+#header-container {
+    padding-top: 10px;
+    display: none !important;
+    box-shadow: none;
 }
-.form-control {
-    display: block;
+#header .header-bar {
+    background: @notebook-bg;
+    background-color: @notebook-bg;
+}
+body > #header .header-bar {
     width: 100%;
-    height: 32px;
-    padding: 6px 12px;
-    font-size: @nb-fontsize-sub;
+    background: @notebook-bg;
+    margin-bottom: -1px;
+}
+.navbar-default {
+    font-size: @nb-fontsize;
+    background-color: @notebook-bg;
+    border-color: @notebook-bg;
+    padding-bottom: 0px;
+    border: 0;
+}
+#menubar {
+    padding-top: 10px;
+    background-color: @notebook-bg;
+}
+#menubar .navbar, .navbar-default {
+    background-color: @notebook-bg;
+    margin-bottom: 0px;
+}
+.navbar-default .navbar-nav > li > a {
     color: @notebook-fg;
-    background-color: @cc-input-bg;
-    background-image: none;
-    border: 1px solid @selected-third;
-    border-radius: 2px;
-    box-shadow: none;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    font-size: @nb-fontsize;
+    display: block;
+    line-height: 1.35;
 }
-.list_item input:not([type="checkbox"]) {
-    margin-right: 0px;
-    padding-right: 0px;
-    height: 80%;
-    width: 30%;
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: @selected-fg;
+    background-color: @selected-third;
 }
-.modal-footer {
-    padding: 15px;
-    text-align: right;
-    border-top: 1px solid @selected-half;
-}
-.input-form-control:hover:active {
-    background-color:  @selected-tenth;
-    selected:  @selected-tenth;
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: @selected-fg-bright;
+    background-color: @selected-active;
+    border-color: @selected-active;
 }
 
-
-
+/****************************************/
 /********* ICONS and INDICATORS *********/
-
-
+/****************************************/
 .command_mode .modal_indicator:before {
     font-size: @nb-fontsize-sub;
 }
@@ -290,11 +230,9 @@ div#ipython_notebook {
     width: 100%;
 }
 
-
-/********* DROPDOWN MENUS *********/
-
-
-
+/****************************************/
+/************ DROPDOWN MENUS ************/
+/****************************************/
 .dropdown-menu {
     font-size: @nb-fontsize;
     box-shadow: none;
@@ -357,7 +295,9 @@ div#ipython_notebook {
     margin-left: 0px;
     padding-top: 0px;
 }
-.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
     color: @disabled;
@@ -368,13 +308,12 @@ div#ipython_notebook {
     white-space: nowrap;
 }
 
-
-
-/********** BUTTONS **********/
-
-
-
-.btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+/****************************************/
+/**************** BUTTONS ***************/
+/****************************************/
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:focus,
+.open > .dropdown-toggle.btn-default:hover {
     color: @selected-fg-bright;
     background-color: @selected-active;
     border-color: @selected-active;
@@ -455,87 +394,95 @@ button.close {
     opacity: 0.9;
 }
 
-
-/********** TOOLTIP DIMENSIONS **********/
-
-
-.ipython_tooltip {
-    border: 2px solid @selected-half;
-    background-color: @tooltip-bg-color;
-    border-radius: 2px;
-    overflow: wrap;
+/**************************************************/
+/********** MODAL, PANELS, & FORM CONTROL *********/
+/**************************************************/
+.modal-content {
+    position: relative;
+    background-color: @notebook-base;
+    border: 1px solid @selected-third;
+    border-radius: 3px;
+    box-shadow: 0px 3px 9px @selected-third;
+    background-clip: padding-box;
+    outline: 0px none;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid @selected-half;
+    min-height: 16.4286px;
+}
+.panel-default {
+    border-color: @selected-third;
+}
+.panel {
+    font-size: @nb-fontsize-sub;
+    margin-bottom: 18px;
+    background-color: @notebook-bg;
+    color: @notebook-fg;
+    border: 0px;
     box-shadow: none;
-    position: absolute;
-    z-index: 1000;
-    font-size: 90%;
 }
-.ipython_tooltip .tooltiptext pre {
-    background-color: @tooltip-bg-color;
-    color: @selected-fg-bright;
-    overflow: wrap;
-    max-width: 800px;
-    font-size: 90%;
+#running .panel-group .panel .panel-heading {
+    background-color: @notebook-bg;
+    padding: 4px 7px;
+    line-height: 22px;
 }
-div#tooltip.ipython_tooltip {
-    overflow: wrap;
-    max-width: 800px;
+#running .panel-group .panel .panel-heading a:hover {
+    font-size: @nb-fontsize-sub;
+    color: @item-cyan;
 }
-div.tooltiptext.bigtooltip {
-    overflow: wrap;
-    height: 400px;
-    max-width: 800px;
+#running .panel-group .panel .panel-body .list_container .list_item {
+    border-bottom: 1px solid @selected-half;
 }
-
-
-
-/********** WIDGETS **********/
-
-
-div.widget-area {
-    background-color: @cc-output-bg;
-    background: @cc-output-bg;
-    color: @cc-output-fg;
-    page-break-inside: avoid;
-    -moz-box-align: stretch;
-    box-orient: horizontal;
-    box-align: stretch;
-    flex-direction: row;
-    align-items: center;
-    align-self: auto;
+.form-control {
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: @nb-fontsize-sub;
+    color: @notebook-fg;
+    background-color: @cc-input-bg;
+    background-image: none;
+    border: 1px solid @selected-third;
+    border-radius: 2px;
+    box-shadow: none;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
-
-/********** MEDIA **********/
-
-audio, video {
-    display: inline;
-    vertical-align: middle;
-    align-content: center;
-    margin-left: 20%;
+.list_item input:not([type="checkbox"]) {
+    margin-right: 0px;
+    padding-right: 0px;
+    height: 80%;
+    width: 30%;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid @selected-half;
+}
+.input-form-control:hover:active {
+    background-color:  @selected-tenth;
+    selected:  @selected-tenth;
 }
 
-
-/********** SCROLL BARS **********/
-/* Courtesy of Sherif Soliman */
-/* (http://sherifsoliman.com) */
-
-
+/****************************************/
+/************** SCROLL BARS *************/
+/****************************************/
 div.output.output_scroll {
     box-shadow: none;
 }
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: @scroll-trough;
+	border-radius: 7px;
+}
 ::-webkit-scrollbar {
-    width: 9px;
-    height: 8px;
-    background-color: @selected-third;
-    background: @selected-third;
+    width: 11px;
+    height: 11px;
+    background-color: @scroll-trough;
+    border-radius: 7px;
 }
-/* Handle */
 ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    background-color: @scrollbar;
-    background: @scrollbar;
-}
-::-webkit-scrollbar-thumb:window-inactive {
-    background-color: @scrollbar-inactive;
-    background: @scrollbar-inactive;
+    background-color: rgb(255, 255, 255);
+    background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(darken(@scrollbar, 5%)), color-stop(0.5, lighten(@scrollbar, 5%)), to(darken(@scrollbar, 4%)));
+    border-radius: 7px;
 }

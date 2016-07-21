@@ -1,23 +1,22 @@
 /* onedork notebook colors */
 @notebook-bg:           #16191d;
-@notebook-fg:           #a6adba;
+@notebook-fg:           lighten(#899ab8, 10%);
 @notebook-base:         #303841;
 
 @selected-bg:           #48a667;
 @selected-half:         rgba(70, 82, 95, .55);
-@selected-third:        rgba(70, 82, 95, .30);
-@selected-tenth:        rgba(70, 82, 95, .15);
+@selected-third:        rgba(70, 82, 95, .35);
+@selected-tenth:        rgba(70, 82, 95, .22);
 @selected-error:        rgba(192, 57, 67, .3);
 @prompt-line:           rgba(83, 180, 115,.5);
-@tc-prompt:             rgba(53, 114, 198,.5);
 @matching-bracket:      #4780ce;
 @selected-active:       @selected-bg;
 @divider:               rgba(83, 180, 115, .3);
 
-@selected-fg:           #d1d5db;
-@selected-fg-bright:    #eeeff1;
+@selected-fg:           #eeeff1;
+@selected-fg-bright:    #ffffff;
 
-@cc-input-bg:           #282c34;
+@cc-input-bg:           darken(#282c34, 2%);
 @cc-input-fg:           #B5C2D9;
 @cc-output-bg:          @notebook-base;
 @cc-output-fg:          @cc-input-fg;
@@ -33,17 +32,21 @@
 @item-cyan:             @item-theme;
 
 @disabled:              #5b6270;
-@scrollbar:             #495164;
+@scrollbar:             desaturate(darken(@selected-bg, 5%), 5%);
+@scroll-trough:         lighten(@cc-output-bg, 60%);
 @scrollbar-inactive:    #464e60;
 @input-prompt:          @disabled;
 @box-shadow:            #252b32;
-@cc-border-command:     @selected-bg;
+@cc-border-selected:    @selected-bg;
 @cc-border-edit:        #61886e;
-@tc-border:             @header-fg;
+@tc-border-selected:    @header-fg;
 @tc-border-edit:        #33517c;
 @button-color:          @selected-bg;
 @table-color:           @cc-input-fg;
 @table-bg:              @cc-output-bg;
+@table-border:          @table-color;
+@codeblock-bg:          darken(@text-cell-bg, 3%);
+@codeblock-border:      @codeblock-bg;
 
 /* onedork codemirror colors */
 @ansiblack:             #2b303b;
@@ -63,7 +66,7 @@
 @cm-gutters:            @cm-selected;
 @cm-linenumber:         @disabled;
 @cm-cursor:             #528bff;
-@cm-comment:            #5b6270; //#484e5e;
+@cm-comment:            #727b8c;
 @cm-atom:               #61afef; //#5cadf1;
 @cm-number:             #ec9d66;
 @cm-property:           @cm-atom;
