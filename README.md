@@ -1,3 +1,4 @@
+# jupyterthemes
 ## Theme-ify your Jupyter Notebooks!
 
 ```sh
@@ -34,7 +35,7 @@ pip install jupyterthemes
 
 
 
-### How to use
+## How to use
 ```
 usage: jt [-l] [-t THEME] [-f FONT] [-fs FONTSIZE ] [-ff NBFONTFAMILY]  
         [-tcff TCFONTFAMILY] [-cw CELLWIDTH] [-lh LINEHEIGHT] [-altmd] [-T]  [-r ]
@@ -71,7 +72,8 @@ usage: jt [-l] [-t THEME] [-f FONT] [-fs FONTSIZE ] [-ff NBFONTFAMILY]
 |  Inconsolata     |  incon      |     normal       |
 * or pass the name of any monospace font you have installed locally (hyphenate spaces)
 
-### Examples
+
+## Examples
 ```sh
 # list available themes
 # oceans16 | grade3 | chesterish | onedork
