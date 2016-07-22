@@ -25,10 +25,14 @@ jt -t onedork -ff serif -tcff serif
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-ffserif-tcffserif.png?raw=true)
 
-### Install with pip
+
+
+## Install with pip
 ```sh
 pip install jupyterthemes
 ```
+
+
 
 ### How to use
 ```
