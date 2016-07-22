@@ -1,7 +1,5 @@
 ## Theme-ify your Jupyter Notebooks!
 
-
-### New themes and customizable options
 ```sh
 jt -t chesterish -cw 850 -fs 10
 ```
@@ -27,38 +25,75 @@ jt -t onedork -ff serif -tcff serif
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-ffserif-tcffserif.png?raw=true)
 
-
-### Install jupyterthemes w/ pip (officially)
+### Install with pip
 ```sh
 pip install jupyterthemes
 ```
 
-### How to...
+### How to use
+```
+usage: jt [-l] [-t THEME] [-f FONT] [-fs FONTSIZE ] [-ff NBFONTFAMILY]  
+        [-tcff TCFONTFAMILY] [-cw CELLWIDTH] [-lh LINEHEIGHT] [-altmd] [-T]  [-r ]
+```
+
+|        options        | arguments |     default    |
+|:----------------------|:---------:|:--------------:|     
+| List Themes           |  -l       |       --       |
+| Select Theme          |  -t       |       --       |
+| Code Font             |  -f       |      Hack      |
+| Code Font-Size        |  -fs      |       11       |
+| NB Font-Family        |  -ff      |   sans-serif   |
+| TxtCell Font-Family   |  -tcff    |   sans-serif   |
+| Cell Width            |  -cw      |      910       |
+| Line Height           |  -lh      |      160       |
+| Alt Txt/MD Layout     |  -altmd   |       --       |
+| Toggle Toolbar        |  -T       |       --       |
+| Restore Default       |  -r       |       --       |
+
+### Importable Code Fonts from Google Fonts API
+
+|    Font-Name     |    -f       |     comments     |
+|:-----------------|:-----------:|:----------------:|     
+|     Hack         |    --       |     italics      |
+|  Source Code Pro |  source     |     italics      |
+|  Roboto Mono     |  roboto     |     italics      |
+|  Space Mono      |  space      |     italics      |         
+|  Anonymous Pro   |  anon       |     italics      |
+|  Cousine         |  cousine    |     italics      |     
+|  Ubuntu Mono     |  ubuntu     |     italics      |
+|  Fira Mono       |  fira       |     normal       |                  
+|  Droid Sans Mono |  droid      |     normal       |         
+|  Oxygen Mono     |  oxygen     |     normal       |
+|  Inconsolata     |  incon      |     normal       |
+* or pass the name of any monospace font you have installed locally (hyphenate spaces)
+
+### Examples
 ```sh
-# can call with "jupyter-themes" or "jt" interchangeably
 # list available themes
-# oceans16 | grade3 | chesterish (New!) | onedork (New!)
+# oceans16 | grade3 | chesterish | onedork
 jt -l
 
-# install a theme...
-jt -t grade3
+# select theme...
+jt -t chesterish
 
-# ...with toolbar (-T) enabled
-jt -T -t grade3
+# toggle toolbar ON [Default: hidden]
+jt -t grade3 -T
 
-# ...and adjust cell width [default=950 (pixels)]
-jt -t grade3 -cw 850
+# set code font to 'Space Mono' 12pt
+# see table above for more options
+jt -t oceans16 -f space -fs 12
 
-# ...with alternate markdown/text-cell layout
-jt -t grade3 -altmd
+# set notebook & text-cell font-family to serif
+# both default to sans-serif
+jt -t onedork -ff serif -tcff serif
 
-# set font (-f) and font-size (-fs) (defaults are Hack and 11)
-jt -t grade3 -f Source-Code-Pro -fs 10
+# adjust cell width and line-height
+jt -t chesterish -cw 870 -lh 170
 
-# set notebook (-ff) & textcell fontfamily (-tcff) (both default to sans)
-jt -t grade3 -ff serif -tcff serif
+# choose alternate txt/markdown layout
+jt -t grade3 -altmd -fs 10 -cw 895 -tcff serif
 
-# restore (-r) default theme
+# restore default theme
 jt -r
 ```
 

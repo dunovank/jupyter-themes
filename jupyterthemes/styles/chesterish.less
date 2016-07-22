@@ -1,11 +1,11 @@
 /* chesterish notebook colors */
-@notebook-bg:           #1e252e;
-@notebook-fg:           #899ab8;
-@notebook-base:         #334056;
+@notebook-bg:           darken(#1e252e, 3%);
+@notebook-fg:           lighten(#899ab8, 8%);
+@notebook-base:         desaturate(darken(#334056, 3%), 3%);
 
 @selected-bg:           #009cd1;
 @selected-half:         rgba(75, 95, 118,.55);
-@selected-third:        rgba(75, 95, 118,.35);
+@selected-third:        rgba(75, 95, 118,.30);
 @selected-tenth:        rgba(75, 95, 118,.10);
 @selected-error:        rgba(191, 97, 106,.4);
 @prompt-line:           rgba(0, 156, 209, .5);
@@ -13,19 +13,19 @@
 @selected-active:       #007aa4;
 @divider:               rgba(0, 156, 209, .3);
 
-@selected-fg:           #ffffff;
-@selected-fg-bright:    #ffffff;
+@selected-fg:           lighten(@notebook-fg, 10%);
+@selected-fg-bright:    lighten(@notebook-fg, 30%);
 
-@cc-input-bg:           #2b3643;
+@cc-input-bg:           darken(#2b3643, 3%);
 @cc-input-fg:           #CDD2E9;
-@cc-output-bg:          @notebook-base;
-@cc-output-fg:          @cc-input-fg;
-@text-cell-fg:          @notebook-fg;
-@unrendered-text:       #d97573;
-@header-fg:             @unrendered-text;
+@cc-output-bg:          darken(@notebook-base, 1%);
+@cc-output-fg:          darken(@cc-input-fg, 7%);
+@text-cell-fg:          lighten(#667FB1, 19%);
+@unrendered-text:       lighten(#008ebf, 4%);
+@header-fg:             desaturate(@unrendered-text, 8%);
 
 @tooltip-bg-color:      #424a5a;
-@tooltip-fg-color:      #CFD2D9;
+@tooltip-fg-color:      #CDD2E9;
 
 @item-theme:            @header-fg;
 @item-blue:             @matching-bracket;
@@ -42,9 +42,9 @@
 @tc-border-selected:    @header-fg;
 @tc-border-edit:        #814c52;
 @button-color:          @selected-active;
-@table-color:           @notebook-fg;
+@table-color:           @cc-output-fg;
 @table-bg:              @cc-output-bg;
-@table-border:          @table-color;
+@table-border:          darken(@cc-output-fg, 8%);
 @codeblock-bg:          darken(@text-cell-bg, 3%);
 @codeblock-border:      @codeblock-bg;
 

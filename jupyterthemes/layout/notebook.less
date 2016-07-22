@@ -1,11 +1,7 @@
 /*****************************************************************
-
  Notebook stylization  (toolbars, lists, menus, scroll & buttons)
-
 *****************************************************************/
-//COMMENT
 
-// asdfasdf
 /********************************************************/
 /****** SET NOTEBOOK, CELL, & OUTPUT FONT SETTINGS ******/
 /********************************************************/
@@ -24,37 +20,37 @@ a {
 div#notebook {
     font-family: @monofont, monospace;
     font-size: @monofontsize;
-    line-height: 170%;
+    line-height: @cc-line-height;
     color: @cc-input-fg;
 }
 
 
 /********************************************************/
-/*** OPEN-PAGE TOOLBAR, LIST CONTAINERS, AND NAV TABS ***/
+/*** INTRO-PAGE TOOLBAR, LIST CONTAINERS, AND NAV TABS ***/
 /********************************************************/
 .toolbar_info {
-    color: @notebook-fg;
-    font-size: 11pt;
-    border: none;
     font-family: @notebook-fontfamily;
+    font-size: @text-cell-fontsize;
+    color: @notebook-fg;
+    border: none;
     text-shadow: none !important;
 }
 .list_container {
-    color: @notebook-fg;
-    font-size: @nb-fontsize-sub;
-    border: none;
     font-family: @notebook-fontfamily;
+    font-size: @text-cell-fontsize;
+    color: @notebook-fg;
+    border: none;
     text-shadow: none !important;
 }
 .list_container > div {
     border-bottom: 1px solid @selected-third;
-    font-size: @nb-fontsize-sub;
+    font-size: @text-cell-fontsize;
 }
 .list_container a {
-    color: @notebook-fg;
-    font-size: @nb-fontsize-sub;
-    border: none;
     font-family: @notebook-fontfamily;
+    font-size: @text-cell-fontsize;
+    color: @notebook-fg;
+    border: none;
     text-shadow: none !important;
 }
 div.list_container a:hover {
@@ -75,10 +71,10 @@ div.list_item:hover {
     background-color: @selected-tenth;
 }
 .breadcrumb>li {
-    color: @notebook-fg;
-    font-size: @nb-fontsize-sub;
-    border: none;
     font-family: @notebook-fontfamily;
+    font-size: @text-cell-fontsize;
+    color: @notebook-fg;
+    border: none;
     text-shadow: none !important;
 }
 .nav-tabs > li > a:hover {
@@ -91,14 +87,14 @@ div.list_item:hover {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-    font-size: @nb-fontsize;
+    font-size: @text-cell-fontsize;
     color: @selected-fg-bright;
     background: @notebook-bg;
     border-color: transparent;
     background-color: @selected-third;
 }
 .nav-tabs {
-    font-size: @nb-fontsize;
+    font-size: @text-cell-fontsize;
     border-bottom: 1px solid @selected-tenth;
 }
 
@@ -322,7 +318,7 @@ div#ipython_notebook {
     color: @notebook-fg;
     background: transparent;
     background-color: transparent;
-    font-size: @nb-fontsize-sub;
+    font-size: @text-cell-fontsize;
     font-weight: normal;
     border: 0 none !important;
     border-radius: 2px;
@@ -471,18 +467,18 @@ div.output.output_scroll {
     box-shadow: none;
 }
 ::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.11);
 	background-color: @scroll-trough;
-	border-radius: 7px;
+	border-radius: 10px;
 }
 ::-webkit-scrollbar {
     width: 11px;
     height: 11px;
     background-color: @scroll-trough;
-    border-radius: 7px;
+    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
     background-color: rgb(255, 255, 255);
-    background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(darken(@scrollbar, 5%)), color-stop(0.5, lighten(@scrollbar, 5%)), to(darken(@scrollbar, 4%)));
-    border-radius: 7px;
+    background-image: -webkit-gradient(linear, 40% 0%, 75% 86%, from(darken(@scrollbar, 5%)), color-stop(0.5, lighten(@scrollbar, 5%)), to(darken(@scrollbar, 4%)));
+    border-radius: 8px;
 }
