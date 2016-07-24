@@ -13,19 +13,20 @@
 @selected-active:       @selected-bg;
 @divider:               rgba(53, 114, 198,.3);
 
-@selected-fg:           #D0D4E6;
-@selected-fg-bright:    #e9ecf1;
+@selected-fg:           lighten(@notebook-fg, 18%);
+@selected-fg-bright:    lighten(@notebook-fg, 45%);
 
 @cc-input-bg:           #303845;
 @cc-input-fg:           #D0D4E6;
 @cc-output-bg:          #384151;
-@cc-output-fg:          lighten(@notebook-fg, 15%);
-@text-cell-fg:          lighten(#667FB1, 17%);
-@unrendered-text:       #d97573;
+@cc-output-fg:          @cc-input-fg;
+@text-cell-fg:          lighten(#667FB1, 22%);
+@unrendered-text:       lighten(#dc6972, 4%);
 @header-fg:             @unrendered-text;
 
-@tooltip-bg-color:      #424a5a;
-@tooltip-fg-color:      #CFD2D9;
+@tooltip-bg-color:      lighten(@cc-output-bg, 2%);
+@tooltip-fg-color:      @cc-input-fg;
+
 
 @item-theme:            #d97573;
 @item-blue:             @matching-bracket;
@@ -50,13 +51,13 @@
 
 /* oceans16 codemirror colors */
 @ansiblack:             #2b303b;
-@ansiblue:              #DB797C;
-@ansigray:              #B4B7B4;
-@ansigreen:             #B5C2D9;
+@ansiblue:              #77ABE7;
+@ansigray:              #899ab8;
+@ansigreen:             #CDD2E9;
 @ansipurple:            #CAA6EC;
-@ansicyan:              #77ABE7;
+@ansicyan:              #8FCA9A;
 @ansiyellow:            #DDD7A3;
-@ansired:               #798daf;
+@ansired:               #DB797C;
 
 @stderr-bg:             #DB797C;
 @stderr-fg:             #D0D4E6;

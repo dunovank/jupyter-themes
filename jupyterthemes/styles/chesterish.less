@@ -1,7 +1,7 @@
 /* chesterish notebook colors */
-@notebook-bg:           darken(#1e252e, 3%);
+@notebook-bg:           darken(#1e252e, 2%);
 @notebook-fg:           lighten(#899ab8, 8%);
-@notebook-base:         desaturate(darken(#334056, 3%), 3%);
+@notebook-base:         desaturate(darken(#334056, 3%), 4%);
 
 @selected-bg:           #009cd1;
 @selected-half:         rgba(75, 95, 118,.55);
@@ -13,19 +13,20 @@
 @selected-active:       #007aa4;
 @divider:               rgba(0, 156, 209, .3);
 
-@selected-fg:           lighten(@notebook-fg, 10%);
-@selected-fg-bright:    lighten(@notebook-fg, 30%);
+@selected-fg:           lighten(@notebook-fg, 18%);
+@selected-fg-bright:    lighten(@notebook-fg, 45%);
 
-@cc-input-bg:           darken(#2b3643, 3%);
+@cc-input-bg:           darken(#2b3643, 1%);
 @cc-input-fg:           #CDD2E9;
-@cc-output-bg:          darken(@notebook-base, 1%);
+@cc-output-bg:          desaturate(@notebook-base, 3%);
 @cc-output-fg:          darken(@cc-input-fg, 7%);
 @text-cell-fg:          lighten(#667FB1, 19%);
 @unrendered-text:       lighten(#008ebf, 4%);
 @header-fg:             desaturate(@unrendered-text, 8%);
 
-@tooltip-bg-color:      #424a5a;
-@tooltip-fg-color:      #CDD2E9;
+@tooltip-bg-color:      lighten(@cc-output-bg, 2%);
+@tooltip-fg-color:      @cc-input-fg;
+
 
 @item-theme:            @header-fg;
 @item-blue:             @matching-bracket;
@@ -40,7 +41,7 @@
 @cc-border-selected:    #008ebf;
 @cc-border-edit:        #005573;
 @tc-border-selected:    @header-fg;
-@tc-border-edit:        #814c52;
+@tc-border-edit:        #005573;
 @button-color:          @selected-active;
 @table-color:           @cc-output-fg;
 @table-bg:              @cc-output-bg;
@@ -50,13 +51,13 @@
 
 /* chesterish codemirror colors */
 @ansiblack:             #2b303b;
-@ansiblue:              #DB797C;
-@ansigray:              #B4B7B4;
-@ansigreen:             #B5C2D9;
+@ansiblue:              #77ABE7;
+@ansigray:              #899ab8;
+@ansigreen:             #CDD2E9;
 @ansipurple:            #CAA6EC;
 @ansicyan:              #77ABE7;
-@ansiyellow:            #F7EFAE;
-@ansired:               #798daf;
+@ansiyellow:            #DDD7A3;
+@ansired:               #DB797C;
 
 @stderr-bg:             #DB797C;
 @stderr-fg:             #D0D4E6;

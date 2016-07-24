@@ -52,7 +52,7 @@ usage: jt [-l] [-t THEME] [-f FONT] [-fs FONTSIZE ] [-ff NBFONTFAMILY]
 | Cell Width            |  -cw      |      910       |
 | Line Height           |  -lh      |      160       |
 | Alt Txt/MD Layout     |  -altmd   |       --       |
-| Toggle Toolbar        |  -T       |       --       |
+| Make Toolbar Visible  |  -T       |       --       |
 | Restore Default       |  -r       |       --       |
 
 ### Importable Code Fonts from Google Fonts API

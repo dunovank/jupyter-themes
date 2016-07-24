@@ -1,7 +1,7 @@
 /* onedork notebook colors */
 @notebook-bg:           #16191d;
 @notebook-fg:           #899ab8;
-@notebook-base:         darken(#303841, 2%);
+@notebook-base:         darken(#303841, 1%);
 
 @selected-bg:           #48a667;
 @selected-half:         rgba(70, 82, 95, .52);
@@ -9,23 +9,24 @@
 @selected-tenth:        rgba(70, 82, 95, .12);
 @selected-error:        rgba(192, 57, 67, .3);
 @prompt-line:           rgba(83, 180, 115,.5);
-@matching-bracket:      #4780ce;
+@matching-bracket:      #3572C6;
 @selected-active:       @selected-bg;
 @divider:               rgba(83, 180, 115, .3);
 
-@selected-fg:           lighten(@notebook-fg, 20%);
-@selected-fg-bright:    lighten(@notebook-fg, 30%);
+@selected-fg:           lighten(@notebook-fg, 25%);
+@selected-fg-bright:    lighten(@notebook-fg, 75%);
 
-@cc-input-bg:           darken(#282c34, 2%);
+@cc-input-bg:           #282c34;
 @cc-input-fg:           #B5C2D9;
 @cc-output-bg:          @notebook-base;
 @cc-output-fg:          darken(@cc-input-fg, 1%);
 @text-cell-fg:          desaturate(lighten(#667FB1, 17%), 5%);
-@unrendered-text:       @matching-bracket;
-@header-fg:             lighten(@unrendered-text, 2%);
+@unrendered-text:       lighten(@matching-bracket, 8%);
+@header-fg:             @unrendered-text;
 
-@tooltip-bg-color:      @notebook-base;
-@tooltip-fg-color:      #CFD2D9;
+
+@tooltip-bg-color:      lighten(@cc-output-bg, 2%);
+@tooltip-fg-color:      @cc-input-fg;
 
 @item-theme:            @selected-bg;
 @item-blue:             @matching-bracket;
@@ -50,13 +51,13 @@
 
 /* onedork codemirror colors */
 @ansiblack:             #2b303b;
-@ansiblue:              #DB797C;
-@ansigray:              #B4B7B4;
-@ansigreen:             #B5C2D9;
+@ansiblue:              #77ABE7;
+@ansigray:              #899ab8;
+@ansigreen:             #CDD2E9;
 @ansipurple:            #CAA6EC;
-@ansicyan:              #77ABE7;
+@ansicyan:              #8FCA9A;
 @ansiyellow:            #DDD7A3;
-@ansired:               #798daf;
+@ansired:               #DB797C;
 
 @stderr-bg:             #DB797C;
 @stderr-fg:             #D0D4E6;

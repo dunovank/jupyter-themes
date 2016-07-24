@@ -6,7 +6,7 @@
 @selected-bg:           @notebook-base;
 @selected-half:         rgba(180, 180, 180,.30);
 @selected-third:        rgba(180, 180, 180,.26);
-@selected-tenth:        rgba(150, 150, 150,.1);
+@selected-tenth:        rgba(150, 150, 150,.12);
 @selected-error:        rgba(191, 97, 106, .40);
 @prompt-line:           rgba(240, 147, 43, .40);
 @matching-bracket:      rgba(30, 112, 199, .30);
@@ -45,18 +45,18 @@
 @table-color:           lighten(@cc-input-fg, 2%);
 @table-bg:              @notebook-bg;
 @table-border:          lighten(@disabled, 4%);
-@codeblock-bg:          @notebook-bg;
-@codeblock-border:      @codeblock-bg;
+@codeblock-bg:          @text-cell-bg;
+@codeblock-border:      darken(@text-cell-bg, 10%);
 
 /* grade3 codemirror colors */
 @ansiblack:             #333333;
 @ansiblue:              #1e70c7;
 @ansigray:              #656565;
-@ansigreen:             #009e07;
+@ansigreen:             #333333;
 @ansipurple:            #653bc5;
-@ansicyan:              #009fb7;
+@ansicyan:              #de143d;
 @ansiyellow:            #dc4384;
-@ansired:               #de143d;
+@ansired:               #009e07;
 
 @stderr-bg:             #ebb5b7;
 @stderr-fg:             #000000;

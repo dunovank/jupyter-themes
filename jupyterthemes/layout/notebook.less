@@ -77,10 +77,14 @@ div.list_item:hover {
     border: none;
     text-shadow: none !important;
 }
+ul#tabs a {
+    font-family: @notebook-fontfamily;
+    font-size: @text-cell-fontsize;
+}
 .nav-tabs > li > a:hover {
     color: @selected-fg;
     background: @notebook-bg;
-    background-color: @selected-tenth;
+    background-color: @selected-third;
     border-color: transparent;
     background-image: none;
 }
@@ -91,12 +95,13 @@ div.list_item:hover {
     color: @selected-fg-bright;
     background: @notebook-bg;
     border-color: transparent;
-    background-color: @selected-third;
+    background-color: @selected-half;
 }
 .nav-tabs {
     font-size: @text-cell-fontsize;
-    border-bottom: 1px solid @selected-tenth;
+    border-bottom: 1px solid @selected-third;
 }
+
 
 /********************************************************/
 /***************** NOTEBOOK PAGE SETTINGS ***************/
@@ -473,12 +478,17 @@ div.output.output_scroll {
 }
 ::-webkit-scrollbar {
     width: 11px;
-    height: 11px;
+    height: 10px;
     background-color: @scroll-trough;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 255, 255);
-    background-image: -webkit-gradient(linear, 40% 0%, 75% 86%, from(darken(@scrollbar, 5%)), color-stop(0.5, lighten(@scrollbar, 5%)), to(darken(@scrollbar, 4%)));
-    border-radius: 8px;
+    background-color: #ffffff;
+    background-image:
+        -webkit-gradient(linear, 40% 0%, 75% 86%,
+            from(darken(@scrollbar, 5%)),
+            color-stop(0.5, lighten(@scrollbar, 5%)),
+            to(darken(@scrollbar, 5%)));
+    min-height: 40px;
+    border-radius: 7px;
 }

@@ -13,7 +13,6 @@ div.CodeMirror pre {
     color: @cc-input-fg;
 }
 div.CodeMirror-lines {
-    padding-top: .6em;
     padding-bottom: .6em;
     padding-left: .5em;
     padding-right: 1.5em;
@@ -59,10 +58,11 @@ div.js-error {
 /******** TOOLTIP DIMENSIONS ********/
 /************************************/
 .ipython_tooltip {
-    border: 2px solid @selected-half;
+    border: 2px solid @selected-bg;
     background-color: @tooltip-bg-color;
     border-radius: 2px;
-    overflow: wrap;
+    overflow-x: visible;
+    overflow-y: visible;
     box-shadow: none;
     position: absolute;
     z-index: 1000;
@@ -70,17 +70,21 @@ div.js-error {
 }
 .ipython_tooltip .tooltiptext pre {
     background-color: @tooltip-bg-color;
-    color: @selected-fg-bright;
-    overflow: wrap;
+    color: @cc-input-fg;
+    line-height: 130%;
+    overflow-x: visible;
+    overflow-y: visible;
     max-width: 800px;
     font-size: 90%;
 }
 div#tooltip.ipython_tooltip {
-    overflow: wrap;
+    overflow-x: wrap;
+    overflow-y: visible;
     max-width: 800px;
 }
 div.tooltiptext.bigtooltip {
-    overflow: wrap;
+    overflow-x: visible;
+    overflow-y: visible;
     height: 400px;
     max-width: 800px;
 }
