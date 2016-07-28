@@ -105,7 +105,7 @@ div.edit_mode div.text_cell.unrendered {
 .rendered_html tr,
 .rendered_html td {
     font-family: @monofont, monospace;
-    font-size: 10pt;
+    font-size: 9.5pt !important;
     line-height: 145% !important;
     border: 1px solid @table-border;
     color: @table-color;
@@ -116,11 +116,9 @@ div.edit_mode div.text_cell.unrendered {
 /*****************************************************/
 /* blog.henryhhammond.com/pandas-formatting-snippets */
 /*****************************************************/
+table.dataframe,
 .rendered_html tr,
 .dataframe * {
-    border: 1px solid @table-border;
-}
-table.dataframe {
     border: 1px solid @table-border;
 }
 .dataframe th,
@@ -134,7 +132,7 @@ table.dataframe {
 .dataframe td,
 .rendered_html td {
     font-family: @monofont, monospace;
-    font-size: 10pt;
+    font-size: 9.5pt !important;
     color: @table-color;
     background: @df-cell-bg;
     border: 1px solid @table-border;

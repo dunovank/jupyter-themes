@@ -7,7 +7,7 @@ from argparse import ArgumentParser
 from jupyter_core.paths import jupyter_config_dir
 import os
 from glob import glob
-__version__ = '0.10.0'
+__version__ = '0.10.1'
 
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
