@@ -102,18 +102,56 @@ div.edit_mode div.text_cell.unrendered {
 }
 /************  TABLES  **********/
 .rendered_html table,
-.rendered_html th,
 .rendered_html tr,
 .rendered_html td {
     font-family: @monofont, monospace;
-    font-size: 9.5pt !important;
-    line-height: @cc-line-height !important;
-    border: 1px @table-border solid;
+    font-size: 10pt;
+    line-height: 145% !important;
+    border: 1px solid @table-border;
     color: @table-color;
     background-color: @table-bg;
     background: @table-bg;
-    align-content: left !important;
 }
+/**************  PANDAS DF FORMATTING  ***************/
+/*****************************************************/
+/* blog.henryhhammond.com/pandas-formatting-snippets */
+/*****************************************************/
+.rendered_html tr,
+.dataframe * {
+    border: 1px solid @table-border;
+}
+table.dataframe {
+    border: 1px solid @table-border;
+}
+.dataframe th,
+.rendered_html th {
+    font-family: @notebook-fontfamily;
+    font-size: 10.5pt !important;
+    font-weight: 450;
+    border: 1px solid @df-header-border;
+    background: @df-header-bg;
+}
+.dataframe td,
+.rendered_html td {
+    font-family: @monofont, monospace;
+    font-size: 10pt;
+    color: @table-color;
+    background: @df-cell-bg;
+    border: 1px solid @table-border;
+    text-align: left;
+    min-width: 4em;
+}
+/********** PANDAS SUMMARY **********/
+.dataframe-summary-row tr:last-child,
+.dataframe-summary-col td:last-child {
+    font-family: @notebook-fontfamily;
+    font-size: 10.5pt !important;
+    font-weight: 450;
+    color: @df-header;
+    border: 1px solid @table-border;
+    background: @df-header-bg;
+}
+
 /******** CODE BLOCKS **********/
 .rendered_html code {
     color: @cc-input-fg;
@@ -143,12 +181,12 @@ pre code {
 /************ LINKS  ************/
 .rendered_html :link {
     font-family: @text-cell-fontfamily;
-    color: @cm-cursor;
+    color: @item-blue;
     text-decoration: underline;
 }
 .rendered_html :visited {
     text-decoration: underline;
-    color: desaturate(@cm-cursor, 50%);
+    color: @item-theme;
 }
 
 
@@ -169,7 +207,7 @@ div.output_wrapper {
 div.output_subarea.output_text.output_stream.output_stdout,
 div.output_subarea.output_text {
     font-family: @monofont, monospace;
-    font-size: 9.5pt !important;
+    font-size: 10pt;
     line-height: 130% !important;
     background-color: @cc-output-bg;
     color: @cc-output-fg;
@@ -180,7 +218,7 @@ div.output_subarea.output_text {
 }
 div.output_area pre {
     font-family: @monofont, monospace;
-    font-size: 9.5pt !important;
+    font-size: 10pt !important;
     line-height: 130% !important;
     color: @cc-output-fg;
     border-top-right-radius: 0px;
@@ -209,9 +247,9 @@ div.output_subarea {
 }
 /*********** WIDGETS ***********/
 div.widget-area {
-    background-color: @cc-output-bg;
-    background: @cc-output-bg;
-    color: @cc-output-fg;
+    background-color: #ffffff;
+    background: #ffffff;
+    color: #303030;
     page-break-inside: avoid;
     -moz-box-align: stretch;
     box-orient: horizontal;
@@ -219,6 +257,23 @@ div.widget-area {
     flex-direction: row;
     align-items: center;
     align-self: auto;
+}
+div.widget-hbox .widget-label {
+    min-width: 10ex;
+    padding-right: 8px;
+    padding-top: 5px;
+    text-align: left !important;
+    vertical-align: middle;
+}
+div.widget-label {
+    min-width: 10ex;
+    padding-right: 8px;
+    padding-top: 5px;
+    text-align: left !important;
+    vertical-align: middle;
+}
+.widget-hbox {
+    display: inline-block;
 }
 /***********  MEDIA ***********/
 audio, video {
@@ -234,20 +289,21 @@ audio, video {
 /*********** CODE CELLS ************/
 div.prompt {
     font-family: @monofont, monospace;
-    font-size: 9.2pt;
+    font-size: 9pt;
     line-height: @cc-line-height;
     padding: .3em;
-    text-align: left;
-    min-width: 11ex;
+    text-align: left !important;
+    min-width: 11.3ex;
 }
 div.prompt.input_prompt {
     font-family: @monofont, monospace;
-    font-size: 9.2pt;
+    font-size: 9pt;
     line-height: @cc-line-height;
     color: @input-prompt;
     background-color: @cc-input-bg;
     font-weight: normal;
-    min-width: 11ex;
+    min-width: 11.3ex;
+    text-align: left !important;
     border-right: 2px solid @prompt-line;
     border-top-left-radius: 2px;
     border-top-right-radius: 0px;
@@ -256,7 +312,7 @@ div.prompt.input_prompt {
 }
 /********** TEXT & MD CELLS **********/
 div.cell.text_cell.rendered .input_prompt {
-    font-size: 9.2pt;
+    font-size: 9pt;
     line-height: @cc-line-height;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
@@ -264,7 +320,7 @@ div.cell.text_cell.rendered .input_prompt {
     min-width: 0ex;
 }
 div.cell.text_cell.unrendered .input_prompt {
-    font-size: 9.2pt;
+    font-size: 9pt;
     line-height: @cc-line-height;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
@@ -299,7 +355,7 @@ div.out_prompt_overlay.prompt:hover {
     font-family: @monofont, monospace;
     font-size: 9.2pt;
     background-color: @cc-output-bg;
-    box-shadow: @box-shadow 1px 1px 3px 3px inset;
+    box-shadow: @box-shadow 2px 1px 2px 2.5px inset;
     border-bottom-left-radius: 2px;
     -webkit-border-: 2px;
     -moz-border-radius: 2px;

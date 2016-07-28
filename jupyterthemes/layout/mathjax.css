@@ -1,14 +1,10 @@
 /**********************************
  MathJax Settings and Style Script
 **********************************/
-
-/**********************************/
-/********** MATHJAX CSS ***********/
-/**********************************/
 .MathJax_Display,
 .MathJax nobr>span.math>span {
     border: 0 !important;
-    font-size: 14pt !important;
+    font-size: 110% !important;
     text-align: center !important;
     margin: 0em !important;
 }
@@ -17,17 +13,16 @@
 .MathJax:focus, body :focus .MathJax {
     display: inline-block !important;
 }
-/**********************************/
-/********* MATHJAX SCRIPT *********/
-/**********************************/
+
 <script>
     MathJax.Hub.Config({
         "HTML-CSS": {
-            preferredFont: "STIX",
+            preferredFont: "TeX",
             availableFonts: ["STIX","TeX"],
             styles: {
+                scale: 110,
                 ".MathJax_Display": {
-                    "font-size": "14pt",
+                    "font-size": "110%",
                 }
             }
         }

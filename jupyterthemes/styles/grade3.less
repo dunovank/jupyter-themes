@@ -3,19 +3,17 @@
 @notebook-fg:           #2c2c2c;
 @notebook-base:         #efefef;
 
+/* selection, hover, prompts, brackets colors */
 @selected-bg:           @notebook-base;
 @selected-half:         rgba(180, 180, 180,.30);
 @selected-third:        rgba(180, 180, 180,.26);
 @selected-tenth:        rgba(150, 150, 150,.12);
 @selected-error:        rgba(191, 97, 106, .40);
-@prompt-line:           rgba(240, 147, 43, .40);
-@matching-bracket:      rgba(30, 112, 199, .30);
 @selected-active:       @selected-half;
-@divider:               @selected-half;
-
 @selected-fg:           #222222;
 @selected-fg-bright:    #000000;
 
+/* code, text, markdown, & tooltip colors */
 @cc-input-bg:           #efefef;
 @cc-input-fg:           #303030;
 @cc-output-bg:          #ffffff;
@@ -23,32 +21,46 @@
 @text-cell-fg:          lighten(@cc-input-fg, 2%);
 @unrendered-text:       #1e70c7;
 @header-fg:             @unrendered-text;
-
-@tooltip-bg-color:      @notebook-base;
+@tooltip-bg-color:      darken(@notebook-bg, 3%);
 @tooltip-fg-color:      #222222;
 
-@item-theme:            #ff8132;
-@item-blue:             #1e70c7;
-@item-cyan:             @item-theme;
-
-@disabled:              #aaaaaa;
-@scrollbar:             desaturate(darken(@item-blue, 1%), 20%);
-@scroll-trough:         lighten(@disabled, 15%);
-@scrollbar-inactive:    #dedede;
-@input-prompt:          @disabled;
-@box-shadow:            #e8e8e8;
+/* cell border colors */
 @cc-border-selected:    @item-theme;
 @cc-border-edit:        #ffd5bb;
 @tc-border-selected:    @header-fg;
 @tc-border-edit:        #87b0db;
+
+/* menus, dividers, prompt-borders, brackets */
+@divider:               @selected-half;
+@disabled:              #aaaaaa;
+@input-prompt:          @disabled;
+@prompt-line:           rgba(240, 147, 43, .40);
+@matching-bracket:      rgba(30, 112, 199, .30);
+
+/* buttons, widgets, kernels colors */
+@item-theme:            #ff8132;
+@item-blue:             #1e70c7;
+@item-cyan:             @item-theme;
 @button-color:          @item-theme;
+
+/* tables and dataframes colors */
 @table-color:           lighten(@cc-input-fg, 2%);
-@table-bg:              @notebook-bg;
-@table-border:          lighten(@disabled, 4%);
+@table-bg:              @text-cell-bg;
+@table-border:          darken(@table-bg, 16%);
+@df-header-bg:          darken(@table-bg, 5%);
+@df-header:             lighten(@cc-input-fg, 2%);
+@df-header-border:      darken(@df-header-bg,11%);
+@df-cell-bg:            @table-bg;
 @codeblock-bg:          @text-cell-bg;
 @codeblock-border:      darken(@text-cell-bg, 10%);
 
-/* grade3 codemirror colors */
+/* scrollbar and shadow colors */
+@scrollbar:             desaturate(darken(@item-blue, 1%), 20%);
+@scroll-trough:         lighten(@disabled, 15%);
+@scrollbar-inactive:    #dedede;
+@box-shadow:            #e8e8e8;
+
+/* grade3 ansi colors */
 @ansiblack:             #333333;
 @ansiblue:              #1e70c7;
 @ansigray:              #656565;
@@ -57,11 +69,11 @@
 @ansicyan:              #de143d;
 @ansiyellow:            #dc4384;
 @ansired:               #009e07;
-
 @stderr-bg:             #ebb5b7;
 @stderr-fg:             #000000;
 @js-error:              @ansired;
 
+/* grade3 codemirror colors */
 @cm-selected:           #e0e1e3;
 @cm-gutters:            @cm-selected;
 @cm-linenumber:         @disabled;

@@ -7,7 +7,7 @@ jt -t chesterish -cw 850 -fs 10
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tchesterish-cw850-fs10.png?raw=true)
 
 ```sh
-jt -t oceans16 -altmd -fs 10 -cw 900
+jt -t oceans16 -alt -fs 10 -cw 900
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-toceans16-altmd-fs10-cw900.png?raw=true)
 
@@ -17,12 +17,12 @@ jt -t onedork -fs 10 -cw 850
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-cw850-fs10.png?raw=true)
 
 ```sh
-jt -t grade3 -altmd -fs 10 -cw 900 -tcff serif
+jt -t grade3 -alt -fs 10 -cw 900 -tcff serif
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tgrade3-altmd-fs10-cw900.png?raw=true)
 
 ```sh
-jt -t onedork -ff serif -tcff serif
+jt -t onedork -nbff serif -tcff serif
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-ffserif-tcffserif.png?raw=true)
 
@@ -33,25 +33,24 @@ jt -t onedork -ff serif -tcff serif
 pip install jupyterthemes
 ```
 
+## How To...
 
-
-## How to use
 ```
-usage: jt [-l] [-t THEME] [-f FONT] [-fs FONTSIZE ] [-ff NBFONTFAMILY]  
-        [-tcff TCFONTFAMILY] [-cw CELLWIDTH] [-lh LINEHEIGHT] [-altmd] [-T]  [-r ]
+usage: jt [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE ] [-nbff NBFONTFAM]  
+        [-tcff TCFONTFAM] [-cw CELLWIDTH] [-lh LINEHEIGHT] [-alt] [-T]  [-r ]
 ```
 
-|        options        | arguments |     default    |
+|        options        |   arg     |     default    |
 |:----------------------|:---------:|:--------------:|     
 | List Themes           |  -l       |       --       |
 | Select Theme          |  -t       |       --       |
 | Code Font             |  -f       |      Hack      |
 | Code Font-Size        |  -fs      |       11       |
-| NB Font-Family        |  -ff      |   sans-serif   |
+| NB Font-Family        |  -nbff    |   sans-serif   |
 | TxtCell Font-Family   |  -tcff    |   sans-serif   |
-| Cell Width            |  -cw      |      910       |
+| Cell Width            |  -cw      |      940       |
 | Line Height           |  -lh      |      160       |
-| Alt Txt/MD Layout     |  -altmd   |       --       |
+| Alt Txt/MD Layout     |  -alt     |       --       |
 | Make Toolbar Visible  |  -T       |       --       |
 | Restore Default       |  -r       |       --       |
 
@@ -60,17 +59,16 @@ usage: jt [-l] [-t THEME] [-f FONT] [-fs FONTSIZE ] [-ff NBFONTFAMILY]
 |    Font-Name     |    -f       |     comments     |
 |:-----------------|:-----------:|:----------------:|     
 |     Hack         |    --       |     italics      |
-|  Source Code Pro |  source     |     italics      |
 |  Roboto Mono     |  roboto     |     italics      |
 |  Space Mono      |  space      |     italics      |         
 |  Anonymous Pro   |  anon       |     italics      |
 |  Cousine         |  cousine    |     italics      |     
 |  Ubuntu Mono     |  ubuntu     |     italics      |
+|  Source Code Pro |  source     |     normal       |
 |  Fira Mono       |  fira       |     normal       |                  
 |  Droid Sans Mono |  droid      |     normal       |         
 |  Oxygen Mono     |  oxygen     |     normal       |
 |  Inconsolata     |  incon      |     normal       |
-* or pass the name of any monospace font you have installed locally (hyphenate spaces)
 
 
 ## Examples
@@ -91,16 +89,14 @@ jt -t oceans16 -f space -fs 12
 
 # set notebook & text-cell font-family to serif
 # both default to sans-serif
-jt -t onedork -ff serif -tcff serif
+jt -t onedork -nbff serif -tcff serif
 
 # adjust cell width and line-height
 jt -t chesterish -cw 870 -lh 170
 
 # choose alternate txt/markdown layout
-jt -t grade3 -altmd -fs 10 -cw 895 -tcff serif
+jt -t grade3 -alt -fs 10 -cw 900 -tcff serif
 
 # restore default theme
 jt -r
 ```
-
-#### mmmm so theme-y...
