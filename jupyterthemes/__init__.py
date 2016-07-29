@@ -94,7 +94,7 @@ def main():
     parser.add_argument('-nbff',"--nbfontfam", action='store', default='sans-serif', help='nb font-family')
     parser.add_argument('-tcff',"--tcfontfam", action='store', default='sans-serif', help='txt font-family')
     parser.add_argument('-cw', "--cellwidth", action='store', default=940, help="set cell width (px)")
-    parser.add_argument('-lh',"--lineheight", action='store', default=160, help='code/text line-height (%)')
+    parser.add_argument('-lh',"--lineheight", action='store', default=160, help='code/text line-height (%%)')
     parser.add_argument('-alt', "--altlayout", action='store_true', default=False, help="alt markdown layout")
     parser.add_argument('-T', "--toolbar", action='store_true', default=False, help="enable the toolbar")
     parser.add_argument('-r', "--reset", action='store_true', help="reset to default theme")
