@@ -394,6 +394,20 @@ div#ipython_notebook {
     font-weight: normal;
     display: table-row-group;
 }
+.btn-sm, .btn-group-sm > .btn {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    padding: 5px 10px;
+    line-height: 1.5;
+    border-radius: 1px;
+}
+.btn-sm, .btn-group-sm > .btn:hover {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    padding: 5px 10px;
+    line-height: 1.5;
+    border-radius: 1px;
+}
 .btn-group, .btn-group-vertical {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
@@ -447,6 +461,8 @@ button.close {
 /********** MODAL, PANELS, & FORM CONTROL *********/
 /**************************************************/
 .modal-content {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
     position: relative;
     background-color: @notebook-base;
     border: 1px solid @selected-third;
@@ -456,6 +472,8 @@ button.close {
     outline: 0px none;
 }
 .modal-header {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
     padding: 15px;
     border-bottom: 1px solid @selected-half;
     min-height: 16.4286px;
