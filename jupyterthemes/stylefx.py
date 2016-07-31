@@ -13,6 +13,15 @@ cl_layout = os.path.join(layouts_dir, 'cells.less')
 mjax_css = os.path.join(layouts_dir, 'mathjax.css')
 fonts_css = os.path.join(layouts_dir, 'fonts.css')
 
+def test_less_compatibility(theme, compatible_versions=[(2,7), (3,3), (3,4)]):
+    import sys
+    cur_version = sys.version_info[:2]
+    if cur_version not in compatible_versions:
+        print("You are using Python {}.{}".format(*cur_version))
+        print("only versions 2.7, 3.3, and 3.4 support custom settings")
+        print("Installing {} theme with default settings".format(theme))
+        return 0
+    return 1
 
 def toggle_toolbar(toolbar=False):
     """ Hides toolbar if toolbar==False (default)

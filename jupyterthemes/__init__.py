@@ -7,7 +7,7 @@ from argparse import ArgumentParser
 from jupyter_core.paths import jupyter_config_dir
 import os
 from glob import glob
-__version__ = '0.10.1'
+__version__ = '0.10.2'
 
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
@@ -26,6 +26,13 @@ if not os.path.isdir(jupyter_path):
     os.makedirs(jupyter_path)
 if not os.path.isdir(jupyter_custom):
     os.makedirs(jupyter_custom)
+
+def install_precompiled_theme(theme):
+    from shutil import copyfile
+    compiled_dir = os.path.join(package_dir, 'styles/compiled')
+    theme_src = os.path.join(compiled_dir, '{}.css'.format(theme))
+    theme_dst = os.path.join(jupyter_custom, 'custom.css')
+    copyfile(theme_src, theme_dst)
 
 def less_to_css(style_less):
     """ write less-compiled css file to css_fpath in jupyter_dir
@@ -63,6 +70,10 @@ def install_theme(theme, monofont='Hack', monosize=11, nbfontfam='sans-serif', t
     md layout, and toolbar pref
     """
     from jupyterthemes import stylefx
+    less_compatible = stylefx.test_less_compatibility(theme)
+    if not less_compatible:
+        install_precompiled_theme(theme)
+        return None
     # initialize style_less & style_css
     style_less, style_css = '', ''
     if monofont != 'Hack':
@@ -88,7 +99,7 @@ def install_theme(theme, monofont='Hack', monosize=11, nbfontfam='sans-serif', t
 def main():
     parser = ArgumentParser()
     parser.add_argument('-l', "--list", action='store_true', help="list available themes")
-    parser.add_argument('-t', "--theme", action='store', help="name of the theme to install")
+    parser.add_argument('-t', "--theme", action='store', help="theme name to install")
     parser.add_argument('-f',"--monofont", action='store', default='Hack', help='monospace code font')
     parser.add_argument('-fs', "--monosize", action='store', default=11, help='code font-size')
     parser.add_argument('-nbff',"--nbfontfam", action='store', default='sans-serif', help='nb font-family')
@@ -99,17 +110,18 @@ def main():
     parser.add_argument('-T', "--toolbar", action='store_true', default=False, help="enable the toolbar")
     parser.add_argument('-r', "--reset", action='store_true', help="reset to default theme")
     args = parser.parse_args()
-    feedback = "Available Themes: {}".format('\n\t'.join(get_themes()))
+    themes = get_themes()
+    say_themes = "Available Themes: \n   {}".format('\n   '.join(themes))
     if args.theme:
-        themes = get_themes()
         if args.theme not in themes:
-            print("Theme {0} not found\n{1}").format(args.theme, feedback)
+            print("Didn't recognize theme name: {}".format(args.theme))
+            print(say_themes)
             exit(1)
         print("Installing {0} at {1}".format(args.theme, css_fpath))
         install_theme(args.theme, monofont=args.monofont, monosize=args.monosize, nbfontfam=args.nbfontfam, tcfontfam=args.tcfontfam, cellwidth=int(args.cellwidth),  lineheight=int(args.lineheight), altlayout=args.altlayout, toolbar=args.toolbar)
     elif args.reset:
         reset_default()
     elif args.list:
-        print(feedback)
+        print(say_themes)
     else:
         print('No theme provided, no changes made')

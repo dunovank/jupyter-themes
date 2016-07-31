@@ -1,0 +1,1119 @@
+body {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ color: #a2b0c7;
+ background-color: #1a2028;
+ line-height: 1;
+}
+a {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ color: #a2b0c7;
+}
+div#notebook {
+ font-family: "Hack", monospace;
+ font-size: 11pt;
+ line-height: 160%;
+ color: #cdd2e9;
+}
+div#notebook_toolbar div.dynamic-instructions {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 11.5pt;
+ display: inline-block;
+}
+.toolbar_info {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 11.5pt;
+ color: #a2b0c7;
+ border: none;
+ text-shadow: none !important;
+}
+.list_container {
+ font-size: 11.5pt;
+ color: #a2b0c7;
+ border: none;
+ text-shadow: none !important;
+}
+.list_container > div {
+ border-bottom: 1px solid rgba(75,95,118,.30);
+ font-size: 11.5pt;
+}
+.list_container a {
+ font-size: 11.5pt;
+ color: #a2b0c7;
+ border: none;
+ text-shadow: none !important;
+}
+div.list_container a:hover {
+ color: #dbe1ea;
+}
+.list_header {
+ font-weight: normal;
+ background-color: #1a2028;
+ color: #a2b0c7;
+}
+div#notebook_list_header.row.list_header {
+ background-color: #1a2028;
+}
+ul#selector-menu.dropdown-menu > li > a {
+ padding: none;
+}
+div.list_item:hover {
+ background-color: rgba(75,95,118,.10);
+}
+.breadcrumb > li {
+ font-size: 11.5pt;
+ color: #a2b0c7;
+ border: none;
+ text-shadow: none !important;
+}
+ul#tabs a {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ font-weight: normal;
+ font-style: normal;
+ border-color: transparent;
+ border-bottom: 1px solid rgba(0,156,209,.5);
+ text-shadow: none !important;
+}
+.nav-tabs {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ font-weight: normal;
+ font-style: normal;
+ text-shadow: none !important;
+ border-color: transparent;
+ border-bottom: 1px solid rgba(0,156,209,.5);
+}
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:active,
+.nav-tabs > li > a:focus {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ font-weight: normal;
+ font-style: normal;
+ color: #dbe1ea;
+ background: #1a2028;
+ background-color: rgba(75,95,118,.30);
+ border-color: transparent;
+ background-image: none;
+ border-color: transparent;
+ border-bottom: 1px solid rgba(0,156,209,.5);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ font-weight: normal;
+ font-style: normal;
+ color: #ffffff;
+ background: #1a2028;
+ background-color: rgba(75,95,118,.55);
+ border-color: transparent;
+ text-shadow: none !important;
+ border-color: transparent;
+ border-bottom: 1px solid rgba(0,156,209,.5);
+}
+div#notebook {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ padding-top: 5px;
+}
+.notebook_app {
+ background-color: #1a2028;
+}
+#notebook-container {
+ padding: 13px;
+ background-color: #1a2028;
+ min-height: 0px;
+ box-shadow: none;
+}
+.container {
+ width: 940px;
+}
+.notebook_app #header {
+ box-shadow: none !important;
+ background-color: #1a2028;
+ border-bottom: 1px solid rgba(75,95,118,.30);
+}
+#header {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ box-shadow: none;
+ background-color: #1a2028;
+}
+#header-container {
+ padding-top: 10px;
+ display: none !important;
+ box-shadow: none;
+}
+#header .header-bar {
+ background: #1a2028;
+ background-color: #1a2028;
+}
+body > #header .header-bar {
+ width: 100%;
+ background: #1a2028;
+ margin-bottom: -1px;
+}
+.navbar-default {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ background-color: #1a2028;
+ border-color: #1a2028;
+ padding-bottom: 0px;
+ border: 0;
+}
+#menubar {
+ padding-top: 10px;
+ background-color: #1a2028;
+}
+#menubar .navbar,
+.navbar-default {
+ background-color: #1a2028;
+ margin-bottom: 0px;
+}
+.navbar-default .navbar-nav > li > a {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ color: #a2b0c7;
+ display: block;
+ line-height: 1.35;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+ color: #dbe1ea;
+ background-color: rgba(75,95,118,.30);
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+ color: #ffffff;
+ background-color: #007aa4;
+ border-color: #007aa4;
+}
+.command_mode .modal_indicator:before {
+ font-size: 11.5pt;
+}
+.item_icon {
+ color: #3572c6;
+}
+.item_buttons .kernel-name {
+ color: #3572c6;
+}
+.running_notebook_icon:before {
+ color: #0899cb !important;
+}
+.item_buttons .running-indicator {
+ padding-top: 2px;
+ color: #0899cb;
+}
+#modal_indicator {
+ float: right !important;
+ color: #009cd1;
+}
+#kernel_indicator {
+ float: right !important;
+ color: #009cd1;
+ font-size: 13pt;
+}
+#kernel_indicator .kernel_indicator_name {
+ padding-left: 5px;
+ padding-right: 5px;
+ font-size: 13pt;
+}
+#project-name > .breadcrumb {
+ font-weight: normal;
+ color: #009cd1;
+}
+div#ipython_notebook {
+ display: none;
+}
+.notification_widget.info {
+ color: #ffffff;
+ background-color: #009cd1;
+ border-color: #009cd1;
+ width: 100%;
+}
+.dropdown-menu {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ box-shadow: none;
+ padding: 0px;
+ text-align: left;
+ border: 2px solid rgba(75,95,118,.30);
+ background-color: #2f3a4a;
+ background: #2f3a4a;
+ line-height: 1.35;
+}
+.dropdown-menu:hover {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ border: 2px solid rgba(75,95,118,.30);
+ background-color: #2f3a4a;
+ box-shadow: none;
+ line-height: 1.35;
+}
+.dropdown-header {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 13.0pt;
+ display: block;
+ color: #a2b0c7;
+ text-decoration: underline;
+ text-decoration-color: rgba(75,95,118,.30);
+ white-space: nowrap;
+ line-height: 1.35;
+}
+.dropdown-menu > li > a {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 11.5pt;
+ display: block;
+ clear: both;
+ padding: 9px 22px;
+ font-weight: normal;
+ line-height: 1.25;
+ color: #a2b0c7;
+ white-space: nowrap;
+ background-color: #2f3a4a;
+ background: #2f3a4a;
+}
+.dropdown-menu > li > a:hover {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 11.5pt;
+ color: #dbe1ea;
+ display: block;
+ clear: both;
+ padding: 9px 22px;
+ font-weight: normal;
+ line-height: 1.25;
+ white-space: nowrap;
+ background-color: rgba(75,95,118,.30);
+ background: rgba(75,95,118,.30);
+}
+.dropdown-menu .divider {
+ height: 2px;
+ margin: 0px 0px;
+ overflow: hidden;
+ background-color: rgba(0,156,209,.3);
+}
+.dropdown-submenu > .dropdown-menu {
+ top: 0;
+ left: 100%;
+ margin-top: -2px;
+ margin-left: 0px;
+ padding-top: 0px;
+}
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 11.5pt;
+ font-weight: normal;
+ color: #546386;
+ padding: none;
+ display: block;
+ clear: both;
+ line-height: 1.25;
+ white-space: nowrap;
+}
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:focus,
+.open > .dropdown-toggle.btn-default:hover {
+ color: #ffffff;
+ background-color: #007aa4;
+ border-color: #007aa4;
+}
+.btn {
+ color: #a2b0c7;
+ background: transparent;
+ background-color: transparent;
+ border: 0 none !important;
+ border-radius: 2px;
+ box-shadow: none !important;
+ text-shadow: none;
+}
+.btn:hover {
+ color: #dbe1ea;
+ background: transparent;
+ background-color: rgba(75,95,118,.55);
+ background-image: none;
+}
+.btn-group > .btn-mini {
+ font-size: 11.5pt;
+ font-weight: normal;
+ color: #a2b0c7;
+ background: transparent;
+ background-color: transparent;
+ border: 0 none !important;
+ border-radius: 2px;
+ box-shadow: none !important;
+ text-shadow: none;
+}
+.btn-group > .btn-mini:hover {
+ font-size: 11.5pt;
+ font-weight: normal;
+ color: #dbe1ea;
+ background: transparent;
+ background-color: rgba(75,95,118,.55);
+ background-image: none;
+}
+.btn-xs,
+.btn-group-xs > .btn {
+ font-size: 11.5pt;
+ font-weight: normal;
+ display: table-row-group;
+}
+.btn-sm,
+.btn-group-sm > .btn {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 11.5pt;
+ padding: 5px 10px;
+ line-height: 1.5;
+ border-radius: 1px;
+}
+.btn-sm,
+.btn-group-sm > .btn:hover {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 11.5pt;
+ padding: 5px 10px;
+ line-height: 1.5;
+ border-radius: 1px;
+}
+.btn-group,
+.btn-group-vertical {
+ font-size: 11.5pt;
+ font-weight: normal;
+ background: transparent;
+ background-color: transparent;
+}
+.btn-group,
+.btn-group-vertical:hover {
+ font-size: 11.5pt;
+ font-weight: normal;
+}
+.alternate_upload .btn-upload {
+ font-size: 11.5pt;
+ font-weight: normal;
+ padding-top: 2px;
+ padding-right: 6px;
+ line-height: 1.5;
+ height: 25px;
+ background: transparent;
+ display: inline-block;
+}
+.alternate_upload .btn-upload:hover {
+ font-size: 11.5pt;
+ font-weight: normal;
+ color: #dbe1ea;
+ background: transparent;
+ background-color: rgba(75,95,118,.55);
+ background-image: none;
+}
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
+ background: #29303c;
+ background-color: #29303c;
+ font-size: 11pt;
+}
+button.close {
+ padding: 0px;
+ cursor: pointer;
+ background: transparent none repeat scroll 0% 0%;
+ border: 0px none;
+}
+.close {
+ float: right;
+ font-size: 22px;
+ font-weight: bold;
+ line-height: 1;
+ color: #007aa4;
+ text-shadow: 0px 1px 0px rgba(75,95,118,.10);
+ opacity: 0.3;
+}
+.close:hover {
+ color: #009cd1;
+ text-shadow: 0px 1px 0px rgba(75,95,118,.10);
+ opacity: 0.9;
+}
+.modal-content {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 11.5pt;
+ position: relative;
+ background-color: #2f3a4a;
+ border: 1px solid rgba(75,95,118,.30);
+ border-radius: 3px;
+ box-shadow: 0px 3px 9px rgba(75,95,118,.30);
+ background-clip: padding-box;
+ outline: 0px none;
+}
+.modal-header {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 11.5pt;
+ padding: 15px;
+ border-bottom: 1px solid rgba(75,95,118,.55);
+ min-height: 16.4286px;
+}
+.panel-default {
+ border-color: rgba(75,95,118,.30);
+}
+.panel {
+ font-size: 11.5pt;
+ margin-bottom: 18px;
+ background-color: #1a2028;
+ color: #a2b0c7;
+ border: 0px;
+ box-shadow: none;
+}
+#running .panel-group .panel .panel-heading {
+ font-size: 13.0pt;
+ background-color: #1a2028;
+ padding: 4px 7px;
+ line-height: 22px;
+}
+#running .panel-group .panel .panel-heading a:hover {
+ font-size: 13.0pt;
+ color: #009cd1;
+}
+#running .panel-group .panel .panel-body .list_container .list_item {
+ border-bottom: 1px solid rgba(75,95,118,.55);
+}
+.form-control {
+ display: block;
+ width: 100%;
+ height: 32px;
+ padding: 6px 12px;
+ font-size: 11.5pt;
+ color: #a2b0c7;
+ background-color: #293340;
+ background-image: none;
+ border: 1px solid rgba(75,95,118,.30);
+ border-radius: 2px;
+ box-shadow: none;
+ transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.list_item input:not([type="checkbox"]) {
+ margin-right: 0px;
+ padding-right: 0px;
+ height: 80%;
+ width: 30%;
+}
+.modal-footer {
+ padding: 15px;
+ text-align: right;
+ border-top: 1px solid rgba(75,95,118,.55);
+}
+.input-form-control:hover:active {
+ background-color: rgba(75,95,118,.10);
+ selected: rgba(75,95,118,.10);
+}
+div.output.output_scroll {
+ box-shadow: none;
+}
+::-webkit-scrollbar-track {
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.11);
+ background-color: #ced4dd;
+ border-radius: 10px;
+}
+::-webkit-scrollbar {
+ width: 11px;
+ height: 10px;
+ background-color: #ced4dd;
+ border-radius: 7px;
+}
+::-webkit-scrollbar-thumb {
+ background-color: #ffffff;
+ background-image: -webkit-gradient(linear,40% 0%,75% 86%,from(#097da5 ),color-stop(0.5,#0ba1d5 ),to(#097da5 ));
+ min-height: 40px;
+ border-radius: 7px;
+}
+div.input_area {
+ background-color: #293340;
+ padding-right: 1.2em;
+ border: 0px;
+ border-top-left-radius: 0px;
+ border-top-right-radius: 2px;
+ border-bottom-left-radius: 0px;
+ border-bottom-right-radius: 0px;
+}
+div.cell {
+ padding: 0px;
+ background: #293340;
+ background-color: #293340;
+ border: medium solid #1a2028;
+ border-top-right-radius: 2px;
+ border-top-left-radius: 2px;
+}
+div.cell.selected {
+ background: #293340;
+ background-color: #293340;
+ border: medium solid #008ebf;
+ padding: 0px;
+ border-top-right-radius: 2px;
+ border-top-left-radius: 2px;
+}
+.edit_mode div.cell.selected {
+ padding: 0px;
+ background: #293340;
+ background-color: #293340;
+ border: medium solid #005573;
+ border-top-right-radius: 2px;
+ border-top-left-radius: 2px;
+}
+div.cell.edit_mode {
+ padding: 0px;
+ background: #293340;
+ background-color: #293340;
+ border: medium solid #005573;
+ border-top-right-radius: 2px;
+ border-top-left-radius: 2px;
+}
+div.text_cell,
+div.text_cell_render pre,
+div.text_cell_render {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 12.5pt;
+ line-height: 160% !important;
+ color: #b0bdd7;
+ background: #293340;
+ background-color: #293340;
+ border-radius: 2px;
+}
+div.cell.text_cell.rendered.selected {
+ font-family: "Droid Sans", sans-serif;
+ border: medium solid #0899cb;
+ line-height: 160% !important;
+ background: #293340;
+ background-color: #293340;
+ border-radius: 2px;
+}
+div.cell.text_cell.unrendered.selected {
+ font-family: "Droid Sans", sans-serif;
+ line-height: 160% !important;
+ background: #293340;
+ background-color: #293340;
+ border: medium solid #0899cb;
+ border-radius: 2px;
+}
+div.cell.text_cell.selected {
+ font-family: "Droid Sans", sans-serif;
+ line-height: 160% !important;
+ border: medium solid #0899cb;
+ background: #293340;
+ background-color: #293340;
+ border-radius: 2px;
+}
+.edit_mode div.cell.text_cell.selected {
+ font-family: "Droid Sans", sans-serif;
+ line-height: 160% !important;
+ background: #293340;
+ background-color: #293340;
+ border: medium solid #005573;
+ border-radius: 2px;
+}
+div.text_cell.unrendered,
+div.text_cell.unrendered.selected,
+div.edit_mode div.text_cell.unrendered {
+ font-family: "Droid Sans", sans-serif;
+ line-height: 160% !important;
+ background: #293340;
+ background-color: #293340;
+ border-radius: 2px;
+}
+.rendered_html table,
+.rendered_html tr,
+.rendered_html td {
+ font-family: "Hack", monospace;
+ font-size: 9.5pt !important;
+ line-height: 145% !important;
+ border: 1px solid #475569;
+ color: #dbdfef;
+ background-color: #3d495a;
+ background: #3d495a;
+}
+table.dataframe,
+.rendered_html tr,
+.dataframe * {
+ border: 1px solid #475569;
+}
+.dataframe th,
+.rendered_html th {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 10.5pt !important;
+ font-weight: 450;
+ border: 1px solid #374556;
+ background: #27313d;
+}
+.dataframe td,
+.rendered_html td {
+ font-family: "Hack", monospace;
+ font-size: 9.5pt !important;
+ color: #dbdfef;
+ background: #3b4657;
+ border: 1px solid #475569;
+ text-align: left;
+ min-width: 4em;
+}
+.dataframe-summary-row tr:last-child,
+.dataframe-summary-col td:last-child {
+ font-family: "Droid Sans", sans-serif;
+ font-size: 10.5pt !important;
+ font-weight: 450;
+ color: #bbc2e1;
+ border: 1px solid #475569;
+ background: #27313d;
+}
+.rendered_html code {
+ color: #cdd2e9;
+ padding-top: 5px;
+ background: #232c37;
+ background-color: #232c37;
+}
+.rendered_html pre,
+div.text_cell_render pre {
+ font-family: "Hack", monospace;
+ font-size: 11pt;
+ line-height: 160% !important;
+ color: #cdd2e9;
+ background: #232c37;
+ background-color: #232c37;
+ border: 2px #232c37  solid;
+ max-width: 85%;
+ border-radius: 2px;
+ padding: 8.5px;
+}
+pre code {
+ padding: 0;
+}
+.rendered_html * + p {
+ margin-top: .2em;
+}
+.rendered_html :link {
+ font-family: "Droid Sans", sans-serif;
+ color: #3572c6;
+ text-decoration: underline;
+}
+.rendered_html :visited {
+ text-decoration: underline;
+ color: #0899cb;
+}
+div.output_wrapper {
+ background-color: #313a48;
+ border: 0px;
+ margin-bottom: 0em;
+ margin-top: 0em;
+ border-top-right-radius: 0px;
+ border-top-left-radius: 0px;
+ border-bottom-left-radius: 2px;
+ border-bottom-right-radius: 2px;
+}
+div.output_subarea.output_text.output_stream.output_stdout,
+div.output_subarea.output_text {
+ font-family: "Hack", monospace;
+ font-size: 10pt;
+ line-height: 130% !important;
+ background-color: #313a48;
+ color: #b4bcde;
+ border-top-right-radius: 0px;
+ border-top-left-radius: 0px;
+ border-bottom-left-radius: 2px;
+ border-bottom-right-radius: 2px;
+}
+div.output_area pre {
+ font-family: "Hack", monospace;
+ font-size: 10pt !important;
+ line-height: 130% !important;
+ color: #b4bcde;
+ border-top-right-radius: 0px;
+ border-top-left-radius: 0px;
+ border-bottom-left-radius: 2px;
+ border-bottom-right-radius: 2px;
+}
+div.output_area {
+ display: -webkit-box;
+}
+div.output_html {
+ font-family: "Hack", monospace;
+ font-size: 11pt;
+ color: #dbdfef;
+ background-color: #313a48;
+ background: #313a48;
+}
+div.output_subarea {
+ overflow-x: auto;
+ padding: .8em;
+ -webkit-box-flex: 1;
+ -moz-box-flex: 1;
+ box-flex: 1;
+ flex: 1;
+ max-width: 90%;
+}
+div.widget-area {
+ font-size: 12pt;
+ background-color: #313a48;
+ background: #313a48;
+ color: #b4bcde;
+ page-break-inside: avoid;
+ -moz-box-align: stretch;
+ box-orient: horizontal;
+ box-align: stretch;
+ flex-direction: row;
+ align-items: center;
+ align-self: auto;
+}
+div.widget-hbox .widget-label {
+ min-width: 10ex;
+ padding-right: 8px;
+ padding-left: 15px;
+ padding-top: 5px;
+ text-align: left !important;
+ vertical-align: middle;
+}
+div.widget-label {
+ min-width: 7ex;
+ padding-right: 8px;
+ padding-top: 5px;
+ padding-left: 15px;
+ text-align: left !important;
+ vertical-align: middle;
+}
+.widget-hbox {
+ display: inline-block;
+}
+audio,
+video {
+ display: inline;
+ vertical-align: middle;
+ align-content: center;
+ margin-left: 20%;
+}
+div.prompt {
+ font-family: "Hack", monospace;
+ font-size: 9pt;
+ line-height: 160%;
+ padding: .3em;
+ text-align: left !important;
+ min-width: 11ex;
+}
+div.prompt.input_prompt {
+ font-family: "Hack", monospace;
+ font-size: 9pt;
+ line-height: 160%;
+ color: #546386;
+ background-color: #293340;
+ font-weight: normal;
+ min-width: 11ex;
+ text-align: left !important;
+ border-right: 2px solid rgba(0,156,209,.5);
+ border-top-left-radius: 2px;
+ border-top-right-radius: 0px;
+ border-bottom-left-radius: 0px;
+ border-bottom-right-radius: 0px;
+}
+div.cell.text_cell.rendered .input_prompt {
+ font-size: 9pt;
+ line-height: 160%;
+ background: #293340;
+ background-color: #293340;
+ border-right-color: transparent;
+ min-width: 0ex;
+}
+div.cell.text_cell.unrendered .input_prompt {
+ font-size: 9pt;
+ line-height: 160%;
+ background: #293340;
+ background-color: #293340;
+ border-right-color: transparent;
+ min-width: 0ex;
+}
+div.prompt.output_prompt {
+ font-family: "Hack", monospace;
+ font-size: 9.2pt;
+ background-color: #313a48;
+ color: #313a48;
+ border-bottom-left-radius: 2px;
+ border-top-right-radius: 0px;
+ border-top-left-radius: 0px;
+ border-bottom-right-radius: 0px;
+}
+div.out_prompt_overlay.prompt {
+ font-family: "Hack", monospace;
+ font-size: 9.2pt;
+ background-color: #313a48;
+ border-bottom-left-radius: 2px;
+ border-top-right-radius: 0px;
+ border-top-left-radius: 0px;
+ border-bottom-right-radius: 0px;
+ min-width: 11ex;
+}
+div.out_prompt_overlay.prompt:hover {
+ font-family: "Hack", monospace;
+ font-size: 9.2pt;
+ background-color: #313a48;
+ box-shadow: #303945 2px 1px 2px 2.5px inset;
+ border-bottom-left-radius: 2px;
+ -webkit-border-: 2px;
+ -moz-border-radius: 2px;
+ border-top-right-radius: 0px;
+ border-top-left-radius: 0px;
+}
+div.CodeMirror,
+div.CodeMirror pre {
+ font-family: "Hack", monospace;
+ font-size: 11pt;
+ line-height: 160%;
+ color: #cdd2e9;
+}
+div.CodeMirror-lines {
+ padding-bottom: .6em;
+ padding-left: .5em;
+ padding-right: 1.5em;
+}
+span.ansiblack {
+ color: #2b303b;
+}
+span.ansiblue {
+ color: #77abe7;
+}
+span.ansigray {
+ color: #899ab8;
+}
+span.ansigreen {
+ color: #cdd2e9;
+}
+span.ansipurple {
+ color: #caa6ec;
+}
+span.ansicyan {
+ color: #77abe7;
+}
+span.ansiyellow {
+ color: #ddd7a3;
+}
+span.ansired {
+ color: #db797c;
+}
+div.output-stderr {
+ background-color: #db797c;
+}
+div.output-stderr pre {
+ color: #d0d4e6;
+}
+div.js-error {
+ color: #db797c;
+}
+.ipython_tooltip {
+ border: 1.5px solid #0a8fbd;
+ background-color: #353f4e;
+ border-radius: 2px;
+ overflow-x: visible;
+ overflow-y: visible;
+ box-shadow: none;
+ position: absolute;
+ z-index: 1000;
+ font-size: 90%;
+}
+.ipython_tooltip .tooltiptext pre {
+ background-color: #353f4e;
+ color: #cdd2e9;
+ line-height: 130%;
+ overflow-x: visible;
+ overflow-y: visible;
+ max-width: 800px;
+ font-size: 90%;
+}
+div#tooltip.ipython_tooltip {
+ overflow-x: wrap;
+ overflow-y: visible;
+ max-width: 800px;
+}
+div.tooltiptext.bigtooltip {
+ overflow-x: visible;
+ overflow-y: scroll;
+ height: 400px;
+ max-width: 800px;
+}
+.cm-s-ipython.CodeMirror {
+ font-family: "Hack", monospace;
+ font-size: 11pt;
+ background: #293340;
+ color: #cdd2e9;
+ border-radius: 2px;
+}
+.cm-s-ipython div.CodeMirror-selected {
+ background: #334050;
+}
+.cm-s-ipython .CodeMirror-gutters {
+ background: #334050;
+ border: none;
+ border-radius: 0px;
+}
+.cm-s-ipython .CodeMirror-linenumber {
+ color: #546386;
+}
+.cm-s-ipython .CodeMirror-cursor {
+ border-left: 2px solid #0095ff;
+}
+.cm-s-ipython span.cm-comment {
+ color: #667fb1;
+ font-style: italic;
+}
+.cm-s-ipython span.cm-atom {
+ color: #be86e3;
+}
+.cm-s-ipython span.cm-number {
+ color: #51c0ef;
+}
+.cm-s-ipython span.cm-property {
+ color: #be86e3;
+}
+.cm-s-ipython span.cm-attribute {
+ color: #e17e85;
+}
+.cm-s-ipython span.cm-keyword {
+ color: #4cb2ff;
+ font-weight: normal;
+}
+.cm-s-ipython span.cm-string {
+ color: #61ba86;
+}
+.cm-s-ipython span.cm-meta {
+ color: #2dced0;
+}
+.cm-s-ipython span.cm-operator {
+ color: #00b4ff;
+}
+.cm-s-ipython span.cm-builtin {
+ color: #e17e85;
+}
+.cm-s-ipython span.cm-variable {
+ color: #cdd2e9;
+}
+.cm-s-ipython span.cm-variable-2 {
+ color: #e17e85;
+}
+.cm-s-ipython span.cm-variable-3 {
+ color: #2dced0;
+}
+.cm-s-ipython span.cm-def {
+ color: #f7e796;
+ font-weight: normal;
+}
+.cm-s-ipython span.cm-error {
+ background: rgba(191,97,106,.4);
+}
+.cm-s-ipython span.cm-tag {
+ color: #be86e3;
+}
+.cm-s-ipython span.cm-link {
+ color: #51c0ef;
+}
+.cm-s-ipython span.cm-storage {
+ color: #be86e3;
+}
+.cm-s-ipython span.cm-entity {
+ color: #be86e3;
+}
+div.CodeMirror span.CodeMirror-matchingbracket {
+ color: #ffffff;
+ background-color: #3572c6;
+}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+ color: #ffffff;
+ background: rgba(191,97,106,.4) !important;
+}
+div.cell.text_cell .cm-s-default .cm-header {
+ color: #009dd3;
+}
+div.cell.text_cell .cm-s-default span.cm-variable-2 {
+ color: #b0bdd7;
+}
+div.cell.text_cell .cm-s-default span.cm-variable-3 {
+ color: #2dced0;
+}
+.cm-s-default span.cm-comment {
+ color: #667fb1;
+}
+.cm-s-default .cm-tag {
+ color: #8fb36a;
+}
+.cm-s-default .cm-builtin {
+ color: #e17e85;
+}
+.cm-s-default .cm-string {
+ color: #61ba86;
+}
+.cm-s-default .cm-keyword {
+ color: #4cb2ff;
+}
+.cm-s-default .cm-number {
+ color: #51c0ef;
+}
+.cm-s-default .cm-error {
+ color: #be86e3;
+}
+.CodeMirror-cursor {
+ border-left: 2px solid #0095ff;
+ border-right: none;
+ width: 0;
+}
+.cm-s-default div.CodeMirror-selected {
+ background: #334050;
+}
+.cm-s-default .cm-selected {
+ background: #334050;
+}
+div.text_cell_render h1 {
+ font-family: "Droid Sans", sans-serif;
+ text-align: center;
+ font-weight: lighter;
+ background: #293340;
+ background-color: #293340;
+ color: #0899cb;
+}
+div.text_cell_render h2,
+div.text_cell_render h3,
+div.text_cell_render h4,
+div.text_cell_render h5,
+div.text_cell_render h6 {
+ font-family: "Droid Sans", sans-serif;
+ text-align: left;
+ font-weight: lighter;
+ background: #293340;
+ background-color: #293340;
+ color: #0899cb;
+}
+div#maintoolbar {
+ display: none !important;
+}
+
+/**********************************
+ MathJax Settings and Style Script
+**********************************/
+.MathJax_Display,
+.MathJax nobr>span.math>span {
+    border: 0 !important;
+    font-size: 110% !important;
+    text-align: center !important;
+    margin: 0em !important;
+}
+/* Prevents MathJax from jittering */
+/* cell position when cell is selected */
+.MathJax:focus, body :focus .MathJax {
+    display: inline-block !important;
+}
+
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            preferredFont: "TeX",
+            availableFonts: ["STIX","TeX"],
+            styles: {
+                scale: 110,
+                ".MathJax_Display": {
+                    "font-size": "110%",
+                }
+            }
+        }
+    });
+</script>
+

@@ -54,7 +54,7 @@ usage: jt [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE ] [-nbff NBFONTFAM]
 | Make Toolbar Visible  |  -T       |       --       |
 | Restore Default       |  -r       |       --       |
 
-### Importable Code Fonts from Google Fonts API
+## Importable Code Fonts from Google Fonts API
 
 |    Font-Name     |    -f       |     comments     |
 |:-----------------|:-----------:|:----------------:|     
@@ -99,4 +99,20 @@ jt -t grade3 -alt -fs 10 -cw 900 -tcff serif
 
 # restore default theme
 jt -r
+```
+
+## Known Issues
+* jupyterthemes relies on ![lesscpy](https://github.com/lesscpy/lesscpy) to compile the custom arguments supplied by the user into into the css body that eventually gets saved as custom.css in your jupyter config directory.
+
+* Unfortunately, lesscpy currently only supports up to Python 3.4. However, if you're running Python 3.5 you can still install and use jupyterthemes but you won't be able to modify the default settings (e.g., font, font-size, cell width, etc.)
+
+* Examples for Python 3.5 users:
+```sh
+# install a theme
+jt -t grade3
+# list theme
+jt -l
+# reset theme
+jt -r
+
 ```
