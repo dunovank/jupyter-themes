@@ -1,5 +1,6 @@
 from __future__ import print_function
 import os
+from warnings import warn
 
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -59,7 +60,13 @@ def get_fonts(fontfamily='sans-serif'):
                         'droid': ['Droid Sans Mono', False],
                         'fira': ['Fira Mono', False],
                         'incon': ['Inconsolata', False]}}
-    return fonts_dict[fontfamily]
+    try:
+        result = fonts_dict[fontfamily.lower()]
+    except KeyError:
+        warn("unknown font family: %s" % fontfamily)
+        result = fontfamily
+
+    return result
 
 def import_monofont(style_css, fontname='Source Code Pro', ital=False):
     g_api = '@import url(https://fonts.googleapis.com/css?family={});'
