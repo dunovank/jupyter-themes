@@ -249,32 +249,12 @@ div.widget-area {
     background-color: @cc-output-bg;
     background: @cc-output-bg;
     color: @cc-output-fg;
-    page-break-inside: avoid;
-    -moz-box-align: stretch;
-    box-orient: horizontal;
-    box-align: stretch;
-    flex-direction: row;
-    align-items: center;
-    align-self: auto;
 }
-div.widget-hbox .widget-label {
-    min-width: 10ex;
-    padding-right: 8px;
-    padding-left: 15px;
-    padding-top: 5px;
-    text-align: left !important;
-    vertical-align: middle;
-}
-div.widget-label {
-    min-width: 7ex;
-    padding-right: 8px;
-    padding-top: 5px;
-    padding-left: 15px;
-    text-align: left !important;
-    vertical-align: middle;
-}
-.widget-hbox {
-    display: inline-block;
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
+    background: transparent;
+    background-color: darken(@cc-output-bg, 4%);
+    border: 1px solid @selected-bg;
+    font-size: 11pt;
 }
 /***********  MEDIA ***********/
 audio, video {
@@ -290,20 +270,20 @@ audio, video {
 /*********** CODE CELLS ************/
 div.prompt {
     font-family: @monofont, monospace;
-    font-size: 9pt;
+    font-size: 9.3pt;
     line-height: @cc-line-height;
     padding: .3em;
     text-align: left !important;
-    min-width: 11ex;
+    min-width: @cc-border-width;
 }
 div.prompt.input_prompt {
     font-family: @monofont, monospace;
-    font-size: 9pt;
+    font-size: 9.3pt;
     line-height: @cc-line-height;
     color: @input-prompt;
     background-color: @cc-input-bg;
     font-weight: normal;
-    min-width: 11ex;
+    min-width: @cc-border-width;
     text-align: left !important;
     border-right: 2px solid @prompt-line;
     border-top-left-radius: 2px;
@@ -313,20 +293,23 @@ div.prompt.input_prompt {
 }
 /********** TEXT & MD CELLS **********/
 div.cell.text_cell.rendered .input_prompt {
-    font-size: 9pt;
+    font-family: @monofont, monospace;
+    font-size: 9.3pt;
     line-height: @cc-line-height;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border-right-color: transparent;
-    min-width: 0ex;
+    border-right-color: @tc-prompt-line;
+    min-width: @tc-border-width;
+
 }
 div.cell.text_cell.unrendered .input_prompt {
-    font-size: 9pt;
+    font-family: @monofont, monospace;
+    font-size: 9.3pt;
     line-height: @cc-line-height;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border-right-color: transparent;
-    min-width: 0ex;
+    border-right-color: @tc-prompt-line;
+    min-width: @tc-border-width;
 }
 /************************************/
 /********** OUTPUT PROMPTS **********/
@@ -334,7 +317,7 @@ div.cell.text_cell.unrendered .input_prompt {
 /************ CODE CELLS ************/
 div.prompt.output_prompt {
     font-family: @monofont, monospace;
-    font-size: 9.2pt;
+    font-size: 9.3pt;
     background-color: @cc-output-bg;
     color: @cc-output-bg;
     border-bottom-left-radius: 2px;
@@ -344,7 +327,7 @@ div.prompt.output_prompt {
 }
 div.out_prompt_overlay.prompt {
     font-family: @monofont, monospace;
-    font-size: 9.2pt;
+    font-size: 9.3pt;
     background-color: @cc-output-bg;
     border-bottom-left-radius: 2px;
     border-top-right-radius: 0px;
@@ -354,7 +337,7 @@ div.out_prompt_overlay.prompt {
 }
 div.out_prompt_overlay.prompt:hover {
     font-family: @monofont, monospace;
-    font-size: 9.2pt;
+    font-size: 9.3pt;
     background-color: @cc-output-bg;
     box-shadow: @box-shadow 2px 1px 2px 2.5px inset;
     border-bottom-left-radius: 2px;

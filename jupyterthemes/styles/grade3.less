@@ -5,9 +5,9 @@
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           @notebook-base;
-@selected-half:         rgba(180, 180, 180,.30);
-@selected-third:        rgba(180, 180, 180,.26);
-@selected-tenth:        rgba(150, 150, 150,.12);
+@selected-half:         rgba(180, 180, 180,.32);
+@selected-third:        rgba(180, 180, 180,.20);
+@selected-tenth:        rgba(150, 150, 150,.07);
 @selected-error:        rgba(191, 97, 106, .40);
 @selected-active:       @selected-half;
 @selected-fg:           #222222;
@@ -34,7 +34,8 @@
 @divider:               @selected-half;
 @disabled:              #aaaaaa;
 @input-prompt:          @disabled;
-@prompt-line:           rgba(240, 147, 43, .40);
+@prompt-line:           rgba(240, 147, 43, .50);
+@tc-prompt-std:         rgba(30, 112, 199, .50);
 @matching-bracket:      rgba(30, 112, 199, .30);
 
 /* buttons, widgets, kernels colors */
@@ -49,12 +50,13 @@
 @table-border:          darken(@table-bg, 16%);
 @df-header-bg:          darken(@table-bg, 10%);
 @df-header:             lighten(@cc-input-fg, 2%);
-@df-header-border:      darken(@df-header-bg,11%);
+@df-header-border:      darken(@df-header-bg,13%);
 @df-cell-bg:            @table-bg;
-@codeblock-bg:          @text-cell-bg;
+@codeblock-bg:          @notebook-bg;
 @codeblock-border:      darken(@text-cell-bg, 10%);
 
-/* scrollbar and shadow colors */
+/* btn, scrollbar and shadow colors */
+@button-bg:             darken(@cc-output-bg, 7%);
 @scrollbar:             desaturate(darken(@item-blue, 1%), 20%);
 @scroll-trough:         lighten(@disabled, 15%);
 @scrollbar-inactive:    #dedede;

@@ -41,7 +41,7 @@ usage: jt [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE ] [-nbff NBFONTFAM]
 ```
 
 |        options        |   arg     |     default    |
-|:----------------------|:---------:|:--------------:|     
+|:----------------------|:---------:|:--------------:|
 | List Themes           |  -l       |       --       |
 | Select Theme          |  -t       |       --       |
 | Code Font             |  -f       |      Hack      |
@@ -51,7 +51,9 @@ usage: jt [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE ] [-nbff NBFONTFAM]
 | Cell Width            |  -cw      |      940       |
 | Line Height           |  -lh      |      160       |
 | Alt Txt/MD Layout     |  -alt     |       --       |
-| Make Toolbar Visible  |  -T       |       --       |
+| Toolbar Visible       |  -T       |       --       |
+| Notebook Name Visible |  -N       |       --       |
+| Jupyter Logo Visible  |  -L       |       --       |
 | Restore Default       |  -r       |       --       |
 
 ## Importable Code Fonts from Google Fonts API
@@ -69,6 +71,9 @@ usage: jt [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE ] [-nbff NBFONTFAM]
 |  Droid Sans Mono |  droid      |     normal       |         
 |  Oxygen Mono     |  oxygen     |     normal       |
 |  Inconsolata     |  incon      |     normal       |
+
+* or provide the name of any monospace font you have installed locally
+
 
 
 ## Examples

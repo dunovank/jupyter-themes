@@ -7,7 +7,7 @@ from argparse import ArgumentParser
 from jupyter_core.paths import jupyter_config_dir
 import os
 from glob import glob
-__version__ = '0.10.2'
+__version__ = '0.10.3'
 
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
@@ -65,7 +65,7 @@ def reset_default():
         except Exception:
             print("Already set to default theme in {0}".format(fpath))
 
-def install_theme(theme, monofont='Hack', monosize=11, nbfontfam='sans-serif', tcfontfam='sans-serif', cellwidth=940, lineheight=160, altlayout=False, toolbar=False):
+def install_theme(theme, monofont='Hack', monosize=11, nbfontfam='sans-serif', tcfontfam='sans-serif', cellwidth=940, lineheight=160, altlayout=False, toolbar=False, logo=False, nbname=False):
     """ install theme to css_fpath with specified font, fontsize,
     md layout, and toolbar pref
     """
@@ -76,15 +76,16 @@ def install_theme(theme, monofont='Hack', monosize=11, nbfontfam='sans-serif', t
         return None
     # initialize style_less & style_css
     style_less, style_css = '', ''
-    if monofont != 'Hack':
-        monofont, ital = stylefx.get_fonts('mono')[monofont]
+    monofonts_google = stylefx.get_fonts('mono')
+    if monofont in list(monofonts_google):
+        monofont, ital = monofonts_google[monofont]
         style_css = stylefx.import_monofont(style_css, fontname=monofont, ital=ital)
     style_less += '@import "styles/{}";\n'.format(theme)
     style_less = stylefx.set_monofont(style_less, monofont, monosize)
     style_less = stylefx.set_nb_font(style_less, nbfontfam)
     style_less = stylefx.set_txt_font(style_less, tcfontfam)
     # define some vars for cell layout
-    style_less = stylefx.style_layout(style_less, cellwidth=cellwidth, lineheight=lineheight, altlayout=altlayout, toolbar=toolbar)
+    style_less = stylefx.style_layout(style_less, cellwidth=cellwidth, lineheight=lineheight, altlayout=altlayout, toolbar=toolbar, logo=logo, nbname=nbname)
     # compile tempfile.less to css code and append to style_css
     style_css += less_to_css(style_less)
     # append mathjax css & script to style_css
@@ -107,7 +108,9 @@ def main():
     parser.add_argument('-cw', "--cellwidth", action='store', default=940, help="set cell width (px)")
     parser.add_argument('-lh',"--lineheight", action='store', default=160, help='code/text line-height (%%)')
     parser.add_argument('-alt', "--altlayout", action='store_true', default=False, help="alt markdown layout")
-    parser.add_argument('-T', "--toolbar", action='store_true', default=False, help="enable the toolbar")
+    parser.add_argument('-T', "--toolbar", action='store_true', default=False, help="make toolbar visible")
+    parser.add_argument('-N', "--nbname", action='store_true', default=False, help="make nb name visible")
+    parser.add_argument('-L', "--logo", action='store_true', default=False, help="make jupyter logo visible")
     parser.add_argument('-r', "--reset", action='store_true', help="reset to default theme")
     args = parser.parse_args()
     themes = get_themes()
@@ -118,7 +121,7 @@ def main():
             print(say_themes)
             exit(1)
         print("Installing {0} at {1}".format(args.theme, css_fpath))
-        install_theme(args.theme, monofont=args.monofont, monosize=args.monosize, nbfontfam=args.nbfontfam, tcfontfam=args.tcfontfam, cellwidth=int(args.cellwidth),  lineheight=int(args.lineheight), altlayout=args.altlayout, toolbar=args.toolbar)
+        install_theme(args.theme, monofont=args.monofont, monosize=args.monosize, nbfontfam=args.nbfontfam, tcfontfam=args.tcfontfam, cellwidth=int(args.cellwidth),  lineheight=int(args.lineheight), altlayout=args.altlayout, toolbar=args.toolbar, nbname=args.nbname, logo=args.logo)
     elif args.reset:
         reset_default()
     elif args.list:

@@ -10,8 +10,8 @@
 @selected-tenth:        rgba(88, 98, 119,.10);
 @selected-error:        rgba(191, 97, 106,.4);
 @selected-active:       @selected-bg;
-@selected-fg:           lighten(@notebook-fg, 19%);
-@selected-fg-bright:    lighten(@notebook-fg, 45%);
+@selected-fg:           lighten(@notebook-fg, 22%);
+@selected-fg-bright:    lighten(@notebook-fg, 55%);
 
 /* code, text, markdown, & tooltip colors */
 @cc-input-bg:           #303845;
@@ -35,6 +35,7 @@
 @disabled:              #5A647B;
 @input-prompt:          @disabled;
 @prompt-line:           rgba(53, 114, 198,.5);
+@tc-prompt-std:         rgba(191, 97, 106,.5);
 @matching-bracket:      @selected-bg;
 
 /* buttons, widgets, kernels colors */
@@ -54,7 +55,8 @@
 @codeblock-bg:          darken(@text-cell-bg, 3%);
 @codeblock-border:      @codeblock-bg;
 
-/* scrollbar and shadow colors */
+/* btn, scrollbar and shadow colors */
+@button-bg:             darken(@cc-output-bg, 2%);
 @scrollbar:             desaturate(darken(@selected-bg, 5%), 5%);
 @scroll-trough:         lighten(@cc-output-bg, 60%);
 @scrollbar-inactive:    #464e60;

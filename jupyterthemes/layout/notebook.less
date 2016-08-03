@@ -34,7 +34,6 @@ div#notebook_toolbar div.dynamic-instructions {
 }
 .toolbar_info {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
     color: @notebook-fg;
     border: none;
     text-shadow: none !important;
@@ -69,6 +68,9 @@ div#notebook_list_header.row.list_header {
 ul#selector-menu.dropdown-menu > li > a {
     padding: none;
 }
+#tree-selector {
+    padding: 0px;
+}
 div.list_item:hover {
     background-color: @selected-tenth;
 }
@@ -84,7 +86,7 @@ ul#tabs a {
     font-weight: normal;
     font-style: normal;
     border-color: transparent;
-    border-bottom: 1px solid @prompt-line;
+    border-bottom: 1px solid @selected-third;
     text-shadow: none !important;
 }
 .nav-tabs {
@@ -94,7 +96,7 @@ ul#tabs a {
     font-style: normal;
     text-shadow: none !important;
     border-color: transparent;
-    border-bottom: 1px solid @prompt-line;
+    border-bottom: 1px solid @selected-third;
 }
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:active,
@@ -109,7 +111,7 @@ ul#tabs a {
     border-color: transparent;
     background-image: none;
     border-color: transparent;
-    border-bottom: 1px solid @prompt-line;
+    border-bottom: 1px solid @selected-third;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
@@ -120,11 +122,9 @@ ul#tabs a {
     font-style: normal;
     color: @selected-fg-bright;
     background: @notebook-bg;
-    background-color: @selected-half;
+    background-color: @selected-bg;
     border-color: transparent;
     text-shadow: none !important;
-    border-color: transparent;
-    border-bottom: 1px solid @prompt-line;
 }
 
 /********************************************************/
@@ -161,11 +161,6 @@ div#notebook {
     font-size: @nb-fontsize;
     box-shadow: none;
     background-color: @notebook-bg;
-}
-#header-container {
-    padding-top: 10px;
-    display: none !important;
-    box-shadow: none;
 }
 #header .header-bar {
     background: @notebook-bg;
@@ -248,10 +243,6 @@ body > #header .header-bar {
 #project-name > .breadcrumb {
     font-weight: normal;
     color: @item-cyan;
-}
-/* Hide IPython/Jupyter Logo */
-div#ipython_notebook {
-    display: none;
 }
 .notification_widget.info {
     color: #fff;
@@ -357,89 +348,108 @@ div#ipython_notebook {
 }
 .btn {
     color: @notebook-fg;
-    background: transparent;
-    background-color: transparent;
-    border: 0 none !important;
+    background: @button-bg;
+    background-color: @button-bg;
+    border: 1px solid darken(@button-bg, 3%) !important;
     border-radius: 2px;
     box-shadow: none !important;
     text-shadow: none;
 }
 .btn:hover {
-    color: @selected-fg;
-    background: transparent;
-    background-color: @selected-half;
+    color: @selected-fg-bright;
+    background: @selected-active;
+    background-color: @selected-active;
+    border-color: @selected-active;
     background-image: none;
 }
 .btn-group > .btn-mini {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
-    color: @notebook-fg;
-    background: transparent;
-    background-color: transparent;
-    border: 0 none !important;
     border-radius: 2px;
+    color: @notebook-fg;
+    background: @button-bg;
+    background-color: @button-bg;
     box-shadow: none !important;
     text-shadow: none;
+    background-image: none;
 }
 .btn-group > .btn-mini:hover {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
-    color: @selected-fg;
-    background: transparent;
-    background-color: @selected-half;
+    color: @selected-fg-bright;
+    background: @selected-active;
+    background-color: @selected-active;
+    border-color: @selected-active;
     background-image: none;
 }
 .btn-xs, .btn-group-xs > .btn {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
+    border-radius: 2px;
     display: table-row-group;
+    background: @button-bg;
+    background-color: @button-bg;
 }
 .btn-sm, .btn-group-sm > .btn {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize-sub;
-    padding: 5px 10px;
-    line-height: 1.5;
-    border-radius: 1px;
+    border-radius: 2px;
+    background: @button-bg;
+    background-color: @button-bg;
 }
-.btn-sm, .btn-group-sm > .btn:hover {
+.btn-group-sm > .btn:hover {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize-sub;
-    padding: 5px 10px;
-    line-height: 1.5;
-    border-radius: 1px;
+    color: @selected-fg-bright;
+    background: @selected-active;
+    background-color: @selected-active;
 }
 .btn-group, .btn-group-vertical {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
-    background: transparent;
-    background-color: transparent;
+    border-radius: 2px;
+    background: @button-bg;
+    background-color: @button-bg;
+    background-image: none;
+    vertical-align: bottom;
 }
-.btn-group, .btn-group-vertical:hover {
+.btn-group-vertical:hover {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
+    color: @selected-fg-bright;
+    background: @selected-active;
+    background-color: @selected-active;
+    background-image: none;
 }
 .alternate_upload .btn-upload {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
-    padding-top: 2px;
-    padding-right: 6px;
-    line-height: 1.5;
-    height: 25px;
+    border-radius: 2px;
+    height: inherit;
     background: transparent;
-    display: inline-block;
+    background-color: @button-bg;
+    display: inline-table;
 }
 .alternate_upload .btn-upload:hover {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
-    color: @selected-fg;
-    background: transparent;
-    background-color: @selected-half;
-    background-image: none;
+    border-radius: 2px;
+    height: inherit;
+    color: @selected-fg-bright;
+    background: @selected-active;
+    background-color: @selected-active;
+    display: inline-table;
 }
-div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
-    background: darken(@cc-output-bg, 4%);
-    background-color: darken(@cc-output-bg, 4%);
-    font-size: 11pt;
+.alternate_upload input.fileinput {
+    display: none;
+    width: 11.5ex;
+}
+#button-select-all {
+    padding-top: 2px;
+    min-width: 50px;
+}
+button#tree-selector-btn {
+    padding-top: 2px;
 }
 button.close {
     padding: 0px;

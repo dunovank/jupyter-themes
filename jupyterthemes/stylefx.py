@@ -23,24 +23,43 @@ def test_less_compatibility(theme, compatible_versions=[(2,7), (3,3), (3,4)]):
         return 0
     return 1
 
-def toggle_toolbar(toolbar=False):
+def toggle_settings(toolbar=False, nbname=False, logo=False):
     """ Hides toolbar if toolbar==False (default)
     """
-    toolbar_string = 'div#maintoolbar {display: none !important;}'
-    if toolbar:
-        toolbar_string = 'div#maintoolbar {margin-left: 8px !important;}'
-    return toolbar_string
+    toggle = ''
+    if not toolbar:
+        toggle += 'div#maintoolbar {display: none !important;}\n'
+    else:
+        toggle += 'div#maintoolbar {margin-left: 8px !important;}\n'
+    if not nbname:
+        toggle += '#header-container {display: none !important;}\n'
+    else:
+        toggle += 'span.save_widget span.filename {margin-left: 12px; font-size: 100%;}\n'
+    if not logo:
+        toggle += 'div#ipython_notebook {display: none;}\n'
+    return toggle
 
-def style_layout(style_less, cellwidth=930, lineheight=160, altlayout=False, toolbar=False):
+def style_layout(style_less, cellwidth=930, lineheight=160, altlayout=False, toolbar=False, nbname=False, logo=False):
     """ set general layout and style properties of text and code cells
     """
+
+    style_less += '@cell-width: {}px; \n'.format(cellwidth)
+    style_less += '@cc-line-height: {}%; \n'.format(lineheight)
+
     textcell_bg = '@cc-input-bg'
+    tc_prompt_line = '@tc-prompt-std'
+    cc_border_width = 11
+    tc_border_width = cc_border_width
     if altlayout:
         # alt txt/md layout
         textcell_bg = '@notebook-bg'
-    style_less += '@cell-width: {}px; \n'.format(cellwidth)
-    style_less += '@cc-line-height: {}%; \n'.format(lineheight)
+        tc_prompt_line = 'transparent'
+        tc_border_width = 4
     style_less += '@text-cell-bg: {}; \n'.format(textcell_bg)
+    style_less += '@cc-border-width: {}ex;\n'.format(cc_border_width)
+    style_less += '@tc-border-width: {}ex;\n'.format(tc_border_width)
+    style_less += '@tc-prompt-line: {};\n'.format(tc_prompt_line)
+
     # read-in notebook.less (general nb style)
     with open(nb_layout, 'r') as notebook:
         style_less += notebook.read() + '\n'
@@ -50,7 +69,7 @@ def style_layout(style_less, cellwidth=930, lineheight=160, altlayout=False, too
     # read-in codemirror.less (syntax-highlighting)
     with open(cm_layout, 'r') as codemirror:
         style_less += codemirror.read() + '\n'
-    style_less += toggle_toolbar(toolbar) +'\n'
+    style_less += toggle_settings(toolbar, nbname, logo) +'\n'
     return style_less
 
 def get_fonts(fontfamily='sans-serif'):
@@ -88,7 +107,7 @@ def set_nb_font(style_less, fontfam='sans'):
         fontsize = 11.5
     nbfont = get_fonts(fontfamily=fontfam)
     style_less += '@notebook-fontfamily: "{}", {}; \n'.format(nbfont, fontfam)
-    style_less += '@nb-fontsize: {}pt; \n'.format(fontsize+1.5)
+    style_less += '@nb-fontsize: {}pt; \n'.format(fontsize+1.2)
     style_less += '@nb-fontsize-sub: {}pt; \n'.format(fontsize)
     return style_less
 
