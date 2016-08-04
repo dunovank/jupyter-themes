@@ -1,13 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif);
+
 body {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  color: #96a5c0;
  background-color: #262931;
  line-height: 1;
 }
 a {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  color: #96a5c0;
 }
 div#notebook {
@@ -18,7 +21,7 @@ div#notebook {
 }
 div#notebook_toolbar div.dynamic-instructions {
  font-family: "Droid Sans", sans-serif;
- font-size: 11.5pt;
+ font-size: 11.6pt;
  display: inline-block;
 }
 .toolbar_info {
@@ -28,17 +31,17 @@ div#notebook_toolbar div.dynamic-instructions {
  text-shadow: none !important;
 }
 .list_container {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  color: #96a5c0;
  border: none;
  text-shadow: none !important;
 }
 .list_container > div {
  border-bottom: 1px solid rgba(88,98,119,.30);
- font-size: 11.5pt;
+ font-size: 11.6pt;
 }
 .list_container a {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  color: #96a5c0;
  border: none;
  text-shadow: none !important;
@@ -64,14 +67,14 @@ div.list_item:hover {
  background-color: rgba(88,98,119,.10);
 }
 .breadcrumb > li {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  color: #96a5c0;
  border: none;
  text-shadow: none !important;
 }
 ul#tabs a {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  font-weight: normal;
  font-style: normal;
  border-color: transparent;
@@ -80,7 +83,7 @@ ul#tabs a {
 }
 .nav-tabs {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  font-weight: normal;
  font-style: normal;
  text-shadow: none !important;
@@ -91,7 +94,7 @@ ul#tabs a {
 .nav-tabs > li > a:active,
 .nav-tabs > li > a:focus {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  font-weight: normal;
  font-style: normal;
  color: #dce1ea;
@@ -106,7 +109,7 @@ ul#tabs a {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  font-weight: normal;
  font-style: normal;
  color: #ffffff;
@@ -117,7 +120,7 @@ ul#tabs a {
 }
 div#notebook {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  padding-top: 5px;
 }
 .notebook_app {
@@ -139,7 +142,7 @@ div#notebook {
 }
 #header {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  box-shadow: none;
  background-color: #262931;
 }
@@ -154,7 +157,7 @@ body > #header .header-bar {
 }
 .navbar-default {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  background-color: #262931;
  border-color: #262931;
  padding-bottom: 0px;
@@ -171,7 +174,7 @@ body > #header .header-bar {
 }
 .navbar-default .navbar-nav > li > a {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  color: #96a5c0;
  display: block;
  line-height: 1.35;
@@ -189,7 +192,7 @@ body > #header .header-bar {
  border-color: #3572c6;
 }
 .command_mode .modal_indicator:before {
- font-size: 11.5pt;
+ font-size: 11.6pt;
 }
 .item_icon {
  color: #3572c6;
@@ -230,7 +233,7 @@ body > #header .header-bar {
 }
 .dropdown-menu {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  box-shadow: none;
  padding: 0px;
  text-align: left;
@@ -241,7 +244,7 @@ body > #header .header-bar {
 }
 .dropdown-menu:hover {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  border: 2px solid rgba(88,98,119,.30);
  background-color: #373e4b;
  box-shadow: none;
@@ -249,7 +252,7 @@ body > #header .header-bar {
 }
 .dropdown-header {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.7pt;
+ font-size: 12.6pt;
  display: block;
  color: #96a5c0;
  text-decoration: underline;
@@ -259,7 +262,7 @@ body > #header .header-bar {
 }
 .dropdown-menu > li > a {
  font-family: "Droid Sans", sans-serif;
- font-size: 11.5pt;
+ font-size: 11.6pt;
  display: block;
  clear: both;
  padding: 9px 22px;
@@ -272,7 +275,7 @@ body > #header .header-bar {
 }
 .dropdown-menu > li > a:hover {
  font-family: "Droid Sans", sans-serif;
- font-size: 11.5pt;
+ font-size: 11.6pt;
  color: #dce1ea;
  display: block;
  clear: both;
@@ -300,7 +303,7 @@ body > #header .header-bar {
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
  font-family: "Droid Sans", sans-serif;
- font-size: 11.5pt;
+ font-size: 11.6pt;
  font-weight: normal;
  color: #5a647b;
  padding: none;
@@ -333,7 +336,7 @@ body > #header .header-bar {
  background-image: none;
 }
 .btn-group > .btn-mini {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  font-weight: normal;
  border-radius: 2px;
  color: #96a5c0;
@@ -344,7 +347,7 @@ body > #header .header-bar {
  background-image: none;
 }
 .btn-group > .btn-mini:hover {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  font-weight: normal;
  color: #ffffff;
  background: #3572c6;
@@ -354,7 +357,7 @@ body > #header .header-bar {
 }
 .btn-xs,
 .btn-group-xs > .btn {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  font-weight: normal;
  border-radius: 2px;
  display: table-row-group;
@@ -364,21 +367,21 @@ body > #header .header-bar {
 .btn-sm,
 .btn-group-sm > .btn {
  font-family: "Droid Sans", sans-serif;
- font-size: 11.5pt;
+ font-size: 11.6pt;
  border-radius: 2px;
  background: #343c4b;
  background-color: #343c4b;
 }
 .btn-group-sm > .btn:hover {
  font-family: "Droid Sans", sans-serif;
- font-size: 11.5pt;
+ font-size: 11.6pt;
  color: #ffffff;
  background: #3572c6;
  background-color: #3572c6;
 }
 .btn-group,
 .btn-group-vertical {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  font-weight: normal;
  border-radius: 2px;
  background: #343c4b;
@@ -387,7 +390,7 @@ body > #header .header-bar {
  vertical-align: bottom;
 }
 .btn-group-vertical:hover {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  font-weight: normal;
  color: #ffffff;
  background: #3572c6;
@@ -395,7 +398,7 @@ body > #header .header-bar {
  background-image: none;
 }
 .alternate_upload .btn-upload {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  font-weight: normal;
  border-radius: 2px;
  height: inherit;
@@ -404,7 +407,7 @@ body > #header .header-bar {
  display: inline-table;
 }
 .alternate_upload .btn-upload:hover {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  font-weight: normal;
  border-radius: 2px;
  height: inherit;
@@ -446,7 +449,7 @@ button.close {
 }
 .modal-content {
  font-family: "Droid Sans", sans-serif;
- font-size: 11.5pt;
+ font-size: 11.6pt;
  position: relative;
  background-color: #373e4b;
  border: 1px solid rgba(88,98,119,.30);
@@ -457,7 +460,7 @@ button.close {
 }
 .modal-header {
  font-family: "Droid Sans", sans-serif;
- font-size: 11.5pt;
+ font-size: 11.6pt;
  padding: 15px;
  border-bottom: 1px solid rgba(88,98,119,.45);
  min-height: 16.4286px;
@@ -466,7 +469,7 @@ button.close {
  border-color: rgba(88,98,119,.30);
 }
 .panel {
- font-size: 11.5pt;
+ font-size: 11.6pt;
  margin-bottom: 18px;
  background-color: #262931;
  color: #96a5c0;
@@ -474,13 +477,13 @@ button.close {
  box-shadow: none;
 }
 #running .panel-group .panel .panel-heading {
- font-size: 12.7pt;
+ font-size: 12.6pt;
  background-color: #262931;
  padding: 4px 7px;
  line-height: 22px;
 }
 #running .panel-group .panel .panel-heading a:hover {
- font-size: 12.7pt;
+ font-size: 12.6pt;
  color: #2c85f7;
 }
 #running .panel-group .panel .panel-body .list_container .list_item {
@@ -491,7 +494,7 @@ button.close {
  width: 100%;
  height: 32px;
  padding: 6px 12px;
- font-size: 11.5pt;
+ font-size: 11.6pt;
  color: #96a5c0;
  background-color: #303845;
  background-image: none;
@@ -580,7 +583,7 @@ div.text_cell,
 div.text_cell_render pre,
 div.text_cell_render {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.5pt;
+ font-size: 12pt;
  line-height: 160% !important;
  color: #bac6dc;
  background: #303845;
@@ -631,7 +634,7 @@ div.edit_mode div.text_cell.unrendered {
 .rendered_html table,
 .rendered_html tr,
 .rendered_html td {
- font-family: "Droid Sans", sans-serif;
+ font-family: "Hack", monospace;
  font-size: 9.5pt !important;
  line-height: 145% !important;
  border: 1px solid #4e5c72;
@@ -654,7 +657,7 @@ table.dataframe,
 }
 .dataframe td,
 .rendered_html td {
- font-family: "Droid Sans", sans-serif;
+ font-family: "Hack", monospace;
  font-size: 9.5pt !important;
  color: #dde0ed;
  background: #455063;
@@ -664,7 +667,7 @@ table.dataframe,
 }
 .dataframe-summary-row tr:last-child,
 .dataframe-summary-col td:last-child {
- font-family: "Droid Sans", sans-serif;
+ font-family: "Hack", monospace;
  font-size: 10.5pt !important;
  font-weight: 450;
  color: #d7daea;
@@ -742,7 +745,7 @@ div.output_area {
 }
 div.output_html {
  font-family: "Droid Sans", sans-serif;
- font-size: 12.5pt;
+ font-size: 12pt;
  color: #dde0ed;
  background-color: #384151;
  background: #384151;

@@ -104,7 +104,7 @@ div.edit_mode div.text_cell.unrendered {
 .rendered_html table,
 .rendered_html tr,
 .rendered_html td {
-    font-family: @text-cell-fontfamily;
+    font-family: @monofont, monospace;
     font-size: 9.5pt !important;
     line-height: 145% !important;
     border: 1px solid @table-border;
@@ -131,7 +131,7 @@ table.dataframe,
 }
 .dataframe td,
 .rendered_html td {
-    font-family: @text-cell-fontfamily;
+    font-family: @monofont, monospace;
     font-size: 9.5pt !important;
     color: @table-color;
     background: @df-cell-bg;
@@ -142,7 +142,7 @@ table.dataframe,
 /********** PANDAS SUMMARY **********/
 .dataframe-summary-row tr:last-child,
 .dataframe-summary-col td:last-child {
-    font-family: @text-cell-fontfamily;
+    font-family: @monofont, monospace;
     font-size: 10.5pt !important;
     font-weight: 450;
     color: @df-header;

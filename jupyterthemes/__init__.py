@@ -7,7 +7,7 @@ from argparse import ArgumentParser
 from jupyter_core.paths import jupyter_config_dir
 import os
 from glob import glob
-__version__ = '0.10.4'
+__version__ = '0.10.5'
 
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
@@ -26,6 +26,16 @@ if not os.path.isdir(jupyter_path):
     os.makedirs(jupyter_path)
 if not os.path.isdir(jupyter_custom):
     os.makedirs(jupyter_custom)
+
+def test_less_compatibility(theme, compatible_versions=[(2,7), (3,3), (3,4)]):
+    import sys
+    cur_version = sys.version_info[:2]
+    if cur_version not in compatible_versions:
+        print("You are using Python {}.{}".format(*cur_version))
+        print("only versions 2.7, 3.3, and 3.4 support custom settings")
+        print("Installing {} theme with default settings".format(theme))
+        return 0
+    return 1
 
 def install_precompiled_theme(theme):
     from shutil import copyfile
@@ -70,17 +80,13 @@ def install_theme(theme, monofont='Hack', monosize=11, nbfontfam='sans-serif', t
     md layout, and toolbar pref
     """
     from jupyterthemes import stylefx
-    less_compatible = stylefx.test_less_compatibility(theme)
+    less_compatible = test_less_compatibility(theme)
     if not less_compatible:
         install_precompiled_theme(theme)
         return None
     # initialize style_less & style_css
-    style_less, style_css = '', ''
-    monofonts_google = stylefx.get_fonts('mono')
-    if monofont in list(monofonts_google):
-        monofont, ital = monofonts_google[monofont]
-        style_css = stylefx.import_monofont(style_css, fontname=monofont, ital=ital)
-    style_less += '@import "styles/{}";\n'.format(theme)
+    style_css = stylefx.import_google_fonts(monofont)
+    style_less = '@import "styles/{}";\n'.format(theme)
     style_less = stylefx.set_monofont(style_less, monofont, monosize)
     style_less = stylefx.set_nb_font(style_less, nbfontfam)
     style_less = stylefx.set_txt_font(style_less, tcfontfam)
