@@ -7,7 +7,7 @@ from argparse import ArgumentParser
 from jupyter_core.paths import jupyter_config_dir
 import os
 from glob import glob
-__version__ = '0.10.3'
+__version__ = '0.10.4'
 
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
@@ -65,7 +65,7 @@ def reset_default():
         except Exception:
             print("Already set to default theme in {0}".format(fpath))
 
-def install_theme(theme, monofont='Hack', monosize=11, nbfontfam='sans-serif', tcfontfam='sans-serif', cellwidth=940, lineheight=160, altlayout=False, toolbar=False, logo=False, nbname=False):
+def install_theme(theme, monofont='Hack', monosize=11, nbfontfam='sans-serif', tcfontfam='sans-serif', cellwidth=940, lineheight=160, altlayout=False, toolbar=False, logo=False, nbname=False, save_compiled=False):
     """ install theme to css_fpath with specified font, fontsize,
     md layout, and toolbar pref
     """

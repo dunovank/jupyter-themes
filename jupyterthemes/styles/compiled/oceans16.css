@@ -1,13 +1,13 @@
 body {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  color: #96a5c0;
  background-color: #262931;
  line-height: 1;
 }
 a {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  color: #96a5c0;
 }
 div#notebook {
@@ -23,7 +23,6 @@ div#notebook_toolbar div.dynamic-instructions {
 }
 .toolbar_info {
  font-family: "Droid Sans", sans-serif;
- font-size: 11.5pt;
  color: #96a5c0;
  border: none;
  text-shadow: none !important;
@@ -45,7 +44,7 @@ div#notebook_toolbar div.dynamic-instructions {
  text-shadow: none !important;
 }
 div.list_container a:hover {
- color: #d3d9e4;
+ color: #dce1ea;
 }
 .list_header {
  font-weight: normal;
@@ -58,6 +57,9 @@ div#notebook_list_header.row.list_header {
 ul#selector-menu.dropdown-menu > li > a {
  padding: none;
 }
+#tree-selector {
+ padding: 0px;
+}
 div.list_item:hover {
  background-color: rgba(88,98,119,.10);
 }
@@ -69,55 +71,53 @@ div.list_item:hover {
 }
 ul#tabs a {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  font-weight: normal;
  font-style: normal;
  border-color: transparent;
- border-bottom: 1px solid rgba(53,114,198,.5);
+ border-bottom: 1px solid rgba(88,98,119,.30);
  text-shadow: none !important;
 }
 .nav-tabs {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  font-weight: normal;
  font-style: normal;
  text-shadow: none !important;
  border-color: transparent;
- border-bottom: 1px solid rgba(53,114,198,.5);
+ border-bottom: 1px solid rgba(88,98,119,.30);
 }
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:active,
 .nav-tabs > li > a:focus {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  font-weight: normal;
  font-style: normal;
- color: #d3d9e4;
+ color: #dce1ea;
  background: #262931;
  background-color: rgba(88,98,119,.30);
  border-color: transparent;
  background-image: none;
  border-color: transparent;
- border-bottom: 1px solid rgba(53,114,198,.5);
+ border-bottom: 1px solid rgba(88,98,119,.30);
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  font-weight: normal;
  font-style: normal;
  color: #ffffff;
  background: #262931;
- background-color: rgba(88,98,119,.45);
+ background-color: #3572c6;
  border-color: transparent;
  text-shadow: none !important;
- border-color: transparent;
- border-bottom: 1px solid rgba(53,114,198,.5);
 }
 div#notebook {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  padding-top: 5px;
 }
 .notebook_app {
@@ -139,14 +139,9 @@ div#notebook {
 }
 #header {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  box-shadow: none;
  background-color: #262931;
-}
-#header-container {
- padding-top: 10px;
- display: none !important;
- box-shadow: none;
 }
 #header .header-bar {
  background: #262931;
@@ -159,7 +154,7 @@ body > #header .header-bar {
 }
 .navbar-default {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  background-color: #262931;
  border-color: #262931;
  padding-bottom: 0px;
@@ -176,14 +171,14 @@ body > #header .header-bar {
 }
 .navbar-default .navbar-nav > li > a {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  color: #96a5c0;
  display: block;
  line-height: 1.35;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
- color: #d3d9e4;
+ color: #dce1ea;
  background-color: rgba(88,98,119,.30);
 }
 .navbar-default .navbar-nav > .open > a,
@@ -227,9 +222,6 @@ body > #header .header-bar {
  font-weight: normal;
  color: #2c85f7;
 }
-div#ipython_notebook {
- display: none;
-}
 .notification_widget.info {
  color: #ffffff;
  background-color: #2c85f7;
@@ -238,7 +230,7 @@ div#ipython_notebook {
 }
 .dropdown-menu {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  box-shadow: none;
  padding: 0px;
  text-align: left;
@@ -249,7 +241,7 @@ div#ipython_notebook {
 }
 .dropdown-menu:hover {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  border: 2px solid rgba(88,98,119,.30);
  background-color: #373e4b;
  box-shadow: none;
@@ -257,7 +249,7 @@ div#ipython_notebook {
 }
 .dropdown-header {
  font-family: "Droid Sans", sans-serif;
- font-size: 13.0pt;
+ font-size: 12.7pt;
  display: block;
  color: #96a5c0;
  text-decoration: underline;
@@ -281,7 +273,7 @@ div#ipython_notebook {
 .dropdown-menu > li > a:hover {
  font-family: "Droid Sans", sans-serif;
  font-size: 11.5pt;
- color: #d3d9e4;
+ color: #dce1ea;
  display: block;
  clear: both;
  padding: 9px 22px;
@@ -326,94 +318,111 @@ div#ipython_notebook {
 }
 .btn {
  color: #96a5c0;
- background: transparent;
- background-color: transparent;
- border: 0 none !important;
+ background: #343c4b;
+ background-color: #343c4b;
+ border: 1px solid #2e3542 !important;
  border-radius: 2px;
  box-shadow: none !important;
  text-shadow: none;
 }
 .btn:hover {
- color: #d3d9e4;
- background: transparent;
- background-color: rgba(88,98,119,.45);
+ color: #ffffff;
+ background: #3572c6;
+ background-color: #3572c6;
+ border-color: #3572c6;
  background-image: none;
 }
 .btn-group > .btn-mini {
  font-size: 11.5pt;
  font-weight: normal;
- color: #96a5c0;
- background: transparent;
- background-color: transparent;
- border: 0 none !important;
  border-radius: 2px;
+ color: #96a5c0;
+ background: #343c4b;
+ background-color: #343c4b;
  box-shadow: none !important;
  text-shadow: none;
+ background-image: none;
 }
 .btn-group > .btn-mini:hover {
  font-size: 11.5pt;
  font-weight: normal;
- color: #d3d9e4;
- background: transparent;
- background-color: rgba(88,98,119,.45);
+ color: #ffffff;
+ background: #3572c6;
+ background-color: #3572c6;
+ border-color: #3572c6;
  background-image: none;
 }
 .btn-xs,
 .btn-group-xs > .btn {
  font-size: 11.5pt;
  font-weight: normal;
+ border-radius: 2px;
  display: table-row-group;
+ background: #343c4b;
+ background-color: #343c4b;
 }
 .btn-sm,
 .btn-group-sm > .btn {
  font-family: "Droid Sans", sans-serif;
  font-size: 11.5pt;
- padding: 5px 10px;
- line-height: 1.5;
- border-radius: 1px;
+ border-radius: 2px;
+ background: #343c4b;
+ background-color: #343c4b;
 }
-.btn-sm,
 .btn-group-sm > .btn:hover {
  font-family: "Droid Sans", sans-serif;
  font-size: 11.5pt;
- padding: 5px 10px;
- line-height: 1.5;
- border-radius: 1px;
+ color: #ffffff;
+ background: #3572c6;
+ background-color: #3572c6;
 }
 .btn-group,
 .btn-group-vertical {
  font-size: 11.5pt;
  font-weight: normal;
- background: transparent;
- background-color: transparent;
+ border-radius: 2px;
+ background: #343c4b;
+ background-color: #343c4b;
+ background-image: none;
+ vertical-align: bottom;
 }
-.btn-group,
 .btn-group-vertical:hover {
  font-size: 11.5pt;
  font-weight: normal;
+ color: #ffffff;
+ background: #3572c6;
+ background-color: #3572c6;
+ background-image: none;
 }
 .alternate_upload .btn-upload {
  font-size: 11.5pt;
  font-weight: normal;
- padding-top: 2px;
- padding-right: 6px;
- line-height: 1.5;
- height: 25px;
+ border-radius: 2px;
+ height: inherit;
  background: transparent;
- display: inline-block;
+ background-color: #343c4b;
+ display: inline-table;
 }
 .alternate_upload .btn-upload:hover {
  font-size: 11.5pt;
  font-weight: normal;
- color: #d3d9e4;
- background: transparent;
- background-color: rgba(88,98,119,.45);
- background-image: none;
+ border-radius: 2px;
+ height: inherit;
+ color: #ffffff;
+ background: #3572c6;
+ background-color: #3572c6;
+ display: inline-table;
 }
-div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
- background: #303745;
- background-color: #303745;
- font-size: 11pt;
+.alternate_upload input.fileinput {
+ display: none;
+ width: 11.5ex;
+}
+#button-select-all {
+ padding-top: 2px;
+ min-width: 50px;
+}
+button#tree-selector-btn {
+ padding-top: 2px;
 }
 button.close {
  padding: 0px;
@@ -465,13 +474,13 @@ button.close {
  box-shadow: none;
 }
 #running .panel-group .panel .panel-heading {
- font-size: 13.0pt;
+ font-size: 12.7pt;
  background-color: #262931;
  padding: 4px 7px;
  line-height: 22px;
 }
 #running .panel-group .panel .panel-heading a:hover {
- font-size: 13.0pt;
+ font-size: 12.7pt;
  color: #2c85f7;
 }
 #running .panel-group .panel .panel-body .list_container .list_item {
@@ -622,7 +631,7 @@ div.edit_mode div.text_cell.unrendered {
 .rendered_html table,
 .rendered_html tr,
 .rendered_html td {
- font-family: "Hack", monospace;
+ font-family: "Droid Sans", sans-serif;
  font-size: 9.5pt !important;
  line-height: 145% !important;
  border: 1px solid #4e5c72;
@@ -645,7 +654,7 @@ table.dataframe,
 }
 .dataframe td,
 .rendered_html td {
- font-family: "Hack", monospace;
+ font-family: "Droid Sans", sans-serif;
  font-size: 9.5pt !important;
  color: #dde0ed;
  background: #455063;
@@ -732,8 +741,8 @@ div.output_area {
  display: -webkit-box;
 }
 div.output_html {
- font-family: "Hack", monospace;
- font-size: 11pt;
+ font-family: "Droid Sans", sans-serif;
+ font-size: 12.5pt;
  color: #dde0ed;
  background-color: #384151;
  background: #384151;
@@ -752,32 +761,12 @@ div.widget-area {
  background-color: #384151;
  background: #384151;
  color: #d0d4e6;
- page-break-inside: avoid;
- -moz-box-align: stretch;
- box-orient: horizontal;
- box-align: stretch;
- flex-direction: row;
- align-items: center;
- align-self: auto;
 }
-div.widget-hbox .widget-label {
- min-width: 10ex;
- padding-right: 8px;
- padding-left: 15px;
- padding-top: 5px;
- text-align: left !important;
- vertical-align: middle;
-}
-div.widget-label {
- min-width: 7ex;
- padding-right: 8px;
- padding-top: 5px;
- padding-left: 15px;
- text-align: left !important;
- vertical-align: middle;
-}
-.widget-hbox {
- display: inline-block;
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
+ background: transparent;
+ background-color: #303745;
+ border: 1px solid #3572c6;
+ font-size: 11pt;
 }
 audio,
 video {
@@ -788,7 +777,7 @@ video {
 }
 div.prompt {
  font-family: "Hack", monospace;
- font-size: 9pt;
+ font-size: 9.3pt;
  line-height: 160%;
  padding: .3em;
  text-align: left !important;
@@ -796,7 +785,7 @@ div.prompt {
 }
 div.prompt.input_prompt {
  font-family: "Hack", monospace;
- font-size: 9pt;
+ font-size: 9.3pt;
  line-height: 160%;
  color: #5a647b;
  background-color: #303845;
@@ -810,24 +799,26 @@ div.prompt.input_prompt {
  border-bottom-right-radius: 0px;
 }
 div.cell.text_cell.rendered .input_prompt {
- font-size: 9pt;
+ font-family: "Hack", monospace;
+ font-size: 9.3pt;
  line-height: 160%;
  background: #303845;
  background-color: #303845;
- border-right-color: transparent;
- min-width: 0ex;
+ border-right-color: rgba(191,97,106,.5);
+ min-width: 11ex;
 }
 div.cell.text_cell.unrendered .input_prompt {
- font-size: 9pt;
+ font-family: "Hack", monospace;
+ font-size: 9.3pt;
  line-height: 160%;
  background: #303845;
  background-color: #303845;
- border-right-color: transparent;
- min-width: 0ex;
+ border-right-color: rgba(191,97,106,.5);
+ min-width: 11ex;
 }
 div.prompt.output_prompt {
  font-family: "Hack", monospace;
- font-size: 9.2pt;
+ font-size: 9.3pt;
  background-color: #384151;
  color: #384151;
  border-bottom-left-radius: 2px;
@@ -837,7 +828,7 @@ div.prompt.output_prompt {
 }
 div.out_prompt_overlay.prompt {
  font-family: "Hack", monospace;
- font-size: 9.2pt;
+ font-size: 9.3pt;
  background-color: #384151;
  border-bottom-left-radius: 2px;
  border-top-right-radius: 0px;
@@ -847,7 +838,7 @@ div.out_prompt_overlay.prompt {
 }
 div.out_prompt_overlay.prompt:hover {
  font-family: "Hack", monospace;
- font-size: 9.2pt;
+ font-size: 9.3pt;
  background-color: #384151;
  box-shadow: #303945 2px 1px 2px 2.5px inset;
  border-bottom-left-radius: 2px;
@@ -1084,6 +1075,12 @@ div.text_cell_render h6 {
 }
 div#maintoolbar {
  display: none !important;
+}
+#header-container {
+ display: none !important;
+}
+div#ipython_notebook {
+ display: none;
 }
 
 /**********************************
