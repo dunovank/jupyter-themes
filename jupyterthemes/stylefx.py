@@ -79,7 +79,7 @@ def send_fonts_to_jupyter(font_file_path):
     fname = font_file_path.split('/')[-1]
     copyfile(font_file_path, os.path.join(jupyter_custom_fonts, fname))
 
-def stored_font_dicts(fontcode):
+def stored_font_dicts(fontcode, get_all=False):
     fonts = {'mono':
                 {'anka': ['Anka/Coder', 'monospace/anka-coder'],
                 'anonymous': ['Anonymous Pro', 'monospace/anonymous-pro'],
@@ -119,6 +119,8 @@ def stored_font_dicts(fontcode):
                 'merriserif': ['Merriweather', 'serif/merriserif'],
                 'crimsonserif': ['Crimson Text', 'serif/crimsonserif'],
                 'droidserif': ['Droid Serif', 'serif/droidserif']}}
+    if get_all:
+        return fonts
     if fontcode in list(fonts['mono']):
         fontinfo = fonts['mono'][fontcode] + ['monospace']
     elif fontcode in list(fonts['sans']):
