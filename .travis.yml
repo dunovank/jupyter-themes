@@ -8,9 +8,8 @@ python:
   - "3.5"
 # command to install dependencies
 install:
-  - pip install numpy
-  - pip install lesscpy
+  - pip install -r requirements.txt
   - python setup.py build_ext --inplace
 # command to run tests
-script: 
+script:
     - nosetests -s tests/test_themes.py
