@@ -1,7 +1,7 @@
 # jupyterthemes
 ## Theme-ify your Jupyter Notebooks!
 
-https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop
+![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
 
 ```sh
 jt -t chesterish -cw 850 -f hack -fs 10
