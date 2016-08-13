@@ -6,15 +6,15 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='jupyterthemes',
-    version='0.10.5',
+    version='0.11.0',
     packages=['jupyterthemes'],
     include_package_data=True,
-    package_data={'jupyterthemes': ['sandbox/*.js', 'layout/*.less', 'layout/*.css', 'styles/*.less', 'styles/compiled/*.css']},
+    package_data={'jupyterthemes': ['sandbox/*.js', 'layout/*.less', 'layout/*.css', 'styles/*.less', 'styles/compiled/*.css', 'fonts/monospace/, fonts/sans-serif/, fonts/serif/']},
     description='Select and install a Jupyter notebook theme',
     long_description=README,
     license='MIT',
     url='https://github.com/dunovank/jupyter-themes/',
-    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.10.5',
+    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.11.0',
     author='dunovank',
     author_email='dunovank@gmail.com',
     classifiers=[
@@ -25,10 +25,11 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    install_requires=['jupyter', 'lesscpy>=0.11.1'],
+    install_requires=['jupyter', 'numpy', 'lesscpy>=0.11.1'],
     keywords=['jupyter', 'ipython', 'notebook', 'themes', 'css'],
     entry_points={
         'console_scripts': [

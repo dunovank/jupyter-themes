@@ -19,14 +19,17 @@
 @cc-output-bg:          @notebook-base;
 @cc-output-fg:          darken(@cc-input-fg, 1%);
 @text-cell-fg:          desaturate(lighten(#667FB1, 20%), 5%);
-@unrendered-text:       lighten(@matching-bracket, 8%);
+@unrendered-text:       lighten(@matching-bracket, 4%);
 @header-fg:             @unrendered-text;
 @tooltip-bg-color:      lighten(@cc-output-bg, 2%);
 @tooltip-fg-color:      @cc-input-fg;
+@nb-name-fg:            @header-fg;
+@nb-name-hover:         saturate(lighten(@nb-name-fg, 5%), 50%);
+
 
 /* cell border colors */
 @cc-border-selected:    @selected-bg;
-@cc-border-edit:        desaturate(darken(@selected-bg, 22%), 12%);
+@cc-border-edit:        desaturate(darken(@selected-bg, 15%), 25%);
 @tc-border-selected:    @header-fg;
 @tc-border-edit:        #33517c;
 
@@ -41,18 +44,19 @@
 /* buttons, widgets, kernels colors */
 @item-theme:            @selected-bg;
 @item-blue:             @matching-bracket;
-@item-cyan:             @item-theme;
+@item-cyan:             #2c85f7;
 @button-color:          @selected-bg;
+@item-green:            @selected-bg;
 
 /* tables and dataframes colors */
-@table-color:           lighten(@cc-input-fg, 4%);
-@table-bg:              lighten(@cc-output-bg,4%);
-@table-border:          lighten(@cc-output-bg,15%);
-@df-header-bg:          lighten(@cc-output-bg,1%);
-@df-header:             lighten(@cc-output-fg,3%);
-@df-header-border:      lighten(@df-header-bg, 6%);
-@df-cell-bg:            lighten(@cc-output-bg,6%);
-@codeblock-bg:          darken(@text-cell-bg, 3%);
+@table-color:           lighten(@cc-input-fg,  8%);
+@table-bg:              lighten(@cc-output-bg, 4%);
+@table-border:          lighten(@cc-output-bg, 24%);
+@df-header-bg:          darken(@cc-output-bg,  1%);
+@df-header:             lighten(@cc-output-fg, 3%);
+@df-header-border:      lighten(@df-header-bg, 9%);
+@df-cell-bg:            lighten(@cc-output-bg, 15%);
+@codeblock-bg:          darken(@text-cell-bg,  2%);
 @codeblock-border:      @codeblock-bg;
 
 /* btn, scrollbar and shadow colors */

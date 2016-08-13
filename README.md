@@ -2,78 +2,61 @@
 ## Theme-ify your Jupyter Notebooks!
 
 ```sh
-jt -t chesterish -cw 850 -fs 10
+jt -t chesterish -cw 850 -f hack -fs 10
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tchesterish-cw850-fs10.png?raw=true)
 
 ```sh
-jt -t oceans16 -alt -fs 10 -cw 900
+jt -t oceans16 -alt -f hack -fs 10 -cw 900
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-toceans16-altmd-fs10-cw900.png?raw=true)
 
 ```sh
-jt -t onedork -fs 10 -cw 850
+jt -t onedork -f hack -fs 10 -cw 850
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-cw850-fs10.png?raw=true)
 
 ```sh
-jt -t grade3 -alt -fs 10 -cw 900 -tcff serif
+jt -t grade3 -alt -fs 10 -cw 900 -tf ptserif
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tgrade3-altmd-fs10-cw900.png?raw=true)
 
 ```sh
-jt -t onedork -nbff serif -tcff serif
+jt -t onedork -nf ptserif -tf ptserif
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-ffserif-tcffserif.png?raw=true)
-
-
 
 # Install with pip
 ```sh
 pip install jupyterthemes
 ```
 
-## How To...
+## Command Line Usage
 
 ```
-usage: jt [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE ] [-nbff NBFONTFAM]  
-        [-tcff TCFONTFAM] [-cw CELLWIDTH] [-lh LINEHEIGHT] [-alt] [-T]  [-r ]
+usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
+          [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-cw CELLWIDTH]
+          [-lh LINEHEIGHT] [-alt] [-vim] [-T] [-N] [-r]
 ```
 
 |        options        |   arg     |     default    |
 |:----------------------|:---------:|:--------------:|
+| Usage help            |  -h       |       --       |
 | List Themes           |  -l       |       --       |
-| Select Theme          |  -t       |       --       |
-| Code Font             |  -f       |      Hack      |
+| Theme Name to Install |  -t       |       --       |
+| Code Font             |  -f       |     source     |
 | Code Font-Size        |  -fs      |       11       |
-| NB Font-Family        |  -nbff    |   sans-serif   |
-| TxtCell Font-Family   |  -tcff    |   sans-serif   |
-| Cell Width            |  -cw      |      940       |
-| Line Height           |  -lh      |      160       |
+| NB Font               |  -nf      |    opensans    |
+| NB Font Size          |  -nfs     |       13       |
+| Txt and MD Font       |  -tf      |     ptserif    |
+| Txt and MD Fontsize   |  -tfs     |       13       |
+| Cell Width            |  -cw      |      980       |
+| Line Height           |  -lh      |      170       |
 | Alt Txt/MD Layout     |  -alt     |       --       |
+| Style Vim NBExt       |  -vim     |       --       |
 | Toolbar Visible       |  -T       |       --       |
-| Notebook Name Visible |  -N       |       --       |
-| Jupyter Logo Visible  |  -L       |       --       |
+| Name & Logo Visible   |  -N       |       --       |
 | Restore Default       |  -r       |       --       |
-
-## Importable Code Fonts from Google Fonts API
-
-|    Font-Name     |    -f       |     comments     |
-|:-----------------|:-----------:|:----------------:|     
-|     Hack         |    --       |     italics      |
-|  Roboto Mono     |  roboto     |     italics      |
-|  Space Mono      |  space      |     italics      |         
-|  Anonymous Pro   |  anon       |     italics      |
-|  Cousine         |  cousine    |     italics      |     
-|  Ubuntu Mono     |  ubuntu     |     italics      |
-|  Source Code Pro |  source     |     normal       |
-|  Fira Mono       |  fira       |     normal       |                  
-|  Droid Sans Mono |  droid      |     normal       |         
-|  Oxygen Mono     |  oxygen     |     normal       |
-|  Inconsolata     |  incon      |     normal       |
-
-* or provide the name of any monospace font you have installed locally
-
 
 
 ## Examples
@@ -85,39 +68,75 @@ jt -l
 # select theme...
 jt -t chesterish
 
-# toggle toolbar ON [Default: hidden]
-jt -t grade3 -T
+# toggle toolbar ON and notebook name ON
+jt -t grade3 -T -N
 
-# set code font to 'Space Mono' 12pt
-# see table above for more options
-jt -t oceans16 -f space -fs 12
+# set code font to 'Roboto Mono' 12pt
+# (see monospace font table below)
+jt -t oceans16 -f roboto -fs 12
 
-# set notebook & text-cell font-family to serif
-# both default to sans-serif
-jt -t onedork -nbff serif -tcff serif
+# set code font to Fira Mono, 11.5pt
+# 3digit font sizes converted into floats (115-->11.5pt)
+jt -t grade3 -f fira -fs 115
+
+# set notebook & text-cell fonts
+# (see sans-serif & serif font tables below)
+jt -t onedork -nf ptserif -tf droidsans
 
 # adjust cell width and line-height
-jt -t chesterish -cw 870 -lh 170
+jt -t chesterish -cw 900 -lh 170
 
 # choose alternate txt/markdown layout
-jt -t grade3 -alt -fs 10 -cw 900 -tcff serif
+jt -t grade3 -alt
 
 # restore default theme
 jt -r
 ```
 
-## Known Issues
-* jupyterthemes relies on ![lesscpy](https://github.com/lesscpy/lesscpy) to compile the custom arguments supplied by the user into into the css body that eventually gets saved as custom.css in your jupyter config directory.
+## Monospace Fonts (codecells)
+| -f arg | Monospace Font |
+|:--|:--|
+|anka|Anka/Coder|
+|anonymous|Anonymous Pro|
+|aurulent|Aurulent Sans Mono|
+|bitstream|Bitstream Vera Sans Mono|
+|bpmono|BPmono|
+|code|Code New Roman|
+|consolamono|Consolamono|
+|cousine|Cousine|
+|dejavu|DejaVu Sans Mono|
+|droidmono|Droid Sans Mono|
+|fira|Fira Mono|
+|firacode|Fira Code|
+|generic|Generic Mono|
+|hack|Hack|
+|inconsolata|Inconsolata-g|
+|liberation|Liberation Mono|
+|meslo|Meslo|
+|office|Office Code Pro|
+|oxygen|Oxygen Mono|
+|roboto|Roboto Mono|
+|saxmono|saxMono|
+|source|Source Code Pro|
+|sourcemed|Source Code Pro Medium|
+|ubuntu|Ubuntu Mono|
 
-* Unfortunately, lesscpy currently only supports up to Python 3.4. However, if you're running Python 3.5 you can still install and use jupyterthemes but you won't be able to modify the default settings (e.g., font, font-size, cell width, etc.)
+## Sans-Serif Fonts
+| -nf/-tf arg | Sans-Serif Font |
+|:--|:--|
+|droidsans|Droid Sans|
+|latosans|Lato|
+|opensans|Open Sans|
+|ptsans|PT Sans|
+|robotosans|Roboto|
+|sourcesans|Source Sans Pro|
 
-* Examples for Python 3.5 users:
-```sh
-# install a theme
-jt -t grade3
-# list theme
-jt -l
-# reset theme
-jt -r
-
-```
+## Serif Fonts
+| -nf/-tf arg | Serif Font |
+|:--|:--|
+|crimsonserif|Crimson Text|
+|droidserif|Droid Serif|
+|ebserif|EB Garamond|
+|loraserif|Lora|
+|merriserif|Merriweather|
+|ptserif|PT Serif|

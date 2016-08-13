@@ -20,9 +20,11 @@
 @cc-output-fg:          darken(@cc-input-fg, 7%);
 @text-cell-fg:          lighten(#667FB1, 22%);
 @unrendered-text:       lighten(#008ebf, 4%);
-@header-fg:             desaturate(@unrendered-text, 8%);
+@header-fg:             desaturate(@unrendered-text, 10%);
 @tooltip-bg-color:      lighten(@cc-output-bg, 2%);
 @tooltip-fg-color:      @cc-input-fg;
+@nb-name-fg:            @header-fg;
+@nb-name-hover:         saturate(lighten(@cc-border-selected, 15%), 20%);
 
 /* cell border colors */
 @cc-border-selected:    #008ebf;
@@ -35,24 +37,25 @@
 @disabled:              #546386;
 @input-prompt:          @disabled;
 @prompt-line:           rgba(0, 156, 209, .5);
-@tc-prompt-std:         darken(@prompt-line, 20%);
+@tc-prompt-std:         rgba(0, 156, 209, .5);
 @matching-bracket:      #3572C6;
 
 /* buttons, widgets, kernels colors */
 @item-theme:            @header-fg;
 @item-blue:             @matching-bracket;
-@item-cyan:             @selected-bg;
+@item-cyan:             #2c85f7;
 @button-color:          @selected-active;
+@item-green:            #48a667;
 
 /* tables and dataframes colors */
-@table-color:           lighten(@cc-input-fg, 4%);
+@table-color:           lighten(@cc-input-fg, 6%);
 @table-bg:              lighten(@cc-output-bg,6%);
 @table-border:          lighten(@table-bg, 5%);
 @df-header-bg:          darken(@cc-input-bg, 1%);
 @df-header:             lighten(@cc-output-fg, 2%);
 @df-header-border:      lighten(@df-header-bg, 8%);
-@df-cell-bg:            lighten(@cc-output-bg, 5%);
-@codeblock-bg:          darken(@text-cell-bg, 3%);
+@df-cell-bg:            lighten(@cc-output-bg, 6%);
+@codeblock-bg:          darken(@text-cell-bg, 2%);
 @codeblock-border:      @codeblock-bg;
 
 /* btn, scrollbar and shadow colors */
@@ -60,7 +63,7 @@
 @scrollbar:             desaturate(darken(@selected-bg, 2%), 10%);
 @scroll-trough:         lighten(@cc-output-bg, 60%);
 @scrollbar-inactive:    #464e60;
-@box-shadow:            #303945;
+@box-shadow:            darken(#303945, 3%);
 
 /* chesterish ansi colors */
 @ansiblack:             #2b303b;

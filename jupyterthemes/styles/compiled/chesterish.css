@@ -1,47 +1,74 @@
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
-@import url(https://fonts.googleapis.com/css?family=PT+Serif);
-
+@font-face {
+ font-family: 'Open Sans';
+ font-weight: normal;
+ font-style: normal;
+ src: local('Open Sans'), url('fonts/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+ font-family: 'PT Serif';
+ font-weight: normal;
+ font-style: italic;
+ src: local('PT Serif'), url('fonts/pt-serif-italic.ttf') format('truetype');
+}
+@font-face {
+ font-family: 'PT Serif';
+ font-weight: normal;
+ font-style: normal;
+ src: local('PT Serif'), url('fonts/pt-serif-regular.ttf') format('truetype');
+}
+@font-face {
+ font-family: 'Source Code Pro';
+ font-weight: normal;
+ font-style: italic;
+ src: local('Source Code Pro'), url('fonts/source-code-pro-italic.otf') format('opentype');
+}
+@font-face {
+ font-family: 'Source Code Pro';
+ font-weight: normal;
+ font-style: normal;
+ src: local('Source Code Pro'), url('fonts/source-code-pro.otf') format('opentype');
+}
 body {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 13pt;
  color: #a2b0c7;
  background-color: #1a2028;
  line-height: 1;
 }
 a {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 13pt;
  color: #a2b0c7;
 }
 div#notebook {
- font-family: "Hack", monospace;
+ font-family: "Source Code Pro", monospace;
  font-size: 11pt;
- line-height: 160%;
+ line-height: 170%;
  color: #cdd2e9;
 }
 div#notebook_toolbar div.dynamic-instructions {
- font-family: "Droid Sans", sans-serif;
- font-size: 11.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  display: inline-block;
 }
 .toolbar_info {
- font-family: "Droid Sans", sans-serif;
+ font-family: "Open Sans", sans-serif;
  color: #a2b0c7;
  border: none;
  text-shadow: none !important;
 }
 .list_container {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  color: #a2b0c7;
  border: none;
  text-shadow: none !important;
 }
 .list_container > div {
  border-bottom: 1px solid rgba(75,95,118,.30);
- font-size: 11.6pt;
+ font-size: 11.5pt;
 }
 .list_container a {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  color: #a2b0c7;
  border: none;
  text-shadow: none !important;
@@ -67,14 +94,14 @@ div.list_item:hover {
  background-color: rgba(75,95,118,.10);
 }
 .breadcrumb > li {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  color: #a2b0c7;
  border: none;
  text-shadow: none !important;
 }
 ul#tabs a {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  font-weight: normal;
  font-style: normal;
  border-color: transparent;
@@ -82,8 +109,8 @@ ul#tabs a {
  text-shadow: none !important;
 }
 .nav-tabs {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  font-weight: normal;
  font-style: normal;
  text-shadow: none !important;
@@ -93,8 +120,8 @@ ul#tabs a {
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:active,
 .nav-tabs > li > a:focus {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  font-weight: normal;
  font-style: normal;
  color: #dbe1ea;
@@ -108,8 +135,8 @@ ul#tabs a {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  font-weight: normal;
  font-style: normal;
  color: #ffffff;
@@ -119,8 +146,8 @@ ul#tabs a {
  text-shadow: none !important;
 }
 div#notebook {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 13pt;
  padding-top: 5px;
 }
 .notebook_app {
@@ -133,7 +160,7 @@ div#notebook {
  box-shadow: none;
 }
 .container {
- width: 940px;
+ width: 980px;
 }
 .notebook_app #header {
  box-shadow: none !important;
@@ -141,8 +168,8 @@ div#notebook {
  border-bottom: 1px solid rgba(75,95,118,.30);
 }
 #header {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 13pt;
  box-shadow: none;
  background-color: #1a2028;
 }
@@ -156,8 +183,8 @@ body > #header .header-bar {
  margin-bottom: -1px;
 }
 .navbar-default {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 13pt;
  background-color: #1a2028;
  border-color: #1a2028;
  padding-bottom: 0px;
@@ -173,11 +200,11 @@ body > #header .header-bar {
  margin-bottom: 0px;
 }
 .navbar-default .navbar-nav > li > a {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 13pt;
  color: #a2b0c7;
  display: block;
- line-height: 1.35;
+ line-height: 1.2;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -191,8 +218,11 @@ body > #header .header-bar {
  background-color: #007aa4;
  border-color: #007aa4;
 }
+.nav {
+ margin-bottom: 0;
+}
 .command_mode .modal_indicator:before {
- font-size: 11.6pt;
+ font-size: 11.5pt;
 }
 .item_icon {
  color: #3572c6;
@@ -201,19 +231,19 @@ body > #header .header-bar {
  color: #3572c6;
 }
 .running_notebook_icon:before {
- color: #0899cb !important;
+ color: #48a667 !important;
 }
 .item_buttons .running-indicator {
  padding-top: 2px;
- color: #0899cb;
+ color: #48a667;
 }
 #modal_indicator {
  float: right !important;
- color: #009cd1;
+ color: #2c85f7;
 }
 #kernel_indicator {
  float: right !important;
- color: #009cd1;
+ color: #2c85f7;
  font-size: 13pt;
 }
 #kernel_indicator .kernel_indicator_name {
@@ -223,65 +253,77 @@ body > #header .header-bar {
 }
 #project-name > .breadcrumb {
  font-weight: normal;
- color: #009cd1;
+ color: #2c85f7;
 }
 .notification_widget.info {
  color: #ffffff;
- background-color: #009cd1;
- border-color: #009cd1;
+ background-color: #2c85f7;
+ border-color: #2c85f7;
  width: 100%;
 }
+span.checkpoint_status,
+span.autosave_status {
+ font-size: small;
+ padding-left: 10px;
+}
+div#ipython_notebook {
+ display: none;
+}
+#kernel_logo_widget,
+#kernel_logo_widget .current_kernel_logo {
+ display: none;
+}
 .dropdown-menu {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 13pt;
  box-shadow: none;
  padding: 0px;
  text-align: left;
  border: 2px solid rgba(75,95,118,.30);
  background-color: #2f3a4a;
  background: #2f3a4a;
- line-height: 1.35;
+ line-height: 1.2;
 }
 .dropdown-menu:hover {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 13pt;
  border: 2px solid rgba(75,95,118,.30);
  background-color: #2f3a4a;
  box-shadow: none;
- line-height: 1.35;
+ line-height: 1.2;
 }
 .dropdown-header {
- font-family: "Droid Sans", sans-serif;
- font-size: 12.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 12pt;
  display: block;
  color: #a2b0c7;
  text-decoration: underline;
  text-decoration-color: rgba(75,95,118,.30);
  white-space: nowrap;
- line-height: 1.35;
+ line-height: 1.2;
 }
 .dropdown-menu > li > a {
- font-family: "Droid Sans", sans-serif;
- font-size: 11.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  display: block;
  clear: both;
- padding: 9px 22px;
+ padding: 9px 19px;
  font-weight: normal;
- line-height: 1.25;
+ line-height: 1.2;
  color: #a2b0c7;
  white-space: nowrap;
  background-color: #2f3a4a;
  background: #2f3a4a;
 }
 .dropdown-menu > li > a:hover {
- font-family: "Droid Sans", sans-serif;
- font-size: 11.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  color: #dbe1ea;
  display: block;
  clear: both;
- padding: 9px 22px;
+ padding: 9px 19px;
  font-weight: normal;
- line-height: 1.25;
+ line-height: 1.2;
  white-space: nowrap;
  background-color: rgba(75,95,118,.30);
  background: rgba(75,95,118,.30);
@@ -302,14 +344,14 @@ body > #header .header-bar {
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
- font-family: "Droid Sans", sans-serif;
- font-size: 11.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  font-weight: normal;
  color: #546386;
  padding: none;
  display: block;
  clear: both;
- line-height: 1.25;
+ line-height: 1.2;
  white-space: nowrap;
 }
 .btn-default.active:hover,
@@ -336,7 +378,7 @@ body > #header .header-bar {
  background-image: none;
 }
 .btn-group > .btn-mini {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  font-weight: normal;
  border-radius: 2px;
  color: #a2b0c7;
@@ -347,7 +389,7 @@ body > #header .header-bar {
  background-image: none;
 }
 .btn-group > .btn-mini:hover {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  font-weight: normal;
  color: #ffffff;
  background: #007aa4;
@@ -357,7 +399,7 @@ body > #header .header-bar {
 }
 .btn-xs,
 .btn-group-xs > .btn {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  font-weight: normal;
  border-radius: 2px;
  display: table-row-group;
@@ -366,22 +408,22 @@ body > #header .header-bar {
 }
 .btn-sm,
 .btn-group-sm > .btn {
- font-family: "Droid Sans", sans-serif;
- font-size: 11.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  border-radius: 2px;
  background: #2d3542;
  background-color: #2d3542;
 }
 .btn-group-sm > .btn:hover {
- font-family: "Droid Sans", sans-serif;
- font-size: 11.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  color: #ffffff;
  background: #007aa4;
  background-color: #007aa4;
 }
 .btn-group,
 .btn-group-vertical {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  font-weight: normal;
  border-radius: 2px;
  background: #2d3542;
@@ -390,7 +432,7 @@ body > #header .header-bar {
  vertical-align: bottom;
 }
 .btn-group-vertical:hover {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  font-weight: normal;
  color: #ffffff;
  background: #007aa4;
@@ -398,7 +440,7 @@ body > #header .header-bar {
  background-image: none;
 }
 .alternate_upload .btn-upload {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  font-weight: normal;
  border-radius: 2px;
  height: inherit;
@@ -407,7 +449,7 @@ body > #header .header-bar {
  display: inline-table;
 }
 .alternate_upload .btn-upload:hover {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  font-weight: normal;
  border-radius: 2px;
  height: inherit;
@@ -443,13 +485,13 @@ button.close {
  opacity: 0.3;
 }
 .close:hover {
- color: #009cd1;
+ color: #2c85f7;
  text-shadow: 0px 1px 0px rgba(75,95,118,.10);
  opacity: 0.9;
 }
 .modal-content {
- font-family: "Droid Sans", sans-serif;
- font-size: 11.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  position: relative;
  background-color: #2f3a4a;
  border: 1px solid rgba(75,95,118,.30);
@@ -459,8 +501,8 @@ button.close {
  outline: 0px none;
 }
 .modal-header {
- font-family: "Droid Sans", sans-serif;
- font-size: 11.6pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
  padding: 15px;
  border-bottom: 1px solid rgba(75,95,118,.55);
  min-height: 16.4286px;
@@ -469,7 +511,7 @@ button.close {
  border-color: rgba(75,95,118,.30);
 }
 .panel {
- font-size: 11.6pt;
+ font-size: 11.5pt;
  margin-bottom: 18px;
  background-color: #1a2028;
  color: #a2b0c7;
@@ -477,14 +519,14 @@ button.close {
  box-shadow: none;
 }
 #running .panel-group .panel .panel-heading {
- font-size: 12.6pt;
+ font-size: 13pt;
  background-color: #1a2028;
  padding: 4px 7px;
  line-height: 22px;
 }
 #running .panel-group .panel .panel-heading a:hover {
- font-size: 12.6pt;
- color: #009cd1;
+ font-size: 13pt;
+ color: #2c85f7;
 }
 #running .panel-group .panel .panel-body .list_container .list_item {
  border-bottom: 1px solid rgba(75,95,118,.55);
@@ -492,10 +534,9 @@ button.close {
 .form-control {
  display: block;
  width: 100%;
- height: 32px;
- padding: 6px 12px;
- font-size: 11.6pt;
- color: #a2b0c7;
+ padding: 4px 9px;
+ font-size: 11.5pt;
+ color: #dbe1ea;
  background-color: #293340;
  background-image: none;
  border: 1px solid rgba(75,95,118,.30);
@@ -582,41 +623,41 @@ div.cell.edit_mode {
 div.text_cell,
 div.text_cell_render pre,
 div.text_cell_render {
- font-family: "Droid Sans", sans-serif;
- font-size: 12pt;
- line-height: 160% !important;
+ font-family: "PT Serif", serif;
+ font-size: 13pt;
+ line-height: 170% !important;
  color: #b0bdd7;
  background: #293340;
  background-color: #293340;
  border-radius: 2px;
 }
 div.cell.text_cell.rendered.selected {
- font-family: "Droid Sans", sans-serif;
- border: medium solid #0899cb;
- line-height: 160% !important;
+ font-family: "PT Serif", serif;
+ border: medium solid #0b98c8;
+ line-height: 170% !important;
  background: #293340;
  background-color: #293340;
  border-radius: 2px;
 }
 div.cell.text_cell.unrendered.selected {
- font-family: "Droid Sans", sans-serif;
- line-height: 160% !important;
+ font-family: "PT Serif", serif;
+ line-height: 170% !important;
  background: #293340;
  background-color: #293340;
- border: medium solid #0899cb;
+ border: medium solid #0b98c8;
  border-radius: 2px;
 }
 div.cell.text_cell.selected {
- font-family: "Droid Sans", sans-serif;
- line-height: 160% !important;
- border: medium solid #0899cb;
+ font-family: "PT Serif", serif;
+ line-height: 170% !important;
+ border: medium solid #0b98c8;
  background: #293340;
  background-color: #293340;
  border-radius: 2px;
 }
 .edit_mode div.cell.text_cell.selected {
- font-family: "Droid Sans", sans-serif;
- line-height: 160% !important;
+ font-family: "PT Serif", serif;
+ line-height: 170% !important;
  background: #293340;
  background-color: #293340;
  border: medium solid #005573;
@@ -625,8 +666,8 @@ div.cell.text_cell.selected {
 div.text_cell.unrendered,
 div.text_cell.unrendered.selected,
 div.edit_mode div.text_cell.unrendered {
- font-family: "Droid Sans", sans-serif;
- line-height: 160% !important;
+ font-family: "PT Serif", serif;
+ line-height: 170% !important;
  background: #293340;
  background-color: #293340;
  border-radius: 2px;
@@ -634,11 +675,11 @@ div.edit_mode div.text_cell.unrendered {
 .rendered_html table,
 .rendered_html tr,
 .rendered_html td {
- font-family: "Hack", monospace;
+ font-family: "Source Code Pro", monospace;
  font-size: 9.5pt !important;
  line-height: 145% !important;
  border: 1px solid #475569;
- color: #dbdfef;
+ color: #e2e5f2;
  background-color: #3d495a;
  background: #3d495a;
 }
@@ -649,7 +690,7 @@ table.dataframe,
 }
 .dataframe th,
 .rendered_html th {
- font-family: "Droid Sans", sans-serif;
+ font-family: "Open Sans", sans-serif;
  font-size: 10.5pt !important;
  font-weight: 450;
  border: 1px solid #374556;
@@ -657,17 +698,17 @@ table.dataframe,
 }
 .dataframe td,
 .rendered_html td {
- font-family: "Hack", monospace;
+ font-family: "Source Code Pro", monospace;
  font-size: 9.5pt !important;
- color: #dbdfef;
- background: #3b4657;
+ color: #e2e5f2;
+ background: #3d495a;
  border: 1px solid #475569;
  text-align: left;
  min-width: 4em;
 }
 .dataframe-summary-row tr:last-child,
 .dataframe-summary-col td:last-child {
- font-family: "Hack", monospace;
+ font-family: "Source Code Pro", monospace;
  font-size: 10.5pt !important;
  font-weight: 450;
  color: #bbc2e1;
@@ -677,18 +718,18 @@ table.dataframe,
 .rendered_html code {
  color: #cdd2e9;
  padding-top: 5px;
- background: #232c37;
- background-color: #232c37;
+ background: #252e3a;
+ background-color: #252e3a;
 }
 .rendered_html pre,
 div.text_cell_render pre {
- font-family: "Hack", monospace;
- font-size: 11pt;
- line-height: 160% !important;
+ font-family: "Source Code Pro", monospace;
+ font-size: 10.5pt !important;
+ line-height: 170% !important;
  color: #cdd2e9;
- background: #232c37;
- background-color: #232c37;
- border: 2px #232c37  solid;
+ background: #252e3a;
+ background-color: #252e3a;
+ border: 2px #252e3a  solid;
  max-width: 85%;
  border-radius: 2px;
  padding: 8.5px;
@@ -700,13 +741,20 @@ pre code {
  margin-top: .2em;
 }
 .rendered_html :link {
- font-family: "Droid Sans", sans-serif;
- color: #3572c6;
- text-decoration: underline;
+ font-family: "PT Serif", serif;
+ color: #0b98c8;
+}
+.rendered_html :link:hover {
+ font-family: "PT Serif", serif;
+ color: #2c85f7;
 }
 .rendered_html :visited {
- text-decoration: underline;
- color: #0899cb;
+ font-family: "PT Serif", serif;
+ color: #0b98c8;
+}
+.rendered_html :visited:hover {
+ font-family: "PT Serif", serif;
+ color: #2c85f7;
 }
 div.output_wrapper {
  background-color: #313a48;
@@ -720,8 +768,8 @@ div.output_wrapper {
 }
 div.output_subarea.output_text.output_stream.output_stdout,
 div.output_subarea.output_text {
- font-family: "Hack", monospace;
- font-size: 10pt;
+ font-family: "Source Code Pro", monospace;
+ font-size: 10.5pt;
  line-height: 130% !important;
  background-color: #313a48;
  color: #b4bcde;
@@ -731,8 +779,8 @@ div.output_subarea.output_text {
  border-bottom-right-radius: 2px;
 }
 div.output_area pre {
- font-family: "Hack", monospace;
- font-size: 10pt !important;
+ font-family: "Source Code Pro", monospace;
+ font-size: 10.5pt !important;
  line-height: 130% !important;
  color: #b4bcde;
  border-top-right-radius: 0px;
@@ -744,9 +792,9 @@ div.output_area {
  display: -webkit-box;
 }
 div.output_html {
- font-family: "Droid Sans", sans-serif;
- font-size: 12pt;
- color: #dbdfef;
+ font-family: "PT Serif", serif;
+ font-size: 13pt;
+ color: #e2e5f2;
  background-color: #313a48;
  background: #313a48;
 }
@@ -767,9 +815,39 @@ div.widget-area {
 }
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
  background: transparent;
- background-color: #29303c;
+ background-color: #272e39;
  border: 1px solid #009cd1;
- font-size: 11pt;
+ font-size: 12pt;
+}
+.widget-hbox {
+ -webkit-box-align: inherit;
+ -moz-box-orient: horizontal;
+ -moz-box-align: stretch;
+ display: inherit;
+ flex-direction: inherit;
+ align-items: inherit;
+}
+.widget-hbox .widget-label {
+ font-family: "Open Sans", sans-serif;
+ font-size: 11.5pt;
+ min-width: 12ex;
+ padding-right: 8px;
+ padding-top: 5px;
+ text-align: right;
+ vertical-align: text-top;
+}
+.widget-hprogress {
+ margin-top: 6px;
+ min-width: 300px;
+}
+.progress {
+ overflow: hidden;
+ height: 22px;
+ margin-bottom: 10px;
+ background-color: #7484a8;
+ border-radius: 3px;
+ -webkit-box-shadow: none;
+ box-shadow: none;
 }
 audio,
 video {
@@ -779,21 +857,21 @@ video {
  margin-left: 20%;
 }
 div.prompt {
- font-family: "Hack", monospace;
- font-size: 9.3pt;
- line-height: 160%;
- padding: .3em;
+ font-family: "Source Code Pro", monospace;
+ font-size: 9.5pt;
+ line-height: 170%;
+ padding: .2em;
  text-align: left !important;
- min-width: 11ex;
+ min-width: 13ex;
 }
 div.prompt.input_prompt {
- font-family: "Hack", monospace;
- font-size: 9.3pt;
- line-height: 160%;
+ font-family: "Source Code Pro", monospace;
+ font-size: 9.5pt;
+ line-height: 170%;
  color: #546386;
  background-color: #293340;
  font-weight: normal;
- min-width: 11ex;
+ min-width: 13ex;
  text-align: left !important;
  border-right: 2px solid rgba(0,156,209,.5);
  border-top-left-radius: 2px;
@@ -802,26 +880,26 @@ div.prompt.input_prompt {
  border-bottom-right-radius: 0px;
 }
 div.cell.text_cell.rendered .input_prompt {
- font-family: "Hack", monospace;
- font-size: 9.3pt;
- line-height: 160%;
+ font-family: "Source Code Pro", monospace;
+ font-size: 9.5pt;
+ line-height: 170%;
  background: #293340;
  background-color: #293340;
- border-right-color: darken(rgba(0,156,209,.5),20%);
- min-width: 11ex;
+ border-right-color: rgba(0,156,209,.5);
+ min-width: 13ex;
 }
 div.cell.text_cell.unrendered .input_prompt {
- font-family: "Hack", monospace;
- font-size: 9.3pt;
- line-height: 160%;
+ font-family: "Source Code Pro", monospace;
+ font-size: 9.5pt;
+ line-height: 170%;
  background: #293340;
  background-color: #293340;
- border-right-color: darken(rgba(0,156,209,.5),20%);
- min-width: 11ex;
+ border-right-color: rgba(0,156,209,.5);
+ min-width: 13ex;
 }
 div.prompt.output_prompt {
- font-family: "Hack", monospace;
- font-size: 9.3pt;
+ font-family: "Source Code Pro", monospace;
+ font-size: 9.5pt;
  background-color: #313a48;
  color: #313a48;
  border-bottom-left-radius: 2px;
@@ -830,20 +908,20 @@ div.prompt.output_prompt {
  border-bottom-right-radius: 0px;
 }
 div.out_prompt_overlay.prompt {
- font-family: "Hack", monospace;
- font-size: 9.3pt;
+ font-family: "Source Code Pro", monospace;
+ font-size: 9.5pt;
  background-color: #313a48;
  border-bottom-left-radius: 2px;
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
  border-bottom-right-radius: 0px;
- min-width: 11ex;
+ min-width: 13ex;
 }
 div.out_prompt_overlay.prompt:hover {
- font-family: "Hack", monospace;
- font-size: 9.3pt;
+ font-family: "Source Code Pro", monospace;
+ font-size: 9.5pt;
  background-color: #313a48;
- box-shadow: #303945 2px 1px 2px 2.5px inset;
+ box-shadow: #2a323c  2px 1px 2px 2.5px inset;
  border-bottom-left-radius: 2px;
  -webkit-border-: 2px;
  -moz-border-radius: 2px;
@@ -852,9 +930,9 @@ div.out_prompt_overlay.prompt:hover {
 }
 div.CodeMirror,
 div.CodeMirror pre {
- font-family: "Hack", monospace;
+ font-family: "Source Code Pro", monospace;
  font-size: 11pt;
- line-height: 160%;
+ line-height: 170%;
  color: #cdd2e9;
 }
 div.CodeMirror-lines {
@@ -927,7 +1005,7 @@ div.tooltiptext.bigtooltip {
  max-width: 800px;
 }
 .cm-s-ipython.CodeMirror {
- font-family: "Hack", monospace;
+ font-family: "Source Code Pro", monospace;
  font-size: 11pt;
  background: #293340;
  color: #cdd2e9;
@@ -1057,33 +1135,37 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
  background: #334050;
 }
 div.text_cell_render h1 {
- font-family: "Droid Sans", sans-serif;
+ font-family: "Open Sans", sans-serif;
  text-align: center;
  font-weight: lighter;
  background: #293340;
  background-color: #293340;
- color: #0899cb;
+ color: #0b98c8;
 }
 div.text_cell_render h2,
 div.text_cell_render h3,
 div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
- font-family: "Droid Sans", sans-serif;
+ font-family: "Open Sans", sans-serif;
  text-align: left;
  font-weight: lighter;
  background: #293340;
  background-color: #293340;
- color: #0899cb;
+ color: #0b98c8;
+}
+a.anchor-link:link {
+ font-size: 100%;
+ text-decoration: none;
+ padding: 0px 20px;
+ visibility: none;
+ color: #0b98c8;
 }
 div#maintoolbar {
  display: none !important;
 }
 #header-container {
  display: none !important;
-}
-div#ipython_notebook {
- display: none;
 }
 
 /**********************************

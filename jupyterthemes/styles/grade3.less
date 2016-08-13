@@ -23,6 +23,8 @@
 @header-fg:             @unrendered-text;
 @tooltip-bg-color:      darken(@notebook-bg, 3%);
 @tooltip-fg-color:      #222222;
+@nb-name-fg:            @unrendered-text;
+@nb-name-hover:         saturate(lighten(@header-fg, 15%), 25%);
 
 /* cell border colors */
 @cc-border-selected:    @item-theme;
@@ -41,8 +43,9 @@
 /* buttons, widgets, kernels colors */
 @item-theme:            #ff8132;
 @item-blue:             #1e70c7;
-@item-cyan:             @item-theme;
+@item-cyan:             #2c85f7;
 @button-color:          @item-theme;
+@item-green:            #48a667;
 
 /* tables and dataframes colors */
 @table-color:           lighten(@cc-input-fg, 2%);
