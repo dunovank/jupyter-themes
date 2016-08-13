@@ -1,5 +1,4 @@
 from __future__ import print_function
-from future.utils import listvalues
 import os, sys
 from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
 from shutil import copyfile, rmtree

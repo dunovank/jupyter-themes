@@ -6,7 +6,7 @@ from __future__ import print_function
 import os, sys
 from argparse import ArgumentParser
 from glob import glob
-import stylefx
+from jupyterthemes import stylefx
 
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
