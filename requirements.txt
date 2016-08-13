@@ -1,5 +1,4 @@
 jupyter
 jupyter_core
 numpy
-shutil
 lesscpy>=0.11.1
