@@ -25,10 +25,10 @@ jt -t onedork -nf ptserif -tf ptserif
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-ffserif-tcffserif.png?raw=true)
 
-#### TravisCI Build status:
+## TravisCI Build status:
  ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
 
-# Install with pip
+## Install with pip
 ```sh
 pip install jupyterthemes
 ```
