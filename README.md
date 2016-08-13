@@ -28,10 +28,21 @@ jt -t onedork -nf ptserif -tf ptserif
 ## TravisCI Build status:
  ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
 
+
 ## Install with pip
 ```sh
 pip install jupyterthemes
 ```
+
+
+## Known Issues
+
+* **UPDATE**: lesscpy has added support for 3.5 to their development branch but still waiting for this to make it's way into the official release on pypi. Soon...
+
+* jupyterthemes relies on [lesscpy](https://github.com/lesscpy/lesscpy) to compile the custom arguments supplied by the user into into the css body that eventually gets saved as custom.css in your jupyter config directory.
+
+* Unfortunately, lesscpy currently only supports up to Python 3.4. If you're running Python 3.5 you can still install and use jupyterthemes but you won't be able to modify the default settings (e.g., font, font-size, cell width, etc.). See *Examples for 3.5 Users* below.
+
 
 ## Command Line Usage
 
@@ -95,15 +106,7 @@ jt -t grade3 -alt
 jt -r
 ```
 
-## Known Issues
-
-* **UPDATE**: lesscpy has added support for 3.5 but still waiting for this to make it's way into the official release. 
-
-* jupyterthemes relies on [lesscpy](https://github.com/lesscpy/lesscpy) to compile the custom arguments supplied by the user into into the css body that eventually gets saved as custom.css in your jupyter config directory.
-
-* Unfortunately, lesscpy currently only supports up to Python 3.4. If you're running Python 3.5 you can still install and use jupyterthemes but you won't be able to modify the default settings (e.g., font, font-size, cell width, etc.)
-
-* Examples for Python 3.5 users:
+## Examples for Python 3.5 users:
 ```sh
 # install a theme
 jt -t grade3
