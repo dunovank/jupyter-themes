@@ -1,8 +1,5 @@
 # jupyterthemes
 ## Theme-ify your Jupyter Notebooks!
-
-![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
-
 ```sh
 jt -t chesterish -cw 850 -f hack -fs 10
 ```
@@ -27,6 +24,9 @@ jt -t grade3 -alt -fs 10 -cw 900 -tf ptserif
 jt -t onedork -nf ptserif -tf ptserif
 ```
 ![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-ffserif-tcffserif.png?raw=true)
+
+#### TravisCI Build status:
+ ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
 
 # Install with pip
 ```sh
