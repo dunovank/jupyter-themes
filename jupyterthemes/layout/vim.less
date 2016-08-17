@@ -1,0 +1,32 @@
+/* adapted from code provided by alextfkd: https://github.com/alextfkd */
+.CodeMirror-dialog-bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 100;
+  background-color: @cc-input-bg;
+  color: @cc-input-fg;
+  padding-right: 1.2em;
+  border: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.CodeMirror-dialog-bottom input {
+  border: none;
+  outline: none;
+  color: @cc-input-fg;
+  background-color: @cc-input-bg;
+  width: calc(100% - 1em);
+}
+/* Jupyter cell is in normal mode when code mirror */
+.edit_mode .cell.selected .CodeMirror-focused.cm-fat-cursor {
+  background-color: @cc-input-bg;
+  color: @cc-input-fg;
+}
+/* Jupyter cell is in insert mode when code mirror */
+.edit_mode .cell.selected .CodeMirror-focused:not(.cm-fat-cursor) {
+  background-color: @cc-input-bg;
+  color: @cc-input-fg;
+}
