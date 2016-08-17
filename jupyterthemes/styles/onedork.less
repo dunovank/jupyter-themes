@@ -19,12 +19,12 @@
 @cc-output-bg:          @notebook-base;
 @cc-output-fg:          darken(@cc-input-fg, 1%);
 @text-cell-fg:          desaturate(lighten(#667FB1, 20%), 5%);
-@unrendered-text:       lighten(@matching-bracket, 4%);
+@unrendered-text:       #437dcd;
 @header-fg:             @unrendered-text;
 @tooltip-bg-color:      lighten(@cc-output-bg, 2%);
 @tooltip-fg-color:      @cc-input-fg;
 @nb-name-fg:            @header-fg;
-@nb-name-hover:         saturate(lighten(@nb-name-fg, 5%), 50%);
+@nb-name-hover:         saturate(lighten(@header-fg, 5%), 50%);
 
 
 /* cell border colors */
@@ -39,11 +39,11 @@
 @input-prompt:          desaturate(darken(#667FB1, 12%), 8%);
 @prompt-line:           rgba(83, 180, 115,.5);
 @tc-prompt-std:         rgba(53, 114, 198,.5);
-@matching-bracket:      #3572C6;
+@matching-bracket:      @item-blue;
 
 /* buttons, widgets, kernels colors */
 @item-theme:            @selected-bg;
-@item-blue:             @matching-bracket;
+@item-blue:             #437dcd;
 @item-cyan:             #2c85f7;
 @button-color:          @selected-bg;
 @item-green:            @selected-bg;

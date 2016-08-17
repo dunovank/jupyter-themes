@@ -80,13 +80,19 @@ div.list_item:hover {
     border: none;
     text-shadow: none !important;
 }
+div.tab-content > .active {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    line-height: 1.45;
+    display: block;
+    padding-top: 4px;
+}
 ul#tabs a {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize-sub;
     font-weight: normal;
     font-style: normal;
     border-color: transparent;
-    border-bottom: 1px solid @selected-third;
     text-shadow: none !important;
 }
 .nav-tabs {
@@ -100,19 +106,7 @@ ul#tabs a {
 }
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:active,
-.nav-tabs > li > a:focus {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
-    font-weight: normal;
-    font-style: normal;
-    color: @selected-fg;
-    background: @notebook-bg;
-    background-color: @selected-third;
-    border-color: transparent;
-    background-image: none;
-    border-color: transparent;
-    border-bottom: 1px solid @selected-third;
-}
+.nav-tabs > li > a:focus,
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
@@ -124,6 +118,7 @@ ul#tabs a {
     background: @notebook-bg;
     background-color: @selected-bg;
     border-color: transparent;
+    background-image: none;
     text-shadow: none !important;
 }
 
@@ -286,7 +281,7 @@ div#ipython_notebook {
 }
 .dropdown-header {
     font-family: @notebook-fontfamily;
-    font-size: 12pt;
+    font-size: @nb-fontsize;
     display: block;
     color: @notebook-fg;
     text-decoration: underline;
@@ -296,7 +291,7 @@ div#ipython_notebook {
 }
 .dropdown-menu > li > a {
     font-family: @notebook-fontfamily;
-    font-size: 11.5pt;
+    font-size: 11pt;
     display: block;
     clear: both;
     padding: 9px 19px;
@@ -309,7 +304,7 @@ div#ipython_notebook {
 }
 .dropdown-menu > li > a:hover {
     font-family: @notebook-fontfamily;
-    font-size: 11.5pt;
+    font-size: 11pt;
     color: @selected-fg;
     display: block;
     clear: both;
@@ -337,7 +332,7 @@ div#ipython_notebook {
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
     font-family: @notebook-fontfamily;
-    font-size: 11.5pt;
+    font-size: 11pt;
     font-weight: normal;
     color: @disabled;
     padding: none;
@@ -456,11 +451,11 @@ div#ipython_notebook {
     width: 11.5ex;
 }
 #button-select-all {
-    padding-top: 2px;
+    padding-top: 4px;
     min-width: 50px;
 }
 button#tree-selector-btn {
-    padding-top: 2px;
+    padding-top: 4px;
 }
 button.close {
     padding: 0px;

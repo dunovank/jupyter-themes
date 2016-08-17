@@ -71,7 +71,6 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Name & Logo Visible   |  -N       |       --       |
 | Restore Default       |  -r       |       --       |
 
-
 ## Examples
 ```sh
 # list available themes
@@ -148,9 +147,9 @@ jt -r
 ## Sans-Serif Fonts
 | -nf/-tf arg | Sans-Serif Font |
 |:--|:--|
+|opensans|Open Sans|
 |droidsans|Droid Sans|
 |latosans|Lato|
-|opensans|Open Sans|
 |ptsans|PT Sans|
 |robotosans|Roboto|
 |sourcesans|Source Sans Pro|
@@ -158,9 +157,10 @@ jt -r
 ## Serif Fonts
 | -nf/-tf arg | Serif Font |
 |:--|:--|
+|ptserif|PT Serif|
+|georgiaserif|Georgia|
 |crimsonserif|Crimson Text|
 |droidserif|Droid Serif|
 |ebserif|EB Garamond|
 |loraserif|Lora|
 |merriserif|Merriweather|
-|ptserif|PT Serif|

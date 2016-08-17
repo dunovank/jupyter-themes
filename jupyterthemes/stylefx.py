@@ -117,7 +117,8 @@ def stored_font_dicts(fontcode, get_all=False):
                 'loraserif': ['Lora', 'serif/loraserif'],
                 'merriserif': ['Merriweather', 'serif/merriserif'],
                 'crimsonserif': ['Crimson Text', 'serif/crimsonserif'],
-                'droidserif': ['Droid Serif', 'serif/droidserif']}}
+                'droidserif': ['Droid Serif', 'serif/droidserif'],
+                'georgiaserif': ['Georgia', 'serif/georgiaserif']}}
     if get_all:
         return fonts
     if fontcode in list(fonts['mono']):
