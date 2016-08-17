@@ -1,3 +1,3 @@
-include *.txt
 include README.md
-recursive-include examples *.txt *.otf *.ttf *.woff *.woff2 *.js
+graft fonts
+prune build
