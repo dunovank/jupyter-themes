@@ -1,6 +1,7 @@
 import os
 from glob import glob
 from setuptools import setup
+import numpy as np
 README = os.path.join(os.path.dirname(__file__), 'README.md')
 with open(README) as rdme:
     longdescr = ''
