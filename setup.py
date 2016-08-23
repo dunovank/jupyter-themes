@@ -20,7 +20,7 @@ datafiles[pkgname].extend(fontsdata)
 
 setup(
     name='jupyterthemes',
-    version='0.11.2',
+    version='0.11.3',
     packages=['jupyterthemes'],
     include_package_data=True,
     package_data = datafiles,

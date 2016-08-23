@@ -1,58 +1,52 @@
 @font-face {
- font-family: 'Open Sans';
+ font-family: 'Droid Sans Mono';
  font-weight: normal;
  font-style: normal;
- src: local('Open Sans'), url('fonts/OpenSans-Regular.ttf') format('truetype');
+ src: local('Droid Sans Mono'), url('fonts/droid-sans-mono.woff') format('woff');
 }
 @font-face {
- font-family: 'PT Serif';
- font-weight: normal;
- font-style: italic;
- src: local('PT Serif'), url('fonts/pt-serif-italic.ttf') format('truetype');
-}
-@font-face {
- font-family: 'PT Serif';
+ font-family: 'Exo_2';
  font-weight: normal;
  font-style: normal;
- src: local('PT Serif'), url('fonts/pt-serif-regular.ttf') format('truetype');
+ src: local('Exo_2'), url('fonts/exo-II-regular.ttf') format('truetype');
 }
 @font-face {
- font-family: 'Source Code Pro';
- font-weight: normal;
- font-style: italic;
- src: local('Source Code Pro'), url('fonts/source-code-pro-italic.otf') format('opentype');
-}
-@font-face {
- font-family: 'Source Code Pro';
+ font-family: 'Fira Code';
  font-weight: normal;
  font-style: normal;
- src: local('Source Code Pro'), url('fonts/source-code-pro.otf') format('opentype');
+ src: local('Fira Code'), url('fonts/firacode.otf') format('opentype');
+}
+@font-face {
+ font-family: 'Georgia';
+ font-weight: normal;
+ font-style: normal;
+ src: local('Georgia'), url('fonts/georgia.ttf') format('truetype');
 }
 body {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 13pt;
  color: #93a2be;
  background-color: #262931;
  line-height: 1;
 }
 a {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 13pt;
  color: #93a2be;
 }
 div#notebook {
- font-family: "Source Code Pro", monospace;
- font-size: 11pt;
+ font-family: "Exo_2", sans-serif;
+ font-size: 13pt;
  line-height: 170%;
  color: #cdd2e9;
 }
 div#notebook_toolbar div.dynamic-instructions {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 11.5pt;
  display: inline-block;
 }
 .toolbar_info {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  color: #93a2be;
  border: none;
  text-shadow: none !important;
@@ -99,17 +93,23 @@ div.list_item:hover {
  border: none;
  text-shadow: none !important;
 }
+div.tab-content > .active {
+ font-family: "Exo_2", sans-serif;
+ font-size: 11.5pt;
+ line-height: 1.45;
+ display: block;
+ padding-top: 4px;
+}
 ul#tabs a {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 11.5pt;
  font-weight: normal;
  font-style: normal;
  border-color: transparent;
- border-bottom: 1px solid rgba(88,98,119,.30);
  text-shadow: none !important;
 }
 .nav-tabs {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 11.5pt;
  font-weight: normal;
  font-style: normal;
@@ -119,23 +119,11 @@ ul#tabs a {
 }
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:active,
-.nav-tabs > li > a:focus {
- font-family: "Open Sans", sans-serif;
- font-size: 11.5pt;
- font-weight: normal;
- font-style: normal;
- color: #d9dee8;
- background: #262931;
- background-color: rgba(88,98,119,.30);
- border-color: transparent;
- background-image: none;
- border-color: transparent;
- border-bottom: 1px solid rgba(88,98,119,.30);
-}
+.nav-tabs > li > a:focus,
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 11.5pt;
  font-weight: normal;
  font-style: normal;
@@ -143,10 +131,11 @@ ul#tabs a {
  background: #262931;
  background-color: #3572c6;
  border-color: transparent;
+ background-image: none;
  text-shadow: none !important;
 }
 div#notebook {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 13pt;
  padding-top: 5px;
 }
@@ -168,7 +157,7 @@ div#notebook {
  border-bottom: 1px solid rgba(88,98,119,.30);
 }
 #header {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 13pt;
  box-shadow: none;
  background-color: #262931;
@@ -183,7 +172,7 @@ body > #header .header-bar {
  margin-bottom: -1px;
 }
 .navbar-default {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 13pt;
  background-color: #262931;
  border-color: #262931;
@@ -200,7 +189,7 @@ body > #header .header-bar {
  margin-bottom: 0px;
 }
 .navbar-default .navbar-nav > li > a {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 13pt;
  color: #93a2be;
  display: block;
@@ -274,7 +263,7 @@ div#ipython_notebook {
  display: none;
 }
 .dropdown-menu {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 13pt;
  box-shadow: none;
  padding: 0px;
@@ -285,7 +274,7 @@ div#ipython_notebook {
  line-height: 1.2;
 }
 .dropdown-menu:hover {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 13pt;
  border: 2px solid rgba(88,98,119,.30);
  background-color: #373e4b;
@@ -293,8 +282,8 @@ div#ipython_notebook {
  line-height: 1.2;
 }
 .dropdown-header {
- font-family: "Open Sans", sans-serif;
- font-size: 12pt;
+ font-family: "Exo_2", sans-serif;
+ font-size: 13pt;
  display: block;
  color: #93a2be;
  text-decoration: underline;
@@ -303,8 +292,8 @@ div#ipython_notebook {
  line-height: 1.2;
 }
 .dropdown-menu > li > a {
- font-family: "Open Sans", sans-serif;
- font-size: 11.5pt;
+ font-family: "Exo_2", sans-serif;
+ font-size: 11pt;
  display: block;
  clear: both;
  padding: 9px 19px;
@@ -316,8 +305,8 @@ div#ipython_notebook {
  background: #373e4b;
 }
 .dropdown-menu > li > a:hover {
- font-family: "Open Sans", sans-serif;
- font-size: 11.5pt;
+ font-family: "Exo_2", sans-serif;
+ font-size: 11pt;
  color: #d9dee8;
  display: block;
  clear: both;
@@ -344,8 +333,8 @@ div#ipython_notebook {
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
- font-family: "Open Sans", sans-serif;
- font-size: 11.5pt;
+ font-family: "Exo_2", sans-serif;
+ font-size: 11pt;
  font-weight: normal;
  color: #5a647b;
  padding: none;
@@ -408,14 +397,14 @@ div#ipython_notebook {
 }
 .btn-sm,
 .btn-group-sm > .btn {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 11.5pt;
  border-radius: 2px;
  background: #343c4b;
  background-color: #343c4b;
 }
 .btn-group-sm > .btn:hover {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 11.5pt;
  color: #ffffff;
  background: #3572c6;
@@ -463,11 +452,11 @@ div#ipython_notebook {
  width: 11.5ex;
 }
 #button-select-all {
- padding-top: 2px;
+ padding-top: 4px;
  min-width: 50px;
 }
 button#tree-selector-btn {
- padding-top: 2px;
+ padding-top: 4px;
 }
 button.close {
  padding: 0px;
@@ -490,7 +479,7 @@ button.close {
  opacity: 0.9;
 }
 .modal-content {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 11.5pt;
  position: relative;
  background-color: #373e4b;
@@ -501,7 +490,7 @@ button.close {
  outline: 0px none;
 }
 .modal-header {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 11.5pt;
  padding: 15px;
  border-bottom: 1px solid rgba(88,98,119,.45);
@@ -623,7 +612,7 @@ div.cell.edit_mode {
 div.text_cell,
 div.text_cell_render pre,
 div.text_cell_render {
- font-family: "PT Serif", serif;
+ font-family: "Georgia", serif;
  font-size: 13pt;
  line-height: 170% !important;
  color: #bac6dc;
@@ -632,7 +621,7 @@ div.text_cell_render {
  border-radius: 2px;
 }
 div.cell.text_cell.rendered.selected {
- font-family: "PT Serif", serif;
+ font-family: "Georgia", serif;
  border: medium solid #48a667;
  line-height: 170% !important;
  background: #303845;
@@ -640,7 +629,7 @@ div.cell.text_cell.rendered.selected {
  border-radius: 2px;
 }
 div.cell.text_cell.unrendered.selected {
- font-family: "PT Serif", serif;
+ font-family: "Georgia", serif;
  line-height: 170% !important;
  background: #303845;
  background-color: #303845;
@@ -648,7 +637,7 @@ div.cell.text_cell.unrendered.selected {
  border-radius: 2px;
 }
 div.cell.text_cell.selected {
- font-family: "PT Serif", serif;
+ font-family: "Georgia", serif;
  line-height: 170% !important;
  border: medium solid #48a667;
  background: #303845;
@@ -656,7 +645,7 @@ div.cell.text_cell.selected {
  border-radius: 2px;
 }
 .edit_mode div.cell.text_cell.selected {
- font-family: "PT Serif", serif;
+ font-family: "Georgia", serif;
  line-height: 170% !important;
  background: #303845;
  background-color: #303845;
@@ -666,7 +655,7 @@ div.cell.text_cell.selected {
 div.text_cell.unrendered,
 div.text_cell.unrendered.selected,
 div.edit_mode div.text_cell.unrendered {
- font-family: "PT Serif", serif;
+ font-family: "Georgia", serif;
  line-height: 170% !important;
  background: #303845;
  background-color: #303845;
@@ -675,9 +664,9 @@ div.edit_mode div.text_cell.unrendered {
 .rendered_html table,
 .rendered_html tr,
 .rendered_html td {
- font-family: "Source Code Pro", monospace;
- font-size: 9.5pt !important;
- line-height: 145% !important;
+ font-family: "Fira Code", monospace;
+ font-size: 9pt !important;
+ line-height: 150% !important;
  border: 1px solid #4e5c72;
  color: #dbdfef;
  background-color: #424d60;
@@ -686,20 +675,22 @@ div.edit_mode div.text_cell.unrendered {
 table.dataframe,
 .rendered_html tr,
 .dataframe * {
+ font-family: "Fira Code", monospace;
+ font-size: 9pt !important;
  border: 1px solid #4e5c72;
 }
 .dataframe th,
 .rendered_html th {
- font-family: "Open Sans", sans-serif;
- font-size: 10.5pt !important;
+ font-family: "Fira Code", monospace;
+ font-size: 9pt !important;
  font-weight: 450;
  border: 1px solid #414c5d;
  background: #2e3642;
 }
 .dataframe td,
 .rendered_html td {
- font-family: "Source Code Pro", monospace;
- font-size: 9.5pt !important;
+ font-family: "Fira Code", monospace;
+ font-size: 9pt !important;
  color: #dbdfef;
  background: #455063;
  border: 1px solid #4e5c72;
@@ -708,8 +699,8 @@ table.dataframe,
 }
 .dataframe-summary-row tr:last-child,
 .dataframe-summary-col td:last-child {
- font-family: "Source Code Pro", monospace;
- font-size: 10.5pt !important;
+ font-family: "Fira Code", monospace;
+ font-size: 10pt !important;
  font-weight: 450;
  color: #d4d8ec;
  border: 1px solid #4e5c72;
@@ -723,8 +714,8 @@ table.dataframe,
 }
 .rendered_html pre,
 div.text_cell_render pre {
- font-family: "Source Code Pro", monospace;
- font-size: 10.5pt !important;
+ font-family: "Droid Sans Mono", monospace;
+ font-size: 11pt !important;
  line-height: 170% !important;
  color: #cdd2e9;
  background: #2c333f;
@@ -741,19 +732,19 @@ pre code {
  margin-top: .2em;
 }
 .rendered_html :link {
- font-family: "PT Serif", serif;
- color: #50a46b;
+ font-family: "Georgia", serif;
+ color: #5ea977;
 }
 .rendered_html :link:hover {
- font-family: "PT Serif", serif;
+ font-family: "Georgia", serif;
  color: #2c85f7;
 }
 .rendered_html :visited {
- font-family: "PT Serif", serif;
- color: #50a46b;
+ font-family: "Georgia", serif;
+ color: #5ea977;
 }
 .rendered_html :visited:hover {
- font-family: "PT Serif", serif;
+ font-family: "Georgia", serif;
  color: #2c85f7;
 }
 div.output_wrapper {
@@ -768,9 +759,9 @@ div.output_wrapper {
 }
 div.output_subarea.output_text.output_stream.output_stdout,
 div.output_subarea.output_text {
- font-family: "Source Code Pro", monospace;
- font-size: 10.5pt;
- line-height: 130% !important;
+ font-family: "Droid Sans Mono", monospace;
+ font-size: 10pt !important;
+ line-height: 150% !important;
  background-color: #384151;
  color: #cdd2e9;
  border-top-right-radius: 0px;
@@ -779,9 +770,9 @@ div.output_subarea.output_text {
  border-bottom-right-radius: 2px;
 }
 div.output_area pre {
- font-family: "Source Code Pro", monospace;
- font-size: 10.5pt !important;
- line-height: 130% !important;
+ font-family: "Droid Sans Mono", monospace;
+ font-size: 10pt !important;
+ line-height: 150% !important;
  color: #cdd2e9;
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
@@ -792,8 +783,8 @@ div.output_area {
  display: -webkit-box;
 }
 div.output_html {
- font-family: "PT Serif", serif;
- font-size: 13pt;
+ font-family: "Droid Sans Mono", monospace;
+ font-size: 10pt !important;
  color: #dbdfef;
  background-color: #384151;
  background: #384151;
@@ -808,7 +799,7 @@ div.output_subarea {
  max-width: 90%;
 }
 div.widget-area {
- font-size: 12pt;
+ font-size: 11pt;
  background-color: #384151;
  background: #384151;
  color: #cdd2e9;
@@ -817,7 +808,7 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
  background: transparent;
  background-color: #2e3542;
  border: 1px solid #3572c6;
- font-size: 12pt;
+ font-size: 11pt;
 }
 .widget-hbox {
  -webkit-box-align: inherit;
@@ -828,7 +819,7 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
  align-items: inherit;
 }
 .widget-hbox .widget-label {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  font-size: 11.5pt;
  min-width: 12ex;
  padding-right: 8px;
@@ -857,21 +848,19 @@ video {
  margin-left: 20%;
 }
 div.prompt {
- font-family: "Source Code Pro", monospace;
- font-size: 9.5pt;
- line-height: 170%;
- padding: .2em;
+ font-family: "Fira Code", monospace;
+ font-size: 9pt;
+ padding: .25em;
  text-align: left !important;
- min-width: 13ex;
+ min-width: 12.8ex;
 }
 div.prompt.input_prompt {
- font-family: "Source Code Pro", monospace;
- font-size: 9.5pt;
- line-height: 170%;
+ font-family: "Fira Code", monospace;
+ font-size: 9pt;
  color: #5a647b;
  background-color: #303845;
  font-weight: normal;
- min-width: 13ex;
+ min-width: 12.8ex;
  text-align: left !important;
  border-right: 2px solid rgba(53,114,198,.5);
  border-top-left-radius: 2px;
@@ -880,26 +869,24 @@ div.prompt.input_prompt {
  border-bottom-right-radius: 0px;
 }
 div.cell.text_cell.rendered .input_prompt {
- font-family: "Source Code Pro", monospace;
- font-size: 9.5pt;
- line-height: 170%;
+ font-family: "Fira Code", monospace;
+ font-size: 9pt;
  background: #303845;
  background-color: #303845;
  border-right-color: rgba(83,180,115,.3);
- min-width: 13ex;
+ min-width: 12.8ex;
 }
 div.cell.text_cell.unrendered .input_prompt {
- font-family: "Source Code Pro", monospace;
- font-size: 9.5pt;
- line-height: 170%;
+ font-family: "Fira Code", monospace;
+ font-size: 9pt;
  background: #303845;
  background-color: #303845;
  border-right-color: rgba(83,180,115,.3);
- min-width: 13ex;
+ min-width: 12.8ex;
 }
 div.prompt.output_prompt {
- font-family: "Source Code Pro", monospace;
- font-size: 9.5pt;
+ font-family: "Fira Code", monospace;
+ font-size: 9pt;
  background-color: #384151;
  color: #384151;
  border-bottom-left-radius: 2px;
@@ -908,18 +895,18 @@ div.prompt.output_prompt {
  border-bottom-right-radius: 0px;
 }
 div.out_prompt_overlay.prompt {
- font-family: "Source Code Pro", monospace;
- font-size: 9.5pt;
+ font-family: "Fira Code", monospace;
+ font-size: 9pt;
  background-color: #384151;
  border-bottom-left-radius: 2px;
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
  border-bottom-right-radius: 0px;
- min-width: 13ex;
+ min-width: 12.8ex;
 }
 div.out_prompt_overlay.prompt:hover {
- font-family: "Source Code Pro", monospace;
- font-size: 9.5pt;
+ font-family: "Fira Code", monospace;
+ font-size: 9pt;
  background-color: #384151;
  box-shadow: #303945 2px 1px 2px 2.5px inset;
  border-bottom-left-radius: 2px;
@@ -930,7 +917,7 @@ div.out_prompt_overlay.prompt:hover {
 }
 div.CodeMirror,
 div.CodeMirror pre {
- font-family: "Source Code Pro", monospace;
+ font-family: "Droid Sans Mono", monospace;
  font-size: 11pt;
  line-height: 170%;
  color: #cdd2e9;
@@ -1005,7 +992,7 @@ div.tooltiptext.bigtooltip {
  max-width: 800px;
 }
 .cm-s-ipython.CodeMirror {
- font-family: "Source Code Pro", monospace;
+ font-family: "Droid Sans Mono", monospace;
  font-size: 11pt;
  background: #303845;
  color: #cdd2e9;
@@ -1094,7 +1081,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
  background: rgba(191,97,106,.4) !important;
 }
 div.cell.text_cell .cm-s-default .cm-header {
- color: #50a46b;
+ color: #5ea977;
 }
 div.cell.text_cell .cm-s-default span.cm-variable-2 {
  color: #bac6dc;
@@ -1135,31 +1122,31 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
  background: #384151;
 }
 div.text_cell_render h1 {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  text-align: center;
  font-weight: lighter;
  background: #303845;
  background-color: #303845;
- color: #50a46b;
+ color: #5ea977;
 }
 div.text_cell_render h2,
 div.text_cell_render h3,
 div.text_cell_render h4,
 div.text_cell_render h5,
 div.text_cell_render h6 {
- font-family: "Open Sans", sans-serif;
+ font-family: "Exo_2", sans-serif;
  text-align: left;
  font-weight: lighter;
  background: #303845;
  background-color: #303845;
- color: #50a46b;
+ color: #5ea977;
 }
 a.anchor-link:link {
  font-size: 100%;
  text-decoration: none;
  padding: 0px 20px;
  visibility: none;
- color: #50a46b;
+ color: #5ea977;
 }
 div#maintoolbar {
  display: none !important;

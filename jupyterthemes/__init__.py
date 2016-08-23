@@ -10,7 +10,7 @@ from jupyterthemes import stylefx
 
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
-__version__ = '0.11.2'
+__version__ = '0.11.3'
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
 
