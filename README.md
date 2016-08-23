@@ -1,13 +1,13 @@
 # jupyterthemes
 ## Theme-ify your Jupyter Notebooks!
 
-###### plots & equations || theme: grade3
+###### *plots & equations*
 ![image](screens/grade3_plot_example.png)
 
-###### markdown & text cells || theme: oceans16
+###### *markdown & text cells*
 ![image](screens/oceans16_markdown.png)
 
-###### pandas dataframe || theme: grade3
+###### *pandas dataframes*
 ![image](screens/grade3_table.png)
 
 ###### *oceans16 syntax*
@@ -19,19 +19,20 @@
 ###### *chesterish syntax*
 ![image](screens/chesterish_code_headers.png)
 
-## Links
-[jupyterthemes on pypi](https://pypi.python.org/pypi/jupyterthemes/)
-[jupyterthemes on github](https://github.com/dunovank/jupyter-themes)
-
-## TravisCI Build status:
+### TravisCI Build status:
 ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
 
-## Install with pip
+### Install with pip
 ```sh
 pip install jupyterthemes
 ```
 
-## Known Issues
+### Links
+[jupyterthemes on PyPI](https://pypi.python.org/pypi/jupyterthemes/)
+[jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
+
+
+### Known Issues
 * **UPDATE**: lesscpy has added support for 3.5 to their development branch but still waiting for this to make it's way into the official release on pypi. Soon...
 
 * jupyterthemes relies on [lesscpy](https://github.com/lesscpy/lesscpy) to compile the custom arguments supplied by the user into into the css body that eventually gets saved as custom.css in your jupyter config directory.
@@ -39,7 +40,7 @@ pip install jupyterthemes
 * Unfortunately, lesscpy currently only supports up to Python 3.4. If you're running Python 3.5 you can still install and use jupyterthemes but you won't be able to modify the default settings (e.g., font, font-size, cell width, etc.). See [*Examples for 3.5 Users*](https://github.com/dunovank/jupyter-themes/tree/develop#examples-for-python-35-users).
 
 
-## Command Line Usage
+### Command Line Usage
 ```
 usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
           [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE]
@@ -69,7 +70,7 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Restore Default       |  -r       |      --       |
 \* Vim extension compatibility provided by [alextfkd](https://github.com/alextfkd)
 
-## Examples
+### Examples
 ```sh
 # list available themes
 # oceans16 | grade3 | chesterish | onedork
@@ -106,7 +107,7 @@ jt -t grade3 -alt
 jt -r
 ```
 
-## Examples for Python 3.5 users:
+### Examples for Python 3.5 users:
 ```sh
 # install a theme
 jt -t grade3
@@ -117,7 +118,7 @@ jt -r
 
 ```
 
-## Monospace Fonts (codecells)
+### Monospace Fonts (codecells)
 | -f arg | Monospace Font |
 |:--|:--|
 |anka|Anka/Coder|
@@ -146,7 +147,7 @@ jt -r
 |ptmono|PT Mono|
 |ubuntu|Ubuntu Mono|
 
-## Sans-Serif Fonts
+### Sans-Serif Fonts
 | -nf/-tf arg | Sans-Serif Font |
 |:--|:--|
 |opensans|Open Sans|
@@ -176,7 +177,7 @@ jt -r
 |puritansans|Puritan Sans|
 |ralewaysans|Raleway|
 
-## Serif Fonts
+### Serif Fonts
 | -nf/-tf arg | Serif Font |
 |:--|:--|
 |georgiaserif|Georgia|
