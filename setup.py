@@ -2,6 +2,8 @@ import os
 from glob import glob
 from setuptools import setup
 import numpy as np
+
+# get readme content after screenshots for pypi site
 README = os.path.join(os.path.dirname(__file__), 'README.md')
 with open(README) as read_me:
     longdescr = ''
@@ -14,6 +16,8 @@ with open(README) as read_me:
 
 pkgname = 'jupyterthemes'
 datafiles = {pkgname: ['sandbox/*.js', 'layout/*.less', 'layout/*.css', 'styles/*.less', 'styles/compiled/*.css']}
+
+# recursively point to all included font directories
 fontfams = ['monospace', 'sans-serif', 'serif']
 fsubdirs = [os.path.join(pkgname,'fonts', subdir) for subdir in fontfams]
 fontsdata = np.hstack([['/'.join(f.split('/')[1:]) for f in glob(os.path.join(fsub, '*', '*'))] for fsub in fsubdirs]).tolist()
