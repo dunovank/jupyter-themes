@@ -19,6 +19,10 @@
 ###### *chesterish syntax*
 ![image](screens/chesterish_code_headers.png)
 
+## Links
+[jupyterthemes on pypi](https://pypi.python.org/pypi/jupyterthemes/)
+[jupyterthemes on github](https://github.com/dunovank/jupyter-themes)
+
 ## TravisCI Build status:
 ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
 
@@ -27,9 +31,7 @@
 pip install jupyterthemes
 ```
 
-
 ## Known Issues
-
 * **UPDATE**: lesscpy has added support for 3.5 to their development branch but still waiting for this to make it's way into the official release on pypi. Soon...
 
 * jupyterthemes relies on [lesscpy](https://github.com/lesscpy/lesscpy) to compile the custom arguments supplied by the user into into the css body that eventually gets saved as custom.css in your jupyter config directory.
@@ -38,7 +40,6 @@ pip install jupyterthemes
 
 
 ## Command Line Usage
-
 ```
 usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
           [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE]
