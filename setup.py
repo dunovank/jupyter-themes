@@ -3,13 +3,14 @@ from glob import glob
 from setuptools import setup
 import numpy as np
 README = os.path.join(os.path.dirname(__file__), 'README.md')
-with open(README) as rdme:
+with open(README) as read_me:
     longdescr = ''
-    i = 0
-    for line in rdme:
-        if i>=28:
+    startReading = False
+    for line in read_me:
+        if "Travis" in line.strip():
+            startReading = True
+        if startReading:
             longdescr += line
-        i+=1
 
 pkgname = 'jupyterthemes'
 datafiles = {pkgname: ['sandbox/*.js', 'layout/*.less', 'layout/*.css', 'styles/*.less', 'styles/compiled/*.css']}
@@ -20,7 +21,7 @@ datafiles[pkgname].extend(fontsdata)
 
 setup(
     name='jupyterthemes',
-    version='0.11.3',
+    version='0.11.4',
     packages=['jupyterthemes'],
     include_package_data=True,
     package_data = datafiles,
@@ -28,7 +29,7 @@ setup(
     long_description=longdescr,
     license='MIT',
     url='https://github.com/dunovank/jupyter-themes/',
-    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.11.2',
+    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.11.4',
     author='dunovank',
     author_email='dunovank@gmail.com',
     classifiers=[
