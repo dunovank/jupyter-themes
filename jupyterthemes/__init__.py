@@ -36,7 +36,7 @@ def reset_default(verbose=False):
     stylefx.reset_default(verbose)
     stylefx.check_directories()
 
-def install_theme(theme, monofont='source', monosize=11, nbfont='opensans', nbfontsize=13, tcfont='ptserif', tcfontsize=13, cellwidth=980, lineheight=170, altlayout=False, vimext=False, toolbar=False, nbname=False):
+def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nbfontsize=13, tcfont='georgiaserif', tcfontsize=13, cellwidth=980, lineheight=170, cursorwidth=2, cursorcolor='default', altlayout=False, vimext=False, toolbar=False, nbname=False):
     """ install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
     """
@@ -48,7 +48,8 @@ def install_theme(theme, monofont='source', monosize=11, nbfont='opensans', nbfo
     # initialize style_less & style_css
     style_less = stylefx.set_font_properties(monofont=monofont, monosize=monosize, nbfont=nbfont, nbfontsize=nbfontsize, tcfont=tcfont, tcfontsize=tcfontsize)
     # define some vars for cell layout
-    style_less = stylefx.style_layout(style_less, theme=theme, cellwidth=cellwidth, lineheight=lineheight, altlayout=altlayout, vimext=vimext, toolbar=toolbar, nbname=nbname)
+    cursorcolor = stylefx.get_colors(theme=theme, c=cursorcolor)
+    style_less = stylefx.style_layout(style_less, theme=theme, cellwidth=cellwidth, lineheight=lineheight, altlayout=altlayout, cursorwidth=cursorwidth, cursorcolor=cursorcolor, vimext=vimext, toolbar=toolbar, nbname=nbname)
     # compile tempfile.less to css code and append to style_css
     style_css = stylefx.less_to_css(style_less)
     # append mathjax css & script to style_css
@@ -62,14 +63,16 @@ def main():
     parser = ArgumentParser()
     parser.add_argument('-l', "--list", action='store_true', help="list available themes")
     parser.add_argument('-t', "--theme", action='store', help="theme name to install")
-    parser.add_argument('-f',"--monofont", action='store', default='source', help='monospace code font')
+    parser.add_argument('-f',"--monofont", action='store', default='droidmono', help='monospace code font')
     parser.add_argument('-fs', "--monosize", action='store', default='11', help='code font-size')
-    parser.add_argument('-nf',"--nbfont", action='store', default='opensans', help='notebook font')
+    parser.add_argument('-nf',"--nbfont", action='store', default='exosans', help='notebook font')
     parser.add_argument('-nfs',"--nbfontsize", action='store', default='13', help='notebook fontsize')
-    parser.add_argument('-tf',"--tcfont", action='store', default='ptserif', help='txtcell font')
+    parser.add_argument('-tf',"--tcfont", action='store', default='georgiaserif', help='txtcell font')
     parser.add_argument('-tfs',"--tcfontsize", action='store', default='13', help='txtcell fontsize')
-    parser.add_argument('-cw', "--cellwidth", action='store', default=980, help="set cell width (px)")
-    parser.add_argument('-lh',"--lineheight", action='store', default=170, help='code/text line-height (%%)')
+    parser.add_argument('-cursw', "--cursorwidth", action='store', default=2, help="set cursorwidth (px)")
+    parser.add_argument('-cursc', "--cursorcolor", action='store', default='default', help="set cursor color (r, b, g, p)")
+    parser.add_argument('-cellw', "--cellwidth", action='store', default=980, help="set cell width (px)")
+    parser.add_argument('-lineh',"--lineheight", action='store', default=170, help='code/text line-height (%%)')
     parser.add_argument('-alt', "--altlayout", action='store_true', default=False, help="alt markdown layout")
     parser.add_argument('-vim', "--vimext", action='store_true', default=False, help="toggle styles for vim")
     parser.add_argument('-T', "--toolbar", action='store_true', default=False, help="make toolbar visible")
@@ -83,7 +86,7 @@ def main():
             print("Didn't recognize theme name: {}".format(args.theme))
             print(say_themes)
             exit(1)
-        install_theme(args.theme, monofont=args.monofont, monosize=args.monosize, nbfont=args.nbfont, nbfontsize=args.nbfontsize, tcfont=args.tcfont, tcfontsize=args.tcfontsize, cellwidth=int(args.cellwidth),  lineheight=int(args.lineheight), altlayout=args.altlayout, vimext=args.vimext, toolbar=args.toolbar, nbname=args.nbname)
+        install_theme(args.theme, monofont=args.monofont, monosize=args.monosize, nbfont=args.nbfont, nbfontsize=args.nbfontsize, tcfont=args.tcfont, tcfontsize=args.tcfontsize, cellwidth=int(args.cellwidth), lineheight=int(args.lineheight), cursorwidth=args.cursorwidth, cursorcolor=args.cursorcolor, altlayout=args.altlayout, vimext=args.vimext, toolbar=args.toolbar, nbname=args.nbname)
     elif args.reset:
         reset_default(verbose=True)
     elif args.list:

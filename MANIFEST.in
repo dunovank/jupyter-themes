@@ -1,3 +1,2 @@
-include *.txt
 include README.md
 global-include jupyterthemes/fonts *.txt *.otf *.ttf *.woff *.woff2 *.js

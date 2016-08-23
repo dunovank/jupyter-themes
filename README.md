@@ -1,34 +1,25 @@
 # jupyterthemes
 ## Theme-ify your Jupyter Notebooks!
-```sh
-jt -t chesterish -cw 850 -f hack -fs 10
-```
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tchesterish-cw850-fs10.png?raw=true)
 
-```sh
-jt -t oceans16 -alt -f hack -fs 10 -cw 900
-```
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-toceans16-altmd-fs10-cw900.png?raw=true)
+###### plots & equations || theme: grade3
+![image](screens/grade3_plot_example.png)
 
-```sh
-jt -t onedork -f hack -fs 10 -cw 850
-```
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-cw850-fs10.png?raw=true)
+###### markdown & text cells || theme: oceans16
+![image](screens/oceans16_markdown.png)
 
-```sh
-jt -t grade3 -alt -fs 10 -cw 900 -tf ptserif
-```
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tgrade3-altmd-fs10-cw900.png?raw=true)
+###### pandas dataframe || theme: grade3
+![image](screens/grade3_table.png)
 
-```sh
-jt -t onedork -nf ptserif -tf ptserif
-```
-![image](https://github.com/dunovank/jupyter-themes/blob/master/screens/jt-tonedork-ffserif-tcffserif.png?raw=true)
+###### oceans16 syntax
+![image](screens/oceans16_code_headers.png)
+###### grade3 syntax
+![image](screens/grade3_code_headers.png)
+###### onedork syntax
+![image](screens/onedork_code_headers.png)
 
 
 ## TravisCI Build status:
 ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
-
 
 ## Install with pip
 ```sh
@@ -49,28 +40,32 @@ pip install jupyterthemes
 
 ```
 usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
-          [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-cw CELLWIDTH]
-          [-lh LINEHEIGHT] [-alt] [-vim] [-T] [-N] [-r]
+          [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE]
+          [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-cellw CELLWIDTH]
+          [-lineh LINEHEIGHT] [-alt] [-vim] [-T] [-N] [-r]
 ```
 
-|        options        |   arg     |     default    |
-|:----------------------|:---------:|:--------------:|
-| Usage help            |  -h       |       --       |
-| List Themes           |  -l       |       --       |
-| Theme Name to Install |  -t       |       --       |
-| Code Font             |  -f       |     source     |
-| Code Font-Size        |  -fs      |       11       |
-| NB Font               |  -nf      |    opensans    |
-| NB Font Size          |  -nfs     |       13       |
-| Txt and MD Font       |  -tf      |     ptserif    |
-| Txt and MD Fontsize   |  -tfs     |       13       |
-| Cell Width            |  -cw      |      980       |
-| Line Height           |  -lh      |      170       |
-| Alt Txt/MD Layout     |  -alt     |       --       |
-| Style Vim NBExt       |  -vim     |       --       |
-| Toolbar Visible       |  -T       |       --       |
-| Name & Logo Visible   |  -N       |       --       |
-| Restore Default       |  -r       |       --       |
+|        options        |   arg     |     default   |
+|:----------------------|:---------:|:-------------:|
+| Usage help            |  -h       |      --       |
+| List Themes           |  -l       |      --       |
+| Theme Name to Install |  -t       |      --       |
+| Code Font             |  -f       |   droidmono   |
+| Code Font-Size        |  -fs      |      11       |
+| Notebook Font         |  -nf      |    exosans    |
+| Notebook Font Size    |  -nfs     |      13       |
+| Text/MD Cell Font     |  -tf      |  georgiaserif |
+| Text/MD Cell Fontsize |  -tfs     |      13       |
+| Cell Width            |  -cellw   |      980      |
+| Line Height           |  -lineh   |      170      |
+| Cursor Width          |  -cursw   |       2       |
+| Cursor Color          |  -cursc   |  [theme clr]  |
+| Alt Text/MD Layout    |  -alt     |      --       |
+| Style Vim NBExt*      |  -vim     |      --       |
+| Toolbar Visible       |  -T       |      --       |
+| Name & Logo Visible   |  -N       |      --       |
+| Restore Default       |  -r       |      --       |
+\* Vim extension compatibility provided by [alextfkd](https://github.com/alextfkd)
 
 ## Examples
 ```sh
@@ -89,15 +84,18 @@ jt -t grade3 -T -N
 jt -t oceans16 -f roboto -fs 12
 
 # set code font to Fira Mono, 11.5pt
-# 3digit font sizes converted into floats (115-->11.5pt)
+# 3digit font-size gets converted into float (115-->11.5)
 jt -t grade3 -f fira -fs 115
 
-# set notebook & text-cell fonts
+# set notebook & text-cell/markdown fonts
 # (see sans-serif & serif font tables below)
 jt -t onedork -nf ptserif -tf droidsans
 
-# adjust cell width and line-height
-jt -t chesterish -cw 900 -lh 170
+# adjust cell width, line-height of codecells
+jt -t chesterish -cellw 900 -lineh 170
+
+# set block cursor, color red
+jt -t onedork -cursw 8 -cursc r
 
 # choose alternate txt/markdown layout
 jt -t grade3 -alt
@@ -143,6 +141,7 @@ jt -r
 |saxmono|saxMono|
 |source|Source Code Pro|
 |sourcemed|Source Code Pro Medium|
+|ptmono|PT Mono|
 |ubuntu|Ubuntu Mono|
 
 ## Sans-Serif Fonts
@@ -154,14 +153,40 @@ jt -r
 |ptsans|PT Sans|
 |robotosans|Roboto|
 |sourcesans|Source Sans Pro|
+|amikosans|Amiko|
+|exosans|Exo_2|
+|nobilesans|Nobile|
+|alegreyasans|Alegreya|
+|armatasans|Armata|
+|cambaysans|Cambay|
+|catamaransans|Catamaran|
+|franklinsans|Libre Franklin|
+|frankruhlsans|Frank Ruhl|
+|gothicsans|Carrois Gothic|
+|gudeasans|Gudea|
+|hindsans|Hind|
+|jaldisans|Jaldi|
+|makosans|Mako|
+|merrisans|Merriweather Sans|
+|mondasans|Monda|
+|oxygensans|Oxygen Sans|
+|pontanosans|Pontano Sans|
+|puritansans|Puritan Sans|
+|ralewaysans|Raleway|
 
 ## Serif Fonts
 | -nf/-tf arg | Serif Font |
 |:--|:--|
-|ptserif|PT Serif|
 |georgiaserif|Georgia|
+|ptserif|PT Serif|
 |crimsonserif|Crimson Text|
 |droidserif|Droid Serif|
 |ebserif|EB Garamond|
 |loraserif|Lora|
 |merriserif|Merriweather|
+|vesperserif|Vesper Libre|
+|scopeserif|ScopeOne|
+|sanchezserif|Sanchez|
+|neutonserif|Neuton|
+|rasaserif|Rasa|
+|vollkornserif|Vollkorn|
