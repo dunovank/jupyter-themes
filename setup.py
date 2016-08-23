@@ -1,20 +1,34 @@
 import os
+from glob import glob
 from setuptools import setup
-README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
-# allow setup.py to be run from any path
-os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
+import numpy as np
+README = os.path.join(os.path.dirname(__file__), 'README.md')
+with open(README) as rdme:
+    longdescr = ''
+    i = 0
+    for line in rdme:
+        if i>=28:
+            longdescr += line
+        i+=1
+
+pkgname = 'jupyterthemes'
+datafiles = {pkgname: ['sandbox/*.js', 'layout/*.less', 'layout/*.css', 'styles/*.less', 'styles/compiled/*.css']}
+fontfams = ['monospace', 'sans-serif', 'serif']
+fsubdirs = [os.path.join(pkgname,'fonts', subdir) for subdir in fontfams]
+fontsdata = np.hstack([['/'.join(f.split('/')[1:]) for f in glob(os.path.join(fsub, '*', '*'))] for fsub in fsubdirs]).tolist()
+datafiles[pkgname].extend(fontsdata)
 
 setup(
     name='jupyterthemes',
-    version='0.11.0',
+    version='0.11.2',
     packages=['jupyterthemes'],
     include_package_data=True,
-    package_data={'jupyterthemes': ['sandbox/*.js', 'layout/*.less', 'layout/*.css', 'styles/*.less', 'styles/compiled/*.css', 'fonts/monospace/, fonts/sans-serif/, fonts/serif/']},
+    package_data = datafiles,
     description='Select and install a Jupyter notebook theme',
-    long_description=README,
+    long_description=longdescr,
     license='MIT',
     url='https://github.com/dunovank/jupyter-themes/',
-    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.11.0',
+    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.11.2',
     author='dunovank',
     author_email='dunovank@gmail.com',
     classifiers=[

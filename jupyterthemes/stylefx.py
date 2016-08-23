@@ -275,11 +275,11 @@ def reset_default(verbose=False):
             os.remove(custom)
         except Exception:
             pass
-    for fontfile in os.listdir(jupyter_custom_fonts):
-        try:
+    try:
+        for fontfile in os.listdir(jupyter_custom_fonts):
             abspath = os.path.join(jupyter_custom_fonts, fontfile)
             os.remove(abspath)
-        except Exception:
-            pass
+    except Exception:
+        check_directories()
     if verbose:
         print("Reset css and font defaults in:\n{} &\n{}".format(*paths))
