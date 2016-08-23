@@ -10,13 +10,14 @@
 ###### pandas dataframe || theme: grade3
 ![image](screens/grade3_table.png)
 
-###### oceans16 syntax
+###### *oceans16 syntax*
 ![image](screens/oceans16_code_headers.png)
-###### grade3 syntax
+###### *grade3 syntax*
 ![image](screens/grade3_code_headers.png)
-###### onedork syntax
+###### *onedork syntax*
 ![image](screens/onedork_code_headers.png)
-
+###### *chesterish syntax*
+![image](screens/chesterish_code_headers.png)
 
 ## TravisCI Build status:
 ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
