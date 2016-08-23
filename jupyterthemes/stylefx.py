@@ -78,6 +78,11 @@ def send_fonts_to_jupyter(font_file_path):
     fname = font_file_path.split('/')[-1]
     copyfile(font_file_path, os.path.join(jupyter_custom_fonts, fname))
 
+def delete_font_files():
+    for fontfile in os.listdir(jupyter_custom_fonts):
+        abspath = os.path.join(jupyter_custom_fonts, fontfile)
+        os.remove(abspath)
+
 def stored_font_dicts(fontcode, get_all=False):
     fonts = {'mono':
                 {'anka': ['Anka/Coder', 'monospace/anka-coder'],
@@ -103,6 +108,7 @@ def stored_font_dicts(fontcode, get_all=False):
                 'saxmono': ['saxMono', 'monospace/saxmono'],
                 'source': ['Source Code Pro', 'monospace/source-code-pro'],
                 'sourcemed': ['Source Code Pro Medium', 'monospace/source-code-medium'],
+                'ptmono': ['PT Mono', 'monospace/ptmono'],
                 'ubuntu': ['Ubuntu Mono', 'monospace/ubuntu']},
             'sans':
                 {'droidsans': ['Droid Sans', 'sans-serif/droidsans'],
@@ -110,7 +116,27 @@ def stored_font_dicts(fontcode, get_all=False):
                 'ptsans': ['PT Sans', 'sans-serif/ptsans'],
                 'sourcesans': ['Source Sans Pro', 'sans-serif/sourcesans'],
                 'robotosans': ['Roboto', 'sans-serif/robotosans'],
-                'latosans': ['Lato', 'sans-serif/latosans']},
+                'latosans': ['Lato', 'sans-serif/latosans'],
+                'amikosans': ['Amiko', 'sans-serif/amikosans'],
+                'exosans': ['Exo_2', 'sans-serif/exosans'],
+                'nobilesans': ['Nobile', 'sans-serif/nobilesans'],
+                'alegreyasans': ['Alegreya', 'sans-serif/alegreyasans'],
+                'armatasans': ['Armata', 'sans-serif/armatasans'],
+                'cambaysans': ['Cambay', 'sans-serif/cambaysans'],
+                'catamaransans': ['Catamaran', 'sans-serif/catamaransans'],
+                'franklinsans': ['Libre Franklin', 'sans-serif/franklinsans'],
+                'frankruhlsans': ['Frank Ruhl', 'sans-serif/frankruhlsans'],
+                'gothicsans': ['Carrois Gothic', 'sans-serif/gothicsans'],
+                'gudeasans': ['Gudea', 'sans-serif/gudeasans'],
+                'hindsans': ['Hind', 'sans-serif/hindsans'],
+                'jaldisans': ['Jaldi', 'sans-serif/jaldisans'],
+                'makosans': ['Mako', 'sans-serif/makosans'],
+                'merrisans': ['Merriweather Sans', 'sans-serif/merrisans'],
+                'mondasans': ['Monda', 'sans-serif/mondasans'],
+                'oxygensans': ['Oxygen Sans', 'sans-serif/oxygensans'],
+                'pontanosans': ['Pontano Sans', 'sans-serif/pontanosans'],
+                'puritansans': ['Puritan Sans', 'sans-serif/puritansans'],
+                'ralewaysans': ['Raleway', 'sans-serif/ralewaysans']},
             'serif':
                 {'ptserif': ['PT Serif', 'serif/ptserif'],
                 'ebserif': ['EB Garamond', 'serif/ebserif'],
@@ -118,18 +144,26 @@ def stored_font_dicts(fontcode, get_all=False):
                 'merriserif': ['Merriweather', 'serif/merriserif'],
                 'crimsonserif': ['Crimson Text', 'serif/crimsonserif'],
                 'droidserif': ['Droid Serif', 'serif/droidserif'],
-                'georgiaserif': ['Georgia', 'serif/georgiaserif']}}
+                'georgiaserif': ['Georgia', 'serif/georgiaserif'],
+                'neutonserif': ['Neuton', 'serif/neutonserif'],
+                'vesperserif': ['Vesper Libre', 'serif/vesperserif'],
+                'scopeserif': ['ScopeOne Serif', 'serif/scopeserif'],
+                'sanchezserif': ['Sanchez Serif', 'serif/sanchezserif'],
+                'rasaserif': ['Rasa', 'serif/rasaserif'],
+                'vollkornserif': ['Vollkorn', 'serif/vollkornserif'],
+                'sourceserif': ['Source Serif Pro', 'serif/sourceserif']}}
     if get_all:
         return fonts
     if fontcode in list(fonts['mono']):
-        fontinfo = fonts['mono'][fontcode] + ['monospace']
+        return fonts['mono'][fontcode] + ['monospace']
     elif fontcode in list(fonts['sans']):
-        fontinfo = fonts['sans'][fontcode] + ['sans-serif']
+        return fonts['sans'][fontcode] + ['sans-serif']
     elif fontcode in list(fonts['serif']):
-        fontinfo = fonts['serif'][fontcode] + ['serif']
-    return fontinfo
+        return fonts['serif'][fontcode] + ['serif']
+    else:
+        "One of the fonts you requested is not available... sorry!"
 
-def import_stored_fonts(style_less='', fontcodes=['opensans', 'ptserif', 'source']):
+def import_stored_fonts(style_less='', fontcodes=['exosans', 'georgiaserif', 'droidmono']):
     """ collect fontnames and local pointers to fontfiles in custom dir
     then pass information for each font to function for writing import statements
     """
@@ -146,25 +180,26 @@ def convert_fontsizes(fontsizes):
             fontsizes[i] = '.'.join([fs[:-1], fs[-1]])
     return fontsizes
 
-def set_font_properties(nbfont='opensans', tcfont='ptserif', monofont='source', monosize=11, tcfontsize=13, nbfontsize=13):
+def set_font_properties(nbfont='exosans', tcfont='georgiaserif', monofont='droidmono', monosize=11, tcfontsize=13, nbfontsize=13, prfontsize=9):
     """ parent function for setting notebook, text/md, and codecell font-properties
     """
     fontsizes = [monosize, nbfontsize, tcfontsize]
     monosize, nbfontsize, tcfontsize = convert_fontsizes(fontsizes)
-    style_less=''
-    style_less = import_stored_fonts(style_less, fontcodes=[nbfont, tcfont, monofont])
+    style_less = ''
+    style_less = import_stored_fonts(style_less, fontcodes=[nbfont, tcfont, monofont, 'firacode'])
     nbfont, nbfontpath, nbfontfam = stored_font_dicts(nbfont)
     tcfont, tcfontpath, tcfontfam = stored_font_dicts(tcfont)
     monofont, monofontpath, monofontfam = stored_font_dicts(monofont)
     # font names and fontfamily info for codecells, notebook & textcells
     style_less += '@monofont: "{}"; \n'.format(monofont)
-    style_less += '@notebook-fontfamily: "{}", {}; \n'.format(nbfont,nbfontfam)
-    style_less += '@text-cell-fontfamily: "{}", {}; \n'.format(tcfont,tcfontfam)
+    style_less += '@notebook-fontfamily: "{}", {}; \n'.format(nbfont, nbfontfam)
+    style_less += '@text-cell-fontfamily: "{}", {}; \n'.format(tcfont, tcfontfam)
     # font size for codecells, main notebook, notebook-sub, & textcells
     style_less += '@monofontsize: {}pt; \n'.format(monosize)
     style_less += '@nb-fontsize: {}pt; \n'.format(nbfontsize)
     style_less += '@nb-fontsize-sub: {}pt; \n'.format(float(nbfontsize)-1.5)
     style_less += '@text-cell-fontsize: {}pt; \n'.format(tcfontsize)
+    style_less += '@prompt-fontsize: {}pt; \n'.format(prfontsize)
     return style_less
 
 def import_fonts(style_less, fontname, font_subdir):
@@ -188,7 +223,7 @@ def import_fonts(style_less, fontname, font_subdir):
         send_fonts_to_jupyter(os.path.join(fontpath, fontfile))
     return style_less
 
-def style_layout(style_less, theme='grade3', cellwidth=980, lineheight=170, altlayout=False, vimext=False, toolbar=False, nbname=False):
+def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default', cellwidth=980, lineheight=170, altlayout=False, vimext=False, toolbar=False, nbname=False):
     """ set general layout and style properties of text and code cells
     """
     style_less += '@import "styles/{}";\n'.format(theme)
@@ -196,7 +231,7 @@ def style_layout(style_less, theme='grade3', cellwidth=980, lineheight=170, altl
     style_less += '@cc-line-height: {}%; \n'.format(lineheight)
     textcell_bg = '@cc-input-bg'
     tc_prompt_line = '@tc-prompt-std'
-    cc_prompt_width = 13
+    cc_prompt_width = 12.8
     tc_prompt_width = cc_prompt_width
     if altlayout:
         # alt txt/md layout
@@ -207,6 +242,8 @@ def style_layout(style_less, theme='grade3', cellwidth=980, lineheight=170, altl
     style_less += '@cc-prompt-width: {}ex;\n'.format(cc_prompt_width)
     style_less += '@tc-prompt-width: {}ex;\n'.format(tc_prompt_width)
     style_less += '@tc-prompt-line: {};\n'.format(tc_prompt_line)
+    style_less += '@cursor-width: {}px;\n'.format(cursorwidth)
+    style_less += '@cursor-info: @cursor-width solid {};\n'.format(cursorcolor)
     # read-in notebook.less (general nb style)
     with open(nb_style, 'r') as notebook:
         style_less += notebook.read() + '\n'
@@ -276,10 +313,19 @@ def reset_default(verbose=False):
         except Exception:
             pass
     try:
-        for fontfile in os.listdir(jupyter_custom_fonts):
-            abspath = os.path.join(jupyter_custom_fonts, fontfile)
-            os.remove(abspath)
+        delete_font_files()
     except Exception:
         check_directories()
+        delete_font_files()
     if verbose:
         print("Reset css and font defaults in:\n{} &\n{}".format(*paths))
+
+
+def get_colors(theme='grade3', c='default', get_dict=False):
+    if theme=='grade3':
+        cdict = {'b': '#1e70c7', 'default': '#ff711a', 'r': '#e22978', 'p': '#AA22FF', 'g': '#2ecc71'}
+    else:
+        cdict = {'default': '#0095ff', 'o': '#ff914d', 'r': '#DB797C', 'p': '#c776df', 'g': '#94c273'}
+    if get_dict:
+        return cdict
+    return cdict[c]

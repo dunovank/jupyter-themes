@@ -104,9 +104,9 @@ div.edit_mode div.text_cell.unrendered {
 .rendered_html table,
 .rendered_html tr,
 .rendered_html td {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt !important;
-    line-height: 145% !important;
+    font-family: "Fira Code", monospace;
+    font-size: 9pt !important;
+    line-height: 150% !important;
     border: 1px solid @table-border;
     color: @table-color;
     background-color: @table-bg;
@@ -119,20 +119,22 @@ div.edit_mode div.text_cell.unrendered {
 table.dataframe,
 .rendered_html tr,
 .dataframe * {
+    font-family: "Fira Code", monospace;
+    font-size: 9pt !important;
     border: 1px solid @table-border;
 }
 .dataframe th,
 .rendered_html th {
-    font-family: @notebook-fontfamily;
-    font-size: 10.5pt !important;
+    font-family: "Fira Code", monospace;
+    font-size: 9pt !important;
     font-weight: 450;
     border: 1px solid @df-header-border;
     background: @df-header-bg;
 }
 .dataframe td,
 .rendered_html td {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt !important;
+    font-family: "Fira Code", monospace;
+    font-size: 9pt !important;
     color: @table-color;
     background: @df-cell-bg;
     border: 1px solid @table-border;
@@ -142,8 +144,8 @@ table.dataframe,
 /********** PANDAS SUMMARY **********/
 .dataframe-summary-row tr:last-child,
 .dataframe-summary-col td:last-child {
-    font-family: @monofont, monospace;
-    font-size: 10.5pt !important;
+    font-family: "Fira Code", monospace;
+    font-size: 10pt !important;
     font-weight: 450;
     color: @df-header;
     border: 1px solid @table-border;
@@ -160,7 +162,7 @@ table.dataframe,
 .rendered_html pre,
 div.text_cell_render pre {
     font-family: @monofont, monospace;
-    font-size: 10.5pt !important;
+    font-size: @monofontsize !important;
     line-height: @cc-line-height !important;
     color: @cc-input-fg;
     background: @codeblock-bg;
@@ -211,8 +213,8 @@ div.output_wrapper {
 div.output_subarea.output_text.output_stream.output_stdout,
 div.output_subarea.output_text {
     font-family: @monofont, monospace;
-    font-size: 10.5pt;
-    line-height: 130% !important;
+    font-size: 10pt !important;
+    line-height: 150% !important;
     background-color: @cc-output-bg;
     color: @cc-output-fg;
     border-top-right-radius: 0px;
@@ -222,8 +224,8 @@ div.output_subarea.output_text {
 }
 div.output_area pre {
     font-family: @monofont, monospace;
-    font-size: 10.5pt !important;
-    line-height: 130% !important;
+    font-size: 10pt !important;
+    line-height: 150% !important;
     color: @cc-output-fg;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
@@ -234,8 +236,8 @@ div.output_area {
     display: -webkit-box;
 }
 div.output_html {
-    font-family: @text-cell-fontfamily;
-    font-size: @text-cell-fontsize;
+    font-family: @monofont, monospace;
+    font-size: 10pt !important;
     color: @table-color;
     background-color: @cc-output-bg;
     background: @cc-output-bg;
@@ -251,7 +253,7 @@ div.output_subarea {
 }
 /*********** WIDGETS ***********/
 div.widget-area {
-    font-size: 12pt;
+    font-size: 11pt;
     background-color: @cc-output-bg;
     background: @cc-output-bg;
     color: @cc-output-fg;
@@ -260,7 +262,7 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
     background: transparent;
     background-color: darken(@cc-output-bg, 5%);
     border: 1px solid @selected-bg;
-    font-size: 12pt;
+    font-size: 11pt;
 }
 .widget-hbox {
     -webkit-box-align: inherit;
@@ -305,17 +307,15 @@ audio, video {
 /***********************************/
 /*********** CODE CELLS ************/
 div.prompt {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt;
-    line-height: @cc-line-height;
-    padding: .2em;
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
+    padding: .25em;
     text-align: left !important;
     min-width: @cc-prompt-width;
 }
 div.prompt.input_prompt {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt;
-    line-height: @cc-line-height;
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
     color: @input-prompt;
     background-color: @cc-input-bg;
     font-weight: normal;
@@ -329,9 +329,8 @@ div.prompt.input_prompt {
 }
 /********** TEXT & MD CELLS **********/
 div.cell.text_cell.rendered .input_prompt {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt;
-    line-height: @cc-line-height;
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border-right-color: @tc-prompt-line;
@@ -339,9 +338,8 @@ div.cell.text_cell.rendered .input_prompt {
 
 }
 div.cell.text_cell.unrendered .input_prompt {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt;
-    line-height: @cc-line-height;
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border-right-color: @tc-prompt-line;
@@ -352,8 +350,8 @@ div.cell.text_cell.unrendered .input_prompt {
 /************************************/
 /************ CODE CELLS ************/
 div.prompt.output_prompt {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt;
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
     background-color: @cc-output-bg;
     color: @cc-output-bg;
     border-bottom-left-radius: 2px;
@@ -362,8 +360,8 @@ div.prompt.output_prompt {
     border-bottom-right-radius: 0px;
 }
 div.out_prompt_overlay.prompt {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt;
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
     background-color: @cc-output-bg;
     border-bottom-left-radius: 2px;
     border-top-right-radius: 0px;
@@ -372,8 +370,8 @@ div.out_prompt_overlay.prompt {
     min-width: @cc-prompt-width;
 }
 div.out_prompt_overlay.prompt:hover {
-    font-family: @monofont, monospace;
-    font-size: 9.5pt;
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
     background-color: @cc-output-bg;
     box-shadow: @box-shadow 2px 1px 2px 2.5px inset;
     border-bottom-left-radius: 2px;
