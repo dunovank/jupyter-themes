@@ -7,7 +7,7 @@ with open(README) as read_me:
     longdescr = ''
     startReading = False
     for line in read_me:
-        if "Links" in line.strip():
+        if "Travis" in line.strip():
             startReading = True
         if startReading:
             longdescr += line
