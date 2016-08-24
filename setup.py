@@ -25,7 +25,7 @@ datafiles[pkgname].extend(fontsdata)
 
 setup(
     name='jupyterthemes',
-    version='0.11.4',
+    version='0.11.5',
     packages=['jupyterthemes'],
     include_package_data=True,
     package_data = datafiles,
@@ -33,7 +33,7 @@ setup(
     long_description=longdescr,
     license='MIT',
     url='https://github.com/dunovank/jupyter-themes/',
-    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.11.4',
+    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.11.5',
     author='dunovank',
     author_email='dunovank@gmail.com',
     classifiers=[
@@ -41,7 +41,6 @@ setup(
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
