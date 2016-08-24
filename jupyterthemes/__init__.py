@@ -30,11 +30,6 @@ def get_themes():
               for theme in glob('{0}/*.less'.format(styles_dir))]
     return themes
 
-# def reset_default(verbose=False):
-#     """ remove custom.css import"""
-#     stylefx.reset_default(verbose)
-#     stylefx.check_directories()
-
 def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nbfontsize=13, tcfont='georgiaserif', tcfontsize=13, cellwidth=980, lineheight=170, cursorwidth=2, cursorcolor='default', altlayout=False, vimext=False, toolbar=False, nbname=False):
     """ install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
