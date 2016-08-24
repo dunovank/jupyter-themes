@@ -88,7 +88,30 @@ div.tooltiptext.bigtooltip {
     height: 400px;
     max-width: 800px;
 }
-
+div#pager {
+    background-color: @notebook-bg;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    z-index: 100;
+    top: auto !important;
+}
+div#pager pre {
+    color: @cc-input-fg;
+    background-color: @cc-input-bg;
+    line-height: @cc-line-height;
+    padding: 0.4em;
+    border-color: transparent;
+}
+div#pager .ui-resizable-handle {
+    top: 0px;
+    height: 8px;
+    background: @scrollbar;
+    border-top: 1px solid darken(@scrollbar, 2%);
+    border-bottom: 1px solid darken(@scrollbar, 2%);
+}
+pre, code, kbd, samp {
+    white-space: pre-wrap;
+}
 /*******************************************/
 /****** CODE CELLS SYNTAX HIGHLIGHTING *****/
 /*******************************************/
