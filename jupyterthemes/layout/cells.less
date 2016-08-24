@@ -251,6 +251,22 @@ div.output_subarea {
     flex: 1;
     max-width: 90%;
 }
+/* debugger input shell */
+input.raw_input {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize !important;
+    color: @cc-input-fg;
+    background-color: darken(@cc-input-bg, 2%);
+    border-color: darken(@cc-input-bg, 2%);
+    background: darken(@cc-input-bg, 2%);
+    width: auto;
+    vertical-align: baseline;
+    padding: 0em 0.25em;
+    margin: 0em 0.25em;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 /*********** WIDGETS ***********/
 div.widget-area {
     font-size: 11pt;
@@ -268,33 +284,56 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
     border: 1px solid @selected-bg;
     font-size: 11pt;
 }
-.widget-hbox {
-    -webkit-box-align: inherit;
+div.widget-hbox {
+    -webkit-box-orient: horizontal;
+    -webkit-box-align: stretch;
     -moz-box-orient: horizontal;
     -moz-box-align: stretch;
+    box-orient: horizontal;
+    box-align: block;
+    display: block;
+    flex-direction: inherit;
+    align-items: inherit;
 }
-.widget-hbox .widget-label {
-    font-family: @notebook-fontfamily;
-    font-size: 11.5pt;
-    min-width: 12ex;
-    padding-right: 8px;
+div.widget-hbox .widget-label {
+    min-width: 10ex;
     padding-top: 5px;
-    vertical-align: text-top;
+    padding-right: 0px;
     text-align: left;
+    margin-right: 1.5em;
 }
-.widget-hprogress {
+div.widget-hprogress {
     margin-top: 6px;
     min-width: 300px;
+}
+div.widget-area .widget-subarea {
+    padding: .44em .4em .4em 1px;
+    margin-left: 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    box-flex: 0;
+    flex: 0;
+    -webkit-box-align: stretch;
+    -moz-box-align: inherit;
+    box-align: stretch;
+    display: block;
+    flex-direction: column;
+    align-items: stretch;
 }
 .progress {
     overflow: hidden;
     height: 22px;
     margin-bottom: 10px;
+    padding-left: 10px;
     background-color: lighten(@disabled, 13%);
     border-radius: 3px;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+
 /***********  MEDIA ***********/
 audio, video {
     display: inline;
