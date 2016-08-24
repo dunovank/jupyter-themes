@@ -814,9 +814,6 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
  -webkit-box-align: inherit;
  -moz-box-orient: horizontal;
  -moz-box-align: stretch;
- display: inherit;
- flex-direction: inherit;
- align-items: inherit;
 }
 .widget-hbox .widget-label {
  font-family: "Exo_2", sans-serif;
@@ -824,8 +821,8 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
  min-width: 12ex;
  padding-right: 8px;
  padding-top: 5px;
- text-align: right;
  vertical-align: text-top;
+ text-align: left;
 }
 .widget-hprogress {
  margin-top: 6px;
@@ -1054,7 +1051,7 @@ div.tooltiptext.bigtooltip {
  color: #2dced0;
 }
 .cm-s-ipython span.cm-def {
- color: #f7e796;
+ color: #ffec8e;
  font-weight: normal;
 }
 .cm-s-ipython span.cm-error {

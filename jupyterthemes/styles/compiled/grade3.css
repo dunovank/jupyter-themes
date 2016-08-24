@@ -616,23 +616,23 @@ div.text_cell_render {
  font-size: 13pt;
  line-height: 170% !important;
  color: #353535;
- background: #efefef;
- background-color: #efefef;
+ background: #ffffff;
+ background-color: #ffffff;
  border-radius: 2px;
 }
 div.cell.text_cell.rendered.selected {
  font-family: "Georgia", serif;
  border: medium solid #1e70c7;
  line-height: 170% !important;
- background: #efefef;
- background-color: #efefef;
+ background: #ffffff;
+ background-color: #ffffff;
  border-radius: 2px;
 }
 div.cell.text_cell.unrendered.selected {
  font-family: "Georgia", serif;
  line-height: 170% !important;
- background: #efefef;
- background-color: #efefef;
+ background: #ffffff;
+ background-color: #ffffff;
  border: medium solid #1e70c7;
  border-radius: 2px;
 }
@@ -640,15 +640,15 @@ div.cell.text_cell.selected {
  font-family: "Georgia", serif;
  line-height: 170% !important;
  border: medium solid #1e70c7;
- background: #efefef;
- background-color: #efefef;
+ background: #ffffff;
+ background-color: #ffffff;
  border-radius: 2px;
 }
 .edit_mode div.cell.text_cell.selected {
  font-family: "Georgia", serif;
  line-height: 170% !important;
- background: #efefef;
- background-color: #efefef;
+ background: #ffffff;
+ background-color: #ffffff;
  border: medium solid #87b0db;
  border-radius: 2px;
 }
@@ -657,8 +657,8 @@ div.text_cell.unrendered.selected,
 div.edit_mode div.text_cell.unrendered {
  font-family: "Georgia", serif;
  line-height: 170% !important;
- background: #efefef;
- background-color: #efefef;
+ background: #ffffff;
+ background-color: #ffffff;
  border-radius: 2px;
 }
 .rendered_html table,
@@ -720,7 +720,7 @@ div.text_cell_render pre {
  color: #303030;
  background: #ffffff;
  background-color: #ffffff;
- border: 2px #d6d6d6  solid;
+ border: 2px #e6e6e6  solid;
  max-width: 85%;
  border-radius: 2px;
  padding: 8.5px;
@@ -814,9 +814,6 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
  -webkit-box-align: inherit;
  -moz-box-orient: horizontal;
  -moz-box-align: stretch;
- display: inherit;
- flex-direction: inherit;
- align-items: inherit;
 }
 .widget-hbox .widget-label {
  font-family: "Exo_2", sans-serif;
@@ -824,8 +821,8 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
  min-width: 12ex;
  padding-right: 8px;
  padding-top: 5px;
- text-align: right;
  vertical-align: text-top;
+ text-align: left;
 }
 .widget-hprogress {
  margin-top: 6px;
@@ -871,18 +868,18 @@ div.prompt.input_prompt {
 div.cell.text_cell.rendered .input_prompt {
  font-family: "Fira Code", monospace;
  font-size: 9pt;
- background: #efefef;
- background-color: #efefef;
- border-right-color: rgba(30,112,199,.50);
- min-width: 12.8ex;
+ background: #ffffff;
+ background-color: #ffffff;
+ border-right-color: transparent;
+ min-width: 0ex;
 }
 div.cell.text_cell.unrendered .input_prompt {
  font-family: "Fira Code", monospace;
  font-size: 9pt;
- background: #efefef;
- background-color: #efefef;
- border-right-color: rgba(30,112,199,.50);
- min-width: 12.8ex;
+ background: #ffffff;
+ background-color: #ffffff;
+ border-right-color: transparent;
+ min-width: 0ex;
 }
 div.prompt.output_prompt {
  font-family: "Fira Code", monospace;
@@ -1125,8 +1122,8 @@ div.text_cell_render h1 {
  font-family: "Exo_2", sans-serif;
  text-align: center;
  font-weight: lighter;
- background: #efefef;
- background-color: #efefef;
+ background: #ffffff;
+ background-color: #ffffff;
  color: #1e70c7;
 }
 div.text_cell_render h2,
@@ -1137,8 +1134,8 @@ div.text_cell_render h6 {
  font-family: "Exo_2", sans-serif;
  text-align: left;
  font-weight: lighter;
- background: #efefef;
- background-color: #efefef;
+ background: #ffffff;
+ background-color: #ffffff;
  color: #1e70c7;
 }
 a.anchor-link:link {

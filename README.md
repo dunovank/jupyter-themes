@@ -22,16 +22,18 @@
 ### TravisCI Build status:
 ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
 
-### Install with pip
-```sh
-pip install jupyterthemes
-```
+### Interactive Binder Demo
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes)
 
 ### Links
 [jupyterthemes on PyPI](https://pypi.python.org/pypi/jupyterthemes/)
 
 [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
 
+### Install with pip
+```sh
+pip install jupyterthemes
+```
 
 ### Known Issues
 * **UPDATE**: lesscpy has added support for 3.5 to their development branch but still waiting for this to make it's way into the official release on pypi. Soon...

@@ -6,7 +6,6 @@ from __future__ import print_function
 import os, sys
 from argparse import ArgumentParser
 from glob import glob
-from jupyterthemes import stylefx
 
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
@@ -31,24 +30,18 @@ def get_themes():
               for theme in glob('{0}/*.less'.format(styles_dir))]
     return themes
 
-def set_nb_theme(name):
-    """ set theme from within notebook """
-    from IPython.core.display import HTML
-    styles_dir = os.path.join(package_dir, 'styles/compiled/')
-    css_path = glob('{0}/{1}.css'.format(styles_dir, name))[0]
-    customcss = open(css_path, "r").read()
-    return HTML(''.join(['<style> ', customcss, ' </style>']))
-
-def reset_default(verbose=False):
-    """ remove custom.css import"""
-    stylefx.reset_default(verbose)
-    stylefx.check_directories()
+# def reset_default(verbose=False):
+#     """ remove custom.css import"""
+#     stylefx.reset_default(verbose)
+#     stylefx.check_directories()
 
 def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nbfontsize=13, tcfont='georgiaserif', tcfontsize=13, cellwidth=980, lineheight=170, cursorwidth=2, cursorcolor='default', altlayout=False, vimext=False, toolbar=False, nbname=False):
     """ install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
     """
-    reset_default()
+    from jupyterthemes import stylefx
+    stylefx.reset_default(False)
+    stylefx.check_directories()
     less_compatible = test_less_compatibility(theme)
     if not less_compatible:
         stylefx.install_precompiled_theme(theme)
