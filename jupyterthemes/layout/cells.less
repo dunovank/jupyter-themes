@@ -120,13 +120,13 @@ table.dataframe,
 .rendered_html tr,
 .dataframe * {
     font-family: "Fira Code", monospace;
-    font-size: 9pt !important;
+    font-size: 9.5pt !important;
     border: 1px solid @table-border;
 }
 .dataframe th,
 .rendered_html th {
-    font-family: "Fira Code", monospace;
-    font-size: 9pt !important;
+    font-family: @notebook-fontfamily;
+    font-size: 10pt !important;
     font-weight: 450;
     border: 1px solid @df-header-border;
     background: @df-header-bg;
@@ -134,7 +134,7 @@ table.dataframe,
 .dataframe td,
 .rendered_html td {
     font-family: "Fira Code", monospace;
-    font-size: 9pt !important;
+    font-size: 9.5pt !important;
     color: @table-color;
     background: @df-cell-bg;
     border: 1px solid @table-border;
@@ -144,7 +144,7 @@ table.dataframe,
 /********** PANDAS SUMMARY **********/
 .dataframe-summary-row tr:last-child,
 .dataframe-summary-col td:last-child {
-    font-family: "Fira Code", monospace;
+    font-family: @notebook-fontfamily;
     font-size: 10pt !important;
     font-weight: 450;
     color: @df-header;
@@ -257,6 +257,10 @@ div.widget-area {
     background-color: @cc-output-bg;
     background: @cc-output-bg;
     color: @cc-output-fg;
+}
+div.widget-area a:hover, a:focus {
+    color: @item-cyan;
+    text-decoration: underline;
 }
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
     background: transparent;
