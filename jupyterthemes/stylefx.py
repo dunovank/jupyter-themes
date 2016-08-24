@@ -320,6 +320,14 @@ def reset_default(verbose=False):
     if verbose:
         print("Reset css and font defaults in:\n{} &\n{}".format(*paths))
 
+def set_nb_theme(name):
+    """ set theme from within notebook """
+    from IPython.core.display import HTML
+    from glob import glob
+    styles_dir = os.path.join(package_dir, 'styles/compiled/')
+    css_path = glob('{0}/{1}.css'.format(styles_dir, name))[0]
+    customcss = open(css_path, "r").read()
+    return HTML(''.join(['<style> ', customcss, ' </style>']))
 
 def get_colors(theme='grade3', c='default', get_dict=False):
     if theme=='grade3':
