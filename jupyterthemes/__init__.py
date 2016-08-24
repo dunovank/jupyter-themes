@@ -31,6 +31,14 @@ def get_themes():
               for theme in glob('{0}/*.less'.format(styles_dir))]
     return themes
 
+def set_nb_theme(name):
+    """ set theme from within notebook """
+    from IPython.core.display import HTML
+    styles_dir = os.path.join(package_dir, 'styles/compiled/')
+    css_path = glob('{0}/{1}.css'.format(styles_dir, name))[0]
+    customcss = open(css_path, "r").read()
+    return HTML(''.join(['<style> ', customcss, ' </style>']))
+
 def reset_default(verbose=False):
     """ remove custom.css import"""
     stylefx.reset_default(verbose)
