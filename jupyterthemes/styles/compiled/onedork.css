@@ -34,6 +34,12 @@ a {
  font-size: 13pt;
  color: #899ab8;
 }
+a:hover,
+a:focus {
+ font-family: "Exo_2", sans-serif;
+ font-size: 13pt;
+ color: #e9ecf1;
+}
 div#notebook {
  font-family: "Exo_2", sans-serif;
  font-size: 13pt;
@@ -133,6 +139,12 @@ ul#tabs a {
  border-color: transparent;
  background-image: none;
  text-shadow: none !important;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+ text-decoration: none;
+ background: #16191d;
+ background-color: rgba(70,82,95,.12);
 }
 div#notebook {
  font-family: "Exo_2", sans-serif;
@@ -529,6 +541,7 @@ button.close {
 .form-control {
  display: block;
  width: 100%;
+ height: auto;
  padding: 4px 9px;
  font-size: 11.5pt;
  color: #e9ecf1;
@@ -542,7 +555,7 @@ button.close {
 .list_item input:not([type="checkbox"]) {
  margin-right: 0px;
  padding-right: 0px;
- height: 80%;
+ height: 90%;
  width: 30%;
 }
 .modal-footer {
@@ -553,6 +566,9 @@ button.close {
 .input-form-control:hover:active {
  background-color: rgba(70,82,95,.12);
  selected: rgba(70,82,95,.12);
+}
+select.form-control.select-xs {
+ height: auto;
 }
 div.output.output_scroll {
  box-shadow: none;
@@ -819,68 +835,54 @@ input.raw_input {
  box-shadow: none;
 }
 div.widget-area {
- font-size: 11pt;
  background-color: #2e353e;
  background: #2e353e;
  color: #b2bfd7;
 }
+div.widget-area a {
+ font-family: "Exo_2", sans-serif;
+ font-size: 11.5pt;
+ font-weight: normal;
+ font-style: normal;
+ color: #899ab8;
+ text-shadow: none !important;
+}
 div.widget-area a:hover,
 a:focus {
- color: #2c85f7;
- text-decoration: underline;
+ font-family: "Exo_2", sans-serif;
+ font-size: 11.5pt;
+ font-weight: normal;
+ font-style: normal;
+ color: #e9ecf1;
+ background: rgba(70,82,95,.32);
+ background-color: rgba(70,82,95,.32);
+ border-color: transparent;
+ background-image: none;
+ text-shadow: none !important;
 }
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
  background: transparent;
  background-color: #23282f;
  border: 1px solid #48a667;
+ font-size: inherit;
+}
+div.jupyter-widgets.widget-hprogress.widget-hbox {
+ display: inline-table;
+}
+div.jupyter-widgets.widget-hprogress.widget-hbox .widget-label {
  font-size: 11pt;
-}
-div.widget-hbox {
- -webkit-box-orient: horizontal;
- -webkit-box-align: stretch;
- -moz-box-orient: horizontal;
- -moz-box-align: stretch;
- box-orient: horizontal;
- box-align: block;
- display: block;
- flex-direction: inherit;
- align-items: inherit;
-}
-div.widget-hbox .widget-label {
- min-width: 10ex;
+ min-width: 15ex;
  padding-top: 5px;
- padding-right: 0px;
+ padding-right: 10px;
  text-align: left;
- margin-right: 1.5em;
-}
-div.widget-hprogress {
- margin-top: 6px;
- min-width: 300px;
-}
-div.widget-area .widget-subarea {
- padding: .44em .4em .4em 1px;
- margin-left: 20px;
- box-sizing: border-box;
- -moz-box-sizing: border-box;
- -webkit-box-sizing: border-box;
- -webkit-box-flex: 0;
- -moz-box-flex: 0;
- box-flex: 0;
- flex: 0;
- -webkit-box-align: stretch;
- -moz-box-align: inherit;
- box-align: stretch;
- display: block;
- flex-direction: column;
- align-items: stretch;
 }
 .progress {
  overflow: hidden;
- height: 22px;
+ height: 20px;
  margin-bottom: 10px;
  padding-left: 10px;
- background-color: #7a8393;
- border-radius: 3px;
+ background-color: #757d8f;
+ border-radius: 4px;
  -webkit-box-shadow: none;
  box-shadow: none;
 }
@@ -890,6 +892,25 @@ video {
  vertical-align: middle;
  align-content: center;
  margin-left: 20%;
+}
+div.nbext-readme > .nbext-readme-contents > .rendered_html {
+ padding: 0.5em 1em;
+ margin-top: 0;
+ z-index: -10;
+ -webkit-box-shadow: none;
+ -moz-box-shadow: none;
+ box-shadow: none;
+}
+div.rendered_html pre {
+ background-color: #24272e;
+ padding: 4px;
+}
+div.rendered_html code {
+ background-color: #24272e;
+ padding: 2px 4px;
+}
+div.rendered_html {
+ color: #899ab8;
 }
 div.prompt {
  font-family: "Fira Code", monospace;
