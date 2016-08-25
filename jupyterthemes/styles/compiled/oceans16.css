@@ -520,6 +520,12 @@ button.close {
 #running .panel-group .panel .panel-body .list_container .list_item {
  border-bottom: 1px solid rgba(88,98,119,.45);
 }
+.panel-default > .panel-heading {
+ color: #93a2be;
+ background: #343c4b;
+ background-color: #343c4b;
+ border: 1px solid #2e3542 !important;
+}
 .form-control {
  display: block;
  width: 100%;
@@ -676,13 +682,13 @@ table.dataframe,
 .rendered_html tr,
 .dataframe * {
  font-family: "Fira Code", monospace;
- font-size: 9pt !important;
+ font-size: 9.5pt !important;
  border: 1px solid #4e5c72;
 }
 .dataframe th,
 .rendered_html th {
- font-family: "Fira Code", monospace;
- font-size: 9pt !important;
+ font-family: "Exo_2", sans-serif;
+ font-size: 10pt !important;
  font-weight: 450;
  border: 1px solid #414c5d;
  background: #2e3642;
@@ -690,7 +696,7 @@ table.dataframe,
 .dataframe td,
 .rendered_html td {
  font-family: "Fira Code", monospace;
- font-size: 9pt !important;
+ font-size: 9.5pt !important;
  color: #dbdfef;
  background: #455063;
  border: 1px solid #4e5c72;
@@ -699,7 +705,7 @@ table.dataframe,
 }
 .dataframe-summary-row tr:last-child,
 .dataframe-summary-col td:last-child {
- font-family: "Fira Code", monospace;
+ font-family: "Exo_2", sans-serif;
  font-size: 10pt !important;
  font-weight: 450;
  color: #d4d8ec;
@@ -798,11 +804,30 @@ div.output_subarea {
  flex: 1;
  max-width: 90%;
 }
+input.raw_input {
+ font-family: "Droid Sans Mono", monospace;
+ font-size: 11pt !important;
+ color: #cdd2e9;
+ background-color: #2c333f;
+ border-color: #2c333f;
+ background: #2c333f;
+ width: auto;
+ vertical-align: baseline;
+ padding: 0em 0.25em;
+ margin: 0em 0.25em;
+ -webkit-box-shadow: none;
+ box-shadow: none;
+}
 div.widget-area {
  font-size: 11pt;
  background-color: #384151;
  background: #384151;
  color: #cdd2e9;
+}
+div.widget-area a:hover,
+a:focus {
+ color: #2c85f7;
+ text-decoration: underline;
 }
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
  background: transparent;
@@ -810,28 +835,50 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
  border: 1px solid #3572c6;
  font-size: 11pt;
 }
-.widget-hbox {
- -webkit-box-align: inherit;
+div.widget-hbox {
+ -webkit-box-orient: horizontal;
+ -webkit-box-align: stretch;
  -moz-box-orient: horizontal;
  -moz-box-align: stretch;
+ box-orient: horizontal;
+ box-align: block;
+ display: block;
+ flex-direction: inherit;
+ align-items: inherit;
 }
-.widget-hbox .widget-label {
- font-family: "Exo_2", sans-serif;
- font-size: 11.5pt;
- min-width: 12ex;
- padding-right: 8px;
+div.widget-hbox .widget-label {
+ min-width: 10ex;
  padding-top: 5px;
- vertical-align: text-top;
+ padding-right: 0px;
  text-align: left;
+ margin-right: 1.5em;
 }
-.widget-hprogress {
+div.widget-hprogress {
  margin-top: 6px;
  min-width: 300px;
+}
+div.widget-area .widget-subarea {
+ padding: .44em .4em .4em 1px;
+ margin-left: 20px;
+ box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ -webkit-box-sizing: border-box;
+ -webkit-box-flex: 0;
+ -moz-box-flex: 0;
+ box-flex: 0;
+ flex: 0;
+ -webkit-box-align: stretch;
+ -moz-box-align: inherit;
+ box-align: stretch;
+ display: block;
+ flex-direction: column;
+ align-items: stretch;
 }
 .progress {
  overflow: hidden;
  height: 22px;
  margin-bottom: 10px;
+ padding-left: 10px;
  background-color: #7a859e;
  border-radius: 3px;
  -webkit-box-shadow: none;
@@ -987,6 +1034,33 @@ div.tooltiptext.bigtooltip {
  overflow-y: scroll;
  height: 400px;
  max-width: 800px;
+}
+div#pager {
+ background-color: #262931;
+ -webkit-box-shadow: none;
+ box-shadow: none;
+ z-index: 100;
+ top: auto !important;
+}
+div#pager pre {
+ color: #cdd2e9;
+ background-color: #303845;
+ line-height: 170%;
+ padding: 0.4em;
+ border-color: transparent;
+}
+div#pager .ui-resizable-handle {
+ top: 0px;
+ height: 8px;
+ background: #3667ac;
+ border-top: 1px solid #3462a4;
+ border-bottom: 1px solid #3462a4;
+}
+pre,
+code,
+kbd,
+samp {
+ white-space: pre-wrap;
 }
 .cm-s-ipython.CodeMirror {
  font-family: "Droid Sans Mono", monospace;
