@@ -17,13 +17,17 @@ a {
     font-size: @nb-fontsize;
     color: @notebook-fg;
 }
+a:hover, a:focus {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    color: @selected-fg;
+}
 div#notebook {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
     line-height: @cc-line-height;
     color: @cc-input-fg;
 }
-
 /*********************************************************/
 /*** INTRO-PAGE TOOLBAR, LIST CONTAINERS, AND NAV TABS ***/
 /*********************************************************/
@@ -121,7 +125,11 @@ ul#tabs a {
     background-image: none;
     text-shadow: none !important;
 }
-
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background: @notebook-bg;
+    background-color: @selected-tenth;
+}
 /********************************************************/
 /***************** NOTEBOOK PAGE SETTINGS ***************/
 /********************************************************/
@@ -532,6 +540,7 @@ button.close {
 .form-control {
     display: block;
     width: 100%;
+    height: auto;
     padding: 4px 9px;
     font-size: @nb-fontsize-sub;
     color: @selected-fg;
@@ -545,7 +554,7 @@ button.close {
 .list_item input:not([type="checkbox"]) {
     margin-right: 0px;
     padding-right: 0px;
-    height: 80%;
+    height: 90%;
     width: 30%;
 }
 .modal-footer {
@@ -557,7 +566,9 @@ button.close {
     background-color:  @selected-tenth;
     selected:  @selected-tenth;
 }
-
+select.form-control.select-xs {
+    height: auto;
+}
 /****************************************/
 /************** SCROLL BARS *************/
 /****************************************/

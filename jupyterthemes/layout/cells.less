@@ -269,46 +269,56 @@ input.raw_input {
 
 /*********** WIDGETS ***********/
 div.widget-area {
-    font-size: 11pt;
     background-color: @cc-output-bg;
     background: @cc-output-bg;
     color: @cc-output-fg;
 }
+div.widget-area a {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    font-style: normal;
+    color: @notebook-fg;
+    text-shadow: none !important;
+}
 div.widget-area a:hover, a:focus {
-    color: @item-cyan;
-    text-decoration: underline;
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    font-style: normal;
+    color: @selected-fg;
+    background: @selected-third;
+    background-color: @selected-third;
+    border-color: transparent;
+    background-image: none;
+    text-shadow: none !important;
 }
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
     background: transparent;
     background-color: darken(@cc-output-bg, 5%);
     border: 1px solid @selected-bg;
+    font-size: inherit;
+}
+div.jupyter-widgets.widget-hprogress.widget-hbox {
+    display: inline-table;
+}
+div.jupyter-widgets.widget-hprogress.widget-hbox .widget-label {
     font-size: 11pt;
-}
-div.widget-hbox {
-    display: block;
-}
-div.widget-hbox .widget-label {
-    min-width: 10ex;
+    min-width: 15ex;
     padding-top: 5px;
-    padding-right: 0px;
+    padding-right: 10px;
     text-align: left;
-    margin-right: 1.5em;
-}
-div.widget-hprogress {
-    margin-top: 6px;
-    min-width: 300px;
 }
 .progress {
     overflow: hidden;
-    height: 22px;
+    height: 20px;
     margin-bottom: 10px;
     padding-left: 10px;
-    background-color: lighten(@disabled, 13%);
-    border-radius: 3px;
+    background-color: lighten(@disabled, 11%);
+    border-radius: 4px;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-
 /***********  MEDIA ***********/
 audio, video {
     display: inline;
@@ -317,6 +327,26 @@ audio, video {
     margin-left: 20%;
 }
 
+/***********  jNB EXTENSION CONFIG ***********/
+div.nbext-readme > .nbext-readme-contents > .rendered_html {
+    padding: 0.5em 1em;
+    margin-top: 0;
+    z-index: -10;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+div.rendered_html pre {
+    background-color: @codeblock-bg;
+    padding: 4px;
+}
+div.rendered_html code {
+    background-color: @codeblock-bg;
+    padding: 2px 4px;
+}
+div.rendered_html {
+    color: @notebook-fg;
+}
 /***********************************/
 /********** INPUT PROMPTS **********/
 /***********************************/

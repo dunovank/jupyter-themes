@@ -9,7 +9,7 @@ from glob import glob
 
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
-__version__ = '0.11.9'
+__version__ = '0.12.0'
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -84,7 +84,8 @@ def main():
             exit(1)
         install_theme(args.theme, monofont=args.monofont, monosize=args.monosize, nbfont=args.nbfont, nbfontsize=args.nbfontsize, tcfont=args.tcfont, tcfontsize=args.tcfontsize, cellwidth=int(args.cellwidth), lineheight=int(args.lineheight), cursorwidth=args.cursorwidth, cursorcolor=args.cursorcolor, altlayout=args.altlayout, vimext=args.vimext, toolbar=args.toolbar, nbname=args.nbname)
     elif args.reset:
-        reset_default(verbose=True)
+        from jupyterthemes import stylefx
+        stylefx.reset_default(verbose=True)
     elif args.list:
         print(say_themes)
     else:
