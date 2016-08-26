@@ -329,6 +329,8 @@ audio, video {
 
 /***********  jNB EXTENSION CONFIG ***********/
 div.nbext-readme > .nbext-readme-contents > .rendered_html {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
     padding: 0.5em 1em;
     margin-top: 0;
     z-index: -10;
@@ -341,12 +343,19 @@ div.rendered_html pre {
     padding: 4px;
 }
 div.rendered_html code {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
     background-color: @codeblock-bg;
     padding: 2px 4px;
 }
 div.rendered_html {
     color: @notebook-fg;
 }
+div.nbext-selector > nav > .nav > li > a {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+}
+
 /***********************************/
 /********** INPUT PROMPTS **********/
 /***********************************/
