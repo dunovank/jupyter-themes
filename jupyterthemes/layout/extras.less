@@ -1,0 +1,269 @@
+/***********************************************************************
+ Pandas DF, Tables, Widgets, Media, Links, Debugger, Nbext, & Animations
+************************************************************************/
+
+/************  TABLES  **********/
+.rendered_html table,
+.rendered_html tr,
+.rendered_html td {
+    font-family: "Fira Code", monospace;
+    font-size: 10pt !important;
+    line-height: 150% !important;
+    border: 1px solid @table-border;
+    color: @table-color;
+    background-color: @table-bg;
+    background: @table-bg;
+}
+/********* PANDAS DATAFRAMES ********/
+table.dataframe,
+.rendered_html tr,
+.dataframe * {
+    font-family: "Fira Code", monospace;
+    font-size: 10pt !important;
+    border: 1px solid @table-border;
+}
+.dataframe th,
+.rendered_html th {
+    font-family: @notebook-fontfamily;
+    font-size: 10.5pt !important;
+    font-weight: 450;
+    border: 1px solid @df-header-border;
+    background: @df-header-bg;
+}
+.dataframe td,
+.rendered_html td {
+    font-family: "Fira Code", monospace;
+    font-size: 10pt !important;
+    color: @table-color;
+    background: @df-cell-bg;
+    border: 1px solid @table-border;
+    text-align: left;
+    min-width: 4em;
+}
+/********** PANDAS SUMMARY **********/
+.dataframe-summary-row tr:last-child,
+.dataframe-summary-col td:last-child {
+    font-family: @notebook-fontfamily;
+    font-size: 10.5pt !important;
+    font-weight: 450;
+    color: @df-header;
+    border: 1px solid @table-border;
+    background: @df-header-bg;
+}
+
+/*********** WIDGETS ***********/
+div.widget-area {
+    background-color: @cc-output-bg;
+    background: @cc-output-bg;
+    color: @cc-output-fg;
+}
+div.widget-area a {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    font-style: normal;
+    color: @notebook-fg;
+    text-shadow: none !important;
+}
+div.widget-area a:hover,
+div.widget-area a:focus {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    font-style: normal;
+    color: @selected-fg;
+    background: @selected-third;
+    background-color: @selected-third;
+    border-color: transparent;
+    background-image: none;
+    text-shadow: none !important;
+}
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
+    background: transparent;
+    background-color: darken(@cc-output-bg, 5%);
+    border: 1px solid @selected-bg;
+    font-size: inherit;
+}
+div.jupyter-widgets.widget-hprogress.widget-hbox,
+div.widget-hbox, .widget-hbox {
+    display: inline-table;
+}
+div.jupyter-widgets.widget-hprogress.widget-hbox .widget-label,
+div.widget-hbox .widget-label,
+.widget-hbox .widget-label {
+    font-size: 11pt;
+    min-width: 100%;
+    padding-top: 5px;
+    padding-right: 10px;
+    text-align: left;
+    vertical-align: text-top;
+}
+.progress {
+    overflow: hidden;
+    height: 20px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    background-color: lighten(@disabled, 11%);
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/************ LINKS  ************/
+.rendered_html :link {
+    font-family: @notebook-fontfamily;
+    font-size: 100%;
+    color: @item-cyan;
+    text-decoration: underline;
+}
+.rendered_html :visited:hover,
+.rendered_html :link:hover {
+    font-family: @notebook-fontfamily;
+    font-size: 100%;
+    color: saturate(@item-theme, 10%);
+}
+.rendered_html :visited,
+.rendered_html :visited:active,
+.rendered_html :visited:focus{
+    color: desaturate(@item-blue, 15%);
+}
+a.anchor-link:link {
+    font-size: 100%;
+    text-decoration: none;
+    padding: 0px 20px;
+    visibility: none;
+    color: @item-cyan;
+}
+
+/***********  JUPYTER NBEXT CONFIGURATOR ***********/
+div#nbextensions-configurator-container.container {
+    width: @cell-width;
+    margin-right: 0;
+    margin-left: 0;
+}
+div.nbext-selector > nav > .nav > li > a {
+    font-family: @notebook-fontfamily;
+    font-size: 11.5pt;
+}
+div.nbext-readme > .nbext-readme-contents > .rendered_html {
+    font-family: @notebook-fontfamily;
+    font-size: 12pt;
+    line-height: 145%;
+    padding: 1em 1em;
+    color: @text-cell-fg;
+    background-color: @text-cell-bg;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.nbext-icon,
+.nbext-desc,
+.nbext-compat-div,
+.nbext-enable-btns,
+.nbext-params {
+    margin-bottom: 8px;
+    font-size: 12pt;
+}
+div.nbext-readme > .nbext-readme-contents {
+    padding: 0;
+    overflow-y: hidden;
+}
+div.nbext-readme > .nbext-readme-contents:not(:empty) {
+    margin-top: 0.5em;
+    border: 1px solid @cc-input-bg;
+    border-top-color: @divider;
+}
+.nbext-showhide-incompat {
+    padding-bottom: 0.5em;
+    color: @unemphasize-fg;
+    font-size: 12pt;
+}
+.shortcut_key {
+    display: inline-block;
+    width: 9ex;
+    text-align: right;
+    font-family: monospace;
+}
+/********** NBEXT MARKDOWN **********/
+mark, .mark {
+    background-color: @text-cell-bg;
+    color: @text-cell-fg;
+    padding: .15em;
+}
+a.text-warning,
+a.text-warning:hover {
+    color: @disabled;
+}
+a.text-warning.bg-warning {
+    background-color: @notebook-bg;
+}
+span.bg-success.text-success {
+    background-color: transparent;
+    color: @item-green;
+}
+span.bg-danger.text-danger {
+    background-color: @notebook-bg;
+    color: @item-red;
+}
+div.nbext-enable-btns .btn[disabled],
+div.nbext-enable-btns .btn[disabled]:hover,
+.btn-default.disabled, .btn-default[disabled] {
+    background: darken(@button-bg, 1%);
+    background-color: darken(@button-bg, 1%);
+    color: darken(@notebook-fg, 3%);
+}
+label#Keyword-Filter {
+    display: none;
+}
+/********** DEBUGGER PATCH **********/
+input.raw_input {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize !important;
+    color: @cc-input-fg;
+    background-color: darken(@cc-input-bg, 2%);
+    border-color: darken(@cc-input-bg, 2%);
+    background: darken(@cc-input-bg, 2%);
+    width: auto;
+    vertical-align: baseline;
+    padding: 0em 0.25em;
+    margin: 0em 0.25em;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/***********  MEDIA ***********/
+audio, video {
+    display: inline;
+    vertical-align: middle;
+    align-content: center;
+    margin-left: 20%;
+}
+
+/******************************************/
+/******** KERNEL RUNNING ANIMATION ********/
+/******************************************/
+// @keyframes fa-spin {
+//   100% {
+//     -webkit-transform: rotate(360deg);
+//     transform: rotate(360deg);
+//   }
+// }
+// .kernel_idle_icon:before {
+//     display: inline-block;
+//     font: normal normal normal 14px/1.2 FontAwesome;
+//     font-size: 15px;
+//     text-rendering: auto;
+//     -webkit-font-smoothing: antialiased;
+//     content: "\f10c";
+//     margin-left: 0.2em;
+// }
+// .kernel_busy_icon:before {
+//     -webkit-animation: fa-spin 2.2s infinite linear;
+//     animation: fa-spin 2.2s infinite linear;
+//     display: inline-block;
+//     font: normal normal normal 14px/1.2 FontAwesome;
+//     font-size: 15px;
+//     -webkit-font-smoothing: antialiased;
+//     content: "\f1ce";
+//     margin-left: 0.2em;
+// }

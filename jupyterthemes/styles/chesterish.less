@@ -1,7 +1,7 @@
 /* chesterish notebook colors */
-@notebook-bg:           darken(#1e252e, 2%);
+@notebook-bg:           #1A2028;
 @notebook-fg:           #A2B0C7;
-@notebook-base:         desaturate(darken(#334056, 3%), 4%);
+@notebook-base:         #30394A;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #009cd1;
@@ -10,21 +10,24 @@
 @selected-tenth:        rgba(75, 95, 118,.10);
 @selected-error:        rgba(191, 97, 106,.4);
 @selected-active:       #007aa4;
-@selected-fg:           lighten(@notebook-fg, 18%);
-@selected-fg-bright:    lighten(@notebook-fg, 45%);
+@selected-fg:           #DBE1EA;
+@selected-fg-bright:    #FEFEFE;
+@unemphasize-fg:        #92A2BD;
 
 /* code, text, markdown, & tooltip colors */
-@cc-input-bg:           darken(#2b3643, 1%);
+@cc-input-bg:           #293340;
 @cc-input-fg:           #CDD2E9;
-@cc-output-bg:          desaturate(@notebook-base, 3%);
-@cc-output-fg:          darken(@cc-input-fg, 7%);
-@text-cell-fg:          lighten(#667FB1, 22%);
+@cc-output-bg:          #323A48;
+@cc-output-fg:          #B4BCDE;
+@text-cell-fg:          #B0BDD7;
 @unrendered-text:       #0b98c8;
 @header-fg:             @unrendered-text;
-@tooltip-bg-color:      lighten(@cc-output-bg, 2%);
+@header-fg2:            #487EC8;
+@header-fg3:            #618DC9;
+@tooltip-bg-color:      #363F4E;
 @tooltip-fg-color:      @cc-input-fg;
 @nb-name-fg:            @header-fg;
-@nb-name-hover:         saturate(lighten(@cc-border-selected, 15%), 20%);
+@nb-name-hover:         #0DC1FF;
 
 /* cell border colors */
 @cc-border-selected:    #008ebf;
@@ -38,32 +41,40 @@
 @input-prompt:          @disabled;
 @prompt-line:           rgba(0, 156, 209, .5);
 @tc-prompt-std:         rgba(0, 156, 209, .5);
-@matching-bracket:      #3572C6;
+@matching-bracket:      #4C8BE2;
+@dropdown-bg:           desaturate(@notebook-base, 5%);
+@dropdown-border:       rgba(63, 83, 105, 0.55);
+@dropdown-hover:        @dropdown-border;
+
+/* panels and form-control styles */
+@panel-header-bg:       @notebook-base;
+@panel-bg:              #2D3846;
+@form-input-bg:         #1C212B;
 
 /* buttons, widgets, kernels colors */
-@item-theme:            @header-fg;
+@item-theme:            #0b98c8;
 @item-blue:             @matching-bracket;
 @item-cyan:             #2c85f7;
 @button-color:          @selected-active;
 @item-green:            #48a667;
 
 /* tables and dataframes colors */
-@table-color:           lighten(@cc-input-fg, 6%);
-@table-bg:              lighten(@cc-output-bg,6%);
-@table-border:          lighten(@table-bg, 5%);
-@df-header-bg:          darken(@cc-input-bg, 1%);
-@df-header:             lighten(@cc-output-fg, 2%);
-@df-header-border:      lighten(@df-header-bg, 8%);
-@df-cell-bg:            lighten(@cc-output-bg, 6%);
-@codeblock-bg:          darken(@text-cell-bg, 2%);
+@table-color:           #E2E5F2;
+@table-bg:              #3F495A;
+@table-border:          #4A5569;
+@df-header-bg:          #27313d;
+@df-header:             #BBC2E1;
+@df-header-border:      #374556;
+@df-cell-bg:            #3F495A;
+@codeblock-bg:          #252E3A;
 @codeblock-border:      @codeblock-bg;
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             darken(@cc-output-bg, 2%);
-@scrollbar:             desaturate(darken(@selected-bg, 2%), 10%);
-@scroll-trough:         lighten(@cc-output-bg, 60%);
+@button-bg:             #27313d;
+@scrollbar:             #0A8FBD;
+@scroll-trough:         #CFD4DD;
 @scrollbar-inactive:    #464e60;
-@box-shadow:            darken(#303945, 3%);
+@box-shadow:            #2A323C;
 
 /* chesterish ansi colors */
 @ansiblack:             #2b303b;
@@ -77,6 +88,7 @@
 @stderr-bg:             #DB797C;
 @stderr-fg:             #D0D4E6;
 @js-error:              @stderr-bg;
+@item-red:              #dc6972;
 
 /* chesterish codemirror colors */
 @cm-selected:           #334050;
@@ -96,7 +108,7 @@
 @cm-variable2:          @cm-attribute;
 @cm-variable3:          @cm-meta;
 
-@cm-def:                saturate(#f7e796, 15%);
+@cm-def:                #FFEC8E;
 @cm-error:              @selected-error;
 @cm-tag:                @cm-atom;
 @cm-link:               @cm-number;

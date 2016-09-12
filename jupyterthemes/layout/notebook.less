@@ -1,16 +1,20 @@
 /*****************************************************************
  Notebook stylization  (toolbars, lists, menus, scroll & buttons)
 *****************************************************************/
-
-/********************************************************/
-/****** SET NOTEBOOK, CELL, & OUTPUT FONT SETTINGS ******/
-/********************************************************/
-body {
+div#notebook {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    line-height: @cc-line-height;
+    color: @cc-input-fg;
+}
+body,
+div.body {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
     color: @notebook-fg;
     background-color: @notebook-bg;
-    line-height: 1;
+    background: @notebook-bg;
+    line-height: 1.3;
 }
 a {
     font-family: @notebook-fontfamily;
@@ -18,23 +22,92 @@ a {
     color: @notebook-fg;
 }
 a:hover, a:focus {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize;
     color: @selected-fg;
 }
-div#notebook {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize;
-    line-height: @cc-line-height;
-    color: @cc-input-fg;
-}
+
 /*********************************************************/
 /*** INTRO-PAGE TOOLBAR, LIST CONTAINERS, AND NAV TABS ***/
 /*********************************************************/
+.list_header,
+div#notebook_list_header.row.list_header {
+    font-size: @nb-fontsize;
+    color: @selected-fg;
+    background-color: @notebook-bg;
+}
+div#cluster_list_header.row.list_header,
+div#running .row.list_header {
+    font-size: @nb-fontsize;
+    color: @selected-fg;
+    background:  @df-header-bg;
+    background-color: @df-header-bg;
+    border-bottom: 2px solid @divider;
+}
+div#cluster_list > div.list_item.row,
+div#cluster_list > div.list_item.row:hover {
+    background: @panel-bg;
+    background-color: @panel-bg;
+}
+div#clusters.tab-pane.active {
+    font-size: 12pt;
+    margin: 5px;
+}
+#running .panel-group .panel .panel-heading {
+    font-size: @nb-fontsize;
+    color: @selected-fg;
+    padding: 8px 15px;
+    background:  @df-header-bg;
+    background-color: @df-header-bg;
+}
+#running .panel-group .panel .panel-heading a {
+    font-size: @nb-fontsize;
+    color: @selected-fg;
+}
+#running .panel-group .panel .panel-heading a:focus,
+#running .panel-group .panel .panel-heading a:hover {
+    font-size: @nb-fontsize;
+    color: @selected-fg;
+}
+#running .panel-group .panel .panel-body .list_container .list_item {
+    background: @panel-bg;
+    background-color: @panel-bg;
+    border-bottom: 2px solid @divider;
+}
+#running .panel-group .panel .panel-body .list_container .list_item:hover {
+    background: @panel-bg;
+    background-color: @panel-bg;
+}
+.list_placeholder {
+    font-weight: normal;
+}
+ul#selector-menu.dropdown-menu > li > a {
+    padding: none;
+}
+#tree-selector {
+    padding: 0px;
+}
+#project_name > ul > li > a > i.fa.fa-home {
+    color: @item-theme;
+    font-size: 16pt;
+    display: inline-block;
+    position: static;
+    padding: 0px 5px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: top;
+}
+#project_name {
+    color: @item-theme;
+    font-size: 16pt;
+    display: inline-block;
+    position: static;
+    padding: 0px 5px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+}
 div#notebook_toolbar div.dynamic-instructions {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize-sub;
-    display: inline-block;
 }
 .toolbar_info {
     font-family: @notebook-fontfamily;
@@ -43,17 +116,17 @@ div#notebook_toolbar div.dynamic-instructions {
     text-shadow: none !important;
 }
 .list_container {
-    font-size: @nb-fontsize-sub;
+    font-size: 11.5pt;
     color: @notebook-fg;
     border: none;
     text-shadow: none !important;
 }
 .list_container > div {
     border-bottom: 1px solid @selected-third;
-    font-size: @nb-fontsize-sub;
+    font-size: 11.5pt
 }
 .list_container a {
-    font-size: @nb-fontsize-sub;
+    font-size: 11.5pt;
     color: @notebook-fg;
     border: none;
     text-shadow: none !important;
@@ -61,35 +134,18 @@ div#notebook_toolbar div.dynamic-instructions {
 div.list_container a:hover {
     color: @selected-fg;
 }
-.list_header {
-    font-weight: normal;
-    background-color: @notebook-bg;
-    color: @notebook-fg;
-}
-div#notebook_list_header.row.list_header {
-    background-color: @notebook-bg;
-}
-ul#selector-menu.dropdown-menu > li > a {
-    padding: none;
-}
-#tree-selector {
-    padding: 0px;
-}
 div.list_item:hover {
     background-color: @selected-tenth;
+}
+.list_header > div input,
+.list_item > div input {
+    top: 0px;
 }
 .breadcrumb>li {
     font-size: @nb-fontsize-sub;
     color: @notebook-fg;
     border: none;
     text-shadow: none !important;
-}
-div.tab-content > .active {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
-    line-height: 1.45;
-    display: block;
-    padding-top: 4px;
 }
 ul#tabs a {
     font-family: @notebook-fontfamily;
@@ -104,39 +160,41 @@ ul#tabs a {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
     font-style: normal;
+    background: @notebook-bg;
     text-shadow: none !important;
     border-color: transparent;
-    border-bottom: 1px solid @selected-third;
+    border-bottom-color: @selected-third;
 }
-.nav-tabs > li > a:hover,
+.nav-tabs > li > a:hover {
+    color: @selected-fg;
+    background-color: @selected-third;
+}
 .nav-tabs > li > a:active,
 .nav-tabs > li > a:focus,
 .nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
-    font-weight: normal;
-    font-style: normal;
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
     color: @selected-fg-bright;
-    background: @notebook-bg;
     background-color: @selected-bg;
-    border-color: transparent;
-    background-image: none;
-    text-shadow: none !important;
+    background-color: @selected-bg;
 }
 .nav > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
-    background: @notebook-bg;
-    background-color: @selected-tenth;
+    background-color: @selected-third;
 }
+.nav > li.disabled > a,
+.nav > li.disabled > a:hover {
+    color: @disabled;
+}
+
+
 /********************************************************/
 /***************** NOTEBOOK PAGE SETTINGS ***************/
 /********************************************************/
 div#notebook {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
-    padding-top: 5px;
+    padding-top: 4px;
 }
 .notebook_app {
     background-color: @notebook-bg;
@@ -146,18 +204,29 @@ div#notebook {
     background-color: @notebook-bg;
     min-height: 0px;
     box-shadow: none;
+    width: @cell-width;
+    margin-right: auto;
+    margin-left: auto;
+}
+div#ipython-main-app.container {
+    width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-right: @container-margins;
+    margin-left: @container-margins;
 }
 .container {
     width: @cell-width;
+    margin-right: auto;
+    margin-left: auto;
 }
-
 /********************************************************/
 /************** NOTEBOOK PAGE HEADER AND NA *************/
 /********************************************************/
 .notebook_app #header {
     box-shadow: none !important;
     background-color: @notebook-bg;
-    border-bottom: 1px solid @selected-third;
+    border-bottom: 1px solid @selected-half;
 }
 #header {
     font-family: @notebook-fontfamily;
@@ -172,15 +241,6 @@ div#notebook {
 body > #header .header-bar {
     width: 100%;
     background: @notebook-bg;
-    margin-bottom: -1px;
-}
-.navbar-default {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize;
-    background-color: @notebook-bg;
-    border-color: @notebook-bg;
-    padding-bottom: 0px;
-    border: 0;
 }
 #menubar {
     padding-top: 10px;
@@ -190,17 +250,30 @@ body > #header .header-bar {
     background-color: @notebook-bg;
     margin-bottom: 0px;
 }
+.navbar {
+    border: none;
+}
+.navbar-default {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    background-color: @notebook-bg;
+    border-color: @dropdown-hover;
+    padding-bottom: 0px;
+    line-height: 1.45em;
+}
 .navbar-default .navbar-nav > li > a {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
     color: @notebook-fg;
     display: block;
-    line-height: 1.2;
+    line-height: 1.45em;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: @selected-fg;
     background-color: @selected-third;
+    border-color: @dropdown-hover;
+    line-height: 1.45em;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -208,15 +281,16 @@ body > #header .header-bar {
     color: @selected-fg-bright;
     background-color: @selected-active;
     border-color: @selected-active;
+    line-height: 1.45em;
 }
-.nav {
-    margin-bottom: 0;
-}
+
 /****************************************/
 /********* ICONS and INDICATORS *********/
 /****************************************/
-.command_mode .modal_indicator:before {
-    font-size: @nb-fontsize-sub;
+.edit_mode .modal_indicator:before {
+    font-size: @nb-fontsize;
+    color: @item-cyan;
+    content: "\f040";
 }
 .item_icon {
     color: @item-blue;
@@ -233,37 +307,65 @@ body > #header .header-bar {
 }
 #modal_indicator {
     float: right !important;
-    color: @item-cyan;
+    color: @item-blue;
+    background: @notebook-bg;
+    background-color: @notebook-bg;
 }
 #kernel_indicator {
     float: right !important;
-    color: @item-cyan;
-    font-size: 13pt;
+    color: @item-theme;
+    background: @notebook-bg;
+    background-color: @notebook-bg;
+    font-size: @nb-fontsize;
+    border-left: 2px solid @item-theme;
 }
 #kernel_indicator .kernel_indicator_name {
+    color: @item-theme;
+    background: @notebook-bg;
+    background-color: @notebook-bg;
+    font-size: @nb-fontsize;
     padding-left: 5px;
     padding-right: 5px;
-    font-size: 13pt;
 }
-#project-name > .breadcrumb {
-    font-weight: normal;
-    color: @item-cyan;
+div.notification_widget.info,
+.notification_widget.info,
+.notification_widget:active:hover,
+.notification_widget.active:hover,
+.open > .dropdown-toggle.notification_widget:hover,
+.notification_widget:active:focus,
+.notification_widget.active:focus,
+.open > .dropdown-toggle.notification_widget:focus,
+.notification_widget:active.focus,
+.notification_widget.active.focus,
+.open > .dropdown-toggle.notification_widget.focus,
+div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn,
+div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:hover,
+div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:focus {
+    color: @item-blue;
+    background-color: @notebook-bg;
+    border-color: @notebook-bg;
 }
-.notification_widget.info {
-    color: #fff;
-    background-color: @item-cyan;
-    border-color: @item-cyan;
-    width: 100%;
+#notification_area,
+div.notification_area {
+    float: right !important;
+    position: static;
 }
-span.checkpoint_status, span.autosave_status {
-    font-size: small;
-    padding-left: 10px;
+#kernel_logo_widget,
+#kernel_logo_widget .current_kernel_logo {
+    display: none;
 }
 div#ipython_notebook {
     display: none;
 }
-#kernel_logo_widget, #kernel_logo_widget .current_kernel_logo {
-    display: none;
+i.fa.fa-icon {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: auto;
+}
+.fa {
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 /****************************************/
 /************ DROPDOWN MENUS ************/
@@ -274,16 +376,17 @@ div#ipython_notebook {
     box-shadow: none;
     padding: 0px;
     text-align: left;
-    border: 2px solid @selected-third;
-    background-color: @notebook-base;
-    background: @notebook-base;
+    border: 2px solid @dropdown-border;
+    background-color: @dropdown-bg;
+    background: @dropdown-bg;
     line-height: 1.2;
+    margin: 1px 0 0;
 }
 .dropdown-menu:hover {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
-    border: 2px solid @selected-third;
-    background-color: @notebook-base;
+    border: 2px solid @dropdown-border;
+    background-color: @dropdown-bg;
     box-shadow: none;
     line-height: 1.2;
 }
@@ -293,35 +396,24 @@ div#ipython_notebook {
     display: block;
     color: @notebook-fg;
     text-decoration: underline;
-    text-decoration-color: @selected-third;
+    text-decoration-color: @dropdown-border;
     white-space: nowrap;
     line-height: 1.2;
 }
 .dropdown-menu > li > a {
     font-family: @notebook-fontfamily;
-    font-size: 11pt;
-    display: block;
-    clear: both;
-    padding: 9px 19px;
-    font-weight: normal;
+    font-size: 12pt;
     line-height: 1.2;
+    display: block;
+    padding: 10px 22px 10px 15px;
     color: @notebook-fg;
-    white-space: nowrap;
-    background-color: @notebook-base;
-    background: @notebook-base;
+    background-color: @dropdown-bg;
+    background: @dropdown-bg;
 }
 .dropdown-menu > li > a:hover {
-    font-family: @notebook-fontfamily;
-    font-size: 11pt;
     color: @selected-fg;
-    display: block;
-    clear: both;
-    padding: 9px 19px;
-    font-weight: normal;
-    line-height: 1.2;
-    white-space: nowrap;
-    background-color: @selected-third;
-    background: @selected-third;
+    background-color: @dropdown-hover;
+    background: @dropdown-hover;
 }
 .dropdown-menu .divider {
     height: 2px;
@@ -340,7 +432,7 @@ div#ipython_notebook {
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
     font-family: @notebook-fontfamily;
-    font-size: 11pt;
+    font-size: 12pt;
     font-weight: normal;
     color: @disabled;
     padding: none;
@@ -349,109 +441,85 @@ div#ipython_notebook {
     line-height: 1.2;
     white-space: nowrap;
 }
-
+.dropdown-submenu > a:after {
+    color: @notebook-fg;
+}
+.dropdown-submenu:hover > a:after,
+.dropdown-submenu:active > a:after,
+.dropdown-submenu:focus > a:after,
+.dropdown-submenu:visited > a:after {
+    color: @selected-fg;
+}
 /****************************************/
 /**************** BUTTONS ***************/
 /****************************************/
+.btn, .btn-default {
+    font-family: @notebook-fontfamily;
+    color: @notebook-fg;
+    background: @button-bg;
+    background-color: @button-bg;
+    border: 1px solid darken(@button-bg, 2%);
+    font-weight: normal;
+    box-shadow: none;
+    text-shadow: none;
+}
+.btn:hover,
+.btn:active,
+.btn.active,
+.btn:active:hover,
+.btn.active:hover,
+.btn:active:focus,
+.btn.active:focus,
+.btn:active.focus,
+.btn.active.focus,
+.btn-default:hover,
+.btn-default:active,
+.btn-default.active,
+.btn-default:active:hover,
 .btn-default.active:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default:hover,
 .open > .dropdown-toggle.btn-default:focus,
-.open > .dropdown-toggle.btn-default:hover {
+.open > .dropdown-toggle.btn-default.focus,
+.open > .dropdown-toggle.btn:hover,
+.open > .dropdown-toggle.btn:focus,
+.open > .dropdown-toggle.btn.focus,
+.open > .dropdown-toggle.btn-default  {
     color: @selected-fg-bright;
     background-color: @selected-active;
+    background: @selected-active;
     border-color: @selected-active;
+    background-image: none;
+    font-weight: normal;
+    text-shadow: none;
+    box-shadow: none !important;
 }
-.btn {
-    color: @notebook-fg;
-    background: @button-bg;
-    background-color: @button-bg;
-    border: 1px solid darken(@button-bg, 3%) !important;
-    border-radius: 2px;
+.btn-group > .btn-mini,
+.btn-sm,
+.btn-group-sm > .btn,
+.btn-xs,
+.btn-group-xs > .btn,
+.alternate_upload .btn-upload,
+.btn-group,
+.btn-group-vertical {
+    font-size: 12pt;
+    font-weight: normal;
     box-shadow: none !important;
     text-shadow: none;
-}
-.btn:hover {
-    color: @selected-fg-bright;
-    background: @selected-active;
-    background-color: @selected-active;
-    border-color: @selected-active;
-    background-image: none;
-}
-.btn-group > .btn-mini {
-    font-size: @nb-fontsize-sub;
-    font-weight: normal;
-    border-radius: 2px;
-    color: @notebook-fg;
-    background: @button-bg;
-    background-color: @button-bg;
-    box-shadow: none !important;
-    text-shadow: none;
-    background-image: none;
-}
-.btn-group > .btn-mini:hover {
-    font-size: @nb-fontsize-sub;
-    font-weight: normal;
-    color: @selected-fg-bright;
-    background: @selected-active;
-    background-color: @selected-active;
-    border-color: @selected-active;
-    background-image: none;
 }
 .btn-xs, .btn-group-xs > .btn {
-    font-size: @nb-fontsize-sub;
+    font-size: 12pt;
+    background-image: none;
     font-weight: normal;
-    border-radius: 2px;
+    text-shadow: none;
+    box-shadow: none !important;
     display: table-row-group;
-    background: @button-bg;
-    background-color: @button-bg;
-}
-.btn-sm, .btn-group-sm > .btn {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
-    border-radius: 2px;
-    background: @button-bg;
-    background-color: @button-bg;
-}
-.btn-group-sm > .btn:hover {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
-    color: @selected-fg-bright;
-    background: @selected-active;
-    background-color: @selected-active;
-}
-.btn-group, .btn-group-vertical {
-    font-size: @nb-fontsize-sub;
-    font-weight: normal;
-    border-radius: 2px;
-    background: @button-bg;
-    background-color: @button-bg;
-    background-image: none;
-    vertical-align: bottom;
-}
-.btn-group-vertical:hover {
-    font-size: @nb-fontsize-sub;
-    font-weight: normal;
-    color: @selected-fg-bright;
-    background: @selected-active;
-    background-color: @selected-active;
-    background-image: none;
 }
 .alternate_upload .btn-upload {
-    font-size: @nb-fontsize-sub;
-    font-weight: normal;
-    border-radius: 2px;
     height: inherit;
-    background: transparent;
-    background-color: @button-bg;
-    display: inline-table;
-}
-.alternate_upload .btn-upload:hover {
-    font-size: @nb-fontsize-sub;
-    font-weight: normal;
-    border-radius: 2px;
-    height: inherit;
-    color: @selected-fg-bright;
-    background: @selected-active;
-    background-color: @selected-active;
     display: inline-table;
 }
 .alternate_upload input.fileinput {
@@ -459,33 +527,82 @@ div#ipython_notebook {
     width: 11.5ex;
 }
 #button-select-all {
-    padding-top: 4px;
-    min-width: 50px;
+    height: auto;
+    font-size: 12pt;
+    padding: 5px;
+    min-width: 65px;
 }
 button#tree-selector-btn {
-    padding-top: 4px;
+    height: auto;
+    font-size: 12pt;
+    padding: 5px;
 }
 button.close {
-    padding: 0px;
-    cursor: pointer;
-    background: transparent none repeat scroll 0% 0%;
     border: 0px none;
 }
+.dynamic-buttons {
+    padding-top: 0px;
+    display: inline-block;
+}
 .close {
-    float: right;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 1;
     color: @button-color;
-    text-shadow: 0px 1px 0px @selected-tenth;
-    opacity: 0.3;
 }
 .close:hover {
     color: @item-cyan;
-    text-shadow: 0px 1px 0px @selected-tenth;
-    opacity: 0.9;
 }
-
+div.btn.btn-default.output_collapsed {
+    background: darken(@button-bg, 4%);
+    background-color: darken(@button-bg, 4%);
+    border-color: darken(@button-bg, 4%);
+}
+div.btn.btn-default.output_collapsed:hover {
+    background: darken(@button-bg, 5%);
+    background-color: darken(@button-bg, 5%);
+    border-color: darken(@button-bg, 5%);
+}
+div.nbext-enable-btns .btn[disabled],
+div.nbext-enable-btns .btn[disabled]:hover,
+.btn-default.disabled,
+.btn-default[disabled],
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus {
+    color: @unemphasize-fg;
+    background: darken(@button-bg, 1%);
+    background-color: darken(@button-bg, 1%);
+    border-color: darken(@button-bg, 1%);
+}
+.input-group-addon {
+    padding: 2px 5px;
+    font-size: 12pt;
+    font-weight: normal;
+    height: auto;
+    color: @notebook-fg;
+    text-align: center;
+    background-color: @button-bg;
+    border: none;
+}
+.btn-group > .btn + .dropdown-toggle {
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 100%;
+}
+.input-group-btn {
+    position: relative;
+    font-size: inherit;
+    white-space: nowrap;
+}
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group {
+    margin-right: -1px;
+    font-size: inherit;
+}
 /**************************************************/
 /********** MODAL, PANELS, & FORM CONTROL *********/
 /**************************************************/
@@ -493,82 +610,112 @@ button.close {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize-sub;
     position: relative;
-    background-color: @notebook-base;
-    border: 1px solid @selected-third;
+    background:  @df-header-bg;
+    background-color: @df-header-bg;
+    border: 1px solid @selected-half;
     border-radius: 3px;
-    box-shadow: 0px 3px 9px @selected-third;
     background-clip: padding-box;
-    outline: 0px none;
+    outline: 1px solid @selected-half;
 }
 .modal-header {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
+    font-size: @nb-fontsize;
+    color: @selected-fg;
+    background:  @df-header-bg;
+    background-color: @df-header-bg;
+    border-color: @divider;
     padding: 15px;
-    border-bottom: 1px solid @selected-half;
     min-height: 16.4286px;
 }
-.panel-default {
-    border-color: @selected-third;
-}
-.panel {
-    font-size: @nb-fontsize-sub;
-    margin-bottom: 18px;
-    background-color: @notebook-bg;
-    color: @notebook-fg;
-    border: 0px;
-    box-shadow: none;
-}
-#running .panel-group .panel .panel-heading {
-    font-size: @nb-fontsize;
-    background-color: @notebook-bg;
-    padding: 4px 7px;
-    line-height: 22px;
-}
-#running .panel-group .panel .panel-heading a:hover {
-    font-size: @nb-fontsize;
-    color: @item-cyan;
-}
-#running .panel-group .panel .panel-body .list_container .list_item {
-    border-bottom: 1px solid @selected-half;
-}
-.panel-default > .panel-heading {
-    color: @notebook-fg;
-    background: @button-bg;
-    background-color: @button-bg;
-    border: 1px solid darken(@button-bg, 3%) !important;
-}
-.form-control {
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 4px 9px;
+.modal-content h4 {
+    font-family: "Exo_2", sans-serif;
     font-size: @nb-fontsize-sub;
     color: @selected-fg;
-    background-color: @cc-input-bg;
-    background-image: none;
-    border: 1px solid @selected-third;
-    border-radius: 2px;
+    padding: 5px;
+}
+.modal-body {
+    background-color: @cc-output-bg;
+    position: relative;
+    padding: 15px;
+}
+.alert-info {
+    background-color: @text-cell-bg;
+    border-color: @divider;
+    color: @notebook-fg;
+}
+.modal .modal-dialog {
+    min-width: 890px;
+}
+div.panel,
+div.panel-default,
+.panel,
+.panel-default {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    background-color: @panel-bg;
+    color: @notebook-fg;
+    margin-bottom: 18px;
+    border: 0;
     box-shadow: none;
+}
+div.panel > .panel-heading,
+div.panel-default > .panel-heading {
+    font-size: @nb-fontsize;
+    color: @selected-fg;
+    background:  @df-header-bg;
+    background-color: @df-header-bg;
+    border: 0;
+}
+div.form-control,
+.form-control {
+    font-family: @notebook-fontfamily;
+    font-size: inherit;
+    color: @notebook-fg;
+    background-color: @form-input-bg;
+    border-color: @divider;
+    height: auto;
+    box-shadow: none;
+    padding: 6px 12px;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
+.form-group.list-group-item {
+    color: @notebook-fg;
+    background-color: @panel-bg;
+    border-color: @divider;
+    margin-bottom: 0px;
+}
 .list_item input:not([type="checkbox"]) {
-    margin-right: 0px;
     padding-right: 0px;
-    height: 90%;
-    width: 30%;
+    height: auto;
+    width: 20%;
+    margin: 6px 0 0;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 6px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+input, button, select, textarea {
+    margin-left: 4px;
+    background-color: @form-input-bg;
+    font-weight: normal;
+    padding-left: 2px;
+    border: 2px solid @divider;
 }
 .modal-footer {
     padding: 15px;
     text-align: right;
     border-top: 1px solid @selected-half;
 }
-.input-form-control:hover:active {
-    background-color:  @selected-tenth;
-    selected:  @selected-tenth;
-}
 select.form-control.select-xs {
     height: auto;
 }
+.typeahead-field input, .typeahead-select {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+}
+
 /****************************************/
 /************** SCROLL BARS *************/
 /****************************************/

@@ -30,6 +30,7 @@ fonts_dir = os.path.join(package_dir, 'fonts')
 nb_style = os.path.join(layouts_dir, 'notebook.less')
 cm_style = os.path.join(layouts_dir, 'codemirror.less')
 cl_style = os.path.join(layouts_dir, 'cells.less')
+ex_style = os.path.join(layouts_dir, 'extras.less')
 jax_style = os.path.join(layouts_dir, 'mathjax.css')
 vim_style = os.path.join(layouts_dir, 'vim.less')
 
@@ -73,9 +74,14 @@ def install_precompiled_theme(theme):
     theme_src = os.path.join(compiled_dir, '{}.css'.format(theme))
     theme_dst = os.path.join(jupyter_custom, 'custom.css')
     copyfile(theme_src, theme_dst)
+    for fontcode in ['exosans', 'ptserif', 'droidmono', 'firacode']:
+        fname, fpath, ffam = stored_font_dicts(fontcode)
+        fontpath = os.path.join(fonts_dir, fpath)
+        for fontfile in os.listdir(fontpath):
+            send_fonts_to_jupyter(os.path.join(fontpath, fontfile))
 
 def send_fonts_to_jupyter(font_file_path):
-    fname = font_file_path.split('/')[-1]
+    fname = font_file_path.split(os.sep)[-1]
     copyfile(font_file_path, os.path.join(jupyter_custom_fonts, fname))
 
 def delete_font_files():
@@ -83,93 +89,19 @@ def delete_font_files():
         abspath = os.path.join(jupyter_custom_fonts, fontfile)
         os.remove(abspath)
 
-def stored_font_dicts(fontcode, get_all=False):
-    fonts = {'mono':
-                {'anka': ['Anka/Coder', 'monospace/anka-coder'],
-                'anonymous': ['Anonymous Pro', 'monospace/anonymous-pro'],
-                'aurulent': ['Aurulent Sans Mono', 'monospace/aurulent'],
-                'bitstream': ['Bitstream Vera Sans Mono', 'monospace/bitstream-vera'],
-                'bpmono': ['BPmono', 'monospace/bpmono'],
-                'code': ['Code New Roman', 'monospace/code-new-roman'],
-                'consolamono': ['Consolamono', 'monospace/consolamono'],
-                'cousine': ['Cousine', 'monospace/cousine'],
-                'dejavu': ['DejaVu Sans Mono', 'monospace/dejavu'],
-                'droidmono': ['Droid Sans Mono', 'monospace/droidmono'],
-                'fira': ['Fira Mono', 'monospace/fira'],
-                'firacode': ['Fira Code', 'monospace/firacode'],
-                'generic': ['Generic Mono', 'monospace/generic'],
-                'hack': ['Hack', 'monospace/hack'],
-                'inconsolata': ['Inconsolata-g', 'monospace/inconsolata-g'],
-                'liberation': ['Liberation Mono', 'monospace/liberation'],
-                'meslo': ['Meslo', 'monospace/meslo'],
-                'office': ['Office Code Pro', 'monospace/office-code-pro'],
-                'oxygen': ['Oxygen Mono', 'monospace/oxygen'],
-                'roboto': ['Roboto Mono', 'monospace/roboto'],
-                'saxmono': ['saxMono', 'monospace/saxmono'],
-                'source': ['Source Code Pro', 'monospace/source-code-pro'],
-                'sourcemed': ['Source Code Pro Medium', 'monospace/source-code-medium'],
-                'ptmono': ['PT Mono', 'monospace/ptmono'],
-                'ubuntu': ['Ubuntu Mono', 'monospace/ubuntu']},
-            'sans':
-                {'droidsans': ['Droid Sans', 'sans-serif/droidsans'],
-                'opensans': ['Open Sans', 'sans-serif/opensans'],
-                'ptsans': ['PT Sans', 'sans-serif/ptsans'],
-                'sourcesans': ['Source Sans Pro', 'sans-serif/sourcesans'],
-                'robotosans': ['Roboto', 'sans-serif/robotosans'],
-                'latosans': ['Lato', 'sans-serif/latosans'],
-                'amikosans': ['Amiko', 'sans-serif/amikosans'],
-                'exosans': ['Exo_2', 'sans-serif/exosans'],
-                'nobilesans': ['Nobile', 'sans-serif/nobilesans'],
-                'alegreyasans': ['Alegreya', 'sans-serif/alegreyasans'],
-                'armatasans': ['Armata', 'sans-serif/armatasans'],
-                'cambaysans': ['Cambay', 'sans-serif/cambaysans'],
-                'catamaransans': ['Catamaran', 'sans-serif/catamaransans'],
-                'franklinsans': ['Libre Franklin', 'sans-serif/franklinsans'],
-                'frankruhlsans': ['Frank Ruhl', 'sans-serif/frankruhlsans'],
-                'gothicsans': ['Carrois Gothic', 'sans-serif/gothicsans'],
-                'gudeasans': ['Gudea', 'sans-serif/gudeasans'],
-                'hindsans': ['Hind', 'sans-serif/hindsans'],
-                'jaldisans': ['Jaldi', 'sans-serif/jaldisans'],
-                'makosans': ['Mako', 'sans-serif/makosans'],
-                'merrisans': ['Merriweather Sans', 'sans-serif/merrisans'],
-                'mondasans': ['Monda', 'sans-serif/mondasans'],
-                'oxygensans': ['Oxygen Sans', 'sans-serif/oxygensans'],
-                'pontanosans': ['Pontano Sans', 'sans-serif/pontanosans'],
-                'puritansans': ['Puritan Sans', 'sans-serif/puritansans'],
-                'ralewaysans': ['Raleway', 'sans-serif/ralewaysans']},
-            'serif':
-                {'ptserif': ['PT Serif', 'serif/ptserif'],
-                'ebserif': ['EB Garamond', 'serif/ebserif'],
-                'loraserif': ['Lora', 'serif/loraserif'],
-                'merriserif': ['Merriweather', 'serif/merriserif'],
-                'crimsonserif': ['Crimson Text', 'serif/crimsonserif'],
-                'droidserif': ['Droid Serif', 'serif/droidserif'],
-                'georgiaserif': ['Georgia', 'serif/georgiaserif'],
-                'neutonserif': ['Neuton', 'serif/neutonserif'],
-                'vesperserif': ['Vesper Libre', 'serif/vesperserif'],
-                'scopeserif': ['ScopeOne Serif', 'serif/scopeserif'],
-                'sanchezserif': ['Sanchez Serif', 'serif/sanchezserif'],
-                'rasaserif': ['Rasa', 'serif/rasaserif'],
-                'vollkornserif': ['Vollkorn', 'serif/vollkornserif'],
-                'sourceserif': ['Source Serif Pro', 'serif/sourceserif']}}
-    if get_all:
-        return fonts
-    if fontcode in list(fonts['mono']):
-        return fonts['mono'][fontcode] + ['monospace']
-    elif fontcode in list(fonts['sans']):
-        return fonts['sans'][fontcode] + ['sans-serif']
-    elif fontcode in list(fonts['serif']):
-        return fonts['serif'][fontcode] + ['serif']
-    else:
-        "One of the fonts you requested is not available... sorry!"
-
-def import_stored_fonts(style_less='', fontcodes=['exosans', 'georgiaserif', 'droidmono']):
+def import_stored_fonts(fontcodes=['exosans', 'ptserif', 'droidmono']):
     """ collect fontnames and local pointers to fontfiles in custom dir
     then pass information for each font to function for writing import statements
     """
+    doc ='\nConcatenated font imports, .less styles, & custom variables\n'
+    s = '*'*65
+    style_less = '\n'.join(['/*', s, s, doc, s, s, '*/'])
+    style_less += '\n\n\n'
+    style_less += '/* Import Notebook, Markdown, & Code Fonts */\n'
     for fontcode in unique(fontcodes):
         fname, fpath, ffam = stored_font_dicts(fontcode)
         style_less = import_fonts(style_less, fname, fpath)
+    style_less += '\n\n'
     return style_less
 
 def convert_fontsizes(fontsizes):
@@ -180,13 +112,15 @@ def convert_fontsizes(fontsizes):
             fontsizes[i] = '.'.join([fs[:-1], fs[-1]])
     return fontsizes
 
-def set_font_properties(nbfont='exosans', tcfont='georgiaserif', monofont='droidmono', monosize=11, tcfontsize=13, nbfontsize=13, prfontsize=9):
+def set_font_properties(nbfont='exosans', tcfont='ptserif', monofont='droidmono', monosize=11, tcfontsize=13, nbfontsize=13, prfontsize=9):
     """ parent function for setting notebook, text/md, and codecell font-properties
     """
     fontsizes = [monosize, nbfontsize, tcfontsize]
     monosize, nbfontsize, tcfontsize = convert_fontsizes(fontsizes)
-    style_less = ''
-    style_less = import_stored_fonts(style_less, fontcodes=[nbfont, tcfont, monofont, 'firacode'])
+
+    style_less = import_stored_fonts(fontcodes=[nbfont, tcfont, monofont, 'firacode'])
+    style_less += '/* Set Font-Type and Font-Size Variables  */\n'
+    # get fontname, fontpath, font-family info
     nbfont, nbfontpath, nbfontfam = stored_font_dicts(nbfont)
     tcfont, tcfontpath, tcfontfam = stored_font_dicts(tcfont)
     monofont, monofontpath, monofontfam = stored_font_dicts(monofont)
@@ -197,9 +131,11 @@ def set_font_properties(nbfont='exosans', tcfont='georgiaserif', monofont='droid
     # font size for codecells, main notebook, notebook-sub, & textcells
     style_less += '@monofontsize: {}pt; \n'.format(monosize)
     style_less += '@nb-fontsize: {}pt; \n'.format(nbfontsize)
-    style_less += '@nb-fontsize-sub: {}pt; \n'.format(float(nbfontsize)-1.5)
+    style_less += '@nb-fontsize-sub: {}pt; \n'.format(float(nbfontsize)-1)
     style_less += '@text-cell-fontsize: {}pt; \n'.format(tcfontsize)
     style_less += '@prompt-fontsize: {}pt; \n'.format(prfontsize)
+    style_less += '\n\n'
+    style_less += '/* Import Theme Colors and Define Layout Variables */\n'
     return style_less
 
 def import_fonts(style_less, fontname, font_subdir):
@@ -207,7 +143,7 @@ def import_fonts(style_less, fontname, font_subdir):
     write import statements to style_less
     """
     ftype_dict = {'woff2':'woff2', 'woff':'woff', 'ttf':'truetype', 'otf':'opentype'}
-    define_font = "@font-face {{font-family: '{fontname}';\n\tfont-weight: {weight};\n\tfont-style: {style};\n\tsrc: local('{fontname}'),\n\turl('fonts/{fontfile}') format('{ftype}');}}\n"
+    define_font = "@font-face {{font-family: '{fontname}';\n\tfont-weight: {weight};\n\tfont-style: {style};\n\tsrc: local('{fontname}'),\n\turl('fonts{sepp}{fontfile}') format('{ftype}');}}\n"
     fontpath = os.path.join(fonts_dir, font_subdir)
     for fontfile in os.listdir(fontpath):
         if '.txt' in fontfile or 'DS_' in fontfile:
@@ -219,16 +155,20 @@ def import_fonts(style_less, fontname, font_subdir):
         elif 'ital' in fontfile:
             style='italic'
         ft = ftype_dict[fontfile.split('.')[-1]]
-        style_less += define_font.format(fontname=fontname, weight=weight, style=style, fontfile=fontfile, ftype=ft)
+        style_less += define_font.format(fontname=fontname, weight=weight, style=style, sepp=os.sep, fontfile=fontfile, ftype=ft)
         send_fonts_to_jupyter(os.path.join(fontpath, fontfile))
+
     return style_less
 
-def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default', cellwidth=980, lineheight=170, altlayout=False, vimext=False, toolbar=False, nbname=False):
+def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default', cellwidth=980, lineheight=170, margins='auto', altlayout=False, vimext=False, toolbar=False, nbname=False):
     """ set general layout and style properties of text and code cells
     """
-    style_less += '@import "styles/{}";\n'.format(theme)
+    style_less += '@import "styles{}";\n'.format(''.join([os.sep, theme]))
     style_less += '@cell-width: {}px; \n'.format(cellwidth)
     style_less += '@cc-line-height: {}%; \n'.format(lineheight)
+    if margins!='auto':
+        margins = '{}px'.format(margins)
+    style_less += '@container-margins: {}; \n'.format(margins)
     textcell_bg = '@cc-input-bg'
     tc_prompt_line = '@tc-prompt-std'
     cc_prompt_width = 12.8
@@ -244,12 +184,16 @@ def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default
     style_less += '@tc-prompt-line: {};\n'.format(tc_prompt_line)
     style_less += '@cursor-width: {}px;\n'.format(cursorwidth)
     style_less += '@cursor-info: @cursor-width solid {};\n'.format(cursorcolor)
+    style_less += '\n\n'
     # read-in notebook.less (general nb style)
     with open(nb_style, 'r') as notebook:
         style_less += notebook.read() + '\n'
-    # read-in cells.less (cell layous)
+    # read-in cells.less (cell layout)
     with open(cl_style, 'r') as cells:
         style_less += cells.read() + '\n'
+    # read-in extras.less (misc layout)
+    with open(ex_style, 'r') as extras:
+        style_less += extras.read() + '\n'
     # read-in codemirror.less (syntax-highlighting)
     with open(cm_style, 'r') as codemirror:
         style_less += codemirror.read() + '\n'
@@ -288,7 +232,7 @@ def set_vim_style(theme):
     vim_jupyter_nbext = os.path.join(jupyter_nbext, 'vim_binding')
     if not os.path.isdir(vim_jupyter_nbext):
         os.makedirs(vim_jupyter_nbext)
-    vim_less = '@import "styles/{}";\n'.format(theme)
+    vim_less = '@import "styles{}";\n'.format(''.join([os.sep, theme]))
     with open(vim_style, 'r') as vimstyle:
         vim_less += vimstyle.read() + '\n'
     with open(vimtemp, 'w') as f:
@@ -307,7 +251,7 @@ def reset_default(verbose=False):
     """
     paths = [jupyter_custom, jupyter_nbext]
     for fpath in paths:
-        custom = '{0}/{1}.css'.format(fpath, 'custom')
+        custom = '{0}{1}{2}.css'.format(fpath, os.sep, 'custom')
         try:
             os.remove(custom)
         except Exception:
@@ -331,9 +275,99 @@ def set_nb_theme(name):
 
 def get_colors(theme='grade3', c='default', get_dict=False):
     if theme=='grade3':
-        cdict = {'b': '#1e70c7', 'default': '#ff711a', 'r': '#e22978', 'p': '#AA22FF', 'g': '#2ecc71'}
+        cdict = {'b': '#1e70c7', 'default': '#ff711a', 'o': '#ff711a', 'r': '#e22978', 'p': '#AA22FF', 'g': '#2ecc71'}
     else:
-        cdict = {'default': '#0095ff', 'o': '#ff914d', 'r': '#DB797C', 'p': '#c776df', 'g': '#94c273'}
+        cdict = {'default': '#0095ff', 'b': '#0095ff', 'o': '#ff914d', 'r': '#DB797C', 'p': '#c776df', 'g': '#94c273'}
     if get_dict:
         return cdict
     return cdict[c]
+
+def stored_font_dicts(fontcode, get_all=False):
+    fonts = {'mono':
+                {'anka': ['Anka/Coder', 'anka-coder'],
+                'anonymous': ['Anonymous Pro', 'anonymous-pro'],
+                'aurulent': ['Aurulent Sans Mono', 'aurulent'],
+                'bitstream': ['Bitstream Vera Sans Mono', 'bitstream-vera'],
+                'bpmono': ['BPmono', 'bpmono'],
+                'code': ['Code New Roman', 'code-new-roman'],
+                'consolamono': ['Consolamono', 'consolamono'],
+                'cousine': ['Cousine', 'cousine'],
+                'dejavu': ['DejaVu Sans Mono', 'dejavu'],
+                'droidmono': ['Droid Sans Mono', 'droidmono'],
+                'fira': ['Fira Mono', 'fira'],
+                'firacode': ['Fira Code', 'firacode'],
+                'generic': ['Generic Mono', 'generic'],
+                'hack': ['Hack', 'hack'],
+                'inconsolata': ['Inconsolata-g', 'inconsolata-g'],
+                'liberation': ['Liberation Mono', 'liberation'],
+                'meslo': ['Meslo', 'meslo'],
+                'office': ['Office Code Pro', 'office-code-pro'],
+                'oxygen': ['Oxygen Mono', 'oxygen'],
+                'roboto': ['Roboto Mono', 'roboto'],
+                'saxmono': ['saxMono', 'saxmono'],
+                'source': ['Source Code Pro', 'source-code-pro'],
+                'sourcemed': ['Source Code Pro Medium', 'source-code-medium'],
+                'ptmono': ['PT Mono', 'ptmono'],
+                'ubuntu': ['Ubuntu Mono', 'ubuntu']},
+            'sans':
+                {'droidsans': ['Droid Sans', 'droidsans'],
+                'opensans': ['Open Sans', 'opensans'],
+                'ptsans': ['PT Sans', 'ptsans'],
+                'sourcesans': ['Source Sans Pro', 'sourcesans'],
+                'robotosans': ['Roboto', 'robotosans'],
+                'latosans': ['Lato', 'latosans'],
+                'amikosans': ['Amiko', 'amikosans'],
+                'exosans': ['Exo_2', 'exosans'],
+                'nobilesans': ['Nobile', 'nobilesans'],
+                'alegreyasans': ['Alegreya', 'alegreyasans'],
+                'armatasans': ['Armata', 'armatasans'],
+                'cambaysans': ['Cambay', 'cambaysans'],
+                'catamaransans': ['Catamaran', 'catamaransans'],
+                'franklinsans': ['Libre Franklin', 'franklinsans'],
+                'frankruhlsans': ['Frank Ruhl', 'frankruhlsans'],
+                'gothicsans': ['Carrois Gothic', 'gothicsans'],
+                'gudeasans': ['Gudea', 'gudeasans'],
+                'hindsans': ['Hind', 'hindsans'],
+                'jaldisans': ['Jaldi', 'jaldisans'],
+                'makosans': ['Mako', 'makosans'],
+                'merrisans': ['Merriweather Sans', 'merrisans'],
+                'mondasans': ['Monda', 'mondasans'],
+                'oxygensans': ['Oxygen Sans', 'oxygensans'],
+                'pontanosans': ['Pontano Sans', 'pontanosans'],
+                'puritansans': ['Puritan Sans', 'puritansans'],
+                'ralewaysans': ['Raleway', 'ralewaysans']},
+            'serif':
+                {'ptserif': ['PT Serif', 'ptserif'],
+                'ebserif': ['EB Garamond', 'ebserif'],
+                'loraserif': ['Lora', 'loraserif'],
+                'merriserif': ['Merriweather', 'merriserif'],
+                'crimsonserif': ['Crimson Text', 'crimsonserif'],
+                'droidserif': ['Droid Serif', 'droidserif'],
+                'georgiaserif': ['Georgia', 'georgiaserif'],
+                'neutonserif': ['Neuton', 'neutonserif'],
+                'vesperserif': ['Vesper Libre', 'vesperserif'],
+                'scopeserif': ['ScopeOne Serif', 'scopeserif'],
+                'sanchezserif': ['Sanchez Serif', 'sanchezserif'],
+                'rasaserif': ['Rasa', 'rasaserif'],
+                'vollkornserif': ['Vollkorn', 'vollkornserif'],
+                'cardoserif': ['Source Serif Pro', 'cardoserif'],
+                'notoserif': ['Source Serif Pro', 'notoserif'],
+                'goudyserif': ['Source Serif Pro', 'goudyserif'],
+                'andadaserif': ['Source Serif Pro', 'andadaserif'],
+                'arapeyserif': ['Source Serif Pro', 'arapeyserif']}}
+    if get_all:
+        return fonts
+    if fontcode in list(fonts['mono']):
+        fontname, fontdir = fonts['mono'][fontcode]
+        fontfam = 'monospace'
+    elif fontcode in list(fonts['sans']):
+        fontname, fontdir = fonts['sans'][fontcode]
+        fontfam = 'sans-serif'
+    elif fontcode in list(fonts['serif']):
+        fontname, fontdir = fonts['serif'][fontcode]
+        fontfam = 'serif'
+    else:
+        "One of the fonts you requested is not available... sorry!"
+        return _
+    fontdir = os.sep.join([fontfam, fontdir])
+    return fontname, fontdir, fontfam

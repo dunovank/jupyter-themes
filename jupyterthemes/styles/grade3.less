@@ -1,30 +1,33 @@
 /* grade3 notebook colors */
 @notebook-bg:           #ffffff;
-@notebook-fg:           #2c2c2c;
-@notebook-base:         #efefef;
+@notebook-fg:           #303030;
+@notebook-base:         #eeeeee;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           @notebook-base;
 @selected-half:         rgba(180, 180, 180,.32);
-@selected-third:        rgba(180, 180, 180,.20);
-@selected-tenth:        rgba(150, 150, 150,.07);
+@selected-third:        rgba(180, 180, 180,.11);
+@selected-tenth:        #fafafa;
 @selected-error:        rgba(191, 97, 106, .40);
-@selected-active:       @selected-half;
+@selected-active:       #E3E3E3;
 @selected-fg:           #222222;
 @selected-fg-bright:    #000000;
+@unemphasize-fg:        #4A4A4A;
 
 /* code, text, markdown, & tooltip colors */
 @cc-input-bg:           #efefef;
 @cc-input-fg:           #303030;
 @cc-output-bg:          #ffffff;
 @cc-output-fg:          @cc-input-fg;
-@text-cell-fg:          lighten(@cc-input-fg, 2%);
-@unrendered-text:       #1e70c7;
+@text-cell-fg:          #353535;
+@unrendered-text:       #126DCE;
 @header-fg:             @unrendered-text;
-@tooltip-bg-color:      darken(@notebook-bg, 3%);
+@header-fg2:            @header-fg;
+@header-fg3:            @header-fg;
+@tooltip-bg-color:      @notebook-base;
 @tooltip-fg-color:      #222222;
-@nb-name-fg:            @unrendered-text;
-@nb-name-hover:         saturate(lighten(@header-fg, 15%), 25%);
+@nb-name-fg:            @item-theme;
+@nb-name-hover:         #DE6D25;
 
 /* cell border colors */
 @cc-border-selected:    @item-theme;
@@ -39,41 +42,50 @@
 @prompt-line:           rgba(240, 147, 43, .50);
 @tc-prompt-std:         rgba(30, 112, 199, .50);
 @matching-bracket:      rgba(30, 112, 199, .30);
+@dropdown-bg:           @notebook-bg;
+@dropdown-border:       @selected-half;
+@dropdown-hover:        @selected-third;
+
+/* panels and form-control styles */
+@panel-header-bg:       @notebook-base;
+@panel-bg:              #fafafa;
+@form-input-bg:         #ffffff;
 
 /* buttons, widgets, kernels colors */
-@item-theme:            #ff8132;
-@item-blue:             #1e70c7;
+@item-theme:            #FF7823;
+@item-blue:             #126DCE;
 @item-cyan:             #2c85f7;
 @button-color:          @item-theme;
-@item-green:            saturate(#48a667, 15%);
+@item-green:            #009e07;
+@item-red:              #de143d;
 
 /* tables and dataframes colors */
-@table-color:           lighten(@cc-input-fg, 2%);
+@table-color:           #353535;
 @table-bg:              @notebook-bg;
-@table-border:          darken(@table-bg, 16%);
-@df-header-bg:          darken(@table-bg, 10%);
-@df-header:             lighten(@cc-input-fg, 2%);
-@df-header-border:      darken(@df-header-bg,13%);
+@table-border:          #D6D6D6;
+@df-header-bg:          @notebook-base;
+@df-header:             #353535;
+@df-header-border:      #C4C4C4;
 @df-cell-bg:            @table-bg;
-@codeblock-bg:          @notebook-bg;
-@codeblock-border:      darken(@text-cell-bg, 10%);
+@codeblock-bg:          @panel-bg;
+@codeblock-border:      darken(@codeblock-bg, 4%);
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             darken(@cc-output-bg, 7%);
-@scrollbar:             desaturate(darken(@item-blue, 1%), 20%);
-@scroll-trough:         lighten(@disabled, 15%);
+@button-bg:             #EAEAEA;
+@scrollbar:             #346EAC;
+@scroll-trough:         #D0D0D0;
 @scrollbar-inactive:    #dedede;
 @box-shadow:            #e8e8e8;
 
 /* grade3 ansi colors */
-@ansiblack:             #333333;
+@ansiblack:             #dc4384;
 @ansiblue:              #009e07;
-@ansigray:              #333333;
-@ansigreen:             #dc4384;
+@ansigray:              #FF7823;
+@ansigreen:             #333333;
 @ansipurple:            #653bc5;
-@ansicyan:              #1e70c7;
-@ansiyellow:            #de143d;
-@ansired:               #666666;
+@ansicyan:              #055be0;
+@ansiyellow:            #FF7823;
+@ansired:               #de143d;
 @stderr-bg:             #ebb5b7;
 @stderr-fg:             #000000;
 @js-error:              @ansired;

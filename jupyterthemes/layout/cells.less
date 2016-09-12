@@ -2,10 +2,7 @@
  Cell Input, Output, and Prompt style for Code, Txt, & MD Cells
 **************************************************************/
 
-/********************************/
-/*********** INPUT **************/
-/********************************/
-/********** CODE CELLS **********/
+/********** CODE CELL INPUT AREA **********/
 div.input_area {
     background-color: @cc-input-bg;
     padding-right: 1.2em;
@@ -47,7 +44,117 @@ div.cell.edit_mode {
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
-/******** TXT & MD CELLS ********/
+
+/*********** CODE CELL INPUT PROMPT ************/
+div.prompt {
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
+    padding: .25em;
+    text-align: left !important;
+    min-width: @cc-prompt-width;
+}
+div.prompt.input_prompt {
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
+    color: @input-prompt;
+    background-color: @cc-input-bg;
+    font-weight: normal;
+    min-width: @cc-prompt-width;
+    text-align: left !important;
+    border-right: 2px solid @prompt-line;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+/********** CODE CELL OUTPUT AREA **********/
+div.output_wrapper {
+    background-color: @cc-output-bg;
+    border: 0px;
+    margin-bottom: 0em;
+    margin-top: 0em;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+div.output_subarea.output_text.output_stream.output_stdout,
+div.output_subarea.output_text {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    line-height: 150% !important;
+    background-color: @cc-output-bg;
+    color: @cc-output-fg;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+div.output_area pre {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    line-height: 150% !important;
+    color: @cc-output-fg;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+div.output_area {
+    display: -webkit-box;
+}
+div.output_html {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    color: @table-color;
+    background-color: @cc-output-bg;
+    background: @cc-output-bg;
+}
+div.output_subarea {
+    overflow-x: auto;
+    padding: .8em;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    flex: 1;
+    max-width: 90%;
+}
+
+/************ CODE CELL OUTPUT PROMPT ************/
+div.prompt.output_prompt {
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
+    background-color: @cc-output-bg;
+    color: @cc-output-bg;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+div.out_prompt_overlay.prompt {
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
+    background-color: @cc-output-bg;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    min-width: @cc-prompt-width;
+}
+div.out_prompt_overlay.prompt:hover {
+    font-family: "Fira Code", monospace;
+    font-size: @prompt-fontsize;
+    background-color: @cc-output-bg;
+    box-shadow: @box-shadow 2px 1px 2px 2.5px inset;
+    border-bottom-left-radius: 2px;
+    -webkit-border-: 2px;
+    -moz-border-radius: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+/******** TXT & MD INPUT AREA ********/
 div.text_cell,
 div.text_cell_render pre,
 div.text_cell_render {
@@ -100,288 +207,8 @@ div.edit_mode div.text_cell.unrendered {
     background-color: @text-cell-bg;
     border-radius: 2px;
 }
-/************  TABLES  **********/
-.rendered_html table,
-.rendered_html tr,
-.rendered_html td {
-    font-family: "Fira Code", monospace;
-    font-size: 9pt !important;
-    line-height: 150% !important;
-    border: 1px solid @table-border;
-    color: @table-color;
-    background-color: @table-bg;
-    background: @table-bg;
-}
-/**************  PANDAS DF FORMATTING  ***************/
-/*****************************************************/
-/* blog.henryhhammond.com/pandas-formatting-snippets */
-/*****************************************************/
-table.dataframe,
-.rendered_html tr,
-.dataframe * {
-    font-family: "Fira Code", monospace;
-    font-size: 9.5pt !important;
-    border: 1px solid @table-border;
-}
-.dataframe th,
-.rendered_html th {
-    font-family: @notebook-fontfamily;
-    font-size: 10pt !important;
-    font-weight: 450;
-    border: 1px solid @df-header-border;
-    background: @df-header-bg;
-}
-.dataframe td,
-.rendered_html td {
-    font-family: "Fira Code", monospace;
-    font-size: 9.5pt !important;
-    color: @table-color;
-    background: @df-cell-bg;
-    border: 1px solid @table-border;
-    text-align: left;
-    min-width: 4em;
-}
-/********** PANDAS SUMMARY **********/
-.dataframe-summary-row tr:last-child,
-.dataframe-summary-col td:last-child {
-    font-family: @notebook-fontfamily;
-    font-size: 10pt !important;
-    font-weight: 450;
-    color: @df-header;
-    border: 1px solid @table-border;
-    background: @df-header-bg;
-}
 
-/******** CODE BLOCKS **********/
-.rendered_html code {
-    color: @cc-input-fg;
-    padding-top: 5px;
-    background: @codeblock-bg;
-    background-color: @codeblock-bg;
-}
-.rendered_html pre,
-div.text_cell_render pre {
-    font-family: @monofont, monospace;
-    font-size: @monofontsize !important;
-    line-height: @cc-line-height !important;
-    color: @cc-input-fg;
-    background: @codeblock-bg;
-    background-color: @codeblock-bg;
-    border: 2px @codeblock-border solid;
-    max-width: 85%;
-    border-radius: 2px;
-    padding: 8.5px;
-}
-pre code {
-    padding: 0;
-}
-.rendered_html * + p {
-    margin-top: .2em;
-}
-/************ LINKS  ************/
-.rendered_html :link {
-    font-family: @text-cell-fontfamily;
-    color: @header-fg;
-}
-.rendered_html :link:hover {
-    font-family: @text-cell-fontfamily;
-    color: @item-cyan;
-}
-.rendered_html :visited {
-    font-family: @text-cell-fontfamily;
-    color: @header-fg;
-}
-.rendered_html :visited:hover {
-    font-family: @text-cell-fontfamily;
-    color: @item-cyan;
-}
-
-/********************************/
-/*********** OUTPUT *************/
-/********************************/
-/********** CODE CELLS **********/
-div.output_wrapper {
-    background-color: @cc-output-bg;
-    border: 0px;
-    margin-bottom: 0em;
-    margin-top: 0em;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-}
-div.output_subarea.output_text.output_stream.output_stdout,
-div.output_subarea.output_text {
-    font-family: @monofont, monospace;
-    font-size: 10pt !important;
-    line-height: 150% !important;
-    background-color: @cc-output-bg;
-    color: @cc-output-fg;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-}
-div.output_area pre {
-    font-family: @monofont, monospace;
-    font-size: 10pt !important;
-    line-height: 150% !important;
-    color: @cc-output-fg;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-}
-div.output_area {
-    display: -webkit-box;
-}
-div.output_html {
-    font-family: @monofont, monospace;
-    font-size: 10pt !important;
-    color: @table-color;
-    background-color: @cc-output-bg;
-    background: @cc-output-bg;
-}
-div.output_subarea {
-    overflow-x: auto;
-    padding: .8em;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    flex: 1;
-    max-width: 90%;
-}
-/* debugger input shell */
-input.raw_input {
-    font-family: @monofont, monospace;
-    font-size: @monofontsize !important;
-    color: @cc-input-fg;
-    background-color: darken(@cc-input-bg, 2%);
-    border-color: darken(@cc-input-bg, 2%);
-    background: darken(@cc-input-bg, 2%);
-    width: auto;
-    vertical-align: baseline;
-    padding: 0em 0.25em;
-    margin: 0em 0.25em;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-/*********** WIDGETS ***********/
-div.widget-area {
-    background-color: @cc-output-bg;
-    background: @cc-output-bg;
-    color: @cc-output-fg;
-}
-div.widget-area a {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
-    font-weight: normal;
-    font-style: normal;
-    color: @notebook-fg;
-    text-shadow: none !important;
-}
-div.widget-area a:hover, a:focus {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
-    font-weight: normal;
-    font-style: normal;
-    color: @selected-fg;
-    background: @selected-third;
-    background-color: @selected-third;
-    border-color: transparent;
-    background-image: none;
-    text-shadow: none !important;
-}
-div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
-    background: transparent;
-    background-color: darken(@cc-output-bg, 5%);
-    border: 1px solid @selected-bg;
-    font-size: inherit;
-}
-div.jupyter-widgets.widget-hprogress.widget-hbox {
-    display: inline-table;
-}
-div.jupyter-widgets.widget-hprogress.widget-hbox .widget-label {
-    font-size: 11pt;
-    min-width: 15ex;
-    padding-top: 5px;
-    padding-right: 10px;
-    text-align: left;
-}
-.progress {
-    overflow: hidden;
-    height: 20px;
-    margin-bottom: 10px;
-    padding-left: 10px;
-    background-color: lighten(@disabled, 11%);
-    border-radius: 4px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-/***********  MEDIA ***********/
-audio, video {
-    display: inline;
-    vertical-align: middle;
-    align-content: center;
-    margin-left: 20%;
-}
-
-/***********  jNB EXTENSION CONFIG ***********/
-div.nbext-readme > .nbext-readme-contents > .rendered_html {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
-    padding: 0.5em 1em;
-    margin-top: 0;
-    z-index: -10;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-div.rendered_html pre {
-    background-color: @codeblock-bg;
-    padding: 4px;
-}
-div.rendered_html code {
-    font-family: @monofont, monospace;
-    font-size: @monofontsize;
-    background-color: @codeblock-bg;
-    padding: 2px 4px;
-}
-div.rendered_html {
-    color: @notebook-fg;
-}
-div.nbext-selector > nav > .nav > li > a {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
-}
-
-/***********************************/
-/********** INPUT PROMPTS **********/
-/***********************************/
-/*********** CODE CELLS ************/
-div.prompt {
-    font-family: "Fira Code", monospace;
-    font-size: @prompt-fontsize;
-    padding: .25em;
-    text-align: left !important;
-    min-width: @cc-prompt-width;
-}
-div.prompt.input_prompt {
-    font-family: "Fira Code", monospace;
-    font-size: @prompt-fontsize;
-    color: @input-prompt;
-    background-color: @cc-input-bg;
-    font-weight: normal;
-    min-width: @cc-prompt-width;
-    text-align: left !important;
-    border-right: 2px solid @prompt-line;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-/********** TEXT & MD CELLS **********/
+/********** TEXT & MD PROMPT **********/
 div.cell.text_cell.rendered .input_prompt {
     font-family: "Fira Code", monospace;
     font-size: @prompt-fontsize;
@@ -399,38 +226,96 @@ div.cell.text_cell.unrendered .input_prompt {
     border-right-color: @tc-prompt-line;
     min-width: @tc-prompt-width;
 }
-/************************************/
-/********** OUTPUT PROMPTS **********/
-/************************************/
-/************ CODE CELLS ************/
-div.prompt.output_prompt {
-    font-family: "Fira Code", monospace;
-    font-size: @prompt-fontsize;
-    background-color: @cc-output-bg;
-    color: @cc-output-bg;
-    border-bottom-left-radius: 2px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+
+/******** MD PRE, CODE, KEYBIND, SAMP **********/
+div.rendered_html code {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    padding-top: 3px;
+    color: @cc-input-fg;
+    background: @codeblock-bg;
+    background-color: @codeblock-bg;
 }
-div.out_prompt_overlay.prompt {
-    font-family: "Fira Code", monospace;
-    font-size: @prompt-fontsize;
-    background-color: @cc-output-bg;
-    border-bottom-left-radius: 2px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    min-width: @cc-prompt-width;
+pre, code, kbd, samp {
+    white-space: pre-wrap;
 }
-div.out_prompt_overlay.prompt:hover {
-    font-family: "Fira Code", monospace;
-    font-size: @prompt-fontsize;
-    background-color: @cc-output-bg;
-    box-shadow: @box-shadow 2px 1px 2px 2.5px inset;
-    border-bottom-left-radius: 2px;
-    -webkit-border-: 2px;
-    -moz-border-radius: 2px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
+code {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize !important;
+    line-height: @cc-line-height !important;
+    color: @text-cell-fg;
+    background: @codeblock-bg;
+    background-color: @codeblock-bg;
+}
+kbd {
+    padding: 2px;
+    font-size: @monofontsize;
+    color: @cc-input-fg;
+    background-color: @codeblock-bg;
+    border: 0;
+    box-shadow: none;
+}
+/******** TXT & MARKDOWN HEADERS **********/
+div.rendered_html {
+    color: @text-cell-fg;
+}
+div.rendered_html pre,
+div.text_cell_render pre {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize !important;
+    line-height: @cc-line-height !important;
+    color: @text-cell-fg;
+    background: @codeblock-bg;
+    background-color: @codeblock-bg;
+    border: 2px @codeblock-border solid;
+    max-width: 86%;
+    border-radius: 2px;
+    padding: 5px;
+}
+div.text_cell_render h1,
+div.rendered_html h1,
+div.text_cell_render h2,
+div.rendered_html h2,
+div.text_cell_render h3,
+div.rendered_html h3,
+div.text_cell_render h4,
+div.rendered_html h4,
+div.text_cell_render h5,
+div.rendered_html h5 {
+    font-family: @notebook-fontfamily;
+}
+.rendered_html h1,
+.text_cell_render h1 {
+    color: @header-fg;
+    font-size: 195%;
+    text-align: center;
+    font-weight: lighter;
+}
+.rendered_html h2,
+.text_cell_render h2 {
+    text-align: left;
+    font-size: 150%;
+    color: @header-fg2;
+    font-style: italic;
+    font-weight: lighter;
+}
+.rendered_html h3,
+.text_cell_render h3 {
+    font-size: 120%;
+    color: @header-fg3;
+    font-weight: lighter;
+}
+.rendered_html h4,
+.text_cell_render h4 {
+    font-size: 100%;
+    color: @header-fg3;
+    font-weight: lighter;
+    font-style: italic;
+}
+.rendered_html h5,
+.text_cell_render h5 {
+    font-size: 100%;
+    color: @header-fg3;
+    font-weight: lighter;
+    text-decoration: underline;
 }

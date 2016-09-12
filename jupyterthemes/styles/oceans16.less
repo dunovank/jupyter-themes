@@ -1,30 +1,33 @@
 /* oceans16 notebook colors */
 @notebook-bg:           #262931;
-@notebook-fg:           lighten(#899ab8, 3%);
+@notebook-fg:           #93A2BE;
 @notebook-base:         #373e4b;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #3572C6;
 @selected-half:         rgba(88, 98, 119,.45);
-@selected-third:        rgba(88, 98, 119,.30);
-@selected-tenth:        rgba(88, 98, 119,.10);
+@selected-third:        rgba(88, 98, 119,.22);
+@selected-tenth:        rgba(88, 98, 119,.04);
 @selected-error:        rgba(191, 97, 106,.4);
 @selected-active:       @selected-bg;
-@selected-fg:           lighten(@notebook-fg, 22%);
-@selected-fg-bright:    lighten(@notebook-fg, 55%);
+@selected-fg:           #D8DCEE;
+@selected-fg-bright:    #FEFEFE;
+@unemphasize-fg:        #92A2BD;
 
 /* code, text, markdown, & tooltip colors */
 @cc-input-bg:           #303845;
 @cc-input-fg:           #CDD2E9;
 @cc-output-bg:          #384151;
 @cc-output-fg:          @cc-input-fg;
-@text-cell-fg:          lighten(#667FB1, 25%);
+@text-cell-fg:          #ABC1E2;
 @unrendered-text:       #5ea977;
 @header-fg:             @unrendered-text;
-@tooltip-bg-color:      lighten(@cc-output-bg, 2%);
+@header-fg2:            @item-theme;
+@header-fg3:            @header-fg2;
+@tooltip-bg-color:      #3C4657;
 @tooltip-fg-color:      @cc-input-fg;
 @nb-name-fg:            @header-fg;
-@nb-name-hover:         saturate(lighten(@nb-name-fg, 10%), 18%);
+@nb-name-hover:         #52B573;
 
 /* cell border colors */
 @cc-border-selected:    @item-blue;
@@ -38,30 +41,39 @@
 @input-prompt:          @disabled;
 @prompt-line:           rgba(53, 114, 198,.5);
 @tc-prompt-std:         rgba(83, 180, 115, .3);
-@matching-bracket:      @selected-bg;
+@matching-bracket:      #4C8BE2;
+@dropdown-bg:           @notebook-base;
+@dropdown-border:       rgba(78, 91, 120,.38);
+@dropdown-hover:        @dropdown-border;
+
+/* panels and form-control styles */
+@panel-header-bg:       @notebook-base;
+@panel-bg:              @cc-output-bg;
+@form-input-bg:         #21262D;
 
 /* buttons, widgets, kernels colors */
-@item-theme:            #2c85f7;
-@item-blue:             @matching-bracket;
+@item-theme:            #4C8BE2;
+@item-blue:             #4C8BE2;
 @item-cyan:             #2c85f7;
 @button-color:          @item-blue;
 @item-green:            #48a667;
+@item-red:              #dc6972;
 
 /* tables and dataframes colors */
-@table-color:           lighten(@cc-input-fg, 4%);
-@table-bg:              lighten(@cc-output-bg,5%);
-@table-border:          lighten(@table-bg, 6%);
-@df-header-bg:          darken(@cc-input-bg, 1%);
-@df-header:             lighten(@cc-output-fg, 2%);
-@df-header-border:      lighten(@df-header-bg, 9%);
-@df-cell-bg:            lighten(@cc-output-bg, 6%);
-@codeblock-bg:          darken(@text-cell-bg, 2%);
+@table-color:           #DBDFEF;
+@table-bg:              #445063;
+@table-border:          #4E5C72;
+@df-header-bg:          #2E3642;
+@df-header:             #D4D8EC;
+@df-header-border:      #414C5D;
+@df-cell-bg:            #445063;
+@codeblock-bg:          #2A313C;
 @codeblock-border:      @codeblock-bg;
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             darken(@cc-output-bg, 2%);
-@scrollbar:             desaturate(darken(@selected-bg, 5%), 5%);
-@scroll-trough:         lighten(@cc-output-bg, 60%);
+@button-bg:             #343C4B;
+@scrollbar:             #3567AC;
+@scroll-trough:         #D7DCE4;
 @scrollbar-inactive:    #464e60;
 @box-shadow:            #303945;
 

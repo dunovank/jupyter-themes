@@ -1,68 +1,80 @@
 /* onedork notebook colors */
 @notebook-bg:           #16191d;
 @notebook-fg:           #899ab8;
-@notebook-base:         darken(#303841, 1%);
+@notebook-base:         #2E353E;
 
 /* selection, hover, prompts, brackets colors */
-@selected-bg:           #48a667;
+@selected-bg:           #41975E;
 @selected-half:         rgba(70, 82, 95, .52);
 @selected-third:        rgba(70, 82, 95, .32);
 @selected-tenth:        rgba(70, 82, 95, .12);
 @selected-error:        rgba(192, 57, 67, .3);
 @selected-active:       @selected-bg;
-@selected-fg:           lighten(@notebook-fg, 30%);
-@selected-fg-bright:    lighten(@notebook-fg, 85%);
+@selected-fg:           #D2D9E4;
+@selected-fg-bright:    #FEFEFE;
+@unemphasize-fg:        #798CAE;
 
 /* code, text, markdown, & tooltip colors */
 @cc-input-bg:           #282c34;
 @cc-input-fg:           #B5C2D9;
 @cc-output-bg:          @notebook-base;
-@cc-output-fg:          darken(@cc-input-fg, 1%);
-@text-cell-fg:          desaturate(lighten(#667FB1, 20%), 5%);
+@cc-output-fg:          #B1BED6;
+@text-cell-fg:          #ABB7CE;
 @unrendered-text:       #437dcd;
 @header-fg:             @unrendered-text;
-@tooltip-bg-color:      lighten(@cc-output-bg, 2%);
+@header-fg2:            #48a667;
+@header-fg3:            @header-fg2;
+@tooltip-bg-color:      #323A44;
 @tooltip-fg-color:      @cc-input-fg;
 @nb-name-fg:            @header-fg;
-@nb-name-hover:         saturate(lighten(@header-fg, 5%), 50%);
+@nb-name-hover:         #2B84FF;
 
 
 /* cell border colors */
-@cc-border-selected:    @selected-bg;
-@cc-border-edit:        desaturate(darken(@selected-bg, 15%), 25%);
+@cc-border-selected:    #48a667;
+@cc-border-edit:        #455C4D;
 @tc-border-selected:    @header-fg;
 @tc-border-edit:        #33517c;
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               rgba(83, 180, 115, .3);
 @disabled:              #5b6270;
-@input-prompt:          desaturate(darken(#667FB1, 12%), 8%);
+@input-prompt:          #526488;
 @prompt-line:           rgba(83, 180, 115,.5);
 @tc-prompt-std:         rgba(53, 114, 198,.5);
 @matching-bracket:      @item-blue;
+@dropdown-bg:           @notebook-base;
+@dropdown-border:       @selected-half;
+@dropdown-hover:        @dropdown-border;
+
+/* panels and form-control styles */
+@panel-header-bg:       #2C333B;
+@panel-bg:              #333B44;
+@form-input-bg:         #181C20;
 
 /* buttons, widgets, kernels colors */
-@item-theme:            @selected-bg;
+@item-theme:            #48a667;
 @item-blue:             #437dcd;
 @item-cyan:             #2c85f7;
 @button-color:          @selected-bg;
 @item-green:            @selected-bg;
+@item-red:              #dc6972;
 
 /* tables and dataframes colors */
-@table-color:           lighten(@cc-input-fg,  8%);
-@table-bg:              lighten(@cc-output-bg, 4%);
-@table-border:          lighten(@cc-output-bg, 24%);
-@df-header-bg:          darken(@cc-output-bg,  1%);
-@df-header:             lighten(@cc-output-fg, 3%);
-@df-header-border:      lighten(@df-header-bg, 9%);
-@df-cell-bg:            lighten(@cc-output-bg, 15%);
-@codeblock-bg:          darken(@text-cell-bg,  2%);
+@table-color:           #D0D8E7;
+@table-bg:              #36404A;
+@table-border:          #627284;
+@df-header-bg:          #2C333B;
+@df-header:             #BCC8DC;
+@df-header-border:      #404A55;
+@df-cell-bg:            #4E5B6A;
+@codeblock-bg:          #24272E;
 @codeblock-border:      @codeblock-bg;
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             darken(@cc-output-bg, 2%);
-@scrollbar:             desaturate(darken(@selected-bg, 9%), 5%);
-@scroll-trough:         lighten(@cc-output-bg, 60%);
+@button-bg:             #2A3038;
+@scrollbar:             #3D7D53;
+@scroll-trough:         #C7CED5;
 @scrollbar-inactive:    #464e60;
 @box-shadow:            #252b32;
 
@@ -80,16 +92,16 @@
 @js-error:              @stderr-bg;
 
 /* onedork codemirror colors */
-@cm-selected:           lighten(#2b313a, 2%);
+@cm-selected:           #2F3640;
 @cm-gutters:            @cm-selected;
 @cm-linenumber:         @disabled;
 @cm-comment:            @input-prompt;
-@cm-atom:               #61afef; //#5cadf1;
+@cm-atom:               #61afef;
 @cm-number:             #ec9d66;
 @cm-property:           @cm-atom;
 @cm-attribute:          #dc6972;
-@cm-keyword:            #c776df; //#c776df;
-@cm-string:             #94c273; //#8fb36a;
+@cm-keyword:            #c776df;
+@cm-string:             #94c273;
 @cm-meta:               #51b6c3;
 @cm-operator:           #5cadf1;
 @cm-builtin:            @cm-attribute;

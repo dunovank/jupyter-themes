@@ -36,7 +36,7 @@ pip install jupyterthemes
 ```
 
 ### Known Issues
-* **UPDATE**: lesscpy has added support for 3.5 to their development branch but still waiting for this to make it's way into the official release on pypi. Soon...
+* **UPDATE**: lesscpy has added support for 3.5 to their development branch but still waiting for this to make it's way into the official release on pypi (opened an issue [here](https://github.com/lesscpy/lesscpy/issues/87)). Soon hopefully...
 
 * jupyterthemes relies on [lesscpy](https://github.com/lesscpy/lesscpy) to compile the custom arguments supplied by the user into into the css body that eventually gets saved as custom.css in your jupyter config directory.
 
@@ -46,10 +46,11 @@ pip install jupyterthemes
 ### Command Line Usage
 ```
 usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
-          [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE]
+          [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-m MARGINS]
           [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-cellw CELLWIDTH]
           [-lineh LINEHEIGHT] [-alt] [-vim] [-T] [-N] [-r]
 ```
+
 
 |        options        |   arg     |     default   |
 |:----------------------|:---------:|:-------------:|
@@ -60,12 +61,13 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Code Font-Size        |  -fs      |      11       |
 | Notebook Font         |  -nf      |    exosans    |
 | Notebook Font Size    |  -nfs     |      13       |
-| Text/MD Cell Font     |  -tf      |  georgiaserif |
+| Text/MD Cell Font     |  -tf      |    ptserif    |
 | Text/MD Cell Fontsize |  -tfs     |      13       |
+| Intro Page Margins    |  -m       |     auto      |
 | Cell Width            |  -cellw   |      980      |
 | Line Height           |  -lineh   |      170      |
 | Cursor Width          |  -cursw   |       2       |
-| Cursor Color          |  -cursc   |  [theme clr]  |
+| Cursor Color          |  -cursc   |      --       |
 | Alt Text/MD Layout    |  -alt     |      --       |
 | Style Vim NBExt*      |  -vim     |      --       |
 | Toolbar Visible       |  -T       |      --       |
@@ -95,13 +97,20 @@ jt -t grade3 -f fira -fs 115
 
 # set notebook & text-cell/markdown fonts
 # (see sans-serif & serif font tables below)
-jt -t onedork -nf ptserif -tf droidsans
+jt -t onedork -nf georgiaserif -tf droidsans
 
 # adjust cell width, line-height of codecells
 jt -t chesterish -cellw 900 -lineh 170
 
-# set block cursor, color red
-jt -t onedork -cursw 8 -cursc r
+# fix the container-margins on the intro page (defaults to 'auto')
+jt -t onedork -m 200
+
+# adjust cursor width (in px) and color
+# (options: b, o, r, p, g)
+jt -t grade3 -alt -cursc r -cursw 5
+
+# toggle toolbar ON and notebook name ON
+jt -t grade3 -T -N
 
 # choose alternate txt/markdown layout
 jt -t grade3 -alt
@@ -153,6 +162,7 @@ jt -r
 ### Sans-Serif Fonts
 | -nf/-tf arg | Sans-Serif Font |
 |:--|:--|
+|exosans|Exo_2|
 |opensans|Open Sans|
 |droidsans|Droid Sans|
 |latosans|Lato|
@@ -160,7 +170,6 @@ jt -r
 |robotosans|Roboto|
 |sourcesans|Source Sans Pro|
 |amikosans|Amiko|
-|exosans|Exo_2|
 |nobilesans|Nobile|
 |alegreyasans|Alegreya|
 |armatasans|Armata|
@@ -183,16 +192,21 @@ jt -r
 ### Serif Fonts
 | -nf/-tf arg | Serif Font |
 |:--|:--|
-|georgiaserif|Georgia|
+|andadaserif|Andada|
+|arapeyserif|Arapey|
 |ptserif|PT Serif|
+|georgiaserif|Georgia|
+|cardoserif|Cardo|
 |crimsonserif|Crimson Text|
 |droidserif|Droid Serif|
 |ebserif|EB Garamond|
 |loraserif|Lora|
 |merriserif|Merriweather|
+|notoserif|Noto Serif|
 |vesperserif|Vesper Libre|
 |scopeserif|ScopeOne|
 |sanchezserif|Sanchez|
 |neutonserif|Neuton|
 |rasaserif|Rasa|
+|goudyserif|Sorts Mill Goudy|
 |vollkornserif|Vollkorn|

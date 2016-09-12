@@ -9,7 +9,7 @@ from glob import glob
 
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
-__version__ = '0.12.2'
+__version__ = '0.12.3'
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -30,7 +30,7 @@ def get_themes():
               for theme in glob('{0}/*.less'.format(styles_dir))]
     return themes
 
-def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nbfontsize=13, tcfont='georgiaserif', tcfontsize=13, cellwidth=980, lineheight=170, cursorwidth=2, cursorcolor='default', altlayout=False, vimext=False, toolbar=False, nbname=False):
+def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nbfontsize=13, tcfont='ptserif', tcfontsize=13, margins='auto', cellwidth=980, lineheight=170, cursorwidth=2, cursorcolor='default', altlayout=False, vimext=False, toolbar=False, nbname=False):
     """ install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
     """
@@ -45,7 +45,7 @@ def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nb
     style_less = stylefx.set_font_properties(monofont=monofont, monosize=monosize, nbfont=nbfont, nbfontsize=nbfontsize, tcfont=tcfont, tcfontsize=tcfontsize)
     # define some vars for cell layout
     cursorcolor = stylefx.get_colors(theme=theme, c=cursorcolor)
-    style_less = stylefx.style_layout(style_less, theme=theme, cellwidth=cellwidth, lineheight=lineheight, altlayout=altlayout, cursorwidth=cursorwidth, cursorcolor=cursorcolor, vimext=vimext, toolbar=toolbar, nbname=nbname)
+    style_less = stylefx.style_layout(style_less, theme=theme, cellwidth=cellwidth, margins=margins, lineheight=lineheight, altlayout=altlayout, cursorwidth=cursorwidth, cursorcolor=cursorcolor, vimext=vimext, toolbar=toolbar, nbname=nbname)
     # compile tempfile.less to css code and append to style_css
     style_css = stylefx.less_to_css(style_less)
     # append mathjax css & script to style_css
@@ -62,11 +62,12 @@ def main():
     parser.add_argument('-f',"--monofont", action='store', default='droidmono', help='monospace code font')
     parser.add_argument('-fs', "--monosize", action='store', default='11', help='code font-size')
     parser.add_argument('-nf',"--nbfont", action='store', default='exosans', help='notebook font')
-    parser.add_argument('-nfs',"--nbfontsize", action='store', default='13', help='notebook fontsize')
-    parser.add_argument('-tf',"--tcfont", action='store', default='georgiaserif', help='txtcell font')
-    parser.add_argument('-tfs',"--tcfontsize", action='store', default='13', help='txtcell fontsize')
+    parser.add_argument('-nfs',"--nbfontsize", action='store', default='135', help='notebook fontsize')
+    parser.add_argument('-tf',"--tcfont", action='store', default='ptserif', help='txtcell font')
+    parser.add_argument('-tfs',"--tcfontsize", action='store', default='135', help='txtcell fontsize')
+    parser.add_argument('-m', "--margins", action='store', default='auto', help="fix margins of main intro page")
     parser.add_argument('-cursw', "--cursorwidth", action='store', default=2, help="set cursorwidth (px)")
-    parser.add_argument('-cursc', "--cursorcolor", action='store', default='default', help="set cursor color (r, b, g, p)")
+    parser.add_argument('-cursc', "--cursorcolor", action='store', default='default', help="cursor color (r, b, g, p)")
     parser.add_argument('-cellw', "--cellwidth", action='store', default=980, help="set cell width (px)")
     parser.add_argument('-lineh',"--lineheight", action='store', default=170, help='code/text line-height (%%)')
     parser.add_argument('-alt', "--altlayout", action='store_true', default=False, help="alt markdown layout")
@@ -82,7 +83,7 @@ def main():
             print("Didn't recognize theme name: {}".format(args.theme))
             print(say_themes)
             exit(1)
-        install_theme(args.theme, monofont=args.monofont, monosize=args.monosize, nbfont=args.nbfont, nbfontsize=args.nbfontsize, tcfont=args.tcfont, tcfontsize=args.tcfontsize, cellwidth=int(args.cellwidth), lineheight=int(args.lineheight), cursorwidth=args.cursorwidth, cursorcolor=args.cursorcolor, altlayout=args.altlayout, vimext=args.vimext, toolbar=args.toolbar, nbname=args.nbname)
+        install_theme(args.theme, monofont=args.monofont, monosize=args.monosize, nbfont=args.nbfont, nbfontsize=args.nbfontsize, tcfont=args.tcfont, tcfontsize=args.tcfontsize, cellwidth=int(args.cellwidth), margins=args.margins, lineheight=int(args.lineheight), cursorwidth=args.cursorwidth, cursorcolor=args.cursorcolor, altlayout=args.altlayout, vimext=args.vimext, toolbar=args.toolbar, nbname=args.nbname)
     elif args.reset:
         from jupyterthemes import stylefx
         stylefx.reset_default(verbose=True)
