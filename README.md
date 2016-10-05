@@ -12,10 +12,13 @@
 
 ###### *oceans16 syntax*
 ![image](screens/oceans16_code_headers.png)
+
 ###### *grade3 syntax*
 ![image](screens/grade3_code_headers.png)
+
 ###### *onedork syntax*
 ![image](screens/onedork_code_headers.png)
+
 ###### *chesterish syntax*
 ![image](screens/chesterish_code_headers.png)
 
@@ -35,14 +38,6 @@
 pip install jupyterthemes
 ```
 
-### Known Issues
-* **UPDATE**: lesscpy has added support for 3.5 to their development branch but still waiting for this to make it's way into the official release on pypi (opened an issue [here](https://github.com/lesscpy/lesscpy/issues/87)). Soon hopefully...
-
-* jupyterthemes relies on [lesscpy](https://github.com/lesscpy/lesscpy) to compile the custom arguments supplied by the user into into the css body that eventually gets saved as custom.css in your jupyter config directory.
-
-* Unfortunately, lesscpy currently only supports up to Python 3.4. If you're running Python 3.5 you can still install and use jupyterthemes but you won't be able to modify the default settings (e.g., font, font-size, cell width, etc.). See [*Examples for 3.5 Users*](https://github.com/dunovank/jupyter-themes/tree/develop#examples-for-python-35-users).
-
-
 ### Command Line Usage
 ```
 usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
@@ -61,7 +56,7 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Code Font-Size        |  -fs      |      11       |
 | Notebook Font         |  -nf      |    exosans    |
 | Notebook Font Size    |  -nfs     |      13       |
-| Text/MD Cell Font     |  -tf      |    ptserif    |
+| Text/MD Cell Font     |  -tf      |   loraserif   |
 | Text/MD Cell Fontsize |  -tfs     |      13       |
 | Intro Page Margins    |  -m       |     auto      |
 | Cell Width            |  -cellw   |      980      |
@@ -69,10 +64,12 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Cursor Width          |  -cursw   |       2       |
 | Cursor Color          |  -cursc   |      --       |
 | Alt Text/MD Layout    |  -alt     |      --       |
+| Alt Prompt Layout     |  -altp    |      --       |
 | Style Vim NBExt*      |  -vim     |      --       |
 | Toolbar Visible       |  -T       |      --       |
 | Name & Logo Visible   |  -N       |      --       |
 | Restore Default       |  -r       |      --       |
+
 \* Vim extension compatibility provided by [alextfkd](https://github.com/alextfkd)
 
 ### Examples
@@ -95,9 +92,9 @@ jt -t oceans16 -f roboto -fs 12
 # 3digit font-size gets converted into float (115-->11.5)
 jt -t grade3 -f fira -fs 115
 
-# set notebook & text-cell/markdown fonts
+# set text-cell/markdown and notebook fonts
 # (see sans-serif & serif font tables below)
-jt -t onedork -nf georgiaserif -tf droidsans
+jt -t onedork -tf georgiaserif -nf droidsans
 
 # adjust cell width, line-height of codecells
 jt -t chesterish -cellw 900 -lineh 170
@@ -105,29 +102,19 @@ jt -t chesterish -cellw 900 -lineh 170
 # fix the container-margins on the intro page (defaults to 'auto')
 jt -t onedork -m 200
 
-# adjust cursor width (in px) and color
-# (options: b, o, r, p, g)
-jt -t grade3 -alt -cursc r -cursw 5
+# adjust cursor width (in px) and make cursor red (r)
+# options: b (blue), o (orange), r (red), p (purple), g (green)
+jt -t grade3 -cursc r -cursw 5
 
 # toggle toolbar ON and notebook name ON
 jt -t grade3 -T -N
 
-# choose alternate txt/markdown layout
-jt -t grade3 -alt
+# choose alternate txt/markdown layout (-alt)
+# and alternate cell prompt (narrow, no numbers)
+jt -t grade3 -alt -altp
 
 # restore default theme
 jt -r
-```
-
-### Examples for Python 3.5 users:
-```sh
-# install a theme
-jt -t grade3
-# list theme
-jt -l
-# reset theme
-jt -r
-
 ```
 
 ### Monospace Fonts (codecells)
@@ -148,6 +135,7 @@ jt -r
 |generic|Generic Mono|
 |hack|Hack|
 |inconsolata|Inconsolata-g|
+|inputmono|Input Mono|
 |liberation|Liberation Mono|
 |meslo|Meslo|
 |office|Office Code Pro|
@@ -192,6 +180,7 @@ jt -r
 ### Serif Fonts
 | -nf/-tf arg | Serif Font |
 |:--|:--|
+|loraserif|Lora|
 |andadaserif|Andada|
 |arapeyserif|Arapey|
 |ptserif|PT Serif|
@@ -200,7 +189,6 @@ jt -r
 |crimsonserif|Crimson Text|
 |droidserif|Droid Serif|
 |ebserif|EB Garamond|
-|loraserif|Lora|
 |merriserif|Merriweather|
 |notoserif|Noto Serif|
 |vesperserif|Vesper Libre|

@@ -49,23 +49,22 @@ div.cell.edit_mode {
 div.prompt {
     font-family: "Fira Code", monospace;
     font-size: @prompt-fontsize;
-    padding: .25em;
+    font-weight: normal;
+    color: @prompt-text;
+    padding: @prompt-padding;
     text-align: left !important;
-    min-width: @cc-prompt-width;
+    min-width: @prompt-min-width;
+    width: @prompt-min-width;
 }
 div.prompt.input_prompt {
-    font-family: "Fira Code", monospace;
-    font-size: @prompt-fontsize;
-    color: @input-prompt;
-    background-color: @cc-input-bg;
-    font-weight: normal;
-    min-width: @cc-prompt-width;
-    text-align: left !important;
-    border-right: 2px solid @prompt-line;
+    background-color: @cc-prompt-bg;
+    border-right: @prompt-border;
     border-top-left-radius: 2px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    min-width: @prompt-min-width;
+    width: @prompt-min-width !important;
 }
 
 /********** CODE CELL OUTPUT AREA **********/
@@ -82,7 +81,7 @@ div.output_wrapper {
 div.output_subarea.output_text.output_stream.output_stdout,
 div.output_subarea.output_text {
     font-family: @monofont, monospace;
-    font-size: @monofontsize;
+    font-size: @monofontsize-sub;
     line-height: 150% !important;
     background-color: @cc-output-bg;
     color: @cc-output-fg;
@@ -93,7 +92,7 @@ div.output_subarea.output_text {
 }
 div.output_area pre {
     font-family: @monofont, monospace;
-    font-size: @monofontsize;
+    font-size: @monofontsize-sub;
     line-height: 150% !important;
     color: @cc-output-fg;
     border-top-right-radius: 0px;
@@ -106,7 +105,7 @@ div.output_area {
 }
 div.output_html {
     font-family: @monofont, monospace;
-    font-size: @monofontsize;
+    font-size: @monofontsize-sub;
     color: @table-color;
     background-color: @cc-output-bg;
     background: @cc-output-bg;
@@ -131,6 +130,8 @@ div.prompt.output_prompt {
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    min-width: @prompt-min-width;
+    width: @prompt-min-width;
 }
 div.out_prompt_overlay.prompt {
     font-family: "Fira Code", monospace;
@@ -140,11 +141,10 @@ div.out_prompt_overlay.prompt {
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    min-width: @cc-prompt-width;
+    min-width: @prompt-min-width;
+    width: @prompt-min-width;
 }
 div.out_prompt_overlay.prompt:hover {
-    font-family: "Fira Code", monospace;
-    font-size: @prompt-fontsize;
     background-color: @cc-output-bg;
     box-shadow: @box-shadow 2px 1px 2px 2.5px inset;
     border-bottom-left-radius: 2px;
@@ -152,6 +152,8 @@ div.out_prompt_overlay.prompt:hover {
     -moz-border-radius: 2px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
+    min-width: @prompt-min-width;
+    width: @prompt-min-width !important;
 }
 
 /******** TXT & MD INPUT AREA ********/
@@ -206,25 +208,32 @@ div.edit_mode div.text_cell.unrendered {
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border-radius: 2px;
+
 }
 
 /********** TEXT & MD PROMPT **********/
 div.cell.text_cell.rendered .input_prompt {
     font-family: "Fira Code", monospace;
     font-size: @prompt-fontsize;
-    background: @text-cell-bg;
-    background-color: @text-cell-bg;
-    border-right-color: @tc-prompt-line;
+    font-weight: normal;
+    color: @prompt-text;
+    padding: @prompt-padding;
+    text-align: left !important;
     min-width: @tc-prompt-width;
-
+    width: @tc-prompt-width !important;
+    background-color: @text-cell-bg;
+    border-right: @tc-prompt-border;
 }
 div.cell.text_cell.unrendered .input_prompt {
     font-family: "Fira Code", monospace;
     font-size: @prompt-fontsize;
-    background: @text-cell-bg;
-    background-color: @text-cell-bg;
-    border-right-color: @tc-prompt-line;
+    font-weight: normal;
+    color: @prompt-text;
+    padding: @prompt-padding;
+    text-align: left !important;
     min-width: @tc-prompt-width;
+    width: @tc-prompt-width !important;
+    border-right: @tc-prompt-border;
 }
 
 /******** MD PRE, CODE, KEYBIND, SAMP **********/
@@ -248,12 +257,23 @@ code {
     background-color: @codeblock-bg;
 }
 kbd {
-    padding: 2px;
+    padding: 4px;
     font-size: @monofontsize;
     color: @cc-input-fg;
     background-color: @codeblock-bg;
     border: 0;
     box-shadow: none;
+}
+pre {
+    display: block;
+    padding: 8.5px;
+    margin: 0 0 9px;
+    font-size: @nb-fontsize-sub;
+    line-height: 1.42857143;
+    color: @cc-input-fg;
+    background-color: @codeblock-bg;
+    border: 1px solid @codeblock-border;
+    border-radius: 2px;
 }
 /******** TXT & MARKDOWN HEADERS **********/
 div.rendered_html {
@@ -284,38 +304,48 @@ div.text_cell_render h5,
 div.rendered_html h5 {
     font-family: @notebook-fontfamily;
 }
+.rendered_html h1:first-child,
+.rendered_html h2:first-child,
+.rendered_html h3:first-child,
+.rendered_html h4:first-child,
+.rendered_html h5:first-child,
+.rendered_html h6:first-child {
+    margin-top: 0.2em;
+}
 .rendered_html h1,
 .text_cell_render h1 {
     color: @header-fg;
-    font-size: 195%;
+    font-size: 220%;
     text-align: center;
     font-weight: lighter;
 }
 .rendered_html h2,
 .text_cell_render h2 {
     text-align: left;
-    font-size: 150%;
-    color: @header-fg2;
+    font-size: 170%;
+    color: @header-fg;
     font-style: italic;
     font-weight: lighter;
 }
 .rendered_html h3,
 .text_cell_render h3 {
-    font-size: 120%;
-    color: @header-fg3;
+    font-size: 150%;
+    color: @header-fg;
     font-weight: lighter;
+    text-decoration: underline;
+    font-style: normal;
 }
 .rendered_html h4,
 .text_cell_render h4 {
-    font-size: 100%;
-    color: @header-fg3;
+    font-size: 120%;
+    color: desaturate(lighten(@header-fg, 10%), 10%);
     font-weight: lighter;
-    font-style: italic;
+    font-style: normal;
 }
 .rendered_html h5,
 .text_cell_render h5 {
     font-size: 100%;
-    color: @header-fg3;
+    color: @selected-fg;
     font-weight: lighter;
     text-decoration: underline;
 }

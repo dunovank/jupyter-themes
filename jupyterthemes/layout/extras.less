@@ -7,7 +7,7 @@
 .rendered_html tr,
 .rendered_html td {
     font-family: "Fira Code", monospace;
-    font-size: 10pt !important;
+    font-size: @monofontsize-sub !important;
     line-height: 150% !important;
     border: 1px solid @table-border;
     color: @table-color;
@@ -19,21 +19,21 @@ table.dataframe,
 .rendered_html tr,
 .dataframe * {
     font-family: "Fira Code", monospace;
-    font-size: 10pt !important;
+    font-size: @monofontsize-sub !important;
     border: 1px solid @table-border;
 }
 .dataframe th,
 .rendered_html th {
     font-family: @notebook-fontfamily;
-    font-size: 10.5pt !important;
-    font-weight: 450;
+    font-size: @monofontsize !important;
+    font-weight: bold;
     border: 1px solid @df-header-border;
     background: @df-header-bg;
 }
 .dataframe td,
 .rendered_html td {
     font-family: "Fira Code", monospace;
-    font-size: 10pt !important;
+    font-size: @monofontsize-sub !important;
     color: @table-color;
     background: @df-cell-bg;
     border: 1px solid @table-border;
@@ -44,8 +44,8 @@ table.dataframe,
 .dataframe-summary-row tr:last-child,
 .dataframe-summary-col td:last-child {
     font-family: @notebook-fontfamily;
-    font-size: 10.5pt !important;
-    font-weight: 450;
+    font-size: @monofontsize !important;
+    font-weight: bold;
     color: @df-header;
     border: 1px solid @table-border;
     background: @df-header-bg;
@@ -116,23 +116,23 @@ div.widget-hbox .widget-label,
     color: @item-cyan;
     text-decoration: underline;
 }
+.rendered_html :visited,
+.rendered_html :visited:active,
+.rendered_html :visited:focus{
+    color: desaturate(@item-blue, 25%);
+}
 .rendered_html :visited:hover,
 .rendered_html :link:hover {
     font-family: @notebook-fontfamily;
     font-size: 100%;
-    color: saturate(@item-theme, 10%);
-}
-.rendered_html :visited,
-.rendered_html :visited:active,
-.rendered_html :visited:focus{
-    color: desaturate(@item-blue, 15%);
+    color: saturate(@nb-name-hover, 10%);
 }
 a.anchor-link:link {
     font-size: 100%;
     text-decoration: none;
     padding: 0px 20px;
     visibility: none;
-    color: @item-cyan;
+    color: @nb-name-hover;
 }
 
 /***********  JUPYTER NBEXT CONFIGURATOR ***********/
@@ -143,7 +143,7 @@ div#nbextensions-configurator-container.container {
 }
 div.nbext-selector > nav > .nav > li > a {
     font-family: @notebook-fontfamily;
-    font-size: 11.5pt;
+    font-size: 12pt;
 }
 div.nbext-readme > .nbext-readme-contents > .rendered_html {
     font-family: @notebook-fontfamily;
@@ -176,11 +176,12 @@ div.nbext-readme > .nbext-readme-contents:not(:empty) {
 .nbext-showhide-incompat {
     padding-bottom: 0.5em;
     color: @unemphasize-fg;
-    font-size: 12pt;
+    font-size: @nb-fontsize-sub;
 }
-.shortcut_key {
+.shortcut_key,
+span.shortcut_key {
     display: inline-block;
-    width: 9ex;
+    width: 16ex;
     text-align: right;
     font-family: monospace;
 }
@@ -205,6 +206,40 @@ span.bg-danger.text-danger {
     background-color: @notebook-bg;
     color: @item-red;
 }
+.has-success .input-group-addon {
+    color: @item-green;
+    border-color: transparent;
+    background: inherit;
+    background-color: rgba(83, 180, 115, .10);
+}
+.has-success .form-control {
+    border-color: @item-green;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.025);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.025);
+}
+.has-error .input-group-addon {
+    color: @item-red;
+    border-color: transparent;
+    background: inherit;
+    background-color: rgba(192, 57, 67, .10);
+}
+.has-error .form-control {
+    border-color: @item-red;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.025);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.025);
+}
+.kse-input-group-pretty > kbd {
+    font-family: @monofont, monospace;
+    color: @notebook-fg;
+    font-weight: normal;
+    background: transparent;
+}
+.kse-input-group-pretty > kbd {
+    font-family: @monofont, monospace;
+    color: @notebook-fg;
+    font-weight: normal;
+    background: transparent;
+}
 div.nbext-enable-btns .btn[disabled],
 div.nbext-enable-btns .btn[disabled]:hover,
 .btn-default.disabled, .btn-default[disabled] {
@@ -215,14 +250,20 @@ div.nbext-enable-btns .btn[disabled]:hover,
 label#Keyword-Filter {
     display: none;
 }
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    color: #ffffff;
+    background-color: @item-blue;
+}
 /********** DEBUGGER PATCH **********/
 input.raw_input {
     font-family: @monofont, monospace;
     font-size: @monofontsize !important;
     color: @cc-input-fg;
-    background-color: darken(@cc-input-bg, 2%);
-    border-color: darken(@cc-input-bg, 2%);
-    background: darken(@cc-input-bg, 2%);
+    background-color: @codeblock-bg;
+    border-color: darken(@codeblock-bg, 1%);
+    background: darken(@codeblock-bg, 1%);
     width: auto;
     vertical-align: baseline;
     padding: 0em 0.25em;
@@ -239,6 +280,163 @@ audio, video {
     margin-left: 20%;
 }
 
+
+/**********************************************/
+/******** COMMAND PROMPT (CMD+SHIFT-P) ********/
+/**********************************************/
+.cmd-palette .modal-body {
+    padding: 0px;
+    margin: 0px;
+}
+.cmd-palette form {
+    background: @cmd-palette-bg;
+    background-color: @cmd-palette-bg;
+}
+.typeahead-field input,
+.typeahead-select {
+    font-family: @notebook-fontfamily;
+    color: @cc-input-fg;
+    background-color: transparent;
+    border: none;
+    font-size: 28pt;
+    display: inline-block;
+    line-height: inherit;
+    padding: 3px 10px;
+    height: 70px;
+}
+body > div.modal.cmd-palette.typeahead-field {
+    display: table;
+    border-collapse: separate;
+    background-color: @cmd-palette-hover;
+}
+.typeahead-field input:last-child,
+.typeahead-hint {
+    background: @cmd-palette-hover;
+    background-color: @cmd-palette-hover;
+}
+.typeahead-container button {
+    font-family: @notebook-fontfamily;
+    font-size: 28pt;
+    background-color: @scroll-trough;
+    border: none;
+    display: inline-block;
+    line-height: inherit;
+    padding: 3px 10px;
+    height: 70px;
+}
+.typeahead-search-icon {
+    min-width: 40px;
+    min-height: 55px;
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+}
+.typeahead-container button:focus,
+.typeahead-container button:hover {
+    color: @selected-fg;
+    background-color: @item-theme;
+    border-color: @item-theme;
+}
+.typeahead-list>li.typeahead-group.active>a,
+.typeahead-list>li.typeahead-group>a,
+.typeahead-list>li.typeahead-group>a:focus,
+.typeahead-list>li.typeahead-group>a:hover {
+    display: none;
+}
+.typeahead-dropdown>li>a,
+.typeahead-list>li>a {
+    color: @notebook-fg;
+    text-decoration: none;
+}
+.typeahead-dropdown,
+.typeahead-list {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    color: @notebook-fg;
+    background-color: @cmd-palette-bg;
+    border: none;
+    background-clip: padding-box;
+    margin-top: 0px;
+    padding: 3px 2px 3px 0px;
+    line-height: 1.7;
+}
+.typeahead-dropdown>li.active>a,
+.typeahead-dropdown>li>a:focus,
+.typeahead-dropdown>li>a:hover,
+.typeahead-list>li.active>a,
+.typeahead-list>li>a:focus,
+.typeahead-list>li>a:hover {
+    color: @selected-fg;
+    background-color: @cmd-palette-hover;
+    border-color:  @cmd-palette-hover;
+}
+.command-shortcut:before {
+    content: "(command)";
+    padding-right: 3px;
+    color: @disabled;
+}
+.edit-shortcut:before {
+    content: "(edit)";
+    padding-right: 3px;
+    color: @disabled;
+}
+ul.typeahead-list i {
+    margin-left: 1px;
+    width: 18px;
+    margin-right: 10px;
+}
+ul.typeahead-list {
+    max-height: 50vh;
+    overflow: auto;
+}
+.typeahead-list>li {
+    position: relative;
+    border: none;
+}
+div.input.typeahead-hint,
+input.typeahead-hint,
+body > div.modal.cmd-palette.in > div > div > div > form > div > div.typeahead-field > span.typeahead-query > input.typeahead-hint {
+    color: @disabled !important;
+    background-color: transparent;
+    padding: 3px 10px;
+}
+.typeahead-dropdown>li>a,
+.typeahead-list>li>a {
+    display: block;
+    padding: 5px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.7;
+    border: 1px solid @cmd-palette-bg;
+    border-bottom-color: @selected-half;
+}
+body > div.modal.cmd-palette.in > div {
+    min-width: 750px;
+    margin: 150px auto;
+}
+.typeahead-container strong {
+    font-weight: bolder;
+    color: @item-theme;
+}
+#find-and-replace #replace-preview .match,
+#find-and-replace #replace-preview .insert {
+    color: #fff;
+    background-color: @cc-border-selected;
+    border-color: @cc-border-selected;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+}
+#find-and-replace #replace-preview .replace .match {
+    background-color: @item-red;
+    border-color: @item-red;
+    border-radius: 0px;
+}
+#find-and-replace #replace-preview .replace .insert {
+    background-color: @item-green;
+    border-color: @item-green;
+    border-radius: 0px;
+}
 /******************************************/
 /******** KERNEL RUNNING ANIMATION ********/
 /******************************************/

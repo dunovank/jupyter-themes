@@ -10,6 +10,7 @@
 @selected-tenth:        rgba(75, 95, 118,.10);
 @selected-error:        rgba(191, 97, 106,.4);
 @selected-active:       #007aa4;
+@navbar-selected:       @selected-active;
 @selected-fg:           #DBE1EA;
 @selected-fg-bright:    #FEFEFE;
 @unemphasize-fg:        #92A2BD;
@@ -22,8 +23,6 @@
 @text-cell-fg:          #B0BDD7;
 @unrendered-text:       #0b98c8;
 @header-fg:             @unrendered-text;
-@header-fg2:            #487EC8;
-@header-fg3:            #618DC9;
 @tooltip-bg-color:      #363F4E;
 @tooltip-fg-color:      @cc-input-fg;
 @nb-name-fg:            @header-fg;
@@ -47,9 +46,12 @@
 @dropdown-hover:        @dropdown-border;
 
 /* panels and form-control styles */
-@panel-header-bg:       @notebook-base;
+@panel-header-bg:       #27313d;
 @panel-bg:              #2D3846;
+@modal-bg:              @panel-bg;
 @form-input-bg:         #1C212B;
+@cmd-palette-bg:        #202937;
+@cmd-palette-hover:     #2b3850;
 
 /* buttons, widgets, kernels colors */
 @item-theme:            #0b98c8;
@@ -57,6 +59,7 @@
 @item-cyan:             #2c85f7;
 @button-color:          @selected-active;
 @item-green:            #48a667;
+@item-red:              #dc6972;
 
 /* tables and dataframes colors */
 @table-color:           #E2E5F2;
@@ -72,7 +75,7 @@
 /* btn, scrollbar and shadow colors */
 @button-bg:             #27313d;
 @scrollbar:             #0A8FBD;
-@scroll-trough:         #CFD4DD;
+@scroll-trough:         #798CAE;
 @scrollbar-inactive:    #464e60;
 @box-shadow:            #2A323C;
 
@@ -88,7 +91,6 @@
 @stderr-bg:             #DB797C;
 @stderr-fg:             #D0D4E6;
 @js-error:              @stderr-bg;
-@item-red:              #dc6972;
 
 /* chesterish codemirror colors */
 @cm-selected:           #334050;

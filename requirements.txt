@@ -1,4 +1,4 @@
 jupyter
 jupyter_core
 numpy
-lesscpy>=0.11.1
+lesscpy>=0.12.0

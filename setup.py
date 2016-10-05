@@ -11,6 +11,8 @@ with open(README) as read_me:
     for line in read_me:
         if "Travis" in line.strip():
             startReading = True
+        if "Monospace Fonts" in line.strip():
+            break
         if startReading:
             longdescr += line
 
@@ -19,13 +21,13 @@ datafiles = {pkgname: ['sandbox/*.js', 'layout/*.less', 'layout/*.css', 'styles/
 
 # recursively point to all included font directories
 fontfams = ['monospace', 'sans-serif', 'serif']
-fsubdirs = [os.path.join(pkgname,'fonts', subdir) for subdir in fontfams]
+fsubdirs = [os.path.join(pkgname, 'fonts', subdir) for subdir in fontfams]
 fontsdata = np.hstack([['/'.join(f.split('/')[1:]) for f in glob(os.path.join(fsub, '*', '*'))] for fsub in fsubdirs]).tolist()
 datafiles[pkgname].extend(fontsdata)
 
 setup(
     name='jupyterthemes',
-    version='0.12.3',
+    version='0.13.0',
     packages=['jupyterthemes'],
     include_package_data=True,
     package_data = datafiles,
@@ -33,7 +35,7 @@ setup(
     long_description=longdescr,
     license='MIT',
     url='https://github.com/dunovank/jupyter-themes/',
-    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.12.3',
+    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.13.0',
     author='dunovank',
     author_email='dunovank@gmail.com',
     classifiers=[
@@ -48,7 +50,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    install_requires=['jupyter', 'jupyter_core', 'numpy', 'lesscpy>=0.11.1'],
+    install_requires=['jupyter', 'jupyter_core', 'numpy', 'lesscpy>=0.12.0'],
     keywords=['jupyter', 'ipython', 'notebook', 'themes', 'css'],
     entry_points={
         'console_scripts': [

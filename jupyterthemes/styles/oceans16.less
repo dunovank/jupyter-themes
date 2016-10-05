@@ -5,11 +5,12 @@
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #3572C6;
-@selected-half:         rgba(88, 98, 119,.45);
-@selected-third:        rgba(88, 98, 119,.22);
-@selected-tenth:        rgba(88, 98, 119,.04);
+@selected-half:         rgba(80, 98, 129,.45);
+@selected-third:        rgba(80, 95, 133,.22);
+@selected-tenth:        rgba(80, 98, 129,.04);
 @selected-error:        rgba(191, 97, 106,.4);
 @selected-active:       @selected-bg;
+@navbar-selected:       @selected-active;
 @selected-fg:           #D8DCEE;
 @selected-fg-bright:    #FEFEFE;
 @unemphasize-fg:        #92A2BD;
@@ -20,10 +21,8 @@
 @cc-output-bg:          #384151;
 @cc-output-fg:          @cc-input-fg;
 @text-cell-fg:          #ABC1E2;
-@unrendered-text:       #5ea977;
+@unrendered-text:       @item-theme;
 @header-fg:             @unrendered-text;
-@header-fg2:            @item-theme;
-@header-fg3:            @header-fg2;
 @tooltip-bg-color:      #3C4657;
 @tooltip-fg-color:      @cc-input-fg;
 @nb-name-fg:            @header-fg;
@@ -32,50 +31,53 @@
 /* cell border colors */
 @cc-border-selected:    @item-blue;
 @cc-border-edit:        #33517c;
-@tc-border-selected:    #48a667;
-@tc-border-edit:        #63816d;
+@tc-border-selected:    @item-blue;//#48a667;
+@tc-border-edit:        #33517c; //#63816d;
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               rgba(53, 114, 198,.3);
-@disabled:              #5A647B;
+@disabled:              #446489;
 @input-prompt:          @disabled;
 @prompt-line:           rgba(53, 114, 198,.5);
-@tc-prompt-std:         rgba(83, 180, 115, .3);
+@tc-prompt-std:         rgba(53, 114, 198,.5); //rgba(83, 180, 115, .3);
 @matching-bracket:      #4C8BE2;
 @dropdown-bg:           @notebook-base;
-@dropdown-border:       rgba(78, 91, 120,.38);
+@dropdown-border:       @selected-third;
 @dropdown-hover:        @dropdown-border;
 
 /* panels and form-control styles */
-@panel-header-bg:       @notebook-base;
-@panel-bg:              @cc-output-bg;
-@form-input-bg:         #21262D;
+@panel-header-bg:       #323a48;
+@panel-bg:              #384152;
+@modal-bg:              @panel-bg;
+@form-input-bg:         @codeblock-bg;
+@cmd-palette-bg:        #202937;
+@cmd-palette-hover:     #2b3850;
 
 /* buttons, widgets, kernels colors */
 @item-theme:            #4C8BE2;
 @item-blue:             #4C8BE2;
-@item-cyan:             #2c85f7;
+@item-cyan:             #157bff;
 @button-color:          @item-blue;
 @item-green:            #48a667;
 @item-red:              #dc6972;
 
 /* tables and dataframes colors */
 @table-color:           #DBDFEF;
-@table-bg:              #445063;
-@table-border:          #4E5C72;
+@table-bg:              #434d61;
+@table-border:          #546379;
 @df-header-bg:          #2E3642;
 @df-header:             #D4D8EC;
 @df-header-border:      #414C5D;
-@df-cell-bg:            #445063;
+@df-cell-bg:            #434d61;
 @codeblock-bg:          #2A313C;
 @codeblock-border:      @codeblock-bg;
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             #343C4B;
+@button-bg:             #303745;
 @scrollbar:             #3567AC;
-@scroll-trough:         #D7DCE4;
+@scroll-trough:         #7689ac;
 @scrollbar-inactive:    #464e60;
-@box-shadow:            #303945;
+@box-shadow:            @button-bg;
 
 /* oceans16 ansi colors */
 @ansiblack:             #2b303b;
@@ -92,8 +94,8 @@
 
 /* oceans16 codemirror colors */
 @cm-selected:           #384151;
-@cm-gutters:            @cm-selected;
-@cm-linenumber:         @disabled;
+@cm-gutters:            #343c4b;
+@cm-linenumber:         @cm-comment;
 @cm-comment:            #667FB1;
 @cm-atom:               #CAA6EC;
 @cm-number:             #EFAA8E;

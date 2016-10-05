@@ -5,13 +5,14 @@
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           @notebook-base;
-@selected-half:         rgba(180, 180, 180,.32);
-@selected-third:        rgba(180, 180, 180,.11);
+@selected-half:         rgba(180, 180, 180,.30);
+@selected-third:        rgba(180, 180, 180,.14);
 @selected-tenth:        #fafafa;
 @selected-error:        rgba(191, 97, 106, .40);
-@selected-active:       #E3E3E3;
-@selected-fg:           #222222;
-@selected-fg-bright:    #000000;
+@selected-active:       #E4E4E4;
+@navbar-selected:       @selected-third;
+@selected-fg:           #2F2F2F;
+@selected-fg-bright:    #1c1c1c;
 @unemphasize-fg:        #4A4A4A;
 
 /* code, text, markdown, & tooltip colors */
@@ -22,8 +23,6 @@
 @text-cell-fg:          #353535;
 @unrendered-text:       #126DCE;
 @header-fg:             @unrendered-text;
-@header-fg2:            @header-fg;
-@header-fg3:            @header-fg;
 @tooltip-bg-color:      @notebook-base;
 @tooltip-fg-color:      #222222;
 @nb-name-fg:            @item-theme;
@@ -47,9 +46,12 @@
 @dropdown-hover:        @selected-third;
 
 /* panels and form-control styles */
-@panel-header-bg:       @notebook-base;
-@panel-bg:              #fafafa;
+@panel-header-bg:       #f7f7f7;
+@panel-bg:              #f9f9f9;
+@modal-bg:              #ffffff;
 @form-input-bg:         #ffffff;
+@cmd-palette-bg:        @form-input-bg;
+@cmd-palette-hover:     @panel-bg;
 
 /* buttons, widgets, kernels colors */
 @item-theme:            #FF7823;
@@ -67,12 +69,12 @@
 @df-header:             #353535;
 @df-header-border:      #C4C4C4;
 @df-cell-bg:            @table-bg;
-@codeblock-bg:          @panel-bg;
-@codeblock-border:      darken(@codeblock-bg, 4%);
+@codeblock-bg:          #efefef;
+@codeblock-border:      darken(@codeblock-bg, 3%);
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             #EAEAEA;
-@scrollbar:             #346EAC;
+@button-bg:             #EBEBEB;
+@scrollbar:             @item-theme; // #346EAC;
 @scroll-trough:         #D0D0D0;
 @scrollbar-inactive:    #dedede;
 @box-shadow:            #e8e8e8;

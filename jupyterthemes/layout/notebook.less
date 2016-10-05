@@ -14,11 +14,15 @@ div.body {
     color: @notebook-fg;
     background-color: @notebook-bg;
     background: @notebook-bg;
-    line-height: 1.3;
+}
+body.notebook_app {
+    padding: 0;
+    background-color: @notebook-bg;
+    background: @notebook-bg;
+    padding-right: 0px !important;
 }
 a {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize;
     color: @notebook-fg;
 }
 a:hover, a:focus {
@@ -30,14 +34,14 @@ a:hover, a:focus {
 /*********************************************************/
 .list_header,
 div#notebook_list_header.row.list_header {
-    font-size: @nb-fontsize;
+    font-size: 14pt;
     color: @selected-fg;
     background-color: @notebook-bg;
 }
 div#cluster_list_header.row.list_header,
 div#running .row.list_header {
-    font-size: @nb-fontsize;
-    color: @selected-fg;
+    font-size: 14pt;
+    color: @notebook-fg;
     background:  @df-header-bg;
     background-color: @df-header-bg;
     border-bottom: 2px solid @divider;
@@ -48,62 +52,68 @@ div#cluster_list > div.list_item.row:hover {
     background-color: @panel-bg;
 }
 div#clusters.tab-pane.active {
-    font-size: 12pt;
-    margin: 5px;
+    font-size: @nb-fontsize-sub;
+    padding: 4px 0 4px 0;
 }
 #running .panel-group .panel .panel-heading {
-    font-size: @nb-fontsize;
-    color: @selected-fg;
-    padding: 8px 15px;
+    font-size: 14pt;
+    color: @notebook-fg;
+    padding: 8px 8px;
     background:  @df-header-bg;
     background-color: @df-header-bg;
 }
 #running .panel-group .panel .panel-heading a {
-    font-size: @nb-fontsize;
-    color: @selected-fg;
+    font-size: 14pt;
+    color: @notebook-fg;
 }
 #running .panel-group .panel .panel-heading a:focus,
 #running .panel-group .panel .panel-heading a:hover {
-    font-size: @nb-fontsize;
-    color: @selected-fg;
+    font-size: 14pt;
+    color: @notebook-fg;
 }
 #running .panel-group .panel .panel-body .list_container .list_item {
     background: @panel-bg;
     background-color: @panel-bg;
+    padding: 2px;
     border-bottom: 2px solid @divider;
 }
 #running .panel-group .panel .panel-body .list_container .list_item:hover {
     background: @panel-bg;
     background-color: @panel-bg;
 }
+#running .panel-group .panel .panel-body {
+    padding: 2px;
+}
+div.running_list_info.toolbar_info {
+    font-size: @nb-fontsize-sub;
+    padding: 4px 0 4px 0;
+    height: inherit;
+    line-height: inherit;
+    text-shadow: none;
+}
 .list_placeholder {
     font-weight: normal;
-}
-ul#selector-menu.dropdown-menu > li > a {
-    padding: none;
 }
 #tree-selector {
     padding: 0px;
 }
 #project_name > ul > li > a > i.fa.fa-home {
     color: @item-theme;
-    font-size: 16pt;
+    font-size: 17pt;
     display: inline-block;
     position: static;
-    padding: 0px 5px;
+    padding: 0px 0px;
     font-weight: normal;
     text-align: center;
-    vertical-align: top;
+    vertical-align: text-top;
 }
 #project_name {
-    color: @item-theme;
-    font-size: 16pt;
-    display: inline-block;
-    position: static;
-    padding: 0px 5px;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
+    display: inline-flex;
+    padding-left: 7px;
+    margin-left: -2px;
+    margin-bottom: -20px;
+    text-align: -webkit-auto;
+    vertical-align: text-top;
 }
 div#notebook_toolbar div.dynamic-instructions {
     font-family: @notebook-fontfamily;
@@ -111,35 +121,83 @@ div#notebook_toolbar div.dynamic-instructions {
 }
 .toolbar_info {
     font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
     color: @notebook-fg;
+    text-shadow: none;
     border: none;
-    text-shadow: none !important;
+    height: inherit;
+    line-height: inherit;
 }
 .list_container {
-    font-size: 11.5pt;
+    font-size: @nb-fontsize-sub;
     color: @notebook-fg;
     border: none;
     text-shadow: none !important;
 }
 .list_container > div {
     border-bottom: 1px solid @selected-third;
-    font-size: 11.5pt
+    font-size: @nb-fontsize-sub;
+}
+.list_header > div, .list_item > div {
+    padding-left: 0px;
+}
+.list_header > div input,
+.list_item > div input {
+    top: 0px;
+}
+.list_header > div .item_link,
+.list_item > div .item_link {
+    margin-left: -1px;
+    vertical-align: middle;
+    line-height: 22px;
+    font-size: @nb-fontsize-sub;
+}
+.item_icon {
+    font-size: @nb-fontsize-sub;
+    vertical-align: middle;
+}
+.list_item input:not([type="checkbox"]) {
+    padding-right: 0px;
+    height: auto;
+    width: 20%;
+    margin: 6px 0 0;
+    margin-top: 1px;
+}
+#button-select-all {
+    height: auto;
+    font-size: @nb-fontsize-sub;
+    padding: 5px;
+    min-width: 65px;
+}
+button#tree-selector-btn {
+    height: auto;
+    font-size: @nb-fontsize-sub;
+    padding: 5px;
+}
+input#select-all.pull-left.tree-selector {
+    margin-left: 7px;
+    margin-right: 2px;
+    margin-top: 5px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 6px 0 0;
+    margin-top: 1px;
+    line-height: normal;
 }
 .list_container a {
-    font-size: 11.5pt;
+    font-size: 17px;
     color: @notebook-fg;
     border: none;
     text-shadow: none !important;
+    font-weight: normal;
+    font-style: normal;
 }
 div.list_container a:hover {
     color: @selected-fg;
 }
 div.list_item:hover {
     background-color: @selected-tenth;
-}
-.list_header > div input,
-.list_item > div input {
-    top: 0px;
 }
 .breadcrumb>li {
     font-size: @nb-fontsize-sub;
@@ -149,7 +207,7 @@ div.list_item:hover {
 }
 ul#tabs a {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
+    font-size: @nb-fontsize;
     font-weight: normal;
     font-style: normal;
     border-color: transparent;
@@ -157,13 +215,13 @@ ul#tabs a {
 }
 .nav-tabs {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
+    font-size: @nb-fontsize;
     font-weight: normal;
     font-style: normal;
     background: @notebook-bg;
     text-shadow: none !important;
     border-color: transparent;
-    border-bottom-color: @selected-third;
+    border-bottom-color: @selected-half;
 }
 .nav-tabs > li > a:hover {
     color: @selected-fg;
@@ -173,10 +231,15 @@ ul#tabs a {
 .nav-tabs > li > a:focus,
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:focus,
-.nav-tabs > li.active > a:hover {
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
     color: @selected-fg-bright;
     background-color: @selected-bg;
-    background-color: @selected-bg;
+    border: 1px solid transparent;
+    border-bottom-color: transparent;
+    cursor: default;
 }
 .nav > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
@@ -186,7 +249,6 @@ ul#tabs a {
 .nav > li.disabled > a:hover {
     color: @disabled;
 }
-
 
 /********************************************************/
 /***************** NOTEBOOK PAGE SETTINGS ***************/
@@ -209,7 +271,7 @@ div#notebook {
     margin-left: auto;
 }
 div#ipython-main-app.container {
-    width: 940px;
+    width: @cell-width;
     margin-right: auto;
     margin-left: auto;
     margin-right: @container-margins;
@@ -226,7 +288,7 @@ div#ipython-main-app.container {
 .notebook_app #header {
     box-shadow: none !important;
     background-color: @notebook-bg;
-    border-bottom: 1px solid @selected-half;
+    border-bottom: 2px solid @selected-third;
 }
 #header {
     font-family: @notebook-fontfamily;
@@ -243,7 +305,6 @@ body > #header .header-bar {
     background: @notebook-bg;
 }
 #menubar {
-    padding-top: 10px;
     background-color: @notebook-bg;
 }
 #menubar .navbar, .navbar-default {
@@ -258,30 +319,32 @@ body > #header .header-bar {
     font-size: @nb-fontsize;
     background-color: @notebook-bg;
     border-color: @dropdown-hover;
+    line-height: 1.5em;
     padding-bottom: 0px;
-    line-height: 1.45em;
 }
 .navbar-default .navbar-nav > li > a {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
     color: @notebook-fg;
     display: block;
-    line-height: 1.45em;
+    line-height: 1.5em;
+    padding-top: 8px;
+    padding-bottom: 6px;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: @selected-fg;
     background-color: @selected-third;
     border-color: @dropdown-hover;
-    line-height: 1.45em;
+    line-height: 1.5em;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
     color: @selected-fg-bright;
-    background-color: @selected-active;
-    border-color: @selected-active;
-    line-height: 1.45em;
+    background-color: @navbar-selected;
+    border-color: @navbar-selected;
+    line-height: 1.5em;
 }
 
 /****************************************/
@@ -296,7 +359,9 @@ body > #header .header-bar {
     color: @item-blue;
 }
 .item_buttons .kernel-name {
+    font-size: @nb-fontsize;
     color: @item-blue;
+    line-height: 22px;
 }
 .running_notebook_icon:before {
     color: @item-green !important;
@@ -316,14 +381,15 @@ body > #header .header-bar {
     color: @item-theme;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    font-size: @nb-fontsize;
+    font-size: 14.5pt;
     border-left: 2px solid @item-theme;
+    padding-bottom: 2px;
 }
 #kernel_indicator .kernel_indicator_name {
     color: @item-theme;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    font-size: @nb-fontsize;
+    font-size: 14.5pt;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -363,10 +429,14 @@ i.fa.fa-icon {
     text-rendering: auto;
 }
 .fa {
+    display: inline-block;
+    font: normal normal normal 14pt/1 "FontAwesome", @notebook-fontfamily;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+
 /****************************************/
 /************ DROPDOWN MENUS ************/
 /****************************************/
@@ -379,8 +449,8 @@ i.fa.fa-icon {
     border: 2px solid @dropdown-border;
     background-color: @dropdown-bg;
     background: @dropdown-bg;
-    line-height: 1.2;
-    margin: 1px 0 0;
+    line-height: 1.3;
+    margin: 0px;
 }
 .dropdown-menu:hover {
     font-family: @notebook-fontfamily;
@@ -388,24 +458,24 @@ i.fa.fa-icon {
     border: 2px solid @dropdown-border;
     background-color: @dropdown-bg;
     box-shadow: none;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 .dropdown-header {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
     display: block;
-    color: @notebook-fg;
+    color: @item-theme;
     text-decoration: underline;
-    text-decoration-color: @dropdown-border;
     white-space: nowrap;
-    line-height: 1.2;
+    padding: 8px 0px 0px 6px;
+    line-height: 1.3;
 }
 .dropdown-menu > li > a {
     font-family: @notebook-fontfamily;
-    font-size: 12pt;
-    line-height: 1.2;
+    font-size: @nb-fontsize-sub;
+    line-height: 1.3;
     display: block;
-    padding: 10px 22px 10px 15px;
+    padding: 10px 25px 10px 14px;
     color: @notebook-fg;
     background-color: @dropdown-bg;
     background: @dropdown-bg;
@@ -414,6 +484,7 @@ i.fa.fa-icon {
     color: @selected-fg;
     background-color: @dropdown-hover;
     background: @dropdown-hover;
+    border-color: @dropdown-hover;
 }
 .dropdown-menu .divider {
     height: 2px;
@@ -432,7 +503,7 @@ i.fa.fa-icon {
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
     font-family: @notebook-fontfamily;
-    font-size: 12pt;
+    font-size: @nb-fontsize-sub;
     font-weight: normal;
     color: @disabled;
     padding: none;
@@ -443,13 +514,16 @@ i.fa.fa-icon {
 }
 .dropdown-submenu > a:after {
     color: @notebook-fg;
+    margin-right: -16px;
 }
 .dropdown-submenu:hover > a:after,
 .dropdown-submenu:active > a:after,
 .dropdown-submenu:focus > a:after,
 .dropdown-submenu:visited > a:after {
-    color: @selected-fg;
+    color: @item-theme;
+    margin-right: -16px;
 }
+
 /****************************************/
 /**************** BUTTONS ***************/
 /****************************************/
@@ -462,6 +536,8 @@ i.fa.fa-icon {
     font-weight: normal;
     box-shadow: none;
     text-shadow: none;
+    border-radius: 2px;
+    font-size: inherit;
 }
 .btn:hover,
 .btn:active,
@@ -493,9 +569,8 @@ i.fa.fa-icon {
     background: @selected-active;
     border-color: @selected-active;
     background-image: none;
-    font-weight: normal;
-    text-shadow: none;
     box-shadow: none !important;
+    border-radius: 2px;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -505,50 +580,40 @@ i.fa.fa-icon {
 .alternate_upload .btn-upload,
 .btn-group,
 .btn-group-vertical {
-    font-size: 12pt;
+    font-size: @nb-fontsize-sub;
     font-weight: normal;
-    box-shadow: none !important;
-    text-shadow: none;
 }
 .btn-xs, .btn-group-xs > .btn {
-    font-size: 12pt;
+    font-size: @nb-fontsize-sub;
     background-image: none;
     font-weight: normal;
     text-shadow: none;
-    box-shadow: none !important;
-    display: table-row-group;
+    display: inline-table;
 }
 .alternate_upload .btn-upload {
-    height: inherit;
-    display: inline-table;
+    display: none;
 }
 .alternate_upload input.fileinput {
     display: none;
-    width: 11.5ex;
-}
-#button-select-all {
-    height: auto;
-    font-size: 12pt;
-    padding: 5px;
-    min-width: 65px;
-}
-button#tree-selector-btn {
-    height: auto;
-    font-size: 12pt;
-    padding: 5px;
 }
 button.close {
     border: 0px none;
+    font-family: sans-serif;
+    font-size: 25pt;
 }
 .dynamic-buttons {
+    font-size: inherit;
     padding-top: 0px;
     display: inline-block;
 }
 .close {
-    color: @button-color;
+    color: @item-red;
+    opacity: .5;
+    text-shadow: none;
 }
 .close:hover {
-    color: @item-cyan;
+    color: @item-red;
+    opacity: 1;
 }
 div.btn.btn-default.output_collapsed {
     background: darken(@button-bg, 4%);
@@ -580,12 +645,12 @@ fieldset[disabled] .btn-default.focus {
 }
 .input-group-addon {
     padding: 2px 5px;
-    font-size: 12pt;
+    font-size: @nb-fontsize-sub;
     font-weight: normal;
     height: auto;
     color: @notebook-fg;
     text-align: center;
-    background-color: @button-bg;
+    background-color: @form-input-bg;
     border: none;
 }
 .btn-group > .btn + .dropdown-toggle {
@@ -610,41 +675,53 @@ fieldset[disabled] .btn-default.focus {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize-sub;
     position: relative;
-    background:  @df-header-bg;
-    background-color: @df-header-bg;
-    border: 1px solid @selected-half;
-    border-radius: 3px;
+    background:  @panel-header-bg;
+    background-color: @panel-header-bg;
+    border: none;
+    border-radius: 1px;
     background-clip: padding-box;
-    outline: 1px solid @selected-half;
+    outline: none;
 }
 .modal-header {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
-    color: @selected-fg;
-    background:  @df-header-bg;
-    background-color: @df-header-bg;
-    border-color: @divider;
-    padding: 15px;
+    color: @notebook-fg;
+    background:  @panel-header-bg;
+    background-color: @panel-header-bg;
+    border-color: @dropdown-border;
+    padding: 12px;
     min-height: 16.4286px;
 }
 .modal-content h4 {
-    font-family: "Exo_2", sans-serif;
-    font-size: @nb-fontsize-sub;
-    color: @selected-fg;
+    font-family: @notebook-fontfamily;
+    font-size: 16pt;
+    color: @notebook-fg;
     padding: 5px;
 }
 .modal-body {
-    background-color: @cc-output-bg;
+    background-color: @modal-bg;
     position: relative;
     padding: 15px;
 }
+.modal-footer {
+    padding: 10px;
+    text-align: right;
+    background-color: @panel-bg;
+    border-top: 1px solid @dropdown-border;
+}
 .alert-info {
     background-color: @text-cell-bg;
-    border-color: @divider;
+    border-color: @dropdown-border;
     color: @notebook-fg;
 }
-.modal .modal-dialog {
-    min-width: 890px;
+.modal-header .close {
+    margin-top: -5px;
+    font-size: 25pt;
+}
+.modal-backdrop,
+.modal-backdrop.in {
+    opacity: 0.7;
+    background-color: @notebook-bg;
 }
 div.panel,
 div.panel-default,
@@ -654,17 +731,27 @@ div.panel-default,
     font-size: @nb-fontsize-sub;
     background-color: @panel-bg;
     color: @notebook-fg;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     border: 0;
     box-shadow: none;
 }
 div.panel > .panel-heading,
 div.panel-default > .panel-heading {
-    font-size: @nb-fontsize;
-    color: @selected-fg;
+    font-size: 14pt;
+    color: @notebook-fg;
     background:  @df-header-bg;
     background-color: @df-header-bg;
     border: 0;
+}
+.modal .modal-dialog {
+    min-width: 950px;
+    margin: 50px auto;
+}
+div.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 7px;
+    padding-right: 12px;
 }
 div.form-control,
 .form-control {
@@ -672,7 +759,8 @@ div.form-control,
     font-size: inherit;
     color: @notebook-fg;
     background-color: @form-input-bg;
-    border-color: @divider;
+    border: 2px solid @codeblock-border;
+    margin-left: 2px;
     height: auto;
     box-shadow: none;
     padding: 6px 12px;
@@ -681,39 +769,16 @@ div.form-control,
 .form-group.list-group-item {
     color: @notebook-fg;
     background-color: @panel-bg;
-    border-color: @divider;
+    border-color: @dropdown-border;
     margin-bottom: 0px;
 }
-.list_item input:not([type="checkbox"]) {
-    padding-right: 0px;
-    height: auto;
-    width: 20%;
-    margin: 6px 0 0;
-}
-input[type="radio"],
-input[type="checkbox"] {
-    margin: 6px 0 0;
-    margin-top: 1px \9;
-    line-height: normal;
-}
 input, button, select, textarea {
-    margin-left: 4px;
     background-color: @form-input-bg;
     font-weight: normal;
-    padding-left: 2px;
-    border: 2px solid @divider;
-}
-.modal-footer {
-    padding: 15px;
-    text-align: right;
-    border-top: 1px solid @selected-half;
+    border: 2px solid @dropdown-border;
 }
 select.form-control.select-xs {
     height: auto;
-}
-.typeahead-field input, .typeahead-select {
-    font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize;
 }
 
 /****************************************/
@@ -725,21 +790,26 @@ div.output.output_scroll {
 ::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.11);
 	background-color: @scroll-trough;
-	border-radius: 10px;
+	border-radius: 6px;
 }
 ::-webkit-scrollbar {
     width: 11px;
     height: 10px;
     background-color: @scroll-trough;
-    border-radius: 7px;
+    border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb {
     background-color: #ffffff;
     background-image:
         -webkit-gradient(linear, 40% 0%, 75% 86%,
-            from(darken(@scrollbar, 5%)),
-            color-stop(0.5, lighten(@scrollbar, 5%)),
-            to(darken(@scrollbar, 5%)));
+            from(darken(@scrollbar, 8%)),
+            color-stop(0.5, lighten(@scrollbar, 8%)),
+            to(darken(@scrollbar, 8%)));
     min-height: 40px;
-    border-radius: 7px;
+    border-radius: 2px;
 }
+/******* Smooth Fonts ********/
+// HTML, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, span, a {
+//     text-rendering: auto;
+//     -webkit-font-smoothing: antialiased;
+// }

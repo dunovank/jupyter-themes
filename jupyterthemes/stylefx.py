@@ -74,7 +74,7 @@ def install_precompiled_theme(theme):
     theme_src = os.path.join(compiled_dir, '{}.css'.format(theme))
     theme_dst = os.path.join(jupyter_custom, 'custom.css')
     copyfile(theme_src, theme_dst)
-    for fontcode in ['exosans', 'ptserif', 'droidmono', 'firacode']:
+    for fontcode in ['exosans', 'loraserif', 'droidmono', 'firacode']:
         fname, fpath, ffam = stored_font_dicts(fontcode)
         fontpath = os.path.join(fonts_dir, fpath)
         for fontfile in os.listdir(fontpath):
@@ -89,7 +89,7 @@ def delete_font_files():
         abspath = os.path.join(jupyter_custom_fonts, fontfile)
         os.remove(abspath)
 
-def import_stored_fonts(fontcodes=['exosans', 'ptserif', 'droidmono']):
+def import_stored_fonts(fontcodes=['exosans', 'loraserif', 'droidmono']):
     """ collect fontnames and local pointers to fontfiles in custom dir
     then pass information for each font to function for writing import statements
     """
@@ -110,14 +110,15 @@ def convert_fontsizes(fontsizes):
     for i, fs in enumerate(fontsizes):
         if len(fs)>=3:
             fontsizes[i] = '.'.join([fs[:-1], fs[-1]])
+        elif int(fs)>50:
+            fontsizes[i] = '.'.join([fs[0], fs[-1]])
     return fontsizes
 
-def set_font_properties(nbfont='exosans', tcfont='ptserif', monofont='droidmono', monosize=11, tcfontsize=13, nbfontsize=13, prfontsize=9):
+def set_font_properties(nbfont='exosans', tcfont='loraserif', monofont='droidmono', monosize=11, tcfontsize=13, nbfontsize=13, prfontsize=95):
     """ parent function for setting notebook, text/md, and codecell font-properties
     """
-    fontsizes = [monosize, nbfontsize, tcfontsize]
-    monosize, nbfontsize, tcfontsize = convert_fontsizes(fontsizes)
-
+    fontsizes = [monosize, nbfontsize, tcfontsize, prfontsize]
+    monosize, nbfontsize, tcfontsize, prfontsize = convert_fontsizes(fontsizes)
     style_less = import_stored_fonts(fontcodes=[nbfont, tcfont, monofont, 'firacode'])
     style_less += '/* Set Font-Type and Font-Size Variables  */\n'
     # get fontname, fontpath, font-family info
@@ -130,6 +131,7 @@ def set_font_properties(nbfont='exosans', tcfont='ptserif', monofont='droidmono'
     style_less += '@text-cell-fontfamily: "{}", {}; \n'.format(tcfont, tcfontfam)
     # font size for codecells, main notebook, notebook-sub, & textcells
     style_less += '@monofontsize: {}pt; \n'.format(monosize)
+    style_less += '@monofontsize-sub: {}pt; \n'.format(float(monosize)-1)
     style_less += '@nb-fontsize: {}pt; \n'.format(nbfontsize)
     style_less += '@nb-fontsize-sub: {}pt; \n'.format(float(nbfontsize)-1)
     style_less += '@text-cell-fontsize: {}pt; \n'.format(tcfontsize)
@@ -160,30 +162,46 @@ def import_fonts(style_less, fontname, font_subdir):
 
     return style_less
 
-def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default', cellwidth=980, lineheight=170, margins='auto', altlayout=False, vimext=False, toolbar=False, nbname=False):
+def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default', cellwidth=980, lineheight=170, margins='auto', altlayout=False, vimext=False, toolbar=False, nbname=False, altprompt=False, hideprompt=False):
     """ set general layout and style properties of text and code cells
     """
     style_less += '@import "styles{}";\n'.format(''.join([os.sep, theme]))
-    style_less += '@cell-width: {}px; \n'.format(cellwidth)
-    style_less += '@cc-line-height: {}%; \n'.format(lineheight)
-    if margins!='auto':
-        margins = '{}px'.format(margins)
-    style_less += '@container-margins: {}; \n'.format(margins)
     textcell_bg = '@cc-input-bg'
-    tc_prompt_line = '@tc-prompt-std'
-    cc_prompt_width = 12.8
-    tc_prompt_width = cc_prompt_width
+    promptText = '@input-prompt'
+    promptBG = '@cc-input-bg'
+    promptPadding = '.25em'
+    promptBorder = '2px solid @prompt-line'
+    tcPromptBorder = '@tc-prompt-std'
+    promptMinWidth = 12
+    tcPromptWidth = promptMinWidth
+    if altprompt:
+        promptPadding = '.1em'
+        #promptBorder = '2px solid transparent'
+        tcPromptBorder = promptBorder
+        promptMinWidth = 8
+        tcPromptWidth = promptMinWidth
+        promptText = 'transparent' #get_alt_prompt_text_color(theme)
     if altlayout:
         # alt txt/md layout
         textcell_bg = '@notebook-bg'
-        tc_prompt_line = 'transparent'
-        tc_prompt_width = 0
+        tcPromptBorder = '2px solid transparent'
+        tcPromptWidth = 0
+    if margins!='auto':
+        margins = '{}px'.format(margins)
+    style_less += '@container-margins: {};\n'.format(margins)
+    style_less += '@cell-width: {}px; \n'.format(cellwidth)
+    style_less += '@cc-line-height: {}%; \n'.format(lineheight)
     style_less += '@text-cell-bg: {}; \n'.format(textcell_bg)
-    style_less += '@cc-prompt-width: {}ex;\n'.format(cc_prompt_width)
-    style_less += '@tc-prompt-width: {}ex;\n'.format(tc_prompt_width)
-    style_less += '@tc-prompt-line: {};\n'.format(tc_prompt_line)
-    style_less += '@cursor-width: {}px;\n'.format(cursorwidth)
-    style_less += '@cursor-info: @cursor-width solid {};\n'.format(cursorcolor)
+    style_less += '@cc-prompt-width: {}ex; \n'.format(promptMinWidth)
+    style_less += '@cc-prompt-bg: {}; \n'.format(promptBG)
+    style_less += '@prompt-text: {}; \n'.format(promptText)
+    style_less += '@prompt-padding: {}; \n'.format(promptPadding)
+    style_less += '@prompt-border: {}; \n'.format(promptBorder)
+    style_less += '@prompt-min-width: {}ex; \n'.format(promptMinWidth)
+    style_less += '@tc-prompt-border: {}; \n'.format(tcPromptBorder)
+    style_less += '@tc-prompt-width: {}ex; \n'.format(tcPromptWidth)
+    style_less += '@cursor-width: {}px; \n'.format(cursorwidth)
+    style_less += '@cursor-info: @cursor-width solid {}; \n'.format(cursorcolor)
     style_less += '\n\n'
     # read-in notebook.less (general nb style)
     with open(nb_style, 'r') as notebook:
@@ -197,12 +215,13 @@ def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default
     # read-in codemirror.less (syntax-highlighting)
     with open(cm_style, 'r') as codemirror:
         style_less += codemirror.read() + '\n'
-    style_less += toggle_settings(toolbar, nbname) +'\n'
+    style_less += toggle_settings(toolbar, nbname, hideprompt) +'\n'
+
     if vimext:
         set_vim_style(theme)
     return style_less
 
-def toggle_settings(toolbar=False, nbname=False):
+def toggle_settings(toolbar=False, nbname=False, hideprompt=False):
     """ toggle main notebook toolbar (e.g., buttons) & filename
     """
     toggle = ''
@@ -216,6 +235,9 @@ def toggle_settings(toolbar=False, nbname=False):
         toggle +='#menubar {padding-top: 4px; background-color: @notebook-bg;}\n'
     else:
         toggle += '#header-container {display: none !important;}\n'
+    if hideprompt:
+        toggle += 'div.prompt {display: none !important;}\n'
+        toggle += '.CodeMirror-gutters, .cm-s-ipython .CodeMirror-gutters { position: absolute; left: 0; top: 0; z-index: 3; width: 2em; display: inline-block !important; }'
     return toggle
 
 def set_mathjax_style(style_css):
@@ -282,6 +304,10 @@ def get_colors(theme='grade3', c='default', get_dict=False):
         return cdict
     return cdict[c]
 
+def get_alt_prompt_text_color(theme):
+    altColors = {'grade3':'#FF7823', 'oceans16':'#667FB1', 'chesterish':'#0b98c8', 'onedork':'#94c273'}
+    return altColors[theme]
+
 def stored_font_dicts(fontcode, get_all=False):
     fonts = {'mono':
                 {'anka': ['Anka/Coder', 'anka-coder'],
@@ -298,6 +324,7 @@ def stored_font_dicts(fontcode, get_all=False):
                 'firacode': ['Fira Code', 'firacode'],
                 'generic': ['Generic Mono', 'generic'],
                 'hack': ['Hack', 'hack'],
+                'inputmono': ['Input Mono', 'inputmono'],
                 'inconsolata': ['Inconsolata-g', 'inconsolata-g'],
                 'liberation': ['Liberation Mono', 'liberation'],
                 'meslo': ['Meslo', 'meslo'],
@@ -350,11 +377,11 @@ def stored_font_dicts(fontcode, get_all=False):
                 'sanchezserif': ['Sanchez Serif', 'sanchezserif'],
                 'rasaserif': ['Rasa', 'rasaserif'],
                 'vollkornserif': ['Vollkorn', 'vollkornserif'],
-                'cardoserif': ['Source Serif Pro', 'cardoserif'],
-                'notoserif': ['Source Serif Pro', 'notoserif'],
-                'goudyserif': ['Source Serif Pro', 'goudyserif'],
-                'andadaserif': ['Source Serif Pro', 'andadaserif'],
-                'arapeyserif': ['Source Serif Pro', 'arapeyserif']}}
+                'cardoserif': ['Cardo Serif', 'cardoserif'],
+                'notoserif': ['Noto Serif', 'notoserif'],
+                'goudyserif': ['Goudy Serif', 'goudyserif'],
+                'andadaserif': ['Andada Serif', 'andadaserif'],
+                'arapeyserif': ['Arapey Serif', 'arapeyserif']}}
     if get_all:
         return fonts
     if fontcode in list(fonts['mono']):
