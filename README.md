@@ -29,9 +29,15 @@
 [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes)
 
 ### Links
-[jupyterthemes on PyPI](https://pypi.python.org/pypi/jupyterthemes/)
+* [jupyterthemes on PyPI](https://pypi.python.org/pypi/jupyterthemes/)
+* [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
 
-[jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
+### Recent updates
+* Full functionality has been added for Python 3.5
+* Better theme integration for command palette, keyboard shortcuts, as well as Running, Clusters, and NBExtension pages.
+* Added font options for code-cells and notebook body
+* Vim nbextension compatibility provided by [alextfkd](https://github.com/alextfkd)
+* Customizable cursor color and size
 
 ### Install with pip
 ```sh
@@ -45,8 +51,6 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
           [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-cellw CELLWIDTH]
           [-lineh LINEHEIGHT] [-alt] [-vim] [-T] [-N] [-r]
 ```
-
-
 |        options        |   arg     |     default   |
 |:----------------------|:---------:|:-------------:|
 | Usage help            |  -h       |      --       |
@@ -69,8 +73,6 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Toolbar Visible       |  -T       |      --       |
 | Name & Logo Visible   |  -N       |      --       |
 | Restore Default       |  -r       |      --       |
-
-\* Vim extension compatibility provided by [alextfkd](https://github.com/alextfkd)
 
 ### Examples
 ```sh
