@@ -257,8 +257,8 @@ def set_vim_style(theme):
     vim_less = '@import "styles{}";\n'.format(''.join([os.sep, theme]))
     with open(vim_style, 'r') as vimstyle:
         vim_less += vimstyle.read() + '\n'
-    with open(vimtemp, 'w') as f:
-        f.write(vim_less)
+    with open(vimtemp, 'w') as vtemp:
+        vtemp.write(vim_less)
     os.chdir(package_dir)
     vim_css = lesscpy.compile(vimtemp)
     vim_css += '\n\n'
@@ -266,7 +266,6 @@ def set_vim_style(theme):
     vim_custom_css = os.path.join(vim_jupyter_nbext, 'vim_binding.css')
     with open(vim_custom_css, 'w') as vim_custom:
         vim_custom.write(vim_css)
-    os.remove(vimtemp)
 
 def reset_default(verbose=False):
     """ remove custom.css and custom fonts
