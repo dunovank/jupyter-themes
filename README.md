@@ -10,6 +10,9 @@
 ###### *pandas dataframes*
 ![image](screens/grade3_table.png)
 
+###### *command palette*
+![image](screens/grade3_command_palette.png)
+
 ###### *oceans16 syntax*
 ![image](screens/oceans16_code_headers.png)
 
@@ -31,6 +34,10 @@
 ### Links
 * [jupyterthemes on PyPI](https://pypi.python.org/pypi/jupyterthemes/)
 * [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
+
+### Requirements
+* Python 2.7, 3.3, 3.4, or 3.5
+* Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 
 ### Recent updates
 * Full functionality has been added for Python 3.5
