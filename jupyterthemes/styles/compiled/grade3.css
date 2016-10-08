@@ -41,6 +41,7 @@ body.notebook_app {
  background-color: #ffffff;
  background: #ffffff;
  padding-right: 0px !important;
+ overflow-y: hidden;
 }
 a {
  font-family: "Exo_2", sans-serif;
@@ -60,8 +61,8 @@ div#cluster_list_header.row.list_header,
 div#running .row.list_header {
  font-size: 14pt;
  color: #303030;
- background: #eeeeee;
- background-color: #eeeeee;
+ background: #f7f7f7;
+ background-color: #f7f7f7;
  border-bottom: 2px solid rgba(180,180,180,.30);
 }
 div#cluster_list > div.list_item.row,
@@ -77,8 +78,8 @@ div#clusters.tab-pane.active {
  font-size: 14pt;
  color: #303030;
  padding: 8px 8px;
- background: #eeeeee;
- background-color: #eeeeee;
+ background: #f7f7f7;
+ background-color: #f7f7f7;
 }
 #running .panel-group .panel .panel-heading a {
  font-size: 14pt;
@@ -440,7 +441,7 @@ i.fa.fa-icon {
 }
 .fa {
  display: inline-block;
- font: normal normal normal 14pt/1 "FontAwesome", "Exo_2", sans-serif;
+ font: normal normal normal 12pt/1 "FontAwesome", "Exo_2", sans-serif;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
@@ -528,13 +529,18 @@ i.fa.fa-icon {
  color: #ff7823;
  margin-right: -16px;
 }
+div.kse-dropdown > .dropdown-menu,
+.kse-dropdown > .dropdown-menu {
+ min-width: 0;
+ top: 94%;
+}
 .btn,
 .btn-default {
  font-family: "Exo_2", sans-serif;
  color: #303030;
  background: #ebebeb;
  background-color: #ebebeb;
- border: 1px solid #e6e6e6;
+ border: 2px solid #e6e6e6;
  font-weight: normal;
  box-shadow: none;
  text-shadow: none;
@@ -546,11 +552,26 @@ i.fa.fa-icon {
 .btn.active,
 .btn:active:hover,
 .btn.active:hover,
+.btn-default:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.open > .dropdown-toggle.btn:hover,
+.open > .dropdown-toggle.btn-default {
+ color: #2f2f2f;
+ background-color: #e4e4e4;
+ background: #e4e4e4;
+ border-color: #e4e4e4;
+ background-image: none;
+ box-shadow: none !important;
+ border-radius: 2px;
+}
+.btn:active,
+.btn.active,
 .btn:active:focus,
 .btn.active:focus,
 .btn:active.focus,
 .btn.active.focus,
-.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
 .btn-default:active,
 .btn-default.active,
 .btn-default:active:hover,
@@ -559,13 +580,8 @@ i.fa.fa-icon {
 .btn-default.active:focus,
 .btn-default:active.focus,
 .btn-default.active.focus,
-.open > .dropdown-toggle.btn-default:hover,
-.open > .dropdown-toggle.btn-default:focus,
-.open > .dropdown-toggle.btn-default.focus,
-.open > .dropdown-toggle.btn:hover,
 .open > .dropdown-toggle.btn:focus,
-.open > .dropdown-toggle.btn.focus,
-.open > .dropdown-toggle.btn-default {
+.open > .dropdown-toggle.btn.focus {
  color: #1c1c1c;
  background-color: #e4e4e4;
  background: #e4e4e4;
@@ -573,6 +589,22 @@ i.fa.fa-icon {
  background-image: none;
  box-shadow: none !important;
  border-radius: 2px;
+}
+.item_buttons > .btn,
+.item_buttons > .btn-group,
+.item_buttons > .input-group {
+ margin-left: 5px;
+ background: #f7f7f7;
+ background-color: #f7f7f7;
+ border: 2px solid #f7f7f7;
+}
+.item_buttons > .btn:hover,
+.item_buttons > .btn-group:hover,
+.item_buttons > .input-group:hover {
+ margin-left: 5px;
+ background: #fcfcfc;
+ background-color: #fcfcfc;
+ border: 2px solid #fcfcfc;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -660,6 +692,10 @@ fieldset[disabled] .btn-default.focus {
  padding-left: 8px;
  padding-right: 8px;
  height: 100%;
+ border-left: 2px solid #ff7823 !important;
+}
+.btn-group > .btn + .dropdown-toggle:hover {
+ border-left: 2px solid #ff7823 !important;
 }
 .input-group-btn {
  position: relative;
@@ -739,8 +775,8 @@ div.panel > .panel-heading,
 div.panel-default > .panel-heading {
  font-size: 14pt;
  color: #303030;
- background: #eeeeee;
- background-color: #eeeeee;
+ background: #f7f7f7;
+ background-color: #f7f7f7;
  border: 0;
 }
 .modal .modal-dialog {
@@ -800,7 +836,7 @@ div.output.output_scroll {
 ::-webkit-scrollbar-thumb {
  background-color: #ffffff;
  background-image: -webkit-gradient(linear,40% 0%,75% 86%,from(#f96000 ),color-stop(0.5,#ff914c ),to(#f96000 ));
- min-height: 40px;
+ min-height: 60px;
  border-radius: 2px;
 }
 div.input_area {
@@ -844,12 +880,16 @@ div.cell.edit_mode {
  border-top-right-radius: 2px;
  border-top-left-radius: 2px;
 }
-div.prompt {
+div.prompt,
+.prompt {
  font-family: "Fira Code", monospace;
  font-size: 9.5pt;
  font-weight: normal;
  color: #aaaaaa;
- padding: .25em;
+ line-height: 170%;
+ padding: 0px;
+ padding-top: 4px;
+ padding-left: .25em;
  text-align: left !important;
  min-width: 12ex;
  width: 12ex;
@@ -1006,7 +1046,6 @@ div.cell.text_cell.rendered .input_prompt {
  font-size: 9.5pt;
  font-weight: normal;
  color: #aaaaaa;
- padding: .25em;
  text-align: left !important;
  min-width: 0ex;
  width: 0ex !important;
@@ -1018,7 +1057,6 @@ div.cell.text_cell.unrendered .input_prompt {
  font-size: 9.5pt;
  font-weight: normal;
  color: #aaaaaa;
- padding: .25em;
  text-align: left !important;
  min-width: 0ex;
  width: 0ex !important;
@@ -1113,7 +1151,7 @@ div.rendered_html h5 {
  text-align: left;
  font-size: 170%;
  color: #126dce;
- font-style: italic;
+ font-style: normal;
  font-weight: lighter;
 }
 .rendered_html h3,
@@ -1121,14 +1159,14 @@ div.rendered_html h5 {
  font-size: 150%;
  color: #126dce;
  font-weight: lighter;
- text-decoration: underline;
+ text-decoration: italic;
  font-style: normal;
 }
 .rendered_html h4,
 .text_cell_render h4 {
  font-size: 120%;
- color: #3386e0;
- font-weight: lighter;
+ color: #126dce;
+ font-weight: underline;
  font-style: normal;
 }
 .rendered_html h5,
@@ -1209,11 +1247,13 @@ div.widget-area a:focus {
  background-image: none;
  text-shadow: none !important;
 }
-div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
- background: transparent;
- background-color: #f2f2f2;
- border: 1px solid #eeeeee;
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn,
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
+ background: #f0f0f0;
+ background-color: #f0f0f0;
+ border: 2px solid #f0f0f0 !important;
  font-size: inherit;
+ z-index: 0;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox,
 div.widget-hbox,
@@ -1257,12 +1297,16 @@ div.widget-hbox .widget-label,
  font-size: 100%;
  color: #eb6a18;
 }
+a.anchor-link:link:hover {
+ font-size: inherit;
+ color: #eb6a18;
+}
 a.anchor-link:link {
- font-size: 100%;
+ font-size: inherit;
  text-decoration: none;
  padding: 0px 20px;
  visibility: none;
- color: #de6d25;
+ color: #126dce;
 }
 div#nbextensions-configurator-container.container {
  width: 980px;
@@ -1298,7 +1342,8 @@ div.nbext-readme > .nbext-readme-contents {
 }
 div.nbext-readme > .nbext-readme-contents:not(:empty) {
  margin-top: 0.5em;
- border: 1px solid #efefef;
+ margin-bottom: 2em;
+ border: none;
  border-top-color: rgba(180,180,180,.30);
 }
 .nbext-showhide-incompat {
@@ -1384,6 +1429,18 @@ label#Keyword-Filter {
 .nav-pills > li.active > a:focus {
  color: #ffffff;
  background-color: #126dce;
+}
+.input-group .nbext-list-btn-add,
+.input-group-btn:last-child > .btn-group > .btn {
+ background: #f7f7f7;
+ background-color: #f7f7f7;
+ border-color: #f7f7f7;
+}
+.input-group .nbext-list-btn-add:hover,
+.input-group-btn:last-child > .btn-group > .btn:hover {
+ background: #fafafa !important;
+ background-color: #fafafa !important;
+ border-color: #fafafa !important;
 }
 input.raw_input {
  font-family: "Droid Sans Mono", monospace;
@@ -1570,6 +1627,7 @@ div.CodeMirror-lines {
  padding-bottom: .6em;
  padding-left: .5em;
  padding-right: 1.5em;
+ padding-top: 4px;
 }
 span.ansiblack {
  color: #dc4384;

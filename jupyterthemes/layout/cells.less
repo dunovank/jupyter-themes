@@ -46,12 +46,15 @@ div.cell.edit_mode {
 }
 
 /*********** CODE CELL INPUT PROMPT ************/
-div.prompt {
+div.prompt, .prompt {
     font-family: "Fira Code", monospace;
     font-size: @prompt-fontsize;
     font-weight: normal;
     color: @prompt-text;
-    padding: @prompt-padding;
+    line-height: 170%;
+    padding: 0px;
+    padding-top: 4px;
+    padding-left: @prompt-padding;
     text-align: left !important;
     min-width: @prompt-min-width;
     width: @prompt-min-width;
@@ -217,7 +220,6 @@ div.cell.text_cell.rendered .input_prompt {
     font-size: @prompt-fontsize;
     font-weight: normal;
     color: @prompt-text;
-    padding: @prompt-padding;
     text-align: left !important;
     min-width: @tc-prompt-width;
     width: @tc-prompt-width !important;
@@ -229,7 +231,6 @@ div.cell.text_cell.unrendered .input_prompt {
     font-size: @prompt-fontsize;
     font-weight: normal;
     color: @prompt-text;
-    padding: @prompt-padding;
     text-align: left !important;
     min-width: @tc-prompt-width;
     width: @tc-prompt-width !important;
@@ -324,7 +325,7 @@ div.rendered_html h5 {
     text-align: left;
     font-size: 170%;
     color: @header-fg;
-    font-style: italic;
+    font-style: normal;
     font-weight: lighter;
 }
 .rendered_html h3,
@@ -332,14 +333,14 @@ div.rendered_html h5 {
     font-size: 150%;
     color: @header-fg;
     font-weight: lighter;
-    text-decoration: underline;
+    text-decoration: italic;
     font-style: normal;
 }
 .rendered_html h4,
 .text_cell_render h4 {
     font-size: 120%;
-    color: desaturate(lighten(@header-fg, 10%), 10%);
-    font-weight: lighter;
+    color: @header-fg;
+    font-weight: underline;
     font-style: normal;
 }
 .rendered_html h5,

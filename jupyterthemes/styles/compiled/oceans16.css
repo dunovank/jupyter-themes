@@ -41,6 +41,7 @@ body.notebook_app {
  background-color: #262931;
  background: #262931;
  padding-right: 0px !important;
+ overflow-y: hidden;
 }
 a {
  font-family: "Exo_2", sans-serif;
@@ -267,7 +268,7 @@ ul#tabs a {
 }
 .nav > li.disabled > a,
 .nav > li.disabled > a:hover {
- color: #446489;
+ color: #516479;
 }
 div#notebook {
  font-family: "Exo_2", sans-serif;
@@ -440,7 +441,7 @@ i.fa.fa-icon {
 }
 .fa {
  display: inline-block;
- font: normal normal normal 14pt/1 "FontAwesome", "Exo_2", sans-serif;
+ font: normal normal normal 12pt/1 "FontAwesome", "Exo_2", sans-serif;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
@@ -510,7 +511,7 @@ i.fa.fa-icon {
  font-family: "Exo_2", sans-serif;
  font-size: 12.0pt;
  font-weight: normal;
- color: #446489;
+ color: #516479;
  padding: none;
  display: block;
  clear: both;
@@ -528,13 +529,18 @@ i.fa.fa-icon {
  color: #4c8be2;
  margin-right: -16px;
 }
+div.kse-dropdown > .dropdown-menu,
+.kse-dropdown > .dropdown-menu {
+ min-width: 0;
+ top: 94%;
+}
 .btn,
 .btn-default {
  font-family: "Exo_2", sans-serif;
  color: #93a2be;
  background: #303745;
  background-color: #303745;
- border: 1px solid #2c323f;
+ border: 2px solid #2c323f;
  font-weight: normal;
  box-shadow: none;
  text-shadow: none;
@@ -546,11 +552,26 @@ i.fa.fa-icon {
 .btn.active,
 .btn:active:hover,
 .btn.active:hover,
+.btn-default:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.open > .dropdown-toggle.btn:hover,
+.open > .dropdown-toggle.btn-default {
+ color: #d8dcee;
+ background-color: #384151;
+ background: #384151;
+ border-color: #384151;
+ background-image: none;
+ box-shadow: none !important;
+ border-radius: 2px;
+}
+.btn:active,
+.btn.active,
 .btn:active:focus,
 .btn.active:focus,
 .btn:active.focus,
 .btn.active.focus,
-.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
 .btn-default:active,
 .btn-default.active,
 .btn-default:active:hover,
@@ -559,13 +580,8 @@ i.fa.fa-icon {
 .btn-default.active:focus,
 .btn-default:active.focus,
 .btn-default.active.focus,
-.open > .dropdown-toggle.btn-default:hover,
-.open > .dropdown-toggle.btn-default:focus,
-.open > .dropdown-toggle.btn-default.focus,
-.open > .dropdown-toggle.btn:hover,
 .open > .dropdown-toggle.btn:focus,
-.open > .dropdown-toggle.btn.focus,
-.open > .dropdown-toggle.btn-default {
+.open > .dropdown-toggle.btn.focus {
  color: #fefefe;
  background-color: #3572c6;
  background: #3572c6;
@@ -573,6 +589,22 @@ i.fa.fa-icon {
  background-image: none;
  box-shadow: none !important;
  border-radius: 2px;
+}
+.item_buttons > .btn,
+.item_buttons > .btn-group,
+.item_buttons > .input-group {
+ margin-left: 5px;
+ background: #2e3642;
+ background-color: #2e3642;
+ border: 2px solid #2e3642;
+}
+.item_buttons > .btn:hover,
+.item_buttons > .btn-group:hover,
+.item_buttons > .input-group:hover {
+ margin-left: 5px;
+ background: #323b48;
+ background-color: #323b48;
+ border: 2px solid #323b48;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -660,6 +692,10 @@ fieldset[disabled] .btn-default.focus {
  padding-left: 8px;
  padding-right: 8px;
  height: 100%;
+ border-left: 2px solid #4c8be2 !important;
+}
+.btn-group > .btn + .dropdown-toggle:hover {
+ border-left: 2px solid #4c8be2 !important;
 }
 .input-group-btn {
  position: relative;
@@ -675,8 +711,8 @@ fieldset[disabled] .btn-default.focus {
  font-family: "Exo_2", sans-serif;
  font-size: 12.0pt;
  position: relative;
- background: #323a48;
- background-color: #323a48;
+ background: #2e3642;
+ background-color: #2e3642;
  border: none;
  border-radius: 1px;
  background-clip: padding-box;
@@ -686,8 +722,8 @@ fieldset[disabled] .btn-default.focus {
  font-family: "Exo_2", sans-serif;
  font-size: 13pt;
  color: #93a2be;
- background: #323a48;
- background-color: #323a48;
+ background: #2e3642;
+ background-color: #2e3642;
  border-color: rgba(80,95,133,.22);
  padding: 12px;
  min-height: 16.4286px;
@@ -800,7 +836,7 @@ div.output.output_scroll {
 ::-webkit-scrollbar-thumb {
  background-color: #ffffff;
  background-image: -webkit-gradient(linear,40% 0%,75% 86%,from(#2b548d ),color-stop(0.5,#447bc5 ),to(#2b548d ));
- min-height: 40px;
+ min-height: 60px;
  border-radius: 2px;
 }
 div.input_area {
@@ -844,12 +880,16 @@ div.cell.edit_mode {
  border-top-right-radius: 2px;
  border-top-left-radius: 2px;
 }
-div.prompt {
+div.prompt,
+.prompt {
  font-family: "Fira Code", monospace;
  font-size: 9.5pt;
  font-weight: normal;
  color: #446489;
- padding: .25em;
+ line-height: 170%;
+ padding: 0px;
+ padding-top: 4px;
+ padding-left: .25em;
  text-align: left !important;
  min-width: 12ex;
  width: 12ex;
@@ -1006,23 +1046,21 @@ div.cell.text_cell.rendered .input_prompt {
  font-size: 9.5pt;
  font-weight: normal;
  color: #446489;
- padding: .25em;
  text-align: left !important;
  min-width: 12ex;
  width: 12ex !important;
  background-color: #303845;
- border-right: rgba(53,114,198,.5);
+ border-right: 2px solid rgba(53,114,198,.5);
 }
 div.cell.text_cell.unrendered .input_prompt {
  font-family: "Fira Code", monospace;
  font-size: 9.5pt;
  font-weight: normal;
  color: #446489;
- padding: .25em;
  text-align: left !important;
  min-width: 12ex;
  width: 12ex !important;
- border-right: rgba(53,114,198,.5);
+ border-right: 2px solid rgba(53,114,198,.5);
 }
 div.rendered_html code {
  font-family: "Droid Sans Mono", monospace;
@@ -1113,7 +1151,7 @@ div.rendered_html h5 {
  text-align: left;
  font-size: 170%;
  color: #4c8be2;
- font-style: italic;
+ font-style: normal;
  font-weight: lighter;
 }
 .rendered_html h3,
@@ -1121,14 +1159,14 @@ div.rendered_html h5 {
  font-size: 150%;
  color: #4c8be2;
  font-weight: lighter;
- text-decoration: underline;
+ text-decoration: italic;
  font-style: normal;
 }
 .rendered_html h4,
 .text_cell_render h4 {
  font-size: 120%;
- color: #80a8e1;
- font-weight: lighter;
+ color: #4c8be2;
+ font-weight: underline;
  font-style: normal;
 }
 .rendered_html h5,
@@ -1209,11 +1247,13 @@ div.widget-area a:focus {
  background-image: none;
  text-shadow: none !important;
 }
-div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
- background: transparent;
- background-color: #2e3542;
- border: 1px solid #3572c6;
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn,
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
+ background: #2b323f;
+ background-color: #2b323f;
+ border: 2px solid #2b323f !important;
  font-size: inherit;
+ z-index: 0;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox,
 div.widget-hbox,
@@ -1235,7 +1275,7 @@ div.widget-hbox .widget-label,
  height: 20px;
  margin-bottom: 10px;
  padding-left: 10px;
- background-color: #5980ac;
+ background-color: #68809a;
  border-radius: 4px;
  -webkit-box-shadow: none;
  box-shadow: none;
@@ -1257,12 +1297,16 @@ div.widget-hbox .widget-label,
  font-size: 100%;
  color: #46c16f;
 }
+a.anchor-link:link:hover {
+ font-size: inherit;
+ color: #46c16f;
+}
 a.anchor-link:link {
- font-size: 100%;
+ font-size: inherit;
  text-decoration: none;
  padding: 0px 20px;
  visibility: none;
- color: #52b573;
+ color: #4c8be2;
 }
 div#nbextensions-configurator-container.container {
  width: 980px;
@@ -1298,7 +1342,8 @@ div.nbext-readme > .nbext-readme-contents {
 }
 div.nbext-readme > .nbext-readme-contents:not(:empty) {
  margin-top: 0.5em;
- border: 1px solid #303845;
+ margin-bottom: 2em;
+ border: none;
  border-top-color: rgba(53,114,198,.3);
 }
 .nbext-showhide-incompat {
@@ -1321,7 +1366,7 @@ mark,
 }
 a.text-warning,
 a.text-warning:hover {
- color: #446489;
+ color: #516479;
 }
 a.text-warning.bg-warning {
  background-color: #262931;
@@ -1384,6 +1429,18 @@ label#Keyword-Filter {
 .nav-pills > li.active > a:focus {
  color: #ffffff;
  background-color: #4c8be2;
+}
+.input-group .nbext-list-btn-add,
+.input-group-btn:last-child > .btn-group > .btn {
+ background: #2e3642;
+ background-color: #2e3642;
+ border-color: #2e3642;
+}
+.input-group .nbext-list-btn-add:hover,
+.input-group-btn:last-child > .btn-group > .btn:hover {
+ background: #303845 !important;
+ background-color: #303845 !important;
+ border-color: #303845 !important;
 }
 input.raw_input {
  font-family: "Droid Sans Mono", monospace;
@@ -1495,12 +1552,12 @@ body > div.modal.cmd-palette.typeahead-field {
 .command-shortcut:before {
  content: "(command)";
  padding-right: 3px;
- color: #446489;
+ color: #516479;
 }
 .edit-shortcut:before {
  content: "(edit)";
  padding-right: 3px;
- color: #446489;
+ color: #516479;
 }
 ul.typeahead-list i {
  margin-left: 1px;
@@ -1518,7 +1575,7 @@ ul.typeahead-list {
 div.input.typeahead-hint,
 input.typeahead-hint,
 body > div.modal.cmd-palette.in > div > div > div > form > div > div.typeahead-field > span.typeahead-query > input.typeahead-hint {
- color: #446489 !important;
+ color: #516479 !important;
  background-color: transparent;
  padding: 3px 10px;
 }
@@ -1570,6 +1627,7 @@ div.CodeMirror-lines {
  padding-bottom: .6em;
  padding-left: .5em;
  padding-right: 1.5em;
+ padding-top: 4px;
 }
 span.ansiblack {
  color: #2b303b;

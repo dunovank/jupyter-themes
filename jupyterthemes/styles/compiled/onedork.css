@@ -41,6 +41,7 @@ body.notebook_app {
  background-color: #16191d;
  background: #16191d;
  padding-right: 0px !important;
+ overflow-y: hidden;
 }
 a {
  font-family: "Exo_2", sans-serif;
@@ -60,14 +61,14 @@ div#cluster_list_header.row.list_header,
 div#running .row.list_header {
  font-size: 14pt;
  color: #899ab8;
- background: #2c333b;
- background-color: #2c333b;
+ background: #222931;
+ background-color: #222931;
  border-bottom: 2px solid rgba(83,180,115,.3);
 }
 div#cluster_list > div.list_item.row,
 div#cluster_list > div.list_item.row:hover {
- background: #333b44;
- background-color: #333b44;
+ background: #2d3640;
+ background-color: #2d3640;
 }
 div#clusters.tab-pane.active {
  font-size: 12.0pt;
@@ -77,8 +78,8 @@ div#clusters.tab-pane.active {
  font-size: 14pt;
  color: #899ab8;
  padding: 8px 8px;
- background: #2c333b;
- background-color: #2c333b;
+ background: #222931;
+ background-color: #222931;
 }
 #running .panel-group .panel .panel-heading a {
  font-size: 14pt;
@@ -90,14 +91,14 @@ div#clusters.tab-pane.active {
  color: #899ab8;
 }
 #running .panel-group .panel .panel-body .list_container .list_item {
- background: #333b44;
- background-color: #333b44;
+ background: #2d3640;
+ background-color: #2d3640;
  padding: 2px;
  border-bottom: 2px solid rgba(83,180,115,.3);
 }
 #running .panel-group .panel .panel-body .list_container .list_item:hover {
- background: #333b44;
- background-color: #333b44;
+ background: #2d3640;
+ background-color: #2d3640;
 }
 #running .panel-group .panel .panel-body {
  padding: 2px;
@@ -440,7 +441,7 @@ i.fa.fa-icon {
 }
 .fa {
  display: inline-block;
- font: normal normal normal 14pt/1 "FontAwesome", "Exo_2", sans-serif;
+ font: normal normal normal 12pt/1 "FontAwesome", "Exo_2", sans-serif;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
@@ -528,13 +529,18 @@ i.fa.fa-icon {
  color: #48a667;
  margin-right: -16px;
 }
+div.kse-dropdown > .dropdown-menu,
+.kse-dropdown > .dropdown-menu {
+ min-width: 0;
+ top: 94%;
+}
 .btn,
 .btn-default {
  font-family: "Exo_2", sans-serif;
  color: #899ab8;
  background: #2a3038;
  background-color: #2a3038;
- border: 1px solid #262b32;
+ border: 2px solid #262b32;
  font-weight: normal;
  box-shadow: none;
  text-shadow: none;
@@ -546,11 +552,26 @@ i.fa.fa-icon {
 .btn.active,
 .btn:active:hover,
 .btn.active:hover,
+.btn-default:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.open > .dropdown-toggle.btn:hover,
+.open > .dropdown-toggle.btn-default {
+ color: #d2d9e4;
+ background-color: #333a44;
+ background: #333a44;
+ border-color: #333a44;
+ background-image: none;
+ box-shadow: none !important;
+ border-radius: 2px;
+}
+.btn:active,
+.btn.active,
 .btn:active:focus,
 .btn.active:focus,
 .btn:active.focus,
 .btn.active.focus,
-.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
 .btn-default:active,
 .btn-default.active,
 .btn-default:active:hover,
@@ -559,13 +580,8 @@ i.fa.fa-icon {
 .btn-default.active:focus,
 .btn-default:active.focus,
 .btn-default.active.focus,
-.open > .dropdown-toggle.btn-default:hover,
-.open > .dropdown-toggle.btn-default:focus,
-.open > .dropdown-toggle.btn-default.focus,
-.open > .dropdown-toggle.btn:hover,
 .open > .dropdown-toggle.btn:focus,
-.open > .dropdown-toggle.btn.focus,
-.open > .dropdown-toggle.btn-default {
+.open > .dropdown-toggle.btn.focus {
  color: #fefefe;
  background-color: #41975e;
  background: #41975e;
@@ -573,6 +589,22 @@ i.fa.fa-icon {
  background-image: none;
  box-shadow: none !important;
  border-radius: 2px;
+}
+.item_buttons > .btn,
+.item_buttons > .btn-group,
+.item_buttons > .input-group {
+ margin-left: 5px;
+ background: #222931;
+ background-color: #222931;
+ border: 2px solid #222931;
+}
+.item_buttons > .btn:hover,
+.item_buttons > .btn-group:hover,
+.item_buttons > .input-group:hover {
+ margin-left: 5px;
+ background: #262e37;
+ background-color: #262e37;
+ border: 2px solid #262e37;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -660,6 +692,10 @@ fieldset[disabled] .btn-default.focus {
  padding-left: 8px;
  padding-right: 8px;
  height: 100%;
+ border-left: 2px solid #48a667 !important;
+}
+.btn-group > .btn + .dropdown-toggle:hover {
+ border-left: 2px solid #48a667 !important;
 }
 .input-group-btn {
  position: relative;
@@ -675,8 +711,8 @@ fieldset[disabled] .btn-default.focus {
  font-family: "Exo_2", sans-serif;
  font-size: 12.0pt;
  position: relative;
- background: #2c333b;
- background-color: #2c333b;
+ background: #222931;
+ background-color: #222931;
  border: none;
  border-radius: 1px;
  background-clip: padding-box;
@@ -686,8 +722,8 @@ fieldset[disabled] .btn-default.focus {
  font-family: "Exo_2", sans-serif;
  font-size: 13pt;
  color: #899ab8;
- background: #2c333b;
- background-color: #2c333b;
+ background: #222931;
+ background-color: #222931;
  border-color: rgba(70,82,95,.52);
  padding: 12px;
  min-height: 16.4286px;
@@ -699,14 +735,14 @@ fieldset[disabled] .btn-default.focus {
  padding: 5px;
 }
 .modal-body {
- background-color: #333b44;
+ background-color: #2d3640;
  position: relative;
  padding: 15px;
 }
 .modal-footer {
  padding: 10px;
  text-align: right;
- background-color: #333b44;
+ background-color: #2d3640;
  border-top: 1px solid rgba(70,82,95,.52);
 }
 .alert-info {
@@ -729,7 +765,7 @@ div.panel-default,
 .panel-default {
  font-family: "Exo_2", sans-serif;
  font-size: 12.0pt;
- background-color: #333b44;
+ background-color: #2d3640;
  color: #899ab8;
  margin-bottom: 14px;
  border: 0;
@@ -739,8 +775,8 @@ div.panel > .panel-heading,
 div.panel-default > .panel-heading {
  font-size: 14pt;
  color: #899ab8;
- background: #2c333b;
- background-color: #2c333b;
+ background: #222931;
+ background-color: #222931;
  border: 0;
 }
 .modal .modal-dialog {
@@ -768,7 +804,7 @@ div.form-control,
 }
 .form-group.list-group-item {
  color: #899ab8;
- background-color: #333b44;
+ background-color: #2d3640;
  border-color: rgba(70,82,95,.52);
  margin-bottom: 0px;
 }
@@ -800,7 +836,7 @@ div.output.output_scroll {
 ::-webkit-scrollbar-thumb {
  background-color: #ffffff;
  background-image: -webkit-gradient(linear,40% 0%,75% 86%,from(#306241 ),color-stop(0.5,#4a9865 ),to(#306241 ));
- min-height: 40px;
+ min-height: 60px;
  border-radius: 2px;
 }
 div.input_area {
@@ -844,12 +880,16 @@ div.cell.edit_mode {
  border-top-right-radius: 2px;
  border-top-left-radius: 2px;
 }
-div.prompt {
+div.prompt,
+.prompt {
  font-family: "Fira Code", monospace;
  font-size: 9.5pt;
  font-weight: normal;
  color: #526488;
- padding: .25em;
+ line-height: 170%;
+ padding: 0px;
+ padding-top: 4px;
+ padding-left: .25em;
  text-align: left !important;
  min-width: 12ex;
  width: 12ex;
@@ -1006,23 +1046,21 @@ div.cell.text_cell.rendered .input_prompt {
  font-size: 9.5pt;
  font-weight: normal;
  color: #526488;
- padding: .25em;
  text-align: left !important;
  min-width: 12ex;
  width: 12ex !important;
  background-color: #282c34;
- border-right: rgba(53,114,198,.5);
+ border-right: 2px solid rgba(83,180,115,.5);
 }
 div.cell.text_cell.unrendered .input_prompt {
  font-family: "Fira Code", monospace;
  font-size: 9.5pt;
  font-weight: normal;
  color: #526488;
- padding: .25em;
  text-align: left !important;
  min-width: 12ex;
  width: 12ex !important;
- border-right: rgba(53,114,198,.5);
+ border-right: 2px solid rgba(83,180,115,.5);
 }
 div.rendered_html code {
  font-family: "Droid Sans Mono", monospace;
@@ -1113,7 +1151,7 @@ div.rendered_html h5 {
  text-align: left;
  font-size: 170%;
  color: #48a667;
- font-style: italic;
+ font-style: normal;
  font-weight: lighter;
 }
 .rendered_html h3,
@@ -1121,14 +1159,14 @@ div.rendered_html h5 {
  font-size: 150%;
  color: #48a667;
  font-weight: lighter;
- text-decoration: underline;
+ text-decoration: italic;
  font-style: normal;
 }
 .rendered_html h4,
 .text_cell_render h4 {
  font-size: 120%;
- color: #70b186;
- font-weight: lighter;
+ color: #48a667;
+ font-weight: underline;
  font-style: normal;
 }
 .rendered_html h5,
@@ -1146,8 +1184,8 @@ div.rendered_html h5 {
  line-height: 150% !important;
  border: 1px solid #627284;
  color: #d0d8e7;
- background-color: #36404a;
- background: #36404a;
+ background-color: #475361;
+ background: #475361;
 }
 table.dataframe,
 .rendered_html tr,
@@ -1169,7 +1207,7 @@ table.dataframe,
  font-family: "Fira Code", monospace;
  font-size: 10.0pt !important;
  color: #d0d8e7;
- background: #4e5b6a;
+ background: #475361;
  border: 1px solid #627284;
  text-align: left;
  min-width: 4em;
@@ -1209,11 +1247,13 @@ div.widget-area a:focus {
  background-image: none;
  text-shadow: none !important;
 }
-div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
- background: transparent;
- background-color: #23282f;
- border: 1px solid #41975e;
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn,
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
+ background: #21262c;
+ background-color: #21262c;
+ border: 2px solid #21262c !important;
  font-size: inherit;
+ z-index: 0;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox,
 div.widget-hbox,
@@ -1257,12 +1297,16 @@ div.widget-hbox .widget-label,
  font-size: 100%;
  color: #2b84ff;
 }
+a.anchor-link:link:hover {
+ font-size: inherit;
+ color: #2b84ff;
+}
 a.anchor-link:link {
- font-size: 100%;
+ font-size: inherit;
  text-decoration: none;
  padding: 0px 20px;
  visibility: none;
- color: #2b84ff;
+ color: #48a667;
 }
 div#nbextensions-configurator-container.container {
  width: 980px;
@@ -1298,7 +1342,8 @@ div.nbext-readme > .nbext-readme-contents {
 }
 div.nbext-readme > .nbext-readme-contents:not(:empty) {
  margin-top: 0.5em;
- border: 1px solid #282c34;
+ margin-bottom: 2em;
+ border: none;
  border-top-color: rgba(83,180,115,.3);
 }
 .nbext-showhide-incompat {
@@ -1384,6 +1429,18 @@ label#Keyword-Filter {
 .nav-pills > li.active > a:focus {
  color: #ffffff;
  background-color: #437dcd;
+}
+.input-group .nbext-list-btn-add,
+.input-group-btn:last-child > .btn-group > .btn {
+ background: #222931;
+ background-color: #222931;
+ border-color: #222931;
+}
+.input-group .nbext-list-btn-add:hover,
+.input-group-btn:last-child > .btn-group > .btn:hover {
+ background: #242c34 !important;
+ background-color: #242c34 !important;
+ border-color: #242c34 !important;
 }
 input.raw_input {
  font-family: "Droid Sans Mono", monospace;
@@ -1570,6 +1627,7 @@ div.CodeMirror-lines {
  padding-bottom: .6em;
  padding-left: .5em;
  padding-right: 1.5em;
+ padding-top: 4px;
 }
 span.ansiblack {
  color: #2b303b;

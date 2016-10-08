@@ -78,11 +78,13 @@ div.widget-area a:focus {
     background-image: none;
     text-shadow: none !important;
 }
-div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
-    background: transparent;
-    background-color: darken(@cc-output-bg, 5%);
-    border: 1px solid @selected-bg;
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn,
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
+    background: darken(@cc-output-bg, 6%);
+    background-color: darken(@cc-output-bg, 6%);
+    border: 2px solid darken(@cc-output-bg, 6%) !important;
     font-size: inherit;
+    z-index: 0;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox,
 div.widget-hbox, .widget-hbox {
@@ -127,12 +129,16 @@ div.widget-hbox .widget-label,
     font-size: 100%;
     color: saturate(@nb-name-hover, 10%);
 }
+a.anchor-link:link:hover {
+    font-size: inherit;
+    color: saturate(@nb-name-hover, 10%);
+}
 a.anchor-link:link {
-    font-size: 100%;
+    font-size: inherit;
     text-decoration: none;
     padding: 0px 20px;
     visibility: none;
-    color: @nb-name-hover;
+    color: @header-fg;
 }
 
 /***********  JUPYTER NBEXT CONFIGURATOR ***********/
@@ -170,7 +176,8 @@ div.nbext-readme > .nbext-readme-contents {
 }
 div.nbext-readme > .nbext-readme-contents:not(:empty) {
     margin-top: 0.5em;
-    border: 1px solid @cc-input-bg;
+    margin-bottom: 2em;
+    border: none;
     border-top-color: @divider;
 }
 .nbext-showhide-incompat {
@@ -255,6 +262,18 @@ label#Keyword-Filter {
 .nav-pills > li.active > a:focus {
     color: #ffffff;
     background-color: @item-blue;
+}
+.input-group .nbext-list-btn-add,
+.input-group-btn:last-child > .btn-group > .btn {
+    background: @panel-header-bg;
+    background-color: @panel-header-bg;
+    border-color: @panel-header-bg;
+}
+.input-group .nbext-list-btn-add:hover,
+.input-group-btn:last-child > .btn-group > .btn:hover {
+    background: lighten(@panel-header-bg, 1%) !important;
+    background-color: lighten(@panel-header-bg, 1%) !important;
+    border-color: lighten(@panel-header-bg, 1%) !important;
 }
 /********** DEBUGGER PATCH **********/
 input.raw_input {

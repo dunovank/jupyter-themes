@@ -41,6 +41,7 @@ body.notebook_app {
  background-color: #1a2028;
  background: #1a2028;
  padding-right: 0px !important;
+ overflow-y: hidden;
 }
 a {
  font-family: "Exo_2", sans-serif;
@@ -440,7 +441,7 @@ i.fa.fa-icon {
 }
 .fa {
  display: inline-block;
- font: normal normal normal 14pt/1 "FontAwesome", "Exo_2", sans-serif;
+ font: normal normal normal 12pt/1 "FontAwesome", "Exo_2", sans-serif;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
@@ -528,13 +529,18 @@ i.fa.fa-icon {
  color: #0b98c8;
  margin-right: -16px;
 }
+div.kse-dropdown > .dropdown-menu,
+.kse-dropdown > .dropdown-menu {
+ min-width: 0;
+ top: 94%;
+}
 .btn,
 .btn-default {
  font-family: "Exo_2", sans-serif;
  color: #a2b0c7;
- background: #27313d;
- background-color: #27313d;
- border: 1px solid #232c37;
+ background: #252e3a;
+ background-color: #252e3a;
+ border: 2px solid #212934;
  font-weight: normal;
  box-shadow: none;
  text-shadow: none;
@@ -546,11 +552,26 @@ i.fa.fa-icon {
 .btn.active,
 .btn:active:hover,
 .btn.active:hover,
+.btn-default:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.open > .dropdown-toggle.btn:hover,
+.open > .dropdown-toggle.btn-default {
+ color: #dbe1ea;
+ background-color: #2b3543;
+ background: #2b3543;
+ border-color: #2b3543;
+ background-image: none;
+ box-shadow: none !important;
+ border-radius: 2px;
+}
+.btn:active,
+.btn.active,
 .btn:active:focus,
 .btn.active:focus,
 .btn:active.focus,
 .btn.active.focus,
-.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
 .btn-default:active,
 .btn-default.active,
 .btn-default:active:hover,
@@ -559,13 +580,8 @@ i.fa.fa-icon {
 .btn-default.active:focus,
 .btn-default:active.focus,
 .btn-default.active.focus,
-.open > .dropdown-toggle.btn-default:hover,
-.open > .dropdown-toggle.btn-default:focus,
-.open > .dropdown-toggle.btn-default.focus,
-.open > .dropdown-toggle.btn:hover,
 .open > .dropdown-toggle.btn:focus,
-.open > .dropdown-toggle.btn.focus,
-.open > .dropdown-toggle.btn-default {
+.open > .dropdown-toggle.btn.focus {
  color: #fefefe;
  background-color: #007aa4;
  background: #007aa4;
@@ -573,6 +589,22 @@ i.fa.fa-icon {
  background-image: none;
  box-shadow: none !important;
  border-radius: 2px;
+}
+.item_buttons > .btn,
+.item_buttons > .btn-group,
+.item_buttons > .input-group {
+ margin-left: 5px;
+ background: #27313d;
+ background-color: #27313d;
+ border: 2px solid #27313d;
+}
+.item_buttons > .btn:hover,
+.item_buttons > .btn-group:hover,
+.item_buttons > .input-group:hover {
+ margin-left: 5px;
+ background: #2b3643;
+ background-color: #2b3643;
+ border: 2px solid #2b3643;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -619,14 +651,14 @@ button.close {
  opacity: 1;
 }
 div.btn.btn-default.output_collapsed {
- background: #1f2731;
- background-color: #1f2731;
- border-color: #1f2731;
+ background: #1d242e;
+ background-color: #1d242e;
+ border-color: #1d242e;
 }
 div.btn.btn-default.output_collapsed:hover {
- background: #1d252d;
- background-color: #1d252d;
- border-color: #1d252d;
+ background: #1b222a;
+ background-color: #1b222a;
+ border-color: #1b222a;
 }
 div.nbext-enable-btns .btn[disabled],
 div.nbext-enable-btns .btn[disabled]:hover,
@@ -642,9 +674,9 @@ fieldset[disabled] .btn-default:focus,
 .btn-default[disabled].focus,
 fieldset[disabled] .btn-default.focus {
  color: #92a2bd;
- background: #252f3a;
- background-color: #252f3a;
- border-color: #252f3a;
+ background: #232c37;
+ background-color: #232c37;
+ border-color: #232c37;
 }
 .input-group-addon {
  padding: 2px 5px;
@@ -660,6 +692,10 @@ fieldset[disabled] .btn-default.focus {
  padding-left: 8px;
  padding-right: 8px;
  height: 100%;
+ border-left: 2px solid #0b98c8 !important;
+}
+.btn-group > .btn + .dropdown-toggle:hover {
+ border-left: 2px solid #0b98c8 !important;
 }
 .input-group-btn {
  position: relative;
@@ -800,7 +836,7 @@ div.output.output_scroll {
 ::-webkit-scrollbar-thumb {
  background-color: #ffffff;
  background-image: -webkit-gradient(linear,40% 0%,75% 86%,from(#087296 ),color-stop(0.5,#0cace4 ),to(#087296 ));
- min-height: 40px;
+ min-height: 60px;
  border-radius: 2px;
 }
 div.input_area {
@@ -844,12 +880,16 @@ div.cell.edit_mode {
  border-top-right-radius: 2px;
  border-top-left-radius: 2px;
 }
-div.prompt {
+div.prompt,
+.prompt {
  font-family: "Fira Code", monospace;
  font-size: 9.5pt;
  font-weight: normal;
  color: #546386;
- padding: .25em;
+ line-height: 170%;
+ padding: 0px;
+ padding-top: 4px;
+ padding-left: .25em;
  text-align: left !important;
  min-width: 12ex;
  width: 12ex;
@@ -1006,23 +1046,21 @@ div.cell.text_cell.rendered .input_prompt {
  font-size: 9.5pt;
  font-weight: normal;
  color: #546386;
- padding: .25em;
  text-align: left !important;
  min-width: 12ex;
  width: 12ex !important;
  background-color: #293340;
- border-right: rgba(0,156,209,.5);
+ border-right: 2px solid rgba(0,156,209,.5);
 }
 div.cell.text_cell.unrendered .input_prompt {
  font-family: "Fira Code", monospace;
  font-size: 9.5pt;
  font-weight: normal;
  color: #546386;
- padding: .25em;
  text-align: left !important;
  min-width: 12ex;
  width: 12ex !important;
- border-right: rgba(0,156,209,.5);
+ border-right: 2px solid rgba(0,156,209,.5);
 }
 div.rendered_html code {
  font-family: "Droid Sans Mono", monospace;
@@ -1113,7 +1151,7 @@ div.rendered_html h5 {
  text-align: left;
  font-size: 170%;
  color: #0b98c8;
- font-style: italic;
+ font-style: normal;
  font-weight: lighter;
 }
 .rendered_html h3,
@@ -1121,14 +1159,14 @@ div.rendered_html h5 {
  font-size: 150%;
  color: #0b98c8;
  font-weight: lighter;
- text-decoration: underline;
+ text-decoration: italic;
  font-style: normal;
 }
 .rendered_html h4,
 .text_cell_render h4 {
  font-size: 120%;
- color: #20b4e6;
- font-weight: lighter;
+ color: #0b98c8;
+ font-weight: underline;
  font-style: normal;
 }
 .rendered_html h5,
@@ -1209,11 +1247,13 @@ div.widget-area a:focus {
  background-image: none;
  text-shadow: none !important;
 }
-div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn {
- background: transparent;
- background-color: #282e39;
- border: 1px solid #009cd1;
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn,
+div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
+ background: #252b36;
+ background-color: #252b36;
+ border: 2px solid #252b36 !important;
  font-size: inherit;
+ z-index: 0;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox,
 div.widget-hbox,
@@ -1257,12 +1297,16 @@ div.widget-hbox .widget-label,
  font-size: 100%;
  color: #0dc1ff;
 }
+a.anchor-link:link:hover {
+ font-size: inherit;
+ color: #0dc1ff;
+}
 a.anchor-link:link {
- font-size: 100%;
+ font-size: inherit;
  text-decoration: none;
  padding: 0px 20px;
  visibility: none;
- color: #0dc1ff;
+ color: #0b98c8;
 }
 div#nbextensions-configurator-container.container {
  width: 980px;
@@ -1298,7 +1342,8 @@ div.nbext-readme > .nbext-readme-contents {
 }
 div.nbext-readme > .nbext-readme-contents:not(:empty) {
  margin-top: 0.5em;
- border: 1px solid #293340;
+ margin-bottom: 2em;
+ border: none;
  border-top-color: rgba(0,156,209,.3);
 }
 .nbext-showhide-incompat {
@@ -1372,8 +1417,8 @@ div.nbext-enable-btns .btn[disabled],
 div.nbext-enable-btns .btn[disabled]:hover,
 .btn-default.disabled,
 .btn-default[disabled] {
- background: #252f3a;
- background-color: #252f3a;
+ background: #232c37;
+ background-color: #232c37;
  color: #98a8c1;
 }
 label#Keyword-Filter {
@@ -1384,6 +1429,18 @@ label#Keyword-Filter {
 .nav-pills > li.active > a:focus {
  color: #ffffff;
  background-color: #4c8be2;
+}
+.input-group .nbext-list-btn-add,
+.input-group-btn:last-child > .btn-group > .btn {
+ background: #27313d;
+ background-color: #27313d;
+ border-color: #27313d;
+}
+.input-group .nbext-list-btn-add:hover,
+.input-group-btn:last-child > .btn-group > .btn:hover {
+ background: #293340 !important;
+ background-color: #293340 !important;
+ border-color: #293340 !important;
 }
 input.raw_input {
  font-family: "Droid Sans Mono", monospace;
@@ -1570,6 +1627,7 @@ div.CodeMirror-lines {
  padding-bottom: .6em;
  padding-left: .5em;
  padding-right: 1.5em;
+ padding-top: 4px;
 }
 span.ansiblack {
  color: #2b303b;

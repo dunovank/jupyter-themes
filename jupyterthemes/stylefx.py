@@ -171,16 +171,14 @@ def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default
     promptBG = '@cc-input-bg'
     promptPadding = '.25em'
     promptBorder = '2px solid @prompt-line'
-    tcPromptBorder = '@tc-prompt-std'
+    tcPromptBorder = promptBorder
     promptMinWidth = 12
     tcPromptWidth = promptMinWidth
     if altprompt:
         promptPadding = '.1em'
-        #promptBorder = '2px solid transparent'
-        tcPromptBorder = promptBorder
         promptMinWidth = 8
         tcPromptWidth = promptMinWidth
-        promptText = 'transparent' #get_alt_prompt_text_color(theme)
+        promptText = 'transparent'
     if altlayout:
         # alt txt/md layout
         textcell_bg = '@notebook-bg'

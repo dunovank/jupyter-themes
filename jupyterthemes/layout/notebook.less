@@ -20,6 +20,7 @@ body.notebook_app {
     background-color: @notebook-bg;
     background: @notebook-bg;
     padding-right: 0px !important;
+    overflow-y: hidden;
 }
 a {
     font-family: @notebook-fontfamily;
@@ -42,8 +43,8 @@ div#cluster_list_header.row.list_header,
 div#running .row.list_header {
     font-size: 14pt;
     color: @notebook-fg;
-    background:  @df-header-bg;
-    background-color: @df-header-bg;
+    background: @panel-header-bg; // @df-header-bg;
+    background-color: @panel-header-bg; //@df-header-bg;
     border-bottom: 2px solid @divider;
 }
 div#cluster_list > div.list_item.row,
@@ -59,8 +60,8 @@ div#clusters.tab-pane.active {
     font-size: 14pt;
     color: @notebook-fg;
     padding: 8px 8px;
-    background:  @df-header-bg;
-    background-color: @df-header-bg;
+    background: @panel-header-bg; // @df-header-bg;
+    background-color: @panel-header-bg; //@df-header-bg;
 }
 #running .panel-group .panel .panel-heading a {
     font-size: 14pt;
@@ -430,7 +431,7 @@ i.fa.fa-icon {
 }
 .fa {
     display: inline-block;
-    font: normal normal normal 14pt/1 "FontAwesome", @notebook-fontfamily;
+    font: normal normal normal 12pt/1 "FontAwesome", @notebook-fontfamily;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -523,7 +524,11 @@ i.fa.fa-icon {
     color: @item-theme;
     margin-right: -16px;
 }
-
+div.kse-dropdown > .dropdown-menu,
+.kse-dropdown > .dropdown-menu {
+    min-width: 0;
+    top: 94%;
+}
 /****************************************/
 /**************** BUTTONS ***************/
 /****************************************/
@@ -532,7 +537,7 @@ i.fa.fa-icon {
     color: @notebook-fg;
     background: @button-bg;
     background-color: @button-bg;
-    border: 1px solid darken(@button-bg, 2%);
+    border: 2px solid darken(@button-bg, 2%);
     font-weight: normal;
     box-shadow: none;
     text-shadow: none;
@@ -544,11 +549,27 @@ i.fa.fa-icon {
 .btn.active,
 .btn:active:hover,
 .btn.active:hover,
+.btn-default:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.open > .dropdown-toggle.btn:hover,
+.open > .dropdown-toggle.btn-default  {
+    color: @selected-fg;
+    background-color: @button-hover;
+    background: @button-hover;
+    border-color: @button-hover;
+    background-image: none;
+    box-shadow: none !important;
+    border-radius: 2px;
+}
+
+.btn:active,
+.btn.active,
 .btn:active:focus,
 .btn.active:focus,
 .btn:active.focus,
 .btn.active.focus,
-.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
 .btn-default:active,
 .btn-default.active,
 .btn-default:active:hover,
@@ -557,13 +578,8 @@ i.fa.fa-icon {
 .btn-default.active:focus,
 .btn-default:active.focus,
 .btn-default.active.focus,
-.open > .dropdown-toggle.btn-default:hover,
-.open > .dropdown-toggle.btn-default:focus,
-.open > .dropdown-toggle.btn-default.focus,
-.open > .dropdown-toggle.btn:hover,
 .open > .dropdown-toggle.btn:focus,
-.open > .dropdown-toggle.btn.focus,
-.open > .dropdown-toggle.btn-default  {
+.open > .dropdown-toggle.btn.focus {
     color: @selected-fg-bright;
     background-color: @selected-active;
     background: @selected-active;
@@ -571,6 +587,22 @@ i.fa.fa-icon {
     background-image: none;
     box-shadow: none !important;
     border-radius: 2px;
+}
+.item_buttons > .btn,
+.item_buttons > .btn-group,
+.item_buttons > .input-group {
+    margin-left: 5px;
+    background: @panel-header-bg;
+    background-color: @panel-header-bg;
+    border: 2px solid @panel-header-bg;
+}
+.item_buttons > .btn:hover,
+.item_buttons > .btn-group:hover,
+.item_buttons > .input-group:hover {
+    margin-left: 5px;
+    background: lighten(@panel-header-bg,2%);
+    background-color: lighten(@panel-header-bg,2%);
+    border: 2px solid lighten(@panel-header-bg,2%);
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -657,6 +689,10 @@ fieldset[disabled] .btn-default.focus {
     padding-left: 8px;
     padding-right: 8px;
     height: 100%;
+    border-left: 2px solid @item-theme !important;
+}
+.btn-group > .btn + .dropdown-toggle:hover {
+    border-left: 2px solid @item-theme !important;
 }
 .input-group-btn {
     position: relative;
@@ -739,8 +775,8 @@ div.panel > .panel-heading,
 div.panel-default > .panel-heading {
     font-size: 14pt;
     color: @notebook-fg;
-    background:  @df-header-bg;
-    background-color: @df-header-bg;
+    background: @panel-header-bg; // @df-header-bg;
+    background-color: @panel-header-bg; //@df-header-bg;
     border: 0;
 }
 .modal .modal-dialog {
@@ -805,7 +841,7 @@ div.output.output_scroll {
             from(darken(@scrollbar, 8%)),
             color-stop(0.5, lighten(@scrollbar, 8%)),
             to(darken(@scrollbar, 8%)));
-    min-height: 40px;
+    min-height: 60px;
     border-radius: 2px;
 }
 /******* Smooth Fonts ********/
