@@ -40,15 +40,19 @@
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 
 ### Recent updates
+###### v0.13.7
+* misc visibility improvements
+
 ###### v0.13.6
 * altlayout is now default for grade3 (white bg for txt/markdown)
 
 ###### v0.13.5
-* Full functionality has been added for Python 3.5
-* Better theme integration for command palette, keyboard shortcuts, as well as Running, Clusters, and NBExtension pages.
-* Added font options for code-cells and notebook body
-* Vim nbextension compatibility provided by [alextfkd](https://github.com/alextfkd)
-* Customizable cursor color and size
+* full functionality has been added for Python 3.5
+* better theme integration for command palette, keyboard shortcuts
+* integration with Running, Clusters, and NBExtension pages.
+* added font options for code-cells and notebook body
+* vim nbextension compatibility provided by [alextfkd](https://github.com/alextfkd)
+* customizable cursor color and size
 
 ### Install with pip
 ```sh

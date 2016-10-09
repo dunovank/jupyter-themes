@@ -47,8 +47,9 @@
 
 /* panels and form-control styles */
 @panel-header-bg:       @notebook-base;
-@panel-bg:              #f7f7f7;
+@panel-bg:              #f8f8f8;
 @modal-bg:              #ffffff;
+@alert-info-bg:         #fdfdfd;
 @form-input-bg:         #ffffff;
 @cmd-palette-bg:        @form-input-bg;
 @cmd-palette-form:      @panel-header-bg;
@@ -74,8 +75,11 @@
 
 /* btn, scrollbar and shadow colors */
 @button-bg:             #EBEBEB;
+@button-border:         darken(@button-bg, 1%);
 @button-color:          @item-theme;
 @button-hover:          @selected-active;
+@button-panel-bg:       @panel-header-bg;
+@button-panel-hover:    darken(@panel-header-bg, 2%);
 @scrollbar:             @item-theme;
 @scroll-trough:         #D0D0D0;
 @scrollbar-inactive:    #dedede;

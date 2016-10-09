@@ -80,9 +80,9 @@ div.widget-area a:focus {
 }
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn,
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
-    background: darken(@cc-output-bg, 6%);
-    background-color: darken(@cc-output-bg, 6%);
-    border: 2px solid darken(@cc-output-bg, 6%) !important;
+    background: @button-panel-bg;
+    background-color: @button-panel-bg;
+    border: 2px solid @button-panel-bg !important;
     font-size: inherit;
     z-index: 0;
 }
@@ -265,16 +265,27 @@ label#Keyword-Filter {
 }
 .input-group .nbext-list-btn-add,
 .input-group-btn:last-child > .btn-group > .btn {
-    background: @panel-header-bg;
-    background-color: @panel-header-bg;
-    border-color: @panel-header-bg;
+    background: @button-panel-bg;
+    background-color: @button-panel-bg;
+    border-color: @button-panel-bg;
 }
 .input-group .nbext-list-btn-add:hover,
 .input-group-btn:last-child > .btn-group > .btn:hover {
-    background: darken(@panel-header-bg, 2%);
-    background-color: darken(@panel-header-bg, 2%);
-    border-color: darken(@panel-header-bg, 2%);
+    background: @button-panel-hover;
+    background-color: @button-panel-hover;
+    border-color: @button-panel-hover;
 }
+#notebook-container > div.cell.code_cell.rendered.selected > div.widget-area > div.widget-subarea > div > div.widget_item.btn-group > button.btn.btn-default.dropdown-toggle.widget-combo-carrot-btn {
+    background: @button-panel-bg;
+    background-color: @button-panel-bg;
+    border-color: @button-panel-bg;
+}
+#notebook-container > div.cell.code_cell.rendered.selected > div.widget-area > div.widget-subarea > div > div.widget_item.btn-group > button.btn.btn-default.dropdown-toggle.widget-combo-carrot-btn:hover {
+    background: @button-panel-hover;
+    background-color: @button-panel-hover;
+    border-color: @button-panel-hover;
+}
+
 /********** DEBUGGER PATCH **********/
 input.raw_input {
     font-family: @monofont, monospace;

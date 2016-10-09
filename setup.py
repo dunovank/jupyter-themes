@@ -3,6 +3,13 @@ from glob import glob
 from setuptools import setup
 import numpy as np
 
+major = 0
+minor = 13
+patch = 7
+version = '.'.join([str(v) for v in [major, minor, patch]])
+url = 'https://github.com/dunovank/jupyter-themes'
+download_url = '/'.join([url, 'tarball', 'v'+version])
+
 # get readme content after screenshots for pypi site
 README = os.path.join(os.path.dirname(__file__), 'README.md')
 with open(README) as read_me:
@@ -18,7 +25,6 @@ with open(README) as read_me:
 
 pkgname = 'jupyterthemes'
 datafiles = {pkgname: ['sandbox/*.js', 'layout/*.less', 'layout/*.css', 'styles/*.less', 'styles/compiled/*.css']}
-
 # recursively point to all included font directories
 fontfams = ['monospace', 'sans-serif', 'serif']
 fsubdirs = [os.path.join(pkgname, 'fonts', subdir) for subdir in fontfams]
@@ -27,15 +33,15 @@ datafiles[pkgname].extend(fontsdata)
 
 setup(
     name='jupyterthemes',
-    version='0.13.6',
+    version=version,
     packages=['jupyterthemes'],
     include_package_data=True,
     package_data = datafiles,
     description='Select and install a Jupyter notebook theme',
     long_description=longdescr,
     license='MIT',
-    url='https://github.com/dunovank/jupyter-themes/',
-    download_url='https://github.com/dunovank/jupyter-themes/tarball/v0.13.6',
+    url=url,
+    download_url=download_url,
     author='dunovank',
     author_email='dunovank@gmail.com',
     classifiers=[

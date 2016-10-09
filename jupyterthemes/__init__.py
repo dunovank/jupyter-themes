@@ -6,10 +6,14 @@ from __future__ import print_function
 import os, sys
 from argparse import ArgumentParser
 from glob import glob
-
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
-__version__ = '0.13.6'
+
+major = 0
+minor = 13
+patch = 7
+__version__ = '.'.join([str(v) for v in [major, minor, patch]])
+
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
 

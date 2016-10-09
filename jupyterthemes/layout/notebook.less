@@ -538,7 +538,7 @@ div.kse-dropdown > .dropdown-menu,
     color: @notebook-fg;
     background: @button-bg;
     background-color: @button-bg;
-    border: 2px solid darken(@button-bg, 2%);
+    border: 2px solid @button-border;
     font-weight: normal;
     box-shadow: none;
     text-shadow: none;
@@ -546,14 +546,11 @@ div.kse-dropdown > .dropdown-menu,
     font-size: inherit;
 }
 .btn:hover,
-.btn:active,
-.btn.active,
 .btn:active:hover,
 .btn.active:hover,
 .btn-default:hover,
 .open > .dropdown-toggle.btn-default:hover,
-.open > .dropdown-toggle.btn:hover,
-.open > .dropdown-toggle.btn-default  {
+.open > .dropdown-toggle.btn:hover {
     color: @selected-fg;
     background-color: @button-hover;
     background: @button-hover;
@@ -580,7 +577,8 @@ div.kse-dropdown > .dropdown-menu,
 .btn-default:active.focus,
 .btn-default.active.focus,
 .open > .dropdown-toggle.btn:focus,
-.open > .dropdown-toggle.btn.focus {
+.open > .dropdown-toggle.btn.focus,
+.open > .dropdown-toggle.btn-default {
     color: @selected-fg-bright;
     background-color: @selected-active;
     background: @selected-active;
@@ -593,17 +591,17 @@ div.kse-dropdown > .dropdown-menu,
 .item_buttons > .btn-group,
 .item_buttons > .input-group {
     margin-left: 5px;
-    background: darken(@panel-header-bg, 1%);
-    background-color: darken(@panel-header-bg, 1%);
-    border: 2px solid darken(@panel-header-bg, 2%);
+    background: @button-panel-bg;
+    background-color: @button-panel-bg;
+    border: 2px solid @button-panel-bg;
 }
 .item_buttons > .btn:hover,
 .item_buttons > .btn-group:hover,
 .item_buttons > .input-group:hover {
     margin-left: 5px;
-    background: darken(@panel-header-bg, 3%);
-    background-color: darken(@panel-header-bg, 3%);
-    border: 2px solid darken(@panel-header-bg, 3%);
+    background: @button-panel-hover;
+    background-color: @button-panel-hover;
+    border: 2px solid @button-panel-hover;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -649,14 +647,14 @@ button.close {
     opacity: 1;
 }
 div.btn.btn-default.output_collapsed {
-    background: darken(@button-bg, 4%);
-    background-color: darken(@button-bg, 4%);
-    border-color: darken(@button-bg, 4%);
+    background: @button-panel-bg;
+    background-color: @button-panel-bg;
+    border-color: @button-panel-bg;
 }
 div.btn.btn-default.output_collapsed:hover {
-    background: darken(@button-bg, 5%);
-    background-color: darken(@button-bg, 5%);
-    border-color: darken(@button-bg, 5%);
+    background: @button-panel-hover;
+    background-color: @button-panel-hover;
+    border-color: @button-panel-hover;
 }
 div.nbext-enable-btns .btn[disabled],
 div.nbext-enable-btns .btn[disabled]:hover,
@@ -702,13 +700,44 @@ fieldset[disabled] .btn-default.focus {
 }
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .btn-group {
-    margin-right: -1px;
+    background: @button-panel-bg;
+    background-color: @button-panel-bg;
+    border: 1px solid darken(@button-panel-bg, 2%);
+    margin: 2px;
     font-size: inherit;
 }
-.btn-group > .btn:first-child {
-    margin-top: 0;
-    margin-left: 0;
+.input-group-btn:first-child > .btn:hover,
+.input-group-btn:first-child > .btn-group:hover {
+    background: @button-panel-hover;
+    background-color: @button-panel-hover;
+    border: 1px solid @button-panel-hover;
+    margin: 2px;
+    font-size: inherit;
+}
+div.modal .btn-group > .btn:first-child {
+    background: @button-panel-bg;
+    background-color: @button-panel-bg;
+    border: 1px solid darken(@button-panel-bg, 2%);
+    margin-top: 0px !important;
+    margin-left: 0px;
     margin-bottom: 2px;
+}
+div.modal .btn-group > .btn:first-child:hover {
+    background: @button-panel-hover;
+    background-color: @button-panel-hover;
+    border: 1px solid @button-panel-hover;
+}
+div.modal > button,
+div.modal-footer > button {
+    background: @button-panel-bg;
+    background-color: @button-panel-bg;
+    border-color: @button-panel-bg;
+}
+div.modal > button:hover,
+div.modal-footer > button:hover  {
+    background: @button-panel-hover;
+    background-color: @button-panel-hover;
+    border-color: @button-panel-hover;
 }
 /**************************************************/
 /********** MODAL, PANELS, & FORM CONTROL *********/
@@ -752,7 +781,7 @@ fieldset[disabled] .btn-default.focus {
     border-top: 1px solid @dropdown-border;
 }
 .alert-info {
-    background-color: @text-cell-bg;
+    background-color: @alert-info-bg;
     border-color: @dropdown-border;
     color: @notebook-fg;
 }

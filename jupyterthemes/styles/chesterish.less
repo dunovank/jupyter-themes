@@ -49,10 +49,12 @@
 @panel-header-bg:       #27313d;
 @panel-bg:              #2D3846;
 @modal-bg:              @panel-bg;
+@alert-info-bg:         #323f50;
 @form-input-bg:         #1C212B;
 @cmd-palette-bg:        #202937;
 @cmd-palette-form:      lighten(@cmd-palette-bg, 5%);
 @cmd-palette-hover:     #2b3850;
+
 
 /* buttons, widgets, kernels colors */
 @item-theme:            #0b98c8;
@@ -74,8 +76,11 @@
 
 /* btn, scrollbar and shadow colors */
 @button-bg:             #252E3A;
+@button-border:         darken(@button-bg, 2%);
 @button-color:          @selected-active;
-@button-hover:          lighten(@button-bg, 3%);
+@button-hover:          lighten(@button-bg, 2%);
+@button-panel-bg:       @panel-header-bg;
+@button-panel-hover:    darken(@panel-header-bg, 2%);
 @scrollbar:             #0A8FBD;
 @scroll-trough:         #798CAE;
 @scrollbar-inactive:    #464e60;
