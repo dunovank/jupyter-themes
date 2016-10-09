@@ -165,6 +165,9 @@ def import_fonts(style_less, fontname, font_subdir):
 def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default', cellwidth=980, lineheight=170, margins='auto', altlayout=False, vimext=False, toolbar=False, nbname=False, altprompt=False, hideprompt=False):
     """ set general layout and style properties of text and code cells
     """
+    # grade3's altlayout is reverse of default
+    if theme=='grade3':
+        altlayout = not altlayout
     style_less += '@import "styles{}";\n'.format(''.join([os.sep, theme]))
     textcell_bg = '@cc-input-bg'
     promptText = '@input-prompt'

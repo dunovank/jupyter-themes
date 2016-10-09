@@ -43,8 +43,8 @@ div#cluster_list_header.row.list_header,
 div#running .row.list_header {
     font-size: 14pt;
     color: @notebook-fg;
-    background: @panel-header-bg; // @df-header-bg;
-    background-color: @panel-header-bg; //@df-header-bg;
+    background: @panel-header-bg;
+    background-color: @panel-header-bg;
     border-bottom: 2px solid @divider;
 }
 div#cluster_list > div.list_item.row,
@@ -60,8 +60,8 @@ div#clusters.tab-pane.active {
     font-size: 14pt;
     color: @notebook-fg;
     padding: 8px 8px;
-    background: @panel-header-bg; // @df-header-bg;
-    background-color: @panel-header-bg; //@df-header-bg;
+    background: @panel-header-bg;
+    background-color: @panel-header-bg;
 }
 #running .panel-group .panel .panel-heading a {
     font-size: 14pt;
@@ -169,6 +169,7 @@ div#notebook_toolbar div.dynamic-instructions {
     font-size: @nb-fontsize-sub;
     padding: 5px;
     min-width: 65px;
+    z-index: 0;
 }
 button#tree-selector-btn {
     height: auto;
@@ -592,17 +593,17 @@ div.kse-dropdown > .dropdown-menu,
 .item_buttons > .btn-group,
 .item_buttons > .input-group {
     margin-left: 5px;
-    background: @panel-header-bg;
-    background-color: @panel-header-bg;
-    border: 2px solid @panel-header-bg;
+    background: darken(@panel-header-bg, 1%);
+    background-color: darken(@panel-header-bg, 1%);
+    border: 2px solid darken(@panel-header-bg, 2%);
 }
 .item_buttons > .btn:hover,
 .item_buttons > .btn-group:hover,
 .item_buttons > .input-group:hover {
     margin-left: 5px;
-    background: lighten(@panel-header-bg,2%);
-    background-color: lighten(@panel-header-bg,2%);
-    border: 2px solid lighten(@panel-header-bg,2%);
+    background: darken(@panel-header-bg, 3%);
+    background-color: darken(@panel-header-bg, 3%);
+    border: 2px solid darken(@panel-header-bg, 3%);
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -704,6 +705,11 @@ fieldset[disabled] .btn-default.focus {
     margin-right: -1px;
     font-size: inherit;
 }
+.btn-group > .btn:first-child {
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 2px;
+}
 /**************************************************/
 /********** MODAL, PANELS, & FORM CONTROL *********/
 /**************************************************/
@@ -756,8 +762,8 @@ fieldset[disabled] .btn-default.focus {
 }
 .modal-backdrop,
 .modal-backdrop.in {
-    opacity: 0.7;
-    background-color: @notebook-bg;
+    opacity: 0.75;
+    background-color: @notebook-base;
 }
 div.panel,
 div.panel-default,
@@ -829,7 +835,7 @@ div.output.output_scroll {
 	border-radius: 6px;
 }
 ::-webkit-scrollbar {
-    width: 11px;
+    width: 14px;
     height: 10px;
     background-color: @scroll-trough;
     border-radius: 6px;
@@ -838,9 +844,9 @@ div.output.output_scroll {
     background-color: #ffffff;
     background-image:
         -webkit-gradient(linear, 40% 0%, 75% 86%,
-            from(darken(@scrollbar, 8%)),
-            color-stop(0.5, lighten(@scrollbar, 8%)),
-            to(darken(@scrollbar, 8%)));
+            from(darken(@scrollbar, 4%)),
+            color-stop(0.5, lighten(@scrollbar, 6%)),
+            to(darken(@scrollbar, 4%)));
     min-height: 60px;
     border-radius: 2px;
 }

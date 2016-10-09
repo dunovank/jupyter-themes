@@ -11,7 +11,7 @@
 ![image](screens/grade3_table.png)
 
 ###### *command palette*
-![image](screens/grade3_command_palette.png)
+![image](screens/oceans16_command_palette.png)
 
 ###### *oceans16 syntax*
 ![image](screens/oceans16_code_headers.png)
@@ -40,6 +40,10 @@
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 
 ### Recent updates
+###### v0.13.6
+* altlayout is now default for grade3 (white bg for txt/markdown)
+
+###### v0.13.5
 * Full functionality has been added for Python 3.5
 * Better theme integration for command palette, keyboard shortcuts, as well as Running, Clusters, and NBExtension pages.
 * Added font options for code-cells and notebook body

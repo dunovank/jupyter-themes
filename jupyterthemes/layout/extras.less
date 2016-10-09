@@ -271,9 +271,9 @@ label#Keyword-Filter {
 }
 .input-group .nbext-list-btn-add:hover,
 .input-group-btn:last-child > .btn-group > .btn:hover {
-    background: lighten(@panel-header-bg, 1%) !important;
-    background-color: lighten(@panel-header-bg, 1%) !important;
-    border-color: lighten(@panel-header-bg, 1%) !important;
+    background: darken(@panel-header-bg, 2%);
+    background-color: darken(@panel-header-bg, 2%);
+    border-color: darken(@panel-header-bg, 2%);
 }
 /********** DEBUGGER PATCH **********/
 input.raw_input {
@@ -299,7 +299,6 @@ audio, video {
     margin-left: 20%;
 }
 
-
 /**********************************************/
 /******** COMMAND PROMPT (CMD+SHIFT-P) ********/
 /**********************************************/
@@ -308,14 +307,18 @@ audio, video {
     margin: 0px;
 }
 .cmd-palette form {
-    background: @cmd-palette-bg;
-    background-color: @cmd-palette-bg;
+    background: @cmd-palette-form;
+    background-color: @cmd-palette-form;
 }
-.typeahead-field input,
-.typeahead-select {
+.typeahead-field input:last-child,
+.typeahead-hint {
+    background: @cmd-palette-form;
+    background-color: @cmd-palette-form;
+    z-index: 1;
+}
+.typeahead-field input {
     font-family: @notebook-fontfamily;
     color: @cc-input-fg;
-    background-color: transparent;
     border: none;
     font-size: 28pt;
     display: inline-block;
@@ -323,14 +326,12 @@ audio, video {
     padding: 3px 10px;
     height: 70px;
 }
+.typeahead-select {
+    background-color: @cmd-palette-form;
+}
 body > div.modal.cmd-palette.typeahead-field {
     display: table;
     border-collapse: separate;
-    background-color: @cmd-palette-hover;
-}
-.typeahead-field input:last-child,
-.typeahead-hint {
-    background: @cmd-palette-hover;
     background-color: @cmd-palette-hover;
 }
 .typeahead-container button {
