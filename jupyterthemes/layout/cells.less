@@ -61,13 +61,17 @@ div.prompt, .prompt {
 }
 div.prompt.input_prompt {
     background-color: @cc-prompt-bg;
-    border-right: @prompt-border;
+    /*border-right: @prompt-border;*/
     border-top-left-radius: 2px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     min-width: @prompt-min-width;
     width: @prompt-min-width !important;
+}
+
+div.cell.code_cell .input_prompt {
+    border-right: @prompt-border;
 }
 
 /********** CODE CELL OUTPUT AREA **********/
@@ -206,15 +210,21 @@ div.cell.text_cell.selected {
 div.text_cell.unrendered,
 div.text_cell.unrendered.selected,
 div.edit_mode div.text_cell.unrendered {
+
     font-family: @text-cell-fontfamily;
     line-height: @cc-line-height !important;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border-radius: 2px;
-
 }
 
+
 /********** TEXT & MD PROMPT **********/
+
+div.cell.text_cell .input_prompt { 
+    border-right: 0;
+}
+
 div.cell.text_cell.rendered .input_prompt {
     font-family: "Fira Code", monospace;
     font-size: @prompt-fontsize;
@@ -224,7 +234,7 @@ div.cell.text_cell.rendered .input_prompt {
     min-width: @tc-prompt-width;
     width: @tc-prompt-width !important;
     background-color: @text-cell-bg;
-    border-right: @tc-prompt-border;
+/*    border-right: @tc-prompt-border;*/
 }
 div.cell.text_cell.unrendered .input_prompt {
     font-family: "Fira Code", monospace;
@@ -234,7 +244,7 @@ div.cell.text_cell.unrendered .input_prompt {
     text-align: left !important;
     min-width: @tc-prompt-width;
     width: @tc-prompt-width !important;
-    border-right: @tc-prompt-border;
+/*    border-right: @tc-prompt-border;*/
 }
 
 /******** MD PRE, CODE, KEYBIND, SAMP **********/
