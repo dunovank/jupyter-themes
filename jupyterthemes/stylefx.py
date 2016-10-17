@@ -33,6 +33,7 @@ cl_style = os.path.join(layouts_dir, 'cells.less')
 ex_style = os.path.join(layouts_dir, 'extras.less')
 jax_style = os.path.join(layouts_dir, 'mathjax.css')
 vim_style = os.path.join(layouts_dir, 'vim.less')
+comp_style = os.path.join(layouts_dir, 'completer.less')
 
 def check_directories():
     # Ensure all install dirs exist
@@ -216,6 +217,9 @@ def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default
     # read-in codemirror.less (syntax-highlighting)
     with open(cm_style, 'r') as codemirror:
         style_less += codemirror.read() + '\n'
+    with open(comp_style, 'r') as codemirror:
+        style_less += codemirror.read() + '\n'
+
     style_less += toggle_settings(toolbar, nbname, hideprompt) +'\n'
 
     if vimext:
