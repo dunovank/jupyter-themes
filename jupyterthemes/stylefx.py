@@ -62,11 +62,9 @@ def write_final_css(style_css):
     with open(jupyter_customcss, 'w') as custom_css:
         custom_css.write(style_css)
 
-def remove_temp_files(vimext=False):
+def remove_temp_file():
     # remove tempfile.less from package_dir
     os.remove(tempfile)
-    if vimext:
-        os.remove(vimtemp)
 
 def install_precompiled_theme(theme):
     # for Python 3.5, install selected theme from precompiled defaults
@@ -267,6 +265,7 @@ def set_vim_style(theme):
     vim_custom_css = os.path.join(vim_jupyter_nbext, 'vim_binding.css')
     with open(vim_custom_css, 'w') as vim_custom:
         vim_custom.write(vim_css)
+    os.remove(vimtemp)
 
 def reset_default(verbose=False):
     """ remove custom.css and custom fonts

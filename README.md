@@ -25,6 +25,9 @@
 ###### *chesterish syntax*
 ![image](screens/chesterish_code_headers.png)
 
+### Announcement
+* Super stoked that people are taking the time to post issues and pull requests with new features/themes/etc. As I'm currently finishing up my dissertation I will most likely be slow to respond to any/all issues/PRs raised between now and December. By all means, keep 'em coming and I'll get back to providing regular support around the holidays. Regards -kyle
+
 ### TravisCI Build status:
 ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
 

@@ -43,7 +43,7 @@ def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nb
     # install style_css to .jupyter/custom/custom.css
     stylefx.write_final_css(style_css)
     # remove tempfile.less from package_dir
-    stylefx.remove_temp_files(vimext=vimext)
+    stylefx.remove_temp_file()
 
 def main():
     parser = ArgumentParser()
