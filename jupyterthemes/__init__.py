@@ -17,12 +17,18 @@ __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
 
+# path to user jupyter-themes dir
+user_dir = os.path.join(os.path.expanduser('~'), '.jupyter-themes')
+
 def get_themes():
     """ return list of available themes """
     styles_dir = os.path.join(package_dir, 'styles')
+    styles__dir_user = os.path.join(user_dir, 'styles')
     themes = [os.path.basename(theme).replace('.less', '')
               for theme in glob('{0}/*.less'.format(styles_dir))]
-    return themes
+    themes_user = [os.path.basename(theme).replace('.less', '')
+                   for theme in glob('{0}/*.less'.format(styles_dir_user))]
+    return map(lambda t: t + ' (user)', themes_user) + [t for t in themes if t not in themes_user]
 
 def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nbfontsize=13, tcfont='loraserif', tcfontsize=13, margins='auto', cellwidth=980, lineheight=170, cursorwidth=2, cursorcolor='default', altlayout=False, altprompt=False, hideprompt=False, vimext=False, toolbar=False, nbname=False):
     """ install theme to jupyter_customcss with specified font, fontsize,
