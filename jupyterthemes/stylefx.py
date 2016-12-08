@@ -8,6 +8,9 @@ import lesscpy
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
 
+# path to user jupyter-themes dir
+user_dir = os.path.join(os.path.expanduser('~'), '.jupyter-themes')
+
 # path to save tempfile with style_less before reading/compiling
 tempfile = os.path.join(package_dir, 'tempfile.less')
 vimtemp = os.path.join(package_dir, 'vimtemp.less')
@@ -24,6 +27,7 @@ jupyter_nbext = os.path.join(jupyter_data, 'nbextensions')
 # theme colors, layout, and font directories
 layouts_dir = os.path.join(package_dir, 'layout')
 styles_dir = os.path.join(package_dir, 'styles')
+styles_dir_user = os.path.join(user_dir, 'styles')
 fonts_dir = os.path.join(package_dir, 'fonts')
 
 # layout files for notebook, codemirror, cells, mathjax, & vim ext
@@ -69,7 +73,11 @@ def remove_temp_file():
 def install_precompiled_theme(theme):
     # for Python 3.5, install selected theme from precompiled defaults
     compiled_dir = os.path.join(styles_dir, 'compiled')
-    theme_src = os.path.join(compiled_dir, '{}.css'.format(theme))
+    compiled_dir_user = os.path.join(styles_dir, 'compiled')
+    if '{}.css'.format(theme) in os.listdir(compiled_dir_user):
+        theme_src = os.path.join(compiled_dir_user, '{}.css'.format(theme))
+    else:
+        theme_src = os.path.join(compiled_dir, '{}.css'.format(theme))
     theme_dst = os.path.join(jupyter_custom, 'custom.css')
     copyfile(theme_src, theme_dst)
     for fontcode in ['exosans', 'loraserif', 'droidmono', 'firacode']:
@@ -166,7 +174,14 @@ def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default
     # grade3's altlayout is reverse of default
     if theme=='grade3':
         altlayout = not altlayout
-    style_less += '@import "styles{}";\n'.format(''.join([os.sep, theme]))
+
+    if '{}.less'.format(theme) in os.listdir(styles_dir_user):
+        theme_relpath = os.path.relpath(os.path.join(styles_dir_user, theme), package_dir)
+    else:
+        theme_relpath = os.path.relpath(os.path.join(styles_dir, theme), package_dir)
+
+    style_less += '@import "{}";\n'.format(theme_relpath)
+
     textcell_bg = '@cc-input-bg'
     promptText = '@input-prompt'
     promptBG = '@cc-input-bg'
