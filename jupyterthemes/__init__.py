@@ -39,7 +39,7 @@ def get_themes():
     for theme in glob('{0}/*.css'.format(precompiled_dir_user)):
         name = name=os.path.basename(theme).replace('.css', '')
         if name in names: continue
-        themes.append(Theme(name=name, tags=['user', 'precompiled only']))
+        themes.append(Theme(name=name, tags=['user', 'precompiled']))
         names.append(name)
 
     for theme in glob('{0}/*.less'.format(styles_dir)):
@@ -51,7 +51,7 @@ def get_themes():
     for theme in glob('{0}/*.css'.format(precompiled_dir)):
         name = os.path.basename(theme).replace('.css', '')
         if name in names: continue
-        themes.append(Theme(name=name, tags=['global', 'precompiled only']))
+        themes.append(Theme(name=name, tags=['global', 'precompiled']))
         names.append(name)
 
     return themes
@@ -63,6 +63,13 @@ def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nb
     from jupyterthemes import stylefx
     stylefx.reset_default(False)
     stylefx.check_directories()
+    themes = get_themes()
+
+    for theme_ in themes:
+        if theme_.name ==  theme and 'precompiled' in theme_.tags:
+            stylefx.install_precompiled_theme(theme)
+            return
+
     # initialize style_less & style_css
     style_less = stylefx.set_font_properties(monofont=monofont, monosize=monosize, nbfont=nbfont, nbfontsize=nbfontsize, tcfont=tcfont, tcfontsize=tcfontsize)
     # define some vars for cell layout
