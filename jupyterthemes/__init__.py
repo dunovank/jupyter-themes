@@ -6,6 +6,7 @@ from __future__ import print_function
 import os, sys
 from argparse import ArgumentParser
 from glob import glob
+from collections import namedtuple
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
 
@@ -24,11 +25,18 @@ def get_themes():
     """ return list of available themes """
     styles_dir = os.path.join(package_dir, 'styles')
     styles_dir_user = os.path.join(user_dir, 'styles')
-    themes = [os.path.basename(theme).replace('.less', '')
-              for theme in glob('{0}/*.less'.format(styles_dir))]
-    themes_user = [os.path.basename(theme).replace('.less', '')
-                   for theme in glob('{0}/*.less'.format(styles_dir_user))]
-    return themes_user + [t for t in themes if t not in themes_user]
+    Theme = namedtuple('Theme', ('name', 'tags'))
+    themes = []
+
+    for theme in glob('{0}/*.less'.format(styles_dir)):
+        name = os.path.basename(theme).replace('.less', '')
+        themes.append(Theme(name=name, tags=['global']))
+
+    for theme in glob('{0}/*.less'.format(styles_dir_user)):
+        name = name=os.path.basename(theme).replace('.less', '')
+        themes.append(Theme(name=name, tags=['user']))
+
+    return themes
 
 def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nbfontsize=13, tcfont='loraserif', tcfontsize=13, margins='auto', cellwidth=980, lineheight=170, cursorwidth=2, cursorcolor='default', altlayout=False, altprompt=False, hideprompt=False, vimext=False, toolbar=False, nbname=False):
     """ install theme to jupyter_customcss with specified font, fontsize,
@@ -75,9 +83,10 @@ def main():
     parser.add_argument('-r', "--reset", action='store_true', help="reset to default theme")
     args = parser.parse_args()
     themes = get_themes()
-    say_themes = "Available Themes: \n   {}".format('\n   '.join(themes))
+    theme_listing = ['{}  ({})'.format(theme.name, ', '.join(theme.tags)) for theme in themes]
+    say_themes = "Available Themes: \n   {}" .format('\n   '.join(theme_listing))
     if args.theme:
-        if args.theme not in themes:
+        if args.theme not in (theme.name for theme in themes):
             print("Didn't recognize theme name: {}".format(args.theme))
             print(say_themes)
             exit(1)
