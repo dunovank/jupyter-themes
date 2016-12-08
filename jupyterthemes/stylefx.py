@@ -73,7 +73,7 @@ def remove_temp_file():
 def install_precompiled_theme(theme):
     # for Python 3.5, install selected theme from precompiled defaults
     compiled_dir = os.path.join(styles_dir, 'compiled')
-    compiled_dir_user = os.path.join(styles_dir, 'compiled')
+    compiled_dir_user = os.path.join(styles_dir_user, 'compiled')
     if '{}.css'.format(theme) in os.listdir(compiled_dir_user):
         theme_src = os.path.join(compiled_dir_user, '{}.css'.format(theme))
     else:
