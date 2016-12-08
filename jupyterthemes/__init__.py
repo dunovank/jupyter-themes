@@ -24,17 +24,35 @@ user_dir = os.path.join(os.path.expanduser('~'), '.jupyter-themes')
 def get_themes():
     """ return list of available themes """
     styles_dir = os.path.join(package_dir, 'styles')
+    precompiled_dir = os.path.join(package_dir, 'styles', 'compiled')
     styles_dir_user = os.path.join(user_dir, 'styles')
+    precompiled_dir_user = os.path.join(user_dir, 'styles', 'compiled')
     Theme = namedtuple('Theme', ('name', 'tags'))
     themes = []
-
-    for theme in glob('{0}/*.less'.format(styles_dir)):
-        name = os.path.basename(theme).replace('.less', '')
-        themes.append(Theme(name=name, tags=['global']))
+    names = []
 
     for theme in glob('{0}/*.less'.format(styles_dir_user)):
         name = name=os.path.basename(theme).replace('.less', '')
         themes.append(Theme(name=name, tags=['user']))
+        names.append(name)
+
+    for theme in glob('{0}/*.css'.format(precompiled_dir_user)):
+        name = name=os.path.basename(theme).replace('.css', '')
+        if name in names: continue
+        themes.append(Theme(name=name, tags=['user', 'precompiled only']))
+        names.append(name)
+
+    for theme in glob('{0}/*.less'.format(styles_dir)):
+        name = os.path.basename(theme).replace('.less', '')
+        if name in names: continue
+        themes.append(Theme(name=name, tags=['global']))
+        names.append(name)
+
+    for theme in glob('{0}/*.css'.format(precompiled_dir)):
+        name = os.path.basename(theme).replace('.css', '')
+        if name in names: continue
+        themes.append(Theme(name=name, tags=['global', 'precompiled only']))
+        names.append(name)
 
     return themes
 
