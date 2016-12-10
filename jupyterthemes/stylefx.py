@@ -74,7 +74,8 @@ def install_precompiled_theme(theme):
     # for Python 3.5, install selected theme from precompiled defaults
     compiled_dir = os.path.join(styles_dir, 'compiled')
     compiled_dir_user = os.path.join(styles_dir_user, 'compiled')
-    if '{}.css'.format(theme) in os.listdir(compiled_dir_user):
+    if (os.path.isdir(compiled_dir_user) and
+            '{}.css'.format(theme) in os.listdir(compiled_dir_user)):
         theme_src = os.path.join(compiled_dir_user, '{}.css'.format(theme))
     else:
         theme_src = os.path.join(compiled_dir, '{}.css'.format(theme))
@@ -175,7 +176,8 @@ def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default
     if theme=='grade3':
         altlayout = not altlayout
 
-    if '{}.less'.format(theme) in os.listdir(styles_dir_user):
+    if (os.path.isdir(styles_dir_user) and
+            '{}.less'.format(theme) in os.listdir(styles_dir_user)):
         theme_relpath = os.path.relpath(os.path.join(styles_dir_user, theme), package_dir)
     else:
         theme_relpath = os.path.relpath(os.path.join(styles_dir, theme), package_dir)

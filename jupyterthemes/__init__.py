@@ -31,16 +31,18 @@ def get_themes():
     themes = []
     names = []
 
-    for theme in glob('{0}/*.less'.format(styles_dir_user)):
-        name = name=os.path.basename(theme).replace('.less', '')
-        themes.append(Theme(name=name, tags=['user']))
-        names.append(name)
+    if os.path.isdir(styles_dir_user):
+        for theme in glob('{0}/*.less'.format(styles_dir_user)):
+            name = name=os.path.basename(theme).replace('.less', '')
+            themes.append(Theme(name=name, tags=['user']))
+            names.append(name)
 
-    for theme in glob('{0}/*.css'.format(precompiled_dir_user)):
-        name = name=os.path.basename(theme).replace('.css', '')
-        if name in names: continue
-        themes.append(Theme(name=name, tags=['user', 'precompiled']))
-        names.append(name)
+    if os.path.isdir(precompiled_dir_user):
+        for theme in glob('{0}/*.css'.format(precompiled_dir_user)):
+            name = name=os.path.basename(theme).replace('.css', '')
+            if name in names: continue
+            themes.append(Theme(name=name, tags=['user', 'precompiled']))
+            names.append(name)
 
     for theme in glob('{0}/*.less'.format(styles_dir)):
         name = os.path.basename(theme).replace('.less', '')
