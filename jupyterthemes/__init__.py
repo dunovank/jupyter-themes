@@ -108,7 +108,9 @@ def main():
     parser.add_argument('-r', "--reset", action='store_true', help="reset to default theme")
     args = parser.parse_args()
     themes = get_themes()
-    theme_listing = ['{}  ({})'.format(theme.name, ', '.join(theme.tags)) for theme in themes]
+    maxlen = max(len(theme.name) for theme in themes)
+    theme_listing = ['{}    {}({})'.format(theme.name, (maxlen-len(theme.name))*' ', ', '.join(theme.tags))
+                     for theme in themes]
     say_themes = "Available Themes: \n   {}" .format('\n   '.join(theme_listing))
     if args.theme:
         if args.theme not in (theme.name for theme in themes):
