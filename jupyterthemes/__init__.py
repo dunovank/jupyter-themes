@@ -107,7 +107,7 @@ def main():
     parser.add_argument('-vim', "--vimext", action='store_true', default=False, help="toggle styles for vim")
     parser.add_argument('-r', "--reset", action='store_true', help="reset to default theme")
     args = parser.parse_args()
-    themes = get_themes()
+    themes = sorted(get_themes(), key=lambda t: t.name)
     maxlen = max(len(theme.name) for theme in themes)
     theme_listing = ['{}    {}({})'.format(theme.name, (maxlen-len(theme.name))*' ', ', '.join(theme.tags))
                      for theme in themes]
