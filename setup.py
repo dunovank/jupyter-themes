@@ -5,7 +5,7 @@ import numpy as np
 
 major = 0
 minor = 13
-patch = 7
+patch = 8
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v'+version])

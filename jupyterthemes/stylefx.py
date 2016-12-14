@@ -326,7 +326,7 @@ def get_colors(theme='grade3', c='default', get_dict=False):
     return cdict[c]
 
 def get_alt_prompt_text_color(theme):
-    altColors = {'grade3':'#FF7823', 'oceans16':'#667FB1', 'chesterish':'#0b98c8', 'onedork':'#94c273'}
+    altColors = {'grade3':'#FF7823', 'oceans16':'#667FB1', 'chesterish':'#0b98c8', 'onedork':'#94c273', 'monokai':'#94c273'}
     return altColors[theme]
 
 def stored_font_dicts(fontcode, get_all=False):
