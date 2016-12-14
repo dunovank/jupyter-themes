@@ -11,7 +11,7 @@ __all__ = [ os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 13
-patch = 8
+patch = 9
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
 # path to local site-packages/jupyterthemes

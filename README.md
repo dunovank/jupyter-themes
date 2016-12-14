@@ -40,6 +40,12 @@
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 
 ### Recent updates
+
+###### v0.13.8
+* add monokai theme (@bdell : PR #59)
+* apply theme to auto-complete menu (@svendx4f : PR #69)
+* added support for user less/precompiled themes (@osamaar : PR #82)
+
 ###### v0.13.7
 * misc visibility improvements
 

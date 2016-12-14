@@ -10,6 +10,7 @@
 @selected-tenth:        rgba(73,72,62,.04);
 @selected-error:        rgba(249,38,114,.4);
 @selected-active:       @selected-bg;
+@navbar-selected:       @selected-active;
 @selected-fg:           #F8F8F0;
 @selected-fg-bright:    #F8F8F2;
 @unemphasize-fg:        #888;
@@ -22,8 +23,8 @@
 @text-cell-fg:          #F8F8F0;
 @unrendered-text:       #A6E22E;
 @header-fg:             @unrendered-text;
-@header-fg2:            @item-theme;
-@header-fg3:            @header-fg2;
+@header-fg2:            @header-fg;
+@header-fg3:            @header-fg;
 @tooltip-bg-color:      #282828;
 @tooltip-fg-color:      @cc-input-fg;
 @nb-name-fg:            @header-fg;
@@ -49,7 +50,13 @@
 /* panels and form-control styles */
 @panel-header-bg:       @notebook-base;
 @panel-bg:              @cc-output-bg;
-@form-input-bg:         #282828;
+@modal-bg:              @panel-bg;
+@alert-info-bg:         #4a5467;
+@form-input-bg:         @codeblock-bg;
+@cmd-palette-bg:        #202937;
+@cmd-palette-form:      #293547;
+@cmd-palette-hover:     #2b3850;
+
 
 /* buttons, widgets, kernels colors */
 @item-theme:            #AE81FF;
@@ -72,6 +79,11 @@
 
 /* btn, scrollbar and shadow colors */
 @button-bg:             #282828;
+@button-border:         #252525;
+@button-color:          @selected-active;
+@button-hover:          #303030;
+@button-panel-bg:       @panel-header-bg;
+@button-panel-hover:    #212121;
 @scrollbar:             #49483E;
 @scroll-trough:         #49483E;
 @scrollbar-inactive:    #49483E;
