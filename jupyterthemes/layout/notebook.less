@@ -312,9 +312,14 @@ body > #header .header-bar {
 #menubar .navbar, .navbar-default {
     background-color: @notebook-bg;
     margin-bottom: 0px;
+    margin-top: 5px;
 }
 .navbar {
     border: none;
+}
+div.navbar-text, .navbar-text {
+    margin-top: 6px !important;
+    margin-bottom: 0px;
 }
 .navbar-default {
     font-family: @notebook-fontfamily;
@@ -330,7 +335,7 @@ body > #header .header-bar {
     color: @notebook-fg;
     display: block;
     line-height: 1.5em;
-    padding-top: 8px;
+    padding-top: 9px;
     padding-bottom: 6px;
 }
 .navbar-default .navbar-nav > li > a:hover,
@@ -353,9 +358,20 @@ body > #header .header-bar {
 /********* ICONS and INDICATORS *********/
 /****************************************/
 .edit_mode .modal_indicator:before {
-    font-size: @nb-fontsize;
+    font-size: 15pt;
     color: @item-cyan;
     content: "\f040";
+    padding-top: 5px;
+    padding-bottom: 0px;
+    vertical-align: bottom;
+}
+.command_mode .modal_indicator:before {
+    font-size: 17pt;
+    color: #2c85f7;
+    content: "\f1f9";
+    padding-top: 5px;
+    padding-bottom: 0px;
+    vertical-align: bottom;
 }
 .item_icon {
     color: @item-blue;
@@ -383,7 +399,7 @@ body > #header .header-bar {
     color: @item-theme;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    font-size: 14.5pt;
+    font-size: 16pt;
     border-left: 2px solid @item-theme;
     padding-bottom: 2px;
 }
@@ -391,10 +407,26 @@ body > #header .header-bar {
     color: @item-theme;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    font-size: 14.5pt;
+    font-size: 16pt;
     padding-left: 5px;
     padding-right: 5px;
+    margin-top: 10px;
+    vertical-align: text-bottom;
+    padding-bottom: 0px;
 }
+
+#kernel_indicator .kernel_indicator_name {
+    color: @item-theme;
+    background: @notebook-bg;
+    background-color: @notebook-bg;
+    font-size: 15.5pt;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 10px;
+    vertical-align: text-bottom;
+    padding-bottom: 0px;
+}
+
 div.notification_widget.info,
 .notification_widget.info,
 .notification_widget:active:hover,
@@ -492,7 +524,7 @@ i.fa.fa-icon {
     height: 2px;
     margin: 0px 0px;
     overflow: hidden;
-    background-color: @divider;
+    background-color: @selected-half;
 }
 .dropdown-submenu > .dropdown-menu {
     top: 0;
@@ -585,7 +617,7 @@ div.kse-dropdown > .dropdown-menu,
     border-color: @selected-active;
     background-image: none;
     box-shadow: none !important;
-    border-radius: 2px;
+    border-radius: 1px;
 }
 .item_buttons > .btn,
 .item_buttons > .btn-group,
@@ -593,7 +625,7 @@ div.kse-dropdown > .dropdown-menu,
     margin-left: 5px;
     background: @button-panel-bg;
     background-color: @button-panel-bg;
-    border: 2px solid @button-panel-bg;
+    border: 1px solid @button-panel-bg;
 }
 .item_buttons > .btn:hover,
 .item_buttons > .btn-group:hover,
@@ -601,7 +633,7 @@ div.kse-dropdown > .dropdown-menu,
     margin-left: 5px;
     background: @button-panel-hover;
     background-color: @button-panel-hover;
-    border: 2px solid @button-panel-hover;
+    border: 1px solid @button-panel-hover;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -621,12 +653,16 @@ div.kse-dropdown > .dropdown-menu,
     text-shadow: none;
     display: inline-table;
 }
+.btn-group > .btn:first-child {
+    margin-left: 3px;
+}
+
 .alternate_upload .btn-upload {
     display: none;
 }
-.alternate_upload input.fileinput {
-    display: none;
-}
+// .alternate_upload input.fileinput {
+//     display: none;
+// }
 button.close {
     border: 0px none;
     font-family: sans-serif;
@@ -702,7 +738,7 @@ fieldset[disabled] .btn-default.focus {
 .input-group-btn:first-child > .btn-group {
     background: @button-panel-bg;
     background-color: @button-panel-bg;
-    border: 1px solid darken(@button-panel-bg, 2%);
+    border: 1px solid darken(@button-panel-bg, 1%);
     margin: 2px;
     font-size: inherit;
 }
@@ -717,7 +753,7 @@ fieldset[disabled] .btn-default.focus {
 div.modal .btn-group > .btn:first-child {
     background: @button-panel-bg;
     background-color: @button-panel-bg;
-    border: 1px solid darken(@button-panel-bg, 2%);
+    border: 1px solid darken(@button-panel-bg, 1%);
     margin-top: 0px !important;
     margin-left: 0px;
     margin-bottom: 2px;
@@ -791,8 +827,8 @@ div.modal-footer > button:hover  {
 }
 .modal-backdrop,
 .modal-backdrop.in {
-    opacity: 0.75;
-    background-color: @notebook-base;
+    opacity: 0.85;
+    background-color: @table-border;
 }
 div.panel,
 div.panel-default,
@@ -810,7 +846,7 @@ div.panel > .panel-heading,
 div.panel-default > .panel-heading {
     font-size: 14pt;
     color: @notebook-fg;
-    background: @panel-header-bg; // @df-header-bg;
+    background: @panel-header-bg; //@df-header-bg;
     background-color: @panel-header-bg; //@df-header-bg;
     border: 0;
 }
@@ -846,7 +882,7 @@ div.form-control,
 input, button, select, textarea {
     background-color: @form-input-bg;
     font-weight: normal;
-    border: 2px solid @dropdown-border;
+    border: 1px solid @dropdown-border;
 }
 select.form-control.select-xs {
     height: auto;
@@ -865,7 +901,7 @@ div.output.output_scroll {
 }
 ::-webkit-scrollbar {
     width: 14px;
-    height: 10px;
+    height: 20px;
     background-color: @scroll-trough;
     border-radius: 6px;
 }
@@ -876,9 +912,10 @@ div.output.output_scroll {
             from(darken(@scrollbar, 4%)),
             color-stop(0.5, lighten(@scrollbar, 6%)),
             to(darken(@scrollbar, 4%)));
-    min-height: 60px;
+    min-height: 100px;
     border-radius: 2px;
 }
+
 /******* Smooth Fonts ********/
 // HTML, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, span, a {
 //     text-rendering: auto;

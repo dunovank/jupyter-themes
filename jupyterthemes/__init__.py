@@ -24,7 +24,7 @@ def get_themes():
               for theme in glob('{0}/*.less'.format(styles_dir))]
     return themes
 
-def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nbfontsize=13, tcfont='loraserif', tcfontsize=13, margins='auto', cellwidth=980, lineheight=170, cursorwidth=2, cursorcolor='default', altlayout=False, altprompt=False, hideprompt=False, vimext=False, toolbar=False, nbname=False):
+def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nbfontsize=13, tcfont='loraserif', tcfontsize=13, margins='auto', cellwidth='980', lineheight=170, cursorwidth=2, cursorcolor='default', altlayout=False, altprompt=False, hideprompt=False, vimext=False, toolbar=False, nbname=False):
     """ install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
     """
@@ -58,7 +58,7 @@ def main():
     parser.add_argument('-m', "--margins", action='store', default='auto', help="fix margins of main intro page")
     parser.add_argument('-cursw', "--cursorwidth", action='store', default=2, help="set cursorwidth (px)")
     parser.add_argument('-cursc', "--cursorcolor", action='store', default='default', help="cursor color (r, b, g, p)")
-    parser.add_argument('-cellw', "--cellwidth", action='store', default=980, help="set cell width (px)")
+    parser.add_argument('-cellw', "--cellwidth", action='store', default='980', help="set cell width (px)")
     parser.add_argument('-lineh',"--lineheight", action='store', default=170, help='code/text line-height (%%)')
     parser.add_argument('-alt', "--altlayout", action='store_true', default=False, help="alt markdown layout")
     parser.add_argument('-altp', "--altprompt", action='store_true', default=False, help="alt input prompt style")
@@ -75,7 +75,7 @@ def main():
             print("Didn't recognize theme name: {}".format(args.theme))
             print(say_themes)
             exit(1)
-        install_theme(args.theme, monofont=args.monofont, monosize=args.monosize, nbfont=args.nbfont, nbfontsize=args.nbfontsize, tcfont=args.tcfont, tcfontsize=args.tcfontsize, cellwidth=int(args.cellwidth), margins=args.margins, lineheight=int(args.lineheight), cursorwidth=args.cursorwidth, cursorcolor=args.cursorcolor, altlayout=args.altlayout, altprompt=args.altprompt, hideprompt=args.hideprompt, vimext=args.vimext, toolbar=args.toolbar, nbname=args.nbname)
+        install_theme(args.theme, monofont=args.monofont, monosize=args.monosize, nbfont=args.nbfont, nbfontsize=args.nbfontsize, tcfont=args.tcfont, tcfontsize=args.tcfontsize, cellwidth=args.cellwidth, margins=args.margins, lineheight=int(args.lineheight), cursorwidth=args.cursorwidth, cursorcolor=args.cursorcolor, altlayout=args.altlayout, altprompt=args.altprompt, hideprompt=args.hideprompt, vimext=args.vimext, toolbar=args.toolbar, nbname=args.nbname)
     elif args.reset:
         from jupyterthemes import stylefx
         stylefx.reset_default(verbose=True)

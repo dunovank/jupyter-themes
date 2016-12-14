@@ -140,12 +140,18 @@ a.anchor-link:link {
     visibility: none;
     color: @header-fg;
 }
-
+.navbar-text {
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
 /***********  JUPYTER NBEXT CONFIGURATOR ***********/
-div#nbextensions-configurator-container.container {
-    width: @cell-width;
-    margin-right: 0;
-    margin-left: 0;
+div#nbextensions-configurator-container.container,
+#nbextensions-configurator-container.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    // margin-right: @container-margins;
+    // margin-left: @container-margins;
 }
 div.nbext-selector > nav > .nav > li > a {
     font-family: @notebook-fontfamily;

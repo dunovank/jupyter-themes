@@ -160,7 +160,7 @@ def import_fonts(style_less, fontname, font_subdir):
 
     return style_less
 
-def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default', cellwidth=980, lineheight=170, margins='auto', altlayout=False, vimext=False, toolbar=False, nbname=False, altprompt=False, hideprompt=False):
+def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default', cellwidth='980', lineheight=170, margins='auto', altlayout=False, vimext=False, toolbar=False, nbname=False, altprompt=False, hideprompt=False):
     """ set general layout and style properties of text and code cells
     """
     # grade3's altlayout is reverse of default
@@ -187,8 +187,10 @@ def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default
         tcPromptWidth = 0
     if margins!='auto':
         margins = '{}px'.format(margins)
+    if '%' not in cellwidth:
+        cellwidth = str(cellwidth)+'px'
     style_less += '@container-margins: {};\n'.format(margins)
-    style_less += '@cell-width: {}px; \n'.format(cellwidth)
+    style_less += '@cell-width: {}; \n'.format(cellwidth)
     style_less += '@cc-line-height: {}%; \n'.format(lineheight)
     style_less += '@text-cell-bg: {}; \n'.format(textcell_bg)
     style_less += '@cc-prompt-width: {}ex; \n'.format(promptMinWidth)
@@ -215,7 +217,6 @@ def style_layout(style_less, theme='grade3', cursorwidth=2, cursorcolor='default
     with open(cm_style, 'r') as codemirror:
         style_less += codemirror.read() + '\n'
     style_less += toggle_settings(toolbar, nbname, hideprompt) +'\n'
-
     if vimext:
         set_vim_style(theme)
     return style_less
@@ -380,7 +381,8 @@ def stored_font_dicts(fontcode, get_all=False):
                 'notoserif': ['Noto Serif', 'notoserif'],
                 'goudyserif': ['Goudy Serif', 'goudyserif'],
                 'andadaserif': ['Andada Serif', 'andadaserif'],
-                'arapeyserif': ['Arapey Serif', 'arapeyserif']}}
+                'arapeyserif': ['Arapey Serif', 'arapeyserif'],
+                'minionserif': ['Minion Pro', 'minionserif']}}
     if get_all:
         return fonts
     if fontcode in list(fonts['mono']):
