@@ -96,9 +96,18 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 ```sh
 # list available themes
 # oceans16 | grade3 | chesterish | onedork
+# available themes are marked with keywords:
+#     user - global - precompiled
+# user themes are stored in:
+#     ~/.jupyter-themes/styles
+# themes available in precompiled (css) form only are stored in:
+#     ~/.jupyter-themes/styles/compiled
 jt -l
 
 # select theme...
+# note that customization options have no effect on precompiled themes
+# available themes are searched in the following order:
+#     user > user precompiled > global > global precompiled
 jt -t chesterish
 
 # toggle toolbar ON and notebook name ON
