@@ -42,9 +42,9 @@
 ### Recent updates
 
 ###### v0.13.8
-* add monokai theme ([bdell](https://github.com/bdell) : [PR #59](github.com/dunovank/jupyter-themes/pull/59))
-* apply theme to auto-complete menu ([svendx4f](https://github.com/svendx4f) : [PR #69](github.com/dunovank/jupyter-themes/pull/69))
-* added support for user less/precompiled themes ([osamaar](https://github.com/osamaar) : [PR #82](github.com/dunovank/jupyter-themes/pull/82))
+* add monokai theme ([bdell](https://github.com/bdell) : [PR #59](https://github.com/dunovank/jupyter-themes/pull/59))
+* apply theme to auto-complete menu ([svendx4f](https://github.com/svendx4f) : [PR #69](https://github.com/dunovank/jupyter-themes/pull/69))
+* added support for user less/precompiled themes ([osamaar](https://github.com/osamaar) : [PR #82](https://github.com/dunovank/jupyter-themes/pull/82))
 
 ###### v0.13.7
 * misc visibility improvements
