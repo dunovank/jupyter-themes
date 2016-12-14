@@ -6,6 +6,7 @@ from __future__ import print_function
 import os, sys
 from argparse import ArgumentParser
 from glob import glob
+from collections import namedtuple
 modules = glob(os.path.dirname(__file__)+"/*.py")
 __all__ = [ os.path.basename(f)[:-3] for f in modules]
 
@@ -17,11 +18,44 @@ __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
 
+# path to user jupyter-themes dir
+user_dir = os.path.join(os.path.expanduser('~'), '.jupyter-themes')
+
 def get_themes():
     """ return list of available themes """
     styles_dir = os.path.join(package_dir, 'styles')
-    themes = [os.path.basename(theme).replace('.less', '')
-              for theme in glob('{0}/*.less'.format(styles_dir))]
+    precompiled_dir = os.path.join(package_dir, 'styles', 'compiled')
+    styles_dir_user = os.path.join(user_dir, 'styles')
+    precompiled_dir_user = os.path.join(user_dir, 'styles', 'compiled')
+    Theme = namedtuple('Theme', ('name', 'tags'))
+    themes = []
+    names = []
+
+    if os.path.isdir(styles_dir_user):
+        for theme in glob('{0}/*.less'.format(styles_dir_user)):
+            name = name=os.path.basename(theme).replace('.less', '')
+            themes.append(Theme(name=name, tags=['user']))
+            names.append(name)
+
+    if os.path.isdir(precompiled_dir_user):
+        for theme in glob('{0}/*.css'.format(precompiled_dir_user)):
+            name = name=os.path.basename(theme).replace('.css', '')
+            if name in names: continue
+            themes.append(Theme(name=name, tags=['user', 'precompiled']))
+            names.append(name)
+
+    for theme in glob('{0}/*.less'.format(styles_dir)):
+        name = os.path.basename(theme).replace('.less', '')
+        if name in names: continue
+        themes.append(Theme(name=name, tags=['global']))
+        names.append(name)
+
+    for theme in glob('{0}/*.css'.format(precompiled_dir)):
+        name = os.path.basename(theme).replace('.css', '')
+        if name in names: continue
+        themes.append(Theme(name=name, tags=['global', 'precompiled']))
+        names.append(name)
+
     return themes
 
 def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nbfontsize=13, tcfont='loraserif', tcfontsize=13, margins='auto', cellwidth='980', lineheight=170, cursorwidth=2, cursorcolor='default', altlayout=False, altprompt=False, hideprompt=False, vimext=False, toolbar=False, nbname=False):
@@ -31,6 +65,13 @@ def install_theme(theme, monofont='droidmono', monosize=11, nbfont='exosans', nb
     from jupyterthemes import stylefx
     stylefx.reset_default(False)
     stylefx.check_directories()
+    themes = get_themes()
+
+    for theme_ in themes:
+        if theme_.name ==  theme and 'precompiled' in theme_.tags:
+            stylefx.install_precompiled_theme(theme)
+            return
+
     # initialize style_less & style_css
     style_less = stylefx.set_font_properties(monofont=monofont, monosize=monosize, nbfont=nbfont, nbfontsize=nbfontsize, tcfont=tcfont, tcfontsize=tcfontsize)
     # define some vars for cell layout
@@ -68,10 +109,13 @@ def main():
     parser.add_argument('-vim', "--vimext", action='store_true', default=False, help="toggle styles for vim")
     parser.add_argument('-r', "--reset", action='store_true', help="reset to default theme")
     args = parser.parse_args()
-    themes = get_themes()
-    say_themes = "Available Themes: \n   {}".format('\n   '.join(themes))
+    themes = sorted(get_themes(), key=lambda t: t.name)
+    maxlen = max(len(theme.name) for theme in themes)
+    theme_listing = ['{}    {}({})'.format(theme.name, (maxlen-len(theme.name))*' ', ', '.join(theme.tags))
+                     for theme in themes]
+    say_themes = "Available Themes: \n   {}" .format('\n   '.join(theme_listing))
     if args.theme:
-        if args.theme not in themes:
+        if args.theme not in (theme.name for theme in themes):
             print("Didn't recognize theme name: {}".format(args.theme))
             print(say_themes)
             exit(1)
