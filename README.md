@@ -25,6 +25,10 @@
 ###### *chesterish syntax*
 ![image](screens/chesterish_code_headers.png)
 
+
+###### *solarized light syntax*
+![image](screens/solarized_light_code_and_text.png)
+
 ### TravisCI Build status:
 ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
 
