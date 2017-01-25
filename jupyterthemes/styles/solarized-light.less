@@ -1,0 +1,160 @@
+
+/*
+This is a non official port for jupyter notebook of the solarized-light theme, documented here:
+http://ethanschoonover.com/solarized
+
+My favorite results are obtained as follows:
+
+jt -t solarized-light --lineheight=140 --monofont="source"
+
+*/
+
+@solar-base03: #002b36; 
+@solar-base02: #073642; 
+@solar-base01: #586e75; 
+@solar-base00: #657b83; 
+
+@solar-base0: #839496;
+@solar-base1: #93a1a1;
+@solar-base2: #eee8d5;
+@solar-base3: #fdf6e3;
+
+@solar-yellow: #b58900;
+@solar-orange: #cb4b16;
+@solar-red: #dc322f;
+@solar-magenta: #d33682;
+@solar-violet: #6c71c4;
+@solar-blue: #268bd2;
+@solar-cyan: #2aa198;
+@solar-green: #859900;
+
+@notebook-bg:           @solar-base3;
+@notebook-fg:           @solar-base01;
+@notebook-base:         @notebook-fg;
+
+/* selection, hover, prompts, brackets colors */
+@selected-bg:           @solar-base2;
+@selected-half:         @solar-base2;
+@selected-third:        @solar-base2;
+@selected-tenth:        @solar-base2;
+@selected-error:        @solar-red;
+@selected-active:       @solar-base03;
+@navbar-selected:       @selected-third;
+@selected-fg:           @solar-base0;
+@selected-fg-bright:    @solar-orange;
+@unemphasize-fg:        @solar-base1;
+
+/* code, text, markdown, & tooltip colors */
+@cc-input-bg:           @solar-base3;
+@cc-input-fg:           @notebook-fg;
+@cc-input-border:       @solar-base2;
+@cc-output-bg:          @notebook-bg;
+@cc-output-fg:          @notebook-fg;
+@text-cell-fg:          @notebook-fg;
+@unrendered-text:       @solar-yellow;
+@header-fg:             @solar-yellow;
+@tooltip-bg-color:      @solar-base2;
+@tooltip-fg-color:      @solar-base;
+@nb-name-fg:            @item-theme;
+@nb-name-hover:         #DE6D25;
+
+/* cell border colors */
+@cc-border-selected:    @solar-base2;
+@cc-border-edit:        @solar-base1;
+@tc-border-selected:    @cc-border-selected;
+@tc-border-edit:        @cc-border-edit;
+@cell-selected-border-width: thin;
+
+/* menus, dividers, prompt-borders, brackets */
+@divider:               @selected-half;
+@disabled:              @solar-base1;
+@input-prompt:          @disabled;
+@prompt-line:           @solar-base2;
+@tc-prompt-std:         rgba(30, 112, 199, .50);
+@matching-bracket:      @solar-base3;
+@dropdown-bg:           @notebook-bg;
+@dropdown-border:       @selected-half;
+@dropdown-hover:        @selected-third;
+
+/* panels and form-control styles */
+@panel-header-bg:       @solar-base2;
+@panel-bg:              #f8f8f8;
+@modal-bg:              #ffffff;
+@alert-info-bg:         #fdfdfd;
+@form-input-bg:         #ffffff;
+@cmd-palette-bg:        @form-input-bg;
+@cmd-palette-form:      @panel-header-bg;
+@cmd-palette-hover:     @panel-bg;
+
+/* buttons, widgets, kernels colors */
+@item-theme:            @solar-base1;
+@item-blue:             @solar-blue;
+@item-cyan:             @solar-cyan;
+@item-green:            @solar-green;
+@item-red:              @solar-red;
+
+/* tables and dataframes colors */
+@table-color:           #353535;
+@table-bg:              @notebook-bg;
+@table-border:          #D6D6D6;
+@df-header-bg:          @solar-base2;
+@df-header:             @solar-base1;
+@df-header-border:      #C4C4C4;
+@df-cell-bg:            @table-bg;
+@codeblock-bg:          #efefef;
+@codeblock-border:      darken(@codeblock-bg, 3%);
+
+/* btn, scrollbar and shadow colors */
+@button-bg:             #EBEBEB;
+@button-border:         darken(@button-bg, 1%);
+@button-color:          @item-theme;
+@button-hover:          @selected-active;
+@button-panel-bg:       @panel-header-bg;
+@button-panel-hover:    darken(@panel-header-bg, 2%);
+@scrollbar:             @item-theme;
+@scroll-trough:         @solar-base2;
+@scrollbar-inactive:    @solar-base1;
+@box-shadow:            #e8e8e8;
+
+@ansiblack:             @solar-base03;
+@ansiblue:              @solar-blue;
+@ansigray:              @solar-base0;
+@ansigreen:             @solar-green;
+@ansipurple:            @solar-violet;
+@ansicyan:              @solar-cyan;
+@ansiyellow:            @solar-yellow;
+@ansired:               @solar-red;
+@stderr-bg:             @solar-orange;
+@stderr-fg:             @solar-base01;
+@js-error:              @ansired;
+
+@cm-selected:           lighten(@solar-base1, 28%);
+@cm-gutters:            @cm-selected;
+
+@cm-linenumber:         @solar-base00;
+@cm-atom:               @solar-magenta;
+@cm-attribute:          @solar-magenta;
+
+@cm-comment:            @solar-base1;
+
+@cm-property:           @solar-blue;
+
+@cm-keyword:            @solar-green;
+
+@cm-string:             @solar-cyan;
+@cm-number:             @solar-cyan;
+
+@cm-meta:               @solar-violet;
+@cm-operator:           @cm-atom;
+@cm-builtin:            @solar-magenta;
+@cm-variable:           @cc-input-fg;
+@cm-variable2:           @cc-input-fg;
+@cm-variable3:           @cc-input-fg;
+
+@cm-def:                @cm-property;
+@cm-error:              @cc-input-bg;
+@cm-tag:                @cm-property;
+@cm-link:               @solar-blue;
+@cm-storage:            @cm-atom;
+@cm-entity:             @cm-property;
+@cm-latex:              @notebook-fg;
