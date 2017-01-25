@@ -41,6 +41,9 @@
 
 ### Recent updates
 
+###### v0.14.1
+* fixed linenumbers in onedork theme
+
 ###### v0.14.0
 * add solarized light theme (added by [svendx4f](https://github.com/svendx4f)
 * fixed bug that prevented theme reset
@@ -101,6 +104,11 @@ jt -l
 # select theme...
 jt -t chesterish
 
+# restore default theme
+# NOTE: Need to delete browser cache after running jt -r
+# If this doesn't work, try starting a new notebook session.
+jt -r
+
 # toggle toolbar ON and notebook name ON
 jt -t grade3 -T -N
 
@@ -132,9 +140,6 @@ jt -t grade3 -T -N
 # choose alternate txt/markdown layout (-alt)
 # and alternate cell prompt (narrow, no numbers)
 jt -t grade3 -alt -altp
-
-# restore default theme
-jt -r
 ```
 
 ### Monospace Fonts (codecells)
