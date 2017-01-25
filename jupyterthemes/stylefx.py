@@ -1,5 +1,5 @@
 from __future__ import print_function
-import os, sys
+import os, sys, re
 from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
 from shutil import copyfile, rmtree
 from numpy import unique
@@ -304,6 +304,8 @@ def reset_default(verbose=False):
     except Exception:
         check_directories()
         delete_font_files()
+    with open(jupyter_customcss, 'w') as custom_css:
+        custom_css.write('')
     if verbose:
         print("Reset css and font defaults in:\n{} &\n{}".format(*paths))
 

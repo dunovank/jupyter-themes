@@ -4,8 +4,8 @@ from setuptools import setup
 import numpy as np
 
 major = 0
-minor = 13
-patch = 9
+minor = 14
+patch = 0
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v'+version])
