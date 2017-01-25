@@ -1,5 +1,5 @@
 from __future__ import print_function
-import os, sys, re
+import os, sys
 from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
 from shutil import copyfile, rmtree
 from numpy import unique

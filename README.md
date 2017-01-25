@@ -25,10 +25,6 @@
 ###### *chesterish syntax*
 ![image](screens/chesterish_code_headers.png)
 
-
-###### *solarized light syntax*
-![image](screens/solarized_light_code_and_text.png)
-
 ### TravisCI Build status:
 ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
 
@@ -45,24 +41,21 @@
 
 ### Recent updates
 
+###### v0.14.0
+* add solarized light theme (added by [svendx4f](https://github.com/svendx4f)
+* fixed bug that prevented theme reset
+* fixed bug that prevented cursor settings from being applied
+* made upload button visible on main page
+* other minor thematic adjustments
+
+###### v0.13.9
+* minor bug fixes and thematic adjustments
+
 ###### v0.13.8
 * add monokai theme ([bdell](https://github.com/bdell) : [PR #59](https://github.com/dunovank/jupyter-themes/pull/59))
 * apply theme to auto-complete menu ([svendx4f](https://github.com/svendx4f) : [PR #69](https://github.com/dunovank/jupyter-themes/pull/69))
 * added support for user less/precompiled themes ([osamaar](https://github.com/osamaar) : [PR #82](https://github.com/dunovank/jupyter-themes/pull/82))
 
-###### v0.13.7
-* misc visibility improvements
-
-###### v0.13.6
-* altlayout is now default for grade3 (white bg for txt/markdown)
-
-###### v0.13.5
-* full functionality has been added for Python 3.5
-* better theme integration for command palette, keyboard shortcuts
-* integration with Running, Clusters, and NBExtension pages.
-* added font options for code-cells and notebook body
-* vim nbextension compatibility provided by [alextfkd](https://github.com/alextfkd)
-* customizable cursor color and size
 
 ### Install with pip
 ```sh
