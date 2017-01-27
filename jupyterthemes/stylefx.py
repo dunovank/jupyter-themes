@@ -2,7 +2,6 @@ from __future__ import print_function
 import os, sys
 from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
 from shutil import copyfile, rmtree
-from numpy import unique
 import lesscpy
 
 # path to local site-packages/jupyterthemes
@@ -106,7 +105,7 @@ def import_stored_fonts(fontcodes=('exosans', 'loraserif', 'droidmono')):
     style_less = '\n'.join(['/*', s, s, doc, s, s, '*/'])
     style_less += '\n\n\n'
     style_less += '/* Import Notebook, Markdown, & Code Fonts */\n'
-    for fontcode in unique(fontcodes):
+    for fontcode in set(fontcodes):
         fname, fpath, ffam = stored_font_dicts(fontcode)
         style_less = import_fonts(style_less, fname, fpath)
     style_less += '\n\n'
