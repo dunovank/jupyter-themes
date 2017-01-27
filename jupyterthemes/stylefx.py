@@ -97,7 +97,7 @@ def delete_font_files():
         abspath = os.path.join(jupyter_custom_fonts, fontfile)
         os.remove(abspath)
 
-def import_stored_fonts(fontcodes=['exosans', 'loraserif', 'droidmono']):
+def import_stored_fonts(fontcodes=('exosans', 'loraserif', 'droidmono')):
     """ collect fontnames and local pointers to fontfiles in custom dir
     then pass information for each font to function for writing import statements
     """
