@@ -13,7 +13,7 @@ def install_themes():
 def install_fonts():
     fonts = stylefx.stored_font_dicts('', get_all=True)
     fontvals = [list(fonts[ff]) for ff in ['mono', 'sans', 'serif']]
-    monotest, sanstest, seriftest = [np.array(fv)[:4] for fv in fontvals]
+    monotest, sanstest, seriftest = [fv[:4] for fv in fontvals]
     for i in range(4):
         mono, sans, serif = monotest[i], sanstest[i], seriftest[i]
         try:
