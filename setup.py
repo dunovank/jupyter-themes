@@ -1,7 +1,7 @@
 import os
 from glob import glob
 from setuptools import setup
-import numpy as np
+from itertools import chain
 
 major = 0
 minor = 14
@@ -28,7 +28,10 @@ datafiles = {pkgname: ['sandbox/*.js', 'layout/*.less', 'layout/*.css', 'styles/
 # recursively point to all included font directories
 fontfams = ['monospace', 'sans-serif', 'serif']
 fsubdirs = [os.path.join(pkgname, 'fonts', subdir) for subdir in fontfams]
-fontsdata = np.hstack([['/'.join(f.split('/')[1:]) for f in glob(os.path.join(fsub, '*', '*'))] for fsub in fsubdirs]).tolist()
+fontsdata = chain.from_iterable([['/'.join(f.split('/')[1:])
+                                  for f in glob(os.path.join(fsub, '*', '*'))]
+                                 for fsub in fsubdirs])
+
 datafiles[pkgname].extend(fontsdata)
 
 setup(
@@ -56,7 +59,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    install_requires=['jupyter', 'jupyter_core', 'numpy', 'lesscpy>=0.12.0'],
+    install_requires=['jupyter', 'jupyter_core', 'lesscpy>=0.12.0'],
     keywords=['jupyter', 'ipython', 'notebook', 'themes', 'css'],
     entry_points={
         'console_scripts': [
