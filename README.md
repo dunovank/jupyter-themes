@@ -29,7 +29,6 @@
 ###### *chesterish syntax*
 ![image](screens/chesterish_code_headers.png)
 
-
 ### Links
 * [jupyterthemes on PyPI](https://pypi.python.org/pypi/jupyterthemes/)
 * [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
