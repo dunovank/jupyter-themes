@@ -1,6 +1,9 @@
 # jupyterthemes
 ## Theme-ify your Jupyter Notebooks!
 
+### TravisCI Build status:
+![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
+
 ###### *plots & equations*
 ![image](screens/grade3_plot_example.png)
 
@@ -25,9 +28,6 @@
 ###### *chesterish syntax*
 ![image](screens/chesterish_code_headers.png)
 
-### TravisCI Build status:
-![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
-
 ### Interactive Binder Demo
 [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes)
 
@@ -40,7 +40,6 @@
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 
 ### Recent updates
-
 ###### v0.14.2
 * removed numpy dependency ([meowklaski](https://github.com/meowklaski) : [PR #97](https://github.com/dunovank/jupyter-themes/pull/97))
 
@@ -48,7 +47,7 @@
 * fixed linenumbers in onedork theme
 
 ###### v0.14.0
-* add solarized light theme (added by [svendx4f](https://github.com/svendx4f))
+* add solarized light theme ([svendx4f](https://github.com/svendx4f): [PR #84](https://github.com/dunovank/jupyter-themes/pull/84))
 * fixed bug that prevented theme reset
 * fixed bug that prevented cursor settings from being applied
 * made upload button visible on main page
