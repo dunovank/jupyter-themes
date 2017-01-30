@@ -41,11 +41,14 @@
 
 ### Recent updates
 
+###### v0.14.2
+* removed numpy dependency ([meowklaski](https://github.com/meowklaski) : [PR #97](https://github.com/dunovank/jupyter-themes/pull/97))
+
 ###### v0.14.1
 * fixed linenumbers in onedork theme
 
 ###### v0.14.0
-* add solarized light theme (added by [svendx4f](https://github.com/svendx4f)
+* add solarized light theme (added by [svendx4f](https://github.com/svendx4f))
 * fixed bug that prevented theme reset
 * fixed bug that prevented cursor settings from being applied
 * made upload button visible on main page
