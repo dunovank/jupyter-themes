@@ -1,8 +1,9 @@
 # jupyterthemes
 ## Theme-ify your Jupyter Notebooks!
 
-### TravisCI Build status:
-![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop)
+|        Author        |   Status     |     Demo    |
+|:--------------------:|:------------:|:-----------:|
+| Kyle Dunovan | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
 
 ###### *plots & equations*
 ![image](screens/grade3_plot_example.png)
@@ -28,8 +29,6 @@
 ###### *chesterish syntax*
 ![image](screens/chesterish_code_headers.png)
 
-### Interactive Binder Demo
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes)
 
 ### Links
 * [jupyterthemes on PyPI](https://pypi.python.org/pypi/jupyterthemes/)
