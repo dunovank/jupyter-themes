@@ -1,9 +1,9 @@
 # jupyterthemes
 ## Theme-ify your Jupyter Notebooks!
 
-|        Author        |   Status     |     Demo    |
-|:--------------------:|:------------:|:-----------:|
-| Kyle Dunovan | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
+|Author | Version | Status | Demo |
+|:--------------------:|:------------:|:------------:|:------------:|
+|  Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
 
 ###### *plots & equations*
 ![image](screens/grade3_plot_example.png)
@@ -62,7 +62,8 @@
 
 ### Install with pip
 ```sh
-pip install jupyterthemes
+# install/upgrade to latest version
+pip install --upgrade jupyterthemes
 ```
 
 ### Command Line Usage
