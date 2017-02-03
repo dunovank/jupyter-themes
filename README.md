@@ -51,20 +51,16 @@
 * made upload button visible on main page
 * other minor thematic adjustments
 
-###### v0.13.9
-* minor bug fixes and thematic adjustments
-
-###### v0.13.8
-* add monokai theme ([bdell](https://github.com/bdell) : [PR #59](https://github.com/dunovank/jupyter-themes/pull/59))
-* apply theme to auto-complete menu ([svendx4f](https://github.com/svendx4f) : [PR #69](https://github.com/dunovank/jupyter-themes/pull/69))
-* added support for user less/precompiled themes ([osamaar](https://github.com/osamaar) : [PR #82](https://github.com/dunovank/jupyter-themes/pull/82))
-
 
 ### Install with pip
 ```sh
 # install/upgrade to latest version
 pip install --upgrade jupyterthemes
 ```
+
+### Known issues
+* Depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (-t) or attempting to restore the default (-r) in order for those changes to take effect. (see [here](https://github.com/dunovank/jupyter-themes/issues/92) for details)
+* If emptying the cache doesn't work, you may need to start a new jupyter session or restart your browser (see [here](https://github.com/dunovank/jupyter-themes/issues/86) for details)
 
 ### Command Line Usage
 ```
@@ -99,7 +95,7 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 ### Examples
 ```sh
 # list available themes
-# oceans16 | grade3 | chesterish | onedork | monokai
+# oceans16 | grade3 | chesterish | onedork | monokai | solarized-light
 jt -l
 
 # select theme...
