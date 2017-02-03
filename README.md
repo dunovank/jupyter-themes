@@ -59,8 +59,8 @@ pip install --upgrade jupyterthemes
 ```
 
 ### Known issues
-* Depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (-t) or attempting to restore the default (-r) in order for those changes to take effect. (see [here](https://github.com/dunovank/jupyter-themes/issues/92) for details)
-* If emptying the cache doesn't work, you may need to start a new jupyter session or restart your browser (see [here](https://github.com/dunovank/jupyter-themes/issues/86) for details)
+* Depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (-t) or attempting to restore the default (-r) in order for those changes to take effect. (see [here](https://github.com/dunovank/jupyter-themes/issues/86) for details)
+* If emptying the cache doesn't work, you may need to start a new jupyter session or restart your browser (see [here](https://github.com/dunovank/jupyter-themes/issues/92) for details)
 
 ### Command Line Usage
 ```
