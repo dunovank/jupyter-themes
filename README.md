@@ -37,21 +37,6 @@
 * Python 2.7, 3.3, 3.4, or 3.5
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 
-### Recent updates
-###### v0.14.2
-* removed numpy dependency ([meowklaski](https://github.com/meowklaski) : [PR #97](https://github.com/dunovank/jupyter-themes/pull/97))
-
-###### v0.14.1
-* fixed linenumbers in onedork theme
-
-###### v0.14.0
-* add solarized light theme ([svendx4f](https://github.com/svendx4f): [PR #84](https://github.com/dunovank/jupyter-themes/pull/84))
-* fixed bug that prevented theme reset
-* fixed bug that prevented cursor settings from being applied
-* made upload button visible on main page
-* other minor thematic adjustments
-
-
 ### Install with pip
 ```sh
 # install/upgrade to latest version
@@ -62,15 +47,17 @@ pip install --upgrade jupyterthemes
 * Depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (-t) or attempting to restore the default (-r) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86))
 * If emptying the cache doesn't work, you may need to start a new jupyter session or restart your browser (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/92))
 * Some users have found that "jt" is not recognized after installing the pypi release (as shown above). Still trying to get to the bottom of this but apparently the following provides a temporary fix (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-277461319)).
+
 ```sh
 # uninstall any existing versions
 pip uninstall jupyterthemes
 # install from the github repo
 pip install --user git+https://github.com/dunovank/jupyter-themes.git
+
 ```
 
 
-### Command Line Usage
+#### Command Line Usage
 ```
 usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
           [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-m MARGINS]
