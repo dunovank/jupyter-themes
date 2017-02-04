@@ -57,7 +57,7 @@ pip install --user git+https://github.com/dunovank/jupyter-themes.git
 ```
 
 
-#### Command Line Usage
+### Command Line Usage
 ```
 usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
           [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-m MARGINS]
@@ -134,7 +134,7 @@ jt -t grade3 -T -N
 jt -t grade3 -alt -altp
 ```
 
-### Monospace Fonts (codecells)
+### Monospace Fonts (code cells)
 | -f arg | Monospace Font |
 |:--|:--|
 |anka|Anka/Coder|
