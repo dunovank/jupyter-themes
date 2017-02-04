@@ -59,8 +59,16 @@ pip install --upgrade jupyterthemes
 ```
 
 ### Known issues
-* Depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (-t) or attempting to restore the default (-r) in order for those changes to take effect. (see [here](https://github.com/dunovank/jupyter-themes/issues/86) for details)
-* If emptying the cache doesn't work, you may need to start a new jupyter session or restart your browser (see [here](https://github.com/dunovank/jupyter-themes/issues/92) for details)
+* Depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (-t) or attempting to restore the default (-r) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86))
+* If emptying the cache doesn't work, you may need to start a new jupyter session or restart your browser (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/92))
+* Some users have found that "jt" is not recognized after installing the pypi release (as shown above). Still trying to get to the bottom of this but apparently the following provides a temporary fix (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-277461319)).
+```sh
+# uninstall any existing versions
+pip uninstall jupyterthemes
+# install from the github repo
+pip install --user git+https://github.com/dunovank/jupyter-themes.git
+```
+
 
 ### Command Line Usage
 ```
