@@ -662,6 +662,12 @@ div.kse-dropdown > .dropdown-menu,
     display: -webkit-inline-box;
     border: soldi 1px @button-bg;
 }
+
+.alternate_upload .btn-upload {
+    height: 22px;
+    padding: 0px 6px 0px 5px;
+}
+
 button.close {
     border: 0px none;
     font-family: sans-serif;
@@ -682,14 +688,14 @@ button.close {
     opacity: 1;
 }
 div.btn.btn-default.output_collapsed {
-    background: @button-panel-bg;
-    background-color: @button-panel-bg;
-    border-color: @button-panel-bg;
+    background: darken(@button-panel-bg, 2%);
+    background-color: darken(@button-panel-bg, 2%);
+    border-color: darken(@button-panel-bg, 2%);
 }
 div.btn.btn-default.output_collapsed:hover {
-    background: @button-panel-hover;
-    background-color: @button-panel-hover;
-    border-color: @button-panel-hover;
+    background: darken(@button-panel-hover, 2%);
+    background-color: darken(@button-panel-hover, 2%);
+    border-color: darken(@button-panel-hover, 2%);
 }
 div.nbext-enable-btns .btn[disabled],
 div.nbext-enable-btns .btn[disabled]:hover,

@@ -1,6 +1,9 @@
 
 ### Release Notes
 
+#### **v0.14.3:**
+- [PR #102](https://github.com/dunovank/jupyter-themes/pull/102) submitted by  [pussinboot](https://github.com/pussinboot) fixed font installation [issue #71](https://github.com/dunovank/jupyter-themes/issues/71) 
+
 #### **v0.14.2:**
 -removed numpy dependency ([meowklaski](https://github.com/meowklaski) : [PR #97](https://github.com/dunovank/jupyter-themes/pull/97))
 
