@@ -214,7 +214,7 @@ def import_fonts(style_less, fontname, font_subdir):
             fontname=fontname,
             weight=weight,
             style=style,
-            sepp=os.sep,
+            sepp='/',
             fontfile=fontfile,
             ftype=ft)
         send_fonts_to_jupyter(os.path.join(fontpath, fontfile))
