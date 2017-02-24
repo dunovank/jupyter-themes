@@ -17,7 +17,6 @@
 <script>
     MathJax.Hub.Config({
         "HTML-CSS": {
-            preferredFont: "TeX",
             availableFonts: ["STIX","TeX"],
             styles: {
                 scale: 110,
