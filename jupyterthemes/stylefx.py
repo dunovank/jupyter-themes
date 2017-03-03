@@ -342,7 +342,7 @@ def toggle_settings(toolbar=False, nbname=False, hideprompt=False):
             'display: inline-block !important; }')
 
     return toggle
- 
+
 
 def set_mathjax_style(style_css):
     """Improve mathjax fonttype setting in markdown cells"""
