@@ -369,3 +369,25 @@ div.rendered_html h5 {
     font-weight: lighter;
     text-decoration: underline;
 }
+div.cell.jupyter-soft-selected {
+    border-left-color: @item-theme;
+    border-right-color: @item-theme;
+    border-left-width: 0;
+    padding-left: 6px;
+    border-right-width: 2px;
+    background: linear-gradient(to right, @item-theme -40px, @item-theme 7px, @item-theme 7px, @item-theme 100%);
+}
+div.cell.selected.jupyter-soft-selected {
+    border-left-width: 0;
+    padding-left: 6px;
+    background: linear-gradient(to right, @item-theme -40px, @item-theme 7px, @item-theme 7px, @item-theme 100%);
+}
+div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
+    position: absolute;
+    z-index: 9999999999;
+    top: 0px;
+    left: 0px;
+    box-shadow: none;
+    pointer-events: none;
+    border-radius: 2px;
+}

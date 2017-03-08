@@ -7,12 +7,14 @@ import os
 import sys
 from argparse import ArgumentParser
 from glob import glob
+from jupyterthemes import jtplot
+
 modules = glob(os.path.dirname(__file__) + "/*.py")
 __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 14
-patch = 4
+patch = 5
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
 # path to local site-packages/jupyterthemes
@@ -26,25 +28,25 @@ def get_themes():
               for theme in glob('{0}/*.less'.format(styles_dir))]
     return themes
 
-
 def install_theme(theme,
-                  monofont='droidmono',
-                  monosize=11,
-                  nbfont='exosans',
-                  nbfontsize=13,
-                  tcfont='loraserif',
-                  tcfontsize=13,
-                  margins='auto',
-                  cellwidth='980',
-                  lineheight=170,
-                  cursorwidth=2,
-                  cursorcolor='default',
-                  altlayout=False,
-                  altprompt=False,
-                  hideprompt=False,
-                  vimext=False,
-                  toolbar=False,
-                  nbname=False):
+                plotstyle=False,
+                monofont='source',
+                monosize=11,
+                nbfont='exosans',
+                nbfontsize=13,
+                tcfont='merriserif',
+                tcfontsize=13,
+                margins='auto',
+                cellwidth='980',
+                lineheight=170,
+                cursorwidth=2,
+                cursorcolor='default',
+                altlayout=False,
+                altprompt=False,
+                hideprompt=False,
+                vimext=False,
+                toolbar=False,
+                nbname=False):
     """ Install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
     """
@@ -90,6 +92,9 @@ def install_theme(theme,
     # remove tempfile.less from package_dir
     stylefx.remove_temp_file()
 
+    # set plotting style
+    # from jupyterthemes import jtplot
+    # jtplot.jtstyle()
 
 def main():
     parser = ArgumentParser()
@@ -97,11 +102,16 @@ def main():
         '-l', "--list", action='store_true', help="list available themes")
     parser.add_argument(
         '-t', "--theme", action='store', help="theme name to install")
+    # parser.add_argument(
+    #     '-plt', "--plot",
+    #     action='store_true',
+    #     default=False,
+    #     help="style plots (default False)")
     parser.add_argument(
         '-f',
         "--monofont",
         action='store',
-        default='droidmono',
+        default='source',
         help='monospace code font')
     parser.add_argument(
         '-fs',
@@ -125,7 +135,7 @@ def main():
         '-tf',
         "--tcfont",
         action='store',
-        default='loraserif',
+        default='merriserif',
         help='txtcell font')
     parser.add_argument(
         '-tfs',
@@ -213,6 +223,7 @@ def main():
             exit(1)
         install_theme(
             args.theme,
+            # plotstyle=args.plot,
             monofont=args.monofont,
             monosize=args.monosize,
             nbfont=args.nbfont,

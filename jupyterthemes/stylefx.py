@@ -1,11 +1,8 @@
 from __future__ import print_function
-
 import os
 import sys
 from shutil import copyfile, rmtree
-
 from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
-
 import lesscpy
 
 # path to local site-packages/jupyterthemes
@@ -114,7 +111,7 @@ def delete_font_files():
 
 def import_stored_fonts(fontcodes=('exosans', 'loraserif', 'droidmono')):
     """Collect fontnames and local pointers to fontfiles in custom dir
-    then pass information for each font to function for writing import 
+    then pass information for each font to function for writing import
     statements
     """
     doc = '\nConcatenated font imports, .less styles, & custom variables\n'
@@ -150,7 +147,7 @@ def set_font_properties(nbfont='exosans',
                         tcfontsize=13,
                         nbfontsize=13,
                         prfontsize=95):
-    """Parent function for setting notebook, text/md, and 
+    """Parent function for setting notebook, text/md, and
     codecell font-properties
     """
     fontsizes = [monosize, nbfontsize, tcfontsize, prfontsize]
@@ -236,6 +233,10 @@ def style_layout(style_less,
                  altprompt=False,
                  hideprompt=False):
     """Set general layout and style properties of text and code cells"""
+
+    # write theme name to ~/.jupyter/custom/ (referenced by jtplot.py)
+    with open(os.path.join(jupyter_custom, 'current_theme.txt'), 'w') as f:
+        f.write(theme)
 
     # grade3's altlayout is reverse of default
     if theme == 'grade3':

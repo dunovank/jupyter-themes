@@ -1,7 +1,7 @@
 /* onedork notebook colors */
-@notebook-bg:           #1c1f28; // #21262c; //#16191d;
+@notebook-bg:           #1c1f28;
 @notebook-fg:           #899ab8;
-@notebook-base:         #373e4b; //#363f49; //#2E353E;
+@notebook-base:         #373e4b;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #41975E;
@@ -16,12 +16,12 @@
 @unemphasize-fg:        #92A2BD;
 
 /* code, text, markdown, & tooltip colors */
-@cc-input-bg:           #2c303c; //#282c34; //#263238; //#282c34;
+@cc-input-bg:           #2c303c;
 @cc-input-fg:           #B5C2D9;
-@cc-output-bg:          @notebook-base;
+@cc-output-bg:          #373e4b;
 @cc-output-fg:          #B1BED6;
 @text-cell-fg:          #ABB7CE;
-@unrendered-text:       #48a667; //437dcd;
+@unrendered-text:       #48a667;
 @header-fg:             @unrendered-text;
 @tooltip-bg-color:      #323A44;
 @tooltip-fg-color:      @cc-input-fg;
@@ -49,7 +49,7 @@
 
 /* panels and form-control styles */
 @panel-header-bg:       #2E3642;
-@panel-bg:              darken(#384152,1%);
+@panel-bg:              #363F4F;
 @modal-bg:              @panel-bg;
 @alert-info-bg:         #4a5467;
 @form-input-bg:         @codeblock-bg;
@@ -72,7 +72,7 @@
 @df-header:             #D4D8EC;
 @df-header-border:      #414C5D;
 @df-cell-bg:            #434d61;
-@codeblock-bg:          darken(#2A313C,2%);
+@codeblock-bg:          #262C36;
 @codeblock-border:      @codeblock-bg;
 
 /* btn, scrollbar and shadow colors */
@@ -102,18 +102,18 @@
 @js-error:              @stderr-bg;
 
 /* onedork codemirror colors */
-@cm-selected:           #373D4B; //#42495e; //#2F3640;
+@cm-selected:           #373D4B;
 @cm-gutters:            @cm-selected;
 @cm-linenumber:         @unemphasize-fg;
 @cm-comment:            @input-prompt;
 @cm-atom:               #61afef;
-@cm-number:             #f0a46f; //#EFAA8E; //#59c4e4;
-@cm-property:           @cm-atom;
+@cm-number:             #f0a46f;
+@cm-property:           #61afef;
 @cm-attribute:          #ea8080;
 @cm-keyword:            #cc89e0;
 @cm-string:             #94c273;
 @cm-meta:               #51b6c3;
-@cm-operator:           #61afef; //#59c4e4;
+@cm-operator:           #61afef;
 @cm-builtin:            @cm-attribute;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cm-attribute;

@@ -9,10 +9,10 @@ jt -t solarized-light --lineheight=140 --monofont="source"
 
 */
 
-@solar-base03: #002b36; 
-@solar-base02: #073642; 
-@solar-base01: #586e75; 
-@solar-base00: #657b83; 
+@solar-base03: #002b36;
+@solar-base02: #073642;
+@solar-base01: #586e75;
+@solar-base00: #657b83;
 
 @solar-base0: #839496;
 @solar-base1: #93a1a1;
@@ -48,8 +48,8 @@ jt -t solarized-light --lineheight=140 --monofont="source"
 @cc-input-bg:           @solar-base3;
 @cc-input-fg:           @notebook-fg;
 @cc-input-border:       @solar-base2;
-@cc-output-bg:          @notebook-bg;
-@cc-output-fg:          @notebook-fg;
+@cc-output-bg:          #fdf6e3;
+@cc-output-fg:          #586e75;
 @text-cell-fg:          @notebook-fg;
 @unrendered-text:       @solar-yellow;
 @header-fg:             @solar-yellow;
@@ -130,31 +130,25 @@ jt -t solarized-light --lineheight=140 --monofont="source"
 
 @cm-selected:           lighten(@solar-base1, 28%);
 @cm-gutters:            @cm-selected;
-
 @cm-linenumber:         @solar-base00;
-@cm-atom:               @solar-magenta;
-@cm-attribute:          @solar-magenta;
-
+@cm-atom:               #d33682;
+@cm-attribute:          #d33682;
 @cm-comment:            @solar-base1;
-
-@cm-property:           @solar-blue;
-
-@cm-keyword:            @solar-green;
-
-@cm-string:             @solar-cyan;
-@cm-number:             @solar-cyan;
-
-@cm-meta:               @solar-violet;
-@cm-operator:           @cm-atom;
-@cm-builtin:            @solar-magenta;
+@cm-property:           #268bd2;
+@cm-keyword:            #859900;
+@cm-string:             #2aa198;
+@cm-number:             #2aa198;
+@cm-meta:               #6c71c4;
+@cm-operator:           #268bd2;
+@cm-builtin:            #d33682;
 @cm-variable:           @cc-input-fg;
-@cm-variable2:           @cc-input-fg;
-@cm-variable3:           @cc-input-fg;
+@cm-variable2:          @cc-input-fg;
+@cm-variable3:          @cc-input-fg;
 
-@cm-def:                @cm-property;
+@cm-def:                #268bd2;
 @cm-error:              @cc-input-bg;
-@cm-tag:                @cm-property;
-@cm-link:               @solar-blue;
-@cm-storage:            @cm-atom;
-@cm-entity:             @cm-property;
+@cm-tag:                #268bd2;
+@cm-link:               #268bd2;
+@cm-storage:            #d33682;
+@cm-entity:             #268bd2;
 @cm-latex:              @notebook-fg;

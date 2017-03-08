@@ -5,7 +5,7 @@ from itertools import chain
 
 major = 0
 minor = 14
-patch = 4
+patch = 5
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v' + version])

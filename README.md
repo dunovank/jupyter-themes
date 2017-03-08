@@ -5,10 +5,13 @@
 |:--------------------:|:------------:|:------------:|:------------:|
 |  Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
 
-###### *plots & equations*
+###### *figures (coming soon)*
+![image](screens/onedork_figure_style.png)
+
+###### *equations*
 ![image](screens/grade3_plot_example.png)
 
-###### *markdown & text cells*
+###### *markdown*
 ![image](screens/oceans16_markdown.png)
 
 ###### *pandas dataframes*
@@ -69,11 +72,11 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Usage help            |  -h       |      --       |
 | List Themes           |  -l       |      --       |
 | Theme Name to Install |  -t       |      --       |
-| Code Font             |  -f       |   droidmono   |
+| Code Font             |  -f       |    source     |
 | Code Font-Size        |  -fs      |      11       |
 | Notebook Font         |  -nf      |    exosans    |
 | Notebook Font Size    |  -nfs     |      13       |
-| Text/MD Cell Font     |  -tf      |   loraserif   |
+| Text/MD Cell Font     |  -tf      |  merriserif   |
 | Text/MD Cell Fontsize |  -tfs     |      13       |
 | Intro Page Margins    |  -m       |     auto      |
 | Cell Width            |  -cellw   |      980      |

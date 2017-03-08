@@ -76,7 +76,7 @@ div#clusters.tab-pane.active {
     background: @panel-bg;
     background-color: @panel-bg;
     padding: 2px;
-    border-bottom: 2px solid @divider;
+    border-bottom: 2px solid @dropdown-border;
 }
 #running .panel-group .panel .panel-body .list_container .list_item:hover {
     background: @panel-bg;
@@ -513,7 +513,8 @@ i.fa.fa-icon {
     background-color: @dropdown-bg;
     background: @dropdown-bg;
 }
-.dropdown-menu > li > a:hover {
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
     color: @selected-fg;
     background-color: @dropdown-hover;
     background: @dropdown-hover;
@@ -657,14 +658,14 @@ div.kse-dropdown > .dropdown-menu,
 }
 .alternate_upload input.fileinput {
     text-align: center;
-    vertical-align: bottom;
+    vertical-align: baseline;
     margin-left: -.5ex;
     display: -webkit-inline-box;
-    border: soldi 1px @button-bg;
+    border: solid 1px @button-bg;
 }
 
 .alternate_upload .btn-upload {
-    height: 22px;
+    // height: 22px;
     padding: 0px 6px 0px 5px;
 }
 

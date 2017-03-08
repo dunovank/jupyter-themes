@@ -1,6 +1,9 @@
 
 ### Release Notes
 
+#### **v0.14.5:**
+- themed plotting styles
+
 #### **v0.14.4:**
 - fixed attribute and property syntax highlighting
 - removed 'TeX' as preferred mathjax font
