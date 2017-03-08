@@ -8,10 +8,7 @@
 ###### *figures (coming soon)*
 ![image](screens/onedork_figure_style.png)
 
-###### *equations*
-![image](screens/grade3_plot_example.png)
-
-###### *markdown*
+###### *markdown/equations*
 ![image](screens/oceans16_markdown.png)
 
 ###### *pandas dataframes*
