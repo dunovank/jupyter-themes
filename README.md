@@ -5,7 +5,7 @@
 |:--------------------:|:------------:|:------------:|:------------:|
 |  Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
 
-###### *figures (coming soon)*
+###### *plotting style*
 ![image](screens/onedork_figure_style.png)
 
 ###### *markdown/equations*
@@ -34,7 +34,7 @@
 * [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
 
 ### Requirements
-* Python 2.7, 3.3, 3.4, or 3.5
+* Python 2.7, 3.3, 3.4, 3.5, 3.6
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 
 ### Install with pip
@@ -87,7 +87,7 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Name & Logo Visible   |  -N       |      --       |
 | Restore Default       |  -r       |      --       |
 
-### Examples
+### Command Line Examples
 ```sh
 # list available themes
 # oceans16 | grade3 | chesterish | onedork | monokai | solarized-light
@@ -123,7 +123,7 @@ jt -t chesterish -cellw 900 -lineh 170
 jt -t onedork -m 200
 
 # adjust cursor width (in px) and make cursor red (r)
-# options: b (blue), o (orange), r (red), p (purple), g (green)
+# options: b (blue), o (orange), r (red), p (purple), g (green), x (font color)
 jt -t grade3 -cursc r -cursw 5
 
 # toggle toolbar ON and notebook name ON
@@ -132,6 +132,31 @@ jt -t grade3 -T -N
 # choose alternate txt/markdown layout (-alt)
 # and alternate cell prompt (narrow, no numbers)
 jt -t grade3 -alt -altp
+```
+
+### Set Plotting Styles (from within notebook)
+##### context and font scaling borrowed from [seaborn](http://seaborn.pydata.org)
+```py
+from jupyterthemes import jtplot
+
+# currently installed theme will be used to
+# set plot style if no arguments provided
+jtplot.style()
+
+# select an alternative theme's plot style by name
+# oceans16 | grade3 | chesterish | onedork | monokai | solarized-light
+jtplot.style('onedork')
+
+# set "context" (paper, notebook, talk, or poster)
+# & font scale (scalar applied to labels, legend, etc.)
+jtplot.style(context='paper', fscale=1.4)
+
+# turn on x and y ticks (default=False)
+# & turn off axis grid (default=True)
+jtplot.style(ticks=True, grid=False)
+
+# fully reset matplotlib default rcParams
+jtplot.reset()
 ```
 
 ### Monospace Fonts (code cells)

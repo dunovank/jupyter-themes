@@ -89,7 +89,7 @@ div.running_list_info.toolbar_info {
     font-size: @nb-fontsize-sub;
     padding: 4px 0 4px 0;
     height: inherit;
-    line-height: inherit;
+    line-height: 1.5; //inherit;
     text-shadow: none;
 }
 .list_placeholder {
@@ -379,7 +379,6 @@ div.navbar-text, .navbar-text {
 .item_buttons .kernel-name {
     font-size: @nb-fontsize;
     color: @item-blue;
-    line-height: 22px;
 }
 .running_notebook_icon:before {
     color: @item-green !important;
@@ -645,6 +644,7 @@ div.kse-dropdown > .dropdown-menu,
 .btn-group-vertical {
     font-size: @nb-fontsize-sub;
     font-weight: normal;
+    height: inherit;
 }
 .btn-xs, .btn-group-xs > .btn {
     font-size: @nb-fontsize-sub;
@@ -656,17 +656,18 @@ div.kse-dropdown > .dropdown-menu,
 .btn-group > .btn:first-child {
     margin-left: 3px;
 }
+
 .alternate_upload input.fileinput {
     text-align: center;
     vertical-align: baseline;
     margin-left: -.5ex;
-    display: -webkit-inline-box;
-    border: solid 1px @button-bg;
+    display: inline-table;
+    border: solid 0px @button-bg;
+    margin-bottom: -1ex;
 }
-
 .alternate_upload .btn-upload {
-    // height: 22px;
-    padding: 0px 6px 0px 5px;
+    // padding: 0px 6px 0px 5px;
+    display: inline-table;
 }
 
 button.close {
@@ -833,8 +834,8 @@ div.modal-footer > button:hover  {
 }
 .modal-backdrop,
 .modal-backdrop.in {
-    opacity: 0.85;
-    background-color: @table-border;
+    opacity: 0.7;
+    background-color: @df-header-border; // @table-border;
 }
 div.panel,
 div.panel-default,
@@ -906,8 +907,8 @@ div.output.output_scroll {
 	border-radius: 6px;
 }
 ::-webkit-scrollbar {
-    width: 14px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
     background-color: @scroll-trough;
     border-radius: 6px;
 }

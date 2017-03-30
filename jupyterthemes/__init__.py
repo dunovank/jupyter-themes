@@ -7,14 +7,13 @@ import os
 import sys
 from argparse import ArgumentParser
 from glob import glob
-from jupyterthemes import jtplot
 
 modules = glob(os.path.dirname(__file__) + "/*.py")
 __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
-minor = 14
-patch = 5
+minor = 15
+patch = 0
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
 # path to local site-packages/jupyterthemes
@@ -29,7 +28,6 @@ def get_themes():
     return themes
 
 def install_theme(theme,
-                plotstyle=False,
                 monofont='source',
                 monosize=11,
                 nbfont='exosans',
@@ -92,21 +90,12 @@ def install_theme(theme,
     # remove tempfile.less from package_dir
     stylefx.remove_temp_file()
 
-    # set plotting style
-    # from jupyterthemes import jtplot
-    # jtplot.jtstyle()
-
 def main():
     parser = ArgumentParser()
     parser.add_argument(
         '-l', "--list", action='store_true', help="list available themes")
     parser.add_argument(
         '-t', "--theme", action='store', help="theme name to install")
-    # parser.add_argument(
-    #     '-plt', "--plot",
-    #     action='store_true',
-    #     default=False,
-    #     help="style plots (default False)")
     parser.add_argument(
         '-f',
         "--monofont",

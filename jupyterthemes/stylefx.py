@@ -38,6 +38,7 @@ ex_style = os.path.join(layouts_dir, 'extras.less')
 jax_style = os.path.join(layouts_dir, 'mathjax.css')
 vim_style = os.path.join(layouts_dir, 'vim.less')
 comp_style = os.path.join(layouts_dir, 'completer.less')
+theme_name_file = os.path.join(jupyter_custom, 'current_theme.txt')
 
 
 def check_directories():
@@ -52,7 +53,6 @@ def check_directories():
         os.makedirs(jupyter_data)
     if not os.path.isdir(jupyter_nbext):
         os.makedirs(jupyter_nbext)
-
 
 def less_to_css(style_less):
     """ write less-compiled css file to jupyter_customcss in jupyter_dir
@@ -412,8 +412,8 @@ def set_nb_theme(name):
 
 def get_colors(theme='grade3', c='default', get_dict=False):
     if theme == 'grade3':
-        cdict = {'b': '#1e70c7',
-                 'default': '#ff711a',
+        cdict = {'default': '#ff711a',
+                 'b': '#1e70c7',
                  'o': '#ff711a',
                  'r': '#e22978',
                  'p': '#AA22FF',
@@ -425,6 +425,9 @@ def get_colors(theme='grade3', c='default', get_dict=False):
                  'r': '#DB797C',
                  'p': '#c776df',
                  'g': '#94c273'}
+
+    cdict['x'] = '@cc-input-fg'
+
     if get_dict:
         return cdict
 

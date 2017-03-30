@@ -1,8 +1,9 @@
 
 ### Release Notes
 
-#### **v0.14.5:**
+#### **v0.15.0:**
 - themed plotting styles
+- python 3.6 compatibility
 
 #### **v0.14.4:**
 - fixed attribute and property syntax highlighting
