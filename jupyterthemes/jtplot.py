@@ -60,6 +60,10 @@ base_font = {
     "legend.fontsize": 10.5}
 
 def infer_theme():
+    """ checks jupyter_config_dir() for text file containing theme name
+    (updated whenever user installs a new theme)
+    """
+
     if os.path.exists(theme_name_file):
         with open(theme_name_file) as f:
             theme = f.readlines()[0]
@@ -79,6 +83,7 @@ def style(theme=None, context='notebook', grid=True, ticks=False, spines=True, f
         ticks (bool): make major x and y ticks visible
         fscale (float): scale font size for axes labels, legend, etc.
     """
+
     # set context and font rc parameters, return rcdict
     rcdict = set_context(context=context, fscale=fscale)
 
@@ -90,15 +95,22 @@ def style(theme=None, context='notebook', grid=True, ticks=False, spines=True, f
     set_style(rcdict, theme=theme, grid=grid, ticks=ticks, spines=spines)
 
 
+
 def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
     """
     This code has been modified from seaborn.rcmod.set_style()
     ::Arguments::
-        theme (str): 'paper', 'notebook', 'talk', or 'poster'
-        font_scale (float): scalar for axes ticks, legend, labels, etc.
+        rcdict (str): dict of "context" properties (filled by set_context())
+        theme (str): name of theme to use when setting color properties
+        grid (bool): turns off axis grid if False (default: True)
+        ticks (bool): removes x,y axis ticks if True (default: False)
+        spines (bool): removes axis spines if False (default: True)
     """
 
+    # extract style and color info for theme
     styleMap, clist = get_theme_style(theme)
+
+    # extract style variables
     figureFace = styleMap['figureFace']
     axisFace = styleMap['axisFace']
     textColor = styleMap['textColor']
@@ -152,7 +164,7 @@ def set_context(context='notebook', fscale=1.):
     Most of this code has been copied/modified from seaborn.rcmod.plotting_context()
     ::Arguments::
         context (str): 'paper', 'notebook', 'talk', or 'poster'
-        font_scale (float): scalar for axes ticks, legend, labels, etc.
+        fscale (float): font-size scalar applied to axes ticks, legend, labels, etc.
     """
     # scale all the parameters by the same factor depending on the context
     scaling = dict(paper=.8, notebook=1, talk=1.3, poster=1.6)[context]
@@ -167,8 +179,9 @@ def set_context(context='notebook', fscale=1.):
     context_dict.update(font_dict)
     return context_dict
 
+
 def figsize(x=5.5, y=4.5, aspect=1.):
-    """
+    """ manually set the default figure size of plots
     ::Arguments::
         x (float): x-axis size
         y (float): y-axis size
@@ -178,11 +191,15 @@ def figsize(x=5.5, y=4.5, aspect=1.):
     mpl.rcParams.update({'figure.figsize': (x*aspect, y)})
 
 
-
 def get_theme_style(theme):
     """
     read-in theme style info and populate styleMap (dict of with mpl.rcParams)
     and clist (list of hex codes passed to color cylcler)
+    ::Arguments::
+        theme (str): theme name
+    ::Returns::
+        styleMap (dict): dict containing theme-specific colors for figure properties
+        clist (list): list of colors to replace mpl's default color_cycle
     """
     styleMap, clist = get_default_jtstyle()
     if theme == 'default':
@@ -222,8 +239,7 @@ def get_color_list():
 
 
 def reset():
-    """
-    full reset of matplotlib default style and colors
+    """ full reset of matplotlib default style and colors
     """
     colors = [(0., 0., 1.), (0., .5, 0.), (1., 0., 0.), (.75, .75, 0.),
             (.75, .75, 0.), (0., .75, .75), (0., 0., 0.)]

@@ -64,28 +64,6 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
           [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-cellw CELLWIDTH]
           [-lineh LINEHEIGHT] [-alt] [-vim] [-T] [-N] [-r]
 ```
-|        options        |   arg     |     default   |
-|:----------------------|:---------:|:-------------:|
-| Usage help            |  -h       |      --       |
-| List Themes           |  -l       |      --       |
-| Theme Name to Install |  -t       |      --       |
-| Code Font             |  -f       |    source     |
-| Code Font-Size        |  -fs      |      11       |
-| Notebook Font         |  -nf      |    exosans    |
-| Notebook Font Size    |  -nfs     |      13       |
-| Text/MD Cell Font     |  -tf      |  merriserif   |
-| Text/MD Cell Fontsize |  -tfs     |      13       |
-| Intro Page Margins    |  -m       |     auto      |
-| Cell Width            |  -cellw   |      980      |
-| Line Height           |  -lineh   |      170      |
-| Cursor Width          |  -cursw   |       2       |
-| Cursor Color          |  -cursc   |      --       |
-| Alt Text/MD Layout    |  -alt     |      --       |
-| Alt Prompt Layout     |  -altp    |      --       |
-| Style Vim NBExt*      |  -vim     |      --       |
-| Toolbar Visible       |  -T       |      --       |
-| Name & Logo Visible   |  -N       |      --       |
-| Restore Default       |  -r       |      --       |
 
 ### Command Line Examples
 ```sh
@@ -134,32 +112,78 @@ jt -t grade3 -T -N
 jt -t grade3 -alt -altp
 ```
 
-### Set Plotting Styles (from within notebook)
-##### context and font scaling borrowed from [seaborn](http://seaborn.pydata.org)
+### Set Plotting Style (from within notebook)
+`jtplot.style()` makes changes to matplotlib's rcParams dictionary so that figure aesthetics match those of a chosen jupyterthemes style. Note, these commands do not need to be re-run every time you generate a new plot, just once at the beginning of your notebook or whenever style changes are desired after that.
+
+For instance, I include the following two lines in my `~/.ipython/profile_default/startup/startup.ipy` file so this is done  automatically whenever I open a new notebook:
+
 ```py
+# import jtplot submodule from jupyterthemes
 from jupyterthemes import jtplot
 
 # currently installed theme will be used to
 # set plot style if no arguments provided
 jtplot.style()
+```
 
-# select an alternative theme's plot style by name
+Some additional examples for setting "context" (taken from [seaborn](https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements-with-plotting-context-and-set-context)) and controlling various figure properties...
+
+```py
+# import jtplot
+from jupyterthemes import jtplot
+
+# you can select an alternative theme's plot style by name
 # oceans16 | grade3 | chesterish | onedork | monokai | solarizedl
 jtplot.style('onedork')
 
 # set "context" (paper, notebook, talk, or poster)
 # & font scale (scalar applied to labels, legend, etc.)
-jtplot.style(context='paper', fscale=1.4)
+jtplot.style('grade3', context='paper', fscale=1.4)
 
-# turn on x and y ticks (default=False)
-# & turn off axis grid (default=True)
+# turn on X- and Y-axis tick marks (default=False)
+# and turn off the axis grid lines (default=True)
 jtplot.style(ticks=True, grid=False)
+
+# set the default figure size
+# x (length), y (height)
+jtplot.figsize(x=6., y=5.)
+
+# or just adjust the aspect ratio
+# new_length = length * aspect
+jtplot.figsize(aspect=1.2)
 
 # fully reset matplotlib default rcParams
 jtplot.reset()
 ```
 
-### Monospace Fonts (code cells)
+### Additional package info
+
+#### Description of Command Line options
+|     cl options        |   arg     |     default   |
+|:----------------------|:---------:|:-------------:|
+| Usage help            |  -h       |      --       |
+| List Themes           |  -l       |      --       |
+| Theme Name to Install |  -t       |      --       |
+| Code Font             |  -f       |    source     |
+| Code Font-Size        |  -fs      |      11       |
+| Notebook Font         |  -nf      |    exosans    |
+| Notebook Font Size    |  -nfs     |      13       |
+| Text/MD Cell Font     |  -tf      |  merriserif   |
+| Text/MD Cell Fontsize |  -tfs     |      13       |
+| Intro Page Margins    |  -m       |     auto      |
+| Cell Width            |  -cellw   |      980      |
+| Line Height           |  -lineh   |      170      |
+| Cursor Width          |  -cursw   |       2       |
+| Cursor Color          |  -cursc   |      --       |
+| Alt Text/MD Layout    |  -alt     |      --       |
+| Alt Prompt Layout     |  -altp    |      --       |
+| Style Vim NBExt*      |  -vim     |      --       |
+| Toolbar Visible       |  -T       |      --       |
+| Name & Logo Visible   |  -N       |      --       |
+| Restore Default       |  -r       |      --       |
+
+
+#### Monospace Fonts (code cells)
 | -f arg | Monospace Font |
 |:--|:--|
 |anka|Anka/Coder|
@@ -189,7 +213,7 @@ jtplot.reset()
 |ptmono|PT Mono|
 |ubuntu|Ubuntu Mono|
 
-### Sans-Serif Fonts
+#### Sans-Serif Fonts
 | -nf/-tf arg | Sans-Serif Font |
 |:--|:--|
 |exosans|Exo_2|
@@ -219,7 +243,7 @@ jtplot.reset()
 |puritansans|Puritan Sans|
 |ralewaysans|Raleway|
 
-### Serif Fonts
+#### Serif Fonts
 | -nf/-tf arg | Serif Font |
 |:--|:--|
 |loraserif|Lora|

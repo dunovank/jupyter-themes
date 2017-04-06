@@ -192,13 +192,6 @@ div.nbext-readme > .nbext-readme-contents:not(:empty) {
     color: @unemphasize-fg;
     font-size: 10.5pt;
 }
-.shortcut_key,
-span.shortcut_key {
-    display: inline-block;
-    width: 16ex;
-    text-align: right;
-    font-family: monospace;
-}
 
 .nbext-filter-menu.dropdown-menu > li > a:hover,
 .nbext-filter-menu.dropdown-menu > li > a:focus,
@@ -507,6 +500,36 @@ body > div.modal.cmd-palette.in > div {
     border-color: @item-green;
     border-radius: 0px;
 }
+/******************************************/
+/************** KEY BINDINGS **************/
+/******************************************/
+.shortcut_key,
+span.shortcut_key {
+    display: inline-block;
+    width: 16ex;
+    text-align: right;
+    font-family: monospace;
+}
+.jupyter-keybindings {
+    padding: 1px;
+    line-height: 24px;
+    border-bottom: 1px solid @selected-third;
+}
+.jupyter-keybindings i {
+    background: @button-bg;
+    font-size: small;
+    padding: 5px;
+    margin-left: 7px;
+}
+div#short-key-bindings-intro.well, .well {
+    background-color: @panel-header-bg;
+    border: 1px solid @panel-header-bg;
+    color: @notebook-fg;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 /******************************************/
 /******** KERNEL RUNNING ANIMATION ********/
 /******************************************/

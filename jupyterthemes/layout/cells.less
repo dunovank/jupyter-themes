@@ -339,13 +339,14 @@ div.rendered_html code {
 pre, code, kbd, samp {
     white-space: pre-wrap;
 }
-code {
+.well code, code {
     font-family: @monofont, monospace;
     font-size: @monofontsize !important;
     line-height: @cc-line-height !important;
     color: @text-cell-fg;
     background: @codeblock-bg;
     background-color: @codeblock-bg;
+    border-color: @codeblock-bg;
 }
 kbd {
     padding: 4px;
@@ -382,7 +383,6 @@ div.text_cell_render pre {
     max-width: 86%;
     border-radius: 2px;
     padding: 5px;
-    border-right: @tc-prompt-border;
 }
 div.text_cell_render h1,
 div.rendered_html h1,

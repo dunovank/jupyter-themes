@@ -1,5 +1,10 @@
 ### Release Notes
 
+#### **v0.15.3:**
+- README & doc updates for jtplot module
+- style fixes for new "add keyboard shortcuts" form
+- minor cosmetic improvements
+
 #### **v0.15.2:**
 - re-added solarizedl theme (accidentally not included in v0.15.1)
 
