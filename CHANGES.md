@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.15.2:**
+- re-added solarizedl theme (accidentally not included in v0.15.1)
+
 #### **v0.15.1:**
 - updated styles for notebook 5.0
 - changed solarized-light to solarizedl
