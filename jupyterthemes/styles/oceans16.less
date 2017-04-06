@@ -1,7 +1,7 @@
 /* oceans16 notebook colors */
 @notebook-bg:           #262931;
 @notebook-fg:           #93A2BE;
-@notebook-base:         #373e4b; //#374357
+@notebook-base:         #373e4b;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #3572C6;
@@ -29,17 +29,17 @@
 @nb-name-hover:         #52B573;
 
 /* cell border colors */
-@cc-border-selected:    @item-blue;
+@cc-border-selected:    #2769c3;
 @cc-border-edit:        #33517c;
-@tc-border-selected:    @item-blue;
-@tc-border-edit:        #33517c;
+@tc-border-selected:    #7aa05d;
+@tc-border-edit:        #455C4D;
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               rgba(53, 114, 198,.3);
 @disabled:              #516479;
 @input-prompt:          #446489;
 @prompt-line:           rgba(53, 114, 198,.5);
-@tc-prompt-std:         rgba(53, 114, 198,.5);
+@tc-prompt-std:         rgba(148, 204, 114, .3);
 @matching-bracket:      #4C8BE2;
 @dropdown-bg:           @notebook-base;
 @dropdown-border:       @selected-third;
@@ -99,7 +99,7 @@
 @js-error:              @stderr-bg;
 
 /* oceans16 codemirror colors */
-@cm-selected:           #42495e; 
+@cm-selected:           #42495e;
 @cm-gutters:            #343c4b;
 @cm-linenumber:         @cm-comment;
 @cm-comment:            #667FB1;
@@ -119,7 +119,7 @@
 @cm-def:                @cm-property;
 @cm-error:              @selected-error;
 @cm-tag:                @cm-atom;
-@cm-link:               @cm-attribute;
+@cm-link:               @nb-name-hover;
 @cm-storage:            @cm-atom;
 @cm-entity:             @cm-attribute;
 @cm-latex:              #8fb36a;

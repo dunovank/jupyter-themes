@@ -72,7 +72,7 @@ def style(theme=None, context='notebook', grid=True, ticks=False, spines=True, f
     """
     main function for styling matplotlib according to theme
     ::Arguments::
-        theme (str): 'oceans16', 'grade3', 'chesterish', 'onedork', 'monokai', 'solarized-light'.
+        theme (str): 'oceans16', 'grade3', 'chesterish', 'onedork', 'monokai', 'solarizedl'.
                     If no theme name supplied the currently installed notebook theme will be used.
         context (str): 'paper', 'notebook', 'talk', or 'poster'
         grid (bool): removes axis grid lines if False
@@ -137,7 +137,7 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
 
     # update matplotlib with rcdict (incl. context, font, & style)
     mpl.rcParams.update(rcdict)
-    
+
     # set color cycle to jt-style color list
     mpl.rcParams['axes.prop_cycle'] = cycler(color=clist)
     # replace default blue, green, etc. with jt colors
@@ -157,6 +157,7 @@ def set_context(context='notebook', fscale=1.):
     # scale all the parameters by the same factor depending on the context
     scaling = dict(paper=.8, notebook=1, talk=1.3, poster=1.6)[context]
     context_dict = {k: v * scaling for k, v in base_context.items()}
+
     # scale default figsize
     figX, figY = (5.5, 4.5)
     context_dict["figure.figsize"] = (figX*scaling, figY*scaling)

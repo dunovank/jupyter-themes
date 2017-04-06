@@ -4,15 +4,15 @@
 @notebook-base:         #373e4b;
 
 /* selection, hover, prompts, brackets colors */
-@selected-bg:           #41975E;
+@selected-bg:           #2769c3; //#2d67b7;
 @selected-half:         rgba(80, 92, 133,.45);
 @selected-third:        rgba(80, 92, 133,.22);
 @selected-tenth:        rgba(80, 90, 133,.06);
 @selected-error:        rgba(192, 57, 67, .3);
 @selected-active:       @selected-bg;
 @navbar-selected:       @selected-active;
-@selected-fg:           #D8DCEE;
-@selected-fg-bright:    #e4e8ee;
+@selected-fg:           #bbc2e0; //#D8DCEE;
+@selected-fg-bright:    #D8DCEE; //#dae4ea; //#e4e8ee;
 @unemphasize-fg:        #92A2BD;
 
 /* code, text, markdown, & tooltip colors */
@@ -21,26 +21,26 @@
 @cc-output-bg:          #373e4b;
 @cc-output-fg:          #B1BED6;
 @text-cell-fg:          #ABB7CE;
-@unrendered-text:       #48a667;
-@header-fg:             @unrendered-text;
+@unrendered-text:       #4C8BE2;
+@header-fg:             #7aa05d;
 @tooltip-bg-color:      #323A44;
 @tooltip-fg-color:      @cc-input-fg;
 @nb-name-fg:            @header-fg;
-@nb-name-hover:         #2B84FF;
+@nb-name-hover:         #94c273;
 
 
 /* cell border colors */
-@cc-border-selected:    #48a667;
-@cc-border-edit:        #455C4D;
+@cc-border-selected:    @selected-bg;
+@cc-border-edit:        #33517c;
 @tc-border-selected:    @header-fg;
-@tc-border-edit:        #33517c;
+@tc-border-edit:        #455C4D;
 
 /* menus, dividers, prompt-borders, brackets */
-@divider:               rgba(83, 180, 115, .3);
+@divider:               rgba(148, 204, 114, .3);
 @disabled:              #434d60;
 @input-prompt:          #526488;
-@prompt-line:           rgba(83, 180, 115,.5);
-@tc-prompt-std:         rgba(53, 114, 198,.5);
+@prompt-line:           rgba(53, 114, 198,.5);
+@tc-prompt-std:         rgba(148, 204, 114, .3);
 @matching-bracket:      #4C8BE2;
 @dropdown-bg:           @notebook-base;
 @dropdown-border:       @selected-third;
@@ -58,10 +58,10 @@
 @cmd-palette-hover:     #2b3850;
 
 /* buttons, widgets, kernels colors */
-@item-theme:            #48a667;
-@item-blue:             #437dcd;
+@item-theme:            #7aa05d;
+@item-blue:             #4C8BE2;
 @item-cyan:             #2c85f7;
-@item-green:            @selected-bg;
+@item-green:            #94c273;
 @item-red:              #dc6972;
 
 /* tables and dataframes colors */
@@ -76,9 +76,9 @@
 @codeblock-border:      @codeblock-bg;
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             #3a4452;
-@button-border:         #38424F;
-@button-color:          @selected-active;
+@button-bg:             #29313c;
+@button-border:         #29313c;
+@button-color:          @selected-bg;
 @button-hover:          #424E5E;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    #2A313C;
@@ -107,7 +107,7 @@
 @cm-linenumber:         @unemphasize-fg;
 @cm-comment:            @input-prompt;
 @cm-atom:               #61afef;
-@cm-number:             #fea47f; //#f0a46f;
+@cm-number:             #fea47f;
 @cm-property:           #61afef;
 @cm-attribute:          #ea8080;
 @cm-keyword:            #cc89e0;
@@ -122,7 +122,7 @@
 @cm-def:                @cm-atom;
 @cm-error:              @selected-error;
 @cm-tag:                @cm-atom;
-@cm-link:               @cm-number;
+@cm-link:               #94c273;
 @cm-storage:            @cm-property;
 @cm-entity:             @cm-property;
 @cm-latex:              #8fb36a;

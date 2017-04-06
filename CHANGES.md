@@ -1,5 +1,9 @@
-
 ### Release Notes
+
+#### **v0.15.1:**
+- updated styles for notebook 5.0
+- changed solarized-light to solarizedl
+- cosmetic changes to onedork, solarizedl
 
 #### **v0.15.0:**
 - themed plotting styles

@@ -115,30 +115,30 @@ div.widget-hbox .widget-label,
 .rendered_html :link {
     font-family: @notebook-fontfamily;
     font-size: 100%;
-    color: @item-cyan;
+    color: @item-blue;
     text-decoration: underline;
 }
 .rendered_html :visited,
 .rendered_html :visited:active,
 .rendered_html :visited:focus{
-    color: desaturate(@item-blue, 25%);
+    color: lighten(desaturate(@item-blue, 25%), 4%);
 }
 .rendered_html :visited:hover,
 .rendered_html :link:hover {
     font-family: @notebook-fontfamily;
     font-size: 100%;
-    color: saturate(@nb-name-hover, 10%);
-}
-a.anchor-link:link:hover {
-    font-size: inherit;
-    color: saturate(@nb-name-hover, 10%);
+    color: @cm-link;
 }
 a.anchor-link:link {
     font-size: inherit;
     text-decoration: none;
     padding: 0px 20px;
     visibility: none;
-    color: @header-fg;
+    color: @item-blue;
+}
+a.anchor-link:link:hover {
+    font-size: inherit;
+    color: @cm-link;
 }
 .navbar-text {
     margin-top: 4px;
@@ -155,11 +155,12 @@ div#nbextensions-configurator-container.container,
 }
 div.nbext-selector > nav > .nav > li > a {
     font-family: @notebook-fontfamily;
-    font-size: 12pt;
+    font-size: 10.5pt;
+    padding: 2px 5px;
 }
 div.nbext-readme > .nbext-readme-contents > .rendered_html {
     font-family: @notebook-fontfamily;
-    font-size: 12pt;
+    font-size: 11.5pt;
     line-height: 145%;
     padding: 1em 1em;
     color: @text-cell-fg;
@@ -174,7 +175,7 @@ div.nbext-readme > .nbext-readme-contents > .rendered_html {
 .nbext-enable-btns,
 .nbext-params {
     margin-bottom: 8px;
-    font-size: 12pt;
+    font-size: 11.5pt;
 }
 div.nbext-readme > .nbext-readme-contents {
     padding: 0;
@@ -189,7 +190,7 @@ div.nbext-readme > .nbext-readme-contents:not(:empty) {
 .nbext-showhide-incompat {
     padding-bottom: 0.5em;
     color: @unemphasize-fg;
-    font-size: @nb-fontsize-sub;
+    font-size: 10.5pt;
 }
 .shortcut_key,
 span.shortcut_key {
@@ -197,6 +198,37 @@ span.shortcut_key {
     width: 16ex;
     text-align: right;
     font-family: monospace;
+}
+
+.nbext-filter-menu.dropdown-menu > li > a:hover,
+.nbext-filter-menu.dropdown-menu > li > a:focus,
+.nbext-filter-menu.dropdown-menu > li > a.ui-state-focus {
+    color: @selected-fg !important;
+    background-color: @dropdown-hover !important;
+    background: @dropdown-hover !important;
+    border-color: @dropdown-hover !important;
+}
+span.rendered_html code {
+    background-color: transparent;
+    color: @notebook-fg;
+}
+#nbextensions-configurator-container > div.row.container-fluid.nbext-selector {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+// #ui-id-1.nbext-filter-menu.dropdown-menu {
+//     top: 183px !important;
+// }
+.nbext-filter-menu {
+    max-height: 50vh;
+    overflow-y: auto;
+    outline: none;
+    border: 2px solid @dropdown-border;
+}
+.alert-warning {
+    background-color: @panel-bg;
+    border-color: @panel-bg;
+    color: @notebook-fg;
 }
 /********** NBEXT MARKDOWN **********/
 mark, .mark {
@@ -266,14 +298,15 @@ label#Keyword-Filter {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-    color: #ffffff;
-    background-color: @item-blue;
+    color: @selected-fg-bright;
+    background-color: @selected-bg;
 }
 .input-group .nbext-list-btn-add,
 .input-group-btn:last-child > .btn-group > .btn {
     background: @button-panel-bg;
     background-color: @button-panel-bg;
     border-color: @button-panel-bg;
+
 }
 .input-group .nbext-list-btn-add:hover,
 .input-group-btn:last-child > .btn-group > .btn:hover {

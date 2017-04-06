@@ -238,10 +238,6 @@ def style_layout(style_less,
     with open(os.path.join(jupyter_custom, 'current_theme.txt'), 'w') as f:
         f.write(theme)
 
-    # grade3's altlayout is reverse of default
-    if theme == 'grade3':
-        altlayout = not altlayout
-
     if (os.path.isdir(styles_dir_user) and
             '{}.less'.format(theme) in os.listdir(styles_dir_user)):
         theme_relpath = os.path.relpath(
@@ -257,9 +253,13 @@ def style_layout(style_less,
     promptBG = '@cc-input-bg'
     promptPadding = '.25em'
     promptBorder = '2px solid @prompt-line'
-    tcPromptBorder = promptBorder
+    tcPromptBorder = '2px solid @tc-prompt-std'
     promptMinWidth = 12
     tcPromptWidth = promptMinWidth
+
+    # grade3's altlayout is reverse of default
+    if theme == 'grade3':
+        textcell_bg = '@notebook-bg'
     if altprompt:
         promptPadding = '.1em'
         promptMinWidth = 8
@@ -268,8 +268,7 @@ def style_layout(style_less,
     if altlayout:
         # alt txt/md layout
         textcell_bg = '@notebook-bg'
-        tcPromptBorder = '2px solid transparent'
-        tcPromptWidth = 0
+        promptMinWidth = 8
     if margins != 'auto':
         margins = '{}px'.format(margins)
     if '%' not in cellwidth:

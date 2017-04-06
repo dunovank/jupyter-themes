@@ -90,7 +90,7 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 ### Command Line Examples
 ```sh
 # list available themes
-# oceans16 | grade3 | chesterish | onedork | monokai | solarized-light
+# oceans16 | grade3 | chesterish | onedork | monokai | solarizedl
 jt -l
 
 # select theme...
@@ -144,7 +144,7 @@ from jupyterthemes import jtplot
 jtplot.style()
 
 # select an alternative theme's plot style by name
-# oceans16 | grade3 | chesterish | onedork | monokai | solarized-light
+# oceans16 | grade3 | chesterish | onedork | monokai | solarizedl
 jtplot.style('onedork')
 
 # set "context" (paper, notebook, talk, or poster)
