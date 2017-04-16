@@ -6,7 +6,7 @@
 |  Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
 
 ###### *plotting style*
-![image](screens/onedork_figure_style.png)
+![image](screens/onedork_reach_plots.png)
 
 ###### *markdown/equations*
 ![image](screens/oceans16_markdown.png)

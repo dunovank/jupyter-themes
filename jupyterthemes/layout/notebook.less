@@ -270,7 +270,7 @@ div#notebook {
     background-color: @notebook-bg;
 }
 #notebook-container {
-    padding: 13px;
+    padding: 13px 2px;
     background-color: @notebook-bg;
     min-height: 0px;
     box-shadow: none;
@@ -293,18 +293,21 @@ div#ipython-main-app.container {
 /********************************************************/
 /************** NOTEBOOK PAGE HEADER AND NA *************/
 /********************************************************/
-.notebook_app #header {
+.notebook_app #header,
+.edit_app #header {
     box-shadow: none !important;
     background-color: @notebook-bg;
     border-bottom: 2px solid @selected-third;
 }
-#header {
+#header,
+.edit_app #header {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
     box-shadow: none;
     background-color: @notebook-bg;
 }
-#header .header-bar {
+#header .header-bar,
+.edit_app #header .header-bar {
     background: @notebook-bg;
     background-color: @notebook-bg;
 }
@@ -314,6 +317,7 @@ body > #header .header-bar {
 }
 #menubar {
     background-color: @notebook-bg;
+    // margin-top: 0px !important;
 }
 #menubar .navbar, .navbar-default {
     background-color: @notebook-bg;
@@ -323,9 +327,13 @@ body > #header .header-bar {
 .navbar {
     border: none;
 }
-div.navbar-text, .navbar-text {
-    margin-top: 5px !important;
+div.navbar-text,
+.navbar-text,
+.navbar-text.indicator_area,
+p.navbar-text.indicator_area {
+    margin-top: 8px !important;
     margin-bottom: 0px;
+    color: @item-theme;
 }
 .navbar-default {
     font-family: @notebook-fontfamily;
@@ -358,6 +366,9 @@ div.navbar-text, .navbar-text {
     background-color: @navbar-selected;
     border-color: @navbar-selected;
     line-height: 1.5em;
+}
+.navbar-nav > li > .dropdown-menu {
+    margin-top: 2px;
 }
 
 /****************************************/
@@ -400,8 +411,8 @@ div.navbar-text, .navbar-text {
 }
 .running_notebook_icon:before {
     color: @item-green !important;
-    font: normal normal normal 17px/1 FontAwesome;
-    font-size: 17px;
+    font: normal normal normal 15px/1 FontAwesome;
+    font-size: 15px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -409,9 +420,9 @@ div.navbar-text, .navbar-text {
     vertical-align: middle;
 }
 .item_buttons .running-indicator {
-    padding-top: 3px;
+    padding-top: 4px;
     color: @item-green;
-    font: @notebook-fontfamily;
+    font-family: @notebook-fontfamily;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
 }
@@ -581,6 +592,7 @@ div.kse-dropdown > .dropdown-menu,
     min-width: 0;
     top: 94%;
 }
+
 /****************************************/
 /**************** BUTTONS ***************/
 /****************************************/
@@ -913,7 +925,7 @@ div.panel-default > .panel-heading {
 div.container-fluid {
     margin-right: auto;
     margin-left: auto;
-    padding-left: 7px;
+    padding-left: 0px;
     padding-right: 12px;
 }
 div.form-control,
@@ -961,8 +973,8 @@ div.output.output_scroll {
 	border-radius: 6px;
 }
 ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
+    width: 9px;
+    height: 9px;
     background-color: @scroll-trough;
     border-radius: 6px;
 }

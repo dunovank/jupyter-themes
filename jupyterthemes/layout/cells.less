@@ -255,8 +255,8 @@ div.edit_mode div.text_cell.unrendered {
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border-radius: 4px;
+    // padding: 0.5em 0.5em 0.5em 0.4em;
 }
-
 div.cell.text_cell.selected:before,
 div.cell.text_cell.selected.jupyter-soft-selected:before {
     background: @tc-border-selected;
@@ -272,7 +272,7 @@ div.cell.text_cell.selected.jupyter-soft-selected:before {
 }
 .edit_mode div.cell.text_cell.selected:before,
 div.cell.text_cell.selected.jupyter-soft-selected:before {
-    background: @cc-border-edit;
+    background: @tc-border-edit;
     border: 2px solid @tc-border-edit;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
@@ -283,6 +283,9 @@ div.cell.text_cell.selected.jupyter-soft-selected:before {
     width: 5px;
     height: 100%;
 }
+// div.text_cell .CodeMirror-scroll {
+//     padding: 0.5em 0.5em 0.5em 0.4em;
+// }
 /********** TEXT & MD PROMPT **********/
 
 div.cell.text_cell .input_prompt {
@@ -409,6 +412,7 @@ div.rendered_html h5 {
     color: @header-fg;
     font-size: 220%;
     text-align: center;
+    font-style: normal;
     font-weight: lighter;
 }
 .rendered_html h2,
@@ -423,23 +427,22 @@ div.rendered_html h5 {
 .text_cell_render h3 {
     font-size: 150%;
     color: @header-fg;
-    font-weight: lighter;
-    text-decoration: italic;
     font-style: normal;
+    font-weight: lighter;
 }
 .rendered_html h4,
 .text_cell_render h4 {
     font-size: 120%;
     color: @header-fg;
-    font-weight: underline;
     font-style: normal;
+    font-weight: lighter;
 }
 .rendered_html h5,
 .text_cell_render h5 {
     font-size: 100%;
     color: @selected-fg;
+    font-style: normal;
     font-weight: lighter;
-    text-decoration: underline;
 }
 // div.cell.jupyter-soft-selected {
 //     border-left-color: @item-theme;

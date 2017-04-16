@@ -1,5 +1,9 @@
 ### Release Notes
 
+#### **v0.15.4:**
+- improved text editor visibility
+- minor cosmetic improvements
+
 #### **v0.15.3:**
 - README & doc updates for jtplot module
 - style fixes for new "add keyboard shortcuts" form

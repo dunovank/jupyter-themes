@@ -121,7 +121,7 @@ div.widget-hbox .widget-label,
 .rendered_html :visited,
 .rendered_html :visited:active,
 .rendered_html :visited:focus{
-    color: lighten(desaturate(@item-blue, 25%), 4%);
+    color: lighten(desaturate(@item-blue, 5%), 4%);
 }
 .rendered_html :visited:hover,
 .rendered_html :link:hover {
@@ -530,6 +530,28 @@ div#short-key-bindings-intro.well, .well {
     box-shadow: none;
 }
 
+/******************************************/
+/************** TEXT EDITOR ***************/
+/******************************************/
+#texteditor-backdrop {
+    background: @notebook-bg;
+    background-color: @notebook-bg;
+}
+#texteditor-backdrop #texteditor-container .CodeMirror-gutter,
+#texteditor-backdrop #texteditor-container .CodeMirror-gutters {
+    background: @cm-gutters;
+    background-color: @cm-gutters;
+    color: @cm-linenumber;
+}
+.edit_app #menubar .navbar {
+    margin-bottom: 0px;
+}
+#texteditor-backdrop #texteditor-container {
+    padding: 0px;
+    background-color: @cc-input-bg;
+    box-shadow: none;
+    // border-left: 2px solid ;
+}
 /******************************************/
 /******** KERNEL RUNNING ANIMATION ********/
 /******************************************/
