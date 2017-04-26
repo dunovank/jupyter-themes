@@ -1,22 +1,4 @@
 @font-face {
- font-family: 'Source Code Pro';
- font-weight: normal;
- font-style: normal;
- src: local('Source Code Pro'), url('fonts/source-code-pro.otf') format('opentype');
-}
-@font-face {
- font-family: 'Source Code Pro';
- font-weight: normal;
- font-style: italic;
- src: local('Source Code Pro'), url('fonts/source-code-pro-italic.otf') format('opentype');
-}
-@font-face {
- font-family: 'Exo_2';
- font-weight: normal;
- font-style: normal;
- src: local('Exo_2'), url('fonts/exo-II-regular.ttf') format('truetype');
-}
-@font-face {
  font-family: 'Fira Code';
  font-weight: normal;
  font-style: normal;
@@ -27,6 +9,24 @@
  font-weight: normal;
  font-style: normal;
  src: local('Merriweather'), url('fonts/Merriweather-Regular.ttf') format('truetype');
+}
+@font-face {
+ font-family: 'Exo_2';
+ font-weight: normal;
+ font-style: normal;
+ src: local('Exo_2'), url('fonts/exo-II-regular.ttf') format('truetype');
+}
+@font-face {
+ font-family: 'Source Code Pro';
+ font-weight: normal;
+ font-style: normal;
+ src: local('Source Code Pro'), url('fonts/source-code-pro.otf') format('opentype');
+}
+@font-face {
+ font-family: 'Source Code Pro';
+ font-weight: normal;
+ font-style: italic;
+ src: local('Source Code Pro'), url('fonts/source-code-pro-italic.otf') format('opentype');
 }
 div#notebook {
  font-family: "Exo_2", sans-serif;
@@ -1208,7 +1208,7 @@ div.prompt,
  padding: 0px;
  padding-top: 4px;
  padding-left: 5px;
- text-align: left !important;
+ text-align: right !important;
  min-width: 12ex !important;
  width: 12ex !important;
 }
@@ -1416,7 +1416,7 @@ div.cell.text_cell.rendered .input_prompt {
  font-size: 9.5pt;
  font-weight: normal;
  color: #446489;
- text-align: left !important;
+ text-align: right !important;
  min-width: 12ex;
  width: 12ex !important;
  background-color: #303845;
@@ -1427,7 +1427,7 @@ div.cell.text_cell.unrendered .input_prompt {
  font-size: 9.5pt;
  font-weight: normal;
  color: #446489;
- text-align: left !important;
+ text-align: right !important;
  min-width: 12ex;
  width: 12ex !important;
  border-right: 2px solid rgba(148,204,114,.3);
@@ -1707,6 +1707,9 @@ div.widget-label {
 }
 .progress-bar-success {
  background-color: #83a83b !important;
+}
+.widget-select select {
+ margin-left: 12px;
 }
 .rendered_html :link {
  font-family: "Exo_2", sans-serif;

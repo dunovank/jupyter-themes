@@ -4,6 +4,8 @@ import sys
 from shutil import copyfile, rmtree
 from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
 import lesscpy
+from IPython.core.display import HTML
+from glob import glob
 
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -91,7 +93,7 @@ def install_precompiled_theme(theme):
     copyfile(theme_src, theme_dst)
 
     for fontcode in ['exosans', 'loraserif', 'droidmono', 'firacode']:
-        fname, fpath, ffam = stored_font_dicts(fontcode)
+        fname, fpath = stored_font_dicts(fontcode)
 
         fontpath = os.path.join(fonts_dir, fpath)
         for fontfile in os.listdir(fontpath):
@@ -109,22 +111,15 @@ def delete_font_files():
         os.remove(abspath)
 
 
-def import_stored_fonts(fontcodes=('exosans', 'loraserif', 'droidmono')):
+def import_stored_fonts(style_less, fontcodes=('exosans', 'loraserif', 'droidmono')):
     """Collect fontnames and local pointers to fontfiles in custom dir
     then pass information for each font to function for writing import
     statements
     """
-    doc = '\nConcatenated font imports, .less styles, & custom variables\n'
-    s = '*' * 65
-    style_less = '\n'.join(['/*', s, s, doc, s, s, '*/'])
-    style_less += '\n\n\n'
-    style_less += '/* Import Notebook, Markdown, & Code Fonts */\n'
-
     for fontcode in set(fontcodes):
-        fname, fpath, ffam = stored_font_dicts(fontcode)
+        fname, fpath = stored_font_dicts(fontcode)
         style_less = import_fonts(style_less, fname, fpath)
     style_less += '\n\n'
-
     return style_less
 
 
@@ -136,37 +131,42 @@ def convert_fontsizes(fontsizes):
             fontsizes[i] = '.'.join([fs[:-1], fs[-1]])
         elif int(fs) > 50:
             fontsizes[i] = '.'.join([fs[0], fs[-1]])
-
     return fontsizes
 
 
-def set_font_properties(nbfont='exosans',
+def set_font_properties(style_less, nbfont='exosans',
                         tcfont='loraserif',
                         monofont='droidmono',
                         monosize=11,
                         tcfontsize=13,
                         nbfontsize=13,
-                        prfontsize=95):
+                        prfontsize=95,
+                        dfonts=False):
     """Parent function for setting notebook, text/md, and
     codecell font-properties
     """
+
     fontsizes = [monosize, nbfontsize, tcfontsize, prfontsize]
     monosize, nbfontsize, tcfontsize, prfontsize = convert_fontsizes(fontsizes)
-    style_less = import_stored_fonts(
-        fontcodes=[nbfont, tcfont, monofont, 'firacode'])
+
+    if dfonts:
+        monofont = 'monospace'
+        tcfont = 'sans-serif'
+        nbfont = 'sans-serif'
+    else:
+        style_less = import_stored_fonts(style_less,
+            fontcodes=[nbfont, tcfont, monofont, 'firacode'])
+        # get fontname, fontpath, font-family info
+        nbfont, nbfontpath= stored_font_dicts(nbfont)
+        tcfont, tcfontpath= stored_font_dicts(tcfont)
+        monofont, monofontpath = stored_font_dicts(monofont)
+
     style_less += '/* Set Font-Type and Font-Size Variables  */\n'
 
-    # get fontname, fontpath, font-family info
-    nbfont, nbfontpath, nbfontfam = stored_font_dicts(nbfont)
-    tcfont, tcfontpath, tcfontfam = stored_font_dicts(tcfont)
-    monofont, monofontpath, monofontfam = stored_font_dicts(monofont)
-
     # font names and fontfamily info for codecells, notebook & textcells
-    style_less += '@monofont: "{}"; \n'.format(monofont)
-    style_less += '@notebook-fontfamily: "{}", {}; \n'.format(nbfont,
-                                                              nbfontfam)
-    style_less += '@text-cell-fontfamily: "{}", {}; \n'.format(tcfont,
-                                                               tcfontfam)
+    style_less += '@monofont: {}; \n'.format(monofont)
+    style_less += '@notebook-fontfamily: {}; \n'.format(nbfont)
+    style_less += '@text-cell-fontfamily: {}; \n'.format(tcfont)
 
     # font size for codecells, main notebook, notebook-sub, & textcells
     style_less += '@monofontsize: {}pt; \n'.format(monosize)
@@ -398,10 +398,6 @@ def reset_default(verbose=False):
 def set_nb_theme(name):
     """Set theme from within notebook """
 
-    # TODO move this import to the top?
-    from IPython.core.display import HTML
-    from glob import glob
-
     styles_dir = os.path.join(package_dir, 'styles/compiled/')
     css_path = glob('{0}/{1}.css'.format(styles_dir, name))[0]
     customcss = open(css_path, "r").read()
@@ -531,8 +527,7 @@ def stored_font_dicts(fontcode, get_all=False):
         fontname, fontdir = fonts['serif'][fontcode]
         fontfam = 'serif'
     else:
-        "One of the fonts you requested is not available... sorry!"
-        return _
+        print("One of the fonts you requested is not available... sorry!")
+        return '', ''
     fontdir = os.sep.join([fontfam, fontdir])
-
-    return fontname, fontdir, fontfam
+    return '"{}", {}'.format(fontname, fontfam), fontdir
