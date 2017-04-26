@@ -1,4 +1,7 @@
 ### Release Notes
+#### **v0.15.6:**
+- fixed bug that prevented fonts from being imported correctly
+
 #### **v0.15.5:**
 - added compatibility for Jupyter terminal app
 - improved toolbar and NB name visibility

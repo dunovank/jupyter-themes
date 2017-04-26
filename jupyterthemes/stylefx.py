@@ -192,10 +192,10 @@ def import_fonts(style_less, fontname, font_subdir):
                   'otf': 'opentype'}
 
     define_font = (
-        "@font-face {{font-family: '{fontname}';\n\tfont-weight:"
+        "@font-face {{font-family: {fontname};\n\tfont-weight:"
         "{weight};\n\tfont-style: {style};\n\tsrc: local('{fontname}'),"
         "\n\turl('fonts{sepp}{fontfile}') format('{ftype}');}}\n")
-
+    fontname = fontname.split(',')[0]
     fontpath = os.path.join(fonts_dir, font_subdir)
     for fontfile in os.listdir(fontpath):
         if '.txt' in fontfile or 'DS_' in fontfile:
