@@ -459,6 +459,7 @@ def stored_font_dicts(fontcode, get_all=False):
               'firacode': ['Fira Code', 'firacode'],
               'generic': ['Generic Mono', 'generic'],
               'hack': ['Hack', 'hack'],
+              'hasklig': ['Hasklig', 'hasklig'],
               'inputmono': ['Input Mono', 'inputmono'],
               'inconsolata': ['Inconsolata-g', 'inconsolata-g'],
               'liberation': ['Liberation Mono', 'liberation'],

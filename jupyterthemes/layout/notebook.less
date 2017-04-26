@@ -37,7 +37,7 @@ a:hover, a:focus {
 div#notebook_list_header.row.list_header {
     font-size: 13.5pt;
     color: @selected-fg;
-    background-color: @button-bg;
+    background-color: @form-input-bg;
     height: 35px;
 }
 div#cluster_list_header.row.list_header,
@@ -54,7 +54,10 @@ div#cluster_list > div.list_item.row:hover {
     background-color: @panel-bg;
 }
 div#clusters.tab-pane.active {
-    font-size: @nb-fontsize-sub;
+    font-size: 15px;
+    margin-bottom: 8px;
+    height: 24px;
+    line-height: 24px;
     padding: 4px 0 4px 0;
 }
 #running .panel-group .panel .panel-heading {
@@ -87,10 +90,12 @@ div#clusters.tab-pane.active {
     padding: 2px;
 }
 div.running_list_info.toolbar_info {
-    font-size: @nb-fontsize-sub;
+    font-size: 15px;
     padding: 4px 0 4px 0;
-    height: inherit;
-    line-height: 1.5; //inherit;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    height: 24px;
+    line-height: 24px;
     text-shadow: none;
 }
 .list_placeholder {
@@ -109,6 +114,49 @@ div.running_list_info.toolbar_info {
     text-align: center;
     vertical-align: text-top;
 }
+.fa-folder:before {
+    color: @item-blue;
+}
+.fa-arrow-up:before {
+    font-size: 14px;
+}
+.fa-arrow-down:before {
+    font-size: 14px;
+}
+.folder_icon:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f07b";
+    color: @item-blue;
+}
+.notebook_icon:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f02d";
+    position: relative;
+    color: @item-cyan !important;
+    top: 0px;
+}
+.file_icon:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f15b";
+    position: relative;
+    top: 0px;
+    color: @scroll-trough !important;
+}
 #project_name {
     display: inline-flex;
     padding-left: 7px;
@@ -119,16 +167,63 @@ div.running_list_info.toolbar_info {
 }
 div#notebook_toolbar div.dynamic-instructions {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
+    font-size: 15px;
+    // margin-top: 5px;
+    // margin-bottom: 8px;
+    // height: 24px;
+    // line-height: 24px;
+    // padding: 4px 0 4px 0;
 }
-.toolbar_info {
+div#maintoolbar .container {
+    margin-left: -5px !important;
+}
+span#login_widget > .button, #logout {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
     color: @notebook-fg;
+    background: @button-bg;
+    background-color: @button-bg;
+    border: 2px solid @button-border;
+    font-weight: normal;
+    box-shadow: none;
     text-shadow: none;
-    border: none;
-    height: inherit;
-    line-height: inherit;
+    border-radius: 2px;
+    font-size: inherit;
+}
+span#login_widget > .button:hover, #logout:hover {
+    color: @selected-fg;
+    background-color: @button-hover;
+    background: @button-hover;
+    border-color: @button-hover;
+    background-image: none;
+    box-shadow: none !important;
+    border-radius: 2px;
+}
+span#login_widget > .button:focus, #logout:focus,
+span#login_widget > .button.focus, #logout.focus,
+span#login_widget > .button:active, #logout:active,
+span#login_widget > .button.active, #logout.active,
+.open > .dropdown-togglespan#login_widget > .button,
+.open > .dropdown-toggle#logout {
+    color: @selected-fg-bright;
+    background-color: @button-color;
+    background: @button-color;
+    border-color: @button-color;
+    background-image: none;
+    box-shadow: none !important;
+    border-radius: 2px;
+}
+body > #header #header-container {
+    padding-bottom: 0px;
+    padding-top: 4px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body > #header {
+    background: @notebook-bg;
+    background-color: @notebook-bg;
+    position: relative;
+    z-index: 100;
 }
 .list_container {
     font-size: @nb-fontsize-sub;
@@ -145,7 +240,7 @@ div#notebook_toolbar div.dynamic-instructions {
 }
 .list_header > div input,
 .list_item > div input {
-    top: 0px;
+    top: 4px;
 }
 .list_header > div .item_link,
 .list_item > div .item_link {
@@ -175,26 +270,27 @@ div#notebook_toolbar div.dynamic-instructions {
     margin-bottom: 0px;
     margin-top: 0px;
     left: -3px;
+    border-radius: 0px !important;
 }
 button#tree-selector-btn {
     height: 34px;
     font-size: @nb-fontsize-sub;
     border: none;
     left: -3px;
+    border-radius: 0px !important;
 }
 input#select-all.pull-left.tree-selector {
     margin-left: 7px;
     margin-right: 2px;
-    margin-top: 6px;
+    margin-top: 2px;
 }
 input[type="radio"],
 input[type="checkbox"] {
-    // margin: 6px 0 0;
     margin-top: 1px;
     line-height: normal;
 }
 .list_container a {
-    font-size: 17px;
+    font-size: 16px;
     color: @notebook-fg;
     border: none;
     text-shadow: none !important;
@@ -212,6 +308,12 @@ div.list_item:hover {
     color: @notebook-fg;
     border: none;
     text-shadow: none !important;
+}
+.breadcrumb > li + li:before {
+    content: "/\00a0";
+    padding: 0px;
+    color: @notebook-fg;
+    font-size: 18px;
 }
 ul#tabs a {
     font-family: @notebook-fontfamily;
@@ -290,6 +392,12 @@ div#ipython-main-app.container {
     margin-right: auto;
     margin-left: auto;
 }
+div#menubar-container {
+    width: 95%;
+}
+div#header-container {
+    width: 95%;
+}
 /********************************************************/
 /************** NOTEBOOK PAGE HEADER AND NA *************/
 /********************************************************/
@@ -315,9 +423,13 @@ body > #header .header-bar {
     width: 100%;
     background: @notebook-bg;
 }
-#menubar {
+span.checkpoint_status, span.autosave_status {
+    font-size: small;
+    display: none;
+}
+#menubar, div#menubar {
     background-color: @notebook-bg;
-    // margin-top: 0px !important;
+    padding-top: 0px !important;
 }
 #menubar .navbar, .navbar-default {
     background-color: @notebook-bg;
@@ -431,7 +543,7 @@ p.navbar-text.indicator_area {
     color: @item-blue;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    margin-top: 2px !important;
+    margin-top: 5px !important;
 }
 #kernel_indicator {
     float: right !important;
@@ -457,15 +569,27 @@ p.navbar-text.indicator_area {
 
 .kernel_idle_icon:before {
     display: inline-block;
-    font: normal normal normal 22px/1 FontAwesome;
-    font-size: 22px;
+    font: normal normal normal 23px/1 FontAwesome;
+    font-size: 23px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     content: "\f10c";
-    vertical-align: bottom;
+    vertical-align: text-top;
 }
-
+.kernel_busy_icon:before {
+    display: inline-block;
+    font: normal normal normal 23px/1 FontAwesome;
+    font-size: 23px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // content: "\f10c";
+    vertical-align: text-top;
+}
+i#kernel_indicator_icon {
+    vertical-align: sub;
+}
 div.notification_widget.info,
 .notification_widget.info,
 .notification_widget:active:hover,
@@ -489,6 +613,15 @@ div.notification_area {
     float: right !important;
     position: static;
 }
+.notification_widget,
+div.notification_widget {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-right: 0px;
+    vertical-align: text-top !important;
+    margin-top: 6px !important;
+    z-index: 1000;
+}
 #kernel_logo_widget,
 #kernel_logo_widget .current_kernel_logo {
     display: none;
@@ -503,7 +636,7 @@ i.fa.fa-icon {
 }
 .fa {
     display: inline-block;
-    font: normal normal normal 12pt/1 "FontAwesome", @notebook-fontfamily;
+    font: normal normal normal 10pt/1 "FontAwesome", @notebook-fontfamily;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -522,23 +655,25 @@ i.fa.fa-icon {
     border: 2px solid @dropdown-border;
     background-color: @dropdown-bg;
     background: @dropdown-bg;
-    line-height: 1.3;
+    line-height: 1;
 }
 .dropdown-menu:hover {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
+    box-shadow: none;
+    padding: 0px;
+    text-align: left;
     border: 2px solid @dropdown-border;
     background-color: @dropdown-bg;
     box-shadow: none;
-    line-height: 1.3;
+    line-height: 1;
 }
-
 .dropdown-menu > li > a {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize-sub;
-    line-height: 1.3;
+    line-height: 1.1;
     display: block;
-    padding: 10px 25px 10px 14px;
+    padding: 10px 20px 9px 10px;
     color: @notebook-fg;
     background-color: @dropdown-bg;
     background: @dropdown-bg;
@@ -551,13 +686,13 @@ i.fa.fa-icon {
     border-color: @dropdown-hover;
 }
 .dropdown-menu .divider {
-    height: 2px;
+    height: 1px;
     margin: 0px 0px;
     overflow: hidden;
     background-color: @selected-half;
 }
 .dropdown-submenu > .dropdown-menu {
-    top: 0;
+    top: 0px;
     left: 100%;
     margin-top: -2px;
     margin-left: 0px;
@@ -573,12 +708,13 @@ i.fa.fa-icon {
     padding: none;
     display: block;
     clear: both;
-    line-height: 1.2;
+    line-height: 1.1;
     white-space: nowrap;
 }
 .dropdown-submenu > a:after {
     color: @notebook-fg;
     margin-right: -16px;
+    margin-top: 0px;
 }
 .dropdown-submenu:hover > a:after,
 .dropdown-submenu:active > a:after,
@@ -601,7 +737,7 @@ div.kse-dropdown > .dropdown-menu,
     color: @notebook-fg;
     background: @button-bg;
     background-color: @button-bg;
-    border: 2px solid @button-border;
+    border: 1px solid @button-border;
     font-weight: normal;
     box-shadow: none;
     text-shadow: none;
@@ -615,9 +751,9 @@ div.kse-dropdown > .dropdown-menu,
 .open > .dropdown-toggle.btn-default:hover,
 .open > .dropdown-toggle.btn:hover {
     color: @selected-fg;
+    border: 1px solid @button-hover;
     background-color: @button-hover;
     background: @button-hover;
-    border-color: @button-hover;
     background-image: none;
     box-shadow: none !important;
     border-radius: 2px;
@@ -643,12 +779,13 @@ div.kse-dropdown > .dropdown-menu,
 .open > .dropdown-toggle.btn.focus,
 .open > .dropdown-toggle.btn-default {
     color: @selected-fg-bright;
+    border: 1px solid @selected-active;
     background-color: @selected-active;
     background: @selected-active;
     border-color: @selected-active;
     background-image: none;
     box-shadow: none !important;
-    border-radius: 1px;
+    border-radius: 2px;
 }
 .item_buttons > .btn,
 .item_buttons > .btn-group,
@@ -705,18 +842,21 @@ div.kse-dropdown > .dropdown-menu,
     font-family: @notebook-fontfamily !important;
     font-size: @nb-fontsize !important;
     color: @item-theme !important;
-    border-bottom: 2px solid @item-theme !important;
+    border-bottom: none !important;
     padding: 0px !important;
-    margin: 6px 6px 1px !important;
+    margin: 6px 6px 0px !important;
 }
+
 span#last-modified.btn.btn-xs.btn-default.sort-action,
 span#sort-name.btn.btn-xs.btn-default.sort-action {
+    font-family: @notebook-fontfamily;
+    font-size: 16px;
     background-color: transparent;
     background: transparent;
     border: none;
     padding-bottom: 0px;
     margin-bottom: 0px;
-    vertical-align: -webkit-baseline-middle;
+    vertical-align: sub;
 }
 span#last-modified.btn.btn-xs.btn-default.sort-action {
     margin-left: 19px;
@@ -725,10 +865,11 @@ span#last-modified.btn.btn-xs.btn-default.sort-action {
 button.close {
     border: 0px none;
     font-family: sans-serif;
-    font-size: 25pt;
+    font-size: 20pt;
+    font-weight: normal;
 }
 .dynamic-buttons {
-    font-size: inherit;
+    font-size: 15px;
     padding-top: 0px;
     display: inline-block;
 }
@@ -736,21 +877,14 @@ button.close {
     color: @item-red;
     opacity: .5;
     text-shadow: none;
+    font-weight: normal;
 }
 .close:hover {
     color: @item-red;
     opacity: 1;
+    font-weight: normal;
 }
-div.btn.btn-default.output_collapsed {
-    background: darken(@button-panel-bg, 5%);
-    background-color: darken(@button-panel-bg, 5%);
-    border-color: darken(@button-panel-bg, 5%);
-}
-div.btn.btn-default.output_collapsed:hover {
-    background: darken(@button-panel-hover, 4%);
-    background-color: darken(@button-panel-hover, 4%);
-    border-color: darken(@button-panel-hover, 4%);
-}
+
 div.nbext-enable-btns .btn[disabled],
 div.nbext-enable-btns .btn[disabled]:hover,
 .btn-default.disabled,
@@ -794,7 +928,7 @@ fieldset[disabled] .btn-default.focus {
     white-space: nowrap;
     background: @button-panel-bg;
     background-color: @button-panel-bg;
-    border: none; // border: 1px solid darken(@button-panel-bg, 1%);
+    border: none;
 }
 .input-group-btn:hover {
     background: @button-panel-hover;
@@ -961,6 +1095,23 @@ select.form-control.select-xs {
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @prompt-line;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @prompt-line;
 }
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+  color: @disabled; //@unemphasize-fg;
+}
+/* Firefox 19+ */
+::-moz-placeholder {
+  color: @disabled; //@unemphasize-fg;
+}
+/* IE 10+ */
+:-ms-input-placeholder {
+  color: @disabled; //@unemphasize-fg;
+}
+/* Firefox 18- */
+:-moz-placeholder {
+  color: @disabled; //@unemphasize-fg;
+}
+
 /****************************************/
 /************** SCROLL BARS *************/
 /****************************************/
@@ -968,15 +1119,15 @@ div.output.output_scroll {
     box-shadow: none;
 }
 ::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.11);
+	-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.11);
 	background-color: @scroll-trough;
-	border-radius: 6px;
+	border-radius: 5px;
 }
 ::-webkit-scrollbar {
-    width: 9px;
+    width: 11px;
     height: 9px;
     background-color: @scroll-trough;
-    border-radius: 6px;
+    border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
     background-color: #ffffff;
@@ -986,7 +1137,8 @@ div.output.output_scroll {
             color-stop(0.5, lighten(@scrollbar, 6%)),
             to(darken(@scrollbar, 4%)));
     min-height: 100px;
-    border-radius: 2px;
+    border-radius: 3px;
+    width: 11px;
 }
 
 /******* Smooth Fonts ********/

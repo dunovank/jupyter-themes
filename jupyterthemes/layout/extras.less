@@ -80,35 +80,63 @@ div.widget-area a:focus {
 }
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn,
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
-    background: @button-panel-bg;
-    background-color: @button-panel-bg;
-    border: 2px solid @button-panel-bg !important;
+    background: darken(@button-panel-bg,1%);
+    background-color: darken(@button-panel-bg,1%);
+    border: 2px solid darken(@button-panel-bg,1%) !important;
     font-size: inherit;
     z-index: 0;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox,
 div.widget-hbox, .widget-hbox {
     display: inline-table;
+    width: 38% !important;
+    margin-left: 10px;
+}
+.widget-inline-hbox {
+    display: inline-table !important;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox .widget-label,
 div.widget-hbox .widget-label,
-.widget-hbox .widget-label {
-    font-size: 11pt;
-    min-width: 100%;
-    padding-top: 5px;
-    padding-right: 10px;
-    text-align: left;
-    vertical-align: text-top;
+.widget-hbox .widget-label,
+.widget-inline-hbox .widget-label,
+div.widget-label {
+    text-align: -webkit-auto !important;
+    margin-left: 15px !important;
+    max-width: 240px !important;
+    min-width: 100px !important;
+    vertical-align: text-top !important;
+    color: @cc-output-fg !important;
+}
+.widget-hprogress .progress {
+    flex-grow: 1;
+    height: 20px;
+    margin-top: auto;
+    margin-left: 12px;
+    margin-bottom: auto;
+    width: 300px;
 }
 .progress {
     overflow: hidden;
-    height: 20px;
+    height: 22px;
     margin-bottom: 10px;
     padding-left: 10px;
-    background-color: lighten(@disabled, 11%);
-    border-radius: 4px;
+    background-color: @table-border !important;
+    border-radius: 2px;
     -webkit-box-shadow: none;
     box-shadow: none;
+    z-index: 10;
+}
+.progress-bar-danger {
+    background-color: @item-danger !important;
+}
+.progress-bar-info {
+    background-color: @item-info !important;
+}
+.progress-bar-warning {
+    background-color: @item-warning !important;
+}
+.progress-bar-success {
+    background-color: @item-success !important;
 }
 
 /************ LINKS  ************/
@@ -144,14 +172,29 @@ a.anchor-link:link:hover {
     margin-top: 4px;
     margin-bottom: 0px;
 }
+#clusters > a {
+    color: @cm-link;
+    text-decoration: underline;
+    cursor: auto;
+}
+#clusters > a:hover {
+    color: @item-blue;
+    text-decoration: underline;
+    cursor: auto;
+}
 /***********  JUPYTER NBEXT CONFIGURATOR ***********/
+#nbextensions-configurator-container > div.row.container-fluid.nbext-selector > h3 {
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    height: 24px;
+    padding: 4px 0 4px 0;
+}
 div#nbextensions-configurator-container.container,
 #nbextensions-configurator-container.container {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    // margin-right: @container-margins;
-    // margin-left: @container-margins;
 }
 div.nbext-selector > nav > .nav > li > a {
     font-family: @notebook-fontfamily;
@@ -516,7 +559,7 @@ span.shortcut_key {
     border-bottom: 1px solid @selected-third;
 }
 .jupyter-keybindings i {
-    background: @button-bg;
+    background: @codeblock-bg;
     font-size: small;
     padding: 5px;
     margin-left: 7px;
@@ -552,6 +595,78 @@ div#short-key-bindings-intro.well, .well {
     box-shadow: none;
     // border-left: 2px solid ;
 }
+
+
+/*********************************************/
+/************** XTERM TERMINAL ***************/
+/*********************************************/
+.terminal-app {
+    background: @notebook-bg;
+}
+.terminal-app .terminal {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    line-height: @cc-line-height;
+    color: @cc-input-fg;
+    background: @cc-input-bg;
+    padding: 0.4em;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.terminal .xterm-viewport {
+    background-color: @cc-input-bg;
+    color: @cc-input-fg;
+    overflow-y: auto;
+}
+.terminal .xterm-color-0 {
+    color: @item-theme;
+}
+.terminal .xterm-color-1 {
+    color: @cm-attribute;
+}
+.terminal .xterm-color-2 {
+    color: @cm-keyword;
+}
+.terminal .xterm-color-3 {
+    color: @cm-builtin;
+}
+.terminal .xterm-color-4 {
+    color: @cm-number;
+}
+.terminal .xterm-color-5 {
+    color: @cm-string;
+}
+.terminal .xterm-color-6 {
+    color: @cm-property;
+}
+.terminal .xterm-color-7 {
+    color: @cm-def;
+}
+.terminal .xterm-color-8 {
+    color: @cm-link;
+}
+.terminal .xterm-color-9 {
+    color: @cm-string;
+}
+.terminal .xterm-color-10 {
+    color: @cm-builtin;
+}
+.terminal .xterm-color-14 {
+    color: @cm-property;
+}
+.terminal .xterm-bg-color-15 {
+    background-color: @cc-input-bg;
+}
+.terminal:not(.xterm-cursor-style-underline):not(.xterm-cursor-style-bar) .terminal-cursor {
+    background-color: @item-theme;
+    color: @cc-input-bg;
+}
+.terminal:not(.focus) .terminal-cursor {
+    outline: 1px solid @item-theme;
+    outline-offset: -1px;
+}
+
 /******************************************/
 /******** KERNEL RUNNING ANIMATION ********/
 /******************************************/

@@ -65,6 +65,31 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
           [-lineh LINEHEIGHT] [-alt] [-vim] [-T] [-N] [-r]
 ```
 
+#### Description of Command Line options
+|     cl options        |   arg     |     default   |
+|:----------------------|:---------:|:-------------:|
+| Usage help            |  -h       |      --       |
+| List Themes           |  -l       |      --       |
+| Theme Name to Install |  -t       |      --       |
+| Code Font             |  -f       |    source     |
+| Code Font-Size        |  -fs      |      11       |
+| Notebook Font         |  -nf      |    exosans    |
+| Notebook Font Size    |  -nfs     |      13       |
+| Text/MD Cell Font     |  -tf      |  merriserif   |
+| Text/MD Cell Fontsize |  -tfs     |      13       |
+| Intro Page Margins    |  -m       |     auto      |
+| Cell Width            |  -cellw   |      980      |
+| Line Height           |  -lineh   |      170      |
+| Cursor Width          |  -cursw   |       2       |
+| Cursor Color          |  -cursc   |      --       |
+| Alt Text/MD Layout    |  -alt     |      --       |
+| Alt Prompt Layout     |  -altp    |      --       |
+| Style Vim NBExt*      |  -vim     |      --       |
+| Toolbar Visible       |  -T       |      --       |
+| Name & Logo Visible   |  -N       |      --       |
+| Restore Default       |  -r       |      --       |
+
+
 ### Command Line Examples
 ```sh
 # list available themes
@@ -94,13 +119,16 @@ jt -t grade3 -f fira -fs 115
 # (see sans-serif & serif font tables below)
 jt -t onedork -tf georgiaserif -nf droidsans
 
-# adjust cell width, line-height of codecells
-jt -t chesterish -cellw 900 -lineh 170
+# adjust cell width (% screen width) and line height
+jt -t chesterish -cellw 90% -lineh 170
+
+# or set the cell width in pixels by leaving off the '%' sign
+jt -t solarizedl -cellw 860
 
 # fix the container-margins on the intro page (defaults to 'auto')
 jt -t onedork -m 200
 
-# adjust cursor width (in px) and make cursor red (r)
+# adjust cursor width (in px) and make cursor red
 # options: b (blue), o (orange), r (red), p (purple), g (green), x (font color)
 jt -t grade3 -cursc r -cursw 5
 
@@ -112,10 +140,12 @@ jt -t grade3 -T -N
 jt -t grade3 -alt -altp
 ```
 
+
 ### Set Plotting Style (from within notebook)
 `jtplot.style()` makes changes to matplotlib's rcParams dictionary so that figure aesthetics match those of a chosen jupyterthemes style. Note, these commands do not need to be re-run every time you generate a new plot, just once at the beginning of your notebook or whenever style changes are desired after that.
 
 For instance, I include the following two lines in my `~/.ipython/profile_default/startup/startup.ipy` file so this is done  automatically whenever I open a new notebook:
+
 
 ```py
 # import jtplot submodule from jupyterthemes
@@ -158,31 +188,6 @@ jtplot.reset()
 
 ### Additional package info
 
-#### Description of Command Line options
-|     cl options        |   arg     |     default   |
-|:----------------------|:---------:|:-------------:|
-| Usage help            |  -h       |      --       |
-| List Themes           |  -l       |      --       |
-| Theme Name to Install |  -t       |      --       |
-| Code Font             |  -f       |    source     |
-| Code Font-Size        |  -fs      |      11       |
-| Notebook Font         |  -nf      |    exosans    |
-| Notebook Font Size    |  -nfs     |      13       |
-| Text/MD Cell Font     |  -tf      |  merriserif   |
-| Text/MD Cell Fontsize |  -tfs     |      13       |
-| Intro Page Margins    |  -m       |     auto      |
-| Cell Width            |  -cellw   |      980      |
-| Line Height           |  -lineh   |      170      |
-| Cursor Width          |  -cursw   |       2       |
-| Cursor Color          |  -cursc   |      --       |
-| Alt Text/MD Layout    |  -alt     |      --       |
-| Alt Prompt Layout     |  -altp    |      --       |
-| Style Vim NBExt*      |  -vim     |      --       |
-| Toolbar Visible       |  -T       |      --       |
-| Name & Logo Visible   |  -N       |      --       |
-| Restore Default       |  -r       |      --       |
-
-
 #### Monospace Fonts (code cells)
 | -f arg | Monospace Font |
 |:--|:--|
@@ -200,6 +205,7 @@ jtplot.reset()
 |firacode|Fira Code|
 |generic|Generic Mono|
 |hack|Hack|
+|hasklig|Hasklig|
 |inconsolata|Inconsolata-g|
 |inputmono|Input Mono|
 |liberation|Liberation Mono|

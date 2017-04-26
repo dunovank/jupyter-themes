@@ -165,6 +165,16 @@ div.output_subarea {
     box-flex: 1;
     flex: 1;
 }
+div.btn.btn-default.output_collapsed {
+    background: darken(@button-panel-bg, 5%);
+    background-color: darken(@button-panel-bg, 5%);
+    border-color: darken(@button-panel-bg, 5%);
+}
+div.btn.btn-default.output_collapsed:hover {
+    background: darken(@button-panel-bg, 7%);
+    background-color: darken(@button-panel-bg, 7%);
+    border-color: darken(@button-panel-bg, 7%);
+}
 
 /************ CODE CELL OUTPUT PROMPT ************/
 div.prompt.output_prompt {
@@ -444,19 +454,10 @@ div.rendered_html h5 {
     font-style: normal;
     font-weight: lighter;
 }
-// div.cell.jupyter-soft-selected {
-//     border-left-color: @item-theme;
-//     border-right-color: @item-theme;
-//     border-left-width: 0;
-//     padding-left: 6px;
-//     border-right-width: 2px;
-//     background: linear-gradient(to right, @item-theme -40px, @item-theme 7px, @item-theme 7px, @item-theme 100%);
-// }
-// div.cell.selected.jupyter-soft-selected {
-//     border-left-width: 0;
-//     padding-left: 6px;
-//     background: linear-gradient(to right, @item-theme -40px, @item-theme 7px, @item-theme 7px, @item-theme 100%);
-// }
+#complete > select > option:hover {
+    background: @dropdown-hover;
+    background-color: @dropdown-hover;
+}
 div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
     position: absolute;
     z-index: 9999999999;
@@ -466,3 +467,13 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
     pointer-events: none;
     border-radius: 2px;
 }
+
+
+/**** HOVER HIGHLIGHT CELL INPUT PROMPT ******/
+
+// .cell:active .input_prompt,
+// .cell:hover .input_prompt,
+// div.cell:hover .input_prompt {
+//     background: lighten(@cc-input-bg, 2%) !important;
+//     background-color: lighten(@cc-input-bg, 2%) !important;
+// }

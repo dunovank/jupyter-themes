@@ -1,4 +1,12 @@
 ### Release Notes
+#### **v0.15.5:**
+- added compatibility for Jupyter terminal app
+- improved toolbar and NB name visibility
+- better syntax highlighting in tracebacks
+- widened main menubar container at top of NB
+- notification widgets no longer interfere with menubar height
+- minor cosmetic improvements
+- added Hasklig monofont
 
 #### **v0.15.4:**
 - improved text editor visibility

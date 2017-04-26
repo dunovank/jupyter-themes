@@ -17,31 +17,48 @@ div.CodeMirror-lines {
 /*********************************/
 /********** ANSI COLORS **********/
 /*********************************/
-span.ansiblack {
+span.ansiblack,
+.ansi-black-fg {
     color: @ansiblack;
 }
-span.ansiblue {
+span.ansiblue,
+.ansi-blue-fg,
+.ansi-blue-intense-fg {
     color: @ansiblue;
 }
-span.ansigray {
+span.ansigray,
+.ansi-gray-fg,
+.ansi-gray-intense-fg {
     color: @ansigray;
 }
-span.ansigreen {
+span.ansigreen,
+.ansi-green-fg {
     color: @ansigreen;
 }
-span.ansipurple {
+.ansi-green-intense-fg {
+    color: @ansigray;
+}
+span.ansipurple,
+.ansi-purple-fg,
+.ansi-purple-intense-fg {
     color: @ansipurple;
 }
-span.ansicyan {
-    color: @ansicyan;
+span.ansicyan,
+.ansi-cyan-fg,
+.ansi-cyan-intense-fg {
+    color: @ansipurple;
 }
-span.ansiyellow {
+span.ansiyellow,
+.ansi-yellow-fg,
+.ansi-yellow-intense-fg {
     color: @ansiyellow;
 }
-span.ansired {
+span.ansired,
+.ansi-red-fg,
+.ansi-red-intense-fg {
     color: @ansired;
 }
-div.output-stderr {
+div.output-stderr{
     background-color: @stderr-bg;
 }
 div.output-stderr pre {

@@ -136,6 +136,9 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
         'savefig.facecolor': figureFace,
         'savefig.edgecolor': figureFace}
 
+    # update rcdict with style params
+    rcdict.update(style_dict)
+
     # Show or hide the axes ticks
     if ticks:
         rcdict.update({
@@ -144,8 +147,7 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
             "xtick.minor.size": 3,
             "ytick.minor.size": 3})
 
-    # update rcdict with style params
-    rcdict.update(style_dict)
+    rcdict.update(base_style)
 
     # update matplotlib with rcdict (incl. context, font, & style)
     mpl.rcParams.update(rcdict)
@@ -171,7 +173,7 @@ def set_context(context='notebook', fscale=1.):
     context_dict = {k: v * scaling for k, v in base_context.items()}
 
     # scale default figsize
-    figX, figY = (5.5, 4.5)
+    figX, figY = (8., 4.)
     context_dict["figure.figsize"] = (figX*scaling, figY*scaling)
 
     # independently scale the fonts
@@ -180,7 +182,7 @@ def set_context(context='notebook', fscale=1.):
     return context_dict
 
 
-def figsize(x=5.5, y=4.5, aspect=1.):
+def figsize(x=8.5, y=4., aspect=1.):
     """ manually set the default figure size of plots
     ::Arguments::
         x (float): x-axis size
