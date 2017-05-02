@@ -2,6 +2,11 @@
 /*
 This is a non official port for jupyter notebook of the solarized-light theme, documented here:
 http://ethanschoonover.com/solarized
+
+My favorite results are obtained as follows:
+
+jt -t solarized-light --lineheight=140 --monofont="source"
+
 */
 
 @solar-base03: #002b36; 
@@ -28,8 +33,8 @@ http://ethanschoonover.com/solarized
 @notebook-base:         @notebook-bg;
 
 /* selection, hover, prompts, brackets colors */
-@selected-bg:           @solar-base03;
-@selected-half:         @solar-base02;
+@selected-bg:           @solar-base02;
+@selected-half:         @solar-base3;
 @selected-third:        @solar-base02;
 @selected-tenth:        @solar-base02;
 @selected-error:        @solar-red;
@@ -49,13 +54,13 @@ http://ethanschoonover.com/solarized
 @unrendered-text:       @solar-yellow;
 @header-fg:             @solar-yellow;
 @tooltip-bg-color:      @solar-base02;
-@tooltip-fg-color:      @solar-base0;
+@tooltip-fg-color:      @solar-base;
 @nb-name-fg:            @item-theme;
 @nb-name-hover:         #DE6D25;
 
 /* cell border colors */
-@cc-border-selected:    @solar-base00;
-@cc-border-edit:        @solar-base1;
+@cc-border-selected:    @solar-base3;
+@cc-border-edit:        @solar-base01;
 @tc-border-selected:    @cc-border-selected;
 @tc-border-edit:        @cc-border-edit;
 @cell-selected-border-width: thin;
@@ -64,20 +69,20 @@ http://ethanschoonover.com/solarized
 @divider:               @selected-half;
 @disabled:              @solar-base01;
 @input-prompt:          @disabled;
-@prompt-line:           @solar-base03;
+@prompt-line:           @solar-base02;
 @tc-prompt-std:         rgba(30, 112, 199, .50);
 @matching-bracket:      @solar-base03;
-@dropdown-bg:           @solar-base03;
-@dropdown-border:       @solar-base01;
+@dropdown-bg:           @notebook-bg;
+@dropdown-border:       @selected-half;
 @dropdown-hover:        @selected-third;
 
 /* panels and form-control styles */
 @panel-header-bg:       @solar-base02;
-@panel-bg:              @solar-yellow;
-@modal-bg:              @solar-yellow;
-@alert-info-bg:         @solar-base0;
-@form-input-bg:         @solar-base03;
-@cmd-palette-bg:        @solar-yellow;
+@panel-bg:              #f8f8f8;
+@modal-bg:              #ffffff;
+@alert-info-bg:         #fdfdfd;
+@form-input-bg:         #ffffff;
+@cmd-palette-bg:        @form-input-bg;
 @cmd-palette-form:      @panel-header-bg;
 @cmd-palette-hover:     @panel-bg;
 
@@ -89,25 +94,25 @@ http://ethanschoonover.com/solarized
 @item-red:              @solar-red;
 
 /* tables and dataframes colors */
-@table-color:           @solar-base00;
-@table-bg:              @solar-base3;
+@table-color:           #353535;
+@table-bg:              @notebook-bg;
 @table-border:          #D6D6D6;
 @df-header-bg:          @solar-base2;
 @df-header:             @solar-base1;
 @df-header-border:      #C4C4C4;
 @df-cell-bg:            @table-bg;
-@codeblock-bg:          @solar-yellow;
+@codeblock-bg:          #efefef;
 @codeblock-border:      darken(@codeblock-bg, 3%);
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             @solar-base03;
-@button-border:         darken(@button-bg, 2%);
+@button-bg:             #EBEBEB;
+@button-border:         darken(@button-bg, 1%);
 @button-color:          @item-theme;
 @button-hover:          @selected-active;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    darken(@panel-header-bg, 2%);
-@scrollbar:             @solar-base00;
-@scroll-trough:         @solar-base1;
+@scrollbar:             @item-theme;
+@scroll-trough:         @solar-base2;
 @scrollbar-inactive:    @solar-base1;
 @box-shadow:            #e8e8e8;
 
