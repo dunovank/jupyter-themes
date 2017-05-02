@@ -1,14 +1,14 @@
 # jupyterthemes
 ## Theme-ify your Jupyter Notebooks!
 
-|Author | Version | Status | Demo |
-|:--------------------:|:------------:|:------------:|:------------:|
-|  Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
+|    Author    |                 Version                  |                  Status                  |                   Demo                   |
+| :----------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
+| Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
 
-###### *plots & equations*
-![image](screens/grade3_plot_example.png)
+###### *plotting style*
+![image](screens/onedork_reach_plots.png)
 
-###### *markdown & text cells*
+###### *markdown/equations*
 ![image](screens/oceans16_markdown.png)
 
 ###### *pandas dataframes*
@@ -34,7 +34,7 @@
 * [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
 
 ### Requirements
-* Python 2.7, 3.3, 3.4, or 3.5
+* Python 2.7, 3.3, 3.4, 3.5, 3.6
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 
 ### Install with pip
@@ -53,7 +53,6 @@ pip install --upgrade jupyterthemes
 pip uninstall jupyterthemes
 # install from the github repo
 pip install --user git+https://github.com/dunovank/jupyter-themes.git
-
 ```
 
 
@@ -62,35 +61,40 @@ pip install --user git+https://github.com/dunovank/jupyter-themes.git
 usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
           [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-m MARGINS]
           [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-cellw CELLWIDTH]
-          [-lineh LINEHEIGHT] [-alt] [-vim] [-T] [-N] [-r]
+          [-lineh LINEHEIGHT] [-alt] [-altp] [-P] [-T] [-N] [-vim] [-r]
+          [-dfonts]
 ```
-|        options        |   arg     |     default   |
-|:----------------------|:---------:|:-------------:|
-| Usage help            |  -h       |      --       |
-| List Themes           |  -l       |      --       |
-| Theme Name to Install |  -t       |      --       |
-| Code Font             |  -f       |   droidmono   |
-| Code Font-Size        |  -fs      |      11       |
-| Notebook Font         |  -nf      |    exosans    |
-| Notebook Font Size    |  -nfs     |      13       |
-| Text/MD Cell Font     |  -tf      |   loraserif   |
-| Text/MD Cell Fontsize |  -tfs     |      13       |
-| Intro Page Margins    |  -m       |     auto      |
-| Cell Width            |  -cellw   |      980      |
-| Line Height           |  -lineh   |      170      |
-| Cursor Width          |  -cursw   |       2       |
-| Cursor Color          |  -cursc   |      --       |
-| Alt Text/MD Layout    |  -alt     |      --       |
-| Alt Prompt Layout     |  -altp    |      --       |
-| Style Vim NBExt*      |  -vim     |      --       |
-| Toolbar Visible       |  -T       |      --       |
-| Name & Logo Visible   |  -N       |      --       |
-| Restore Default       |  -r       |      --       |
 
-### Examples
+#### Description of Command Line options
+| cl options            |   arg   |  default   |
+| :-------------------- | :-----: | :--------: |
+| Usage help            |   -h    |     --     |
+| List Themes           |   -l    |     --     |
+| Theme Name to Install |   -t    |     --     |
+| Code Font             |   -f    |   source   |
+| Code Font-Size        |   -fs   |     11     |
+| Notebook Font         |   -nf   |  exosans   |
+| Notebook Font Size    |  -nfs   |     13     |
+| Text/MD Cell Font     |   -tf   | merriserif |
+| Text/MD Cell Fontsize |  -tfs   |     13     |
+| Intro Page Margins    |   -m    |    auto    |
+| Cell Width            | -cellw  |    980     |
+| Line Height           | -lineh  |    170     |
+| Cursor Width          | -cursw  |     2      |
+| Cursor Color          | -cursc  |     --     |
+| Alt Text/MD Layout    |  -alt   |     --     |
+| Alt Prompt Layout     |  -altp  |     --     |
+| Style Vim NBExt*      |  -vim   |     --     |
+| Toolbar Visible       |   -T    |     --     |
+| Name & Logo Visible   |   -N    |     --     |
+| Restore Default       |   -r    |     --     |
+| Default Fonts         | -dfonts |     --     |
+
+
+### Command Line Examples
 ```sh
 # list available themes
-# oceans16 | grade3 | chesterish | onedork | monokai | solarized-light
+# oceans16 | grade3 | chesterish | onedork | monokai | solarizedl
 jt -l
 
 # select theme...
@@ -116,14 +120,17 @@ jt -t grade3 -f fira -fs 115
 # (see sans-serif & serif font tables below)
 jt -t onedork -tf georgiaserif -nf droidsans
 
-# adjust cell width, line-height of codecells
-jt -t chesterish -cellw 900 -lineh 170
+# adjust cell width (% screen width) and line height
+jt -t chesterish -cellw 90% -lineh 170
+
+# or set the cell width in pixels by leaving off the '%' sign
+jt -t solarizedl -cellw 860
 
 # fix the container-margins on the intro page (defaults to 'auto')
 jt -t onedork -m 200
 
-# adjust cursor width (in px) and make cursor red (r)
-# options: b (blue), o (orange), r (red), p (purple), g (green)
+# adjust cursor width (in px) and make cursor red
+# options: b (blue), o (orange), r (red), p (purple), g (green), x (font color)
 jt -t grade3 -cursc r -cursw 5
 
 # toggle toolbar ON and notebook name ON
@@ -134,84 +141,133 @@ jt -t grade3 -T -N
 jt -t grade3 -alt -altp
 ```
 
-### Monospace Fonts (code cells)
-| -f arg | Monospace Font |
-|:--|:--|
-|anka|Anka/Coder|
-|anonymous|Anonymous Pro|
-|aurulent|Aurulent Sans Mono|
-|bitstream|Bitstream Vera Sans Mono|
-|bpmono|BPmono|
-|code|Code New Roman|
-|consolamono|Consolamono|
-|cousine|Cousine|
-|dejavu|DejaVu Sans Mono|
-|droidmono|Droid Sans Mono|
-|fira|Fira Mono|
-|firacode|Fira Code|
-|generic|Generic Mono|
-|hack|Hack|
-|inconsolata|Inconsolata-g|
-|inputmono|Input Mono|
-|liberation|Liberation Mono|
-|meslo|Meslo|
-|office|Office Code Pro|
-|oxygen|Oxygen Mono|
-|roboto|Roboto Mono|
-|saxmono|saxMono|
-|source|Source Code Pro|
-|sourcemed|Source Code Pro Medium|
-|ptmono|PT Mono|
-|ubuntu|Ubuntu Mono|
 
-### Sans-Serif Fonts
-| -nf/-tf arg | Sans-Serif Font |
-|:--|:--|
-|exosans|Exo_2|
-|opensans|Open Sans|
-|droidsans|Droid Sans|
-|latosans|Lato|
-|ptsans|PT Sans|
-|robotosans|Roboto|
-|sourcesans|Source Sans Pro|
-|amikosans|Amiko|
-|nobilesans|Nobile|
-|alegreyasans|Alegreya|
-|armatasans|Armata|
-|cambaysans|Cambay|
-|catamaransans|Catamaran|
-|franklinsans|Libre Franklin|
-|frankruhlsans|Frank Ruhl|
-|gothicsans|Carrois Gothic|
-|gudeasans|Gudea|
-|hindsans|Hind|
-|jaldisans|Jaldi|
-|makosans|Mako|
-|merrisans|Merriweather Sans|
-|mondasans|Monda|
-|oxygensans|Oxygen Sans|
-|pontanosans|Pontano Sans|
-|puritansans|Puritan Sans|
-|ralewaysans|Raleway|
+### Set Plotting Style (from within notebook)
+`jtplot.style()` makes changes to matplotlib's rcParams dictionary so that figure aesthetics match those of a chosen jupyterthemes style. Note, these commands do not need to be re-run every time you generate a new plot, just once at the beginning of your notebook or whenever style changes are desired after that.
 
-### Serif Fonts
-| -nf/-tf arg | Serif Font |
-|:--|:--|
-|loraserif|Lora|
-|andadaserif|Andada|
-|arapeyserif|Arapey|
-|ptserif|PT Serif|
-|georgiaserif|Georgia|
-|cardoserif|Cardo|
-|crimsonserif|Crimson Text|
-|droidserif|Droid Serif|
-|ebserif|EB Garamond|
-|merriserif|Merriweather|
-|notoserif|Noto Serif|
-|vesperserif|Vesper Libre|
-|scopeserif|ScopeOne|
-|sanchezserif|Sanchez|
-|neutonserif|Neuton|
-|rasaserif|Rasa|
-|goudyserif|Sorts Mill Goudy|
-|vollkornserif|Vollkorn|
+For instance, I include the following two lines in my `~/.ipython/profile_default/startup/startup.ipy` file so this is done  automatically whenever I open a new notebook:
+
+
+```py
+# import jtplot submodule from jupyterthemes
+from jupyterthemes import jtplot
+
+# currently installed theme will be used to
+# set plot style if no arguments provided
+jtplot.style()
+```
+
+Some additional examples for setting "context" (taken from [seaborn](https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements-with-plotting-context-and-set-context)) and controlling various figure properties...
+
+```py
+# import jtplot
+from jupyterthemes import jtplot
+
+# you can select an alternative theme's plot style by name
+# oceans16 | grade3 | chesterish | onedork | monokai | solarizedl
+jtplot.style('onedork')
+
+# set "context" (paper, notebook, talk, or poster)
+# & font scale (scalar applied to labels, legend, etc.)
+jtplot.style('grade3', context='paper', fscale=1.4)
+
+# turn on X- and Y-axis tick marks (default=False)
+# and turn off the axis grid lines (default=True)
+jtplot.style(ticks=True, grid=False)
+
+# set the default figure size
+# x (length), y (height)
+jtplot.figsize(x=6., y=5.)
+
+# or just adjust the aspect ratio
+# new_length = length * aspect
+jtplot.figsize(aspect=1.2)
+
+# fully reset matplotlib default rcParams
+jtplot.reset()
+```
+
+
+
+#### Monospace Fonts (code cells)
+| -f arg      | Monospace Font           |
+| :---------- | :----------------------- |
+| anka        | Anka/Coder               |
+| anonymous   | Anonymous Pro            |
+| aurulent    | Aurulent Sans Mono       |
+| bitstream   | Bitstream Vera Sans Mono |
+| bpmono      | BPmono                   |
+| code        | Code New Roman           |
+| consolamono | Consolamono              |
+| cousine     | Cousine                  |
+| dejavu      | DejaVu Sans Mono         |
+| droidmono   | Droid Sans Mono          |
+| fira        | Fira Mono                |
+| firacode    | Fira Code                |
+| generic     | Generic Mono             |
+| hack        | Hack                     |
+| hasklig     | Hasklig                  |
+| inconsolata | Inconsolata-g            |
+| inputmono   | Input Mono               |
+| liberation  | Liberation Mono          |
+| meslo       | Meslo                    |
+| office      | Office Code Pro          |
+| oxygen      | Oxygen Mono              |
+| roboto      | Roboto Mono              |
+| saxmono     | saxMono                  |
+| source      | Source Code Pro          |
+| sourcemed   | Source Code Pro Medium   |
+| ptmono      | PT Mono                  |
+| ubuntu      | Ubuntu Mono              |
+
+#### Sans-Serif Fonts
+| -nf/-tf arg   | Sans-Serif Font   |
+| :------------ | :---------------- |
+| exosans       | Exo_2             |
+| opensans      | Open Sans         |
+| droidsans     | Droid Sans        |
+| latosans      | Lato              |
+| ptsans        | PT Sans           |
+| robotosans    | Roboto            |
+| sourcesans    | Source Sans Pro   |
+| amikosans     | Amiko             |
+| nobilesans    | Nobile            |
+| alegreyasans  | Alegreya          |
+| armatasans    | Armata            |
+| cambaysans    | Cambay            |
+| catamaransans | Catamaran         |
+| franklinsans  | Libre Franklin    |
+| frankruhlsans | Frank Ruhl        |
+| gothicsans    | Carrois Gothic    |
+| gudeasans     | Gudea             |
+| hindsans      | Hind              |
+| jaldisans     | Jaldi             |
+| makosans      | Mako              |
+| merrisans     | Merriweather Sans |
+| mondasans     | Monda             |
+| oxygensans    | Oxygen Sans       |
+| pontanosans   | Pontano Sans      |
+| puritansans   | Puritan Sans      |
+| ralewaysans   | Raleway           |
+
+#### Serif Fonts
+| -nf/-tf arg   | Serif Font       |
+| :------------ | :--------------- |
+| loraserif     | Lora             |
+| andadaserif   | Andada           |
+| arapeyserif   | Arapey           |
+| ptserif       | PT Serif         |
+| georgiaserif  | Georgia          |
+| cardoserif    | Cardo            |
+| crimsonserif  | Crimson Text     |
+| droidserif    | Droid Serif      |
+| ebserif       | EB Garamond      |
+| merriserif    | Merriweather     |
+| notoserif     | Noto Serif       |
+| vesperserif   | Vesper Libre     |
+| scopeserif    | ScopeOne         |
+| sanchezserif  | Sanchez          |
+| neutonserif   | Neuton           |
+| rasaserif     | Rasa             |
+| goudyserif    | Sorts Mill Goudy |
+| vollkornserif | Vollkorn         |

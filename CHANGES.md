@@ -1,5 +1,36 @@
-
 ### Release Notes
+#### **v0.15.6:**
+- fixed bug that prevented fonts from being imported correctly
+
+#### **v0.15.5:**
+- added compatibility for Jupyter terminal app
+- improved toolbar and NB name visibility
+- better syntax highlighting in tracebacks
+- widened main menubar container at top of NB
+- notification widgets no longer interfere with menubar height
+- minor cosmetic improvements
+- added Hasklig monofont
+
+#### **v0.15.4:**
+- improved text editor visibility
+- minor cosmetic improvements
+
+#### **v0.15.3:**
+- README & doc updates for jtplot module
+- style fixes for new "add keyboard shortcuts" form
+- minor cosmetic improvements
+
+#### **v0.15.2:**
+- re-added solarizedl theme (accidentally not included in v0.15.1)
+
+#### **v0.15.1:**
+- updated styles for notebook 5.0
+- changed solarized-light to solarizedl
+- cosmetic changes to onedork, solarizedl
+
+#### **v0.15.0:**
+- themed plotting styles
+- python 3.6 compatibility
 
 #### **v0.14.4:**
 - fixed attribute and property syntax highlighting

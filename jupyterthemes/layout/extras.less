@@ -80,86 +80,132 @@ div.widget-area a:focus {
 }
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn,
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
-    background: @button-panel-bg;
-    background-color: @button-panel-bg;
-    border: 2px solid @button-panel-bg !important;
+    background: darken(@button-panel-bg,1%);
+    background-color: darken(@button-panel-bg,1%);
+    border: 2px solid darken(@button-panel-bg,1%) !important;
     font-size: inherit;
     z-index: 0;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox,
 div.widget-hbox, .widget-hbox {
     display: inline-table;
+    width: 38% !important;
+    margin-left: 10px;
+}
+.widget-inline-hbox {
+    display: inline-table !important;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox .widget-label,
 div.widget-hbox .widget-label,
-.widget-hbox .widget-label {
-    font-size: 11pt;
-    min-width: 100%;
-    padding-top: 5px;
-    padding-right: 10px;
-    text-align: left;
-    vertical-align: text-top;
+.widget-hbox .widget-label,
+.widget-inline-hbox .widget-label,
+div.widget-label {
+    text-align: -webkit-auto !important;
+    margin-left: 15px !important;
+    max-width: 240px !important;
+    min-width: 100px !important;
+    vertical-align: text-top !important;
+    color: @cc-output-fg !important;
+}
+.widget-hprogress .progress {
+    flex-grow: 1;
+    height: 20px;
+    margin-top: auto;
+    margin-left: 12px;
+    margin-bottom: auto;
+    width: 300px;
 }
 .progress {
     overflow: hidden;
-    height: 20px;
+    height: 22px;
     margin-bottom: 10px;
     padding-left: 10px;
-    background-color: lighten(@disabled, 11%);
-    border-radius: 4px;
+    background-color: @table-border !important;
+    border-radius: 2px;
     -webkit-box-shadow: none;
     box-shadow: none;
+    z-index: 10;
 }
-
+.progress-bar-danger {
+    background-color: @item-danger !important;
+}
+.progress-bar-info {
+    background-color: @item-info !important;
+}
+.progress-bar-warning {
+    background-color: @item-warning !important;
+}
+.progress-bar-success {
+    background-color: @item-success !important;
+}
+.widget-select select {
+    margin-left: 12px;
+}
 /************ LINKS  ************/
 .rendered_html :link {
     font-family: @notebook-fontfamily;
     font-size: 100%;
-    color: @item-cyan;
+    color: @item-blue;
     text-decoration: underline;
 }
 .rendered_html :visited,
 .rendered_html :visited:active,
 .rendered_html :visited:focus{
-    color: desaturate(@item-blue, 25%);
+    color: lighten(desaturate(@item-blue, 5%), 4%);
 }
 .rendered_html :visited:hover,
 .rendered_html :link:hover {
     font-family: @notebook-fontfamily;
     font-size: 100%;
-    color: saturate(@nb-name-hover, 10%);
-}
-a.anchor-link:link:hover {
-    font-size: inherit;
-    color: saturate(@nb-name-hover, 10%);
+    color: @cm-link;
 }
 a.anchor-link:link {
     font-size: inherit;
     text-decoration: none;
     padding: 0px 20px;
     visibility: none;
-    color: @header-fg;
+    color: @item-blue;
+}
+a.anchor-link:link:hover {
+    font-size: inherit;
+    color: @cm-link;
 }
 .navbar-text {
     margin-top: 4px;
     margin-bottom: 0px;
 }
+#clusters > a {
+    color: @cm-link;
+    text-decoration: underline;
+    cursor: auto;
+}
+#clusters > a:hover {
+    color: @item-blue;
+    text-decoration: underline;
+    cursor: auto;
+}
 /***********  JUPYTER NBEXT CONFIGURATOR ***********/
+#nbextensions-configurator-container > div.row.container-fluid.nbext-selector > h3 {
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    height: 24px;
+    padding: 4px 0 4px 0;
+}
 div#nbextensions-configurator-container.container,
 #nbextensions-configurator-container.container {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    // margin-right: @container-margins;
-    // margin-left: @container-margins;
 }
 div.nbext-selector > nav > .nav > li > a {
     font-family: @notebook-fontfamily;
-    font-size: 12pt;
+    font-size: 10.5pt;
+    padding: 2px 5px;
 }
 div.nbext-readme > .nbext-readme-contents > .rendered_html {
     font-family: @notebook-fontfamily;
-    font-size: 12pt;
+    font-size: 11.5pt;
     line-height: 145%;
     padding: 1em 1em;
     color: @text-cell-fg;
@@ -174,7 +220,7 @@ div.nbext-readme > .nbext-readme-contents > .rendered_html {
 .nbext-enable-btns,
 .nbext-params {
     margin-bottom: 8px;
-    font-size: 12pt;
+    font-size: 11.5pt;
 }
 div.nbext-readme > .nbext-readme-contents {
     padding: 0;
@@ -189,14 +235,38 @@ div.nbext-readme > .nbext-readme-contents:not(:empty) {
 .nbext-showhide-incompat {
     padding-bottom: 0.5em;
     color: @unemphasize-fg;
-    font-size: @nb-fontsize-sub;
+    font-size: 10.5pt;
 }
-.shortcut_key,
-span.shortcut_key {
-    display: inline-block;
-    width: 16ex;
-    text-align: right;
-    font-family: monospace;
+
+.nbext-filter-menu.dropdown-menu > li > a:hover,
+.nbext-filter-menu.dropdown-menu > li > a:focus,
+.nbext-filter-menu.dropdown-menu > li > a.ui-state-focus {
+    color: @selected-fg !important;
+    background-color: @dropdown-hover !important;
+    background: @dropdown-hover !important;
+    border-color: @dropdown-hover !important;
+}
+span.rendered_html code {
+    background-color: transparent;
+    color: @notebook-fg;
+}
+#nbextensions-configurator-container > div.row.container-fluid.nbext-selector {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+// #ui-id-1.nbext-filter-menu.dropdown-menu {
+//     top: 183px !important;
+// }
+.nbext-filter-menu {
+    max-height: 50vh;
+    overflow-y: auto;
+    outline: none;
+    border: 2px solid @dropdown-border;
+}
+.alert-warning {
+    background-color: @panel-bg;
+    border-color: @panel-bg;
+    color: @notebook-fg;
 }
 /********** NBEXT MARKDOWN **********/
 mark, .mark {
@@ -266,14 +336,15 @@ label#Keyword-Filter {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-    color: #ffffff;
-    background-color: @item-blue;
+    color: @selected-fg-bright;
+    background-color: @selected-bg;
 }
 .input-group .nbext-list-btn-add,
 .input-group-btn:last-child > .btn-group > .btn {
     background: @button-panel-bg;
     background-color: @button-panel-bg;
     border-color: @button-panel-bg;
+
 }
 .input-group .nbext-list-btn-add:hover,
 .input-group-btn:last-child > .btn-group > .btn:hover {
@@ -474,6 +545,130 @@ body > div.modal.cmd-palette.in > div {
     border-color: @item-green;
     border-radius: 0px;
 }
+/******************************************/
+/************** KEY BINDINGS **************/
+/******************************************/
+.shortcut_key,
+span.shortcut_key {
+    display: inline-block;
+    width: 16ex;
+    text-align: right;
+    font-family: monospace;
+}
+.jupyter-keybindings {
+    padding: 1px;
+    line-height: 24px;
+    border-bottom: 1px solid @selected-third;
+}
+.jupyter-keybindings i {
+    background: @codeblock-bg;
+    font-size: small;
+    padding: 5px;
+    margin-left: 7px;
+}
+div#short-key-bindings-intro.well, .well {
+    background-color: @panel-header-bg;
+    border: 1px solid @panel-header-bg;
+    color: @notebook-fg;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/******************************************/
+/************** TEXT EDITOR ***************/
+/******************************************/
+#texteditor-backdrop {
+    background: @notebook-bg;
+    background-color: @notebook-bg;
+}
+#texteditor-backdrop #texteditor-container .CodeMirror-gutter,
+#texteditor-backdrop #texteditor-container .CodeMirror-gutters {
+    background: @cm-gutters;
+    background-color: @cm-gutters;
+    color: @cm-linenumber;
+}
+.edit_app #menubar .navbar {
+    margin-bottom: 0px;
+}
+#texteditor-backdrop #texteditor-container {
+    padding: 0px;
+    background-color: @cc-input-bg;
+    box-shadow: none;
+    // border-left: 2px solid ;
+}
+
+
+/*********************************************/
+/************** XTERM TERMINAL ***************/
+/*********************************************/
+.terminal-app {
+    background: @notebook-bg;
+}
+.terminal-app .terminal {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    line-height: @cc-line-height;
+    color: @cc-input-fg;
+    background: @cc-input-bg;
+    padding: 0.4em;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.terminal .xterm-viewport {
+    background-color: @cc-input-bg;
+    color: @cc-input-fg;
+    overflow-y: auto;
+}
+.terminal .xterm-color-0 {
+    color: @item-theme;
+}
+.terminal .xterm-color-1 {
+    color: @cm-attribute;
+}
+.terminal .xterm-color-2 {
+    color: @cm-keyword;
+}
+.terminal .xterm-color-3 {
+    color: @cm-builtin;
+}
+.terminal .xterm-color-4 {
+    color: @cm-number;
+}
+.terminal .xterm-color-5 {
+    color: @cm-string;
+}
+.terminal .xterm-color-6 {
+    color: @cm-property;
+}
+.terminal .xterm-color-7 {
+    color: @cm-def;
+}
+.terminal .xterm-color-8 {
+    color: @cm-link;
+}
+.terminal .xterm-color-9 {
+    color: @cm-string;
+}
+.terminal .xterm-color-10 {
+    color: @cm-builtin;
+}
+.terminal .xterm-color-14 {
+    color: @cm-property;
+}
+.terminal .xterm-bg-color-15 {
+    background-color: @cc-input-bg;
+}
+.terminal:not(.xterm-cursor-style-underline):not(.xterm-cursor-style-bar) .terminal-cursor {
+    background-color: @item-theme;
+    color: @cc-input-bg;
+}
+.terminal:not(.focus) .terminal-cursor {
+    outline: 1px solid @item-theme;
+    outline-offset: -1px;
+}
+
 /******************************************/
 /******** KERNEL RUNNING ANIMATION ********/
 /******************************************/

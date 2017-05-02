@@ -17,31 +17,48 @@ div.CodeMirror-lines {
 /*********************************/
 /********** ANSI COLORS **********/
 /*********************************/
-span.ansiblack {
+span.ansiblack,
+.ansi-black-fg {
     color: @ansiblack;
 }
-span.ansiblue {
+span.ansiblue,
+.ansi-blue-fg,
+.ansi-blue-intense-fg {
     color: @ansiblue;
 }
-span.ansigray {
+span.ansigray,
+.ansi-gray-fg,
+.ansi-gray-intense-fg {
     color: @ansigray;
 }
-span.ansigreen {
+span.ansigreen,
+.ansi-green-fg {
     color: @ansigreen;
 }
-span.ansipurple {
+.ansi-green-intense-fg {
+    color: @ansigray;
+}
+span.ansipurple,
+.ansi-purple-fg,
+.ansi-purple-intense-fg {
     color: @ansipurple;
 }
-span.ansicyan {
-    color: @ansicyan;
+span.ansicyan,
+.ansi-cyan-fg,
+.ansi-cyan-intense-fg {
+    color: @ansipurple;
 }
-span.ansiyellow {
+span.ansiyellow,
+.ansi-yellow-fg,
+.ansi-yellow-intense-fg {
     color: @ansiyellow;
 }
-span.ansired {
+span.ansired,
+.ansi-red-fg,
+.ansi-red-intense-fg {
     color: @ansired;
 }
-div.output-stderr {
+div.output-stderr{
     background-color: @stderr-bg;
 }
 div.output-stderr pre {
@@ -135,6 +152,24 @@ div.tooltiptext.bigtooltip {
 .cm-s-ipython .CodeMirror-linenumber {
     color: @cm-linenumber;
 }
+.CodeMirror-sizer {
+    margin-left: 40px;
+}
+.CodeMirror-gutter,
+.CodeMirror-gutters,
+.CodeMirror-linenumber {
+    background: @cm-gutters;
+    background-color: @cm-gutters;
+    border-color: @cm-gutters;
+    padding-right: 4px;
+}
+.CodeMirror-gutter.CodeMirror-linenumbers,
+div.CodeMirror-gutter.CodeMirror-linenumbers {
+    width: 34px;
+}
+.CodeMirror-linenumber {
+    color: @cm-linenumber;
+}
 .cm-s-ipython .CodeMirror-cursor {
     border-left: @cursor-info !important;
 }
@@ -213,9 +248,27 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 /***********************************************/
 /**** TXT, HEADER, & MD SYNTAX HIGHLIGHTING ****/
 /***********************************************/
-div.cell.text_cell .cm-s-default .cm-header {
-    color: @unrendered-text;
+.cm-header-1 {
+    font-size: 220%;
 }
+.cm-header-2 {
+    font-size: 170%;
+}
+.cm-header-3 {
+    font-size: 150%;
+}
+.cm-header-4 {
+    font-size: 120%;
+}
+.cm-header-5 {
+    font-size: 100%;
+}
+div.cell.text_cell .cm-s-default .cm-header {
+    font-family: @notebook-fontfamily;
+    font-weight: normal;
+    color: @header-fg;
+}
+
 div.cell.text_cell .cm-s-default span.cm-variable-2 {
     color: @text-cell-fg;
 }

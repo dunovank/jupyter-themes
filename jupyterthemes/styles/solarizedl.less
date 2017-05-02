@@ -1,18 +1,18 @@
 
 /*
-This is a non official port for jupyter notebook of the solarized-light theme, documented here:
+This is a non official port for jupyter notebook of the solarizedl theme, documented here:
 http://ethanschoonover.com/solarized
 
 My favorite results are obtained as follows:
 
-jt -t solarized-light --lineheight=140 --monofont="source"
+jt -t solarizedl --lineheight=140 --monofont="source"
 
 */
 
-@solar-base03: #002b36; 
-@solar-base02: #073642; 
-@solar-base01: #586e75; 
-@solar-base00: #657b83; 
+@solar-base03: #002b36;
+@solar-base02: #073642;
+@solar-base01: #586e75;
+@solar-base00: #657b83;
 
 @solar-base0: #839496;
 @solar-base1: #93a1a1;
@@ -28,28 +28,28 @@ jt -t solarized-light --lineheight=140 --monofont="source"
 @solar-cyan: #2aa198;
 @solar-green: #859900;
 
-@notebook-bg:           @solar-base3;
+@notebook-bg:           @solar-base2;
 @notebook-fg:           @solar-base01;
 @notebook-base:         @notebook-fg;
 
 /* selection, hover, prompts, brackets colors */
-@selected-bg:           @solar-base2;
-@selected-half:         @solar-base2;
-@selected-third:        @solar-base2;
-@selected-tenth:        @solar-base2;
+@selected-bg:           darken(@solar-base2, 5%);
+@selected-half:         darken(@solar-base2, 5%);
+@selected-third:        darken(@solar-base2, 3%);
+@selected-tenth:        darken(@solar-base2, 2%);
 @selected-error:        @solar-red;
-@selected-active:       @solar-base03;
+@selected-active:       darken(@button-bg, 5%);
 @navbar-selected:       @selected-third;
-@selected-fg:           @solar-base0;
+@selected-fg:           darken(@solar-base01, 8%);
 @selected-fg-bright:    @solar-orange;
 @unemphasize-fg:        @solar-base1;
 
 /* code, text, markdown, & tooltip colors */
 @cc-input-bg:           @solar-base3;
 @cc-input-fg:           @notebook-fg;
-@cc-input-border:       @solar-base2;
-@cc-output-bg:          @notebook-bg;
-@cc-output-fg:          @notebook-fg;
+@cc-input-border:       @solar-base1;
+@cc-output-bg:          @solar-base2;
+@cc-output-fg:          @solar-base01;
 @text-cell-fg:          @notebook-fg;
 @unrendered-text:       @solar-yellow;
 @header-fg:             @solar-yellow;
@@ -59,26 +59,26 @@ jt -t solarized-light --lineheight=140 --monofont="source"
 @nb-name-hover:         #DE6D25;
 
 /* cell border colors */
-@cc-border-selected:    @solar-base2;
-@cc-border-edit:        @solar-base1;
-@tc-border-selected:    @cc-border-selected;
-@tc-border-edit:        @cc-border-edit;
+@cc-border-selected:    @solar-base1;
+@cc-border-edit:        #bbc4c5;
+@tc-border-selected:    @solar-yellow;
+@tc-border-edit:        rgba(181, 137, 0, .4);
 @cell-selected-border-width: thin;
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               @selected-half;
 @disabled:              @solar-base1;
 @input-prompt:          @disabled;
-@prompt-line:           @solar-base2;
-@tc-prompt-std:         rgba(30, 112, 199, .50);
+@prompt-line:           #bbc4c5; //@solar-base2;
+@tc-prompt-std:         rgba(181, 137, 0, .4);
 @matching-bracket:      @solar-base3;
-@dropdown-bg:           @notebook-bg;
-@dropdown-border:       @selected-half;
-@dropdown-hover:        @selected-third;
+@dropdown-bg:           lighten(@notebook-bg, 5%);
+@dropdown-border:       darken(@notebook-bg, 7%);
+@dropdown-hover:        darken(@dropdown-bg, 4%);
 
 /* panels and form-control styles */
-@panel-header-bg:       @solar-base2;
-@panel-bg:              #f8f8f8;
+@panel-header-bg:       darken(@solar-base2, 4%);
+@panel-bg:              lighten(@solar-base2, 3%);
 @modal-bg:              #ffffff;
 @alert-info-bg:         #fdfdfd;
 @form-input-bg:         #ffffff;
@@ -92,6 +92,13 @@ jt -t solarized-light --lineheight=140 --monofont="source"
 @item-cyan:             @solar-cyan;
 @item-green:            @solar-green;
 @item-red:              @solar-red;
+@item-orange:           @solar-orange;
+// @item-danger:           #a8524c;
+
+@item-danger:           @solar-red;
+@item-success:          @solar-green;
+@item-info:             @solar-blue;
+@item-warning:          @solar-yellow;
 
 /* tables and dataframes colors */
 @table-color:           #353535;
@@ -105,16 +112,16 @@ jt -t solarized-light --lineheight=140 --monofont="source"
 @codeblock-border:      darken(@codeblock-bg, 3%);
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             #EBEBEB;
+@button-bg:             lighten(@solar-base1, 23%);
 @button-border:         darken(@button-bg, 1%);
 @button-color:          @item-theme;
-@button-hover:          @selected-active;
+@button-hover:          darken(@button-bg, 4%);
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    darken(@panel-header-bg, 2%);
 @scrollbar:             @item-theme;
 @scroll-trough:         @solar-base2;
 @scrollbar-inactive:    @solar-base1;
-@box-shadow:            #e8e8e8;
+@box-shadow:            darken(@cc-output-bg, 4%);
 
 @ansiblack:             @solar-base03;
 @ansiblue:              @solar-blue;
@@ -130,31 +137,32 @@ jt -t solarized-light --lineheight=140 --monofont="source"
 
 @cm-selected:           lighten(@solar-base1, 28%);
 @cm-gutters:            @cm-selected;
-
 @cm-linenumber:         @solar-base00;
-@cm-atom:               @solar-magenta;
-@cm-attribute:          @solar-magenta;
-
+@cm-atom:               #d33682;
+@cm-attribute:          #d33682;
 @cm-comment:            @solar-base1;
-
-@cm-property:           @solar-blue;
-
-@cm-keyword:            @solar-green;
-
-@cm-string:             @solar-cyan;
-@cm-number:             @solar-cyan;
-
-@cm-meta:               @solar-violet;
-@cm-operator:           @cm-atom;
-@cm-builtin:            @solar-magenta;
+@cm-property:           #268bd2;
+@cm-keyword:            #859900;
+@cm-string:             #2aa198;
+@cm-number:             #2aa198;
+@cm-meta:               #6c71c4;
+@cm-operator:           #268bd2;
+@cm-builtin:            #d33682;
 @cm-variable:           @cc-input-fg;
-@cm-variable2:           @cc-input-fg;
-@cm-variable3:           @cc-input-fg;
+@cm-variable2:          @cc-input-fg;
+@cm-variable3:          @cc-input-fg;
 
-@cm-def:                @cm-property;
+@cm-def:                #268bd2;
 @cm-error:              @cc-input-bg;
-@cm-tag:                @cm-property;
-@cm-link:               @solar-blue;
-@cm-storage:            @cm-atom;
-@cm-entity:             @cm-property;
+@cm-tag:                #268bd2;
+@cm-link:               @solar-green;
+@cm-storage:            #d33682;
+@cm-entity:             #268bd2;
 @cm-latex:              @notebook-fg;
+
+/* jtplot figure style */
+@axisFace:              #eee8d5;
+@figureFace:            #eee8d5;
+@textColor:             #586e75;
+@edgeColor:             #D6D6D6;
+@gridColor:             #C4C4C4;

@@ -5,44 +5,36 @@
 /********** CODE CELL INPUT AREA **********/
 div.input_area {
     background-color: @cc-input-bg;
+    background: @cc-input-bg;
     padding-right: 1.2em;
     border: 0px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 2px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-radius: 2px;
 }
 div.cell {
     padding: 0px;
     background: @cc-input-bg;
     background-color: @cc-input-bg;
     border: medium solid @notebook-bg;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+    border-radius: 2px;
+    top: 0;
+    border-top-left-radius: 4px;
 }
 div.cell.selected {
     background: @cc-input-bg;
     background-color: @cc-input-bg;
-    border: medium solid @cc-border-selected;
+    border: medium solid @notebook-bg;
     padding: 0px;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
 }
 .edit_mode div.cell.selected {
     padding: 0px;
     background: @cc-input-bg;
     background-color: @cc-input-bg;
-    border: medium solid @cc-border-edit;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+    border: medium solid @notebook-bg;
 }
 div.cell.edit_mode {
     padding: 0px;
     background: @cc-input-bg;
     background-color: @cc-input-bg;
-    border: medium solid @cc-border-edit;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
 }
 div.CodeMirror-sizer {
     margin-left: 0px;
@@ -53,9 +45,36 @@ div.CodeMirror-sizer {
     padding-bottom: 0px;
     margin-top: 3px;
 }
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+    background: @cc-border-selected;
+    border: 2px solid @cc-border-selected;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 4px;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 5px;
+    height: 100%;
+}
+.edit_mode div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+    background: @cc-border-edit;
+    border: 2px solid @cc-border-edit;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 5px;
+    height: 100%;
+}
 
-/*********** CODE CELL INPUT PROMPT ************/
+// /*********** CODE CELL INPUT PROMPT ************/
 div.prompt, .prompt {
+    // border-left: 5px solid @notebook-bg;
     font-family: "Fira Code", monospace;
     font-size: @prompt-fontsize;
     font-weight: normal;
@@ -63,15 +82,15 @@ div.prompt, .prompt {
     line-height: 170%;
     padding: 0px;
     padding-top: 4px;
-    padding-left: @prompt-padding;
-    text-align: left !important;
-    min-width: @prompt-min-width;
-    width: @prompt-min-width;
+    padding-left: 5px;
+    text-align: right !important;
+    min-width: @prompt-min-width !important;
+    width: @prompt-min-width !important;
 }
+
 div.prompt.input_prompt {
     background-color: @cc-prompt-bg;
-    /*border-right: @prompt-border;*/
-    border-top-left-radius: 2px;
+    border-top: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -81,18 +100,34 @@ div.prompt.input_prompt {
 
 div.cell.code_cell .input_prompt {
     border-right: @prompt-border;
+    // border-top-left-radius: 4px;
+}
+
+div.cell.selected .prompt {
+    top: 0;
+    border-left: 5px solid @cc-border-selected;
+    border-radius: 2px;
+}
+.edit_mode div.cell.selected .prompt {
+    top: 0;
+    border-left: 5px solid @cc-border-edit;
+    border-radius: 2px;
+}
+.edit_mode div.cell.selected .prompt {
+    top: 0;
+    border-left: 5px solid @cc-border-edit;
+    border-radius: 2px;
 }
 
 /********** CODE CELL OUTPUT AREA **********/
 div.output_wrapper {
     background-color: @cc-output-bg;
     border: 0px;
+    left: 0px;
     margin-bottom: 0em;
     margin-top: 0em;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
 }
 div.output_subarea.output_text.output_stream.output_stdout,
 div.output_subarea.output_text {
@@ -103,8 +138,6 @@ div.output_subarea.output_text {
     color: @cc-output-fg;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
 }
 div.output_area pre {
     font-family: @monofont, monospace;
@@ -113,8 +146,6 @@ div.output_area pre {
     color: @cc-output-fg;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
 }
 div.output_area {
     display: -webkit-box;
@@ -128,12 +159,21 @@ div.output_html {
 }
 div.output_subarea {
     overflow-x: auto;
-    padding: .8em;
+    padding: 0.3em;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     box-flex: 1;
     flex: 1;
-    max-width: 90%;
+}
+div.btn.btn-default.output_collapsed {
+    background: darken(@button-panel-bg, 5%);
+    background-color: darken(@button-panel-bg, 5%);
+    border-color: darken(@button-panel-bg, 5%);
+}
+div.btn.btn-default.output_collapsed:hover {
+    background: darken(@button-panel-bg, 7%);
+    background-color: darken(@button-panel-bg, 7%);
+    border-color: darken(@button-panel-bg, 7%);
 }
 
 /************ CODE CELL OUTPUT PROMPT ************/
@@ -142,12 +182,13 @@ div.prompt.output_prompt {
     font-size: @prompt-fontsize;
     background-color: @cc-output-bg;
     color: @cc-output-bg;
-    border-bottom-left-radius: 2px;
+    border-bottom-left-radius: 4px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    min-width: @prompt-min-width;
-    width: @prompt-min-width;
+    min-width: @prompt-min-width !important;
+    width: @prompt-min-width !important;
+    border-right: @prompt-border !important;
 }
 div.out_prompt_overlay.prompt {
     font-family: "Fira Code", monospace;
@@ -157,8 +198,9 @@ div.out_prompt_overlay.prompt {
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    min-width: @prompt-min-width;
-    width: @prompt-min-width;
+    min-width: @prompt-min-width !important;
+    width: @prompt-min-width !important;
+    border-right: @prompt-border !important;
 }
 div.out_prompt_overlay.prompt:hover {
     background-color: @cc-output-bg;
@@ -168,10 +210,13 @@ div.out_prompt_overlay.prompt:hover {
     -moz-border-radius: 2px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
-    min-width: @prompt-min-width;
+    min-width: @prompt-min-width !important;
     width: @prompt-min-width !important;
+    border-right: @prompt-border !important;
 }
-
+div.cell.code_cell .output_prompt {
+    border-right: 2px solid @prompt-border !important;
+}
 /******** TXT & MD INPUT AREA ********/
 div.text_cell,
 div.text_cell_render pre,
@@ -182,11 +227,10 @@ div.text_cell_render {
     color: @text-cell-fg;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 div.cell.text_cell.rendered.selected {
     font-family: @text-cell-fontfamily;
-    border: medium solid @tc-border-selected;
     line-height: @cc-line-height !important;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
@@ -197,13 +241,11 @@ div.cell.text_cell.unrendered.selected {
     line-height: @cc-line-height !important;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border: medium solid @tc-border-selected;
     border-radius: 2px;
 }
 div.cell.text_cell.selected {
     font-family: @text-cell-fontfamily;
     line-height: @cc-line-height !important;
-    border: medium solid @tc-border-selected;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border-radius: 2px;
@@ -213,21 +255,47 @@ div.cell.text_cell.selected {
     line-height: @cc-line-height !important;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border: medium solid @tc-border-edit;
     border-radius: 2px;
 }
 div.text_cell.unrendered,
 div.text_cell.unrendered.selected,
 div.edit_mode div.text_cell.unrendered {
-
     font-family: @text-cell-fontfamily;
     line-height: @cc-line-height !important;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border-radius: 2px;
+    border-radius: 4px;
+    // padding: 0.5em 0.5em 0.5em 0.4em;
 }
-
-
+div.cell.text_cell.selected:before,
+div.cell.text_cell.selected.jupyter-soft-selected:before {
+    background: @tc-border-selected;
+    border: 2px solid @tc-border-selected;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 5px;
+    height: 100%;
+}
+.edit_mode div.cell.text_cell.selected:before,
+div.cell.text_cell.selected.jupyter-soft-selected:before {
+    background: @tc-border-edit;
+    border: 2px solid @tc-border-edit;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 5px;
+    height: 100%;
+}
+// div.text_cell .CodeMirror-scroll {
+//     padding: 0.5em 0.5em 0.5em 0.4em;
+// }
 /********** TEXT & MD PROMPT **********/
 
 div.cell.text_cell .input_prompt {
@@ -239,21 +307,37 @@ div.cell.text_cell.rendered .input_prompt {
     font-size: @prompt-fontsize;
     font-weight: normal;
     color: @prompt-text;
-    text-align: left !important;
+    text-align: right !important;
     min-width: @tc-prompt-width;
     width: @tc-prompt-width !important;
     background-color: @text-cell-bg;
-/*    border-right: @tc-prompt-border;*/
+    border-right: @tc-prompt-border;
 }
 div.cell.text_cell.unrendered .input_prompt {
     font-family: "Fira Code", monospace;
     font-size: @prompt-fontsize;
     font-weight: normal;
     color: @prompt-text;
-    text-align: left !important;
+    text-align: right !important;
     min-width: @tc-prompt-width;
     width: @tc-prompt-width !important;
-/*    border-right: @tc-prompt-border;*/
+    border-right: @tc-prompt-border;
+}
+div.cell.text_cell.rendered .input_prompt {
+    border-right: @tc-prompt-border;
+    // border-top-left-radius: 4px;
+}
+div.cell.text_cell.rendered.selected .input_prompt {
+    top: 0;
+    border-left: 5px solid @tc-border-selected;
+    border-radius: 2px;
+    border-right: @tc-prompt-border;
+}
+div.text_cell.unrendered.selected .prompt {
+    top: 0;
+    border-left: 5px solid @tc-border-edit;
+    border-radius: 2px;
+    border-right: @tc-prompt-border;
 }
 
 /******** MD PRE, CODE, KEYBIND, SAMP **********/
@@ -268,13 +352,14 @@ div.rendered_html code {
 pre, code, kbd, samp {
     white-space: pre-wrap;
 }
-code {
+.well code, code {
     font-family: @monofont, monospace;
     font-size: @monofontsize !important;
     line-height: @cc-line-height !important;
     color: @text-cell-fg;
     background: @codeblock-bg;
     background-color: @codeblock-bg;
+    border-color: @codeblock-bg;
 }
 kbd {
     padding: 4px;
@@ -337,6 +422,7 @@ div.rendered_html h5 {
     color: @header-fg;
     font-size: 220%;
     text-align: center;
+    font-style: normal;
     font-weight: lighter;
 }
 .rendered_html h2,
@@ -351,21 +437,43 @@ div.rendered_html h5 {
 .text_cell_render h3 {
     font-size: 150%;
     color: @header-fg;
-    font-weight: lighter;
-    text-decoration: italic;
     font-style: normal;
+    font-weight: lighter;
 }
 .rendered_html h4,
 .text_cell_render h4 {
     font-size: 120%;
     color: @header-fg;
-    font-weight: underline;
     font-style: normal;
+    font-weight: lighter;
 }
 .rendered_html h5,
 .text_cell_render h5 {
     font-size: 100%;
     color: @selected-fg;
+    font-style: normal;
     font-weight: lighter;
-    text-decoration: underline;
 }
+#complete > select > option:hover {
+    background: @dropdown-hover;
+    background-color: @dropdown-hover;
+}
+div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
+    position: absolute;
+    z-index: 9999999999;
+    top: 0px;
+    left: 0px;
+    box-shadow: none;
+    pointer-events: none;
+    border-radius: 2px;
+}
+
+
+/**** HOVER HIGHLIGHT CELL INPUT PROMPT ******/
+
+// .cell:active .input_prompt,
+// .cell:hover .input_prompt,
+// div.cell:hover .input_prompt {
+//     background: lighten(@cc-input-bg, 2%) !important;
+//     background-color: lighten(@cc-input-bg, 2%) !important;
+// }

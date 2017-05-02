@@ -7,12 +7,13 @@ import os
 import sys
 from argparse import ArgumentParser
 from glob import glob
+
 modules = glob(os.path.dirname(__file__) + "/*.py")
 __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
-minor = 14
-patch = 4
+minor = 15
+patch = 6
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
 # path to local site-packages/jupyterthemes
@@ -26,25 +27,26 @@ def get_themes():
               for theme in glob('{0}/*.less'.format(styles_dir))]
     return themes
 
-
 def install_theme(theme,
-                  monofont='droidmono',
-                  monosize=11,
-                  nbfont='exosans',
-                  nbfontsize=13,
-                  tcfont='loraserif',
-                  tcfontsize=13,
-                  margins='auto',
-                  cellwidth='980',
-                  lineheight=170,
-                  cursorwidth=2,
-                  cursorcolor='default',
-                  altlayout=False,
-                  altprompt=False,
-                  hideprompt=False,
-                  vimext=False,
-                  toolbar=False,
-                  nbname=False):
+                monofont='source',
+                monosize=11,
+                nbfont='exosans',
+                nbfontsize=13,
+                tcfont='merriserif',
+                tcfontsize=13,
+                margins='auto',
+                cellwidth='980',
+                lineheight=170,
+                cursorwidth=2,
+                cursorcolor='default',
+                altlayout=False,
+                altprompt=False,
+                hideprompt=False,
+                vimext=False,
+                toolbar=False,
+                nbname=False,
+                dfonts=False):
+
     """ Install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
     """
@@ -52,14 +54,22 @@ def install_theme(theme,
     stylefx.reset_default(False)
     stylefx.check_directories()
 
+    doc = '\nConcatenated font imports, .less styles, & custom variables\n'
+    s = '*' * 65
+    style_less = '\n'.join(['/*', s, s, doc, s, s, '*/'])
+    style_less += '\n\n\n'
+    style_less += '/* Import Notebook, Markdown, & Code Fonts */\n'
+
     # initialize style_less & style_css
     style_less = stylefx.set_font_properties(
+        style_less=style_less,
         monofont=monofont,
         monosize=monosize,
         nbfont=nbfont,
         nbfontsize=nbfontsize,
         tcfont=tcfont,
-        tcfontsize=tcfontsize)
+        tcfontsize=tcfontsize,
+        dfonts=dfonts)
 
     # define some vars for cell layout
     cursorcolor = stylefx.get_colors(theme=theme, c=cursorcolor)
@@ -90,7 +100,6 @@ def install_theme(theme,
     # remove tempfile.less from package_dir
     stylefx.remove_temp_file()
 
-
 def main():
     parser = ArgumentParser()
     parser.add_argument(
@@ -101,7 +110,7 @@ def main():
         '-f',
         "--monofont",
         action='store',
-        default='droidmono',
+        default='source',
         help='monospace code font')
     parser.add_argument(
         '-fs',
@@ -125,7 +134,7 @@ def main():
         '-tf',
         "--tcfont",
         action='store',
-        default='loraserif',
+        default='merriserif',
         help='txtcell font')
     parser.add_argument(
         '-tfs',
@@ -200,10 +209,20 @@ def main():
         default=False,
         help="toggle styles for vim")
     parser.add_argument(
-        '-r', "--reset", action='store_true', help="reset to default theme")
-    args = parser.parse_args()
+        '-r',
+        "--reset",
+        action='store_true',
+        help="reset to default theme")
+    parser.add_argument(
+        '-dfonts',
+        "--defaultfonts",
+        action='store_true',
+        default=False,
+        help="suppress custom fonts")
 
+    args = parser.parse_args()
     themes = get_themes()
+    themes.append('solarized-light')
     say_themes = "Available Themes: \n   {}".format('\n   '.join(themes))
 
     if args.theme:
@@ -229,7 +248,8 @@ def main():
             hideprompt=args.hideprompt,
             vimext=args.vimext,
             toolbar=args.toolbar,
-            nbname=args.nbname)
+            nbname=args.nbname,
+            dfonts=args.defaultfonts)
     elif args.reset:
         from jupyterthemes import stylefx
         stylefx.reset_default(verbose=True)
