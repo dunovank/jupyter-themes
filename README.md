@@ -61,7 +61,7 @@ pip install --user git+https://github.com/dunovank/jupyter-themes.git
 usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
           [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-m MARGINS]
           [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-cellw CELLWIDTH]
-          [-lineh LINEHEIGHT] [-alt] [-altp] [-P] [-T] [-N] [-vim] [-r]
+          [-lineh LINEHEIGHT] [-altp] [-P] [-T] [-N] [-vim] [-r]
           [-dfonts]
 ```
 
@@ -82,7 +82,6 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Line Height           | -lineh  |    170     |
 | Cursor Width          | -cursw  |     2      |
 | Cursor Color          | -cursc  |     --     |
-| Alt Text/MD Layout    |  -alt   |     --     |
 | Alt Prompt Layout     |  -altp  |     --     |
 | Style Vim NBExt*      |  -vim   |     --     |
 | Toolbar Visible       |   -T    |     --     |
@@ -136,9 +135,8 @@ jt -t grade3 -cursc r -cursw 5
 # toggle toolbar ON and notebook name ON
 jt -t grade3 -T -N
 
-# choose alternate txt/markdown layout (-alt)
-# and alternate cell prompt (narrow, no numbers)
-jt -t grade3 -alt -altp
+# choose alternate prompt layout (narrower/no numbers)
+jt -t grade3 -altp
 ```
 
 

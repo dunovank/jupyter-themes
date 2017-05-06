@@ -1,55 +1,44 @@
 /***********************************************************************
  Pandas DF, Tables, Widgets, Media, Links, Debugger, Nbext, & Animations
 ************************************************************************/
-
-/************  TABLES  **********/
-.rendered_html table,
-.rendered_html tr,
-.rendered_html td {
-    font-family: "Fira Code", monospace;
-    font-size: @monofontsize-sub !important;
-    line-height: 150% !important;
-    border: 1px solid @table-border;
+.rendered_html tr, .rendered_html th, .rendered_html td {
+    text-align: left;
+    vertical-align: middle;
+    padding: 0.5em 0.5em;
+    line-height: normal;
+    white-space: normal;
+    max-width: none;
+    border: none;
+}
+.rendered_html table {
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
     color: @table-color;
-    background-color: @table-bg;
+    font-size: 12px;
+    table-layout: fixed;
+}
+.rendered_html thead {
+    background: @df-header-bg;
+    color: @df-header;
+    border-bottom: 1px solid @df-header-bg;
+    vertical-align: bottom;
+}
+.rendered_html tbody tr:nth-child(odd) {
     background: @table-bg;
 }
-/********* PANDAS DATAFRAMES ********/
-table.dataframe,
-.rendered_html tr,
-.dataframe * {
-    font-family: "Fira Code", monospace;
-    font-size: @monofontsize-sub !important;
-    border: 1px solid @table-border;
+.rendered_html tbody tr {
+    background: darken(@table-bg, 3%);
 }
-.dataframe th,
-.rendered_html th {
-    font-family: @notebook-fontfamily;
-    font-size: @monofontsize !important;
-    font-weight: bold;
-    border: 1px solid @df-header-border;
-    background: @df-header-bg;
+.rendered_html tbody tr:hover:nth-child(odd) {
+    background: darken(@table-bg,1%);
 }
-.dataframe td,
-.rendered_html td {
-    font-family: "Fira Code", monospace;
-    font-size: @monofontsize-sub !important;
-    color: @table-color;
-    background: @df-cell-bg;
-    border: 1px solid @table-border;
-    text-align: left;
-    min-width: 4em;
+.rendered_html tbody tr:hover {
+    background: darken(@table-bg, 4%);
 }
-/********** PANDAS SUMMARY **********/
-.dataframe-summary-row tr:last-child,
-.dataframe-summary-col td:last-child {
-    font-family: @notebook-fontfamily;
-    font-size: @monofontsize !important;
-    font-weight: bold;
-    color: @df-header;
-    border: 1px solid @table-border;
-    background: @df-header-bg;
-}
+
 
 /*********** WIDGETS ***********/
 div.widget-area {
@@ -141,6 +130,7 @@ div.widget-label {
 .widget-select select {
     margin-left: 12px;
 }
+
 /************ LINKS  ************/
 .rendered_html :link {
     font-family: @notebook-fontfamily;
@@ -184,6 +174,7 @@ a.anchor-link:link:hover {
     text-decoration: underline;
     cursor: auto;
 }
+
 /***********  JUPYTER NBEXT CONFIGURATOR ***********/
 #nbextensions-configurator-container > div.row.container-fluid.nbext-selector > h3 {
     font-size: 15px;

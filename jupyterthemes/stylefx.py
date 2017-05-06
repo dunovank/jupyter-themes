@@ -226,7 +226,6 @@ def style_layout(style_less,
                  cellwidth='980',
                  lineheight=170,
                  margins='auto',
-                 altlayout=False,
                  vimext=False,
                  toolbar=False,
                  nbname=False,
@@ -254,21 +253,19 @@ def style_layout(style_less,
     promptPadding = '.25em'
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
-    promptMinWidth = 12
+    promptMinWidth = 11
     tcPromptWidth = promptMinWidth
+    tcPromptFontsize = "@prompt-fontsize"
 
-    # grade3's altlayout is reverse of default
     if theme == 'grade3':
         textcell_bg = '@notebook-bg'
     if altprompt:
         promptPadding = '.1em'
-        promptMinWidth = 8
-        tcPromptWidth = promptMinWidth
+        promptMinWidth = 6
+        tcPromptWidth = 6
+        # tcPromptFontsize = "pt"
         promptText = 'transparent'
-    if altlayout:
-        # alt txt/md layout
-        textcell_bg = '@notebook-bg'
-        promptMinWidth = 8
+        tcPromptBorder = '2px solid transparent'
     if margins != 'auto':
         margins = '{}px'.format(margins)
     if '%' not in cellwidth:
@@ -289,6 +286,7 @@ def style_layout(style_less,
     style_less += '@cursor-width: {}px; \n'.format(cursorwidth)
     style_less += '@cursor-info: @cursor-width solid {}; \n'.format(
         cursorcolor)
+    style_less += '@tc-prompt-fontsize: {}; \n'.format(tcPromptFontsize)
     style_less += '\n\n'
 
     # read-in notebook.less (general nb style)

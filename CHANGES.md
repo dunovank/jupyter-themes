@@ -1,4 +1,10 @@
 ### Release Notes
+
+#### **v0.15.7:**
+- fixed jupyter-soft-selected style (multiple cell selected)
+- modified table style
+- deprecated -alt/--altlayout (use -altp/--altprompt for smaller prompts, no number)
+
 #### **v0.15.6:**
 - fixed bug that prevented fonts from being imported correctly
 

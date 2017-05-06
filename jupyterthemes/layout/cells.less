@@ -45,8 +45,7 @@ div.CodeMirror-sizer {
     padding-bottom: 0px;
     margin-top: 3px;
 }
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
+div.cell.selected:before {
     background: @cc-border-selected;
     border: 2px solid @cc-border-selected;
     border-top-left-radius: 2px;
@@ -58,8 +57,10 @@ div.cell.selected.jupyter-soft-selected:before {
     width: 5px;
     height: 100%;
 }
-.edit_mode div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
+
+/*********** JUPYTER CELLS SOFT-SELECTED ************/
+div.cell.selected.jupyter-soft-selected:before,
+.edit_mode div.cell.selected:before {
     background: @cc-border-edit;
     border: 2px solid @cc-border-edit;
     border-top-left-radius: 2px;
@@ -72,6 +73,52 @@ div.cell.selected.jupyter-soft-selected:before {
     height: 100%;
 }
 
+div.cell.jupyter-soft-selected,
+div.cell.selected.jupyter-soft-selected {
+    border-left-color: @cc-border-edit;
+    border-left-width: 0px;
+    padding-left: 7px;
+    border-right-color: @cc-border-edit;
+    border-right-width: 0px;
+    background: @cc-border-edit;
+    border-radius: 6px;
+}
+div.cell.selected.jupyter-soft-selected {
+    border-left-color: @cc-border-selected;
+    border-color: @notebook-bg;
+    padding-left: 7px;
+    border-radius: 6px;
+}
+div.cell.selected.jupyter-soft-selected .prompt,
+div.cell.text_cell.selected.jupyter-soft-selected .prompt {
+    top: 0;
+    border-left: @cc-input-bg !important;
+    border-radius: 2px;
+}
+div.cell.text_cell.selected.jupyter-soft-selected .input_prompt {
+    border-left: none !important;
+}
+div.cell.text_cell.selected.jupyter-soft-selected:before {
+    background: @tc-border-edit !important;
+    border: 2px solid @tc-border-edit !important;
+    border-radius: 6px !important;
+    position: absolute !important;
+    display: block !important;
+    top: 0px !important;
+    left: 0px !important;
+    width: 6px !important;
+    height: 100% !important;
+}
+div.cell.text_cell.jupyter-soft-selected,
+div.cell.text_cell.selected.jupyter-soft-selected {
+    border-left-color: @tc-border-edit !important;
+    border-left-width: 0px !important;
+    padding-left: 7px !important;
+    border-right-color: @tc-border-edit !important;
+    border-right-width: 0px !important;
+    background: @tc-border-edit !important;
+    border-radius: 6px !important;
+}
 // /*********** CODE CELL INPUT PROMPT ************/
 div.prompt, .prompt {
     // border-left: 5px solid @notebook-bg;
@@ -181,7 +228,7 @@ div.prompt.output_prompt {
     font-family: "Fira Code", monospace;
     font-size: @prompt-fontsize;
     background-color: @cc-output-bg;
-    color: @cc-output-bg;
+    color: transparent;
     border-bottom-left-radius: 4px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
@@ -201,6 +248,7 @@ div.out_prompt_overlay.prompt {
     min-width: @prompt-min-width !important;
     width: @prompt-min-width !important;
     border-right: @prompt-border !important;
+    color: transparent;
 }
 div.out_prompt_overlay.prompt:hover {
     background-color: @cc-output-bg;
@@ -216,6 +264,17 @@ div.out_prompt_overlay.prompt:hover {
 }
 div.cell.code_cell .output_prompt {
     border-right: 2px solid @prompt-border !important;
+    color: transparent;
+}
+div.cell.selected .output_prompt,
+div.cell.selected .out_prompt_overlay.prompt {
+    border-left: 5px solid @cc-border-selected;
+    border-radius: 0px !important;
+}
+.edit_mode div.cell.selected .output_prompt,
+.edit_mode div.cell.selected .out_prompt_overlay.prompt {
+    border-left: 5px solid @cc-border-edit !important;
+    border-radius: 0px !important;
 }
 /******** TXT & MD INPUT AREA ********/
 div.text_cell,
@@ -227,35 +286,35 @@ div.text_cell_render {
     color: @text-cell-fg;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border-radius: 4px;
+    border-radius: 0px;
 }
 div.cell.text_cell.rendered.selected {
     font-family: @text-cell-fontfamily;
     line-height: @cc-line-height !important;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border-radius: 2px;
+    border-radius: 0px;
 }
 div.cell.text_cell.unrendered.selected {
     font-family: @text-cell-fontfamily;
     line-height: @cc-line-height !important;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border-radius: 2px;
+    border-radius: 0px;
 }
 div.cell.text_cell.selected {
     font-family: @text-cell-fontfamily;
     line-height: @cc-line-height !important;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border-radius: 2px;
+    border-radius: 0px;
 }
 .edit_mode div.cell.text_cell.selected {
     font-family: @text-cell-fontfamily;
     line-height: @cc-line-height !important;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border-radius: 2px;
+    border-radius: 0px;
 }
 div.text_cell.unrendered,
 div.text_cell.unrendered.selected,
@@ -264,11 +323,9 @@ div.edit_mode div.text_cell.unrendered {
     line-height: @cc-line-height !important;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
-    border-radius: 4px;
-    // padding: 0.5em 0.5em 0.5em 0.4em;
+    border-radius: 0px;
 }
-div.cell.text_cell.selected:before,
-div.cell.text_cell.selected.jupyter-soft-selected:before {
+div.cell.text_cell.selected:before {
     background: @tc-border-selected;
     border: 2px solid @tc-border-selected;
     border-top-left-radius: 2px;
@@ -280,8 +337,7 @@ div.cell.text_cell.selected.jupyter-soft-selected:before {
     width: 5px;
     height: 100%;
 }
-.edit_mode div.cell.text_cell.selected:before,
-div.cell.text_cell.selected.jupyter-soft-selected:before {
+.edit_mode div.cell.text_cell.selected:before {
     background: @tc-border-edit;
     border: 2px solid @tc-border-edit;
     border-top-left-radius: 2px;
@@ -293,9 +349,8 @@ div.cell.text_cell.selected.jupyter-soft-selected:before {
     width: 5px;
     height: 100%;
 }
-// div.text_cell .CodeMirror-scroll {
-//     padding: 0.5em 0.5em 0.5em 0.4em;
-// }
+
+
 /********** TEXT & MD PROMPT **********/
 
 div.cell.text_cell .input_prompt {
@@ -304,7 +359,7 @@ div.cell.text_cell .input_prompt {
 
 div.cell.text_cell.rendered .input_prompt {
     font-family: "Fira Code", monospace;
-    font-size: @prompt-fontsize;
+    font-size: @tc-prompt-fontsize;
     font-weight: normal;
     color: @prompt-text;
     text-align: right !important;
@@ -312,20 +367,21 @@ div.cell.text_cell.rendered .input_prompt {
     width: @tc-prompt-width !important;
     background-color: @text-cell-bg;
     border-right: @tc-prompt-border;
+    border-left: 5px solid @text-cell-bg;
 }
 div.cell.text_cell.unrendered .input_prompt {
     font-family: "Fira Code", monospace;
-    font-size: @prompt-fontsize;
+    font-size: @tc-prompt-fontsize;
     font-weight: normal;
     color: @prompt-text;
     text-align: right !important;
     min-width: @tc-prompt-width;
     width: @tc-prompt-width !important;
     border-right: @tc-prompt-border;
+    border-left: 5px solid @text-cell-bg;
 }
 div.cell.text_cell.rendered .input_prompt {
     border-right: @tc-prompt-border;
-    // border-top-left-radius: 4px;
 }
 div.cell.text_cell.rendered.selected .input_prompt {
     top: 0;
