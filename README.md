@@ -93,7 +93,7 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 ### Command Line Examples
 ```sh
 # list available themes
-# oceans16 | grade3 | chesterish | onedork | monokai | solarizedl
+# onedork | grade3 | oceans16 | chesterish | monokai | solarizedl | solarizedd
 jt -l
 
 # select theme...
@@ -109,15 +109,15 @@ jt -t grade3 -T -N
 
 # set code font to 'Roboto Mono' 12pt
 # (see monospace font table below)
-jt -t oceans16 -f roboto -fs 12
+jt -t onedork -f roboto -fs 12
 
 # set code font to Fira Mono, 11.5pt
 # 3digit font-size gets converted into float (115-->11.5)
-jt -t grade3 -f fira -fs 115
+jt -t solarizedd -f fira -fs 115
 
 # set text-cell/markdown and notebook fonts
 # (see sans-serif & serif font tables below)
-jt -t onedork -tf georgiaserif -nf droidsans
+jt -t oceans16 -tf georgiaserif -nf droidsans
 
 # adjust cell width (% screen width) and line height
 jt -t chesterish -cellw 90% -lineh 170
@@ -126,14 +126,14 @@ jt -t chesterish -cellw 90% -lineh 170
 jt -t solarizedl -cellw 860
 
 # fix the container-margins on the intro page (defaults to 'auto')
-jt -t onedork -m 200
+jt -t monokai -m 200
 
 # adjust cursor width (in px) and make cursor red
 # options: b (blue), o (orange), r (red), p (purple), g (green), x (font color)
-jt -t grade3 -cursc r -cursw 5
+jt -t oceans16 -cursc r -cursw 5
 
 # toggle toolbar ON and notebook name ON
-jt -t grade3 -T -N
+jt -t onedork -T -N
 
 # choose alternate prompt layout (narrower/no numbers)
 jt -t grade3 -altp
@@ -162,7 +162,7 @@ Some additional examples for setting "context" (taken from [seaborn](https://sea
 from jupyterthemes import jtplot
 
 # you can select an alternative theme's plot style by name
-# oceans16 | grade3 | chesterish | onedork | monokai | solarizedl
+# onedork | grade3 | oceans16 | chesterish | monokai | solarizedl | solarizedd
 jtplot.style('onedork')
 
 # set "context" (paper, notebook, talk, or poster)

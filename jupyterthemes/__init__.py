@@ -13,7 +13,7 @@ __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 15
-patch = 6
+patch = 7
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
 # path to local site-packages/jupyterthemes
@@ -214,9 +214,8 @@ def main():
 
     args = parser.parse_args()
     themes = get_themes()
-    themes.append('solarized-light')
+    themes.sort()
     say_themes = "Available Themes: \n   {}".format('\n   '.join(themes))
-
     if args.theme:
         if args.theme not in themes:
             print("Didn't recognize theme name: {}".format(args.theme))
