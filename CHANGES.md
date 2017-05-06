@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.15.8:**
+- made changes to solarizedd style
+
 #### **v0.15.7:**
 - added solarized-dark theme "jt -t solarizedd" ([PR #103](https://github.com/dunovank/jupyter-themes/pull/103) submitted by [raybuhr](https://github.com/raybuhr))
 - fixed jupyter-soft-selected style (multiple cell selected)

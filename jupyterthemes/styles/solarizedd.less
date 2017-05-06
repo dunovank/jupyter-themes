@@ -1,9 +1,6 @@
-
 /*
 This is a non official port for jupyter notebook of the solarized-dark theme, documented here:
 http://ethanschoonover.com/solarized
-
-
 */
 
 @solar-base03: #002b36;
@@ -25,19 +22,19 @@ http://ethanschoonover.com/solarized
 @solar-cyan: #2aa198;
 @solar-green: #859900;
 
-@notebook-bg:           @solar-base02;
-@notebook-fg:           @solar-base1;
+@notebook-bg:           @solar-base03;
+@notebook-fg:           @solar-base01;
 @notebook-base:         @notebook-bg;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           @solar-base02;
-@selected-half:         @solar-base3;
-@selected-third:        @solar-base02;
-@selected-tenth:        @solar-base02;
+@selected-half:         rgba(30, 67, 77, .5);
+@selected-third:        rgba(30, 67, 77, .3); //@solar-base02;
+@selected-tenth:        rgba(30, 67, 77, .1); //@solar-base02;
 @selected-error:        @solar-red;
-@selected-active:       @solar-base3;
+@selected-active:       @selected-half;
 @navbar-selected:       @selected-third;
-@selected-fg:           @solar-base00;
+@selected-fg:           @solar-base0;
 @selected-fg-bright:    @solar-orange;
 @unemphasize-fg:        @solar-base1;
 
@@ -51,15 +48,15 @@ http://ethanschoonover.com/solarized
 @unrendered-text:       @solar-yellow;
 @header-fg:             @solar-yellow;
 @tooltip-bg-color:      @solar-base02;
-@tooltip-fg-color:      @solar-base;
+@tooltip-fg-color:      @solar-base1;
 @nb-name-fg:            @item-theme;
 @nb-name-hover:         #DE6D25;
 
 /* cell border colors */
-@cc-border-selected:    @solar-base3;
-@cc-border-edit:        @solar-base01;
-@tc-border-selected:    @cc-border-selected;
-@tc-border-edit:        @cc-border-edit;
+@cc-border-selected:    #0b6073;
+@cc-border-edit:        darken(#0b6073,7%);
+@tc-border-selected:    @solar-yellow;
+@tc-border-edit:        desaturate(@solar-yellow, 20%);
 @cell-selected-border-width: thin;
 
 /* menus, dividers, prompt-borders, brackets */
@@ -75,10 +72,10 @@ http://ethanschoonover.com/solarized
 
 /* panels and form-control styles */
 @panel-header-bg:       @solar-base02;
-@panel-bg:              #f8f8f8;
-@modal-bg:              #ffffff;
+@panel-bg:              #dadada;
+@modal-bg:              #e0e0e0;
 @alert-info-bg:         #fdfdfd;
-@form-input-bg:         #ffffff;
+@form-input-bg:         #e5e5e5;
 @cmd-palette-bg:        @form-input-bg;
 @cmd-palette-form:      @panel-header-bg;
 @cmd-palette-hover:     @panel-bg;
@@ -107,16 +104,16 @@ http://ethanschoonover.com/solarized
 @codeblock-border:      darken(@codeblock-bg, 3%);
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             #EBEBEB;
-@button-border:         darken(@button-bg, 1%);
+@button-bg:             @selected-half;
+@button-border:         @selected-half;
 @button-color:          @item-theme;
-@button-hover:          @selected-active;
+@button-hover:          rgba(30, 67, 77, .9);
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    darken(@panel-header-bg, 2%);
 @scrollbar:             @item-theme;
 @scroll-trough:         @solar-base2;
 @scrollbar-inactive:    @solar-base1;
-@box-shadow:            #e8e8e8;
+@box-shadow:            #05262f;
 
 @ansiblack:             @solar-base03;
 @ansiblue:              @solar-blue;

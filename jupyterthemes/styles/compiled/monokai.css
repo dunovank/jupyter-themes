@@ -1,32 +1,32 @@
 @font-face {
- font-family: 'Fira Code';
+ font-family: "Fira Code";
  font-weight: normal;
  font-style: normal;
- src: local('Fira Code'), url('fonts/firacode.otf') format('opentype');
+ src: local('"Fira Code"'), url('fonts/firacode.otf') format('opentype');
 }
 @font-face {
- font-family: 'Merriweather';
+ font-family: "Source Code Pro";
  font-weight: normal;
  font-style: normal;
- src: local('Merriweather'), url('fonts/Merriweather-Regular.ttf') format('truetype');
+ src: local('"Source Code Pro"'), url('fonts/source-code-pro.otf') format('opentype');
 }
 @font-face {
- font-family: 'Exo_2';
- font-weight: normal;
- font-style: normal;
- src: local('Exo_2'), url('fonts/exo-II-regular.ttf') format('truetype');
-}
-@font-face {
- font-family: 'Source Code Pro';
- font-weight: normal;
- font-style: normal;
- src: local('Source Code Pro'), url('fonts/source-code-pro.otf') format('opentype');
-}
-@font-face {
- font-family: 'Source Code Pro';
+ font-family: "Source Code Pro";
  font-weight: normal;
  font-style: italic;
- src: local('Source Code Pro'), url('fonts/source-code-pro-italic.otf') format('opentype');
+ src: local('"Source Code Pro"'), url('fonts/source-code-pro-italic.otf') format('opentype');
+}
+@font-face {
+ font-family: "Exo_2";
+ font-weight: normal;
+ font-style: normal;
+ src: local('"Exo_2"'), url('fonts/exo-II-regular.ttf') format('truetype');
+}
+@font-face {
+ font-family: "Merriweather";
+ font-weight: normal;
+ font-style: normal;
+ src: local('"Merriweather"'), url('fonts/Merriweather-Regular.ttf') format('truetype');
 }
 div#notebook {
  font-family: "Exo_2", sans-serif;
@@ -1094,8 +1094,8 @@ select.form-control.select-xs {
 .form-control:focus {
  border-color: #ae81ff;
  outline: 0;
- -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #a6e22e;
- box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #a6e22e;
+ -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #49483e;
+ box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #49483e;
 }
 ::-webkit-input-placeholder {
  color: #75715e;
@@ -1172,8 +1172,7 @@ div.CodeMirror-sizer {
  padding-bottom: 0px;
  margin-top: 3px;
 }
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
+div.cell.selected:before {
  background: #49483e;
  border: 2px solid #49483e;
  border-top-left-radius: 2px;
@@ -1185,8 +1184,8 @@ div.cell.selected.jupyter-soft-selected:before {
  width: 5px;
  height: 100%;
 }
-.edit_mode div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
+div.cell.selected.jupyter-soft-selected:before,
+.edit_mode div.cell.selected:before {
  background: #cccccc;
  border: 2px solid #cccccc;
  border-top-left-radius: 2px;
@@ -1197,6 +1196,52 @@ div.cell.selected.jupyter-soft-selected:before {
  left: 0px;
  width: 5px;
  height: 100%;
+}
+div.cell.jupyter-soft-selected,
+div.cell.selected.jupyter-soft-selected {
+ border-left-color: #cccccc;
+ border-left-width: 0px;
+ padding-left: 7px;
+ border-right-color: #cccccc;
+ border-right-width: 0px;
+ background: #cccccc;
+ border-radius: 6px;
+}
+div.cell.selected.jupyter-soft-selected {
+ border-left-color: #49483e;
+ border-color: #1e1e1e;
+ padding-left: 7px;
+ border-radius: 6px;
+}
+div.cell.selected.jupyter-soft-selected .prompt,
+div.cell.text_cell.selected.jupyter-soft-selected .prompt {
+ top: 0;
+ border-left: #282828 !important;
+ border-radius: 2px;
+}
+div.cell.text_cell.selected.jupyter-soft-selected .input_prompt {
+ border-left: none !important;
+}
+div.cell.text_cell.selected.jupyter-soft-selected:before {
+ background: #cccccc !important;
+ border: 2px solid #cccccc !important;
+ border-radius: 6px !important;
+ position: absolute !important;
+ display: block !important;
+ top: 0px !important;
+ left: 0px !important;
+ width: 6px !important;
+ height: 100% !important;
+}
+div.cell.text_cell.jupyter-soft-selected,
+div.cell.text_cell.selected.jupyter-soft-selected {
+ border-left-color: #cccccc !important;
+ border-left-width: 0px !important;
+ padding-left: 7px !important;
+ border-right-color: #cccccc !important;
+ border-right-width: 0px !important;
+ background: #cccccc !important;
+ border-radius: 6px !important;
 }
 div.prompt,
 .prompt {
@@ -1209,8 +1254,8 @@ div.prompt,
  padding-top: 4px;
  padding-left: 5px;
  text-align: right !important;
- min-width: 12ex !important;
- width: 12ex !important;
+ min-width: 11ex !important;
+ width: 11ex !important;
 }
 div.prompt.input_prompt {
  background-color: #282828;
@@ -1218,11 +1263,11 @@ div.prompt.input_prompt {
  border-top-right-radius: 0px;
  border-bottom-left-radius: 0px;
  border-bottom-right-radius: 0px;
- min-width: 12ex;
- width: 12ex !important;
+ min-width: 11ex;
+ width: 11ex !important;
 }
 div.cell.code_cell .input_prompt {
- border-right: 2px solid #a6e22e;
+ border-right: 2px solid #49483e;
 }
 div.cell.selected .prompt {
  top: 0;
@@ -1250,7 +1295,7 @@ div.output_wrapper {
 }
 div.output_subarea.output_text.output_stream.output_stdout,
 div.output_subarea.output_text {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 10.0pt;
  line-height: 150% !important;
  background-color: #232323;
@@ -1259,7 +1304,7 @@ div.output_subarea.output_text {
  border-top-left-radius: 0px;
 }
 div.output_area pre {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 10.0pt;
  line-height: 150% !important;
  color: #cccccc;
@@ -1270,7 +1315,7 @@ div.output_area {
  display: -webkit-box;
 }
 div.output_html {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 10.0pt;
  color: #cccccc;
  background-color: #232323;
@@ -1298,14 +1343,14 @@ div.prompt.output_prompt {
  font-family: "Fira Code", monospace;
  font-size: 9.5pt;
  background-color: #232323;
- color: #232323;
+ color: transparent;
  border-bottom-left-radius: 4px;
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
  border-bottom-right-radius: 0px;
- min-width: 12ex !important;
- width: 12ex !important;
- border-right: 2px solid #a6e22e !important;
+ min-width: 11ex !important;
+ width: 11ex !important;
+ border-right: 2px solid #49483e !important;
 }
 div.out_prompt_overlay.prompt {
  font-family: "Fira Code", monospace;
@@ -1315,9 +1360,10 @@ div.out_prompt_overlay.prompt {
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
  border-bottom-right-radius: 0px;
- min-width: 12ex !important;
- width: 12ex !important;
- border-right: 2px solid #a6e22e !important;
+ min-width: 11ex !important;
+ width: 11ex !important;
+ border-right: 2px solid #49483e !important;
+ color: transparent;
 }
 div.out_prompt_overlay.prompt:hover {
  background-color: #232323;
@@ -1327,12 +1373,23 @@ div.out_prompt_overlay.prompt:hover {
  -moz-border-radius: 2px;
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
- min-width: 12ex !important;
- width: 12ex !important;
- border-right: 2px solid #a6e22e !important;
+ min-width: 11ex !important;
+ width: 11ex !important;
+ border-right: 2px solid #49483e !important;
 }
 div.cell.code_cell .output_prompt {
- border-right: 2px solid 2px solid #a6e22e !important;
+ border-right: 2px solid 2px solid #49483e !important;
+ color: transparent;
+}
+div.cell.selected .output_prompt,
+div.cell.selected .out_prompt_overlay.prompt {
+ border-left: 5px solid #49483e;
+ border-radius: 0px !important;
+}
+.edit_mode div.cell.selected .output_prompt,
+.edit_mode div.cell.selected .out_prompt_overlay.prompt {
+ border-left: 5px solid #cccccc !important;
+ border-radius: 0px !important;
 }
 div.text_cell,
 div.text_cell_render pre,
@@ -1343,35 +1400,35 @@ div.text_cell_render {
  color: #f8f8f0;
  background: #282828;
  background-color: #282828;
- border-radius: 4px;
+ border-radius: 0px;
 }
 div.cell.text_cell.rendered.selected {
  font-family: "Merriweather", serif;
  line-height: 170% !important;
  background: #282828;
  background-color: #282828;
- border-radius: 2px;
+ border-radius: 0px;
 }
 div.cell.text_cell.unrendered.selected {
  font-family: "Merriweather", serif;
  line-height: 170% !important;
  background: #282828;
  background-color: #282828;
- border-radius: 2px;
+ border-radius: 0px;
 }
 div.cell.text_cell.selected {
  font-family: "Merriweather", serif;
  line-height: 170% !important;
  background: #282828;
  background-color: #282828;
- border-radius: 2px;
+ border-radius: 0px;
 }
 .edit_mode div.cell.text_cell.selected {
  font-family: "Merriweather", serif;
  line-height: 170% !important;
  background: #282828;
  background-color: #282828;
- border-radius: 2px;
+ border-radius: 0px;
 }
 div.text_cell.unrendered,
 div.text_cell.unrendered.selected,
@@ -1380,10 +1437,9 @@ div.edit_mode div.text_cell.unrendered {
  line-height: 170% !important;
  background: #282828;
  background-color: #282828;
- border-radius: 4px;
+ border-radius: 0px;
 }
-div.cell.text_cell.selected:before,
-div.cell.text_cell.selected.jupyter-soft-selected:before {
+div.cell.text_cell.selected:before {
  background: #49483e;
  border: 2px solid #49483e;
  border-top-left-radius: 2px;
@@ -1395,8 +1451,7 @@ div.cell.text_cell.selected.jupyter-soft-selected:before {
  width: 5px;
  height: 100%;
 }
-.edit_mode div.cell.text_cell.selected:before,
-div.cell.text_cell.selected.jupyter-soft-selected:before {
+.edit_mode div.cell.text_cell.selected:before {
  background: #cccccc;
  border: 2px solid #cccccc;
  border-top-left-radius: 2px;
@@ -1417,10 +1472,11 @@ div.cell.text_cell.rendered .input_prompt {
  font-weight: normal;
  color: #75715e;
  text-align: right !important;
- min-width: 12ex;
- width: 12ex !important;
+ min-width: 11ex;
+ width: 11ex !important;
  background-color: #282828;
  border-right: 2px solid #ae81ff;
+ border-left: 5px solid #282828;
 }
 div.cell.text_cell.unrendered .input_prompt {
  font-family: "Fira Code", monospace;
@@ -1428,9 +1484,10 @@ div.cell.text_cell.unrendered .input_prompt {
  font-weight: normal;
  color: #75715e;
  text-align: right !important;
- min-width: 12ex;
- width: 12ex !important;
+ min-width: 11ex;
+ width: 11ex !important;
  border-right: 2px solid #ae81ff;
+ border-left: 5px solid #282828;
 }
 div.cell.text_cell.rendered .input_prompt {
  border-right: 2px solid #ae81ff;
@@ -1448,7 +1505,7 @@ div.text_cell.unrendered.selected .prompt {
  border-right: 2px solid #ae81ff;
 }
 div.rendered_html code {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 11pt;
  padding-top: 3px;
  color: #f8f8f0;
@@ -1463,7 +1520,7 @@ samp {
 }
 .well code,
 code {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 11pt !important;
  line-height: 170% !important;
  color: #f8f8f0;
@@ -1495,7 +1552,7 @@ div.rendered_html {
 }
 div.rendered_html pre,
 div.text_cell_render pre {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 11pt !important;
  line-height: 170% !important;
  color: #f8f8f0;
@@ -1576,50 +1633,44 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
  pointer-events: none;
  border-radius: 2px;
 }
-.rendered_html table,
 .rendered_html tr,
+.rendered_html th,
 .rendered_html td {
- font-family: "Fira Code", monospace;
- font-size: 10.0pt !important;
- line-height: 150% !important;
- border: 1px solid #49483e;
- color: #cccccc;
- background-color: #282828;
- background: #282828;
-}
-table.dataframe,
-.rendered_html tr,
-.dataframe * {
- font-family: "Fira Code", monospace;
- font-size: 10.0pt !important;
- border: 1px solid #49483e;
-}
-.dataframe th,
-.rendered_html th {
- font-family: "Exo_2", sans-serif;
- font-size: 11pt !important;
- font-weight: bold;
- border: 1px solid #49483e;
- background: #282828;
-}
-.dataframe td,
-.rendered_html td {
- font-family: "Fira Code", monospace;
- font-size: 10.0pt !important;
- color: #cccccc;
- background: #282828;
- border: 1px solid #49483e;
  text-align: left;
- min-width: 4em;
+ vertical-align: middle;
+ padding: 0.5em 0.5em;
+ line-height: normal;
+ white-space: normal;
+ max-width: none;
+ border: none;
 }
-.dataframe-summary-row tr:last-child,
-.dataframe-summary-col td:last-child {
- font-family: "Exo_2", sans-serif;
- font-size: 11pt !important;
- font-weight: bold;
+.rendered_html table {
+ margin-left: auto;
+ margin-right: auto;
+ border: none;
+ border-collapse: collapse;
+ border-spacing: 0;
  color: #cccccc;
- border: 1px solid #49483e;
+ font-size: 12px;
+ table-layout: fixed;
+}
+.rendered_html thead {
  background: #282828;
+ color: #cccccc;
+ border-bottom: 1px solid #282828;
+ vertical-align: bottom;
+}
+.rendered_html tbody tr:nth-child(odd) {
+ background: #282828;
+}
+.rendered_html tbody tr {
+ background: #202020;
+}
+.rendered_html tbody tr:hover:nth-child(odd) {
+ background: #252525;
+}
+.rendered_html tbody tr:hover {
+ background: #1e1e1e;
 }
 div.widget-area {
  background-color: #232323;
@@ -1876,13 +1927,13 @@ span.bg-danger.text-danger {
  box-shadow: inset 0 1px 1px rgba(0,0,0,0.025);
 }
 .kse-input-group-pretty > kbd {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  color: #f8f8f0;
  font-weight: normal;
  background: transparent;
 }
 .kse-input-group-pretty > kbd {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  color: #f8f8f0;
  font-weight: normal;
  background: transparent;
@@ -1927,7 +1978,7 @@ label#Keyword-Filter {
  border-color: #212121;
 }
 input.raw_input {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 11pt !important;
  color: #f8f8f0;
  background-color: #282828;
@@ -2151,7 +2202,7 @@ div#short-key-bindings-intro.well,
  background: #1e1e1e;
 }
 .terminal-app .terminal {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 11pt;
  line-height: 170%;
  color: #f8f8f0;
@@ -2215,7 +2266,7 @@ div#short-key-bindings-intro.well,
 }
 div.CodeMirror,
 div.CodeMirror pre {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 11pt;
  line-height: 170%;
  color: #f8f8f0;
@@ -2277,7 +2328,7 @@ div.js-error {
  color: #f92672;
 }
 .ipython_tooltip {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 11pt;
  line-height: 170%;
  border: 2px solid #141414;
@@ -2291,7 +2342,7 @@ div.js-error {
  z-index: 1000;
 }
 .ipython_tooltip .tooltiptext pre {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 11pt;
  line-height: 170%;
  background: #282828;
@@ -2313,7 +2364,7 @@ div.tooltiptext.bigtooltip {
  max-width: 800px;
 }
 .cm-s-ipython.CodeMirror {
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 11pt;
  background: #282828;
  color: #f8f8f0;
@@ -2471,6 +2522,9 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
 .cm-s-default .cm-error {
  color: #ae81ff;
 }
+.cm-s-default .cm-link {
+ color: #a6e22e;
+}
 .CodeMirror-cursor {
  border-left: 2px solid #0095ff !important;
  border-right: none;
@@ -2486,7 +2540,7 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
  position: absolute;
  z-index: 110;
  overflow: hidden;
- border: medium solid #a6e22e;
+ border: medium solid #49483e;
  box-shadow: none;
  line-height: 1;
 }
@@ -2499,7 +2553,7 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
  margin: 0px;
  margin-left: 2px;
  overflow: auto;
- font-family: "Source Code Pro", monospace;
+ font-family: "Source Code Pro", monospace, monospace;
  font-size: 11pt;
  color: #f8f8f0;
  width: auto;
