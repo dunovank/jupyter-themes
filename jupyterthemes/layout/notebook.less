@@ -6,6 +6,7 @@ div#notebook {
     font-size: @nb-fontsize;
     line-height: @cc-line-height;
     color: @cc-input-fg;
+    -webkit-font-smoothing: antialiased !important;
 }
 body,
 div.body {
@@ -14,6 +15,7 @@ div.body {
     color: @notebook-fg;
     background-color: @notebook-bg;
     background: @notebook-bg;
+    -webkit-font-smoothing: antialiased !important;
 }
 body.notebook_app {
     padding: 0;
@@ -25,9 +27,11 @@ body.notebook_app {
 a {
     font-family: @notebook-fontfamily;
     color: @notebook-fg;
+    -webkit-font-smoothing: antialiased !important;
 }
 a:hover, a:focus {
     color: @selected-fg;
+    -webkit-font-smoothing: antialiased !important;
 }
 
 /*********************************************************/
@@ -457,7 +461,7 @@ p.navbar-text.indicator_area {
 }
 .navbar-default .navbar-nav > li > a {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize;
+    font-size: 13pt; //@nb-fontsize;
     color: @notebook-fg;
     display: block;
     line-height: 1.5em;
@@ -489,30 +493,50 @@ p.navbar-text.indicator_area {
 
 #notification_trusted {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize;
+    font-size: 13pt;
     color: @item-blue;
     border: none;
     background: transparent;
     background-color: transparent;
-    vertical-align: text-top;
-    margin-top: 6px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+}
+div.notification_widget.info,
+.notification_widget.info,
+.notification_widget:active:hover,
+.notification_widget.active:hover,
+.open > .dropdown-toggle.notification_widget:hover,
+.notification_widget:active:focus,
+.notification_widget.active:focus,
+.open > .dropdown-toggle.notification_widget:focus,
+.notification_widget:active.focus,
+.notification_widget.active.focus,
+.open > .dropdown-toggle.notification_widget.focus,
+div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn,
+div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:hover,
+div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:focus {
+    color: @item-blue;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
 }
 .edit_mode .modal_indicator:before {
-    font-size: 17pt;
-    color: @item-blue;
-    content: "\f040";
-    padding-top: 5px;
+    font-size: 19px;
+    color: @cc-border-edit;
+    content: "E"; //"\f040";
     padding-bottom: 0px;
-    vertical-align: middle;
+    vertical-align: -webkit-baseline-middle;
+    margin-left: 1px;
 }
 .command_mode .modal_indicator:before {
     font-family: @notebook-fontfamily;
-    font-size: 17pt;
+    font-size: 19px;
     color: @item-blue;
     content: "C"; //"\f1f9";
-    padding-top: 5px;
     padding-bottom: 0px;
-    vertical-align: middle;
+    vertical-align: -webkit-baseline-middle;
+    margin-left: 1px;
 }
 .item_icon {
     color: @item-blue;
@@ -544,48 +568,51 @@ p.navbar-text.indicator_area {
     background: @notebook-bg;
     background-color: @notebook-bg;
     margin-top: 5px !important;
+    margin-left: 1px;
+    font-size: 13pt;
 }
 #kernel_indicator {
     float: right !important;
     color: @item-theme;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    font-size: 15pt;
     border-left: 2px solid @item-theme;
     padding-bottom: 2px;
     margin-top: 5px !important;
+    margin-left: -2px;
 }
 #kernel_indicator .kernel_indicator_name {
     color: @item-theme;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    font-size: 14.5pt;
+    font-size: 13pt;
     padding-left: 5px;
     padding-right: 5px;
-    margin-top: 10px;
-    vertical-align: middle;
+    margin-top: 5px;
+     vertical-align: -webkit-baseline-middle;
     padding-bottom: 0px;
 }
 
 .kernel_idle_icon:before {
     display: inline-block;
-    font: normal normal normal 23px/1 FontAwesome;
-    font-size: 23px;
+    font: normal normal normal 20px/1 FontAwesome;
+    font-size: 19px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     content: "\f10c";
-    vertical-align: text-top;
+    vertical-align: middle;
+    margin-left: -3px;
 }
 .kernel_busy_icon:before {
     display: inline-block;
-    font: normal normal normal 23px/1 FontAwesome;
-    font-size: 23px;
+    font: normal normal normal 20px/1 FontAwesome;
+    font-size: 19px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    // content: "\f10c";
-    vertical-align: text-top;
+    vertical-align: middle;
+    margin-left: -3px;
 }
 i#kernel_indicator_icon {
     vertical-align: sub;

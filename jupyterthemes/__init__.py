@@ -13,7 +13,7 @@ __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 15
-patch = 8
+patch = 9
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
 # path to local site-packages/jupyterthemes
@@ -30,7 +30,7 @@ def get_themes():
 def install_theme(theme,
                 monofont='source',
                 monosize=11,
-                nbfont='exosans',
+                nbfont='helvetica',
                 nbfontsize=13,
                 tcfont='merriserif',
                 tcfontsize=13,
@@ -120,7 +120,7 @@ def main():
         '-nf',
         "--nbfont",
         action='store',
-        default='exosans',
+        default='helvetica',
         help='notebook font')
     parser.add_argument(
         '-nfs',

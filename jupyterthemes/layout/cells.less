@@ -122,7 +122,7 @@ div.cell.text_cell.selected.jupyter-soft-selected {
 // /*********** CODE CELL INPUT PROMPT ************/
 div.prompt, .prompt {
     // border-left: 5px solid @notebook-bg;
-    font-family: "Fira Code", monospace;
+    font-family: @monofont, monospace;
     font-size: @prompt-fontsize;
     font-weight: normal;
     color: @prompt-text;
@@ -225,7 +225,7 @@ div.btn.btn-default.output_collapsed:hover {
 
 /************ CODE CELL OUTPUT PROMPT ************/
 div.prompt.output_prompt {
-    font-family: "Fira Code", monospace;
+    font-family: @monofont, monospace;
     font-size: @prompt-fontsize;
     background-color: @cc-output-bg;
     color: transparent;
@@ -238,7 +238,7 @@ div.prompt.output_prompt {
     border-right: @prompt-border !important;
 }
 div.out_prompt_overlay.prompt {
-    font-family: "Fira Code", monospace;
+    font-family: @monofont, monospace;
     font-size: @prompt-fontsize;
     background-color: @cc-output-bg;
     border-bottom-left-radius: 2px;
@@ -358,7 +358,7 @@ div.cell.text_cell .input_prompt {
 }
 
 div.cell.text_cell.rendered .input_prompt {
-    font-family: "Fira Code", monospace;
+    font-family: @monofont, monospace;
     font-size: @tc-prompt-fontsize;
     font-weight: normal;
     color: @prompt-text;
@@ -370,7 +370,7 @@ div.cell.text_cell.rendered .input_prompt {
     border-left: 5px solid @text-cell-bg;
 }
 div.cell.text_cell.unrendered .input_prompt {
-    font-family: "Fira Code", monospace;
+    font-family: @monofont, monospace;
     font-size: @tc-prompt-fontsize;
     font-weight: normal;
     color: @prompt-text;

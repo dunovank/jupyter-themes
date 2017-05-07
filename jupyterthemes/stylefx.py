@@ -92,7 +92,7 @@ def install_precompiled_theme(theme):
     theme_dst = os.path.join(jupyter_custom, 'custom.css')
     copyfile(theme_src, theme_dst)
 
-    for fontcode in ['exosans', 'loraserif', 'droidmono', 'firacode']:
+    for fontcode in ['exosans', 'loraserif', 'source', 'firacode']:
         fname, fpath = stored_font_dicts(fontcode)
 
         fontpath = os.path.join(fonts_dir, fpath)
@@ -111,7 +111,7 @@ def delete_font_files():
         os.remove(abspath)
 
 
-def import_stored_fonts(style_less, fontcodes=('exosans', 'loraserif', 'droidmono')):
+def import_stored_fonts(style_less, fontcodes=('helvetica', 'merriserif', 'source')):
     """Collect fontnames and local pointers to fontfiles in custom dir
     then pass information for each font to function for writing import
     statements
@@ -129,14 +129,15 @@ def convert_fontsizes(fontsizes):
     for i, fs in enumerate(fontsizes):
         if len(fs) >= 3:
             fontsizes[i] = '.'.join([fs[:-1], fs[-1]])
-        elif int(fs) > 50:
+        elif int(fs) > 25:
             fontsizes[i] = '.'.join([fs[0], fs[-1]])
     return fontsizes
 
 
-def set_font_properties(style_less, nbfont='exosans',
-                        tcfont='loraserif',
-                        monofont='droidmono',
+def set_font_properties(style_less,
+                        nbfont='helvetica',
+                        tcfont='merriserif',
+                        monofont='source',
                         monosize=11,
                         tcfontsize=13,
                         nbfontsize=13,
@@ -148,26 +149,25 @@ def set_font_properties(style_less, nbfont='exosans',
 
     fontsizes = [monosize, nbfontsize, tcfontsize, prfontsize]
     monosize, nbfontsize, tcfontsize, prfontsize = convert_fontsizes(fontsizes)
-
+    default_fonts =  ['monospace', 'sans-serif', 'sans-serif']
     if dfonts:
-        monofont = 'monospace'
-        tcfont = 'sans-serif'
-        nbfont = 'sans-serif'
+        monofont, tcfont, nbfont = default_fonts
     else:
-        style_less = import_stored_fonts(style_less,
-            fontcodes=[nbfont, tcfont, monofont, 'firacode'])
-        # get fontname, fontpath, font-family info
-        nbfont, nbfontpath= stored_font_dicts(nbfont)
-        tcfont, tcfontpath= stored_font_dicts(tcfont)
-        monofont, monofontpath = stored_font_dicts(monofont)
+        try:
+            style_less = import_stored_fonts(style_less,
+                fontcodes=[nbfont, tcfont, monofont])
+            # get fontname, fontpath, font-family info
+            nbfont, nbfontpath = stored_font_dicts(nbfont)
+            tcfont, tcfontpath = stored_font_dicts(tcfont)
+            monofont, monofontpath = stored_font_dicts(monofont)
+        except Exception:
+            monofont, tcfont, nbfont = default_fonts
 
     style_less += '/* Set Font-Type and Font-Size Variables  */\n'
-
     # font names and fontfamily info for codecells, notebook & textcells
     style_less += '@monofont: {}; \n'.format(monofont)
     style_less += '@notebook-fontfamily: {}; \n'.format(nbfont)
     style_less += '@text-cell-fontfamily: {}; \n'.format(tcfont)
-
     # font size for codecells, main notebook, notebook-sub, & textcells
     style_less += '@monofontsize: {}pt; \n'.format(monosize)
     style_less += '@monofontsize-sub: {}pt; \n'.format(float(monosize) - 1)
@@ -177,7 +177,6 @@ def set_font_properties(style_less, nbfont='exosans',
     style_less += '@prompt-fontsize: {}pt; \n'.format(prfontsize)
     style_less += '\n\n'
     style_less += '/* Import Theme Colors and Define Layout Variables */\n'
-
     return style_less
 
 
@@ -492,7 +491,9 @@ def stored_font_dicts(fontcode, get_all=False):
               'oxygensans': ['Oxygen Sans', 'oxygensans'],
               'pontanosans': ['Pontano Sans', 'pontanosans'],
               'puritansans': ['Puritan Sans', 'puritansans'],
-              'ralewaysans': ['Raleway', 'ralewaysans']},
+              'ralewaysans': ['Raleway', 'ralewaysans'],
+              'helvetica': ['Helvetica', 'helvetica'],
+              'helveticaneue': ['Helvetica Neue', 'helveticaneue']},
              'serif':
              {'ptserif': ['PT Serif', 'ptserif'],
               'ebserif': ['EB Garamond', 'ebserif'],
@@ -525,7 +526,7 @@ def stored_font_dicts(fontcode, get_all=False):
         fontname, fontdir = fonts['serif'][fontcode]
         fontfam = 'serif'
     else:
-        print("One of the fonts you requested is not available... sorry!")
-        return '', ''
+        print("\n\tOne of the fonts you requested is not available\n\tSetting all fonts to default")
+        return ''
     fontdir = os.sep.join([fontfam, fontdir])
     return '"{}", {}'.format(fontname, fontfam), fontdir

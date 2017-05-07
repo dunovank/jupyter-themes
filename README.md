@@ -73,7 +73,7 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Theme Name to Install |   -t    |     --     |
 | Code Font             |   -f    |   source   |
 | Code Font-Size        |   -fs   |     11     |
-| Notebook Font         |   -nf   |  exosans   |
+| Notebook Font         |   -nf   |  helvetica |
 | Notebook Font Size    |  -nfs   |     13     |
 | Text/MD Cell Font     |   -tf   | merriserif |
 | Text/MD Cell Fontsize |  -tfs   |     13     |
@@ -221,9 +221,11 @@ jtplot.reset()
 #### Sans-Serif Fonts
 | -nf/-tf arg   | Sans-Serif Font   |
 | :------------ | :---------------- |
-| exosans       | Exo_2             |
+| helvetica     | Helvetica         |
+| helveticaneue | Helvetica Neue    |
 | opensans      | Open Sans         |
 | droidsans     | Droid Sans        |
+| exosans       | Exo_2             |
 | latosans      | Lato              |
 | ptsans        | PT Sans           |
 | robotosans    | Roboto            |
