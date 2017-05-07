@@ -4,6 +4,7 @@
 - improved kernel and notification widget alignment
 - added helvetica, helveticaneue fonts
 - fixed bug that prevented install if fontname not recognized
+- minor cosmetic improvements
 
 #### **v0.15.8:**
 - made changes to solarizedd style
