@@ -6,7 +6,7 @@
 - re-compiled css for binder
 - minor cosmetic improvements
 
-###  **v0.15.9:**
+####  **v0.15.9:**
 - improved kernel and notification widget alignment
 - added helvetica, helveticaneue fonts
 - fixed bug that prevented install if fontname not recognized
