@@ -71,11 +71,11 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Usage help            |   -h    |     --     |
 | List Themes           |   -l    |     --     |
 | Theme Name to Install |   -t    |     --     |
-| Code Font             |   -f    |   source   |
+| Code Font             |   -f    |     --     |
 | Code Font-Size        |   -fs   |     11     |
-| Notebook Font         |   -nf   |  helvetica |
+| Notebook Font         |   -nf   |     --     |
 | Notebook Font Size    |  -nfs   |     13     |
-| Text/MD Cell Font     |   -tf   | merriserif |
+| Text/MD Cell Font     |   -tf   |     --     |
 | Text/MD Cell Fontsize |  -tfs   |     13     |
 | Intro Page Margins    |   -m    |    auto    |
 | Cell Width            | -cellw  |    980     |
@@ -131,9 +131,6 @@ jt -t monokai -m 200
 # adjust cursor width (in px) and make cursor red
 # options: b (blue), o (orange), r (red), p (purple), g (green), x (font color)
 jt -t oceans16 -cursc r -cursw 5
-
-# toggle toolbar ON and notebook name ON
-jt -t onedork -T -N
 
 # choose alternate prompt layout (narrower/no numbers)
 jt -t grade3 -altp

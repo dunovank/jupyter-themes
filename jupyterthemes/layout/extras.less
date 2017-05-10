@@ -249,9 +249,6 @@ span.rendered_html code {
     padding-left: 0px;
     padding-right: 0px;
 }
-// #ui-id-1.nbext-filter-menu.dropdown-menu {
-//     top: 183px !important;
-// }
 .nbext-filter-menu {
     max-height: 50vh;
     overflow-y: auto;
@@ -262,6 +259,12 @@ span.rendered_html code {
     background-color: @panel-bg;
     border-color: @panel-bg;
     color: @notebook-fg;
+}
+.notification_widget.danger {
+    color: #fff;
+    background-color: @item-danger;
+    border-color: @item-danger;
+    padding-right: 5px;
 }
 /********** NBEXT MARKDOWN **********/
 mark, .mark {
@@ -358,6 +361,67 @@ label#Keyword-Filter {
     border-color: @button-panel-hover;
 }
 
+.ui-widget-content {
+    background: @button-bg;
+    background-color: @button-bg;
+    border: 2px solid @button-bg;
+    color: @notebook-fg;
+}
+
+div.collapsible_headings_toggle {
+    color: @selected-half !important;
+}
+div.collapsible_headings_toggle:hover {
+    color: @item-theme !important;
+}
+.collapsible_headings_toggle .h1,
+.collapsible_headings_toggle .h2,
+.collapsible_headings_toggle .h3,
+.collapsible_headings_toggle .h4,
+.collapsible_headings_toggle .h5,
+.collapsible_headings_toggle .h6 {
+    margin: 0.3em .4em 0em 0em !important;
+    line-height: 1.2 !important;
+}
+div.collapsible_headings_toggle .fa-caret-down:before,
+div.collapsible_headings_toggle .fa-caret-right:before {
+    font-size: xx-large;
+    transition: transform 1000ms;
+    transform: none !important;
+}
+.collapsible_headings_collapsed.collapsible_headings_ellipsis .rendered_html h1:after,
+.collapsible_headings_collapsed.collapsible_headings_ellipsis .rendered_html h2:after,
+.collapsible_headings_collapsed.collapsible_headings_ellipsis .rendered_html h3:after,
+.collapsible_headings_collapsed.collapsible_headings_ellipsis .rendered_html h4:after,
+.collapsible_headings_collapsed.collapsible_headings_ellipsis .rendered_html h5:after,
+.collapsible_headings_collapsed.collapsible_headings_ellipsis .rendered_html h6:after {
+    position: absolute;
+    right: 0;
+    bottom: 20% !important;
+    content: "[\002026]";
+    color: @selected-half !important;
+    padding: 0.5em 0em 0em 0em !important;
+}
+.collapsible_headings_ellipsis .rendered_html h1,
+.collapsible_headings_ellipsis .rendered_html h2,
+.collapsible_headings_ellipsis .rendered_html h3,
+.collapsible_headings_ellipsis .rendered_html h4,
+.collapsible_headings_ellipsis .rendered_html h5,
+.collapsible_headings_ellipsis .rendered_html h6,
+.collapsible_headings_toggle .fa {
+    transition: transform 1000ms !important;
+    -webkit-transform: inherit !important;
+    -moz-transform: inherit !important;
+    -ms-transform: inherit !important;
+    -o-transform: inherit !important;
+    transform: inherit !important;
+    // border-spacing: 90px;
+    padding-right: 0px !important;
+}
+// .collapsible_headings_toggle .fa {
+//     transition: transform 1000ms;
+//     transform: none !important;
+// }
 /********** DEBUGGER PATCH **********/
 input.raw_input {
     font-family: @monofont, monospace;

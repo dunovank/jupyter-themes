@@ -128,6 +128,7 @@ div.tooltiptext.bigtooltip {
     background: @cm-gutters;
     border: none;
     border-radius:0px;
+    width: 36px;
 }
 .cm-s-ipython .CodeMirror-linenumber {
     color: @cm-linenumber;
@@ -135,17 +136,16 @@ div.tooltiptext.bigtooltip {
 .CodeMirror-sizer {
     margin-left: 40px;
 }
-.CodeMirror-gutter,
-.CodeMirror-gutters,
-.CodeMirror-linenumber {
-    background: @cm-gutters;
-    background-color: @cm-gutters;
-    border-color: @cm-gutters;
-    padding-right: 4px;
-}
-.CodeMirror-gutter.CodeMirror-linenumbers,
-div.CodeMirror-gutter.CodeMirror-linenumbers {
-    width: 34px;
+.CodeMirror-linenumber,
+div.CodeMirror-linenumber,
+.CodeMirror-gutter.CodeMirror-linenumber
+div.CodeMirror-gutter.CodeMirror-linenumber {
+    padding-right: 1px;
+    margin-left: 0px;
+    margin: 0px;
+    width: 26px !important;
+    padding: 0px;
+    text-align: right;
 }
 .CodeMirror-linenumber {
     color: @cm-linenumber;
@@ -222,17 +222,17 @@ div.CodeMirror span.CodeMirror-matchingbracket {
 }
 div.CodeMirror span.CodeMirror-nonmatchingbracket {
     color: @selected-fg-bright;
-    background: @selected-error !important ;
+    background: @selected-error !important;
 }
 
 /***********************************************/
 /**** TXT, HEADER, & MD SYNTAX HIGHLIGHTING ****/
 /***********************************************/
 .cm-header-1 {
-    font-size: 220%;
+    font-size: 215%;
 }
 .cm-header-2 {
-    font-size: 170%;
+    font-size: 180%;
 }
 .cm-header-3 {
     font-size: 150%;
@@ -243,12 +243,17 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 .cm-header-5 {
     font-size: 100%;
 }
+.cm-s-default .cm-hr {
+    color: @cm-operator;
+}
+
 div.cell.text_cell .cm-s-default .cm-header {
     font-family: @notebook-fontfamily;
     font-weight: normal;
     color: @header-fg;
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
 }
-
 div.cell.text_cell .cm-s-default span.cm-variable-2 {
     color: @text-cell-fg;
 }
@@ -278,6 +283,9 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
 }
 .cm-s-default .cm-link {
     color: @cm-link;
+}
+.cm-s-default .cm-atom {
+    color: @cm-number;
 }
 .CodeMirror-cursor {
     border-left: @cursor-info !important;

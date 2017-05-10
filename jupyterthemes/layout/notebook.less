@@ -172,11 +172,6 @@ div.running_list_info.toolbar_info {
 div#notebook_toolbar div.dynamic-instructions {
     font-family: @notebook-fontfamily;
     font-size: 15px;
-    // margin-top: 5px;
-    // margin-bottom: 8px;
-    // height: 24px;
-    // line-height: 24px;
-    // padding: 4px 0 4px 0;
 }
 div#maintoolbar .container {
     margin-left: -5px !important;
@@ -397,10 +392,10 @@ div#ipython-main-app.container {
     margin-left: auto;
 }
 div#menubar-container {
-    width: 95%;
+    width: 98%;
 }
 div#header-container {
-    width: 95%;
+    width: 98%;
 }
 /********************************************************/
 /************** NOTEBOOK PAGE HEADER AND NA *************/
@@ -461,7 +456,7 @@ p.navbar-text.indicator_area {
 }
 .navbar-default .navbar-nav > li > a {
     font-family: @notebook-fontfamily;
-    font-size: 13pt; //@nb-fontsize;
+    font-size: 12.5pt; //@nb-fontsize;
     color: @notebook-fg;
     display: block;
     line-height: 1.5em;
@@ -491,16 +486,6 @@ p.navbar-text.indicator_area {
 /********* ICONS and INDICATORS *********/
 /****************************************/
 
-#notification_trusted {
-    font-family: @notebook-fontfamily;
-    font-size: 13pt;
-    color: @item-blue;
-    border: none;
-    background: transparent;
-    background-color: transparent;
-    padding-bottom: 0px !important;
-    margin-bottom: 0px !important;
-}
 div.notification_widget.info,
 .notification_widget.info,
 .notification_widget:active:hover,
@@ -520,7 +505,39 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:focus {
     border-color: transparent !important;
     padding-bottom: 0px !important;
     margin-bottom: 0px !important;
+    font-size: 8pt;
+    z-index: 0;
 }
+div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
+    font-size: 8pt;
+    z-index: 0;
+}
+.notification_widget {
+    color: @item-blue;
+    z-index: -500;
+    font-size: 8pt;
+    background: transparent;
+    background-color: transparent;
+    margin-right: 3px;
+    border: none;
+}
+/* COMMENT OUT TO RESTORE START-UP NOTIFICATIONS */
+// div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn
+div.notification_widget.info,
+.notification_widget.info {
+    display: none !important;
+}
+#notification_trusted {
+    font-family: @notebook-fontfamily;
+    font-size: 13pt;
+    color: @item-blue;
+    border: none;
+    background: transparent;
+    background-color: transparent;
+    margin-bottom: 0px !important;
+    margin-top: 6px !important;
+}
+
 .edit_mode .modal_indicator:before {
     font-size: 19px;
     color: @cc-border-edit;
@@ -528,6 +545,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:focus {
     padding-bottom: 0px;
     vertical-align: -webkit-baseline-middle;
     margin-left: 1px;
+    margin-bottom: 2px;
 }
 .command_mode .modal_indicator:before {
     font-family: @notebook-fontfamily;
@@ -537,6 +555,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:focus {
     padding-bottom: 0px;
     vertical-align: -webkit-baseline-middle;
     margin-left: 1px;
+    margin-bottom: 2px;
 }
 .item_icon {
     color: @item-blue;
@@ -567,11 +586,11 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:focus {
     color: @item-blue;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    margin-top: 5px !important;
+    margin-top: 6px !important;
     margin-left: 1px;
-    font-size: 13pt;
 }
 #kernel_indicator {
+    font-size: 13pt;
     float: right !important;
     color: @item-theme;
     background: @notebook-bg;
@@ -582,14 +601,14 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:focus {
     margin-left: -2px;
 }
 #kernel_indicator .kernel_indicator_name {
+    font-size: 13pt;
     color: @item-theme;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    font-size: 13pt;
     padding-left: 5px;
     padding-right: 5px;
     margin-top: 5px;
-     vertical-align: -webkit-baseline-middle;
+    vertical-align: -webkit-baseline-middle;
     padding-bottom: 0px;
 }
 
@@ -1087,7 +1106,7 @@ div.container-fluid {
     margin-right: auto;
     margin-left: auto;
     padding-left: 0px;
-    padding-right: 12px;
+    padding-right: 5px;
 }
 div.form-control,
 .form-control {
@@ -1145,31 +1164,44 @@ select.form-control.select-xs {
 div.output.output_scroll {
     box-shadow: none;
 }
-::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.11);
-	background-color: @scroll-trough;
-	border-radius: 5px;
-}
+// ::-webkit-scrollbar-track {
+// 	-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.11);
+// 	background-color: @scroll-trough;
+// 	border-radius: 3px;
+// }
 ::-webkit-scrollbar {
-    width: 11px;
+    width: 10px;
     height: 9px;
-    background-color: @scroll-trough;
-    border-radius: 5px;
+    background-color: transparent; //@scroll-trough;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; //@scroll-trough;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
-    background-image:
-        -webkit-gradient(linear, 40% 0%, 75% 86%,
-            from(darken(@scrollbar, 4%)),
-            color-stop(0.5, lighten(@scrollbar, 6%)),
-            to(darken(@scrollbar, 4%)));
+    border-radius: 2px;
+    border: 2px solid @scrollbar;
+    background: @scrollbar;
+    background-clip: content-box;
     min-height: 100px;
-    border-radius: 3px;
-    width: 11px;
+    width: 10px;
 }
 
 /******* Smooth Fonts ********/
-// HTML, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, span, a {
-//     text-rendering: auto;
-//     -webkit-font-smoothing: antialiased;
+HTML, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, span, a {
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+// ::-webkit-scrollbar-thumb {
+//     background-color: #ffffff;
+//     background-image:
+//         -webkit-gradient(linear, 40% 0%, 75% 86%,
+//             from(darken(@scrollbar, 4%)),
+//             color-stop(0.5, lighten(@scrollbar, 6%)),
+//             to(darken(@scrollbar, 4%)));
+//     min-height: 100px;
+//     border-radius: 3px;
+//     width: 10px;
 // }

@@ -12,8 +12,8 @@ modules = glob(os.path.dirname(__file__) + "/*.py")
 __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
-minor = 15
-patch = 9
+minor = 16
+patch = 0
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
 # path to local site-packages/jupyterthemes
@@ -28,11 +28,11 @@ def get_themes():
     return themes
 
 def install_theme(theme,
-                monofont='source',
+                monofont=None,
                 monosize=11,
-                nbfont='helvetica',
+                nbfont=None,
                 nbfontsize=13,
-                tcfont='merriserif',
+                tcfont=None,
                 tcfontsize=13,
                 margins='auto',
                 cellwidth='980',
@@ -108,7 +108,7 @@ def main():
         '-f',
         "--monofont",
         action='store',
-        default='source',
+        default=None,
         help='monospace code font')
     parser.add_argument(
         '-fs',
@@ -120,7 +120,7 @@ def main():
         '-nf',
         "--nbfont",
         action='store',
-        default='helvetica',
+        default=None,
         help='notebook font')
     parser.add_argument(
         '-nfs',
@@ -132,7 +132,7 @@ def main():
         '-tf',
         "--tcfont",
         action='store',
-        default='merriserif',
+        default=None,
         help='txtcell font')
     parser.add_argument(
         '-tfs',
@@ -210,7 +210,7 @@ def main():
         "--defaultfonts",
         action='store_true',
         default=False,
-        help="suppress custom fonts")
+        help="force fonts to browser default")
 
     args = parser.parse_args()
     themes = get_themes()

@@ -43,7 +43,7 @@ div.CodeMirror-sizer {
     min-height: 37px;
     padding-right: 0px;
     padding-bottom: 0px;
-    margin-top: 3px;
+    margin-top: 0px;
 }
 div.cell.selected:before {
     background: @cc-border-selected;
@@ -121,33 +121,34 @@ div.cell.text_cell.selected.jupyter-soft-selected {
 }
 // /*********** CODE CELL INPUT PROMPT ************/
 div.prompt, .prompt {
-    // border-left: 5px solid @notebook-bg;
     font-family: @monofont, monospace;
-    font-size: @prompt-fontsize;
+    font-size: 9pt !important;
     font-weight: normal;
     color: @prompt-text;
     line-height: 170%;
     padding: 0px;
     padding-top: 4px;
-    padding-left: 5px;
+    padding-left: 0px;
+    padding-right: 1px;
     text-align: right !important;
     min-width: @prompt-min-width !important;
     width: @prompt-min-width !important;
 }
 
 div.prompt.input_prompt {
+    font-size: 9pt !important;
     background-color: @cc-prompt-bg;
     border-top: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+        padding-right: 3px;
     min-width: @prompt-min-width;
     width: @prompt-min-width !important;
 }
 
 div.cell.code_cell .input_prompt {
     border-right: @prompt-border;
-    // border-top-left-radius: 4px;
 }
 
 div.cell.selected .prompt {
@@ -179,7 +180,7 @@ div.output_wrapper {
 div.output_subarea.output_text.output_stream.output_stdout,
 div.output_subarea.output_text {
     font-family: @monofont, monospace;
-    font-size: @monofontsize-sub;
+    font-size: @monofontsize-sub !important;
     line-height: 150% !important;
     background-color: @cc-output-bg;
     color: @cc-output-fg;
@@ -226,7 +227,7 @@ div.btn.btn-default.output_collapsed:hover {
 /************ CODE CELL OUTPUT PROMPT ************/
 div.prompt.output_prompt {
     font-family: @monofont, monospace;
-    font-size: @prompt-fontsize;
+    font-size: 9pt !important;
     background-color: @cc-output-bg;
     color: transparent;
     border-bottom-left-radius: 4px;
@@ -239,7 +240,7 @@ div.prompt.output_prompt {
 }
 div.out_prompt_overlay.prompt {
     font-family: @monofont, monospace;
-    font-size: @prompt-fontsize;
+    font-size: 9pt !important;
     background-color: @cc-output-bg;
     border-bottom-left-radius: 2px;
     border-top-right-radius: 0px;
@@ -252,7 +253,8 @@ div.out_prompt_overlay.prompt {
 }
 div.out_prompt_overlay.prompt:hover {
     background-color: @cc-output-bg;
-    box-shadow: @box-shadow 2px 1px 2px 2.5px inset;
+    box-shadow: @box-shadow 2px 1px 3px 2.5px inset;
+    border: none;
     border-bottom-left-radius: 2px;
     -webkit-border-: 2px;
     -moz-border-radius: 2px;
@@ -282,11 +284,34 @@ div.text_cell_render pre,
 div.text_cell_render {
     font-family: @text-cell-fontfamily;
     font-size: @text-cell-fontsize;
-    line-height: @cc-line-height !important;
+    line-height: 130% !important;
     color: @text-cell-fg;
     background: @text-cell-bg;
     background-color: @text-cell-bg;
     border-radius: 0px;
+}
+div .text_cell_render {
+    padding: 0.4em 0.4em 0em 0.4em;
+}
+div.cell.text_cell .CodeMirror-lines {
+    padding-top: .7em !important;
+    padding-bottom: .4em !important;
+    padding-left: .5em !important;
+    padding-right: .5em !important;
+    margin-top: .4em;
+    margin-bottom: .3em;
+}
+div.cell.text_cell.unrendered div.input_area,
+div.cell.text_cell.rendered div.input_area {
+    background-color: @text-cell-bg;
+    background: @text-cell-bg;
+    border: 0px;
+    border-radius: 2px;
+}
+div.cell.text_cell .CodeMirror,
+div.cell.text_cell .CodeMirror pre {
+    line-height: 170% !important;
+    // padding: .15em 0em .15em 0em;
 }
 div.cell.text_cell.rendered.selected {
     font-family: @text-cell-fontfamily;
@@ -440,6 +465,14 @@ pre {
 div.rendered_html {
     color: @text-cell-fg;
 }
+.rendered_html * + ul {
+    margin-top: .4em;
+    margin-bottom: .3em;
+}
+.rendered_html * + p {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
 div.rendered_html pre,
 div.text_cell_render pre {
     font-family: @monofont, monospace;
@@ -451,7 +484,6 @@ div.text_cell_render pre {
     border: 2px @codeblock-border solid;
     max-width: 86%;
     border-radius: 2px;
-    padding: 5px;
 }
 div.text_cell_render h1,
 div.rendered_html h1,
@@ -464,6 +496,8 @@ div.rendered_html h4,
 div.text_cell_render h5,
 div.rendered_html h5 {
     font-family: @notebook-fontfamily;
+    margin: 0.4em .2em .3em .2em !important
+
 }
 .rendered_html h1:first-child,
 .rendered_html h2:first-child,
@@ -471,12 +505,13 @@ div.rendered_html h5 {
 .rendered_html h4:first-child,
 .rendered_html h5:first-child,
 .rendered_html h6:first-child {
-    margin-top: 0.2em;
+    margin-top: 0.2em !important;
+    margin-bottom: 0.2em !important;
 }
 .rendered_html h1,
 .text_cell_render h1 {
     color: @header-fg;
-    font-size: 220%;
+    font-size: 215%;
     text-align: center;
     font-style: normal;
     font-weight: lighter;
@@ -484,7 +519,7 @@ div.rendered_html h5 {
 .rendered_html h2,
 .text_cell_render h2 {
     text-align: left;
-    font-size: 170%;
+    font-size: 180%;
     color: @header-fg;
     font-style: normal;
     font-weight: lighter;
@@ -510,6 +545,19 @@ div.rendered_html h5 {
     font-style: normal;
     font-weight: lighter;
 }
+hr {
+    margin-top: 8px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid @header-fg;
+}
+.rendered_html hr {
+    color: @header-fg;
+    background-color: @header-fg;
+    margin-right: 2em;
+}
+
+
 #complete > select > option:hover {
     background: @dropdown-hover;
     background-color: @dropdown-hover;
@@ -523,7 +571,6 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
     pointer-events: none;
     border-radius: 2px;
 }
-
 
 /**** HOVER HIGHLIGHT CELL INPUT PROMPT ******/
 

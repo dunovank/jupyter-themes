@@ -92,13 +92,6 @@ def install_precompiled_theme(theme):
     theme_dst = os.path.join(jupyter_custom, 'custom.css')
     copyfile(theme_src, theme_dst)
 
-    for fontcode in ['exosans', 'loraserif', 'source', 'firacode']:
-        fname, fpath = stored_font_dicts(fontcode)
-
-        fontpath = os.path.join(fonts_dir, fpath)
-        for fontfile in os.listdir(fontpath):
-            send_fonts_to_jupyter(os.path.join(fontpath, fontfile))
-
 
 def send_fonts_to_jupyter(font_file_path):
     fname = font_file_path.split(os.sep)[-1]
@@ -109,18 +102,6 @@ def delete_font_files():
     for fontfile in os.listdir(jupyter_custom_fonts):
         abspath = os.path.join(jupyter_custom_fonts, fontfile)
         os.remove(abspath)
-
-
-def import_stored_fonts(style_less, fontcodes=('helvetica', 'merriserif', 'source')):
-    """Collect fontnames and local pointers to fontfiles in custom dir
-    then pass information for each font to function for writing import
-    statements
-    """
-    for fontcode in set(fontcodes):
-        fname, fpath = stored_font_dicts(fontcode)
-        style_less = import_fonts(style_less, fname, fpath)
-    style_less += '\n\n'
-    return style_less
 
 
 def convert_fontsizes(fontsizes):
@@ -135,9 +116,9 @@ def convert_fontsizes(fontsizes):
 
 
 def set_font_properties(style_less,
-                        nbfont='helvetica',
-                        tcfont='merriserif',
-                        monofont='source',
+                        nbfont=None,
+                        tcfont=None,
+                        monofont=None,
                         monosize=11,
                         tcfontsize=13,
                         nbfontsize=13,
@@ -149,19 +130,24 @@ def set_font_properties(style_less,
 
     fontsizes = [monosize, nbfontsize, tcfontsize, prfontsize]
     monosize, nbfontsize, tcfontsize, prfontsize = convert_fontsizes(fontsizes)
-    default_fonts =  ['monospace', 'sans-serif', 'sans-serif']
-    if dfonts:
-        monofont, tcfont, nbfont = default_fonts
+    if dfonts==True:
+        monofont, tcfont, nbfont = ['monospace', 'sans-serif', 'sans-serif']
     else:
-        try:
-            style_less = import_stored_fonts(style_less,
-                fontcodes=[nbfont, tcfont, monofont])
-            # get fontname, fontpath, font-family info
-            nbfont, nbfontpath = stored_font_dicts(nbfont)
+        if monofont is not None:
+            monofont, monofpath = stored_font_dicts(monofont)
+            style_less = import_fonts(style_less, monofont, monofpath)
+        else:
+            monofont='monospace'
+        if tcfont is not None:
             tcfont, tcfontpath = stored_font_dicts(tcfont)
-            monofont, monofontpath = stored_font_dicts(monofont)
-        except Exception:
-            monofont, tcfont, nbfont = default_fonts
+            style_less = import_fonts(style_less, tcfont, tcfontpath)
+        else:
+            tcfont='sans-serif'
+        if nbfont is not None:
+            nbfont, nbfontpath = stored_font_dicts(nbfont)
+            style_less = import_fonts(style_less, nbfont, nbfontpath)
+        else:
+            nbfont='sans-serif'
 
     style_less += '/* Set Font-Type and Font-Size Variables  */\n'
     # font names and fontfamily info for codecells, notebook & textcells
@@ -252,7 +238,7 @@ def style_layout(style_less,
     promptPadding = '.25em'
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
-    promptMinWidth = 11
+    promptMinWidth = 12.5
     tcPromptWidth = promptMinWidth
     tcPromptFontsize = "@prompt-fontsize"
 
@@ -260,8 +246,8 @@ def style_layout(style_less,
         textcell_bg = '@notebook-bg'
     if altprompt:
         promptPadding = '.1em'
-        promptMinWidth = 6
-        tcPromptWidth = 6
+        promptMinWidth = 7
+        tcPromptWidth = 7
         # tcPromptFontsize = "pt"
         promptText = 'transparent'
         tcPromptBorder = '2px solid transparent'

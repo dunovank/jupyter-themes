@@ -1,9 +1,16 @@
 ### Release Notes
 
-#### **v0.15.9:**
+#### **v0.16.0:**
+- all fonts now default to whatever browser defaults are (users can still specify custom code-cell (-f), text-cell (-tcf), and notebook (-nbf) fonts as before).
+- improved prompt style for text cells
+- re-compiled css for binder
+- minor cosmetic improvements
+
+###  **v0.15.9:**
 - improved kernel and notification widget alignment
 - added helvetica, helveticaneue fonts
 - fixed bug that prevented install if fontname not recognized
+- added compatibility for hide_header nbext
 - minor cosmetic improvements
 
 #### **v0.15.8:**
