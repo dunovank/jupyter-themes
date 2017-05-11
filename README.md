@@ -44,12 +44,15 @@ pip install --upgrade jupyterthemes
 ```
 
 ### Known issues
-**Refreshing / Removing / Resetting:** Depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)). If emptying the cache doesn't work, you may need to start a new jupyter session or restart your browser (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/92))
+**refreshing / removing / resetting:** depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)). If emptying the cache doesn't work, you may need to start a new jupyter session or restart your browser (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/92))
 
-**Install issue** Some users have [reported](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-298364089) that the `jt` command is not recognized after installing the pypi release. See
+**install issue:** some users have [reported](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-298364089) that the `jt` command is not recognized after installing the pypi release. See
  [here](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-300688587) and [here](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-277461319) for solutions.
 
-**For best results...** I recommend using jupyterthemes with at least `notebook>=5.0`. All versions of `jupyterthemes>=0.15.0` have been developed to accommodate various design updates in newer releases of `notebook`. So if you're running a new version of `jupyterthemes` and haven't upgraded `notebook` in a while you might consider it (`pip install --upgrade notebook`)
+**slow render when scrolling:** see temporary fix [here](https://github.com/dunovank/jupyter-themes/issues/117#issuecomment-296391443)
+
+**For best results:** jupyterthemes styles are most compatible with notebook>=5.0 (`pip install --upgrade notebook`)
+
 
 ### Command Line Usage
 ```
