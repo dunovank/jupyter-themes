@@ -12,3 +12,5 @@ install:
 # command to run tests
 script:
     - nosetests -s tests/test_themes.py
+dist: trusty
+sudo: false
