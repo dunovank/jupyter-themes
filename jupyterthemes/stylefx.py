@@ -123,13 +123,15 @@ def set_font_properties(style_less,
                         tcfontsize=13,
                         nbfontsize=13,
                         prfontsize=95,
+                        dffontsize=93,
+                        outfontsize=85,
                         dfonts=False):
     """Parent function for setting notebook, text/md, and
     codecell font-properties
     """
 
-    fontsizes = [monosize, nbfontsize, tcfontsize, prfontsize]
-    monosize, nbfontsize, tcfontsize, prfontsize = convert_fontsizes(fontsizes)
+    fontsizes = [monosize, nbfontsize, tcfontsize, prfontsize, dffontsize, outfontsize]
+    monosize, nbfontsize, tcfontsize, prfontsize, dffontsize, outfontsize = convert_fontsizes(fontsizes)
     if dfonts==True:
         monofont, tcfont, nbfont = ['monospace', 'sans-serif', 'sans-serif']
     else:
@@ -160,6 +162,9 @@ def set_font_properties(style_less,
     style_less += '@nb-fontsize: {}pt; \n'.format(nbfontsize)
     style_less += '@nb-fontsize-sub: {}pt; \n'.format(float(nbfontsize) - 1)
     style_less += '@text-cell-fontsize: {}pt; \n'.format(tcfontsize)
+    style_less += '@df-header-fontsize: {}pt; \n'.format(float(dffontsize) + 1)
+    style_less += '@df-fontsize: {}pt; \n'.format(dffontsize)
+    style_less += '@output-font-size: {}pt; \n'.format(outfontsize)
     style_less += '@prompt-fontsize: {}pt; \n'.format(prfontsize)
     style_less += '\n\n'
     style_less += '/* Import Theme Colors and Define Layout Variables */\n'
@@ -451,55 +456,24 @@ def stored_font_dicts(fontcode, get_all=False):
               'sourcemed': ['Source Code Pro Medium', 'source-code-medium'],
               'ptmono': ['PT Mono', 'ptmono'],
               'ubuntu': ['Ubuntu Mono', 'ubuntu']},
-             'sans':
+             'sans':             
              {'droidsans': ['Droid Sans', 'droidsans'],
               'opensans': ['Open Sans', 'opensans'],
               'ptsans': ['PT Sans', 'ptsans'],
               'sourcesans': ['Source Sans Pro', 'sourcesans'],
               'robotosans': ['Roboto', 'robotosans'],
               'latosans': ['Lato', 'latosans'],
-              'amikosans': ['Amiko', 'amikosans'],
-              'exosans': ['Exo_2', 'exosans'],
-              'nobilesans': ['Nobile', 'nobilesans'],
-              'alegreyasans': ['Alegreya', 'alegreyasans'],
-              'armatasans': ['Armata', 'armatasans'],
-              'cambaysans': ['Cambay', 'cambaysans'],
-              'catamaransans': ['Catamaran', 'catamaransans'],
-              'franklinsans': ['Libre Franklin', 'franklinsans'],
-              'frankruhlsans': ['Frank Ruhl', 'frankruhlsans'],
-              'gothicsans': ['Carrois Gothic', 'gothicsans'],
-              'gudeasans': ['Gudea', 'gudeasans'],
-              'hindsans': ['Hind', 'hindsans'],
-              'jaldisans': ['Jaldi', 'jaldisans'],
-              'makosans': ['Mako', 'makosans'],
-              'merrisans': ['Merriweather Sans', 'merrisans'],
-              'mondasans': ['Monda', 'mondasans'],
-              'oxygensans': ['Oxygen Sans', 'oxygensans'],
-              'pontanosans': ['Pontano Sans', 'pontanosans'],
-              'puritansans': ['Puritan Sans', 'puritansans'],
-              'ralewaysans': ['Raleway', 'ralewaysans'],
-              'helvetica': ['Helvetica', 'helvetica'],
-              'helveticaneue': ['Helvetica Neue', 'helveticaneue']},
+              'exosans': ['Exo_2', 'exosans']},
              'serif':
              {'ptserif': ['PT Serif', 'ptserif'],
               'ebserif': ['EB Garamond', 'ebserif'],
               'loraserif': ['Lora', 'loraserif'],
               'merriserif': ['Merriweather', 'merriserif'],
               'crimsonserif': ['Crimson Text', 'crimsonserif'],
-              'droidserif': ['Droid Serif', 'droidserif'],
               'georgiaserif': ['Georgia', 'georgiaserif'],
               'neutonserif': ['Neuton', 'neutonserif'],
-              'vesperserif': ['Vesper Libre', 'vesperserif'],
-              'scopeserif': ['ScopeOne Serif', 'scopeserif'],
-              'sanchezserif': ['Sanchez Serif', 'sanchezserif'],
-              'rasaserif': ['Rasa', 'rasaserif'],
-              'vollkornserif': ['Vollkorn', 'vollkornserif'],
               'cardoserif': ['Cardo Serif', 'cardoserif'],
-              'notoserif': ['Noto Serif', 'notoserif'],
-              'goudyserif': ['Goudy Serif', 'goudyserif'],
-              'andadaserif': ['Andada Serif', 'andadaserif'],
-              'arapeyserif': ['Arapey Serif', 'arapeyserif'],
-              'minionserif': ['Minion Pro', 'minionserif']}}
+              'goudyserif': ['Goudy Serif', 'goudyserif']}}
     if get_all:
         return fonts
     if fontcode in list(fonts['mono']):

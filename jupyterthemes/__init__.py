@@ -13,7 +13,7 @@ __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 16
-patch = 0
+patch = 1
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
 # path to local site-packages/jupyterthemes
@@ -34,6 +34,8 @@ def install_theme(theme,
                 nbfontsize=13,
                 tcfont=None,
                 tcfontsize=13,
+                dffontsize=93,
+                outfontsize=85,
                 margins='auto',
                 cellwidth='980',
                 lineheight=170,
@@ -68,6 +70,8 @@ def install_theme(theme,
         nbfontsize=nbfontsize,
         tcfont=tcfont,
         tcfontsize=tcfontsize,
+        dffontsize=dffontsize,
+        outfontsize=outfontsize,
         dfonts=dfonts)
 
     # define some vars for cell layout
@@ -140,6 +144,18 @@ def main():
         action='store',
         default='13',
         help='txtcell fontsize')
+    parser.add_argument(
+        '-dfs',
+        "--dffontsize",
+        action='store',
+        default='93',
+        help='pandas dataframe fontsize')
+    parser.add_argument(
+        '-ofs',
+        "--outfontsize",
+        action='store',
+        default='85',
+        help='output area fontsize')
     parser.add_argument(
         '-m',
         "--margins",
@@ -229,6 +245,8 @@ def main():
             nbfontsize=args.nbfontsize,
             tcfont=args.tcfont,
             tcfontsize=args.tcfontsize,
+            dffontsize=args.dffontsize,
+            outfontsize=args.outfontsize,
             cellwidth=args.cellwidth,
             margins=args.margins,
             lineheight=int(args.lineheight),

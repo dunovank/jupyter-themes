@@ -44,25 +44,20 @@ pip install --upgrade jupyterthemes
 ```
 
 ### Known issues
-* Depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (-t) or attempting to restore the default (-r) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86))
-* If emptying the cache doesn't work, you may need to start a new jupyter session or restart your browser (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/92))
-* Some users have found that "jt" is not recognized after installing the pypi release (as shown above). Still trying to get to the bottom of this but apparently the following provides a temporary fix (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-277461319)).
+**Refreshing / Removing / Resetting:** Depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)). If emptying the cache doesn't work, you may need to start a new jupyter session or restart your browser (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/92))
 
-```sh
-# uninstall any existing versions
-pip uninstall jupyterthemes
-# install from the github repo
-pip install --user git+https://github.com/dunovank/jupyter-themes.git
-```
+**Install issue** Some users have [reported](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-298364089) that the `jt` command is not recognized after installing the pypi release. See
+ [here](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-300688587) and [here](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-277461319) for solutions.
 
+**For best results...** I recommend using jupyterthemes with at least `notebook>=5.0`. All versions of `jupyterthemes>=0.15.0` have been developed to accommodate various design updates in newer releases of `notebook`. So if you're running a new version of `jupyterthemes` and haven't upgraded `notebook` in a while you might consider it (`pip install --upgrade notebook`)
 
 ### Command Line Usage
 ```
-usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
-          [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-m MARGINS]
-          [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-cellw CELLWIDTH]
-          [-lineh LINEHEIGHT] [-altp] [-P] [-T] [-N] [-vim] [-r]
-          [-dfonts]
+jt  [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
+    [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-dfs DFFONTSIZE]
+    [-m MARGINS] [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-vim]
+    [-cellw CELLWIDTH] [-lineh LINEHEIGHT] [-altp] [-P] [-T] [-N]
+    [-r] [-dfonts]
 ```
 
 #### Description of Command Line options
@@ -77,6 +72,8 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Notebook Font Size    |  -nfs   |     13     |
 | Text/MD Cell Font     |   -tf   |     --     |
 | Text/MD Cell Fontsize |  -tfs   |     13     |
+| Pandas DF Fontsize    |  -dfs   |     9      |
+| Output Area Fontsize  |  -ofs   |    8.5     |
 | Intro Page Margins    |   -m    |    auto    |
 | Cell Width            | -cellw  |    980     |
 | Line Height           | -lineh  |    170     |
@@ -86,8 +83,8 @@ usage: jt [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Style Vim NBExt*      |  -vim   |     --     |
 | Toolbar Visible       |   -T    |     --     |
 | Name & Logo Visible   |   -N    |     --     |
-| Restore Default       |   -r    |     --     |
-| Default Fonts         | -dfonts |     --     |
+| Reset Default Theme   |   -r    |     --     |
+| Force Default Fonts   | -dfonts |     --     |
 
 
 ### Command Line Examples
@@ -112,12 +109,13 @@ jt -t grade3 -T -N
 jt -t onedork -f roboto -fs 12
 
 # set code font to Fira Mono, 11.5pt
-# 3digit font-size gets converted into float (115-->11.5)
+# 3digit font-sizes get converted into float (115-->11.5)
+# 2digit font-sizes > 25 get converted into float (85-->8.5)
 jt -t solarizedd -f fira -fs 115
 
-# set text-cell/markdown and notebook fonts
-# (see sans-serif & serif font tables below)
-jt -t oceans16 -tf georgiaserif -nf droidsans
+# set font/font-size of markdown (text cells) and notebook (interface)
+# see sans-serif & serif font tables below
+jt -t oceans16 -tf merriserif -tfs 10 -nf ptsans -nfs 13
 
 # adjust cell width (% screen width) and line height
 jt -t chesterish -cellw 90% -lineh 170
@@ -134,6 +132,12 @@ jt -t oceans16 -cursc r -cursw 5
 
 # choose alternate prompt layout (narrower/no numbers)
 jt -t grade3 -altp
+
+# my two go-to styles
+# dark
+jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88%
+# light
+jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88%
 ```
 
 
@@ -183,7 +187,6 @@ jtplot.reset()
 ```
 
 
-
 #### Monospace Fonts (code cells)
 | -f arg      | Monospace Font           |
 | :---------- | :----------------------- |
@@ -218,8 +221,6 @@ jtplot.reset()
 #### Sans-Serif Fonts
 | -nf/-tf arg   | Sans-Serif Font   |
 | :------------ | :---------------- |
-| helvetica     | Helvetica         |
-| helveticaneue | Helvetica Neue    |
 | opensans      | Open Sans         |
 | droidsans     | Droid Sans        |
 | exosans       | Exo_2             |
@@ -227,44 +228,16 @@ jtplot.reset()
 | ptsans        | PT Sans           |
 | robotosans    | Roboto            |
 | sourcesans    | Source Sans Pro   |
-| amikosans     | Amiko             |
-| nobilesans    | Nobile            |
-| alegreyasans  | Alegreya          |
-| armatasans    | Armata            |
-| cambaysans    | Cambay            |
-| catamaransans | Catamaran         |
-| franklinsans  | Libre Franklin    |
-| frankruhlsans | Frank Ruhl        |
-| gothicsans    | Carrois Gothic    |
-| gudeasans     | Gudea             |
-| hindsans      | Hind              |
-| jaldisans     | Jaldi             |
-| makosans      | Mako              |
-| merrisans     | Merriweather Sans |
-| mondasans     | Monda             |
-| oxygensans    | Oxygen Sans       |
-| pontanosans   | Pontano Sans      |
-| puritansans   | Puritan Sans      |
-| ralewaysans   | Raleway           |
 
 #### Serif Fonts
 | -nf/-tf arg   | Serif Font       |
 | :------------ | :--------------- |
 | loraserif     | Lora             |
-| andadaserif   | Andada           |
-| arapeyserif   | Arapey           |
 | ptserif       | PT Serif         |
 | georgiaserif  | Georgia          |
 | cardoserif    | Cardo            |
 | crimsonserif  | Crimson Text     |
-| droidserif    | Droid Serif      |
 | ebserif       | EB Garamond      |
 | merriserif    | Merriweather     |
-| notoserif     | Noto Serif       |
-| vesperserif   | Vesper Libre     |
-| scopeserif    | ScopeOne         |
-| sanchezserif  | Sanchez          |
 | neutonserif   | Neuton           |
-| rasaserif     | Rasa             |
 | goudyserif    | Sorts Mill Goudy |
-| vollkornserif | Vollkorn         |

@@ -10,9 +10,13 @@
     max-width: none;
     border: none;
 }
+.rendered_html tr,
+.rendered_html td {   
+    font-size: @df-fontsize !important;
+}
 .rendered_html thead {
     font-family: @notebook-fontfamily;
-    font-size: 12px;
+    font-size: @df-header-fontsize !important;
 }
 .rendered_html table {
     margin-left: auto;
@@ -21,7 +25,7 @@
     border-collapse: collapse;
     border-spacing: 0;
     color: @table-color;
-    font-size: 11px;
+    font-size: @df-fontsize !important;
     table-layout: fixed;
 }
 .rendered_html thead {

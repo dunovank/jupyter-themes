@@ -1,5 +1,11 @@
 ### Release Notes
 
+#### **v0.16.1:**
+- removed some excess fonts from sans-serif and serif collections
+- added option for setting pandas dataframe font-size (-dfs , --dffontsize)
+- added option for output area font-size (-ofs , --outfontsize)
+- minor cosmetic improvements
+
 #### **v0.16.0:**
 - all fonts now default to whatever browser defaults are (users can still specify custom code-cell (-f), text-cell (-tcf), and notebook (-nbf) fonts as before).
 - improved prompt style for text cells
