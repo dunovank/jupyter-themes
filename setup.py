@@ -62,7 +62,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    install_requires=['jupyter', 'jupyter_core', 'lesscpy>=0.12.0'],
+    install_requires=['ipython<6.0', 'jupyter', 'jupyter_core', 'lesscpy>=0.12.0'],
     keywords=['jupyter', 'ipython', 'notebook', 'themes', 'css'],
     entry_points={
         'console_scripts': [
