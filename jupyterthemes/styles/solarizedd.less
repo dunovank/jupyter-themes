@@ -3,6 +3,16 @@ This is a non official port for jupyter notebook of the solarized-dark theme, do
 http://ethanschoonover.com/solarized
 */
 
+/* solarized base colors */
+@yellow:                #b58900;
+@orange:                #cb4b16;
+@red:                   #dc322f;
+@magenta:               #d33682;
+@violet:                #6c71c4;
+@blue:                  #268bd2;
+@cyan:                  #2aa198;
+@green:                 #859900;
+
 @solar-base03: #002b36;
 @solar-base02: #073642;
 @solar-base01: #586e75;
@@ -13,15 +23,6 @@ http://ethanschoonover.com/solarized
 @solar-base2: #eee8d5;
 @solar-base3: #fdf6e3;
 
-@solar-yellow: #b58900;
-@solar-orange: #cb4b16;
-@solar-red: #dc322f;
-@solar-magenta: #d33682;
-@solar-violet: #6c71c4;
-@solar-blue: #268bd2;
-@solar-cyan: #2aa198;
-@solar-green: #859900;
-
 @notebook-bg:           @solar-base03;
 @notebook-fg:           @solar-base01;
 @notebook-base:         @notebook-bg;
@@ -31,11 +32,11 @@ http://ethanschoonover.com/solarized
 @selected-half:         rgba(30, 67, 77, .5);
 @selected-third:        rgba(30, 67, 77, .3); //@solar-base02;
 @selected-tenth:        rgba(30, 67, 77, .1); //@solar-base02;
-@selected-error:        @solar-red;
+@selected-error:        @red;
 @selected-active:       @selected-half;
 @navbar-selected:       @selected-third;
 @selected-fg:           @solar-base0;
-@selected-fg-bright:    @solar-orange;
+@selected-fg-bright:    @orange;
 @unemphasize-fg:        @solar-base1;
 
 /* code, text, markdown, & tooltip colors */
@@ -45,8 +46,8 @@ http://ethanschoonover.com/solarized
 @cc-output-bg:          @notebook-bg;
 @cc-output-fg:          @notebook-fg;
 @text-cell-fg:          @notebook-fg;
-@unrendered-text:       @solar-yellow;
-@header-fg:             @solar-yellow;
+@unrendered-text:       @yellow;
+@header-fg:             @yellow;
 @tooltip-bg-color:      @solar-base02;
 @tooltip-fg-color:      @solar-base1;
 @nb-name-fg:            @item-theme;
@@ -55,8 +56,8 @@ http://ethanschoonover.com/solarized
 /* cell border colors */
 @cc-border-selected:    #0b6073;
 @cc-border-edit:        darken(#0b6073,7%);
-@tc-border-selected:    @solar-yellow;
-@tc-border-edit:        desaturate(@solar-yellow, 20%);
+@tc-border-selected:    @yellow;
+@tc-border-edit:        desaturate(@yellow, 20%);
 @cell-selected-border-width: thin;
 
 /* menus, dividers, prompt-borders, brackets */
@@ -82,10 +83,10 @@ http://ethanschoonover.com/solarized
 
 /* buttons, widgets, kernels colors */
 @item-theme:            @solar-base01;
-@item-blue:             @solar-blue;
-@item-cyan:             @solar-cyan;
-@item-green:            @solar-green;
-@item-red:              @solar-red;
+@item-blue:             @blue;
+@item-cyan:             @cyan;
+@item-green:            @green;
+@item-red:              @red;
 
 @item-danger:           #e16256;
 @item-success:          #83a83b;
@@ -116,14 +117,14 @@ http://ethanschoonover.com/solarized
 @box-shadow:            #05262f;
 
 @ansiblack:             @solar-base03;
-@ansiblue:              @solar-blue;
+@ansiblue:              @blue;
 @ansigray:              @solar-base0;
-@ansigreen:             @solar-green;
-@ansipurple:            @solar-violet;
-@ansicyan:              @solar-cyan;
-@ansiyellow:            @solar-yellow;
-@ansired:               @solar-red;
-@stderr-bg:             @solar-orange;
+@ansigreen:             @green;
+@ansipurple:            @violet;
+@ansicyan:              @cyan;
+@ansiyellow:            @yellow;
+@ansired:               @red;
+@stderr-bg:             @orange;
 @stderr-fg:             @solar-base01;
 @js-error:              @ansired;
 
@@ -131,29 +132,37 @@ http://ethanschoonover.com/solarized
 @cm-gutters:            @cm-selected;
 
 @cm-linenumber:         @solar-base00;
-@cm-atom:               @solar-magenta;
-@cm-attribute:          @solar-magenta;
+@cm-atom:               @magenta;
+@cm-attribute:          @magenta;
 
 @cm-comment:            @solar-base1;
 
-@cm-property:           @solar-blue;
+@cm-property:           @blue;
 
-@cm-keyword:            @solar-green;
+@cm-keyword:            @green;
 
-@cm-string:             @solar-cyan;
-@cm-number:             @solar-cyan;
+@cm-string:             @cyan;
+@cm-number:             @cyan;
 
-@cm-meta:               @solar-violet;
+@cm-meta:               @violet;
 @cm-operator:           @cm-atom;
-@cm-builtin:            @solar-magenta;
+@cm-builtin:            @magenta;
 @cm-variable:           @cc-input-fg;
-@cm-variable2:           @cc-input-fg;
-@cm-variable3:           @cc-input-fg;
+@cm-variable2:          @cc-input-fg;
+@cm-variable3:          @cc-input-fg;
 
 @cm-def:                @cm-property;
 @cm-error:              @cc-input-bg;
 @cm-tag:                @cm-property;
-@cm-link:               @solar-blue;
+@cm-link:               @blue;
 @cm-storage:            @cm-atom;
 @cm-entity:             @cm-property;
 @cm-latex:              @notebook-fg;
+
+
+/* jtplot figure style */
+@axisFace:              #002b36;
+@figureFace:            #002b36;
+@textColor:             #dadada;
+@edgeColor:             #D6D6D6;
+@gridColor:             #073642;

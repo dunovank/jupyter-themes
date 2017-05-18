@@ -1,13 +1,17 @@
-
 /*
 This is a non official port for jupyter notebook of the solarizedl theme, documented here:
 http://ethanschoonover.com/solarized
-
-My favorite results are obtained as follows:
-
-jt -t solarizedl --lineheight=140 --monofont="source"
-
 */
+
+/* solarized base colors */
+@yellow:                #b58900;
+@orange:                #cb4b16;
+@red:                   #dc322f;
+@magenta:               #d33682;
+@violet:                #6c71c4;
+@blue:                  #268bd2;
+@cyan:                  #2aa198;
+@green:                 #859900;
 
 @solar-base03: #002b36;
 @solar-base02: #073642;
@@ -19,15 +23,6 @@ jt -t solarizedl --lineheight=140 --monofont="source"
 @solar-base2: #eee8d5;
 @solar-base3: #fdf6e3;
 
-@solar-yellow: #b58900;
-@solar-orange: #cb4b16;
-@solar-red: #dc322f;
-@solar-magenta: #d33682;
-@solar-violet: #6c71c4;
-@solar-blue: #268bd2;
-@solar-cyan: #2aa198;
-@solar-green: #859900;
-
 @notebook-bg:           @solar-base2;
 @notebook-fg:           @solar-base01;
 @notebook-base:         @notebook-fg;
@@ -37,11 +32,11 @@ jt -t solarizedl --lineheight=140 --monofont="source"
 @selected-half:         darken(@solar-base2, 5%);
 @selected-third:        darken(@solar-base2, 3%);
 @selected-tenth:        darken(@solar-base2, 2%);
-@selected-error:        @solar-red;
+@selected-error:        @red;
 @selected-active:       darken(@button-bg, 5%);
 @navbar-selected:       @selected-third;
 @selected-fg:           darken(@solar-base01, 8%);
-@selected-fg-bright:    @solar-orange;
+@selected-fg-bright:    @orange;
 @unemphasize-fg:        @solar-base1;
 
 /* code, text, markdown, & tooltip colors */
@@ -51,8 +46,8 @@ jt -t solarizedl --lineheight=140 --monofont="source"
 @cc-output-bg:          @solar-base2;
 @cc-output-fg:          @solar-base01;
 @text-cell-fg:          @notebook-fg;
-@unrendered-text:       @solar-yellow;
-@header-fg:             @solar-yellow;
+@unrendered-text:       @yellow;
+@header-fg:             @yellow;
 @tooltip-bg-color:      @solar-base2;
 @tooltip-fg-color:      @solar-base;
 @nb-name-fg:            @item-theme;
@@ -61,7 +56,7 @@ jt -t solarizedl --lineheight=140 --monofont="source"
 /* cell border colors */
 @cc-border-selected:    @solar-base1;
 @cc-border-edit:        #bbc4c5;
-@tc-border-selected:    @solar-yellow;
+@tc-border-selected:    @yellow;
 @tc-border-edit:        rgba(181, 137, 0, .4);
 @cell-selected-border-width: thin;
 
@@ -88,17 +83,17 @@ jt -t solarizedl --lineheight=140 --monofont="source"
 
 /* buttons, widgets, kernels colors */
 @item-theme:            @solar-base1;
-@item-blue:             @solar-blue;
-@item-cyan:             @solar-cyan;
-@item-green:            @solar-green;
-@item-red:              @solar-red;
-@item-orange:           @solar-orange;
+@item-blue:             @blue;
+@item-cyan:             @cyan;
+@item-green:            @green;
+@item-red:              @red;
+@item-orange:           @orange;
 // @item-danger:           #a8524c;
 
-@item-danger:           @solar-red;
-@item-success:          @solar-green;
-@item-info:             @solar-blue;
-@item-warning:          @solar-yellow;
+@item-danger:           @red;
+@item-success:          @green;
+@item-info:             @blue;
+@item-warning:          @yellow;
 
 /* tables and dataframes colors */
 @table-color:           #353535;
@@ -124,14 +119,14 @@ jt -t solarizedl --lineheight=140 --monofont="source"
 @box-shadow:            darken(@cc-output-bg, 4%);
 
 @ansiblack:             @solar-base03;
-@ansiblue:              @solar-blue;
+@ansiblue:              @blue;
 @ansigray:              @solar-base0;
-@ansigreen:             @solar-green;
-@ansipurple:            @solar-violet;
-@ansicyan:              @solar-cyan;
-@ansiyellow:            @solar-yellow;
-@ansired:               @solar-red;
-@stderr-bg:             @solar-orange;
+@ansigreen:             @green;
+@ansipurple:            @violet;
+@ansicyan:              @cyan;
+@ansiyellow:            @yellow;
+@ansired:               @red;
+@stderr-bg:             @orange;
 @stderr-fg:             @solar-base01;
 @js-error:              @ansired;
 
@@ -155,7 +150,7 @@ jt -t solarizedl --lineheight=140 --monofont="source"
 @cm-def:                #268bd2;
 @cm-error:              @cc-input-bg;
 @cm-tag:                #268bd2;
-@cm-link:               @solar-green;
+@cm-link:               @green;
 @cm-storage:            #d33682;
 @cm-entity:             #268bd2;
 @cm-latex:              @notebook-fg;

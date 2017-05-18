@@ -1,6 +1,7 @@
 from __future__ import print_function
 import os
 import sys
+import re
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from cycler import cycler
@@ -59,6 +60,12 @@ base_font = {
     "ytick.labelsize": 10.5,
     "legend.fontsize": 10.5}
 
+
+def remove_non_colors(clist):
+    checkHex = r'^#(?:[0-9a-fA-F]{3}){1,2}$'
+    return [clr for clr in clist if re.search(checkHex, clr)]
+
+
 def infer_theme():
     """ checks jupyter_config_dir() for text file containing theme name
     (updated whenever user installs a new theme)
@@ -72,20 +79,19 @@ def infer_theme():
     return theme
 
 
-def style(theme=None, context='notebook', grid=True, ticks=False, spines=True, fscale=1):
+def style(theme=None, context='paper', grid=True, ticks=False, spines=True, fscale=1.2, figsize=(7., 5.)):
     """
     main function for styling matplotlib according to theme
     ::Arguments::
-        theme (str): 'oceans16', 'grade3', 'chesterish', 'onedork', 'monokai', 'solarizedl'.
-                    If no theme name supplied the currently installed notebook theme will be used.
-        context (str): 'paper', 'notebook', 'talk', or 'poster'
+        theme (str): 'oceans16', 'grade3', 'chesterish', 'onedork', 'monokai', 'solarizedl', 'solarizedd'. If no theme name supplied the currently installed notebook theme will be used.
+        context (str): 'paper' (Default), 'notebook', 'talk', or 'poster'
         grid (bool): removes axis grid lines if False
         ticks (bool): make major x and y ticks visible
         fscale (float): scale font size for axes labels, legend, etc.
     """
 
     # set context and font rc parameters, return rcdict
-    rcdict = set_context(context=context, fscale=fscale)
+    rcdict = set_context(context=context, fscale=fscale, figsize=figsize)
 
     # read in theme name from ~/.jupyter/custom/current_theme.txt
     if theme is None:
@@ -161,7 +167,7 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
         mpl.colors.colorConverter.cache[code] = rgb
 
 
-def set_context(context='notebook', fscale=1.):
+def set_context(context='paper', fscale=1., figsize=(7., 5.)):
     """
     Most of this code has been copied/modified from seaborn.rcmod.plotting_context()
     ::Arguments::
@@ -173,7 +179,7 @@ def set_context(context='notebook', fscale=1.):
     context_dict = {k: v * scaling for k, v in base_context.items()}
 
     # scale default figsize
-    figX, figY = (8., 4.)
+    figX, figY = figsize
     context_dict["figure.figsize"] = (figX*scaling, figY*scaling)
 
     # independently scale the fonts
@@ -182,7 +188,7 @@ def set_context(context='notebook', fscale=1.):
     return context_dict
 
 
-def figsize(x=8.5, y=4., aspect=1.):
+def figsize(x=7, y=5., aspect=1.):
     """ manually set the default figure size of plots
     ::Arguments::
         x (float): x-axis size
@@ -207,7 +213,10 @@ def get_theme_style(theme):
     if theme == 'default':
         return styleMap, clist
 
-    syntaxVars = ['@cm-atom', '@cm-number', '@cm-property', '@cm-attribute', '@cm-keyword', '@cm-string', '@cm-meta']
+    # syntaxVars = ['@cm-atom', '@cm-number', '@cm-property', '@cm-attribute', '@cm-keyword', '@cm-string', '@cm-meta']
+
+    syntaxVars = ['@yellow:', '@orange:', '@red:', '@magenta:', '@violet:', '@blue:', '@cyan:', '@green:']
+
     get_hex_code = lambda line: line.split(':')[-1].split(';')[0][-7:]
 
     themeFile = os.path.join(styles_dir, theme+'.less')
@@ -223,6 +232,7 @@ def get_theme_style(theme):
     # remove duplicate hexcolors
     syntaxVars = list(set(syntaxVars))
     clist.extend(syntaxVars)
+    clist = remove_non_colors(clist)
     return styleMap, clist
 
 
@@ -235,9 +245,15 @@ def get_default_jtstyle():
     return styleMap, get_color_list()
 
 
+def blend_palette(color1, color2, ncolors=10):
+    from pylab import matplotlib as mpl
+    blend = sns.blend_palette((color1, color2), ncolors)
+    return [mpl.colors.rgb2hex(c) for c in blend]
+
 def get_color_list():
-    return ['#3572C6', '#83a83b', '#c44e52', '#8172b2', "#ff914d", "#77BEDB", "#222222", "#4168B7",
-    "#27ae60", "#e74c3c", "#8E44AD", "#ff711a", "#3498db", '#6C7A89']
+    return ['#3572C6', '#83a83b', '#c44e52', '#8172b2', "#ff914d",
+    "#77BEDB", "#222222", "#4168B7", "#27ae60", "#e74c3c", "#8E44AD",
+    "#ff711a", "#3498db", '#6C7A89']
 
 
 def reset():

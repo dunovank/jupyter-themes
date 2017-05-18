@@ -64,7 +64,6 @@ def less_to_css(style_less):
     os.chdir(package_dir)
     style_css = lesscpy.compile(tempfile)
     style_css += '\n\n'
-
     return style_css
 
 
@@ -456,7 +455,7 @@ def stored_font_dicts(fontcode, get_all=False):
               'sourcemed': ['Source Code Pro Medium', 'source-code-medium'],
               'ptmono': ['PT Mono', 'ptmono'],
               'ubuntu': ['Ubuntu Mono', 'ubuntu']},
-             'sans':             
+             'sans':
              {'droidsans': ['Droid Sans', 'droidsans'],
               'opensans': ['Open Sans', 'opensans'],
               'ptsans': ['PT Sans', 'ptsans'],
