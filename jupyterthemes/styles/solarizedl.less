@@ -13,19 +13,27 @@ http://ethanschoonover.com/solarized
 @cyan:                  #2aa198;
 @green:                 #859900;
 
-@solar-base03: #002b36;
-@solar-base02: #073642;
-@solar-base01: #586e75;
-@solar-base00: #657b83;
+@solar-base03:          #002b36;
+@solar-base02:          #073642;
+@solar-base01:          #586e75;
+@solar-base00:          #657b83;
 
-@solar-base0: #839496;
-@solar-base1: #93a1a1;
-@solar-base2: #eee8d5;
-@solar-base3: #fdf6e3;
+@solar-base0:           #839496;
+@solar-base1:           #93a1a1;
+@solar-base2:           #eee8d5;
+@solar-base3:           #fdf6e3;
 
+/* solarized notebook colors */
 @notebook-bg:           @solar-base2;
 @notebook-fg:           @solar-base01;
 @notebook-base:         @notebook-fg;
+
+/* jtplot figure style */
+@axisFace:              #eee8d5;
+@figureFace:            #eee8d5;
+@textColor:             #586e75;
+@edgeColor:             #D6D6D6;
+@gridColor:             #C4C4C4;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           darken(@solar-base2, 5%);
@@ -88,7 +96,7 @@ http://ethanschoonover.com/solarized
 @item-green:            @green;
 @item-red:              @red;
 @item-orange:           @orange;
-// @item-danger:           #a8524c;
+@item-danger:           #a8524c;
 
 @item-danger:           @red;
 @item-success:          @green;
@@ -118,6 +126,7 @@ http://ethanschoonover.com/solarized
 @scrollbar-inactive:    @solar-base1;
 @box-shadow:            darken(@cc-output-bg, 4%);
 
+/* solarized ansi colors */
 @ansiblack:             @solar-base03;
 @ansiblue:              @blue;
 @ansigray:              @solar-base0;
@@ -130,34 +139,28 @@ http://ethanschoonover.com/solarized
 @stderr-fg:             @solar-base01;
 @js-error:              @ansired;
 
+/* solarized codemirror colors */
 @cm-selected:           lighten(@solar-base1, 28%);
 @cm-gutters:            @cm-selected;
 @cm-linenumber:         @solar-base00;
-@cm-atom:               #d33682;
-@cm-attribute:          #d33682;
+@cm-atom:               @magenta;
+@cm-attribute:          @magenta;
 @cm-comment:            @solar-base1;
-@cm-property:           #268bd2;
-@cm-keyword:            #859900;
-@cm-string:             #2aa198;
-@cm-number:             #2aa198;
-@cm-meta:               #6c71c4;
-@cm-operator:           #268bd2;
-@cm-builtin:            #d33682;
+@cm-property:           @blue;
+@cm-keyword:            @green;
+@cm-string:             @blue;
+@cm-number:             @blue;
+@cm-meta:               @violet;
+@cm-operator:           @blue;
+@cm-builtin:            @magenta;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cc-input-fg;
 @cm-variable3:          @cc-input-fg;
 
-@cm-def:                #268bd2;
+@cm-def:                @blue;
 @cm-error:              @cc-input-bg;
-@cm-tag:                #268bd2;
+@cm-tag:                @blue;
 @cm-link:               @green;
-@cm-storage:            #d33682;
-@cm-entity:             #268bd2;
+@cm-storage:            @magenta;
+@cm-entity:             @blue;
 @cm-latex:              @notebook-fg;
-
-/* jtplot figure style */
-@axisFace:              #eee8d5;
-@figureFace:            #eee8d5;
-@textColor:             #586e75;
-@edgeColor:             #D6D6D6;
-@gridColor:             #C4C4C4;

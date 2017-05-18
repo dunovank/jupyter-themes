@@ -9,11 +9,17 @@
 @cyan:                  #4cb2ff;
 @green:                 #61ba86;
 
-
 /* chesterish notebook colors */
 @notebook-bg:           #1A2028;
 @notebook-fg:           #A2B0C7;
 @notebook-base:         #30394A;
+
+/* jtplot figure style */
+@axisFace:              #293340;
+@figureFace:            #293340;
+@textColor:             #CDD2E9;
+@edgeColor:             #4A5569;
+@gridColor:             #374556;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #009cd1;
@@ -112,41 +118,34 @@
 @ansigreen:             #8FCA9A;
 @ansipurple:            #b399ef;
 @ansicyan:              #77ABE7;
-@ansiyellow:            #DDD7A3;
-@ansired:               #e07a7a;
-@stderr-bg:             #e07a7a;
+@ansiyellow:            @yellow;
+@ansired:               @magenta;
+@stderr-bg:             @magenta;
 @stderr-fg:             #D0D4E6;
-@js-error:              @stderr-bg;
+@js-error:              @magenta;
 
 /* chesterish codemirror colors */
 @cm-selected:           #334050;
 @cm-gutters:            @cm-selected;
 @cm-linenumber:         @disabled;
 @cm-comment:            #667FB1;
-@cm-atom:               #be86e3;
-@cm-number:             #51c0ef;
-@cm-property:           #be86e3;
-@cm-attribute:          #e17e85;
-@cm-keyword:            #4cb2ff;
-@cm-string:             #61ba86;
-@cm-meta:               #2dced0;
+@cm-atom:               @violet;
+@cm-number:             @blue;
+@cm-property:           @violet;
+@cm-attribute:          @red;
+@cm-keyword:            @cyan;
+@cm-string:             @green;
+@cm-meta:               @yellow;
 @cm-operator:           #00B4FF;
-@cm-builtin:            @cm-attribute;
+@cm-builtin:            @red;
 @cm-variable:           @cc-input-fg;
-@cm-variable2:          @cm-attribute;
-@cm-variable3:          @cm-meta;
+@cm-variable2:          @red;
+@cm-variable3:          @yellow;
 
-@cm-def:                #FFEC8E;
+@cm-def:                @yellow;
 @cm-error:              @selected-error;
-@cm-tag:                @cm-atom;
-@cm-link:               @cm-number;
-@cm-storage:            @cm-property;
-@cm-entity:             @cm-property;
+@cm-tag:                @violet;
+@cm-link:               @blue;
+@cm-storage:            @violet;
+@cm-entity:             @violet;
 @cm-latex:              #8fb36a;
-
-/* jtplot figure style */
-@axisFace:              #293340;
-@figureFace:            #293340;
-@textColor:             #CDD2E9;
-@edgeColor:             #4A5569;
-@gridColor:             #374556;

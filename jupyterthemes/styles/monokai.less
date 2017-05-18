@@ -13,6 +13,13 @@
 @notebook-fg:           #F8F8F0;
 @notebook-base:         #282828;
 
+/* jtplot figure style */
+@axisFace:              #232323;
+@figureFace:            #232323;
+@textColor:             #CCCCCC;
+@edgeColor:             #49483E;
+@gridColor:             #282828;
+
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #49483E;
 @selected-half:         rgba(73,72,62,.45);
@@ -31,12 +38,12 @@
 @cc-output-bg:          #232323;
 @cc-output-fg:          #CCCCCC;
 @text-cell-fg:          #F8F8F0;
-@unrendered-text:       #A6E22E;
-@header-fg:             @unrendered-text;
+@unrendered-text:       @green;
+@header-fg:             @green;
 @tooltip-bg-color:      #282828;
 @tooltip-fg-color:      @cc-input-fg;
-@nb-name-fg:            @header-fg;
-@nb-name-hover:         #A6E22E;
+@nb-name-fg:            @green;
+@nb-name-hover:         @green;
 
 /* cell border colors */
 @cc-border-selected:    @selected-bg;
@@ -49,7 +56,7 @@
 @disabled:              #75715E;
 @input-prompt:          @disabled;
 @prompt-line:           #49483e;
-@tc-prompt-std:         #AE81FF;
+@tc-prompt-std:         @violet;
 @matching-bracket:      #49483E;
 @dropdown-bg:           #232323;
 @dropdown-border:       #232323;
@@ -67,14 +74,14 @@
 
 
 /* buttons, widgets, kernels colors */
-@item-theme:            #AE81FF;
-@item-blue:             #66D9EF;
-@item-cyan:             #66D9EF;
-@button-color:          #A6E22E;
-@item-green:            #A6E22E;
-@item-red:              #F92672;
-@item-orange:           #FD971F;
-// @item-danger:           #a8524c;
+@item-theme:            @violet;
+@item-blue:             @blue;
+@item-cyan:             @blue;
+@button-color:          @green;
+@item-green:            @green;
+@item-red:              @red;
+@item-orange:           @orange;
+@item-danger:           #a8524c;
 
 @item-danger:           #e74c3c;
 @item-success:          #83a83b;
@@ -106,46 +113,39 @@
 
 /* monokai ansi colors */
 @ansiblack:             #282828;
-@ansiblue:              #66D9EF;
+@ansiblue:              @blue;
 @ansigray:              #888;
-@ansigreen:             #A6E22E;
-@ansipurple:            #AE81FF;
-@ansicyan:              #66D9EF;
-@ansiyellow:            #E6DB74;
-@ansired:               #F92672;
-@stderr-bg:             #F92672;
+@ansigreen:             @green;
+@ansipurple:            @violet;
+@ansicyan:              @blue;
+@ansiyellow:            @yellow;
+@ansired:               @red;
+@stderr-bg:             @red;
 @stderr-fg:             #F8F8F2;
-@js-error:              @stderr-bg;
+@js-error:              @red;
 
 /* monokai codemirror colors */
 @cm-selected:           #49483E;
 @cm-gutters:            @cm-selected;
 @cm-linenumber:         @disabled;
 @cm-comment:            #49483E;
-@cm-atom:               #AE81FF;
-@cm-number:             #AE81FF;
-@cm-property:           #A6E22E;
-@cm-attribute:          #A6E22E;
-@cm-keyword:            #F92672;
-@cm-string:             #E6DB74;
-@cm-meta:               #FD971F;
-@cm-operator:           @cm-property;
-@cm-builtin:            @cm-attribute;
+@cm-atom:               @violet;
+@cm-number:             @violet;
+@cm-property:           @green;
+@cm-attribute:          @green;
+@cm-keyword:            @red;
+@cm-string:             @yellow;
+@cm-meta:               @orange;
+@cm-operator:           @green;
+@cm-builtin:            @green;
 @cm-variable:           @cc-input-fg;
-@cm-variable2:          @cm-attribute;
-@cm-variable3:          @cm-meta;
+@cm-variable2:          @green;
+@cm-variable3:          @orange;
 
-@cm-def:                @cm-property;
+@cm-def:                @green;
 @cm-error:              @selected-error;
-@cm-tag:                @cm-atom;
-@cm-link:               @cm-attribute;
-@cm-storage:            @cm-atom;
-@cm-entity:             @cm-attribute;
+@cm-tag:                @violet;
+@cm-link:               @green;
+@cm-storage:            @violet;
+@cm-entity:             @green;
 @cm-latex:              #529B2F;
-
-/* jtplot figure style */
-@axisFace:              #232323;
-@figureFace:            #232323;
-@textColor:             #CCCCCC;
-@edgeColor:             #49483E;
-@gridColor:             #282828;

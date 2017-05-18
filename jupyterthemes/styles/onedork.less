@@ -13,6 +13,13 @@
 @notebook-fg:           #899ab8;
 @notebook-base:         #2f3540;
 
+/* jtplot figure style */
+@axisFace:              #373e4b;
+@figureFace:            #373e4b;
+@textColor:             #B1BED6;
+@edgeColor:             #546379;
+@gridColor:             #414C5D;
+
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #2769c3;
 @selected-half:         rgba(80, 92, 133,.45);
@@ -97,20 +104,20 @@
 @button-hover:          #3C4451;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    #2A313C;
-@scrollbar:             #3f4555; //464e60; //#546379; //#414C5D; //#3D7D53;
-@scroll-trough:         transparent; //#798CAE; //#D4D8EC; //#798CAE;
+@scrollbar:             #3f4555;
+@scroll-trough:         transparent;
 @scrollbar-inactive:    #464e60;
 @box-shadow:            #2b303b;
 
 
 /* onedork ansi colors */
 @ansiblack:             #2b303b;
-@ansiblue:              #61afef;
+@ansiblue:              @blue;
 @ansigray:              #899ab8;
 @ansigreen:             #8FCA9A;
 @ansipurple:            #b399ef;
 @ansicyan:              #77ABE7;
-@ansiyellow:            #DDD7A3;
+@ansiyellow:            @yellow;
 @ansired:               #e07a7a;
 @stderr-bg:             #e07a7a;
 @stderr-fg:             #D0D4E6;
@@ -121,30 +128,23 @@
 @cm-gutters:            #353a48;
 @cm-linenumber:         @input-prompt;
 @cm-comment:            @input-prompt;
-@cm-atom:               #61afef;
-@cm-number:             #fea47f;
-@cm-property:           #61afef;
-@cm-attribute:          #ea8080;
-@cm-keyword:            #cc89e0;
-@cm-string:             #94c273;
-@cm-meta:               #51b6c3;
-@cm-operator:           #61afef;
-@cm-builtin:            @cm-attribute;
+@cm-atom:               @blue;
+@cm-number:             @orange;
+@cm-property:           @blue;
+@cm-attribute:          @red;
+@cm-keyword:            @violet;
+@cm-string:             @green;
+@cm-meta:               @yellow;
+@cm-operator:           @blue;
+@cm-builtin:            @red;
 @cm-variable:           @cc-input-fg;
-@cm-variable2:          @cm-attribute;
-@cm-variable3:          @cm-meta;
+@cm-variable2:          @red;
+@cm-variable3:          @violet;
 
-@cm-def:                @cm-atom;
+@cm-def:                @blue;
 @cm-error:              @selected-error;
-@cm-tag:                @cm-atom;
-@cm-link:               #94c273;
-@cm-storage:            @cm-property;
-@cm-entity:             @cm-property;
+@cm-tag:                @blue;
+@cm-link:               @green;
+@cm-storage:            @blue;
+@cm-entity:             @blue;
 @cm-latex:              #8fb36a;
-
-/* jtplot figure style */
-@axisFace:              #373e4b;
-@figureFace:            #373e4b;
-@textColor:             #B1BED6;
-@edgeColor:             #546379;
-@gridColor:             #414C5D;

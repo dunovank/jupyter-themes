@@ -5,13 +5,20 @@
 @magenta:               #e07a7a;
 @violet:                #CAA6EC;
 @blue:                  #77ABE7;
-@cyan:                  #7BC6C0;
+@cyan:                  #61afef;
 @green:                 #8FCA9A;
 
 /* oceans16 notebook colors */
 @notebook-bg:           #262931;
 @notebook-fg:           #93A2BE;
 @notebook-base:         #373e4b;
+
+/* jtplot figure style */
+@axisFace:              #384151;
+@figureFace:            #384151;
+@textColor:             #CDD2E9;
+@edgeColor:             #546379;
+@gridColor:             #4a5467;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #3572C6;
@@ -104,46 +111,39 @@
 
 /* oceans16 ansi colors */
 @ansiblack:             #2b303b;
-@ansiblue:              #61afef;
+@ansiblue:              @cyan;
 @ansigray:              #899ab8;
-@ansigreen:             #8FCA9A;
+@ansigreen:             @green;
 @ansipurple:            #b399ef;
-@ansicyan:              #77ABE7;
-@ansiyellow:            #DDD7A3;
-@ansired:               #e07a7a;
-@stderr-bg:             #e07a7a;
+@ansicyan:              @blue;
+@ansiyellow:            @yellow;
+@ansired:               @red;
+@stderr-bg:             @red;
 @stderr-fg:             #D0D4E6;
-@js-error:              @stderr-bg;
+@js-error:              @red;
 
 /* oceans16 codemirror colors */
 @cm-selected:           #42495e;
 @cm-gutters:            #343c4b;
 @cm-linenumber:         @cm-comment;
 @cm-comment:            #667FB1;
-@cm-atom:               #CAA6EC;
-@cm-number:             #EFAA8E;
-@cm-property:           #77ABE7;
-@cm-attribute:          #E39194;
-@cm-keyword:            #CAA6EC;
-@cm-string:             #8FCA9A;
-@cm-meta:               #7BC6C0;
-@cm-operator:           @cm-property;
-@cm-builtin:            @cm-attribute;
+@cm-atom:               @violet;
+@cm-number:             @orange;
+@cm-property:           @blue;
+@cm-attribute:          @red;
+@cm-keyword:            @violet;
+@cm-string:             @green;
+@cm-meta:               @yellow;
+@cm-operator:           @blue;
+@cm-builtin:            @red;
 @cm-variable:           @cc-input-fg;
-@cm-variable2:          @cm-attribute;
-@cm-variable3:          @cm-meta;
+@cm-variable2:          @red;
+@cm-variable3:          @yellow;
 
-@cm-def:                @cm-property;
+@cm-def:                @blue;
 @cm-error:              @selected-error;
 @cm-tag:                @cm-atom;
-@cm-link:               @nb-name-hover;
+@cm-link:               @cyan;
 @cm-storage:            @cm-atom;
-@cm-entity:             @cm-attribute;
+@cm-entity:             @red;
 @cm-latex:              #8fb36a;
-
-/* jtplot figure style */
-@axisFace:              #384151;
-@figureFace:            #384151;
-@textColor:             #CDD2E9;
-@edgeColor:             #546379;
-@gridColor:             #4a5467;
