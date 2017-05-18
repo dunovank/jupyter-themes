@@ -16,9 +16,9 @@
 /* jtplot figure style */
 @axisFace:              #232323;
 @figureFace:            #232323;
-@textColor:             #CCCCCC;
-@edgeColor:             #49483E;
-@gridColor:             #282828;
+@textColor:             #BBBBBB;
+@edgeColor:             #888888;
+@gridColor:             #303030;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #49483E;
@@ -46,10 +46,10 @@
 @nb-name-hover:         @green;
 
 /* cell border colors */
-@cc-border-selected:    @selected-bg;
-@cc-border-edit:        #CCCCCC;
-@tc-border-selected:    @selected-bg;
-@tc-border-edit:        #CCCCCC;
+@cc-border-selected:    lighten(@selected-bg, 3%);
+@cc-border-edit:        darken(@selected-bg, 8%);
+@tc-border-selected:    lighten(@selected-bg, 3%);
+@tc-border-edit:        darken(@selected-bg, 8%);
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               #232323;
@@ -74,7 +74,7 @@
 
 
 /* buttons, widgets, kernels colors */
-@item-theme:            @violet;
+@item-theme:            @green;
 @item-blue:             @blue;
 @item-cyan:             @blue;
 @button-color:          @green;
@@ -92,7 +92,7 @@
 @table-color:           #CCCCCC;
 @table-bg:              #282828;
 @table-border:          #49483E;
-@df-header-bg:          #282828;
+@df-header-bg:          darken(@table-bg, 4%);
 @df-header:             #CCCCCC;
 @df-header-border:      #49483E;
 @df-cell-bg:            #282828;
@@ -107,7 +107,7 @@
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    #212121;
 @scrollbar:             #49483E;
-@scroll-trough:         #49483E;
+@scroll-trough:         lighten(@notebook-bg, 6%);
 @scrollbar-inactive:    #49483E;
 @box-shadow:            #49483E;
 

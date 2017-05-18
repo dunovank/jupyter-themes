@@ -99,8 +99,6 @@ def install_theme(theme,
     # install style_css to .jupyter/custom/custom.css
     stylefx.write_final_css(style_css)
 
-    return style_less, style_css
-
     # remove tempfile.less from package_dir
     stylefx.remove_temp_file()
 

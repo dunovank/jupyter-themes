@@ -1170,22 +1170,25 @@ div.output.output_scroll {
 // 	border-radius: 3px;
 // }
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 9px;
-    background-color: transparent; //@scroll-trough;
+    width: 11px;
+    max-height: 9px;
+    background-color: @scroll-trough;
     border-radius: 3px;
+    border: none;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent; //@scroll-trough;
+    background: @scroll-trough;
+    border: none;
+    width: 11px;
+    max-height: 9px;
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 2px;
-    border: 2px solid @scrollbar;
+    border: none;
     background: @scrollbar;
     background-clip: content-box;
-    min-height: 100px;
-    width: 10px;
+    width: 11px;
 }
 
 /******* Smooth Fonts ********/
