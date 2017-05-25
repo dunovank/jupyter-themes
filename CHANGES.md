@@ -1,5 +1,10 @@
 ### Release Notes
 
+#### **v0.16.2:**
+- added matplotlib and seaborn dependencies
+- updated index.ipynb for binder and compiled themes
+- minor cosmetic improvements
+
 #### **v0.16.1:**
 - removed some excess fonts from sans-serif and serif collections
 - added option for setting pandas dataframe font-size (-dfs , --dffontsize)

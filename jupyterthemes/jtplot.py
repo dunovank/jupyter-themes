@@ -2,7 +2,7 @@ from __future__ import print_function
 import os
 import sys
 import re
-import matplotlib as mpl
+from pylab import matplotlib as mpl
 import matplotlib.pyplot as plt
 from cycler import cycler
 from jupyter_core.paths import jupyter_config_dir
@@ -79,7 +79,7 @@ def infer_theme():
     return theme
 
 
-def style(theme=None, context='paper', grid=True, ticks=False, spines=True, fscale=1.2, figsize=(7., 5.)):
+def style(theme=None, context='paper', grid=True, ticks=False, spines=True, fscale=1.2, figsize=(8., 7.)):
     """
     main function for styling matplotlib according to theme
     ::Arguments::
@@ -167,7 +167,7 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
         mpl.colors.colorConverter.cache[code] = rgb
 
 
-def set_context(context='paper', fscale=1., figsize=(7., 5.)):
+def set_context(context='paper', fscale=1., figsize=(8., 7.)):
     """
     Most of this code has been copied/modified from seaborn.rcmod.plotting_context()
     ::Arguments::
@@ -188,7 +188,7 @@ def set_context(context='paper', fscale=1., figsize=(7., 5.)):
     return context_dict
 
 
-def figsize(x=7, y=5., aspect=1.):
+def figsize(x=8, y=7., aspect=1.):
     """ manually set the default figure size of plots
     ::Arguments::
         x (float): x-axis size
@@ -246,7 +246,7 @@ def get_default_jtstyle():
 
 
 def blend_palette(color1, color2, ncolors=10):
-    from pylab import matplotlib as mpl
+    import seaborn as sns
     blend = sns.blend_palette((color1, color2), ncolors)
     return [mpl.colors.rgb2hex(c) for c in blend]
 
@@ -268,3 +268,48 @@ def reset():
     mpl.rcParams.update(mpl.rcParamsDefault)
     mpl.rcParams['figure.facecolor'] = 'white'
     mpl.rcParams['axes.facecolor'] = 'white'
+
+
+# #################################################################
+# #       COPIED FROM SEABORN palettes.py lines 416 - 424         #
+# #################################################################
+# def _color_to_rgb(color, input):
+#     """Add some more flexibility to color choices."""
+#     import colorsys
+#     if input == "hls":
+#         color = colorsys.hls_to_rgb(*color)
+#     elif input == "husl":
+#         color = husl.husl_to_rgb(*color)
+#     return color
+
+# #################################################################
+# #       COPIED FROM SEABORN palettes.py lines 701 - 726         #
+# #################################################################
+# def blend_palette(colors, n_colors=6, as_cmap=False, input="rgb"):
+#     """Make a palette that blends between a list of colors.
+#
+#     Parameters
+#     ----------
+#     colors : sequence of colors in various formats interpreted by ``input``
+#         hex code, html color name, or tuple in ``input`` space.
+#     n_colors : int, optional
+#         Number of colors in the palette.
+#     as_cmap : bool, optional
+#         If True, return as a matplotlib colormap instead of list.
+#
+#     Returns
+#     -------
+#     palette or cmap : seaborn color palette or matplotlib colormap
+#         List-like object of colors as RGB tuples, or colormap object that
+#         can map continuous values to colors, depending on the value of the
+#         ``as_cmap`` parameter.
+#
+#     """
+#     colors = [_color_to_rgb(color, input) for color in colors]
+#     name = "blend"
+#     pal = mpl.colors.LinearSegmentedColormap.from_list(name, colors)
+#     if not as_cmap:
+#         pal = _ColorPalette(pal(np.linspace(0, 1, n_colors)))
+#     return pal
+
+#################################################################

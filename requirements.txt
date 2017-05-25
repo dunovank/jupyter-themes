@@ -1,4 +1,6 @@
 ipython<6.0
 jupyter
 jupyter_core
+matplotlib
+seaborn
 lesscpy>=0.12.0

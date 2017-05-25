@@ -259,6 +259,15 @@ body > #header {
     margin: 6px 0 0;
     margin-top: 1px;
 }
+.list_header > div .item_link, .list_item > div .item_link {
+    margin-left: -1px;
+    vertical-align: middle;
+    line-height: 22px;
+    font-size: 10.5pt;
+    display: inline-table;
+    position: static;
+}
+
 #button-select-all {
     height: 34px;
     min-width: 55px;
@@ -522,40 +531,29 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
     border: none;
 }
 /* COMMENT OUT TO RESTORE START-UP NOTIFICATIONS */
-// div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn
 div.notification_widget.info,
 .notification_widget.info {
     display: none !important;
 }
-#notification_trusted {
-    font-family: @notebook-fontfamily;
-    font-size: 13pt;
-    color: @item-blue;
-    border: none;
-    background: transparent;
-    background-color: transparent;
-    margin-bottom: 0px !important;
-    margin-top: 6px !important;
-}
-
 .edit_mode .modal_indicator:before {
-    font-size: 19px;
-    color: @cc-border-edit;
-    content: "E"; //"\f040";
+    font-size: 18px;
+    color: @item-theme;
+    content: "E";
+    opacity: 0.35;
     padding-bottom: 0px;
     vertical-align: -webkit-baseline-middle;
     margin-left: 1px;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
 }
 .command_mode .modal_indicator:before {
     font-family: @notebook-fontfamily;
-    font-size: 19px;
-    color: @item-blue;
-    content: "C"; //"\f1f9";
+    font-size: 18px;
+    color: @item-theme;
+    content: "C";
     padding-bottom: 0px;
     vertical-align: -webkit-baseline-middle;
     margin-left: 1px;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
 }
 .item_icon {
     color: @item-blue;
@@ -573,6 +571,8 @@ div.notification_widget.info,
     -moz-osx-font-smoothing: grayscale;
     content: "\f10c";
     vertical-align: middle;
+    position: static;
+    display: inherit;
 }
 .item_buttons .running-indicator {
     padding-top: 4px;
@@ -581,41 +581,52 @@ div.notification_widget.info,
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
 }
+#notification_trusted {
+    font-family: @notebook-fontfamily;
+    font-size: 17px;
+    color: @item-blue;
+    border: none;
+    background: transparent;
+    background-color: transparent;
+    margin-bottom: 0px !important;
+    margin-top: 8px !important;
+    vertical-align: -webkit-baseline-middle !important;
+}
 #modal_indicator {
     float: right !important;
-    color: @item-blue;
+    color: #4c8be2;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    margin-top: 6px !important;
-    margin-left: 1px;
+    margin-top: 5px !important;
+    margin-left: 0px;
 }
 #kernel_indicator {
-    font-size: 13pt;
+    font-size: 15px;
     float: right !important;
     color: @item-theme;
     background: @notebook-bg;
     background-color: @notebook-bg;
     border-left: 2px solid @item-theme;
-    padding-bottom: 2px;
-    margin-top: 5px !important;
+    padding-bottom: 4px;
+    margin-top: 6px !important;
     margin-left: -2px;
 }
 #kernel_indicator .kernel_indicator_name {
-    font-size: 13pt;
+    font-size: 17px;
     color: @item-theme;
     background: @notebook-bg;
     background-color: @notebook-bg;
     padding-left: 5px;
     padding-right: 5px;
-    margin-top: 5px;
+    margin-top: 4px;
     vertical-align: -webkit-baseline-middle;
     padding-bottom: 0px;
 }
 
 .kernel_idle_icon:before {
     display: inline-block;
-    font: normal normal normal 20px/1 FontAwesome;
-    font-size: 19px;
+    font: normal normal normal 17px/1 FontAwesome;
+    font-size: 17px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -625,8 +636,8 @@ div.notification_widget.info,
 }
 .kernel_busy_icon:before {
     display: inline-block;
-    font: normal normal normal 20px/1 FontAwesome;
-    font-size: 19px;
+    font: normal normal normal 17px/1 FontAwesome;
+    font-size: 17px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -804,7 +815,6 @@ div.kse-dropdown > .dropdown-menu,
     box-shadow: none !important;
     border-radius: 2px;
 }
-
 .btn:active,
 .btn.active,
 .btn:active:focus,

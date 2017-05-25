@@ -153,7 +153,7 @@ div.running_list_info.toolbar_info {
  content: "\f15b";
  position: relative;
  top: 0px;
- color: #d0d0d0 !important;
+ color: #e0e0e0 !important;
 }
 #project_name {
  display: inline-flex;
@@ -518,34 +518,25 @@ div.notification_widget.info,
 .notification_widget.info {
  display: none !important;
 }
-#notification_trusted {
- font-family: sans-serif;
- font-size: 13pt;
- color: #126dce;
- border: none;
- background: transparent;
- background-color: transparent;
- margin-bottom: 0px !important;
- margin-top: 6px !important;
-}
 .edit_mode .modal_indicator:before {
- font-size: 19px;
- color: #ffd5bb;
+ font-size: 18px;
+ color: #ff7823;
  content: "E";
+ opacity: 0.35;
  padding-bottom: 0px;
  vertical-align: -webkit-baseline-middle;
  margin-left: 1px;
- margin-bottom: 2px;
+ margin-bottom: 0px;
 }
 .command_mode .modal_indicator:before {
  font-family: sans-serif;
- font-size: 19px;
- color: #126dce;
+ font-size: 18px;
+ color: #ff7823;
  content: "C";
  padding-bottom: 0px;
  vertical-align: -webkit-baseline-middle;
  margin-left: 1px;
- margin-bottom: 2px;
+ margin-bottom: 0px;
 }
 .item_icon {
  color: #126dce;
@@ -571,40 +562,51 @@ div.notification_widget.info,
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
 }
+#notification_trusted {
+ font-family: sans-serif;
+ font-size: 17px;
+ color: #126dce;
+ border: none;
+ background: transparent;
+ background-color: transparent;
+ margin-bottom: 0px !important;
+ margin-top: 8px !important;
+ vertical-align: -webkit-baseline-middle !important;
+}
 #modal_indicator {
  float: right !important;
- color: #126dce;
+ color: #4c8be2;
  background: #ffffff;
  background-color: #ffffff;
- margin-top: 6px !important;
- margin-left: 1px;
+ margin-top: 5px !important;
+ margin-left: 0px;
 }
 #kernel_indicator {
- font-size: 13pt;
+ font-size: 15px;
  float: right !important;
  color: #ff7823;
  background: #ffffff;
  background-color: #ffffff;
  border-left: 2px solid #ff7823;
- padding-bottom: 2px;
- margin-top: 5px !important;
+ padding-bottom: 4px;
+ margin-top: 6px !important;
  margin-left: -2px;
 }
 #kernel_indicator .kernel_indicator_name {
- font-size: 13pt;
+ font-size: 17px;
  color: #ff7823;
  background: #ffffff;
  background-color: #ffffff;
  padding-left: 5px;
  padding-right: 5px;
- margin-top: 5px;
+ margin-top: 4px;
  vertical-align: -webkit-baseline-middle;
  padding-bottom: 0px;
 }
 .kernel_idle_icon:before {
  display: inline-block;
- font: normal normal normal 20px/1 FontAwesome;
- font-size: 19px;
+ font: normal normal normal 17px/1 FontAwesome;
+ font-size: 17px;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
@@ -614,8 +616,8 @@ div.notification_widget.info,
 }
 .kernel_busy_icon:before {
  display: inline-block;
- font: normal normal normal 20px/1 FontAwesome;
- font-size: 19px;
+ font: normal normal normal 17px/1 FontAwesome;
+ font-size: 17px;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
@@ -1132,21 +1134,24 @@ div.output.output_scroll {
  box-shadow: none;
 }
 ::-webkit-scrollbar {
- width: 10px;
- height: 9px;
- background-color: transparent;
+ width: 11px;
+ max-height: 9px;
+ background-color: #e0e0e0;
  border-radius: 3px;
+ border: none;
 }
 ::-webkit-scrollbar-track {
- background: transparent;
+ background: #e0e0e0;
+ border: none;
+ width: 11px;
+ max-height: 9px;
 }
 ::-webkit-scrollbar-thumb {
  border-radius: 2px;
- border: 2px solid #ff7823;
+ border: none;
  background: #ff7823;
  background-clip: content-box;
- min-height: 100px;
- width: 10px;
+ width: 11px;
 }
 HTML,
 body,
@@ -1181,37 +1186,37 @@ a {
  -webkit-font-smoothing: antialiased;
 }
 div.input_area {
- background-color: #efefef;
- background: #efefef;
+ background-color: #ededed;
+ background: #ededed;
  padding-right: 1.2em;
  border: 0px;
  border-radius: 2px;
 }
 div.cell {
  padding: 0px;
- background: #efefef;
- background-color: #efefef;
+ background: #ededed;
+ background-color: #ededed;
  border: medium solid #ffffff;
  border-radius: 2px;
  top: 0;
  border-top-left-radius: 4px;
 }
 div.cell.selected {
- background: #efefef;
- background-color: #efefef;
+ background: #ededed;
+ background-color: #ededed;
  border: medium solid #ffffff;
  padding: 0px;
 }
 .edit_mode div.cell.selected {
  padding: 0px;
- background: #efefef;
- background-color: #efefef;
+ background: #ededed;
+ background-color: #ededed;
  border: medium solid #ffffff;
 }
 div.cell.edit_mode {
  padding: 0px;
- background: #efefef;
- background-color: #efefef;
+ background: #ededed;
+ background-color: #ededed;
 }
 div.CodeMirror-sizer {
  margin-left: 0px;
@@ -1266,7 +1271,7 @@ div.cell.selected.jupyter-soft-selected {
 div.cell.selected.jupyter-soft-selected .prompt,
 div.cell.text_cell.selected.jupyter-soft-selected .prompt {
  top: 0;
- border-left: #efefef !important;
+ border-left: #ededed !important;
  border-radius: 2px;
 }
 div.cell.text_cell.selected.jupyter-soft-selected .input_prompt {
@@ -1310,7 +1315,7 @@ div.prompt,
 }
 div.prompt.input_prompt {
  font-size: 9pt !important;
- background-color: #efefef;
+ background-color: #ededed;
  border-top: 0px;
  border-top-right-radius: 0px;
  border-bottom-left-radius: 0px;
@@ -1349,7 +1354,7 @@ div.output_wrapper {
 div.output_subarea.output_text.output_stream.output_stdout,
 div.output_subarea.output_text {
  font-family: monospace, monospace;
- font-size: 10.0pt !important;
+ font-size: 8.5pt !important;
  line-height: 150% !important;
  background-color: #ffffff;
  color: #303030;
@@ -1358,8 +1363,8 @@ div.output_subarea.output_text {
 }
 div.output_area pre {
  font-family: monospace, monospace;
- font-size: 10.0pt;
- line-height: 150% !important;
+ font-size: 8.5pt !important;
+ line-height: 151% !important;
  color: #303030;
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
@@ -1369,7 +1374,7 @@ div.output_area {
 }
 div.output_html {
  font-family: monospace, monospace;
- font-size: 10.0pt;
+ font-size: 8.5pt;
  color: #353535;
  background-color: #ffffff;
  background: #ffffff;
@@ -1420,7 +1425,7 @@ div.out_prompt_overlay.prompt {
 }
 div.out_prompt_overlay.prompt:hover {
  background-color: #ffffff;
- box-shadow: #e8e8e8 2px 1px 3px 2.5px inset;
+ box-shadow: #e8e8e8 2px 1px 1px 2px inset;
  border: none;
  border-bottom-left-radius: 2px;
  -webkit-border-: 2px;
@@ -1740,9 +1745,13 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
  max-width: none;
  border: none;
 }
+.rendered_html tr,
+.rendered_html td {
+ font-size: 9.3pt !important;
+}
 .rendered_html thead {
  font-family: sans-serif;
- font-size: 12px;
+ font-size: 10.3pt !important;
 }
 .rendered_html table {
  margin-left: auto;
@@ -1751,7 +1760,7 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
  border-collapse: collapse;
  border-spacing: 0;
  color: #353535;
- font-size: 11px;
+ font-size: 9.3pt !important;
  table-layout: fixed;
 }
 .rendered_html thead {
@@ -1877,7 +1886,7 @@ div.widget-label {
 .rendered_html :link:hover {
  font-family: sans-serif;
  font-size: 100%;
- color: #ff7823;
+ color: #ff8132;
 }
 a.anchor-link:link {
  font-size: inherit;
@@ -1888,14 +1897,14 @@ a.anchor-link:link {
 }
 a.anchor-link:link:hover {
  font-size: inherit;
- color: #ff7823;
+ color: #ff8132;
 }
 .navbar-text {
  margin-top: 4px;
  margin-bottom: 0px;
 }
 #clusters > a {
- color: #ff7823;
+ color: #ff8132;
  text-decoration: underline;
  cursor: auto;
 }
@@ -2194,7 +2203,7 @@ body > div.modal.cmd-palette.typeahead-field {
 .typeahead-container button {
  font-family: sans-serif;
  font-size: 28pt;
- background-color: #d0d0d0;
+ background-color: #e0e0e0;
  border: none;
  display: inline-block;
  line-height: inherit;
@@ -2356,7 +2365,7 @@ div#short-key-bindings-intro.well,
 }
 #texteditor-backdrop #texteditor-container {
  padding: 0px;
- background-color: #efefef;
+ background-color: #ededed;
  box-shadow: none;
 }
 .terminal-app {
@@ -2367,14 +2376,14 @@ div#short-key-bindings-intro.well,
  font-size: 11pt;
  line-height: 170%;
  color: #303030;
- background: #efefef;
+ background: #ededed;
  padding: 0.4em;
  border-radius: 2px;
  -webkit-box-shadow: none;
  box-shadow: none;
 }
 .terminal .xterm-viewport {
- background-color: #efefef;
+ background-color: #ededed;
  color: #303030;
  overflow-y: auto;
 }
@@ -2403,7 +2412,7 @@ div#short-key-bindings-intro.well,
  color: #e22978;
 }
 .terminal .xterm-color-8 {
- color: #ff7823;
+ color: #ff8132;
 }
 .terminal .xterm-color-9 {
  color: #009e07;
@@ -2415,11 +2424,11 @@ div#short-key-bindings-intro.well,
  color: #e22978;
 }
 .terminal .xterm-bg-color-15 {
- background-color: #efefef;
+ background-color: #ededed;
 }
 .terminal:not(.xterm-cursor-style-underline):not(.xterm-cursor-style-bar) .terminal-cursor {
  background-color: #ff7823;
- color: #efefef;
+ color: #ededed;
 }
 .terminal:not(.focus) .terminal-cursor {
  outline: 1px solid #ff7823;
@@ -2433,14 +2442,14 @@ div.CodeMirror pre {
  color: #303030;
 }
 div.CodeMirror-lines {
- padding-bottom: .6em;
+ padding-bottom: .9em;
  padding-left: .5em;
  padding-right: 1.5em;
- padding-top: 4px;
+ padding-top: .7em;
 }
 span.ansiblack,
 .ansi-black-fg {
- color: #dc4384;
+ color: #e22978;
 }
 span.ansiblue,
 .ansi-blue-fg,
@@ -2450,14 +2459,14 @@ span.ansiblue,
 span.ansigray,
 .ansi-gray-fg,
 .ansi-gray-intense-fg {
- color: #ff7823;
+ color: #ff8132;
 }
 span.ansigreen,
 .ansi-green-fg {
  color: #333333;
 }
 .ansi-green-intense-fg {
- color: #ff7823;
+ color: #ff8132;
 }
 span.ansipurple,
 .ansi-purple-fg,
@@ -2472,7 +2481,7 @@ span.ansicyan,
 span.ansiyellow,
 .ansi-yellow-fg,
 .ansi-yellow-intense-fg {
- color: #ff7823;
+ color: #ff8132;
 }
 span.ansired,
 .ansi-red-fg,
@@ -2527,7 +2536,7 @@ div.tooltiptext.bigtooltip {
 .cm-s-ipython.CodeMirror {
  font-family: monospace, monospace;
  font-size: 11pt;
- background: #efefef;
+ background: #ededed;
  color: #303030;
  border-radius: 2px;
  font-style: normal;
@@ -2616,7 +2625,7 @@ div.CodeMirror-linenumber,
  color: #e22978;
 }
 .cm-s-ipython span.cm-link {
- color: #ff7823;
+ color: #ff8132;
 }
 .cm-s-ipython span.cm-storage {
  color: #055be0;
@@ -2688,7 +2697,7 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
  color: #055be0;
 }
 .cm-s-default .cm-link {
- color: #ff7823;
+ color: #ff8132;
 }
 .cm-s-default .cm-atom {
  color: #ff8132;
@@ -2713,8 +2722,8 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
  line-height: 1;
 }
 .completions select {
- background: #efefef;
- background-color: #efefef;
+ background: #ededed;
+ background-color: #ededed;
  outline: none;
  border: none;
  padding: 0px;

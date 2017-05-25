@@ -5,7 +5,7 @@ from itertools import chain
 
 major = 0
 minor = 16
-patch = 1
+patch = 2
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v' + version])
@@ -62,7 +62,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    install_requires=['ipython<6.0', 'jupyter', 'jupyter_core', 'lesscpy>=0.12.0'],
+    install_requires=['ipython<6.0', 'jupyter', 'jupyter_core', 'lesscpy>=0.12.0', 'matplotlib', 'seaborn'],
     keywords=['jupyter', 'ipython', 'notebook', 'themes', 'css'],
     entry_points={
         'console_scripts': [
