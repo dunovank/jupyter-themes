@@ -11,7 +11,7 @@
     border: none;
 }
 .rendered_html tr,
-.rendered_html td {   
+.rendered_html td {
     font-size: @df-fontsize !important;
 }
 .rendered_html thead {
@@ -735,11 +735,121 @@ div#short-key-bindings-intro.well, .well {
 /******************************************/
 /******** KERNEL RUNNING ANIMATION ********/
 /******************************************/
+// @keyframes fa-pulse {
+//   100% {
+//     -webkit-transform: rotate(360deg);
+//     transform: rotate(360deg);
+//   }
+// }
+//
 // @keyframes fa-spin {
 //   100% {
 //     -webkit-transform: rotate(360deg);
 //     transform: rotate(360deg);
 //   }
+// }
+// @keyframes shrinking-cog {
+//   0% {transform: scale(1);}
+//   20% {transform: scale(1.2);}
+//  100% {transform: scale(0);}
+// }
+
+
+// .pulse {
+//   margin:2px;
+//   display: block;
+//   width: 22px;
+//   height: 22px;
+//   border-radius: 50%;
+//   background: @item-theme;
+//   cursor: pointer;
+//   box-shadow: 0 0 0 @tc-prompt-std;
+//   animation: pulse 2s infinite;
+// }
+// .pulse:hover {
+//   animation: none;
+// }
+
+@-webkit-keyframes fa-pulse {
+  // 0% {-webkit-box-shadow: 0 0 0 0 @tc-prompt-std;}
+  // 70% {-webkit-box-shadow: 0 0 0 5px rgba(204,169,44, 0.2);}
+  // 100% {-webkit-box-shadow: 0 0 0 5px rgba(204,169,44, 0.2);}
+  0% {
+    background-color: #001F3F;
+    background: @item-theme;
+  }
+  100% {
+    background-color: @item-theme;
+    background: @item-theme;
+  }
+}
+@keyframes fa-pulse {
+  0% {
+    background-color: #001F3F;
+  }
+  100% {
+    background-color: @item-theme;
+    background: @item-theme;
+  }
+}
+//   0% {-moz-box-shadow: 0 0 0 0 @tc-prompt-std;
+//     box-shadow: 2px 2px 2px 2px @tc-prompt-std;}
+//   70% {-moz-box-shadow: 0px 0 0 6 rgba(204,169,44, 0.1);
+//     box-shadow: 2 2 2 3px rgba(204,169,44, 0.2);}
+//   100% {-moz-box-shadow: 0 0 0 8px rgba(204,169,44, 0.2);
+//     box-shadow: 2 2 2 5px rgba(204,169,44, 0.2);}
+// }
+//
+.kernel_idle_icon:before {
+    display: inline-block;
+    font: normal normal normal 16px/1.2 FontAwesome;
+    font-size: 16px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "\f10c";
+    margin-left: 0.2em;
+}
+.kernel_busy_icon:before {
+  -webkit-animation: fa-pulse 1.5s infinite running;
+  animation: fa-pulse 1.5s infinite running;
+  margin-left: .2em;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  font-size: 16px;
+  border-radius: 50%;
+  vertical-align: middle;
+  cursor: pointer;
+}
+// @keyframes stretch {
+//   /* declare animation actions here */
+// }
+
+// .element {
+//   animation-name: stretch;
+//   animation-duration: 1.5s;
+//   animation-timing-function: ease-out;
+//   animation-delay: 0s;
+//   animation-direction: alternate;
+//   animation-iteration-count: infinite;
+//   animation-fill-mode: none;
+//   animation-play-state: running;
+// }
+//
+// /*
+//   is the same as:
+// */
+//
+// .element {
+//   animation:
+//     stretch
+//     1.5s
+//     ease-out
+//     0s
+//     alternate
+//     infinite
+//     none
+//     running;
 // }
 // .kernel_idle_icon:before {
 //     display: inline-block;

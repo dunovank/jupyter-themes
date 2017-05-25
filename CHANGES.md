@@ -1,5 +1,9 @@
 ### Release Notes
 
+#### **v0.16.3:**
+- removed broken matplotlib dependency
+- added pulse kernel busy indicator
+
 #### **v0.16.2:**
 - added matplotlib and seaborn dependencies
 - updated index.ipynb for binder and compiled themes
