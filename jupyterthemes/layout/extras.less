@@ -806,21 +806,31 @@ div#short-key-bindings-intro.well, .well {
     font-size: 16px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    content: "\f10c";
+    // content: "\f10c";
+    cursor: pointer;
     margin-left: 0.2em;
 }
 .kernel_busy_icon:before {
-  -webkit-animation: fa-pulse 1.5s infinite running;
-  animation: fa-pulse 1.5s infinite running;
-  margin-left: .2em;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  font-size: 16px;
-  border-radius: 50%;
-  vertical-align: middle;
-  cursor: pointer;
+    -webkit-animation: pulse 1.5s infinite linear;
+    // animation: fa-spin 2.2s infinite linear;
+    animation: pulse 1.5s infinite linear;
+    display: inline-block;
+    font: normal normal normal 16px/1.2 FontAwesome;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    margin-left: 0.2em;
 }
+
+@keyframes pulse {
+  0% {
+    color: @notebook-bg;
+  }
+  100% {
+    color: @item-theme;
+  }
+}
+
 // @keyframes stretch {
 //   /* declare animation actions here */
 // }

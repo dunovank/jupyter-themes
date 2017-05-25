@@ -34,7 +34,7 @@
 * [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
 
 ### Requirements
-* Python 2.7, 3.3, 3.4, 3.5, 3.6
+* Python 2.7, 3.4, 3.5, 3.6
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 * matplotlib
 * seaborn
