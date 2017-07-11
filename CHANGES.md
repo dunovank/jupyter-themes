@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.16.6**
+- minor bug-fix in jtplot (prevent clist printing)
+
 #### **v0.16.5**
 - improved monokai comment visibility
 - solarized style improvements (l & d flavors)

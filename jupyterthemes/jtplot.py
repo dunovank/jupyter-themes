@@ -115,7 +115,6 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
 
     # extract style and color info for theme
     styleMap, clist = get_theme_style(theme)
-    print(clist)
 
     # extract style variables
     figureFace = styleMap['figureFace']
