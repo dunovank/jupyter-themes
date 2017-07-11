@@ -41,29 +41,29 @@ a:hover, a:focus {
 div#notebook_list_header.row.list_header {
     font-size: 13.5pt;
     color: @selected-fg;
-    background-color: @form-input-bg;
+    background-color: transparent;
     height: 35px;
 }
-div#cluster_list_header.row.list_header,
-div#running .row.list_header {
-    font-size: 14pt;
-    color: @notebook-fg;
-    background: @panel-header-bg;
-    background-color: @panel-header-bg;
-    border-bottom: 2px solid @divider;
-}
-div#cluster_list > div.list_item.row,
-div#cluster_list > div.list_item.row:hover {
-    background: @panel-bg;
-    background-color: @panel-bg;
-}
-div#clusters.tab-pane.active {
-    font-size: 15px;
-    margin-bottom: 8px;
-    height: 24px;
-    line-height: 24px;
-    padding: 4px 0 4px 0;
-}
+// div#cluster_list_header.row.list_header,
+// div#running .row.list_header {
+//     font-size: 14pt;
+//     color: @notebook-fg;
+//     background: @panel-header-bg;
+//     background-color: @panel-header-bg;
+//     border-bottom: 2px solid @divider;
+// }
+// div#cluster_list > div.list_item.row,
+// div#cluster_list > div.list_item.row:hover {
+//     background: @panel-bg;
+//     background-color: @panel-bg;
+// }
+// div#clusters.tab-pane.active {
+//     font-size: 15px;
+//     margin-bottom: 8px;
+//     height: 24px;
+//     line-height: 24px;
+//     padding: 4px 0 4px 0;
+// }
 #running .panel-group .panel .panel-heading {
     font-size: 14pt;
     color: @notebook-fg;
@@ -159,7 +159,7 @@ div.running_list_info.toolbar_info {
     content: "\f15b";
     position: relative;
     top: 0px;
-    color: @scroll-trough !important;
+    color: @notebook-fg !important;
 }
 #project_name {
     display: inline-flex;
@@ -237,10 +237,10 @@ body > #header {
 .list_header > div, .list_item > div {
     padding-left: 0px;
 }
-.list_header > div input,
-.list_item > div input {
-    top: 4px;
-}
+// .list_header > div input,
+// .list_item > div input {
+//     top: 4px;
+// }
 .list_header > div .item_link,
 .list_item > div .item_link {
     margin-left: -1px;
@@ -291,6 +291,7 @@ input#select-all.pull-left.tree-selector {
     margin-left: 7px;
     margin-right: 2px;
     margin-top: 2px;
+    top: 4px;
 }
 input[type="radio"],
 input[type="checkbox"] {
@@ -362,6 +363,7 @@ ul#tabs a {
 .nav > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
     background-color: @selected-third;
+    transition: 200ms ease;
 }
 .nav > li.disabled > a,
 .nav > li.disabled > a:hover {
@@ -401,11 +403,13 @@ div#ipython-main-app.container {
     margin-left: auto;
 }
 div#menubar-container {
-    width: 98%;
+    width: 100%;
+    width: @cell-width;
 }
 div#header-container {
-    width: 98%;
+    width: @cell-width;
 }
+
 /********************************************************/
 /************** NOTEBOOK PAGE HEADER AND NA *************/
 /********************************************************/
@@ -442,7 +446,7 @@ span.checkpoint_status, span.autosave_status {
 #menubar .navbar, .navbar-default {
     background-color: @notebook-bg;
     margin-bottom: 0px;
-    margin-top: 3px;
+    margin-top: 0px;
 }
 .navbar {
     border: none;
@@ -465,12 +469,12 @@ p.navbar-text.indicator_area {
 }
 .navbar-default .navbar-nav > li > a {
     font-family: @notebook-fontfamily;
-    font-size: 12.5pt; //@nb-fontsize;
+    font-size: @nb-fontsize;
     color: @notebook-fg;
     display: block;
     line-height: 1.5em;
-    padding-top: 9px;
-    padding-bottom: 6px;
+    padding-top: 14px;
+    padding-bottom: 11px;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -478,6 +482,7 @@ p.navbar-text.indicator_area {
     background-color: @selected-third;
     border-color: @dropdown-hover;
     line-height: 1.5em;
+    transition: 200ms ease;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -486,10 +491,15 @@ p.navbar-text.indicator_area {
     background-color: @navbar-selected;
     border-color: @navbar-selected;
     line-height: 1.5em;
+    transition: 200ms ease;
 }
 .navbar-nav > li > .dropdown-menu {
-    margin-top: 2px;
+    margin-top: 0px;
 }
+.navbar-nav {
+    margin: 0;
+}
+
 
 /****************************************/
 /********* ICONS and INDICATORS *********/
@@ -583,32 +593,42 @@ div.notification_widget.info,
 }
 #notification_trusted {
     font-family: @notebook-fontfamily;
-    font-size: 17px;
+    font-size: 17px !important;
     color: @item-blue;
     border: none;
     background: transparent;
     background-color: transparent;
     margin-bottom: 0px !important;
-    margin-top: 8px !important;
-    vertical-align: -webkit-baseline-middle !important;
+    margin-top: 11px !important;
+    vertical-align: middle !important;
 }
+// #notification_trusted.notification_widget.btn.btn-xs.navbar-btn {
+//     display: inherit;
+//     content: "T";
+// }
+// #notification_trusted:before {
+//     content: "T";
+// }
+// #notification_trusted > span {
+//     display: none;
+// }
 #modal_indicator {
     float: right !important;
     color: #4c8be2;
     background: @notebook-bg;
     background-color: @notebook-bg;
-    margin-top: 5px !important;
+    margin-top: 8px !important;
     margin-left: 0px;
 }
 #kernel_indicator {
-    font-size: 15px;
     float: right !important;
     color: @item-theme;
     background: @notebook-bg;
     background-color: @notebook-bg;
     border-left: 2px solid @item-theme;
+    padding-top: 0px;
     padding-bottom: 4px;
-    margin-top: 5px !important;
+    margin-top: 8px !important;
     margin-left: -2px;
 }
 #kernel_indicator .kernel_indicator_name {
@@ -623,27 +643,65 @@ div.notification_widget.info,
     padding-bottom: 0px;
 }
 
+/******************************************/
+/******** KERNEL RUNNING ANIMATION ********/
+/******************************************/
 .kernel_idle_icon:before {
     display: inline-block;
-    font: normal normal normal 16px/1 FontAwesome;
-    font-size: 16px;
+    font: normal normal normal 22px/1 FontAwesome;
+    font-size: 22px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "\f10c";
+    cursor: pointer;
+    margin-left: 0px !important;
+    opacity: 0.7;
     vertical-align: middle;
-    margin-left: -3px;
+    margin-top: 1px;
+    content: "\f1db";
 }
 .kernel_busy_icon:before {
     display: inline-block;
-    font: normal normal normal 16px/1 FontAwesome;
-    font-size: 16px;
+    font: normal normal normal 22px/1 FontAwesome;
+    font-size: 22px;
+    -webkit-animation: pulsate 2s infinite ease-out;
+    animation: pulsate 2s infinite ease-out;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    margin-left: 0px !important;
     vertical-align: middle;
-    margin-left: -3px;
+    margin-top: 1px;
+    content: "\f111";
 }
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(1.0, 1.0); opacity: 0.8;}
+    8% {-webkit-transform: scale(1.0, 1.0); opacity: 0.8;}
+    50% {-webkit-transform: scale(0.75, 0.75); opacity: 0.3;}
+    92% {-webkit-transform: scale(1.0, 1.0); opacity: 0.8;}
+    100% {-webkit-transform: scale(1.0, 1.0); opacity: 0.8;}
+}
+// .kernel_idle_icon:before {
+//     display: inline-block;
+//     font: normal normal normal 16px/1 FontAwesome;
+//     font-size: 16px;
+//     text-rendering: auto;
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+//     content: "\f10c";
+//     vertical-align: middle;
+//     margin-left: -3px;
+// }
+// .kernel_busy_icon:before {
+//     display: inline-block;
+//     font: normal normal normal 16px/1 FontAwesome;
+//     font-size: 16px;
+//     text-rendering: auto;
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+//     vertical-align: middle;
+//     margin-left: -3px;
+//     content: "\f111";
+// }
 i#kernel_indicator_icon {
     vertical-align: sub;
 }
@@ -714,6 +772,7 @@ i.fa.fa-icon {
     background: @dropdown-bg;
     line-height: 1;
 }
+
 .dropdown-menu:hover {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
@@ -741,6 +800,7 @@ i.fa.fa-icon {
     background-color: @dropdown-hover;
     background: @dropdown-hover;
     border-color: @dropdown-hover;
+    transition: 200ms ease;
 }
 .dropdown-menu .divider {
     height: 1px;
@@ -754,6 +814,7 @@ i.fa.fa-icon {
     margin-top: -2px;
     margin-left: 0px;
     padding-top: 0px;
+    transition: 200ms ease;
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
@@ -814,6 +875,7 @@ div.kse-dropdown > .dropdown-menu,
     background-image: none;
     box-shadow: none !important;
     border-radius: 2px;
+    transition: 200ms ease;
 }
 .btn:active,
 .btn.active,
@@ -842,6 +904,7 @@ div.kse-dropdown > .dropdown-menu,
     background-image: none;
     box-shadow: none !important;
     border-radius: 2px;
+    transition: 200ms ease;
 }
 .item_buttons > .btn,
 .item_buttons > .btn-group,
@@ -858,6 +921,7 @@ div.kse-dropdown > .dropdown-menu,
     background: @button-panel-hover;
     background-color: @button-panel-hover;
     border: 1px solid @button-panel-hover;
+    transition: 200ms ease;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -958,6 +1022,7 @@ fieldset[disabled] .btn-default.focus {
     background: darken(@button-bg, 1%);
     background-color: darken(@button-bg, 1%);
     border-color: darken(@button-bg, 1%);
+    transition: 200ms ease;
 }
 .input-group-addon {
     padding: 2px 5px;
@@ -1006,6 +1071,7 @@ fieldset[disabled] .btn-default.focus {
     border: none; //1px solid @button-panel-hover;
     margin: 2px;
     font-size: inherit;
+    transition: 200ms ease;
 }
 div.modal .btn-group > .btn:first-child {
     background: @button-panel-bg;
@@ -1019,6 +1085,7 @@ div.modal .btn-group > .btn:first-child:hover {
     background: @button-panel-hover;
     background-color: @button-panel-hover;
     border: 1px solid @button-panel-hover;
+    transition: 200ms ease;
 }
 div.modal > button,
 div.modal-footer > button {
@@ -1031,6 +1098,7 @@ div.modal-footer > button:hover  {
     background: @button-panel-hover;
     background-color: @button-panel-hover;
     border-color: @button-panel-hover;
+    transition: 200ms ease;
 }
 
 /**************************************************/
@@ -1086,7 +1154,7 @@ div.modal-footer > button:hover  {
 .modal-backdrop,
 .modal-backdrop.in {
     opacity: 0.7;
-    background-color: @df-header-border; // @table-border;
+    background-color: @df-header-border;
 }
 div.panel,
 div.panel-default,
@@ -1104,8 +1172,8 @@ div.panel > .panel-heading,
 div.panel-default > .panel-heading {
     font-size: 14pt;
     color: @notebook-fg;
-    background: @panel-header-bg; //@df-header-bg;
-    background-color: @panel-header-bg; //@df-header-bg;
+    background: @panel-header-bg;
+    background-color: @panel-header-bg;
     border: 0;
 }
 .modal .modal-dialog {
@@ -1153,21 +1221,29 @@ select.form-control.select-xs {
 }
 /* Chrome/Opera/Safari */
 ::-webkit-input-placeholder {
-  color: @disabled; //@unemphasize-fg;
+  color: @disabled;
 }
 /* Firefox 19+ */
 ::-moz-placeholder {
-  color: @disabled; //@unemphasize-fg;
+  color: @disabled;
 }
 /* IE 10+ */
 :-ms-input-placeholder {
-  color: @disabled; //@unemphasize-fg;
+  color: @disabled;
 }
 /* Firefox 18- */
 :-moz-placeholder {
-  color: @disabled; //@unemphasize-fg;
+  color: @disabled;
 }
-
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+    border-left: 2px solid @dropdown-border !important;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control:focus {
+    border-left-color: @item-theme !important;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @prompt-line !important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @prompt-line !important;
+}
 /****************************************/
 /************** SCROLL BARS *************/
 /****************************************/
@@ -1202,15 +1278,3 @@ HTML, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
 }
-
-// ::-webkit-scrollbar-thumb {
-//     background-color: #ffffff;
-//     background-image:
-//         -webkit-gradient(linear, 40% 0%, 75% 86%,
-//             from(darken(@scrollbar, 4%)),
-//             color-stop(0.5, lighten(@scrollbar, 6%)),
-//             to(darken(@scrollbar, 4%)));
-//     min-height: 100px;
-//     border-radius: 3px;
-//     width: 10px;
-// }

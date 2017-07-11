@@ -11,7 +11,7 @@
 /* monokai notebook colors */
 @notebook-bg:           #1E1E1E;
 @notebook-fg:           #F8F8F0;
-@notebook-base:         #282828;
+@notebook-base:         lighten(#282828, 2%);
 
 /* jtplot figure style */
 @axisFace:              #232323;
@@ -46,9 +46,9 @@
 @nb-name-hover:         @green;
 
 /* cell border colors */
-@cc-border-selected:    lighten(@selected-bg, 3%);
+@cc-border-selected:    lighten(@selected-bg, 5%);
 @cc-border-edit:        darken(@selected-bg, 8%);
-@tc-border-selected:    lighten(@selected-bg, 3%);
+@tc-border-selected:    lighten(@selected-bg, 5%);
 @tc-border-edit:        darken(@selected-bg, 8%);
 
 /* menus, dividers, prompt-borders, brackets */
@@ -128,7 +128,7 @@
 @cm-selected:           #49483E;
 @cm-gutters:            @cm-selected;
 @cm-linenumber:         @disabled;
-@cm-comment:            #49483E;
+@cm-comment:            #75715E; //#49483E;
 @cm-atom:               @violet;
 @cm-number:             @violet;
 @cm-property:           @green;

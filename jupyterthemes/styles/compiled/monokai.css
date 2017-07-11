@@ -42,8 +42,8 @@ div#cluster_list_header.row.list_header,
 div#running .row.list_header {
  font-size: 14pt;
  color: #f8f8f0;
- background: #282828;
- background-color: #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
  border-bottom: 2px solid #232323;
 }
 div#cluster_list > div.list_item.row,
@@ -62,8 +62,8 @@ div#clusters.tab-pane.active {
  font-size: 14pt;
  color: #f8f8f0;
  padding: 8px 8px;
- background: #282828;
- background-color: #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
 }
 #running .panel-group .panel .panel-heading a {
  font-size: 14pt;
@@ -153,7 +153,7 @@ div.running_list_info.toolbar_info {
  content: "\f15b";
  position: relative;
  top: 0px;
- color: #2d2d2d !important;
+ color: #f8f8f0 !important;
 }
 #project_name {
  display: inline-flex;
@@ -259,6 +259,15 @@ body > #header {
  width: 20%;
  margin: 6px 0 0;
  margin-top: 1px;
+}
+.list_header > div .item_link,
+.list_item > div .item_link {
+ margin-left: -1px;
+ vertical-align: middle;
+ line-height: 22px;
+ font-size: 10.5pt;
+ display: inline-table;
+ position: static;
 }
 #button-select-all {
  height: 34px;
@@ -431,7 +440,7 @@ div#menubar {
 .navbar-default {
  background-color: #1e1e1e;
  margin-bottom: 0px;
- margin-top: 3px;
+ margin-top: 0px;
 }
 .navbar {
  border: none;
@@ -454,12 +463,12 @@ p.navbar-text.indicator_area {
 }
 .navbar-default .navbar-nav > li > a {
  font-family: sans-serif;
- font-size: 12.5pt;
+ font-size: 13pt;
  color: #f8f8f0;
  display: block;
  line-height: 1.5em;
- padding-top: 9px;
- padding-bottom: 6px;
+ padding-top: 14px;
+ padding-bottom: 11px;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -477,7 +486,10 @@ p.navbar-text.indicator_area {
  line-height: 1.5em;
 }
 .navbar-nav > li > .dropdown-menu {
- margin-top: 2px;
+ margin-top: 0px;
+}
+.navbar-nav {
+ margin: 0;
 }
 div.notification_widget.info,
 .notification_widget.info,
@@ -554,6 +566,8 @@ div.notification_widget.info,
  -moz-osx-font-smoothing: grayscale;
  content: "\f10c";
  vertical-align: middle;
+ position: static;
+ display: inherit;
 }
 .item_buttons .running-indicator {
  padding-top: 4px;
@@ -564,32 +578,32 @@ div.notification_widget.info,
 }
 #notification_trusted {
  font-family: sans-serif;
- font-size: 17px;
+ font-size: 17px !important;
  color: #66d9ef;
  border: none;
  background: transparent;
  background-color: transparent;
  margin-bottom: 0px !important;
- margin-top: 8px !important;
- vertical-align: -webkit-baseline-middle !important;
+ margin-top: 11px !important;
+ vertical-align: middle !important;
 }
 #modal_indicator {
  float: right !important;
  color: #4c8be2;
  background: #1e1e1e;
  background-color: #1e1e1e;
- margin-top: 5px !important;
+ margin-top: 8px !important;
  margin-left: 0px;
 }
 #kernel_indicator {
- font-size: 15px;
  float: right !important;
  color: #a6e22e;
  background: #1e1e1e;
  background-color: #1e1e1e;
  border-left: 2px solid #a6e22e;
+ padding-top: 0px;
  padding-bottom: 4px;
- margin-top: 6px !important;
+ margin-top: 8px !important;
  margin-left: -2px;
 }
 #kernel_indicator .kernel_indicator_name {
@@ -605,24 +619,50 @@ div.notification_widget.info,
 }
 .kernel_idle_icon:before {
  display: inline-block;
- font: normal normal normal 17px/1 FontAwesome;
- font-size: 17px;
+ font: normal normal normal 22px/1 FontAwesome;
+ font-size: 22px;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
- content: "\f10c";
+ cursor: pointer;
+ margin-left: 0px !important;
+ opacity: 0.7;
  vertical-align: middle;
- margin-left: -3px;
+ content: "\f1db";
 }
 .kernel_busy_icon:before {
  display: inline-block;
- font: normal normal normal 17px/1 FontAwesome;
- font-size: 17px;
+ font: normal normal normal 22px/1 FontAwesome;
+ font-size: 22px;
+ -webkit-animation: pulsate 2s infinite ease-out;
+ animation: pulsate 2s infinite ease-out;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
+ cursor: pointer;
+ margin-left: 0px !important;
  vertical-align: middle;
- margin-left: -3px;
+ content: "\f111";
+}
+@-webkit-keyframes pulsate {
+ 0% {
+  -webkit-transform: scale(1.0,1.0);
+  opacity: 0.8;
+ }
+ 8% {
+  -webkit-transform: scale(1.0,1.0);
+  opacity: 0.8;
+ }
+ 50% {
+  -webkit-transform: scale(0.75,0.75);
+  opacity: 0.3;
+ }
+ 92% {
+  -webkit-transform: scale(1.0,1.0);
+  opacity: 0.8;
+ }
+ 100% {
+  -webkit-transform: scale(1.0,1.0);
+  opacity: 0.8;
+ }
 }
 i#kernel_indicator_icon {
  vertical-align: sub;
@@ -819,9 +859,9 @@ div.kse-dropdown > .dropdown-menu,
 .item_buttons > .btn-group,
 .item_buttons > .input-group {
  margin-left: 5px;
- background: #282828;
- background-color: #282828;
- border: 1px solid #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
+ border: 1px solid #2d2d2d;
 }
 .item_buttons > .btn:hover,
 .item_buttons > .btn-group:hover,
@@ -950,8 +990,8 @@ fieldset[disabled] .btn-default.focus {
  position: relative;
  font-size: inherit;
  white-space: nowrap;
- background: #282828;
- background-color: #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
  border: none;
 }
 .input-group-btn:hover {
@@ -961,8 +1001,8 @@ fieldset[disabled] .btn-default.focus {
 }
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .btn-group {
- background: #282828;
- background-color: #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
  border: none;
  margin: 2px;
  font-size: inherit;
@@ -976,9 +1016,9 @@ fieldset[disabled] .btn-default.focus {
  font-size: inherit;
 }
 div.modal .btn-group > .btn:first-child {
- background: #282828;
- background-color: #282828;
- border: 1px solid #252525;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
+ border: 1px solid #2a2a2a;
  margin-top: 0px !important;
  margin-left: 0px;
  margin-bottom: 2px;
@@ -990,9 +1030,9 @@ div.modal .btn-group > .btn:first-child:hover {
 }
 div.modal > button,
 div.modal-footer > button {
- background: #282828;
- background-color: #282828;
- border-color: #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
+ border-color: #2d2d2d;
 }
 div.modal > button:hover,
 div.modal-footer > button:hover {
@@ -1004,8 +1044,8 @@ div.modal-footer > button:hover {
  font-family: sans-serif;
  font-size: 12.0pt;
  position: relative;
- background: #282828;
- background-color: #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
  border: none;
  border-radius: 1px;
  background-clip: padding-box;
@@ -1015,8 +1055,8 @@ div.modal-footer > button:hover {
  font-family: sans-serif;
  font-size: 13pt;
  color: #f8f8f0;
- background: #282828;
- background-color: #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
  border-color: #232323;
  padding: 12px;
  min-height: 16.4286px;
@@ -1068,8 +1108,8 @@ div.panel > .panel-heading,
 div.panel-default > .panel-heading {
  font-size: 14pt;
  color: #f8f8f0;
- background: #282828;
- background-color: #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
  border: 0;
 }
 .modal .modal-dialog {
@@ -1228,8 +1268,8 @@ div.CodeMirror-sizer {
  margin-top: 0px;
 }
 div.cell.selected:before {
- background: #515045;
- border: 2px solid #515045;
+ background: #57564a;
+ border: 2px solid #57564a;
  border-top-left-radius: 2px;
  border-bottom-left-radius: 4px;
  position: absolute;
@@ -1263,7 +1303,7 @@ div.cell.selected.jupyter-soft-selected {
  border-radius: 6px;
 }
 div.cell.selected.jupyter-soft-selected {
- border-left-color: #515045;
+ border-left-color: #57564a;
  border-color: #1e1e1e;
  padding-left: 7px;
  border-radius: 6px;
@@ -1329,7 +1369,7 @@ div.cell.code_cell .input_prompt {
 }
 div.cell.selected .prompt {
  top: 0;
- border-left: 5px solid #515045;
+ border-left: 5px solid #57564a;
  border-radius: 2px;
 }
 .edit_mode div.cell.selected .prompt {
@@ -1388,14 +1428,14 @@ div.output_subarea {
  flex: 1;
 }
 div.btn.btn-default.output_collapsed {
+ background: #202020;
+ background-color: #202020;
+ border-color: #202020;
+}
+div.btn.btn-default.output_collapsed:hover {
  background: #1b1b1b;
  background-color: #1b1b1b;
  border-color: #1b1b1b;
-}
-div.btn.btn-default.output_collapsed:hover {
- background: #161616;
- background-color: #161616;
- border-color: #161616;
 }
 div.prompt.output_prompt {
  font-family: monospace, monospace;
@@ -1442,7 +1482,7 @@ div.cell.code_cell .output_prompt {
 }
 div.cell.selected .output_prompt,
 div.cell.selected .out_prompt_overlay.prompt {
- border-left: 5px solid #515045;
+ border-left: 5px solid #57564a;
  border-radius: 0px !important;
 }
 .edit_mode div.cell.selected .output_prompt,
@@ -1521,8 +1561,8 @@ div.edit_mode div.text_cell.unrendered {
  border-radius: 0px;
 }
 div.cell.text_cell.selected:before {
- background: #515045;
- border: 2px solid #515045;
+ background: #57564a;
+ border: 2px solid #57564a;
  border-top-left-radius: 2px;
  border-bottom-left-radius: 2px;
  position: absolute;
@@ -1575,7 +1615,7 @@ div.cell.text_cell.rendered .input_prompt {
 }
 div.cell.text_cell.rendered.selected .input_prompt {
  top: 0;
- border-left: 5px solid #515045;
+ border-left: 5px solid #57564a;
  border-radius: 2px;
  border-right: 2px solid #ae81ff;
 }
@@ -1809,9 +1849,9 @@ div.widget-area a:focus {
 }
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn,
 div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
- background: #252525;
- background-color: #252525;
- border: 2px solid #252525 !important;
+ background: #2a2a2a;
+ background-color: #2a2a2a;
+ border: 2px solid #2a2a2a !important;
  font-size: inherit;
  z-index: 0;
 }
@@ -2072,9 +2112,9 @@ label#Keyword-Filter {
 }
 .input-group .nbext-list-btn-add,
 .input-group-btn:last-child > .btn-group > .btn {
- background: #282828;
- background-color: #282828;
- border-color: #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
+ border-color: #2d2d2d;
 }
 .input-group .nbext-list-btn-add:hover,
 .input-group-btn:last-child > .btn-group > .btn:hover {
@@ -2083,9 +2123,9 @@ label#Keyword-Filter {
  border-color: #212121;
 }
 #notebook-container > div.cell.code_cell.rendered.selected > div.widget-area > div.widget-subarea > div > div.widget_item.btn-group > button.btn.btn-default.dropdown-toggle.widget-combo-carrot-btn {
- background: #282828;
- background-color: #282828;
- border-color: #282828;
+ background: #2d2d2d;
+ background-color: #2d2d2d;
+ border-color: #2d2d2d;
 }
 #notebook-container > div.cell.code_cell.rendered.selected > div.widget-area > div.widget-subarea > div > div.widget_item.btn-group > button.btn.btn-default.dropdown-toggle.widget-combo-carrot-btn:hover {
  background: #212121;
@@ -2307,8 +2347,8 @@ body > div.modal.cmd-palette.in > div {
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
  color: #ffffff;
- background-color: #515045;
- border-color: #515045;
+ background-color: #57564a;
+ border-color: #57564a;
  border-style: solid;
  border-width: 1px;
  border-radius: 0px;
@@ -2343,8 +2383,8 @@ span.shortcut_key {
 }
 div#short-key-bindings-intro.well,
 .well {
- background-color: #282828;
- border: 1px solid #282828;
+ background-color: #2d2d2d;
+ border: 1px solid #2d2d2d;
  color: #f8f8f0;
  border-radius: 2px;
  -webkit-box-shadow: none;
@@ -2574,7 +2614,7 @@ div.CodeMirror-linenumber,
  border-left: 2px solid #0095ff !important;
 }
 .cm-s-ipython span.cm-comment {
- color: #49483e;
+ color: #75715e;
  font-style: italic;
 }
 .cm-s-ipython span.cm-atom {
@@ -2676,7 +2716,7 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
  color: #fd971f;
 }
 .cm-s-default span.cm-comment {
- color: #49483e;
+ color: #75715e;
 }
 .cm-s-default .cm-tag {
  color: #529b2f;
@@ -2762,7 +2802,7 @@ div#maintoolbar {
     MathJax.Hub.Config({
         "HTML-CSS": {
             /*preferredFont: "TeX",*/
-            availableFonts: ["TeX", "STIX"],
+            /*availableFonts: ["TeX", "STIX"],*/
             styles: {
                 scale: 110,
                 ".MathJax_Display": {

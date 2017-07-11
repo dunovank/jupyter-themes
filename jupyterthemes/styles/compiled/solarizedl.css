@@ -153,7 +153,7 @@ div.running_list_info.toolbar_info {
  content: "\f15b";
  position: relative;
  top: 0px;
- color: #e1d6b4 !important;
+ color: #586e75 !important;
 }
 #project_name {
  display: inline-flex;
@@ -259,6 +259,15 @@ body > #header {
  width: 20%;
  margin: 6px 0 0;
  margin-top: 1px;
+}
+.list_header > div .item_link,
+.list_item > div .item_link {
+ margin-left: -1px;
+ vertical-align: middle;
+ line-height: 22px;
+ font-size: 10.5pt;
+ display: inline-table;
+ position: static;
 }
 #button-select-all {
  height: 34px;
@@ -431,7 +440,7 @@ div#menubar {
 .navbar-default {
  background-color: #eee8d5;
  margin-bottom: 0px;
- margin-top: 3px;
+ margin-top: 0px;
 }
 .navbar {
  border: none;
@@ -454,12 +463,12 @@ p.navbar-text.indicator_area {
 }
 .navbar-default .navbar-nav > li > a {
  font-family: sans-serif;
- font-size: 12.5pt;
+ font-size: 13pt;
  color: #586e75;
  display: block;
  line-height: 1.5em;
- padding-top: 9px;
- padding-bottom: 6px;
+ padding-top: 14px;
+ padding-bottom: 11px;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -477,7 +486,10 @@ p.navbar-text.indicator_area {
  line-height: 1.5em;
 }
 .navbar-nav > li > .dropdown-menu {
- margin-top: 2px;
+ margin-top: 0px;
+}
+.navbar-nav {
+ margin: 0;
 }
 div.notification_widget.info,
 .notification_widget.info,
@@ -554,6 +566,8 @@ div.notification_widget.info,
  -moz-osx-font-smoothing: grayscale;
  content: "\f10c";
  vertical-align: middle;
+ position: static;
+ display: inherit;
 }
 .item_buttons .running-indicator {
  padding-top: 4px;
@@ -564,32 +578,32 @@ div.notification_widget.info,
 }
 #notification_trusted {
  font-family: sans-serif;
- font-size: 17px;
+ font-size: 17px !important;
  color: #268bd2;
  border: none;
  background: transparent;
  background-color: transparent;
  margin-bottom: 0px !important;
- margin-top: 8px !important;
- vertical-align: -webkit-baseline-middle !important;
+ margin-top: 11px !important;
+ vertical-align: middle !important;
 }
 #modal_indicator {
  float: right !important;
  color: #4c8be2;
  background: #eee8d5;
  background-color: #eee8d5;
- margin-top: 5px !important;
+ margin-top: 8px !important;
  margin-left: 0px;
 }
 #kernel_indicator {
- font-size: 15px;
  float: right !important;
  color: #93a1a1;
  background: #eee8d5;
  background-color: #eee8d5;
  border-left: 2px solid #93a1a1;
+ padding-top: 0px;
  padding-bottom: 4px;
- margin-top: 6px !important;
+ margin-top: 8px !important;
  margin-left: -2px;
 }
 #kernel_indicator .kernel_indicator_name {
@@ -605,24 +619,50 @@ div.notification_widget.info,
 }
 .kernel_idle_icon:before {
  display: inline-block;
- font: normal normal normal 17px/1 FontAwesome;
- font-size: 17px;
+ font: normal normal normal 22px/1 FontAwesome;
+ font-size: 22px;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
- content: "\f10c";
+ cursor: pointer;
+ margin-left: 0px !important;
+ opacity: 0.7;
  vertical-align: middle;
- margin-left: -3px;
+ content: "\f1db";
 }
 .kernel_busy_icon:before {
  display: inline-block;
- font: normal normal normal 17px/1 FontAwesome;
- font-size: 17px;
+ font: normal normal normal 22px/1 FontAwesome;
+ font-size: 22px;
+ -webkit-animation: pulsate 2s infinite ease-out;
+ animation: pulsate 2s infinite ease-out;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
+ cursor: pointer;
+ margin-left: 0px !important;
  vertical-align: middle;
- margin-left: -3px;
+ content: "\f111";
+}
+@-webkit-keyframes pulsate {
+ 0% {
+  -webkit-transform: scale(1.0,1.0);
+  opacity: 0.8;
+ }
+ 8% {
+  -webkit-transform: scale(1.0,1.0);
+  opacity: 0.8;
+ }
+ 50% {
+  -webkit-transform: scale(0.75,0.75);
+  opacity: 0.3;
+ }
+ 92% {
+  -webkit-transform: scale(1.0,1.0);
+  opacity: 0.8;
+ }
+ 100% {
+  -webkit-transform: scale(1.0,1.0);
+  opacity: 0.8;
+ }
 }
 i#kernel_indicator_icon {
  vertical-align: sub;
@@ -2762,7 +2802,7 @@ div#maintoolbar {
     MathJax.Hub.Config({
         "HTML-CSS": {
             /*preferredFont: "TeX",*/
-            availableFonts: ["TeX", "STIX"],
+            /*availableFonts: ["TeX", "STIX"],*/
             styles: {
                 scale: 110,
                 ".MathJax_Display": {

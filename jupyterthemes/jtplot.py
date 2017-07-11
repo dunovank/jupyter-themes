@@ -115,6 +115,7 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
 
     # extract style and color info for theme
     styleMap, clist = get_theme_style(theme)
+    print(clist)
 
     # extract style variables
     figureFace = styleMap['figureFace']
@@ -158,8 +159,12 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
     # update matplotlib with rcdict (incl. context, font, & style)
     mpl.rcParams.update(rcdict)
 
-    # set color cycle to jt-style color list
-    mpl.rcParams['axes.prop_cycle'] = cycler(color=clist)
+    try:
+        # set color cycle to jt-style color list
+        mpl.rcParams['axes.prop_cycle'] = cycler(color=clist)
+    except Exception:
+        pass
+
     # replace default blue, green, etc. with jt colors
     for code, color in zip("bgrmyck", clist[:7]):
         rgb = mpl.colors.colorConverter.to_rgb(color)
@@ -212,8 +217,6 @@ def get_theme_style(theme):
     styleMap, clist = get_default_jtstyle()
     if theme == 'default':
         return styleMap, clist
-
-    # syntaxVars = ['@cm-atom', '@cm-number', '@cm-property', '@cm-attribute', '@cm-keyword', '@cm-string', '@cm-meta']
 
     syntaxVars = ['@yellow:', '@orange:', '@red:', '@magenta:', '@violet:', '@blue:', '@cyan:', '@green:']
 
@@ -268,48 +271,3 @@ def reset():
     mpl.rcParams.update(mpl.rcParamsDefault)
     mpl.rcParams['figure.facecolor'] = 'white'
     mpl.rcParams['axes.facecolor'] = 'white'
-
-
-# #################################################################
-# #       COPIED FROM SEABORN palettes.py lines 416 - 424         #
-# #################################################################
-# def _color_to_rgb(color, input):
-#     """Add some more flexibility to color choices."""
-#     import colorsys
-#     if input == "hls":
-#         color = colorsys.hls_to_rgb(*color)
-#     elif input == "husl":
-#         color = husl.husl_to_rgb(*color)
-#     return color
-
-# #################################################################
-# #       COPIED FROM SEABORN palettes.py lines 701 - 726         #
-# #################################################################
-# def blend_palette(colors, n_colors=6, as_cmap=False, input="rgb"):
-#     """Make a palette that blends between a list of colors.
-#
-#     Parameters
-#     ----------
-#     colors : sequence of colors in various formats interpreted by ``input``
-#         hex code, html color name, or tuple in ``input`` space.
-#     n_colors : int, optional
-#         Number of colors in the palette.
-#     as_cmap : bool, optional
-#         If True, return as a matplotlib colormap instead of list.
-#
-#     Returns
-#     -------
-#     palette or cmap : seaborn color palette or matplotlib colormap
-#         List-like object of colors as RGB tuples, or colormap object that
-#         can map continuous values to colors, depending on the value of the
-#         ``as_cmap`` parameter.
-#
-#     """
-#     colors = [_color_to_rgb(color, input) for color in colors]
-#     name = "blend"
-#     pal = mpl.colors.LinearSegmentedColormap.from_list(name, colors)
-#     if not as_cmap:
-#         pal = _ColorPalette(pal(np.linspace(0, 1, n_colors)))
-#     return pal
-
-#################################################################

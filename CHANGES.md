@@ -1,5 +1,18 @@
 ### Release Notes
 
+#### **v0.16.5**
+- improved monokai comment visibility
+- solarized style improvements (l & d flavors)
+- improved kernel-busy animation
+- moved kernel-idle/busy code from extras.less to notebook.less
+- notebook-fontsize (-nfs) adjusts header
+- minor cosmetic improvements
+- fixed matplotlib error in jtplot
+- added check_dependencies() fx to prevent unnecessary dependency installs
+
+#### **v0.16.4:**
+- fixed pulse kernel-busy indicator
+
 #### **v0.16.4:**
 - fixed pulse kernel-busy indicator
 

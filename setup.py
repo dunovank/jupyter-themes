@@ -5,7 +5,7 @@ from itertools import chain
 
 major = 0
 minor = 16
-patch = 4
+patch = 5
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v' + version])
@@ -36,6 +36,44 @@ fontsdata = chain.from_iterable([['/'.join(f.split('/')[1:])
 
 datafiles[pkgname].extend(fontsdata)
 
+
+# MODIFIED FROM Seaborn/setup.py
+# https://github.com/mwaskom/seaborn/blob/master/setup.py
+try:
+    from setuptools import setup
+    _has_setuptools = True
+except ImportError:
+    from distutils.core import setup
+
+def check_dependencies():
+    install_requires = []
+    try:
+        import IPython
+        assert(float(IPython.__version__.split('.')[0])<6.)
+    except Exception:
+        install_requires.append('ipython<6.0')
+    try:
+        import jupyter
+    except ImportError:
+        install_requires.append('jupyter')
+    try:
+        import lesscpy
+        assert(float(lesscpy.__version__[2:])>=12.)
+    except Exception:
+        install_requires.append('lesscpy>=0.12.0')
+    try:
+        import matplotlib
+    except ImportError:
+        install_requires.append('matplotlib')
+    try:
+        import seaborn
+    except ImportError:
+        install_requires.append('seaborn')
+    return install_requires
+
+install_requires = check_dependencies()
+# END MODIFIED CODE FROM Seaborn/setup.py
+
 setup(
     name='jupyterthemes',
     version=version,
@@ -61,8 +99,8 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    install_requires=['ipython<6.0', 'jupyter', 'jupyter_core', 'lesscpy>=0.12.0', 'seaborn'],
-    keywords=['jupyter', 'ipython', 'notebook', 'themes', 'css'],
+    install_requires=install_requires,
+    keywords=['jupyter', 'python', 'ipython', 'notebook', 'theme', 'less', 'css'],
     entry_points={
         'console_scripts': [
             'jupyter-theme = jupyterthemes:main',
