@@ -6,6 +6,7 @@ from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
 import lesscpy
 from IPython.core.display import HTML
 from glob import glob
+from tempfile import mkstemp
 
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -14,8 +15,8 @@ package_dir = os.path.dirname(os.path.realpath(__file__))
 user_dir = os.path.join(os.path.expanduser('~'), '.jupyter-themes')
 
 # path to save tempfile with style_less before reading/compiling
-tempfile = os.path.join(package_dir, 'tempfile.less')
-vimtemp = os.path.join(package_dir, 'vimtemp.less')
+_, tempfile = mkstemp('.less')
+_, vimtemp = mkstemp('.less')
 
 # path to install custom.css file (~/.jupyter/custom/)
 jupyter_home = jupyter_config_dir()
@@ -74,7 +75,7 @@ def write_final_css(style_css):
 
 
 def remove_temp_file():
-    # remove tempfile.less from package_dir
+    # remove tempfile.less
     os.remove(tempfile)
 
 
