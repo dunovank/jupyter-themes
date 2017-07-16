@@ -53,9 +53,9 @@ def check_dependencies():
     except Exception:
         install_requires.append('ipython<6.0')
     try:
-        import jupyter
+        import jupyter_core
     except ImportError:
-        install_requires.append('jupyter')
+        install_requires.append('jupyter_core')
     try:
         import lesscpy
         assert(float(lesscpy.__version__[2:])>=12.)
@@ -65,10 +65,6 @@ def check_dependencies():
         import matplotlib
     except ImportError:
         install_requires.append('matplotlib')
-    try:
-        import seaborn
-    except ImportError:
-        install_requires.append('seaborn')
     return install_requires
 
 install_requires = check_dependencies()

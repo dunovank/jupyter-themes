@@ -46,7 +46,7 @@ pip install --upgrade jupyterthemes
 ```
 
 ### Known issues
-- **refreshing / removing / resetting:** depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)).
+- **refreshing / removing / resetting:** depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)). At the very least you'll need to refresh your browser window (usually `cmd+r` or `ctrl+r`).
 - **install issue:** if you get an error saying `jt` is not recognized, try [this](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-300688587) fix.
 - **slow render when scrolling:** fix available [here](https://github.com/dunovank/jupyter-themes/issues/117#issuecomment-296391443)
 - **for best results:** use notebook>=5.0 (`pip install --upgrade notebook`)
@@ -145,9 +145,31 @@ jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88%
 ### Set Plotting Style (from within notebook)
 `jtplot.style()` makes changes to matplotlib's rcParams dictionary so that figure aesthetics match those of a chosen jupyterthemes style. Note, these commands do not need to be re-run every time you generate a new plot, just once at the beginning of your notebook or whenever style changes are desired after that.
 
-For instance, I include the following two lines in my `~/.ipython/profile_default/startup/startup.ipy` file so this is done  automatically whenever I open a new notebook:
+```py
+def style(theme=None, context='paper', grid=True, gridlines='-', ticks=False, spines=True, fscale=1.2, figsize=(8., 7.)):
+    """
+    main function for styling matplotlib according to theme
 
+    ::Arguments::
+        theme (str): 'oceans16', 'grade3', 'chesterish', 'onedork', 'monokai', 'solarizedl', 'solarizedd'. If no theme name supplied the currently installed notebook theme will be used.
 
+        context (str): 'paper' (Default), 'notebook', 'talk', or 'poster'
+
+        grid (bool): removes axis grid lines if False
+
+        gridlines (str): set grid linestyle (e.g., '--' for dashed grid)
+
+        ticks (bool): makes major x and y ticks visible if True
+
+        spines (bool): removes x (bottom) and y (left) axis spines if False
+
+        fscale (float): scale font size for axes labels, legend, etc.
+
+        figsize (tuple): default figure size of matplotlib figures
+    """
+```
+
+**Pro-tip**: Include the following two lines in `~/.ipython/profile_default/startup/startup.ipy` file to set plotting style automatically whenever you start a notebook:
 ```py
 # import jtplot submodule from jupyterthemes
 from jupyterthemes import jtplot
@@ -157,7 +179,7 @@ from jupyterthemes import jtplot
 jtplot.style()
 ```
 
-Some additional examples for setting "context" (taken from [seaborn](https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements-with-plotting-context-and-set-context)) and controlling various figure properties...
+Some additional examples for setting "context" (borrowed from [seaborn](https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements-with-plotting-context-and-set-context)), controlling various figure properties, etc.
 
 ```py
 # import jtplot
@@ -169,7 +191,7 @@ jtplot.style('onedork')
 
 # set "context" (paper, notebook, talk, or poster)
 # & font scale (scalar applied to labels, legend, etc.)
-jtplot.style('grade3', context='paper', fscale=1.4)
+jtplot.style('grade3', context='paper', fscale=1.4, spines=False, gridlines='--')
 
 # turn on X- and Y-axis tick marks (default=False)
 # and turn off the axis grid lines (default=True)

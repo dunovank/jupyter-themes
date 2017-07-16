@@ -35,28 +35,8 @@ a:focus {
 div#notebook_list_header.row.list_header {
  font-size: 13.5pt;
  color: #bbc2e0;
- background-color: #262c36;
+ background-color: transparent;
  height: 35px;
-}
-div#cluster_list_header.row.list_header,
-div#running .row.list_header {
- font-size: 14pt;
- color: #899ab8;
- background: #2e3642;
- background-color: #2e3642;
- border-bottom: 2px solid rgba(148,204,114,.3);
-}
-div#cluster_list > div.list_item.row,
-div#cluster_list > div.list_item.row:hover {
- background: #384152;
- background-color: #384152;
-}
-div#clusters.tab-pane.active {
- font-size: 15px;
- margin-bottom: 8px;
- height: 24px;
- line-height: 24px;
- padding: 4px 0 4px 0;
 }
 #running .panel-group .panel .panel-heading {
  font-size: 14pt;
@@ -238,10 +218,6 @@ body > #header {
 .list_item > div {
  padding-left: 0px;
 }
-.list_header > div input,
-.list_item > div input {
- top: 4px;
-}
 .list_header > div .item_link,
 .list_item > div .item_link {
  margin-left: -1px;
@@ -292,6 +268,7 @@ input#select-all.pull-left.tree-selector {
  margin-left: 7px;
  margin-right: 2px;
  margin-top: 2px;
+ top: 4px;
 }
 input[type="radio"],
 input[type="checkbox"] {
@@ -364,6 +341,7 @@ ul#tabs a {
 .nav > li > a:focus {
  text-decoration: none;
  background-color: rgba(80,92,133,.22);
+ transition: 200ms ease;
 }
 .nav > li.disabled > a,
 .nav > li.disabled > a:hover {
@@ -399,10 +377,11 @@ div#ipython-main-app.container {
  margin-left: auto;
 }
 div#menubar-container {
- width: 98%;
+ width: 100%;
+ width: 980px;
 }
 div#header-container {
- width: 98%;
+ width: 980px;
 }
 .notebook_app #header,
 .edit_app #header {
@@ -476,6 +455,7 @@ p.navbar-text.indicator_area {
  background-color: rgba(80,92,133,.22);
  border-color: rgba(80,92,133,.22);
  line-height: 1.5em;
+ transition: 200ms ease;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -484,6 +464,7 @@ p.navbar-text.indicator_area {
  background-color: #2769c3;
  border-color: #2769c3;
  line-height: 1.5em;
+ transition: 200ms ease;
 }
 .navbar-nav > li > .dropdown-menu {
  margin-top: 0px;
@@ -627,6 +608,7 @@ div.notification_widget.info,
  margin-left: 0px !important;
  opacity: 0.7;
  vertical-align: middle;
+ margin-top: 1px;
  content: "\f1db";
 }
 .kernel_busy_icon:before {
@@ -640,6 +622,7 @@ div.notification_widget.info,
  cursor: pointer;
  margin-left: 0px !important;
  vertical-align: middle;
+ margin-top: 1px;
  content: "\f111";
 }
 @-webkit-keyframes pulsate {
@@ -756,6 +739,7 @@ i.fa.fa-icon {
  background-color: rgba(80,92,133,.22);
  background: rgba(80,92,133,.22);
  border-color: rgba(80,92,133,.22);
+ transition: 200ms ease;
 }
 .dropdown-menu .divider {
  height: 1px;
@@ -769,6 +753,7 @@ i.fa.fa-icon {
  margin-top: -2px;
  margin-left: 0px;
  padding-top: 0px;
+ transition: 200ms ease;
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
@@ -826,6 +811,7 @@ div.kse-dropdown > .dropdown-menu,
  background-image: none;
  box-shadow: none !important;
  border-radius: 2px;
+ transition: 200ms ease;
 }
 .btn:active,
 .btn.active,
@@ -854,6 +840,7 @@ div.kse-dropdown > .dropdown-menu,
  background-image: none;
  box-shadow: none !important;
  border-radius: 2px;
+ transition: 200ms ease;
 }
 .item_buttons > .btn,
 .item_buttons > .btn-group,
@@ -870,6 +857,7 @@ div.kse-dropdown > .dropdown-menu,
  background: #2a313c;
  background-color: #2a313c;
  border: 1px solid #2a313c;
+ transition: 200ms ease;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -966,6 +954,7 @@ fieldset[disabled] .btn-default.focus {
  background: #2f363f;
  background-color: #2f363f;
  border-color: #2f363f;
+ transition: 200ms ease;
 }
 .input-group-addon {
  padding: 2px 5px;
@@ -1014,6 +1003,7 @@ fieldset[disabled] .btn-default.focus {
  border: none;
  margin: 2px;
  font-size: inherit;
+ transition: 200ms ease;
 }
 div.modal .btn-group > .btn:first-child {
  background: #2e3642;
@@ -1027,6 +1017,7 @@ div.modal .btn-group > .btn:first-child:hover {
  background: #2a313c;
  background-color: #2a313c;
  border: 1px solid #2a313c;
+ transition: 200ms ease;
 }
 div.modal > button,
 div.modal-footer > button {
@@ -1039,6 +1030,7 @@ div.modal-footer > button:hover {
  background: #2a313c;
  background-color: #2a313c;
  border-color: #2a313c;
+ transition: 200ms ease;
 }
 .modal-content {
  font-family: sans-serif;
@@ -1169,6 +1161,15 @@ select.form-control.select-xs {
 }
 :-moz-placeholder {
  color: #526488;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+ border-left: 2px solid rgba(80,92,133,.22) !important;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control:focus {
+ border-left-color: #7aa05d !important;
+ outline: 0;
+ -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(53,114,198,.5) !important;
+ box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(53,114,198,.5) !important;
 }
 div.output.output_scroll {
  box-shadow: none;

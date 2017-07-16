@@ -1,10 +1,7 @@
-from __future__ import print_function
 import os
 import sys
 import re
-from pylab import matplotlib as mpl
-import matplotlib.pyplot as plt
-from cycler import cycler
+import matplotlib as mpl
 from jupyter_core.paths import jupyter_config_dir
 
 # path to install (~/.jupyter/custom/)
@@ -79,15 +76,26 @@ def infer_theme():
     return theme
 
 
-def style(theme=None, context='paper', grid=True, ticks=False, spines=True, fscale=1.2, figsize=(8., 7.)):
+def style(theme=None, context='paper', grid=True, gridlines=u'-', ticks=False, spines=True, fscale=1.2, figsize=(8., 7.)):
     """
     main function for styling matplotlib according to theme
+
     ::Arguments::
         theme (str): 'oceans16', 'grade3', 'chesterish', 'onedork', 'monokai', 'solarizedl', 'solarizedd'. If no theme name supplied the currently installed notebook theme will be used.
+
         context (str): 'paper' (Default), 'notebook', 'talk', or 'poster'
+
         grid (bool): removes axis grid lines if False
+
+        gridlines (str): set grid linestyle (e.g., '--' for dashed grid)
+
         ticks (bool): make major x and y ticks visible
+
+        spines (bool): removes x (bottom) and y (left) axis spines if False
+
         fscale (float): scale font size for axes labels, legend, etc.
+
+        figsize (tuple): default figure size of matplotlib figures
     """
 
     # set context and font rc parameters, return rcdict
@@ -98,11 +106,11 @@ def style(theme=None, context='paper', grid=True, ticks=False, spines=True, fsca
         theme = infer_theme()
 
     # combine context & font rcparams with theme style
-    set_style(rcdict, theme=theme, grid=grid, ticks=ticks, spines=spines)
+    set_style(rcdict, theme=theme, grid=grid, gridlines=gridlines, ticks=ticks, spines=spines)
 
 
 
-def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
+def set_style(rcdict, theme=None, grid=True, gridlines=u'-', ticks=False, spines=True):
     """
     This code has been modified from seaborn.rcmod.set_style()
     ::Arguments::
@@ -124,7 +132,7 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
     gridColor = styleMap['gridColor']
 
     if not spines:
-        edgeColor = gridColor
+        edgeColor = 'none'
 
     style_dict = {
         'figure.edgecolor': figureFace,
@@ -133,6 +141,7 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
         'axes.edgecolor': edgeColor,
         'axes.labelcolor': textColor,
         'axes.grid': grid,
+        'grid.linestyle': gridlines,
         'grid.color': gridColor,
         'text.color': textColor,
         'xtick.color': textColor,
@@ -153,12 +162,13 @@ def set_style(rcdict, theme=None, grid=True, ticks=False, spines=True):
             "xtick.minor.size": 3,
             "ytick.minor.size": 3})
 
-    rcdict.update(base_style)
+    base_style.update(rcdict)
 
     # update matplotlib with rcdict (incl. context, font, & style)
     mpl.rcParams.update(rcdict)
 
     try:
+        from cycler import cycler
         # set color cycle to jt-style color list
         mpl.rcParams['axes.prop_cycle'] = cycler(color=clist)
     except Exception:
@@ -245,12 +255,7 @@ def get_default_jtstyle():
                 'edgeColor': '.8',
                 'gridColor': '.8'}
     return styleMap, get_color_list()
-
-
-def blend_palette(color1, color2, ncolors=10):
-    import seaborn as sns
-    blend = sns.blend_palette((color1, color2), ncolors)
-    return [mpl.colors.rgb2hex(c) for c in blend]
+    
 
 def get_color_list():
     return ['#3572C6', '#83a83b', '#c44e52', '#8172b2', "#ff914d",

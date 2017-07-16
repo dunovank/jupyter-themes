@@ -19,13 +19,13 @@
     font-size: @df-header-fontsize !important;
 }
 .rendered_html table {
-    margin-left: auto;
+    font-family: @notebook-fontfamily !important;
+    margin-left: 8px;
     margin-right: auto;
     border: none;
     border-collapse: collapse;
     border-spacing: 0;
     color: @table-color;
-    font-size: @df-fontsize !important;
     table-layout: fixed;
 }
 .rendered_html thead {
@@ -46,7 +46,9 @@
 .rendered_html tbody tr:hover {
     background: darken(@table-bg, 4%);
 }
-
+.rendered_html * + table {
+    margin-top: .05em;
+}
 
 /*********** WIDGETS ***********/
 div.widget-area {
@@ -83,15 +85,14 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
     font-size: inherit;
     z-index: 0;
 }
-div.jupyter-widgets.widget-hprogress.widget-hbox,
-div.widget-hbox, .widget-hbox {
-    display: inline-table;
+div.jupyter-widgets.widget-hprogress.widget-hbox {
+    display: inline-table !important;
     width: 38% !important;
     margin-left: 10px;
 }
-.widget-inline-hbox {
-    display: inline-table !important;
-}
+// .widget-inline-hbox, div.widget-hbox, .widget-hbox {
+//     display: inline-table !important;
+// }
 div.jupyter-widgets.widget-hprogress.widget-hbox .widget-label,
 div.widget-hbox .widget-label,
 .widget-hbox .widget-label,
@@ -608,6 +609,7 @@ body > div.modal.cmd-palette.in > div {
     border-color: @item-green;
     border-radius: 0px;
 }
+
 /******************************************/
 /************** KEY BINDINGS **************/
 /******************************************/
@@ -730,4 +732,25 @@ div#short-key-bindings-intro.well, .well {
 .terminal:not(.focus) .terminal-cursor {
     outline: 1px solid @item-theme;
     outline-offset: -1px;
+}
+
+/**************************************************/
+/************** PAGER DOCUMENTATION ***************/
+/**************************************************/
+div#pager #pager-contents {
+    background: @notebook-bg !important;
+    background-color: @notebook-bg !important;
+}
+div#pager pre {
+    color: @cc-input-fg !important;
+    background: @cc-input-bg !important;
+    background-color: @cc-input-bg !important;
+    padding: 0.4em;
+}
+div#pager .ui-resizable-handle {
+    top: 0px;
+    height: 8px;
+    background: @item-theme !important;
+    border-top: 1px solid @item-theme;
+    border-bottom: 1px solid @item-theme;
 }

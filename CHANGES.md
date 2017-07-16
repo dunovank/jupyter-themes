@@ -1,5 +1,13 @@
 ### Release Notes
 
+#### **v0.16.7**
+- fixed hbox widget display (no longer vertically stacks objects)
+- applied style to pager documentation
+- added gridlines option to jtplot.style() to set linestyle of axis grid
+- README update with more jtplot documentation
+- removed seaborn from dependencies
+- explicitly import stylefx and jtplot modules to \__init__.py
+
 #### **v0.16.6**
 - minor bug-fix in jtplot (prevent clist printing)
 

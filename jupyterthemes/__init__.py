@@ -1,13 +1,12 @@
-"""
-Juypiter theme installer
-Author: dunovank at github.com
-"""
-from __future__ import print_function
 import os
 import sys
 from argparse import ArgumentParser
 from glob import glob
+from . import stylefx
+from . import jtplot
 
+# path to local site-packages/jupyterthemes
+package_dir = os.path.dirname(os.path.realpath(__file__))
 modules = glob(os.path.dirname(__file__) + "/*.py")
 __all__ = [os.path.basename(f)[:-3] for f in modules]
 
@@ -16,8 +15,6 @@ minor = 16
 patch = 6
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
-# path to local site-packages/jupyterthemes
-package_dir = os.path.dirname(os.path.realpath(__file__))
 
 
 def get_themes():
@@ -42,6 +39,7 @@ def install_theme(theme=None,
                 cursorwidth=2,
                 cursorcolor='default',
                 altprompt=False,
+                altmd=False,
                 hideprompt=False,
                 vimext=False,
                 toolbar=False,
@@ -51,7 +49,6 @@ def install_theme(theme=None,
     """ Install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
     """
-    from jupyterthemes import stylefx
     stylefx.reset_default(False)
     stylefx.check_directories()
 
@@ -84,6 +81,7 @@ def install_theme(theme=None,
             margins=margins,
             lineheight=lineheight,
             altprompt=altprompt,
+            altmd=altmd,
             hideprompt=hideprompt,
             cursorwidth=cursorwidth,
             cursorcolor=cursorcolor,
@@ -202,6 +200,12 @@ def main():
         default=False,
         help="alt input prompt style")
     parser.add_argument(
+        '-altmd',
+        "--altmarkdown",
+        action='store_true',
+        default=False,
+        help="alt markdown cell style")
+    parser.add_argument(
         '-P',
         "--hideprompt",
         action='store_true',
@@ -243,7 +247,6 @@ def main():
     say_themes = "Available Themes: \n   {}".format('\n   '.join(themes))
 
     if args.reset:
-        from jupyterthemes import stylefx
         stylefx.reset_default(verbose=True)
         exit(1)
 
@@ -273,6 +276,7 @@ def main():
         cursorwidth=args.cursorwidth,
         cursorcolor=args.cursorcolor,
         altprompt=args.altprompt,
+        altmd=args.altmarkdown,
         hideprompt=args.hideprompt,
         vimext=args.vimext,
         toolbar=args.toolbar,
