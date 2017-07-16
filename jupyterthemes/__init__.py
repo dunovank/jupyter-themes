@@ -12,9 +12,8 @@ __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 16
-patch = 6
+patch = 7
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
-
 
 
 def get_themes():
@@ -23,6 +22,7 @@ def get_themes():
     themes = [os.path.basename(theme).replace('.less', '')
               for theme in glob('{0}/*.less'.format(styles_dir))]
     return themes
+
 
 def install_theme(theme=None,
                 monofont=None,

@@ -1630,6 +1630,7 @@ div.rendered_html code {
  font-family: monospace, monospace;
  font-size: 11pt;
  padding-top: 3px;
+ padding-left: 2px;
  color: #f8f8f0;
  background: #282828;
  background-color: #282828;
@@ -1688,9 +1689,13 @@ div.text_cell_render pre {
  color: #f8f8f0;
  background: #282828;
  background-color: #282828;
- border: 2px #282828 solid;
- max-width: 86%;
- border-radius: 2px;
+ max-width: 80%;
+ border-radius: 0px;
+ border-left: 3px solid #49483e;
+ max-width: 80%;
+ border-radius: 0px;
+ padding-left: 5px;
+ margin-left: 6px;
 }
 div.text_cell_render h1,
 div.rendered_html h1,
@@ -1795,13 +1800,13 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
  font-size: 10.3pt !important;
 }
 .rendered_html table {
- margin-left: auto;
+ font-family: sans-serif !important;
+ margin-left: 8px;
  margin-right: auto;
  border: none;
  border-collapse: collapse;
  border-spacing: 0;
  color: #cccccc;
- font-size: 9.3pt !important;
  table-layout: fixed;
 }
 .rendered_html thead {
@@ -1821,6 +1826,9 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
 }
 .rendered_html tbody tr:hover {
  background: #1e1e1e;
+}
+.rendered_html * + table {
+ margin-top: .05em;
 }
 div.widget-area {
  background-color: #232323;
@@ -1856,15 +1864,10 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
  font-size: inherit;
  z-index: 0;
 }
-div.jupyter-widgets.widget-hprogress.widget-hbox,
-div.widget-hbox,
-.widget-hbox {
- display: inline-table;
+div.jupyter-widgets.widget-hprogress.widget-hbox {
+ display: inline-table !important;
  width: 38% !important;
  margin-left: 10px;
-}
-.widget-inline-hbox {
- display: inline-table !important;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox .widget-label,
 div.widget-hbox .widget-label,
@@ -2474,6 +2477,23 @@ div#short-key-bindings-intro.well,
 .terminal:not(.focus) .terminal-cursor {
  outline: 1px solid #a6e22e;
  outline-offset: -1px;
+}
+div#pager #pager-contents {
+ background: #1e1e1e !important;
+ background-color: #1e1e1e !important;
+}
+div#pager pre {
+ color: #f8f8f0 !important;
+ background: #282828 !important;
+ background-color: #282828 !important;
+ padding: 0.4em;
+}
+div#pager .ui-resizable-handle {
+ top: 0px;
+ height: 8px;
+ background: #a6e22e !important;
+ border-top: 1px solid #a6e22e;
+ border-bottom: 1px solid #a6e22e;
 }
 div.CodeMirror,
 div.CodeMirror pre {

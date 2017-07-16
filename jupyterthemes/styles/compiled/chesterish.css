@@ -1630,9 +1630,10 @@ div.rendered_html code {
  font-family: monospace, monospace;
  font-size: 11pt;
  padding-top: 3px;
+ padding-left: 2px;
  color: #cdd2e9;
- background: #252e3a;
- background-color: #252e3a;
+ background: #293340;
+ background-color: #293340;
 }
 pre,
 code,
@@ -1686,11 +1687,15 @@ div.text_cell_render pre {
  font-size: 11pt !important;
  line-height: 170% !important;
  color: #b0bdd7;
- background: #252e3a;
- background-color: #252e3a;
- border: 2px #252e3a solid;
- max-width: 86%;
- border-radius: 2px;
+ background: #293340;
+ background-color: #293340;
+ max-width: 80%;
+ border-radius: 0px;
+ border-left: 3px solid rgba(0,156,209,.5);
+ max-width: 80%;
+ border-radius: 0px;
+ padding-left: 5px;
+ margin-left: 6px;
 }
 div.text_cell_render h1,
 div.rendered_html h1,
@@ -1795,13 +1800,13 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
  font-size: 10.3pt !important;
 }
 .rendered_html table {
- margin-left: auto;
+ font-family: sans-serif !important;
+ margin-left: 8px;
  margin-right: auto;
  border: none;
  border-collapse: collapse;
  border-spacing: 0;
  color: #e2e5f2;
- font-size: 9.3pt !important;
  table-layout: fixed;
 }
 .rendered_html thead {
@@ -1821,6 +1826,9 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
 }
 .rendered_html tbody tr:hover {
  background: #373f4e;
+}
+.rendered_html * + table {
+ margin-top: .05em;
 }
 div.widget-area {
  background-color: #323a48;
@@ -1856,15 +1864,10 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
  font-size: inherit;
  z-index: 0;
 }
-div.jupyter-widgets.widget-hprogress.widget-hbox,
-div.widget-hbox,
-.widget-hbox {
- display: inline-table;
+div.jupyter-widgets.widget-hprogress.widget-hbox {
+ display: inline-table !important;
  width: 38% !important;
  margin-left: 10px;
-}
-.widget-inline-hbox {
- display: inline-table !important;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox .widget-label,
 div.widget-hbox .widget-label,
@@ -2474,6 +2477,23 @@ div#short-key-bindings-intro.well,
 .terminal:not(.focus) .terminal-cursor {
  outline: 1px solid #0b98c8;
  outline-offset: -1px;
+}
+div#pager #pager-contents {
+ background: #1a2028 !important;
+ background-color: #1a2028 !important;
+}
+div#pager pre {
+ color: #cdd2e9 !important;
+ background: #293340 !important;
+ background-color: #293340 !important;
+ padding: 0.4em;
+}
+div#pager .ui-resizable-handle {
+ top: 0px;
+ height: 8px;
+ background: #0b98c8 !important;
+ border-top: 1px solid #0b98c8;
+ border-bottom: 1px solid #0b98c8;
 }
 div.CodeMirror,
 div.CodeMirror pre {
