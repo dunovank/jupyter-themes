@@ -255,11 +255,11 @@ def get_default_jtstyle():
                 'edgeColor': '.8',
                 'gridColor': '.8'}
     return styleMap, get_color_list()
-    
+
 
 def get_color_list():
     return ['#3572C6', '#83a83b', '#c44e52', '#8172b2', "#ff914d",
-    "#77BEDB", "#222222", "#4168B7", "#27ae60", "#e74c3c", "#8E44AD",
+    "#77BEDB", "#222222", "#4168B7", "#27ae60", "#e74c3c",'#cc89e0',
     "#ff711a", "#3498db", '#6C7A89']
 
 

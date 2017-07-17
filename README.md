@@ -37,7 +37,6 @@
 * Python 2.7, 3.4, 3.5, 3.6
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 * matplotlib
-* seaborn
 
 ### Install with pip
 ```sh
