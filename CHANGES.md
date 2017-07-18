@@ -1,5 +1,29 @@
 ### Release Notes
 
+#### **v0.16.7**
+- fixed hbox widget display (no longer vertically stacks objects)
+- applied style to pager documentation
+- added gridlines option to jtplot.style() to set linestyle of axis grid
+- README update with more jtplot documentation
+- removed seaborn from dependencies
+- explicitly import stylefx and jtplot modules to \__init__.py
+
+#### **v0.16.6**
+- minor bug-fix in jtplot (prevent clist printing)
+
+#### **v0.16.5**
+- improved monokai comment visibility
+- solarized style improvements (l & d flavors)
+- improved kernel-busy animation
+- moved kernel-idle/busy code from extras.less to notebook.less
+- notebook-fontsize (-nfs) adjusts header
+- minor cosmetic improvements
+- fixed matplotlib error in jtplot
+- added check_dependencies() fx to prevent unnecessary dependency installs
+
+#### **v0.16.4:**
+- fixed pulse kernel-busy indicator
+
 #### **v0.16.4:**
 - fixed pulse kernel-busy indicator
 

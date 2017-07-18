@@ -37,7 +37,6 @@
 * Python 2.7, 3.4, 3.5, 3.6
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 * matplotlib
-* seaborn
 
 ### Install with pip
 ```sh
@@ -46,7 +45,7 @@ pip install --upgrade jupyterthemes
 ```
 
 ### Known issues
-- **refreshing / removing / resetting:** depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)).
+- **refreshing / removing / resetting:** depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)). At the very least you'll need to refresh your browser window (usually `cmd+r` or `ctrl+r`).
 - **install issue:** if you get an error saying `jt` is not recognized, try [this](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-300688587) fix.
 - **slow render when scrolling:** fix available [here](https://github.com/dunovank/jupyter-themes/issues/117#issuecomment-296391443)
 - **for best results:** use notebook>=5.0 (`pip install --upgrade notebook`)
@@ -143,11 +142,11 @@ jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88%
 
 
 ### Set Plotting Style (from within notebook)
-`jtplot.style()` makes changes to matplotlib's rcParams dictionary so that figure aesthetics match those of a chosen jupyterthemes style. Note, these commands do not need to be re-run every time you generate a new plot, just once at the beginning of your notebook or whenever style changes are desired after that.
+`jtplot.style()` makes changes to matplotlib's rcParams dictionary so that figure aesthetics match those of a chosen jupyterthemes style. In addition to setting the color scheme, `jtplot.style()` allows you to control various figure properties (spines, grid, font scale, etc.) as well as the plotting "context" (borrowed from [seaborn](https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements-with-plotting-context-and-set-context)).
 
-For instance, I include the following two lines in my `~/.ipython/profile_default/startup/startup.ipy` file so this is done  automatically whenever I open a new notebook:
+Note, these commands do not need to be re-run every time you generate a new plot, just once at the beginning of your notebook or whenever style changes are desired after that.
 
-
+**Pro-tip**: Include the following two lines in `~/.ipython/profile_default/startup/startup.ipy` file to set plotting style automatically whenever you start a notebook:
 ```py
 # import jtplot submodule from jupyterthemes
 from jupyterthemes import jtplot
@@ -157,33 +156,26 @@ from jupyterthemes import jtplot
 jtplot.style()
 ```
 
-Some additional examples for setting "context" (taken from [seaborn](https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements-with-plotting-context-and-set-context)) and controlling various figure properties...
-
+### jtplot.style() Examples
 ```py
-# import jtplot
+# import jtplot module in notebook
 from jupyterthemes import jtplot
 
-# you can select an alternative theme's plot style by name
+# choose which theme to inherit plotting style from
 # onedork | grade3 | oceans16 | chesterish | monokai | solarizedl | solarizedd
-jtplot.style('onedork')
+jtplot.style(theme='onedork')
 
-# set "context" (paper, notebook, talk, or poster)
-# & font scale (scalar applied to labels, legend, etc.)
-jtplot.style('grade3', context='paper', fscale=1.4)
+# set "context" (paper, notebook, talk, poster)
+# scale font-size of ticklabels, legend, etc.
+# remove spines from x and y axes and make grid dashed
+jtplot.style(context='talk', fscale=1.4, spines=False, gridlines='--')
 
 # turn on X- and Y-axis tick marks (default=False)
-# and turn off the axis grid lines (default=True)
-jtplot.style(ticks=True, grid=False)
+# turn off the axis grid lines (default=True)
+# and set the default figure size
+jtplot.style(ticks=True, grid=False, figsize=(6, 4.5))
 
-# set the default figure size
-# x (length), y (height)
-jtplot.figsize(x=6., y=5.)
-
-# or just adjust the aspect ratio
-# new_length = length * aspect
-jtplot.figsize(aspect=1.2)
-
-# fully reset matplotlib default rcParams
+# reset default matplotlib rcParams
 jtplot.reset()
 ```
 

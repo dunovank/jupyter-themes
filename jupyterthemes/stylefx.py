@@ -1,11 +1,10 @@
-from __future__ import print_function
 import os
 import sys
+import lesscpy
 from shutil import copyfile, rmtree
 from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
-import lesscpy
-from IPython.core.display import HTML
 from glob import glob
+from tempfile import mkstemp
 
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -14,8 +13,8 @@ package_dir = os.path.dirname(os.path.realpath(__file__))
 user_dir = os.path.join(os.path.expanduser('~'), '.jupyter-themes')
 
 # path to save tempfile with style_less before reading/compiling
-tempfile = os.path.join(package_dir, 'tempfile.less')
-vimtemp = os.path.join(package_dir, 'vimtemp.less')
+_, tempfile = mkstemp('.less')
+_, vimtemp = mkstemp('.less')
 
 # path to install custom.css file (~/.jupyter/custom/)
 jupyter_home = jupyter_config_dir()
@@ -74,7 +73,7 @@ def write_final_css(style_css):
 
 
 def remove_temp_file():
-    # remove tempfile.less from package_dir
+    # remove tempfile.less
     os.remove(tempfile)
 
 
@@ -219,7 +218,8 @@ def style_layout(style_less,
                  toolbar=False,
                  nbname=False,
                  altprompt=False,
-                 hideprompt=False):
+                 hideprompt=False,
+                 altmd=False):
     """Set general layout and style properties of text and code cells"""
 
     # write theme name to ~/.jupyter/custom/ (referenced by jtplot.py)
@@ -248,11 +248,13 @@ def style_layout(style_less,
 
     if theme == 'grade3':
         textcell_bg = '@notebook-bg'
+    if altmd:
+        textcell_bg = '@notebook-bg'
+        tcPromptBorder = '2px dotted @tc-border-selected'
     if altprompt:
         promptPadding = '.1em'
         promptMinWidth = 7
         tcPromptWidth = 7
-        # tcPromptFontsize = "pt"
         promptText = 'transparent'
         tcPromptBorder = '2px solid transparent'
     if margins != 'auto':
@@ -384,7 +386,7 @@ def reset_default(verbose=False):
 
 def set_nb_theme(name):
     """Set theme from within notebook """
-
+    from IPython.core.display import HTML
     styles_dir = os.path.join(package_dir, 'styles/compiled/')
     css_path = glob('{0}/{1}.css'.format(styles_dir, name))[0]
     customcss = open(css_path, "r").read()

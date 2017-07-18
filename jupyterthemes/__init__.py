@@ -1,23 +1,19 @@
-"""
-Juypiter theme installer
-Author: dunovank at github.com
-"""
-from __future__ import print_function
 import os
 import sys
 from argparse import ArgumentParser
 from glob import glob
+from . import stylefx
+from . import jtplot
 
+# path to local site-packages/jupyterthemes
+package_dir = os.path.dirname(os.path.realpath(__file__))
 modules = glob(os.path.dirname(__file__) + "/*.py")
 __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 16
-patch = 4
+patch = 8
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
-
-# path to local site-packages/jupyterthemes
-package_dir = os.path.dirname(os.path.realpath(__file__))
 
 
 def get_themes():
@@ -27,7 +23,8 @@ def get_themes():
               for theme in glob('{0}/*.less'.format(styles_dir))]
     return themes
 
-def install_theme(theme,
+
+def install_theme(theme=None,
                 monofont=None,
                 monosize=11,
                 nbfont=None,
@@ -42,6 +39,7 @@ def install_theme(theme,
                 cursorwidth=2,
                 cursorcolor='default',
                 altprompt=False,
+                altmd=False,
                 hideprompt=False,
                 vimext=False,
                 toolbar=False,
@@ -51,7 +49,6 @@ def install_theme(theme,
     """ Install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
     """
-    from jupyterthemes import stylefx
     stylefx.reset_default(False)
     stylefx.check_directories()
 
@@ -74,21 +71,23 @@ def install_theme(theme,
         outfontsize=outfontsize,
         dfonts=dfonts)
 
-    # define some vars for cell layout
-    cursorcolor = stylefx.get_colors(theme=theme, c=cursorcolor)
-    style_less = stylefx.style_layout(
-        style_less,
-        theme=theme,
-        cellwidth=cellwidth,
-        margins=margins,
-        lineheight=lineheight,
-        altprompt=altprompt,
-        hideprompt=hideprompt,
-        cursorwidth=cursorwidth,
-        cursorcolor=cursorcolor,
-        vimext=vimext,
-        toolbar=toolbar,
-        nbname=nbname)
+    if theme is not None:
+        # define some vars for cell layout
+        cursorcolor = stylefx.get_colors(theme=theme, c=cursorcolor)
+        style_less = stylefx.style_layout(
+            style_less,
+            theme=theme,
+            cellwidth=cellwidth,
+            margins=margins,
+            lineheight=lineheight,
+            altprompt=altprompt,
+            altmd=altmd,
+            hideprompt=hideprompt,
+            cursorwidth=cursorwidth,
+            cursorcolor=cursorcolor,
+            vimext=vimext,
+            toolbar=toolbar,
+            nbname=nbname)
 
     # compile tempfile.less to css code and append to style_css
     style_css = stylefx.less_to_css(style_less)
@@ -106,9 +105,16 @@ def install_theme(theme,
 def main():
     parser = ArgumentParser()
     parser.add_argument(
-        '-l', "--list", action='store_true', help="list available themes")
+        '-l',
+        "--list",
+        action='store_true',
+        help="list available themes")
     parser.add_argument(
-        '-t', "--theme", action='store', help="theme name to install")
+        '-t',
+        "--theme",
+        default=None,
+        action='store',
+        help="theme name to install")
     parser.add_argument(
         '-f',
         "--monofont",
@@ -194,6 +200,12 @@ def main():
         default=False,
         help="alt input prompt style")
     parser.add_argument(
+        '-altmd',
+        "--altmarkdown",
+        action='store_true',
+        default=False,
+        help="alt markdown cell style")
+    parser.add_argument(
         '-P',
         "--hideprompt",
         action='store_true',
@@ -233,36 +245,40 @@ def main():
     themes = get_themes()
     themes.sort()
     say_themes = "Available Themes: \n   {}".format('\n   '.join(themes))
-    if args.theme:
+
+    if args.reset:
+        stylefx.reset_default(verbose=True)
+        exit(1)
+
+    elif args.list:
+        print(say_themes)
+        exit(1)
+
+    elif args.theme is not None:
         if args.theme not in themes:
             print("Didn't recognize theme name: {}".format(args.theme))
             print(say_themes)
-            exit(1)
-        install_theme(
-            args.theme,
-            monofont=args.monofont,
-            monosize=args.monosize,
-            nbfont=args.nbfont,
-            nbfontsize=args.nbfontsize,
-            tcfont=args.tcfont,
-            tcfontsize=args.tcfontsize,
-            dffontsize=args.dffontsize,
-            outfontsize=args.outfontsize,
-            cellwidth=args.cellwidth,
-            margins=args.margins,
-            lineheight=int(args.lineheight),
-            cursorwidth=args.cursorwidth,
-            cursorcolor=args.cursorcolor,
-            altprompt=args.altprompt,
-            hideprompt=args.hideprompt,
-            vimext=args.vimext,
-            toolbar=args.toolbar,
-            nbname=args.nbname,
-            dfonts=args.defaultfonts)
-    elif args.reset:
-        from jupyterthemes import stylefx
-        stylefx.reset_default(verbose=True)
-    elif args.list:
-        print(say_themes)
-    else:
-        print('No theme provided, no changes made')
+            args.theme=None
+
+    install_theme(
+        theme=args.theme,
+        monofont=args.monofont,
+        monosize=args.monosize,
+        nbfont=args.nbfont,
+        nbfontsize=args.nbfontsize,
+        tcfont=args.tcfont,
+        tcfontsize=args.tcfontsize,
+        dffontsize=args.dffontsize,
+        outfontsize=args.outfontsize,
+        cellwidth=args.cellwidth,
+        margins=args.margins,
+        lineheight=int(args.lineheight),
+        cursorwidth=args.cursorwidth,
+        cursorcolor=args.cursorcolor,
+        altprompt=args.altprompt,
+        altmd=args.altmarkdown,
+        hideprompt=args.hideprompt,
+        vimext=args.vimext,
+        toolbar=args.toolbar,
+        nbname=args.nbname,
+        dfonts=args.defaultfonts)

@@ -19,13 +19,13 @@
     font-size: @df-header-fontsize !important;
 }
 .rendered_html table {
-    margin-left: auto;
+    font-family: @notebook-fontfamily !important;
+    margin-left: 8px;
     margin-right: auto;
     border: none;
     border-collapse: collapse;
     border-spacing: 0;
     color: @table-color;
-    font-size: @df-fontsize !important;
     table-layout: fixed;
 }
 .rendered_html thead {
@@ -46,7 +46,9 @@
 .rendered_html tbody tr:hover {
     background: darken(@table-bg, 4%);
 }
-
+.rendered_html * + table {
+    margin-top: .05em;
+}
 
 /*********** WIDGETS ***********/
 div.widget-area {
@@ -83,14 +85,10 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
     font-size: inherit;
     z-index: 0;
 }
-div.jupyter-widgets.widget-hprogress.widget-hbox,
-div.widget-hbox, .widget-hbox {
-    display: inline-table;
+div.jupyter-widgets.widget-hprogress.widget-hbox {
+    display: inline-table !important;
     width: 38% !important;
     margin-left: 10px;
-}
-.widget-inline-hbox {
-    display: inline-table !important;
 }
 div.jupyter-widgets.widget-hprogress.widget-hbox .widget-label,
 div.widget-hbox .widget-label,
@@ -608,6 +606,7 @@ body > div.modal.cmd-palette.in > div {
     border-color: @item-green;
     border-radius: 0px;
 }
+
 /******************************************/
 /************** KEY BINDINGS **************/
 /******************************************/
@@ -732,51 +731,23 @@ div#short-key-bindings-intro.well, .well {
     outline-offset: -1px;
 }
 
-/******************************************/
-/******** KERNEL RUNNING ANIMATION ********/
-/******************************************/
-
-.kernel_idle_icon:before {
-    display: inline-block;
-    font: normal normal normal 20px/1 FontAwesome;
-    font-size: 20px;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    cursor: pointer;
-    margin-left: 2px !important;
-    opacity: .5;
+/**************************************************/
+/************** PAGER DOCUMENTATION ***************/
+/**************************************************/
+div#pager #pager-contents {
+    background: @notebook-bg !important;
+    background-color: @notebook-bg !important;
 }
-.kernel_busy_icon:before {
-    display: inline-block;
-    font: normal normal normal 20px/1 FontAwesome;
-    font-size: 20px;
-    -webkit-animation: pulsate 2s infinite ease-out;
-    animation: pulsate 2s infinite ease-out;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    cursor: pointer;
-    margin-left: 2px !important;
+div#pager pre {
+    color: @cc-input-fg !important;
+    background: @cc-input-bg !important;
+    background-color: @cc-input-bg !important;
+    padding: 0.4em;
 }
-
-
-@-webkit-keyframes pulsate {
-    // 0% {-webkit-transform: scale(0.75, .75); opacity: 0.0;}
-    // 50% {opacity: 1.0;}
-    // 100% {-webkit-transform: scale(1.05, 1.05); opacity: 0.0;}
-    0% {-webkit-transform: scale(0.75, .75); opacity: 0.3;}
-    50% {-webkit-transform: scale(1.05, 1.05); opacity: 1.0;}
-    100% {-webkit-transform: scale(.75, .75); opacity: 0.3;}
+div#pager .ui-resizable-handle {
+    top: 0px;
+    height: 8px;
+    background: @item-theme !important;
+    border-top: 1px solid @item-theme;
+    border-bottom: 1px solid @item-theme;
 }
-
-// @keyframes pulse {
-//     0% {color: @item-theme; opacity: .2;}
-//     50% {color: @item-theme; opacity: 1.0;}
-//     100% {color: @item-theme; opacity: .2;}
-// }
-// @-webkit-keyframes blob {
-//     0% {-webkit-transform: scale(0.7, .7); opacity: 1.0;}
-//     20% {-webkit-transform: scale(0.6, .8); opacity: 0.5;}
-//     50% {-webkit-transform: scale(1.0, 1.0); opacity: 1.0;}
-//     70% {-webkit-transform: scale(0.8, .6); opacity: 0.5;}
-//     100% {-webkit-transform: scale(0.7, .7); opacity: 1.0;}
-// }

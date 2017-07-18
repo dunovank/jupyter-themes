@@ -426,9 +426,10 @@ div.rendered_html code {
     font-family: @monofont, monospace;
     font-size: @monofontsize;
     padding-top: 3px;
+    padding-left: 2px;
     color: @cc-input-fg;
-    background: @codeblock-bg;
-    background-color: @codeblock-bg;
+    background: @text-cell-bg; // @codeblock-bg;
+    background-color: @text-cell-bg; // @codeblock-bg;
 }
 pre, code, kbd, samp {
     white-space: pre-wrap;
@@ -479,11 +480,15 @@ div.text_cell_render pre {
     font-size: @monofontsize !important;
     line-height: @cc-line-height !important;
     color: @text-cell-fg;
-    background: @codeblock-bg;
-    background-color: @codeblock-bg;
-    border: 2px @codeblock-border solid;
-    max-width: 86%;
-    border-radius: 2px;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    max-width: 80%;
+    border-radius: 0px;
+    border-left: 3px solid @prompt-line;
+    max-width: 80%;
+    border-radius: 0px;
+    padding-left: 5px;
+    margin-left: 6px;
 }
 div.text_cell_render h1,
 div.rendered_html h1,

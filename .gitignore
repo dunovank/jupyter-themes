@@ -51,6 +51,10 @@ Thumbs.db
 ######################
 build/
 
+# cached python folder #
+########################
+#__pycache__/
+
 # Setuptools distribution folder #
 ##################################
 dist/
