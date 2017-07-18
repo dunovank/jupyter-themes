@@ -146,6 +146,8 @@ jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88%
 
 Note, these commands do not need to be re-run every time you generate a new plot, just once at the beginning of your notebook or whenever style changes are desired after that.
 
+`jtplot.style()` makes changes to matplotlib's rcParams dictionary so that figure aesthetics match those of a chosen jupyterthemes style. Note, these commands do not need to be re-run every time you generate a new plot, just once at the beginning of your notebook or whenever style changes are desired after that.
+
 **Pro-tip**: Include the following two lines in `~/.ipython/profile_default/startup/startup.ipy` file to set plotting style automatically whenever you start a notebook:
 ```py
 # import jtplot submodule from jupyterthemes
@@ -156,7 +158,10 @@ from jupyterthemes import jtplot
 jtplot.style()
 ```
 
+
 ### jtplot.style() Examples
+Some additional examples for setting "context" (borrowed from [seaborn](https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements-with-plotting-context-and-set-context)), controlling various figure properties, etc.
+
 ```py
 # import jtplot module in notebook
 from jupyterthemes import jtplot

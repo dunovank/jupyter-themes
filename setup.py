@@ -5,7 +5,11 @@ from itertools import chain
 
 major = 0
 minor = 16
+<<<<<<< HEAD
 patch = 8
+=======
+patch = 7
+>>>>>>> ea01c834d1d262479a798727789265e2c1f473a6
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v' + version])
@@ -58,8 +62,14 @@ def check_dependencies():
         install_requires.append('jupyter_core')
     try:
         import lesscpy
+<<<<<<< HEAD
     except Exception:
         install_requires.append('lesscpy')
+=======
+        assert(float(lesscpy.__version__[2:])>=12.)
+    except Exception:
+        install_requires.append('lesscpy>=0.12.0')
+>>>>>>> ea01c834d1d262479a798727789265e2c1f473a6
     try:
         import matplotlib
     except ImportError:
