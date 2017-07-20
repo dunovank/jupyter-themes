@@ -4,8 +4,8 @@ from setuptools import setup
 from itertools import chain
 
 major = 0
-minor = 16
-patch = 9
+minor = 17
+patch = 0
 
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
@@ -37,38 +37,8 @@ fontsdata = chain.from_iterable([['/'.join(f.split('/')[1:])
 
 datafiles[pkgname].extend(fontsdata)
 
-
-# MODIFIED FROM Seaborn/setup.py
-# https://github.com/mwaskom/seaborn/blob/master/setup.py
-try:
-    from setuptools import setup
-    _has_setuptools = True
-except ImportError:
-    from distutils.core import setup
-
-def check_dependencies():
-    install_requires = []
-    try:
-        import IPython
-        assert(float(IPython.__version__.split('.')[0])<6.)
-    except Exception:
-        install_requires.append('ipython<6.0')
-    try:
-        import jupyter_core
-    except ImportError:
-        install_requires.append('jupyter_core')
-    try:
-        import lesscpy
-    except Exception:
-        install_requires.append('lesscpy')
-    try:
-        import matplotlib
-    except ImportError:
-        install_requires.append('matplotlib')
-    return install_requires
-
-install_requires = check_dependencies()
-# END MODIFIED CODE FROM Seaborn/setup.py
+# required dependencies
+install_requires = ['ipython<6.0', 'jupyter_core', 'lesscpy', 'matplotlib']
 
 setup(
     name='jupyterthemes',
