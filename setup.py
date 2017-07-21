@@ -3,13 +3,14 @@ from glob import glob
 from setuptools import setup
 from itertools import chain
 
+pkgname = 'jupyterthemes'
 major = 0
 minor = 17
-patch = 0
-
+patch = 1
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v' + version])
+
 
 # get readme content after screenshots for pypi site
 README = os.path.join(os.path.dirname(__file__), 'README.md')
@@ -24,18 +25,25 @@ with open(README) as read_me:
         if startReading:
             longdescr += line
 
-pkgname = 'jupyterthemes'
-datafiles = {pkgname: ['sandbox/*.js', 'layout/*.less', 'layout/*.css',
-                       'styles/*.less', 'styles/compiled/*.css']}
+
+# add layout, .less styles, and compiled .css files to pkg data
+layout = os.path.join(pkgname, 'layout')
+styles = os.path.join(pkgname, 'styles')
+stylesCompiled = os.path.join(styles, 'compiled')
+
+datafiles = {pkgname: []}
+for subdir in ['layout', 'styles', 'styles/compiled']:
+    files = glob(os.path.join(pkgname, subdir, '*.*ss'))
+    filesLocalPath = [os.sep.join(f.split(os.sep)[1:]) for f in files]
+    datafiles[pkgname].extend(filesLocalPath)
 
 # recursively point to all included font directories
 fontfams = ['monospace', 'sans-serif', 'serif']
 fsubdirs = [os.path.join(pkgname, 'fonts', subdir) for subdir in fontfams]
-fontsdata = chain.from_iterable([['/'.join(f.split('/')[1:])
+fontsdata = chain.from_iterable([[os.sep.join(f.split(os.sep)[1:])
                                   for f in glob(os.path.join(fsub, '*', '*'))]
                                  for fsub in fsubdirs])
-
-datafiles[pkgname].extend(fontsdata)
+datafiles[pkgname].extend(list(fontsdata))
 
 # required dependencies
 install_requires = ['ipython<6.0', 'jupyter_core', 'lesscpy', 'matplotlib']

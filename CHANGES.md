@@ -1,5 +1,12 @@
 ### Release Notes
 
+#### **v0.17.1**
+- fixed bug caused by [PR #152](https://github.com/dunovank/jupyter-themes/pull/152) preventing install on Windows machines
+- added explicit pointers to layout and styles.less/.css package data in setup.py
+
+#### **v0.17.0**
+- fixed neglected dependencies issue
+
 #### **v0.16.7**
 - fixed hbox widget display (no longer vertically stacks objects)
 - applied style to pager documentation

@@ -72,11 +72,6 @@ def write_final_css(style_css):
         custom_css.write(style_css)
 
 
-def remove_temp_file():
-    # remove tempfile.less
-    os.remove(tempfile)
-
-
 def install_precompiled_theme(theme):
     # for Python 3.5, install selected theme from precompiled defaults
     compiled_dir = os.path.join(styles_dir, 'compiled')
@@ -347,9 +342,12 @@ def set_vim_style(theme):
     """Add style and compatibility with vim notebook extension"""
 
     vim_jupyter_nbext = os.path.join(jupyter_nbext, 'vim_binding')
+
     if not os.path.isdir(vim_jupyter_nbext):
         os.makedirs(vim_jupyter_nbext)
+
     vim_less = '@import "styles{}";\n'.format(''.join([os.sep, theme]))
+
     with open(vim_style, 'r') as vimstyle:
         vim_less += vimstyle.read() + '\n'
     with open(vimtemp, 'w') as vtemp:
@@ -357,11 +355,11 @@ def set_vim_style(theme):
     os.chdir(package_dir)
     vim_css = lesscpy.compile(vimtemp)
     vim_css += '\n\n'
+
     # install vim_custom_css to ...nbextensions/vim_binding/vim_binding.css
     vim_custom_css = os.path.join(vim_jupyter_nbext, 'vim_binding.css')
     with open(vim_custom_css, 'w') as vim_custom:
         vim_custom.write(vim_css)
-    os.remove(vimtemp)
 
 
 def reset_default(verbose=False):

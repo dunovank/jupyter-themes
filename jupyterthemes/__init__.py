@@ -12,7 +12,7 @@ __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 17
-patch = 0
+patch = 1
 
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
@@ -98,9 +98,6 @@ def install_theme(theme=None,
 
     # install style_css to .jupyter/custom/custom.css
     stylefx.write_final_css(style_css)
-
-    # remove tempfile.less from package_dir
-    stylefx.remove_temp_file()
 
 
 def main():
