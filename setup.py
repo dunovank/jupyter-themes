@@ -6,7 +6,7 @@ from itertools import chain
 pkgname = 'jupyterthemes'
 major = 0
 minor = 17
-patch = 1
+patch = 2
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v' + version])
