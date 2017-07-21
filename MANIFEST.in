@@ -1,2 +1,5 @@
 include README.md
-global-include jupyterthemes/fonts *.txt *.otf *.ttf *.woff *.woff2 *.js
+global-include jupyterthemes/layout *.css *.less
+global-include jupyterthemes/styles/compiled *.css
+global-include jupyterthemes/styles *.css *.less
+global-include jupyterthemes/fonts *.txt *.otf *.ttf *.woff *.woff2
