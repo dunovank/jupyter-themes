@@ -67,7 +67,7 @@ def main():
     parser.add_argument('-tfs',"--tcfontsize", action='store', default='13', help='txtcell fontsize')
     parser.add_argument('-cursw', "--cursorwidth", action='store', default=2, help="set cursorwidth (px)")
     parser.add_argument('-cursc', "--cursorcolor", action='store', default='default', help="set cursor color (r, b, g, p)")
-    parser.add_argument('-cellw', "--cellwidth", action='store', default=980, help="set cell width (px)")
+    parser.add_argument('-cellw', "--cellwidth", action='store', default=980, help="set cell width (px or %%)")
     parser.add_argument('-lineh',"--lineheight", action='store', default=170, help='code/text line-height (%%)')
     parser.add_argument('-alt', "--altlayout", action='store_true', default=False, help="alt markdown layout")
     parser.add_argument('-vim', "--vimext", action='store_true', default=False, help="toggle styles for vim")
