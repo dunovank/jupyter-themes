@@ -3,8 +3,8 @@
 
 |    Author    |                 Version                  |                  Status                  |                   Demo                   |
 | :----------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
-| Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=develop) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
-
+| Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=master) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
+https://travis-ci.org/dunovank/jupyter-themes#
 ###### *plotting style*
 ![image](screens/onedork_reach_plots.png)
 
