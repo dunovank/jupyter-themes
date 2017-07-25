@@ -184,7 +184,7 @@ def main():
         "--cellwidth",
         action='store',
         default='980',
-        help="set cell width (px)")
+        help="set cell width (px or %%)")
     parser.add_argument(
         '-lineh',
         "--lineheight",
