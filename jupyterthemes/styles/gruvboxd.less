@@ -1,0 +1,163 @@
+/* This is an unnoficial port of the gruvbox theme for Jupyter notebooks */
+
+/* gruvbox base colors */
+@yellow:                #fabd2f;
+@orange:                #fe8019;
+@red:                   #fb4934;
+@magenta:               #d3869b;
+@violet:                #b16286;
+@blue:                  #83a598;
+@cyan:                  #8ec07c;
+@green:                 #b8bb26;
+@gray:					#928374;
+
+@gruv-base03:           #1d2021;
+@gruv-base02:           #282828;
+@gruv-base01:           #3c3836;
+@gruv-base00:           #504945;
+
+@gruv-base0:            #fbf1c7;
+@gruv-base1:            #ebdbb2;
+@gruv-base2:            #d5c4a1;
+@gruv-base3:            #bdae93;
+
+/* gruvized notebook colors */
+@notebook-bg:           @gruv-base03;
+@notebook-fg:           @gruv-base1;
+@notebook-base:         @notebook-bg;
+
+/* jtplot figure style */
+@axisFace:              #282828;
+@figureFace:            #1d2021;
+@textColor:             #d5c4a1;
+@edgeColor:             #d5c4a1;
+@gridColor:             #3c3836;
+
+/* selection, hover, prompts, brackets colors */
+@selected-bg:           @gruv-base02;
+@selected-half:         rgba(40, 40, 40, .5);
+@selected-third:        rgba(40, 40, 40, .3);
+@selected-tenth:        rgba(40, 40, 40, .1);
+@selected-error:        @red;
+@selected-active:       @selected-half;
+@navbar-selected:       @selected-third;
+@selected-fg:           @gruv-base0;
+@selected-fg-bright:    @blue;
+@unemphasize-fg:        @gruv-base1;
+
+/* code, text, markdown, & tooltip colors */
+@cc-input-bg:           @gruv-base02;
+@cc-input-fg:           @notebook-fg;
+@cc-input-border:       @gruv-base2;
+@cc-output-bg:          @notebook-bg;
+@cc-output-fg:          @notebook-fg;
+@text-cell-fg:          @notebook-fg;
+@unrendered-text:       @yellow;
+@header-fg:             @yellow;
+@tooltip-bg-color:      @gruv-base02;
+@tooltip-fg-color:      @gruv-base1;
+@nb-name-fg:            @item-theme;
+@nb-name-hover:         @gray;
+
+/* cell border colors */
+@cc-border-selected:    @blue;
+@cc-border-edit:        @yellow;
+@tc-border-edit:    	@gruv-base00;
+@tc-border-selected:    @yellow;
+// @cell-selected-border-width: thin;
+
+/* menus, dividers, prompt-borders, brackets */
+@divider:               @selected-half;
+@disabled:              @gruv-base01;
+@input-prompt:          @gruv-base3;
+@prompt-line:           @cc-border-edit;
+@tc-prompt-std:         rgba(215, 153, 33, .50);
+@matching-bracket:      @gruv-base3;
+@dropdown-bg:           @notebook-bg;
+@dropdown-border:       @selected-half;
+@dropdown-hover:        @selected-third;
+
+/* panels and form-control styles */
+@panel-header-bg:       darken(@gruv-base03, 1%);
+@panel-bg:              lighten(@cc-input-bg, 0%);
+@modal-bg:              lighten(@cc-input-bg, 0%);
+@alert-info-bg:         lighten(@cc-input-bg, 0%);
+@form-input-bg:         lighten(@cc-input-bg, 3%);
+@cmd-palette-bg:        @form-input-bg;
+@cmd-palette-form:      @panel-header-bg;
+@cmd-palette-hover:     @panel-bg;
+
+/* buttons, widgets, kernels colors */
+@item-theme:            @gruv-base2;
+@item-blue:             @blue;
+@item-cyan:             @cyan;
+@item-green:            @green;
+@item-red:              @red;
+
+@item-danger:           @red;
+@item-success:          @green;
+@item-info:             @cyan;
+@item-warning:          @yellow;
+
+/* tables and dataframes colors */
+@table-color:           @gruv-base1;
+@table-bg:              @notebook-bg;
+@table-border:          @gray;
+@df-header-bg:          @gruv-base02;
+@df-header:             @gruv-base1;
+@df-header-border:      @gray;
+@df-cell-bg:            @table-bg;
+@codeblock-bg:          lighten(@cc-input-bg, 4%);
+@codeblock-border:      @codeblock-bg;
+
+/* btn, scrollbar and shadow colors */
+@button-bg:             @selected-half;
+@button-border:         @selected-half;
+@button-color:          @item-theme;
+@button-hover:          rgba(40, 40, 40, .9);
+@button-panel-bg:       @panel-header-bg;
+@button-panel-hover:    darken(@panel-header-bg, 2%);
+@scrollbar:             @item-theme;
+@scroll-trough:         lighten(@notebook-bg, 6%);
+@scrollbar-inactive:    @gruv-base1;
+@box-shadow:            @gray;
+
+/* gruvized ansi colors */
+@ansiblack:             @gruv-base03;
+@ansiblue:              @blue;
+@ansigray:              @gruv-base0;
+@ansigreen:             @green;
+@ansipurple:            @violet;
+@ansicyan:              @cyan;
+@ansiyellow:            @yellow;
+@ansired:               @red;
+@stderr-bg:             @orange;
+@stderr-fg:             @gruv-base01;
+@js-error:              @ansired;
+
+/* gruvized codemirror colors */
+@cm-selected:           @gruv-base01;
+@cm-gutters:            @gruv-base02;
+@cm-linenumber:         @gruv-base3;
+@cm-atom:               @magenta;
+@cm-attribute:          @magenta;
+@cm-comment:            @gray;
+@cm-property:           @cyan;
+@cm-keyword:            @red;
+@cm-string:             @green;
+@cm-number:             @blue;
+@cm-meta:               @violet;
+@cm-operator:           @magenta;
+@cm-builtin:            @magenta;
+@cm-variable:           @cc-input-fg;
+@cm-variable2:          @cyan;
+@cm-variable3:          @violet;
+
+@cm-def:                @blue;
+@cm-error:              @cc-input-bg;
+@cm-tag:                @blue;
+@cm-link:               @blue;
+@cm-storage:            @magenta;
+@cm-entity:             @green;
+@cm-latex:              @notebook-fg;
+
