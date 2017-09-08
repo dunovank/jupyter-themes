@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.17.6**
+- added dependency check to setup.py script (prevent unnecessary dep upgrades)
+
 #### **v0.17.5**
 - removed version on ipython requirement
 - merged gruvbox themes PR
