@@ -1,9 +1,11 @@
 ### Release Notes
 
-#### **v0.17.4**
+#### **v0.17.5**
+- removed version on ipython requirement
+- merged gruvbox themes PR
 - modified selected code-cell behavior (border-left colors in command and edit_mode)
 - removed command- and edit-mode border colors on output-prompt
-- added `-altout` (--altoutput) argument for setting output area background to notebook bg
+- added `-altout` (--altoutput) argument for setting output area background to notebook bg**
 
 #### **v0.17.3**
 - removed develop branch
