@@ -213,8 +213,9 @@ def style_layout(style_less,
                  toolbar=False,
                  nbname=False,
                  altprompt=False,
-                 hideprompt=False,
-                 altmd=False):
+                 altmd=False,
+                 altout=False,
+                 hideprompt=False):
     """Set general layout and style properties of text and code cells"""
 
     # write theme name to ~/.jupyter/custom/ (referenced by jtplot.py)
@@ -240,18 +241,21 @@ def style_layout(style_less,
     promptMinWidth = 12.5
     tcPromptWidth = promptMinWidth
     tcPromptFontsize = "@prompt-fontsize"
+    ccOutputBG = '@cc-output-bg-default'
 
     if theme == 'grade3':
         textcell_bg = '@notebook-bg'
-    if altmd:
-        textcell_bg = '@notebook-bg'
-        tcPromptBorder = '2px dotted @tc-border-selected'
     if altprompt:
         promptPadding = '.1em'
         promptMinWidth = 7
         tcPromptWidth = 7
         promptText = 'transparent'
         tcPromptBorder = '2px solid transparent'
+    if altmd:
+        textcell_bg = '@notebook-bg'
+        tcPromptBorder = '2px dotted @tc-border-selected'
+    if altout:
+        ccOutputBG = '@notebook-bg'
     if margins != 'auto':
         margins = '{}px'.format(margins)
     if '%' not in cellwidth:
@@ -263,6 +267,7 @@ def style_layout(style_less,
     style_less += '@text-cell-bg: {}; \n'.format(textcell_bg)
     style_less += '@cc-prompt-width: {}ex; \n'.format(promptMinWidth)
     style_less += '@cc-prompt-bg: {}; \n'.format(promptBG)
+    style_less += '@cc-output-bg: {}; \n'.format(ccOutputBG)
     style_less += '@prompt-text: {}; \n'.format(promptText)
     style_less += '@prompt-padding: {}; \n'.format(promptPadding)
     style_less += '@prompt-border: {}; \n'.format(promptBorder)
@@ -319,11 +324,14 @@ def toggle_settings(toolbar=False, nbname=False, hideprompt=False):
     else:
         toggle += '#header-container {display: none !important;}\n'
     if hideprompt:
-        toggle += 'div.prompt {display: none !important;}\n'
+        toggle += 'div.prompt.input_prompt {display: none !important;}\n'
+        toggle += 'div.prompt.output_prompt {width: 2em !important;}\n'
+        toggle += 'div.out_prompt_overlay.prompt:hover {width: 2.6em !important; min-width: 2.6em !important;}\n'
         toggle += (
             '.CodeMirror-gutters, .cm-s-ipython .CodeMirror-gutters'
             '{ position: absolute; left: 0; top: 0; z-index: 3; width: 2em; '
-            'display: inline-block !important; }')
+            'display: inline-block !important; }\n')
+        toggle += ('div.cell.code_cell .input { border-left: 5px solid @cm-gutters !important; border-bottom-left-radius: 5px; border-top-left-radius: 5px; }\n')
 
     return toggle
 

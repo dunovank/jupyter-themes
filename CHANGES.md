@@ -1,5 +1,15 @@
 ### Release Notes
 
+#### **v0.17.4**
+- modified selected code-cell behavior (border-left colors in command and edit_mode)
+- removed command- and edit-mode border colors on output-prompt
+- added `-altout` (--altoutput) argument for setting output area background to notebook bg
+
+#### **v0.17.3**
+- removed develop branch
+- changed README build status to master branch
+- correction to cell-width help docs (px or %)
+
 #### **v0.17.1**
 - fixed bug caused by [PR #152](https://github.com/dunovank/jupyter-themes/pull/152) preventing install on Windows machines
 - added explicit pointers to layout and styles.less/.css package data in setup.py

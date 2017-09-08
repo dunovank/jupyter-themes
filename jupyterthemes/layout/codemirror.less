@@ -124,10 +124,18 @@ div.tooltiptext.bigtooltip {
 .cm-s-ipython div.CodeMirror-selected {
     background: @cm-selected;
 }
+.CodeMirror-gutters {
+    border: none;
+    border-right: 1px solid @cm-gutters !important;
+    background-color: @cm-gutters !important;
+    background: @cm-gutters !important;
+    border-radius: 0px;
+    white-space: nowrap;
+}
 .cm-s-ipython .CodeMirror-gutters {
     background: @cm-gutters;
     border: none;
-    border-radius:0px;
+    border-radius: 0px;
     width: 36px;
 }
 .cm-s-ipython .CodeMirror-linenumber {
@@ -286,6 +294,9 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
 }
 .cm-s-default .cm-atom {
     color: @cm-number;
+}
+.cm-s-default .cm-def {
+    color: @cm-def;
 }
 .CodeMirror-cursor {
     border-left: @cursor-info !important;

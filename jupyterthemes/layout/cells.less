@@ -8,14 +8,14 @@ div.input_area {
     background: @cc-input-bg;
     padding-right: 1.2em;
     border: 0px;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 div.cell {
     padding: 0px;
     background: @cc-input-bg;
     background-color: @cc-input-bg;
     border: medium solid @notebook-bg;
-    border-radius: 2px;
+    border-radius: 4px;
     top: 0;
     border-top-left-radius: 4px;
 }
@@ -46,42 +46,89 @@ div.CodeMirror-sizer {
     margin-top: 0px;
 }
 div.cell.selected:before {
-    background: @cc-border-selected;
-    border: 2px solid @cc-border-selected;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 4px;
+    background: @cc-input-bg; //@cc-border-selected;
+    border: none; // 2px solid @cc-border-selected;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     position: absolute;
     display: block;
     top: 0px;
     left: 0px;
-    width: 5px;
+    width: 0px;
     height: 100%;
 }
-
-/*********** JUPYTER CELLS SOFT-SELECTED ************/
-div.cell.selected.jupyter-soft-selected:before,
 .edit_mode div.cell.selected:before {
-    background: @cc-border-edit;
-    border: 2px solid @cc-border-edit;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+    background: @cc-input-bg;
+    border: none; // 2px solid @cc-border-selected;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     position: absolute;
     display: block;
     top: 0px;
     left: 0px;
-    width: 5px;
+    width: 0px;
     height: 100%;
 }
-
-div.cell.jupyter-soft-selected,
-div.cell.selected.jupyter-soft-selected {
-    border-left-color: @cc-border-edit;
-    border-left-width: 0px;
-    padding-left: 7px;
-    border-right-color: @cc-border-edit;
-    border-right-width: 0px;
-    background: @cc-border-edit;
-    border-radius: 6px;
+div.cell.code_cell .input {
+    border-left: 5px solid transparent !important;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+div.cell.code_cell.selected .input {
+    border-left: 5px solid @cc-border-selected !important;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.edit_mode div.cell.code_cell.selected .input {
+    border-left: 5px solid @cc-border-edit !important;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+/*********** JUPYTER CELLS SOFT-SELECTED ************/
+// div.cell.selected .input {
+//     background: @cc-border-selected !important;
+// }
+// .edit_mode div.cell.selected .input{
+//     background: @cc-border-edit !important;
+// }
+// div.cell.selected.jupyter-soft-selected:before,
+// .edit_mode div.cell.selected:before {
+//     background: transparent; //@cc-border-edit;
+//     border: none; //2px solid @cc-border-edit;
+//     border-top-left-radius: 5px !important;
+//     border-bottom-left-radius: 5px !important;
+//     position: absolute;
+//     display: block;
+//     top: 0px;
+//     left: 0px;
+//     width: 5px;
+//     height: 100%;
+// }
+div.cell.selected.jupyter-soft-selected:before .input,
+.edit_mode div.cell.selected:before .input {
+    border-left: 5px solid @cc-border-edit !important;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    // border-left-color: @cc-border-edit;
+    // border-left-width: 0px;
+    // padding-left: 7px;
+    // border-right-color: @cc-border-edit;
+    // border-right-width: 0px;
+    // background: @cc-border-edit;
+    // border-radius: 6px;
+}
+div.cell.jupyter-soft-selected .input,
+div.cell.selected.jupyter-soft-selected .input {
+    border-left: 5px solid @cc-border-edit !important;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    // border-left-color: @cc-border-edit;
+    // border-left-width: 0px;
+    // padding-left: 7px;
+    // border-right-color: @cc-border-edit;
+    // border-right-width: 0px;
+    // background: @cc-border-edit;
+    // border-radius: 6px;
 }
 div.cell.selected.jupyter-soft-selected {
     border-left-color: @cc-border-selected;
@@ -119,6 +166,7 @@ div.cell.text_cell.selected.jupyter-soft-selected {
     background: @tc-border-edit !important;
     border-radius: 6px !important;
 }
+
 // /*********** CODE CELL INPUT PROMPT ************/
 div.prompt, .prompt {
     font-family: @monofont, monospace;
@@ -153,18 +201,18 @@ div.cell.code_cell .input_prompt {
 
 div.cell.selected .prompt {
     top: 0;
-    border-left: 5px solid @cc-border-selected;
-    border-radius: 2px;
+    // border-left: 5px solid @cc-border-selected;
+    // border-radius: 2px;
 }
 .edit_mode div.cell.selected .prompt {
     top: 0;
-    border-left: 5px solid @cc-border-edit;
-    border-radius: 2px;
+    // border-left: 5px solid @cc-border-edit;
+    // border-radius: 2px;
 }
 .edit_mode div.cell.selected .prompt {
     top: 0;
-    border-left: 5px solid @cc-border-edit;
-    border-radius: 2px;
+    // border-left: 5px solid @cc-border-edit;
+    // border-radius: 2px;
 }
 
 /********** CODE CELL OUTPUT AREA **********/
@@ -207,7 +255,7 @@ div.output_html {
 }
 div.output_subarea {
     overflow-x: auto;
-    padding: 0.3em;
+    padding: 0.8em !important;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     box-flex: 1;
@@ -236,7 +284,8 @@ div.prompt.output_prompt {
     border-bottom-right-radius: 0px;
     min-width: @prompt-min-width !important;
     width: @prompt-min-width !important;
-    border-right: @prompt-border !important;
+    // border-right: @prompt-border !important;
+    border-right: 2px solid @cc-output-bg;
 }
 div.out_prompt_overlay.prompt {
     font-family: @monofont, monospace;
@@ -248,12 +297,13 @@ div.out_prompt_overlay.prompt {
     border-bottom-right-radius: 0px;
     min-width: @prompt-min-width !important;
     width: @prompt-min-width !important;
-    border-right: @prompt-border !important;
+    border-right: 2px solid @cc-output-bg;
+    //border-right: @prompt-border !important;
     color: transparent;
 }
 div.out_prompt_overlay.prompt:hover {
     background-color: @cc-output-bg;
-    box-shadow: @box-shadow 2px 1px 1px 2px inset;
+    box-shadow: @box-shadow 2px 0px 4px 0px inset;
     border: none;
     border-bottom-left-radius: 2px;
     -webkit-border-: 2px;
@@ -262,22 +312,24 @@ div.out_prompt_overlay.prompt:hover {
     border-top-left-radius: 0px;
     min-width: @prompt-min-width !important;
     width: @prompt-min-width !important;
-    border-right: @prompt-border !important;
+    border-right: 2px solid @cc-output-bg;
+    //@prompt-border !important;
 }
 div.cell.code_cell .output_prompt {
-    border-right: 2px solid @prompt-border !important;
+    // border-right: 2px solid @prompt-border !important;
+    border-right: 2px solid @cc-output-bg;
     color: transparent;
 }
-div.cell.selected .output_prompt,
-div.cell.selected .out_prompt_overlay.prompt {
-    border-left: 5px solid @cc-border-selected;
-    border-radius: 0px !important;
-}
-.edit_mode div.cell.selected .output_prompt,
-.edit_mode div.cell.selected .out_prompt_overlay.prompt {
-    border-left: 5px solid @cc-border-edit !important;
-    border-radius: 0px !important;
-}
+// div.cell.selected .output_prompt,
+// div.cell.selected .out_prompt_overlay.prompt {
+    // border-left: 5px solid @cc-border-selected;
+    // border-radius: 0px !important;
+// }
+// .edit_mode div.cell.selected .output_prompt,
+// .edit_mode div.cell.selected .out_prompt_overlay.prompt {
+    // border-left: 5px solid @cc-border-edit !important;
+    // border-radius: 0px !important;
+// }
 /******** TXT & MD INPUT AREA ********/
 div.text_cell,
 div.text_cell_render pre,
@@ -473,6 +525,7 @@ div.rendered_html {
 .rendered_html * + p {
     margin-top: .5em;
     margin-bottom: .5em;
+    margin-left: .5em;
 }
 div.rendered_html pre,
 div.text_cell_render pre {

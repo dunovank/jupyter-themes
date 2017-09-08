@@ -41,6 +41,7 @@ def install_theme(theme=None,
                 cursorcolor='default',
                 altprompt=False,
                 altmd=False,
+                altout=False,
                 hideprompt=False,
                 vimext=False,
                 toolbar=False,
@@ -50,6 +51,9 @@ def install_theme(theme=None,
     """ Install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
     """
+    # get working directory
+    wkdir = os.path.abspath('./')
+
     stylefx.reset_default(False)
     stylefx.check_directories()
 
@@ -83,6 +87,7 @@ def install_theme(theme=None,
             lineheight=lineheight,
             altprompt=altprompt,
             altmd=altmd,
+            altout=altout,
             hideprompt=hideprompt,
             cursorwidth=cursorwidth,
             cursorcolor=cursorcolor,
@@ -99,6 +104,8 @@ def install_theme(theme=None,
     # install style_css to .jupyter/custom/custom.css
     stylefx.write_final_css(style_css)
 
+    # change back to original working directory
+    os.chdir(wkdir)
 
 def main():
     parser = ArgumentParser()
@@ -204,6 +211,12 @@ def main():
         default=False,
         help="alt markdown cell style")
     parser.add_argument(
+        '-altout',
+        "--altoutput",
+        action='store_true',
+        default=False,
+        help="set output bg color to notebook bg")
+    parser.add_argument(
         '-P',
         "--hideprompt",
         action='store_true',
@@ -275,6 +288,7 @@ def main():
         cursorcolor=args.cursorcolor,
         altprompt=args.altprompt,
         altmd=args.altmarkdown,
+        altout=args.altoutput,
         hideprompt=args.hideprompt,
         vimext=args.vimext,
         toolbar=args.toolbar,

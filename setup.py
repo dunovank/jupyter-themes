@@ -46,7 +46,7 @@ fontsdata = chain.from_iterable([[os.sep.join(f.split(os.sep)[1:])
 datafiles[pkgname].extend(list(fontsdata))
 
 # required dependencies
-install_requires = ['ipython<6.0', 'jupyter_core', 'lesscpy', 'matplotlib']
+install_requires = ['ipython', 'jupyter_core', 'lesscpy>=0.12.0', 'matplotlib>=1.4.3']
 
 setup(
     name='jupyterthemes',

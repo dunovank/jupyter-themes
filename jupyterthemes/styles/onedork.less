@@ -18,7 +18,7 @@
 @figureFace:            #373e4b;
 @textColor:             #B1BED6;
 @edgeColor:             #899ab8;
-@gridColor:             #4a5467;
+@gridColor:             #546379;
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           #2769c3;
@@ -35,7 +35,7 @@
 /* code, text, markdown, & tooltip colors */
 @cc-input-bg:           #2c303c;
 @cc-input-fg:           #B5C2D9;
-@cc-output-bg:          #373e4b;
+@cc-output-bg-default:  #373e4b;
 @cc-output-fg:          #B1BED6;
 @text-cell-fg:          #ABB7CE;
 @unrendered-text:       #7aa05d;
@@ -48,8 +48,8 @@
 /* cell border colors */
 @cc-border-selected:    @selected-bg;
 @cc-border-edit:        #33517c;
-@tc-border-selected:    @header-fg;
-@tc-border-edit:        #455C4D;
+@tc-border-selected:    @cm-gutters; //@header-fg;
+@tc-border-edit:        @tc-border-selected; //#455C4D;
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               rgba(148, 204, 114, .3);

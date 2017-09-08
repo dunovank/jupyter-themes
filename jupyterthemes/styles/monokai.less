@@ -11,7 +11,7 @@
 /* monokai notebook colors */
 @notebook-bg:           #1E1E1E;
 @notebook-fg:           #F8F8F0;
-@notebook-base:         lighten(#282828, 2%);
+@notebook-base:         #2d2d2d;
 
 /* jtplot figure style */
 @axisFace:              #232323;
@@ -35,7 +35,7 @@
 /* code, text, markdown, & tooltip colors */
 @cc-input-bg:           #282828;
 @cc-input-fg:           #F8F8F0;
-@cc-output-bg:          #232323;
+@cc-output-bg-default:  #232323;
 @cc-output-fg:          #CCCCCC;
 @text-cell-fg:          #F8F8F0;
 @unrendered-text:       @green;
@@ -46,10 +46,10 @@
 @nb-name-hover:         @green;
 
 /* cell border colors */
-@cc-border-selected:    lighten(@selected-bg, 5%);
-@cc-border-edit:        darken(@selected-bg, 8%);
-@tc-border-selected:    lighten(@selected-bg, 5%);
-@tc-border-edit:        darken(@selected-bg, 8%);
+@cc-border-selected:    #57564b;
+@cc-border-edit:        #33322b;
+@tc-border-selected:    @cc-border-selected;
+@tc-border-edit:        @cc-border-edit;
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               #232323;
@@ -64,7 +64,7 @@
 
 /* panels and form-control styles */
 @panel-header-bg:       @notebook-base;
-@panel-bg:              @cc-output-bg;
+@panel-bg:              @cc-output-bg-default;
 @modal-bg:              @panel-bg;
 @alert-info-bg:         #4a5467;
 @form-input-bg:         @codeblock-bg;
@@ -92,7 +92,7 @@
 @table-color:           #CCCCCC;
 @table-bg:              #282828;
 @table-border:          #49483E;
-@df-header-bg:          darken(@table-bg, 4%);
+@df-header-bg:          #1e1e1e;
 @df-header:             #CCCCCC;
 @df-header-border:      #49483E;
 @df-cell-bg:            #282828;
@@ -107,7 +107,7 @@
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    #212121;
 @scrollbar:             #49483E;
-@scroll-trough:         lighten(@notebook-bg, 6%);
+@scroll-trough:         #2d2d2d;
 @scrollbar-inactive:    #49483E;
 @box-shadow:            #49483E;
 
@@ -128,7 +128,7 @@
 @cm-selected:           #49483E;
 @cm-gutters:            @cm-selected;
 @cm-linenumber:         @disabled;
-@cm-comment:            #75715E; //#49483E;
+@cm-comment:            #75715E;
 @cm-atom:               @violet;
 @cm-number:             @violet;
 @cm-property:           @green;

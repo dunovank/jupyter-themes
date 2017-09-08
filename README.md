@@ -56,8 +56,8 @@ pip install --upgrade jupyterthemes
 jt  [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
     [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-dfs DFFONTSIZE]
     [-m MARGINS] [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-vim]
-    [-cellw CELLWIDTH] [-lineh LINEHEIGHT] [-altp] [-P] [-T] [-N]
-    [-r] [-dfonts]
+    [-cellw CELLWIDTH] [-lineh LINEHEIGHT] [-altp] [-altmd] [-altout]
+    [-P] [-T] [-N] [-r] [-dfonts]
 ```
 
 #### Description of Command Line options
@@ -80,6 +80,8 @@ jt  [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Cursor Width          | -cursw  |     2      |
 | Cursor Color          | -cursc  |     --     |
 | Alt Prompt Layout     |  -altp  |     --     |
+| Alt Markdown BG Color | -altmd  |     --     |
+| Alt Output BG Color   | -altout |     --     |
 | Style Vim NBExt*      |  -vim   |     --     |
 | Toolbar Visible       |   -T    |     --     |
 | Name & Logo Visible   |   -N    |     --     |
