@@ -6,7 +6,7 @@ from itertools import chain
 pkgname = 'jupyterthemes'
 major = 0
 minor = 17
-patch = 7
+patch = 8
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v' + version])
@@ -44,36 +44,6 @@ fontsdata = chain.from_iterable([[os.sep.join(f.split(os.sep)[1:])
                                   for f in glob(os.path.join(fsub, '*', '*'))]
                                  for fsub in fsubdirs])
 datafiles[pkgname].extend(list(fontsdata))
-
-# def check_dependencies():
-#     install_requires = ['jupyter_core']
-    # try:
-    #     import jupyter_core
-    # except Exception:
-    #     install_requires.append('jupyter_core')
-
-    # try:
-    #     import IPython
-    #     assert(int(''.join(IPython.__version__.split('.')))>=541)
-    # except Exception:
-    #     install_requires.append('ipython>=5.4.1')
-
-    # try:
-    #     import lesscpy
-    #     assert(int(''.join(lesscpy.__version__.split('.')))>=120)
-    # except Exception:
-    #     install_requires.append('lesscpy>=0.12.0')
-
-    # try:
-    #     import matplotlib
-    #     assert(int(''.join(matplotlib.__version__.split('.')))>=143)
-    #
-    # except Exception:
-    #     install_requires.append('matplotlib')
-    # install_requires.append('lesscpy>=0.12.0')
-    # return install_requires
-
-# install_requires = check_dependencies()
 
 install_requires = ['jupyter_core', 'ipython>=5.4.1', 'matplotlib>=1.4.3', 'lesscpy>=0.12.0']
 

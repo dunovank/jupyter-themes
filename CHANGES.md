@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.17.8**
+- made toolbar visible by default (toggle off with `-T` flag when running `jt` command)
+
 #### **v0.17.7**
 - removed dependency check from setup.py script (caused issues with dependencies)
 - added cl flag for setting math (latex) fontsize (`-mathfs`)

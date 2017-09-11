@@ -40,7 +40,10 @@
 
 ### Install with pip
 ```sh
-# install/upgrade to latest version
+# install jupyterthemes
+pip install jupyterthemes
+
+# upgrade to latest version
 pip install --upgrade jupyterthemes
 ```
 
@@ -104,7 +107,7 @@ jt -t chesterish
 # If this doesn't work, try starting a new notebook session.
 jt -r
 
-# toggle toolbar ON and notebook name ON
+# toggle toolbar OFF and notebook name ON
 jt -t grade3 -T -N
 
 # set code font to 'Roboto Mono' 12pt
@@ -138,9 +141,9 @@ jt -t grade3 -altp
 
 # my two go-to styles
 # dark
-jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88%
+jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T
 # light
-jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88%
+jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T
 ```
 
 

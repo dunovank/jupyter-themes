@@ -12,7 +12,7 @@ __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 17
-patch = 7
+patch = 8
 
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
@@ -45,7 +45,7 @@ def install_theme(theme=None,
                 altout=False,
                 hideprompt=False,
                 vimext=False,
-                toolbar=False,
+                toolbar=True,
                 nbname=False,
                 dfonts=False):
 
@@ -234,7 +234,7 @@ def main():
         '-T',
         "--toolbar",
         action='store_true',
-        default=False,
+        default=True,
         help="make toolbar visible")
     parser.add_argument(
         '-N',
