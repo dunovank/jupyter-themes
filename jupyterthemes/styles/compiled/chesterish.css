@@ -979,13 +979,9 @@ fieldset[disabled] .btn-default.focus {
  position: relative;
  font-size: inherit;
  white-space: nowrap;
- background: #27313d;
- background-color: #27313d;
  border: none;
 }
 .input-group-btn:hover {
- background: #232c37;
- background-color: #232c37;
  border: none;
 }
 .input-group-btn:first-child > .btn,
@@ -993,7 +989,7 @@ fieldset[disabled] .btn-default.focus {
  background: #27313d;
  background-color: #27313d;
  border: none;
- margin: 2px;
+ margin-right: 3px;
  font-size: inherit;
 }
 .input-group-btn:first-child > .btn:hover,
@@ -1001,7 +997,6 @@ fieldset[disabled] .btn-default.focus {
  background: #232c37;
  background-color: #232c37;
  border: none;
- margin: 2px;
  font-size: inherit;
  transition: 200ms ease;
 }
@@ -1177,12 +1172,12 @@ div.output.output_scroll {
 ::-webkit-scrollbar {
  width: 11px;
  max-height: 9px;
- background-color: #262f3b;
+ background-color: #292d3a;
  border-radius: 3px;
  border: none;
 }
 ::-webkit-scrollbar-track {
- background: #262f3b;
+ background: #292d3a;
  border: none;
  width: 11px;
  max-height: 9px;
@@ -1190,7 +1185,7 @@ div.output.output_scroll {
 ::-webkit-scrollbar-thumb {
  border-radius: 2px;
  border: none;
- background: #0a8fbd;
+ background: #3f4555;
  background-clip: content-box;
  width: 11px;
 }
@@ -1231,33 +1226,36 @@ div.input_area {
  background: #293340;
  padding-right: 1.2em;
  border: 0px;
- border-radius: 2px;
+ border-radius: 0px;
+ border-top-right-radius: 3px;
+ border-bottom-right-radius: 3px;
 }
 div.cell {
  padding: 0px;
- background: #293340;
- background-color: #293340;
+ background: #1a2028;
+ background-color: #1a2028;
  border: medium solid #1a2028;
- border-radius: 2px;
+ border-radius: 0px;
  top: 0;
- border-top-left-radius: 4px;
 }
 div.cell.selected {
- background: #293340;
- background-color: #293340;
+ background: #1a2028;
+ background-color: #1a2028;
  border: medium solid #1a2028;
  padding: 0px;
+ border-radius: 3px;
 }
 .edit_mode div.cell.selected {
  padding: 0px;
- background: #293340;
- background-color: #293340;
+ background: #1a2028;
+ background-color: #1a2028;
  border: medium solid #1a2028;
+ border-radius: 3px;
 }
 div.cell.edit_mode {
  padding: 0px;
- background: #293340;
- background-color: #293340;
+ background: #1a2028;
+ background-color: #1a2028;
 }
 div.CodeMirror-sizer {
  margin-left: 0px;
@@ -1269,39 +1267,56 @@ div.CodeMirror-sizer {
  margin-top: 0px;
 }
 div.cell.selected:before {
- background: #008ebf;
- border: 2px solid #008ebf;
- border-top-left-radius: 2px;
- border-bottom-left-radius: 4px;
+ background: #293340;
+ border: none;
+ border-radius: 3px;
  position: absolute;
  display: block;
  top: 0px;
  left: 0px;
- width: 5px;
+ width: 0px;
  height: 100%;
 }
-div.cell.selected.jupyter-soft-selected:before,
 .edit_mode div.cell.selected:before {
- background: #005573;
- border: 2px solid #005573;
- border-top-left-radius: 2px;
- border-bottom-left-radius: 2px;
+ background: #1a2028;
+ border: none;
+ border-radius: 3px;
  position: absolute;
  display: block;
  top: 0px;
  left: 0px;
- width: 5px;
+ width: 0px;
  height: 100%;
 }
-div.cell.jupyter-soft-selected,
-div.cell.selected.jupyter-soft-selected {
- border-left-color: #005573;
- border-left-width: 0px;
- padding-left: 7px;
- border-right-color: #005573;
- border-right-width: 0px;
- background: #005573;
- border-radius: 6px;
+div.cell.code_cell .input {
+ border-left: 5px solid #293340 !important;
+ border-radius: 3px;
+ border-bottom-left-radius: 3px;
+ border-top-left-radius: 3px;
+}
+div.cell.code_cell.selected .input {
+ border-left: 5px solid #008ebf !important;
+ border-radius: 3px;
+ border-bottom-left-radius: 3px;
+ border-top-left-radius: 3px;
+}
+.edit_mode div.cell.code_cell.selected .input {
+ border-left: 5px solid #005573 !important;
+ border-radius: 3px;
+ border-bottom-left-radius: 3px;
+ border-top-left-radius: 3px;
+}
+div.cell.selected.jupyter-soft-selected:before .input,
+.edit_mode div.cell.selected:before .input {
+ border-left: 3px solid #005573 !important;
+ border-bottom-left-radius: 3px;
+ border-top-left-radius: 3px;
+}
+div.cell.jupyter-soft-selected .input,
+div.cell.selected.jupyter-soft-selected .input {
+ border-left: 3px solid #005573 !important;
+ border-bottom-left-radius: 3px;
+ border-top-left-radius: 3px;
 }
 div.cell.selected.jupyter-soft-selected {
  border-left-color: #008ebf;
@@ -1370,18 +1385,12 @@ div.cell.code_cell .input_prompt {
 }
 div.cell.selected .prompt {
  top: 0;
- border-left: 5px solid #008ebf;
- border-radius: 2px;
 }
 .edit_mode div.cell.selected .prompt {
  top: 0;
- border-left: 5px solid #005573;
- border-radius: 2px;
 }
 .edit_mode div.cell.selected .prompt {
  top: 0;
- border-left: 5px solid #005573;
- border-radius: 2px;
 }
 div.output_wrapper {
  background-color: #323a48;
@@ -1422,7 +1431,7 @@ div.output_html {
 }
 div.output_subarea {
  overflow-x: auto;
- padding: 0.3em;
+ padding: 0.8em !important;
  -webkit-box-flex: 1;
  -moz-box-flex: 1;
  box-flex: 1;
@@ -1440,7 +1449,8 @@ div.btn.btn-default.output_collapsed:hover {
 }
 div.prompt.output_prompt {
  font-family: monospace, monospace;
- font-size: 9pt !important;
+ font-size: 9.5pt !important;
+ font-weight: bold !important;
  background-color: #323a48;
  color: transparent;
  border-bottom-left-radius: 4px;
@@ -1449,11 +1459,12 @@ div.prompt.output_prompt {
  border-bottom-right-radius: 0px;
  min-width: 12.5ex !important;
  width: 12.5ex !important;
- border-right: 2px solid rgba(0,156,209,.5) !important;
+ border-right: 2px solid transparent;
 }
 div.out_prompt_overlay.prompt {
  font-family: monospace, monospace;
- font-size: 9pt !important;
+ font-size: 9.5pt !important;
+ font-weight: bold !important;
  background-color: #323a48;
  border-bottom-left-radius: 2px;
  border-top-right-radius: 0px;
@@ -1461,12 +1472,12 @@ div.out_prompt_overlay.prompt {
  border-bottom-right-radius: 0px;
  min-width: 12.5ex !important;
  width: 12.5ex !important;
- border-right: 2px solid rgba(0,156,209,.5) !important;
+ border-right: 2px solid transparent;
  color: transparent;
 }
 div.out_prompt_overlay.prompt:hover {
- background-color: #323a48;
- box-shadow: #2a323c 2px 1px 1px 2px inset;
+ background-color: #374556;
+ box-shadow: none !important;
  border: none;
  border-bottom-left-radius: 2px;
  -webkit-border-: 2px;
@@ -1475,115 +1486,23 @@ div.out_prompt_overlay.prompt:hover {
  border-top-left-radius: 0px;
  min-width: 12.5ex !important;
  width: 12.5ex !important;
- border-right: 2px solid rgba(0,156,209,.5) !important;
+ border-right: 2px solid #374556 !important;
 }
 div.cell.code_cell .output_prompt {
- border-right: 2px solid 2px solid rgba(0,156,209,.5) !important;
+ border-right: 2px solid transparent;
  color: transparent;
 }
 div.cell.selected .output_prompt,
 div.cell.selected .out_prompt_overlay.prompt {
- border-left: 5px solid #008ebf;
+ border-left: 5px solid #005573;
+ border-right: 2px solid #323a48;
  border-radius: 0px !important;
 }
 .edit_mode div.cell.selected .output_prompt,
 .edit_mode div.cell.selected .out_prompt_overlay.prompt {
- border-left: 5px solid #005573 !important;
+ border-left: 5px solid #005573;
+ border-right: 2px solid #323a48;
  border-radius: 0px !important;
-}
-div.text_cell,
-div.text_cell_render pre,
-div.text_cell_render {
- font-family: sans-serif;
- font-size: 13pt;
- line-height: 130% !important;
- color: #b0bdd7;
- background: #293340;
- background-color: #293340;
- border-radius: 0px;
-}
-div .text_cell_render {
- padding: 0.4em 0.4em 0em 0.4em;
-}
-div.cell.text_cell .CodeMirror-lines {
- padding-top: .7em !important;
- padding-bottom: .4em !important;
- padding-left: .5em !important;
- padding-right: .5em !important;
- margin-top: .4em;
- margin-bottom: .3em;
-}
-div.cell.text_cell.unrendered div.input_area,
-div.cell.text_cell.rendered div.input_area {
- background-color: #293340;
- background: #293340;
- border: 0px;
- border-radius: 2px;
-}
-div.cell.text_cell .CodeMirror,
-div.cell.text_cell .CodeMirror pre {
- line-height: 170% !important;
-}
-div.cell.text_cell.rendered.selected {
- font-family: sans-serif;
- line-height: 170% !important;
- background: #293340;
- background-color: #293340;
- border-radius: 0px;
-}
-div.cell.text_cell.unrendered.selected {
- font-family: sans-serif;
- line-height: 170% !important;
- background: #293340;
- background-color: #293340;
- border-radius: 0px;
-}
-div.cell.text_cell.selected {
- font-family: sans-serif;
- line-height: 170% !important;
- background: #293340;
- background-color: #293340;
- border-radius: 0px;
-}
-.edit_mode div.cell.text_cell.selected {
- font-family: sans-serif;
- line-height: 170% !important;
- background: #293340;
- background-color: #293340;
- border-radius: 0px;
-}
-div.text_cell.unrendered,
-div.text_cell.unrendered.selected,
-div.edit_mode div.text_cell.unrendered {
- font-family: sans-serif;
- line-height: 170% !important;
- background: #293340;
- background-color: #293340;
- border-radius: 0px;
-}
-div.cell.text_cell.selected:before {
- background: #0b98c8;
- border: 2px solid #0b98c8;
- border-top-left-radius: 2px;
- border-bottom-left-radius: 2px;
- position: absolute;
- display: block;
- top: 0px;
- left: 0px;
- width: 5px;
- height: 100%;
-}
-.edit_mode div.cell.text_cell.selected:before {
- background: #005573;
- border: 2px solid #005573;
- border-top-left-radius: 2px;
- border-bottom-left-radius: 2px;
- position: absolute;
- display: block;
- top: 0px;
- left: 0px;
- width: 5px;
- height: 100%;
 }
 div.cell.text_cell .input_prompt {
  border-right: 0;
@@ -1680,6 +1599,7 @@ div.rendered_html {
 .rendered_html * + p {
  margin-top: .5em;
  margin-bottom: .5em;
+ margin-left: .5em;
 }
 div.rendered_html pre,
 div.text_cell_render pre {
@@ -1880,6 +1800,7 @@ div.widget-label {
  min-width: 100px !important;
  vertical-align: text-top !important;
  color: #b4bcde !important;
+ font-size: 14px;
 }
 .widget-hprogress .progress {
  flex-grow: 1;
@@ -2247,7 +2168,7 @@ body > div.modal.cmd-palette.typeahead-field {
 .typeahead-container button {
  font-family: sans-serif;
  font-size: 28pt;
- background-color: #262f3b;
+ background-color: #252e3a;
  border: none;
  display: inline-block;
  line-height: inherit;
@@ -2606,6 +2527,14 @@ div.tooltiptext.bigtooltip {
 .cm-s-ipython div.CodeMirror-selected {
  background: #334050;
 }
+.CodeMirror-gutters {
+ border: none;
+ border-right: 1px solid #334050 !important;
+ background-color: #334050 !important;
+ background: #334050 !important;
+ border-radius: 0px;
+ white-space: nowrap;
+}
 .cm-s-ipython .CodeMirror-gutters {
  background: #334050;
  border: none;
@@ -2763,6 +2692,9 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
 .cm-s-default .cm-atom {
  color: #51c0ef;
 }
+.cm-s-default .cm-def {
+ color: #ffec8e;
+}
 .CodeMirror-cursor {
  border-left: 2px solid #0095ff !important;
  border-right: none;
@@ -2773,6 +2705,22 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
 }
 .cm-s-default .cm-selected {
  background: #334050;
+}
+.MathJax_Display,
+.MathJax {
+ border: 0 !important;
+ font-size: 100% !important;
+ text-align: center !important;
+ margin: 0em !important;
+ line-height: 2.25 !important;
+}
+.MathJax:focus,
+body :focus .MathJax {
+ display: inline-block !important;
+}
+.MathJax:focus,
+body :focus .MathJax {
+ display: inline-block !important;
 }
 .completions {
  position: absolute;
@@ -2803,33 +2751,18 @@ div#maintoolbar {
  display: none !important;
 }
 
-/**********************************
- MathJax Settings and Style Script
-**********************************/
-.MathJax_Display,
-.MathJax nobr>span.math>span {
-    border: 0 !important;
-    font-size: 110% !important;
-    text-align: center !important;
-    margin: 0em !important;
-}
-/* Prevents MathJax from jittering */
-/* cell position when cell is selected */
-.MathJax:focus, body :focus .MathJax {
-    display: inline-block !important;
-}
-
 <script>
     MathJax.Hub.Config({
         "HTML-CSS": {
             /*preferredFont: "TeX",*/
             /*availableFonts: ["TeX", "STIX"],*/
             styles: {
-                scale: 110,
+                scale: 100,
                 ".MathJax_Display": {
-                    "font-size": "110%",
+                    "font-size": "100%",
                 }
             }
         }
     });
 </script>
+    

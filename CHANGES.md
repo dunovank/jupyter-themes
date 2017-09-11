@@ -1,5 +1,9 @@
 ### Release Notes
 
+#### **v0.17.7**
+- removed dependency check from setup.py script (caused issues with dependencies)
+- added cl flag for setting math (latex) fontsize (`-mathfs`)
+
 #### **v0.17.6**
 - added dependency check to setup.py script (prevent unnecessary dep upgrades)
 

@@ -36,7 +36,6 @@ nb_style = os.path.join(layouts_dir, 'notebook.less')
 cm_style = os.path.join(layouts_dir, 'codemirror.less')
 cl_style = os.path.join(layouts_dir, 'cells.less')
 ex_style = os.path.join(layouts_dir, 'extras.less')
-jax_style = os.path.join(layouts_dir, 'mathjax.css')
 vim_style = os.path.join(layouts_dir, 'vim.less')
 comp_style = os.path.join(layouts_dir, 'completer.less')
 theme_name_file = os.path.join(jupyter_custom, 'current_theme.txt')
@@ -118,6 +117,7 @@ def set_font_properties(style_less,
                         prfontsize=95,
                         dffontsize=93,
                         outfontsize=85,
+                        mathfontsize=100,
                         dfonts=False):
     """Parent function for setting notebook, text/md, and
     codecell font-properties
@@ -159,6 +159,8 @@ def set_font_properties(style_less,
     style_less += '@df-fontsize: {}pt; \n'.format(dffontsize)
     style_less += '@output-font-size: {}pt; \n'.format(outfontsize)
     style_less += '@prompt-fontsize: {}pt; \n'.format(prfontsize)
+    style_less += '@mathfontsize: {}%; \n'.format(mathfontsize)
+    # style_less += '@mathfontsize-str: "{}pt"; \n'.format(mathfontsize)
     style_less += '\n\n'
     style_less += '/* Import Theme Colors and Define Layout Variables */\n'
     return style_less
@@ -247,8 +249,8 @@ def style_layout(style_less,
         textcell_bg = '@notebook-bg'
     if altprompt:
         promptPadding = '.1em'
-        promptMinWidth = 7
-        tcPromptWidth = 7
+        promptMinWidth = 8
+        tcPromptWidth = 8
         promptText = 'transparent'
         tcPromptBorder = '2px solid transparent'
     if altmd:
@@ -325,8 +327,8 @@ def toggle_settings(toolbar=False, nbname=False, hideprompt=False):
         toggle += '#header-container {display: none !important;}\n'
     if hideprompt:
         toggle += 'div.prompt.input_prompt {display: none !important;}\n'
-        toggle += 'div.prompt.output_prompt {width: 2em !important;}\n'
-        toggle += 'div.out_prompt_overlay.prompt:hover {width: 2.6em !important; min-width: 2.6em !important;}\n'
+        toggle += 'div.prompt.output_prompt {width: 5ex !important;}\n'
+        toggle += 'div.out_prompt_overlay.prompt:hover {width: 5ex !important; min-width: 5ex !important;}\n'
         toggle += (
             '.CodeMirror-gutters, .cm-s-ipython .CodeMirror-gutters'
             '{ position: absolute; left: 0; top: 0; z-index: 3; width: 2em; '
@@ -336,14 +338,28 @@ def toggle_settings(toolbar=False, nbname=False, hideprompt=False):
     return toggle
 
 
-def set_mathjax_style(style_css):
-    """Improve mathjax fonttype setting in markdown cells"""
+def set_mathjax_style(style_css, mathfontsize):
+    """Write mathjax settings, set math fontsize
+    """
 
-    # append mathjax css & script to style_css
-    with open(jax_style, 'r') as mathjax:
-        style_css += mathjax.read() + '\n'
+    jax_style = """<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            /*preferredFont: "TeX",*/
+            /*availableFonts: ["TeX", "STIX"],*/
+            styles: {
+                scale: %d,
+                ".MathJax_Display": {
+                    "font-size": %s,
+                }
+            }
+        }
+    });\n</script>
+    """ % (int(mathfontsize), '"{}%"'.format(str(mathfontsize)))
 
+    style_css += jax_style
     return style_css
+
 
 
 def set_vim_style(theme):

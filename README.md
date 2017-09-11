@@ -74,6 +74,7 @@ jt  [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Text/MD Cell Fontsize |  -tfs   |     13     |
 | Pandas DF Fontsize    |  -dfs   |     9      |
 | Output Area Fontsize  |  -ofs   |    8.5     |
+| Mathjax Fontsize (%)  | -mathfs |    100     |
 | Intro Page Margins    |   -m    |    auto    |
 | Cell Width            | -cellw  |    980     |
 | Line Height           | -lineh  |    170     |

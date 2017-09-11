@@ -309,3 +309,26 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
 .cm-s-default .cm-selected {
     background: @cm-selected;
 }
+
+/**********************************
+ MathJax Settings and Style Script
+**********************************/
+.MathJax_Display,
+.MathJax {
+    border: 0 !important;
+    font-size: @mathfontsize !important;
+    text-align: center !important;
+    margin: 0em !important;
+    line-height: 2.25 !important;
+}
+/* Prevents MathJax from jittering */
+/* cell position when cell is selected */
+.MathJax:focus, body :focus .MathJax {
+    display: inline-block !important;
+}
+
+/* Prevents MathJax from jittering */
+/* cell position when cell is selected */
+.MathJax:focus, body :focus .MathJax {
+    display: inline-block !important;
+}

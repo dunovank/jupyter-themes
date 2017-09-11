@@ -12,7 +12,7 @@ __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 17
-patch = 6
+patch = 7
 
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
@@ -34,6 +34,7 @@ def install_theme(theme=None,
                 tcfontsize=13,
                 dffontsize=93,
                 outfontsize=85,
+                mathfontsize=100,
                 margins='auto',
                 cellwidth='980',
                 lineheight=170,
@@ -74,6 +75,7 @@ def install_theme(theme=None,
         tcfontsize=tcfontsize,
         dffontsize=dffontsize,
         outfontsize=outfontsize,
+        mathfontsize=mathfontsize,
         dfonts=dfonts)
 
     if theme is not None:
@@ -99,7 +101,7 @@ def install_theme(theme=None,
     style_css = stylefx.less_to_css(style_less)
 
     # append mathjax css & script to style_css
-    style_css = stylefx.set_mathjax_style(style_css)
+    style_css = stylefx.set_mathjax_style(style_css, mathfontsize)
 
     # install style_css to .jupyter/custom/custom.css
     stylefx.write_final_css(style_css)
@@ -168,6 +170,12 @@ def main():
         action='store',
         default='85',
         help='output area fontsize')
+    parser.add_argument(
+        '-mathfs',
+        "--mathfontsize",
+        action='store',
+        default='100',
+        help='mathjax fontsize (in %)')
     parser.add_argument(
         '-m',
         "--margins",
@@ -281,6 +289,7 @@ def main():
         tcfontsize=args.tcfontsize,
         dffontsize=args.dffontsize,
         outfontsize=args.outfontsize,
+        mathfontsize=args.mathfontsize,
         cellwidth=args.cellwidth,
         margins=args.margins,
         lineheight=int(args.lineheight),
