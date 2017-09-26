@@ -175,7 +175,7 @@ def main():
         "--mathfontsize",
         action='store',
         default='100',
-        help='mathjax fontsize (in %)')
+        help='mathjax fontsize (in %%)')
     parser.add_argument(
         '-m',
         "--margins",
