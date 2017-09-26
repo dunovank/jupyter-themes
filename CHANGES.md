@@ -1,5 +1,9 @@
 ### Release Notes
 
+#### **v0.17.9**
+- merged [PR #180](https://github.com/dunovank/jupyter-themes/pull/180) submitted by  [fry95116](https://github.com/fry95116) fixing str formatting issue with `-mathfs` arg
+- misc. style updates
+
 #### **v0.17.8**
 - fixed soft-selected cell highlighting
 - misc. style updates from "safarinb" project (buttons, tabs, hover, focus, etc.)
