@@ -1,7 +1,8 @@
 ### Release Notes
 
 #### **v0.17.8**
-- made toolbar visible by default (toggle off with `-T` flag when running `jt` command)
+- fixed soft-selected cell highlighting
+- misc. style updates from "safarinb" project (buttons, tabs, hover, focus, etc.)
 
 #### **v0.17.7**
 - removed dependency check from setup.py script (caused issues with dependencies)

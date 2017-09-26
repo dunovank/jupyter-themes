@@ -45,7 +45,7 @@ def install_theme(theme=None,
                 altout=False,
                 hideprompt=False,
                 vimext=False,
-                toolbar=True,
+                toolbar=False,
                 nbname=False,
                 dfonts=False):
 
@@ -234,7 +234,7 @@ def main():
         '-T',
         "--toolbar",
         action='store_true',
-        default=True,
+        default=False,
         help="make toolbar visible")
     parser.add_argument(
         '-N',

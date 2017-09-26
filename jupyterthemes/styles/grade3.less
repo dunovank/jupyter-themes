@@ -7,6 +7,15 @@
 @blue:                  #055be0;
 @cyan:                  #AA22FF;
 @green:                 #009e07;
+@code-gray:             #6a737d;
+@code-fg:               #3f3d46;
+@code-yellow:           #FCB83D;
+@code-red:              #d3305e;
+@code-violet:           #7d4bb3;
+@code-green:            #488f0c;
+@code-blue:             #007dc5;
+@code-orange:           #f65d22;
+@code-cyan:             #3275d5;
 
 /* grade3 notebook colors */
 @notebook-bg:           #ffffff;
@@ -26,7 +35,7 @@
 @selected-third:        rgba(180, 180, 180,.14);
 @selected-tenth:        #fafafa;
 @selected-error:        rgba(191, 97, 106, .40);
-@selected-active:       #E4E4E4;
+@selected-active:       @item-theme;
 @navbar-selected:       @selected-third;
 @selected-fg:           #2F2F2F;
 @selected-fg-bright:    #1c1c1c;
@@ -52,24 +61,32 @@
 @tc-border-edit:        @tc-border-selected;
 
 /* menus, dividers, prompt-borders, brackets */
-@divider:               @selected-half;
-@disabled:              #aaaaaa;
+@disabled:              #828892;
+@divider:               @disabled;
 @input-prompt:          @disabled;
+@input-hover-bg:        darken(@cc-input-bg, 1%);
+@prompt-hover-color:    darken(@input-prompt, 2%);
 @prompt-line:           rgba(240, 147, 43, .50);
-@tc-prompt-std:         rgba(30, 112, 199, .50);
+@tc-prompt-std:         transparent;
 @matching-bracket:      rgba(30, 112, 199, .30);
-@dropdown-bg:           @notebook-bg;
-@dropdown-border:       @selected-half;
-@dropdown-hover:        @selected-third;
+@nb-header-bg:          @item-theme;
+@nb-header-fg:          @notebook-fg;
+@menubar-bg:            darken(@notebook-base, 5%);
+@menubar-fg:            @notebook-fg;
+@menubar-hover:         #DEDEDE;
+@dropdown-bg:           @menubar-hover;
+@dropdown-border:       @dropdown-bg;
+@dropdown-hover:        darken(@menubar-hover, 4%);
 
 /* panels and form-control styles */
-@panel-header-bg:       @notebook-base;
-@panel-bg:              #fafafa;
+@panel-header-bg:       #e4e4e4;
+@panel-bg:              #f4f4f4;
 @modal-bg:              #ffffff;
 @alert-info-bg:         #fdfdfd;
 @form-input-bg:         #ffffff;
+@form-input-border:     #d0d0d0;
 @cmd-palette-bg:        @form-input-bg;
-@cmd-palette-form:      @panel-header-bg;
+@cmd-palette-form:      #E5E5E5;
 @cmd-palette-hover:     @panel-bg;
 
 /* buttons, widgets, kernels colors */
@@ -95,17 +112,24 @@
 @df-cell-bg:            #ffffff;
 @codeblock-bg:          #efefef;
 @codeblock-border:      #E7E7E7;
+@md-header-link:        rgba(0,0,0,.32);
+@nb-name-fg:            @button-bg;
+@nb-name-hover:         @divider;
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             #EBEBEB;
-@button-border:         #E8E8E8;
-@button-color:          @item-theme;
-@button-hover:          @selected-active;
+@button-bg:             darken(@cc-input-bg, 3%);
+@button-border:         @button-bg;
+@button-color:          @notebook-fg;
+@button-hover:          #ef5c00;
+@button-hover-bg:       darken(@button-bg, 2%);
+@button-hover-border:   @button-hover-bg;
+@button-focus-bg:       #ffccac;
+@button-focus-fg:       #ef5c00;
 @button-panel-bg:       @panel-header-bg;
-@button-panel-hover:    #E9E9E9;
+@button-panel-hover:    darken(@panel-header-bg, 2%);
 @scrollbar:             #909090;
 @scroll-trough:         darken(@notebook-bg, 8%);
-@scrollbar-inactive:    #dedede;
+@scrollbar-inactive:    #c4cfdc;
 @box-shadow:            darken(@notebook-bg, 3%);
 
 /* grade3 ansi colors */
@@ -142,7 +166,7 @@
 @cm-def:                @magenta;
 @cm-error:              @selected-error;
 @cm-tag:                @magenta;
-@cm-link:               @orange;
+@cm-link:               #ef5c00;
 @cm-storage:            @blue;
 @cm-entity:             @magenta;
 @cm-latex:              #009fb7;

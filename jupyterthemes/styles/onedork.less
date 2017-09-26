@@ -7,6 +7,15 @@
 @blue:                  #61afef;
 @cyan:                  #51b6c3;
 @green:                 #94c273;
+@code-gray:             #6a737d;
+@code-fg:               #B5C2D9;
+@code-yellow:           @yellow;
+@code-red:              @red;
+@code-violet:           @violet;
+@code-green:            @green;
+@code-blue:             @blue;
+@code-orange:           @orange;
+@code-cyan:             @cyan;
 
 /* onedork notebook colors */
 @notebook-bg:           #1c1f28;
@@ -52,13 +61,20 @@
 @tc-border-edit:        @tc-border-selected; //#455C4D;
 
 /* menus, dividers, prompt-borders, brackets */
-@divider:               rgba(148, 204, 114, .3);
+@divider:               rgba(148, 204, 114, .4);
 @disabled:              #526488;
 @input-prompt:          #526488;
-@prompt-line:           rgba(53, 114, 198,.5);
+@input-hover-bg:        #2a2e39;
+@prompt-hover-color:    #576a8d;
+@prompt-line:           rgba(53, 114, 198, .75);
 @tc-prompt-std:         rgba(148, 204, 114, .3);
 @matching-bracket:      #4C8BE2;
-@dropdown-bg:           @notebook-base;
+@menubar-bg:            #242931;
+@menubar-fg:            @notebook-fg;
+@menubar-hover:         @dropdown-bg;
+@nb-header-bg:          @item-theme;
+@nb-header-fg:          #899ab8;
+@dropdown-bg:           #171a20;
 @dropdown-border:       @selected-third;
 @dropdown-hover:        @dropdown-border;
 
@@ -69,9 +85,11 @@
 @modal-bg:              @panel-bg;
 @alert-info-bg:         #4a5467;
 @form-input-bg:         @codeblock-bg;
+@form-input-border:     @codeblock-bg;
 @cmd-palette-bg:        #202937;
 @cmd-palette-form:      #293547;
 @cmd-palette-hover:     #2b3850;
+
 
 /* buttons, widgets, kernels colors */
 @item-theme:            #7aa05d;
@@ -98,16 +116,23 @@
 @codeblock-border:      @codeblock-bg;
 
 /* btn, scrollbar and shadow colors */
-@button-bg:             #313842;
-@button-border:         #313842;
-@button-color:          @selected-bg;
-@button-hover:          #3C4451;
+@button-bg:             #303542;
+@button-border:         @button-bg;
+@button-color:          @notebook-fg;
+@button-hover:          @item-theme;
+@button-hover-bg:       #2a2e39;
+@button-hover-border:   @button-hover-bg;
+@button-focus-bg:       #546745;
+@button-focus-fg:       #8adc4b;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    #2A313C;
 @scrollbar:             #3f4555;
 @scroll-trough:         #292d3a;
 @scrollbar-inactive:    #464e60;
 @box-shadow:            #3e4458;
+@md-header-link:        rgba(0,0,0,.32);
+@nb-name-fg:            @button-bg;
+@nb-name-hover:         @divider;
 
 
 /* onedork ansi colors */

@@ -10,13 +10,9 @@
     max-width: none;
     border: none;
 }
-.rendered_html tr,
 .rendered_html td {
-    font-size: @df-fontsize !important;
-}
-.rendered_html thead {
-    font-family: @notebook-fontfamily;
-    font-size: @df-header-fontsize !important;
+    font-family: @notebook-fontfamily !important;
+    font-size: @df-fontsize;
 }
 .rendered_html table {
     font-family: @notebook-fontfamily !important;
@@ -29,6 +25,8 @@
     table-layout: fixed;
 }
 .rendered_html thead {
+    font-family: @notebook-fontfamily !important;
+    font-size: @df-header-fontsize !important;
     background: @df-header-bg;
     color: @df-header;
     border-bottom: 1px solid @df-header-bg;
@@ -49,7 +47,6 @@
 .rendered_html * + table {
     margin-top: .05em;
 }
-
 /*********** WIDGETS ***********/
 div.widget-area {
     background-color: @cc-output-bg;
@@ -101,7 +98,7 @@ div.widget-label {
     min-width: 100px !important;
     vertical-align: text-top !important;
     color: @cc-output-fg !important;
-    font-size: 14px;
+    font-size: 14px !important;
 }
 .widget-hprogress .progress {
     flex-grow: 1;
@@ -142,30 +139,30 @@ div.widget-label {
 .rendered_html :link {
     font-family: @notebook-fontfamily;
     font-size: 100%;
-    color: @item-blue;
+    color: @item-theme;
     text-decoration: underline;
 }
 .rendered_html :visited,
 .rendered_html :visited:active,
 .rendered_html :visited:focus{
-    color: lighten(desaturate(@item-blue, 5%), 4%);
+    color: lighten(desaturate(@item-theme, 5%), 4%);
 }
 .rendered_html :visited:hover,
 .rendered_html :link:hover {
     font-family: @notebook-fontfamily;
     font-size: 100%;
-    color: @cm-link;
+    color: saturate(darken(@item-theme, 8%), 15%);
 }
-a.anchor-link:link {
+div.cell.text_cell a.anchor-link:link {
     font-size: inherit;
     text-decoration: none;
     padding: 0px 20px;
     visibility: none;
-    color: @item-blue;
+    color: @md-header-link;
 }
-a.anchor-link:link:hover {
+div.cell.text_cell a.anchor-link:link:hover {
     font-size: inherit;
-    color: @cm-link;
+    color: @nb-name-hover;
 }
 .navbar-text {
     margin-top: 4px;
@@ -184,7 +181,7 @@ a.anchor-link:link:hover {
 
 /***********  JUPYTER NBEXT CONFIGURATOR ***********/
 #nbextensions-configurator-container > div.row.container-fluid.nbext-selector > h3 {
-    font-size: 15px;
+    font-size: 17px;
     margin-top: 5px;
     margin-bottom: 8px;
     height: 24px;
@@ -201,6 +198,28 @@ div.nbext-selector > nav > .nav > li > a {
     font-size: 10.5pt;
     padding: 2px 5px;
 }
+div.nbext-selector > nav > .nav > li > a:hover {
+    background: transparent;
+}
+div.nbext-selector > nav > .nav > li:hover {
+    background-color: @selected-third !important;
+    background: @selected-third !important;
+}
+div.nbext-selector > nav > .nav > li.active:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:active,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    color: @selected-fg-bright;
+    background-color: @selected-third !important;
+    background: @selected-third !important;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
 div.nbext-readme > .nbext-readme-contents > .rendered_html {
     font-family: @notebook-fontfamily;
     font-size: 11.5pt;
@@ -242,7 +261,16 @@ div.nbext-readme > .nbext-readme-contents:not(:empty) {
     color: @selected-fg !important;
     background-color: @dropdown-hover !important;
     background: @dropdown-hover !important;
-    border-color: @dropdown-hover !important;
+    border-color:  @dropdown-hover !important;
+}
+.nbext-filter-input-wrap > .nbext-filter-input-subwrap,
+ .nbext-filter-input-wrap > .nbext-filter-input-subwrap > input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    vertical-align: middle;
+    margin-top: -2px;
 }
 span.rendered_html code {
     background-color: transparent;
@@ -258,6 +286,9 @@ span.rendered_html code {
     outline: none;
     border: 2px solid @dropdown-border;
 }
+.nbext-filter-menu:hover {
+    border: 2px solid @dropdown-border;
+}
 .alert-warning {
     background-color: @panel-bg;
     border-color: @panel-bg;
@@ -269,6 +300,13 @@ span.rendered_html code {
     border-color: @item-danger;
     padding-right: 5px;
 }
+#nbextensions-configurator-container > div.nbext-buttons.tree-buttons.no-padding.pull-right > span > button {
+    border: none !important;
+}
+button#refresh_running_list {
+    border: none !important;
+}
+
 /********** NBEXT MARKDOWN **********/
 mark, .mark {
     background-color: @text-cell-bg;
@@ -334,17 +372,12 @@ div.nbext-enable-btns .btn[disabled]:hover,
 label#Keyword-Filter {
     display: none;
 }
-.nav-pills > li.active > a,
-.nav-pills > li.active > a:hover,
-.nav-pills > li.active > a:focus {
-    color: @selected-fg-bright;
-    background-color: @selected-bg;
-}
 .input-group .nbext-list-btn-add,
 .input-group-btn:last-child > .btn-group > .btn {
     background: @button-panel-bg;
     background-color: @button-panel-bg;
     border-color: @button-panel-bg;
+    border: 2px solid @button-panel-bg;
 
 }
 .input-group .nbext-list-btn-add:hover,
@@ -352,6 +385,7 @@ label#Keyword-Filter {
     background: @button-panel-hover;
     background-color: @button-panel-hover;
     border-color: @button-panel-hover;
+    border: 2px solid @button-panel-hover;
 }
 #notebook-container > div.cell.code_cell.rendered.selected > div.widget-area > div.widget-subarea > div > div.widget_item.btn-group > button.btn.btn-default.dropdown-toggle.widget-combo-carrot-btn {
     background: @button-panel-bg;
@@ -418,13 +452,9 @@ div.collapsible_headings_toggle .fa-caret-right:before {
     -ms-transform: inherit !important;
     -o-transform: inherit !important;
     transform: inherit !important;
-    // border-spacing: 90px;
     padding-right: 0px !important;
 }
-// .collapsible_headings_toggle .fa {
-//     transition: transform 1000ms;
-//     transform: none !important;
-// }
+
 /********** DEBUGGER PATCH **********/
 input.raw_input {
     font-family: @monofont, monospace;
@@ -487,7 +517,7 @@ body > div.modal.cmd-palette.typeahead-field {
 .typeahead-container button {
     font-family: @notebook-fontfamily;
     font-size: 28pt;
-    background-color: @button-bg;
+    background-color: @button-panel-bg; //scroll-trough;
     border: none;
     display: inline-block;
     line-height: inherit;
@@ -504,8 +534,8 @@ body > div.modal.cmd-palette.typeahead-field {
 .typeahead-container button:focus,
 .typeahead-container button:hover {
     color: @selected-fg;
-    background-color: @item-theme;
-    border-color: @item-theme;
+    background-color: @button-panel-hover; //@item-theme;
+    border-color: @button-hover-bg; //@item-theme;
 }
 .typeahead-list>li.typeahead-group.active>a,
 .typeahead-list>li.typeahead-group>a,
@@ -658,7 +688,6 @@ div#short-key-bindings-intro.well, .well {
     padding: 0px;
     background-color: @cc-input-bg;
     box-shadow: none;
-    // border-left: 2px solid ;
 }
 
 
@@ -730,6 +759,42 @@ div#short-key-bindings-intro.well, .well {
 .terminal:not(.focus) .terminal-cursor {
     outline: 1px solid @item-theme;
     outline-offset: -1px;
+}
+
+
+/* CELL TOOLBAR */
+.celltoolbar {
+    font-size: 100%;
+    padding-top: 3px;
+    border-color: transparent;
+    border-bottom: thin solid @divider;
+    background: transparent;
+}
+.cell-tag, .tags-input input,
+.tags-input button {
+    color: @button-color;
+    background-color: @notebook-bg;
+    background-image: none;
+    border: 1px solid @button-color;
+    border-radius: 1px;
+    box-shadow: none;
+    width: inherit;
+    font-size: inherit;
+    height: 22px;
+    line-height: 22px;
+}
+#notebook-container > div.cell.code_cell.rendered.selected > div.input > div.inner_cell > div.ctb_hideshow.ctb_show > div > div > button, #notebook-container > div.input > div.inner_cell > div.ctb_hideshow.ctb_show > div > div > button {
+    font-size: 10pt;
+    color: @button-color;
+    background-color: @notebook-bg;
+    background-image: none;
+    border: 1px solid @button-color;
+    border-radius: 1px;
+    box-shadow: none;
+    width: inherit;
+    font-size: inherit;
+    height: 22px;
+    line-height: 22px;
 }
 
 /**************************************************/

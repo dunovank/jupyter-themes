@@ -79,35 +79,49 @@ div.cell.code_cell .input {
 div.cell.code_cell.selected .input {
     border-left: 5px solid @cc-border-selected !important;
     border-radius: 3px;
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
 }
 .edit_mode div.cell.code_cell.selected .input {
     border-left: 5px solid @cc-border-edit !important;
     border-radius: 3px;
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
 }
 
 
 /*********** JUPYTER CELLS SOFT-SELECTED ************/
-div.cell.selected.jupyter-soft-selected:before .input,
-.edit_mode div.cell.selected:before .input {
-    border-left: 3px solid @cc-border-edit !important;
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
+div.cell.jupyter-soft-selected,
+div.cell.selected.jupyter-soft-selected {
+    border-left-color: @cc-border-edit !important;
+    border-left-width: 0px !important;
+    padding-left: 7px !important;
+    border-right-color: @cc-border-edit !important;
+    border-right-width: 0px !important;
+    background: @cc-border-edit !important;
+    border-radius: 6px !important;
 }
-div.cell.jupyter-soft-selected .input,
 div.cell.selected.jupyter-soft-selected .input {
-    border-left: 3px solid @cc-border-edit !important;
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
+    border-left: 5px solid @cc-input-bg !important;
+}
+
+div.cell.selected.jupyter-soft-selected:before,
+.edit_mode div.cell.selected:before .input {
+    background: @cc-border-edit  !important;
+    border: 2px solid @cc-border-edit !important;
+    border-radius: 6px !important;
+    position: absolute !important;
+    display: block !important;
+    top: 0px !important;
+    left: 0px !important;
+    width: 6px !important;
+    height: 100% !important;
 }
 div.cell.selected.jupyter-soft-selected {
     border-left-color: @cc-border-selected;
     border-color: @notebook-bg;
     padding-left: 7px;
     border-radius: 6px;
+}
+div.cell.code_cell.selected .input {
+    border-left: none;
+    border-radius: 3px;
 }
 div.cell.selected.jupyter-soft-selected .prompt,
 div.cell.text_cell.selected.jupyter-soft-selected .prompt {
@@ -140,7 +154,8 @@ div.cell.text_cell.selected.jupyter-soft-selected {
     border-radius: 6px !important;
 }
 
-// /*********** CODE CELL INPUT PROMPT ************/
+
+/*********** CODE CELL INPUT PROMPT ************/
 div.prompt, .prompt {
     font-family: @monofont, monospace;
     font-size: 9pt !important;
@@ -181,6 +196,7 @@ div.cell.selected .prompt {
 .edit_mode div.cell.selected .prompt {
     top: 0;
 }
+
 
 /********** CODE CELL OUTPUT AREA **********/
 div.output_wrapper {
@@ -298,49 +314,142 @@ div.cell.selected .out_prompt_overlay.prompt {
     border-radius: 0px !important;
 }
 
-
-/********** TEXT & MD PROMPT **********/
-
-div.cell.text_cell .input_prompt {
-    border-right: 0;
+/******** TXT & MD INPUT AREA ********/
+div.text_cell,
+div.text_cell_render pre,
+div.text_cell_render {
+    font-family: @text-cell-fontfamily;
+    font-size: @text-cell-fontsize;
+    line-height: 130% !important;
+    color: @text-cell-fg;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border-radius: 0px;
+}
+div .text_cell_render {
+    padding: 0.4em 0.4em 0.4em 0.4em;
+}
+div.cell.text_cell .CodeMirror-lines {
+    padding-top: .7em !important;
+    padding-bottom: .4em !important;
+    padding-left: .5em !important;
+    padding-right: .5em !important;
+    margin-top: .4em;
+    margin-bottom: .3em;
+}
+div.cell.text_cell.unrendered div.input_area,
+div.cell.text_cell.rendered div.input_area {
+    background-color: @text-cell-bg;
+    background: @text-cell-bg;
+    border: 0px;
+    border-radius: 2px;
+}
+div.cell.text_cell .CodeMirror,
+div.cell.text_cell .CodeMirror pre {
+    line-height: 170% !important;
+}
+div.cell.text_cell.rendered.selected {
+    font-family: @text-cell-fontfamily;
+    line-height: @cc-line-height !important;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border-radius: 0px;
+}
+div.cell.text_cell.unrendered.selected {
+    font-family: @text-cell-fontfamily;
+    line-height: @cc-line-height !important;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border-radius: 0px;
+}
+div.cell.text_cell.selected {
+    font-family: @text-cell-fontfamily;
+    line-height: @cc-line-height !important;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border-radius: 0px;
+}
+.edit_mode div.cell.text_cell.selected {
+    font-family: @text-cell-fontfamily;
+    line-height: @cc-line-height !important;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border-radius: 0px;
+}
+div.text_cell.unrendered,
+div.text_cell.unrendered.selected,
+div.edit_mode div.text_cell.unrendered {
+    font-family: @text-cell-fontfamily;
+    line-height: @cc-line-height !important;
+    background: @text-cell-bg;
+    background-color: @text-cell-bg;
+    border-radius: 0px;
+}
+div.cell.text_cell.selected:before {
+    background: @tc-border-selected;
+    border: 2px solid @tc-border-selected;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 5px;
+    height: 100%;
+}
+.edit_mode div.cell.text_cell.selected:before {
+    background: @tc-border-edit;
+    border: 2px solid @tc-border-edit;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 5px;
+    height: 100%;
 }
 
-div.cell.text_cell.rendered .input_prompt {
+/********** TEXT & MD PROMPT **********/
+div.cell.text_cell .prompt {
+    border-right: 0;
+}
+div.cell.text_cell.rendered .prompt {
     font-family: @monofont, monospace;
     font-size: @tc-prompt-fontsize;
     font-weight: normal;
-    color: @prompt-text;
+    color: @prompt-text !important;
     text-align: right !important;
-    min-width: @tc-prompt-width;
+    min-width: @tc-prompt-width !important;
     width: @tc-prompt-width !important;
     background-color: @text-cell-bg;
     border-right: @tc-prompt-border;
+    // border-left: 5px solid @tc-border-selected;
     border-left: 5px solid @text-cell-bg;
 }
-div.cell.text_cell.unrendered .input_prompt {
+div.cell.text_cell.unrendered .prompt {
     font-family: @monofont, monospace;
     font-size: @tc-prompt-fontsize;
     font-weight: normal;
-    color: @prompt-text;
+    color: @prompt-text !important;
     text-align: right !important;
-    min-width: @tc-prompt-width;
+    min-width: @tc-prompt-width !important;
     width: @tc-prompt-width !important;
     border-right: @tc-prompt-border;
     border-left: 5px solid @text-cell-bg;
 }
-div.cell.text_cell.rendered .input_prompt {
+div.cell.text_cell.rendered .prompt {
     border-right: @tc-prompt-border;
 }
-div.cell.text_cell.rendered.selected .input_prompt {
+div.cell.text_cell.rendered.selected .prompt {
     top: 0;
     border-left: 5px solid @tc-border-selected;
-    border-radius: 2px;
     border-right: @tc-prompt-border;
 }
 div.text_cell.unrendered.selected .prompt {
     top: 0;
+    background: @text-cell-bg;
     border-left: 5px solid @tc-border-edit;
-    border-radius: 2px;
     border-right: @tc-prompt-border;
 }
 
@@ -351,8 +460,8 @@ div.rendered_html code {
     padding-top: 3px;
     padding-left: 2px;
     color: @cc-input-fg;
-    background: @text-cell-bg; // @codeblock-bg;
-    background-color: @text-cell-bg; // @codeblock-bg;
+    background: @codeblock-bg;
+    background-color: @codeblock-bg;
 }
 pre, code, kbd, samp {
     white-space: pre-wrap;
@@ -367,10 +476,11 @@ pre, code, kbd, samp {
     border-color: @codeblock-bg;
 }
 kbd {
-    padding: 4px;
+    padding: 1px;
     font-size: @monofontsize;
+    font-weight: 800;
     color: @cc-input-fg;
-    background-color: @codeblock-bg;
+    background-color: transparent !important;
     border: 0;
     box-shadow: none;
 }
@@ -385,6 +495,8 @@ pre {
     border: 1px solid @codeblock-border;
     border-radius: 2px;
 }
+
+
 /******** TXT & MARKDOWN HEADERS **********/
 div.rendered_html {
     color: @text-cell-fg;
@@ -396,19 +508,37 @@ div.rendered_html {
 .rendered_html * + p {
     margin-top: .5em;
     margin-bottom: .5em;
-    margin-left: .5em;
 }
-div.rendered_html pre,
-div.text_cell_render pre {
+div.rendered_html pre {
     font-family: @monofont, monospace;
     font-size: @monofontsize !important;
     line-height: @cc-line-height !important;
     color: @text-cell-fg;
-    background: @text-cell-bg;
-    background-color: @text-cell-bg;
+    background: @codeblock-bg;
+    background-color: @codeblock-bg;
     max-width: 80%;
     border-radius: 0px;
-    border-left: 3px solid @prompt-line;
+    border-left: 3px solid @codeblock-bg;
+    max-width: 80%;
+    border-radius: 0px;
+    padding-left: 5px;
+    margin-left: 6px;
+}
+
+div.text_cell_render pre,
+div.text_cell_render code {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize !important;
+    line-height: @cc-line-height !important;
+    color: @text-cell-fg;
+    background: @notebook-bg;
+    background-color: @notebook-bg;
+    max-width: 80%;
+    border-radius: 0px;
+    border-left: none;
+}
+div.text_cell_render pre {
+    border-left: 3px solid @prompt-line !important;
     max-width: 80%;
     border-radius: 0px;
     padding-left: 5px;
@@ -440,7 +570,7 @@ div.rendered_html h5 {
 .rendered_html h1,
 .text_cell_render h1 {
     color: @header-fg;
-    font-size: 215%;
+    font-size: 200%;
     text-align: center;
     font-style: normal;
     font-weight: lighter;
@@ -448,22 +578,22 @@ div.rendered_html h5 {
 .rendered_html h2,
 .text_cell_render h2 {
     text-align: left;
-    font-size: 180%;
-    color: @header-fg;
+    font-size: 170%;
+    color: @code-fg;
     font-style: normal;
     font-weight: lighter;
 }
 .rendered_html h3,
 .text_cell_render h3 {
-    font-size: 150%;
-    color: @header-fg;
+    font-size: 140%;
+    color: @code-fg;
     font-style: normal;
     font-weight: lighter;
 }
 .rendered_html h4,
 .text_cell_render h4 {
-    font-size: 120%;
-    color: @header-fg;
+    font-size: 110%;
+    color: @code-fg;
     font-style: normal;
     font-weight: lighter;
 }

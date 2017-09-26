@@ -212,7 +212,7 @@ def style_layout(style_less,
                  lineheight=170,
                  margins='auto',
                  vimext=False,
-                 toolbar=True,
+                 toolbar=False,
                  nbname=False,
                  altprompt=False,
                  altmd=False,
@@ -307,12 +307,13 @@ def style_layout(style_less,
     return style_less
 
 
-def toggle_settings(toolbar=True, nbname=False, hideprompt=False):
+def toggle_settings(toolbar=False, nbname=False, hideprompt=False):
     """Toggle main notebook toolbar (e.g., buttons) & filename"""
 
     toggle = ''
     if toolbar:
         toggle += 'div#maintoolbar {margin-left: 8px !important;}\n'
+        toggle += '.toolbar.container {width: 100% !important;}\n'
     else:
         toggle += 'div#maintoolbar {display: none !important;}\n'
     if nbname:

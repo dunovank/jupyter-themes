@@ -7,6 +7,15 @@
 @blue:                  #77ABE7;
 @cyan:                  #61afef;
 @green:                 #8FCA9A;
+@code-gray:             #6a737d;
+@code-fg:               #B5C2D9;
+@code-yellow:           @yellow;
+@code-red:              @red;
+@code-violet:           @violet;
+@code-green:            @green;
+@code-blue:             @blue;
+@code-orange:           @orange;
+@code-cyan:             @cyan;
 
 /* oceans16 notebook colors */
 @notebook-bg:           #262931;
@@ -55,10 +64,17 @@
 @divider:               rgba(53, 114, 198,.3);
 @disabled:              #546379;
 @input-prompt:          #446489;
-@prompt-line:           rgba(53, 114, 198,.5);
+@input-hover-bg:        #2a2e39;
+@prompt-hover-color:    #576a8d;
+@prompt-line:           rgba(53, 114, 198, 5);
 @tc-prompt-std:         rgba(53, 114, 198,.5);
 @matching-bracket:      #4C8BE2;
-@dropdown-bg:           @notebook-base;
+@menubar-bg:            #242931;
+@menubar-fg:            @notebook-fg;
+@menubar-hover:         @dropdown-bg;
+@nb-header-bg:          @item-theme;
+@nb-header-fg:          #899ab8;
+@dropdown-bg:           #171a20;
 @dropdown-border:       @selected-third;
 @dropdown-hover:        @dropdown-border;
 
@@ -68,6 +84,7 @@
 @modal-bg:              @panel-bg;
 @alert-info-bg:         #4a5467;
 @form-input-bg:         @codeblock-bg;
+@form-input-border:     @codeblock-bg;
 @cmd-palette-bg:        #202937;
 @cmd-palette-form:      #293547;
 @cmd-palette-hover:     #2b3850;
@@ -99,15 +116,22 @@
 
 /* btn, scrollbar and shadow colors */
 @button-bg:             #3a4452;
-@button-border:         #38424F;
-@button-color:          @item-blue;
-@button-hover:          #424E5E;
+@button-border:         @button-bg;
+@button-color:          @notebook-fg;
+@button-hover:          @item-theme;
+@button-hover-bg:       #2a2e39;
+@button-hover-border:   @button-hover-bg;
+@button-focus-bg:       #33517c;
+@button-focus-fg:       #157bff;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    #2A313C;
 @scrollbar:             #3f4555;
 @scroll-trough:         #292d3a;
 @scrollbar-inactive:    #464e60;
 @box-shadow:            #3e4458;
+@md-header-link:        rgba(0,0,0,.32);
+@nb-name-fg:            @button-bg;
+@nb-name-hover:         @divider;
 
 /* oceans16 ansi colors */
 @ansiblack:             #2b303b;

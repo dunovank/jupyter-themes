@@ -39,31 +39,20 @@ a:hover, a:focus {
 /*********************************************************/
 .list_header,
 div#notebook_list_header.row.list_header {
-    font-size: 13.5pt;
+    font-size: 14pt;
     color: @selected-fg;
     background-color: transparent;
     height: 35px;
 }
-// div#cluster_list_header.row.list_header,
-// div#running .row.list_header {
-//     font-size: 14pt;
-//     color: @notebook-fg;
-//     background: @panel-header-bg;
-//     background-color: @panel-header-bg;
-//     border-bottom: 2px solid @divider;
-// }
-// div#cluster_list > div.list_item.row,
-// div#cluster_list > div.list_item.row:hover {
-//     background: @panel-bg;
-//     background-color: @panel-bg;
-// }
-// div#clusters.tab-pane.active {
-//     font-size: 15px;
-//     margin-bottom: 8px;
-//     height: 24px;
-//     line-height: 24px;
-//     padding: 4px 0 4px 0;
-// }
+i.fa.fa-folder {
+    display: inline-block;
+    font: normal normal normal 14px "FontAwesome";
+    font-family: "FontAwesome" !important;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+    -moz-osx-font-smoothing: grayscale;
+}
 #running .panel-group .panel .panel-heading {
     font-size: 14pt;
     color: @notebook-fg;
@@ -93,6 +82,12 @@ div#notebook_list_header.row.list_header {
 #running .panel-group .panel .panel-body {
     padding: 2px;
 }
+button#refresh_running_list {
+    border: none !important;
+}
+button#refresh_cluster_list {
+    border: none !important;
+}
 div.running_list_info.toolbar_info {
     font-size: 15px;
     padding: 4px 0 4px 0;
@@ -107,6 +102,7 @@ div.running_list_info.toolbar_info {
 }
 #tree-selector {
     padding: 0px;
+    border-color: transparent;
 }
 #project_name > ul > li > a > i.fa.fa-home {
     color: @item-theme;
@@ -127,6 +123,11 @@ div.running_list_info.toolbar_info {
 .fa-arrow-down:before {
     font-size: 14px;
 }
+span#last-modified.btn.btn-xs.btn-default.sort-action:hover .fa,
+span#sort-name.btn.btn-xs.btn-default.sort-action:hover .fa {
+    color: @button-hover;
+}
+
 .folder_icon:before {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -146,7 +147,7 @@ div.running_list_info.toolbar_info {
     -moz-osx-font-smoothing: grayscale;
     content: "\f02d";
     position: relative;
-    color: @item-cyan !important;
+    color: @item-green !important;
     top: 0px;
 }
 .file_icon:before {
@@ -159,43 +160,42 @@ div.running_list_info.toolbar_info {
     content: "\f15b";
     position: relative;
     top: 0px;
-    color: @notebook-fg !important;
+    color: @edgeColor !important;
 }
-#project_name {
+#project_name a {
     display: inline-flex;
     padding-left: 7px;
     margin-left: -2px;
-    margin-bottom: -20px;
     text-align: -webkit-auto;
-    vertical-align: text-top;
+    vertical-align: baseline;
+    font-size: 18px;
 }
 div#notebook_toolbar div.dynamic-instructions {
     font-family: @notebook-fontfamily;
-    font-size: 15px;
-}
-div#maintoolbar .container {
-    margin-left: -5px !important;
+    font-size: 17px;
+    color: @disabled;
 }
 span#login_widget > .button, #logout {
-    font-family: @notebook-fontfamily;
-    color: @notebook-fg;
-    background: @button-bg;
-    background-color: @button-bg;
-    border: 2px solid @button-border;
+    font-family: "Proxima Nova", sans-serif;
+    color: @button-color;
+    background: transparent;
+    background-color: transparent;
+    border: 2px solid @button-bg;
     font-weight: normal;
     box-shadow: none;
     text-shadow: none;
-    border-radius: 2px;
-    font-size: inherit;
+    border-radius: 3px;
+    margin-right: 10px;
+    padding: 2px 7px;
 }
 span#login_widget > .button:hover, #logout:hover {
-    color: @selected-fg;
-    background-color: @button-hover;
-    background: @button-hover;
-    border-color: @button-hover;
+    color: @button-hover;
+    background-color: transparent;
+    background: transparent;
+    border: 2px solid @button-hover;
     background-image: none;
     box-shadow: none !important;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 span#login_widget > .button:focus, #logout:focus,
 span#login_widget > .button.focus, #logout.focus,
@@ -225,49 +225,47 @@ body > #header {
     z-index: 100;
 }
 .list_container {
-    font-size: @nb-fontsize-sub;
+    font-size: @nb-fontsize;
     color: @notebook-fg;
     border: none;
     text-shadow: none !important;
 }
 .list_container > div {
     border-bottom: 1px solid @selected-third;
-    font-size: @nb-fontsize-sub;
+    font-size: @nb-fontsize;
 }
 .list_header > div, .list_item > div {
+    padding-top: 6px;
+    padding-bottom: 2px;
     padding-left: 0px;
 }
-// .list_header > div input,
-// .list_item > div input {
-//     top: 4px;
-// }
 .list_header > div .item_link,
 .list_item > div .item_link {
     margin-left: -1px;
     vertical-align: middle;
     line-height: 22px;
-    font-size: @nb-fontsize-sub;
+    font-size: @nb-fontsize;
 }
 .item_icon {
-    font-size: @nb-fontsize-sub;
+    color: @item-blue;
+    font-size: 13pt;
     vertical-align: middle;
 }
 .list_item input:not([type="checkbox"]) {
     padding-right: 0px;
-    height: auto;
-    width: 20%;
-    margin: 6px 0 0;
-    margin-top: 1px;
+    height: 1.75em;
+    width: 25%;
+    margin: 0px 0 0;
+    margin-top: 0px;
 }
 .list_header > div .item_link, .list_item > div .item_link {
     margin-left: -1px;
     vertical-align: middle;
-    line-height: 22px;
-    font-size: 10.5pt;
+    line-height: 1.5em;
+    font-size: 12pt;
     display: inline-table;
     position: static;
 }
-
 #button-select-all {
     height: 34px;
     min-width: 55px;
@@ -280,11 +278,20 @@ body > #header {
     left: -3px;
     border-radius: 0px !important;
 }
+#button-select-all:focus,
+#button-select-all:active:focus,
+#button-select-all.active:focus,
+#button-select-all.focus,
+#button-select-all:active.focus,
+#button-select-all.active.focus {
+    background-color: @button-bg !important;
+    background: @button-bg !important;
+}
 button#tree-selector-btn {
     height: 34px;
     font-size: @nb-fontsize-sub;
     border: none;
-    left: -3px;
+    left: 0px;
     border-radius: 0px !important;
 }
 input#select-all.pull-left.tree-selector {
@@ -298,6 +305,12 @@ input[type="checkbox"] {
     margin-top: 1px;
     line-height: normal;
 }
+.delete-button {
+    border: none !important;
+}
+i.fa.fa-trash {
+    font-size: 13.5pt;
+}
 .list_container a {
     font-size: 16px;
     color: @notebook-fg;
@@ -308,6 +321,15 @@ input[type="checkbox"] {
 }
 div.list_container a:hover {
     color: @selected-fg;
+}
+.list_header > div input,
+.list_item > div input {
+    margin-right: 7px;
+    margin-left: 12px;
+    vertical-align: baseline;
+    line-height: 22px;
+    position: relative;
+    top: -1px;
 }
 div.list_item:hover {
     background-color: @selected-tenth;
@@ -324,51 +346,85 @@ div.list_item:hover {
     color: @notebook-fg;
     font-size: 18px;
 }
+#project_name > .breadcrumb {
+    padding: 0px;
+    margin-bottom: 0px;
+    background-color: transparent;
+    font-weight: normal;
+    margin-top: -2px;
+}
 ul#tabs a {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize;
+    font-size: 13.5pt;
     font-weight: normal;
     font-style: normal;
-    border-color: transparent;
     text-shadow: none !important;
+
 }
 .nav-tabs {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize;
+    font-size: 13.5pt;
     font-weight: normal;
     font-style: normal;
-    background: @notebook-bg;
-    text-shadow: none !important;
+    background-color: transparent;
     border-color: transparent;
-    border-bottom-color: @selected-half;
+    text-shadow: none !important;
+    border: 2px solid transparent;
 }
-.nav-tabs > li > a:hover {
-    color: @selected-fg;
-    background-color: @selected-third;
-}
+
 .nav-tabs > li > a:active,
 .nav-tabs > li > a:focus,
+.nav-tabs > li > a:hover,
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-    color: @selected-fg-bright;
-    background-color: @selected-bg;
-    border: 1px solid transparent;
-    border-bottom-color: transparent;
-    cursor: default;
-}
-.nav > li > a:hover, .nav > li > a:focus {
-    text-decoration: none;
-    background-color: @selected-third;
-    transition: 200ms ease;
+    color: @button-hover;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid transparent;
 }
 .nav > li.disabled > a,
 .nav > li.disabled > a:hover {
     color: @disabled;
 }
+.nav-tabs > li > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: @button-hover;
+  visibility: hidden;
+  -webkit-transform: perspective(0) scaleX(0);
+  transform: perspective(0) scaleX(0);
+  -webkit-transition: ease 220ms;
+  transition: ease 220ms;
+  -webkit-font-smoothing: antialiased !important;
+}
+.nav-tabs > li > a:hover:before {
+  visibility: visible;
+  -webkit-transform: perspective(1) scaleX(1);
+  transform: perspective(1) scaleX(1);
+}
+.nav-tabs > li.active > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: @button-hover;
+    visibility: visible;
+    -webkit-transform: perspective(1) scaleX(1);
+    transform: perspective(1) scaleX(1);
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+
 
 /********************************************************/
 /***************** NOTEBOOK PAGE SETTINGS ***************/
@@ -519,16 +575,16 @@ div.notification_widget.info,
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn,
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:hover,
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:focus {
-    color: @item-blue;
+    color: @nb-header-fg !important;
     background-color: transparent !important;
     border-color: transparent !important;
     padding-bottom: 0px !important;
     margin-bottom: 0px !important;
-    font-size: 8pt;
+    font-size: 9pt !important;
     z-index: 0;
 }
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
-    font-size: 8pt;
+    font-size: 9pt !important;
     z-index: 0;
 }
 .notification_widget {
@@ -602,16 +658,7 @@ div.notification_widget.info,
     margin-top: 11px !important;
     vertical-align: middle !important;
 }
-// #notification_trusted.notification_widget.btn.btn-xs.navbar-btn {
-//     display: inherit;
-//     content: "T";
-// }
-// #notification_trusted:before {
-//     content: "T";
-// }
-// #notification_trusted > span {
-//     display: none;
-// }
+
 #modal_indicator {
     float: right !important;
     color: #4c8be2;
@@ -680,28 +727,6 @@ div.notification_widget.info,
     92% {-webkit-transform: scale(1.0, 1.0); opacity: 0.8;}
     100% {-webkit-transform: scale(1.0, 1.0); opacity: 0.8;}
 }
-// .kernel_idle_icon:before {
-//     display: inline-block;
-//     font: normal normal normal 16px/1 FontAwesome;
-//     font-size: 16px;
-//     text-rendering: auto;
-//     -webkit-font-smoothing: antialiased;
-//     -moz-osx-font-smoothing: grayscale;
-//     content: "\f10c";
-//     vertical-align: middle;
-//     margin-left: -3px;
-// }
-// .kernel_busy_icon:before {
-//     display: inline-block;
-//     font: normal normal normal 16px/1 FontAwesome;
-//     font-size: 16px;
-//     text-rendering: auto;
-//     -webkit-font-smoothing: antialiased;
-//     -moz-osx-font-smoothing: grayscale;
-//     vertical-align: middle;
-//     margin-left: -3px;
-//     content: "\f111";
-// }
 i#kernel_indicator_icon {
     vertical-align: sub;
 }
@@ -719,7 +744,7 @@ div.notification_widget.info,
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn,
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:hover,
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:focus {
-    color: @item-blue;
+    color: @nb-header-fg;
     background-color: @notebook-bg;
     border-color: @notebook-bg;
 }
@@ -847,20 +872,21 @@ div.kse-dropdown > .dropdown-menu,
     top: 94%;
 }
 
+
 /****************************************/
 /**************** BUTTONS ***************/
 /****************************************/
 .btn, .btn-default {
     font-family: @notebook-fontfamily;
-    color: @notebook-fg;
+    color: @button-color;
     background: @button-bg;
     background-color: @button-bg;
-    border: 1px solid @button-border;
+    border: 2px solid @button-bg;
     font-weight: normal;
     box-shadow: none;
     text-shadow: none;
-    border-radius: 2px;
-    font-size: inherit;
+    border-radius: 3px;
+    font-size: initial;
 }
 .btn:hover,
 .btn:active:hover,
@@ -868,14 +894,13 @@ div.kse-dropdown > .dropdown-menu,
 .btn-default:hover,
 .open > .dropdown-toggle.btn-default:hover,
 .open > .dropdown-toggle.btn:hover {
-    color: @selected-fg;
-    border: 1px solid @button-hover;
-    background-color: @button-hover;
-    background: @button-hover;
+    color: @button-hover;
+    border: 2px solid @button-hover-border;
+    background-color: @button-hover-bg;
+    background: @button-hover-bg;
     background-image: none;
     box-shadow: none !important;
-    border-radius: 2px;
-    transition: 200ms ease;
+    border-radius: 3px;
 }
 .btn:active,
 .btn.active,
@@ -896,32 +921,79 @@ div.kse-dropdown > .dropdown-menu,
 .open > .dropdown-toggle.btn:focus,
 .open > .dropdown-toggle.btn.focus,
 .open > .dropdown-toggle.btn-default {
-    color: @selected-fg-bright;
-    border: 1px solid @selected-active;
-    background-color: @selected-active;
-    background: @selected-active;
-    border-color: @selected-active;
+    color: @button-hover;
+    border: 2px solid @button-hover-border;
+    background-color: @button-hover-bg;
+    background: @button-hover-bg;
     background-image: none;
     box-shadow: none !important;
-    border-radius: 2px;
-    transition: 200ms ease;
+    border-radius: 3px;
+}
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+    color: @button-focus-fg !important;
+    background-color: @button-bg;
+    border-color: @button-focus-bg !important;
+    transition: 2000ms ease;
+}
+.btn:focus,
+.btn.focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn:active,
+.btn.active,
+.btn:active.focus,
+.btn.active.focus {
+    color: @button-focus-fg !important;
+    outline: none !important;
+    outline-width: 0px !important;
+    background: @button-focus-bg !important;
+    background-color: @button-focus-bg !important;
+    border-color: @button-focus-bg !important;
+    transition: 200ms ease !important;
 }
 .item_buttons > .btn,
 .item_buttons > .btn-group,
 .item_buttons > .input-group {
+    font-size: @nb-fontsize;
+    background: transparent;
+    background-color: transparent;
+    border: 0px solid @button-panel-bg;
+    border-bottom: 2px solid transparent;
     margin-left: 5px;
-    background: @button-panel-bg;
-    background-color: @button-panel-bg;
-    border: 1px solid @button-panel-bg;
+    padding-top: 4px !important;
 }
 .item_buttons > .btn:hover,
 .item_buttons > .btn-group:hover,
-.item_buttons > .input-group:hover {
+.item_buttons > .input-group:hover,
+.item_buttons > .btn.active,
+.item_buttons > .btn-group.active,
+.item_buttons > .input-group.active,
+.item_buttons > .btn.focus {
     margin-left: 5px;
     background: @button-panel-hover;
-    background-color: @button-panel-hover;
-    border: 1px solid @button-panel-hover;
-    transition: 200ms ease;
+    padding-top: 4px !important;
+    background-color: transparent;
+    border: 0px solid transparent;
+    border-bottom: 2px solid @item-theme;
+    border-radius: 0px;
+    transition: none;
+}
+.item_buttons {
+    line-height: 1.5em !important;
+}
+.item_buttons .btn {
+    min-width: 11ex;
+}
+.btn-group > .btn:first-child {
+    margin-left: 3px;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -931,21 +1003,61 @@ div.kse-dropdown > .dropdown-menu,
 .alternate_upload .btn-upload,
 .btn-group,
 .btn-group-vertical {
-    font-size: @nb-fontsize-sub;
+    font-size: inherit;
     font-weight: normal;
     height: inherit;
+    line-height: inherit;
 }
 .btn-xs, .btn-group-xs > .btn {
-    font-size: @nb-fontsize-sub;
+    font-size: initial !important;
     background-image: none;
     font-weight: normal;
     text-shadow: none;
     display: inline-table;
+    padding: 2px 5px;
+    line-height: 1.45;
 }
 .btn-group > .btn:first-child {
     margin-left: 3px;
 }
-
+div#new-buttons > button,
+#new-buttons > button,
+div#refresh_notebook_list,
+#refresh_notebook_list {
+    background: transparent;
+    background-color: transparent;
+    border: none;
+}
+div#new-buttons > button:hover,
+#new-buttons > button:hover,
+div#refresh_notebook_list,
+#refresh_notebook_list,
+div.alternate_upload .btn-upload,
+.alternate_upload .btn-upload,
+div.dynamic-buttons > button,
+.dynamic-buttons > button,
+.dynamic-buttons > button:focus,
+.dynamic-buttons > button:active:focus,
+.dynamic-buttons > button.active:focus,
+.dynamic-buttons > button.focus,
+.dynamic-buttons > button:active.focus,
+.dynamic-buttons > button.active.focus,
+#new-buttons > button:focus,
+#new-buttons > button:active:focus,
+#new-buttons > button.active:focus,
+#new-buttons > button.focus,
+#new-buttons > button:active.focus,
+#new-buttons > button.active.focus,
+.alternate_upload .btn-upload:focus,
+.alternate_upload .btn-upload:active:focus,
+.alternate_upload .btn-upload.active:focus,
+.alternate_upload .btn-upload.focus,
+.alternate_upload .btn-upload:active.focus,
+.alternate_upload .btn-upload.active.focus {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+}
 .alternate_upload input.fileinput {
     text-align: center;
     vertical-align: bottom;
@@ -956,7 +1068,21 @@ div.kse-dropdown > .dropdown-menu,
 }
 .alternate_upload .btn-upload {
     display: inline-table;
+    background: transparent;
+    border: none;
 }
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+    margin-left: -2px;
+}
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    z-index: 2;
+}
+
 
 .dropdown-header {
     font-family: @notebook-fontfamily !important;
@@ -966,7 +1092,6 @@ div.kse-dropdown > .dropdown-menu,
     padding: 0px !important;
     margin: 6px 6px 0px !important;
 }
-
 span#last-modified.btn.btn-xs.btn-default.sort-action,
 span#sort-name.btn.btn-xs.btn-default.sort-action {
     font-family: @notebook-fontfamily;
@@ -974,6 +1099,7 @@ span#sort-name.btn.btn-xs.btn-default.sort-action {
     background-color: transparent;
     background: transparent;
     border: none;
+    color: @notebook-fg;
     padding-bottom: 0px;
     margin-bottom: 0px;
     vertical-align: sub;
@@ -989,7 +1115,6 @@ button.close {
     font-weight: normal;
 }
 .dynamic-buttons {
-    font-size: 15px;
     padding-top: 0px;
     display: inline-block;
 }
@@ -1004,7 +1129,6 @@ button.close {
     opacity: 1;
     font-weight: normal;
 }
-
 div.nbext-enable-btns .btn[disabled],
 div.nbext-enable-btns .btn[disabled]:hover,
 .btn-default.disabled,
@@ -1026,52 +1150,56 @@ fieldset[disabled] .btn-default.focus {
 }
 .input-group-addon {
     padding: 2px 5px;
-    font-size: @nb-fontsize-sub;
+    font-size: @nb-fontsize;
     font-weight: normal;
     height: auto;
     color: @notebook-fg;
     text-align: center;
-    background-color: @form-input-bg;
-    border: none;
+    background-color: transparent;
+    border: 2px solid transparent !important;
+    text-transform: capitalize;
+}
+a.btn.btn-default.input-group-addon:hover {
+    background: transparent !important;
+    background-color: transparent !important;
 }
 .btn-group > .btn + .dropdown-toggle {
     padding-left: 8px;
     padding-right: 8px;
     height: 100%;
-    border-left: 2px solid @button-color !important;
+    // border-left: 1px solid @button-bg !important;
 }
 .btn-group > .btn + .dropdown-toggle:hover {
-    border-left: 2px solid @button-color !important;
+    // border-left: 1px solid @button-hover !important;
+    background: @button-focus-bg !important;
 }
 .input-group-btn {
     position: relative;
     font-size: inherit;
     white-space: nowrap;
-    // background: @button-panel-bg;
-    // background-color: @button-panel-bg;
+    background: @button-panel-bg;
+    background-color: @button-panel-bg;
     border: none;
 }
 .input-group-btn:hover {
-    // background: @button-panel-hover;
-    // background-color: @button-panel-hover;
-    border: none; // border: 1px solid @button-panel-hover;
+    background: @button-panel-hover;
+    background-color: @button-panel-hover;
+    border: none;
 }
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .btn-group {
     background: @button-panel-bg;
     background-color: @button-panel-bg;
-    border: none; //1px solid darken(@button-panel-bg, 1%);
-    // margin: 2px;
-    margin-right: 3px;
+    border: none;
+    margin-left: 2px;
+    margin-right: -1px;
     font-size: inherit;
 }
 .input-group-btn:first-child > .btn:hover,
 .input-group-btn:first-child > .btn-group:hover {
-    background: @button-panel-hover;
-    background-color: @button-panel-hover;
-    border: none; //1px solid @button-panel-hover;
-    // margin: 2px;
-    // margin-right: 3px;
+    background: @button-hover-bg;
+    background-color: @button-hover-bg;
+    border: none;
     font-size: inherit;
     transition: 200ms ease;
 }
@@ -1139,10 +1267,10 @@ div.modal-footer > button:hover  {
     padding: 15px;
 }
 .modal-footer {
-    padding: 10px;
+    padding: 8px;
     text-align: right;
-    background-color: @panel-bg;
-    border-top: 1px solid @dropdown-border;
+    background-color: @modal-bg; //@panel-header-bg;
+    border-top: none; //0px solid @dropdown-border;
 }
 .alert-info {
     background-color: @alert-info-bg;
@@ -1155,15 +1283,15 @@ div.modal-footer > button:hover  {
 }
 .modal-backdrop,
 .modal-backdrop.in {
-    opacity: 0.7;
-    background-color: @df-header-border;
+    opacity: 0.85;
+    background-color: notebook-bg; //@table-border;
 }
 div.panel,
 div.panel-default,
 .panel,
 .panel-default {
     font-family: @notebook-fontfamily;
-    font-size: @nb-fontsize-sub;
+    font-size: @nb-fontsize;
     background-color: @panel-bg;
     color: @notebook-fg;
     margin-bottom: 14px;
@@ -1191,15 +1319,17 @@ div.container-fluid {
 div.form-control,
 .form-control {
     font-family: @notebook-fontfamily;
-    font-size: inherit;
+    font-size: initial;
     color: @notebook-fg;
     background-color: @form-input-bg;
-    border: 2px solid @codeblock-border;
+    border: 1px solid @form-input-border !important;
     margin-left: 2px;
-    height: auto;
     box-shadow: none;
-    padding: 6px 12px;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.form-control-static {
+    min-height: inherit;
+    height: inherit;
 }
 .form-group.list-group-item {
     color: @notebook-fg;
@@ -1213,13 +1343,26 @@ input, button, select, textarea {
     border: 1px solid @dropdown-border;
 }
 select.form-control.select-xs {
-    height: auto;
+    height: 33px;
+    font-size: @nb-fontsize;
+}
+.toolbar select, .toolbar label {
+    width: auto;
+    vertical-align: middle;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    display: inline;
+    font-size: 92%;
+    margin-left: 10px;
+    padding: 0px;
+    background: @button-bg !important;
+    background-color: @button-bg !important;
+    border: 2px solid @button-border !important;
 }
 .form-control:focus {
     border-color: @item-theme;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @prompt-line;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @prompt-line;
+    outline: 2px solid @prompt-line;
+    -webkit-box-shadow: none;
 }
 /* Chrome/Opera/Safari */
 ::-webkit-input-placeholder {
@@ -1238,14 +1381,15 @@ select.form-control.select-xs {
   color: @disabled;
 }
 [dir="ltr"] #find-and-replace .input-group-btn + .form-control {
-    border-left: 2px solid @dropdown-border !important;
+    border: 2px solid @dropdown-border !important;
 }
 [dir="ltr"] #find-and-replace .input-group-btn + .form-control:focus {
-    border-left-color: @item-theme !important;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @prompt-line !important;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @prompt-line !important;
+    border-color: @item-theme;
+    outline: 2px solid @prompt-line;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
+
 /****************************************/
 /************** SCROLL BARS *************/
 /****************************************/

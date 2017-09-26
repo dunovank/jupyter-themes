@@ -107,7 +107,7 @@ jt -t chesterish
 # If this doesn't work, try starting a new notebook session.
 jt -r
 
-# toggle toolbar OFF and notebook name ON
+# toggle toolbar ON and notebook name ON
 jt -t grade3 -T -N
 
 # set code font to 'Roboto Mono' 12pt

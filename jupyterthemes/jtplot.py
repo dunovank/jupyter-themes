@@ -22,12 +22,7 @@ base_style = {
     'lines.solid_capstyle': u'round',
     'legend.frameon': False,
     "legend.numpoints": 1,
-    "legend.scatterpoints": 1,
-    'font.family': u'sans-serif',
-    'font.sans-serif': [u'Helvetica',
-        u'Arial',
-        u'Bitstream Vera Sans',
-        u'sans-serif']}
+    "legend.scatterpoints": 1}
 
 # base context params
 base_context = {
@@ -198,6 +193,9 @@ def set_context(context='paper', fscale=1., figsize=(8., 7.)):
 
     # independently scale the fonts
     font_dict = {k: v * fscale for k, v in base_font.items()}
+    font_dict["font.family"] = ["sans-serif"]
+    font_dict["font.sans-serif"] = ["Helvetica", "Helvetica Neue", "Arial",
+                                "DejaVu Sans", "Liberation Sans", "sans-serif"]
     context_dict.update(font_dict)
     return context_dict
 
