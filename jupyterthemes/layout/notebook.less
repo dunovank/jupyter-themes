@@ -920,24 +920,24 @@ div.kse-dropdown > .dropdown-menu,
 .btn-default.active.focus,
 .open > .dropdown-toggle.btn:focus,
 .open > .dropdown-toggle.btn.focus,
-.open > .dropdown-toggle.btn-default {
+.open > .dropdown-toggle.btn-default:hover,
+.open > .dropdown-toggle.btn-default:focus,
+.open > .dropdown-toggle.btn-default.hover,
+.open > .dropdown-toggle.btn-default.focus {
     color: @button-hover;
     border: 2px solid @button-hover-border;
-    background-color: @button-hover-bg;
-    background: @button-hover-bg;
+    background-color: @button-hover-bg !important;
+    background: @button-hover-bg !important;
     background-image: none;
     box-shadow: none !important;
     border-radius: 3px;
 }
 .btn-default:active:hover,
 .btn-default.active:hover,
-.open > .dropdown-toggle.btn-default:hover,
 .btn-default:active:focus,
 .btn-default.active:focus,
-.open > .dropdown-toggle.btn-default:focus,
 .btn-default:active.focus,
-.btn-default.active.focus,
-.open > .dropdown-toggle.btn-default.focus {
+.btn-default.active.focus {
     color: @button-focus-fg !important;
     background-color: @button-bg;
     border-color: @button-focus-bg !important;
@@ -1171,7 +1171,7 @@ a.btn.btn-default.input-group-addon:hover {
 }
 .btn-group > .btn + .dropdown-toggle:hover {
     // border-left: 1px solid @button-hover !important;
-    background: @button-focus-bg !important;
+    background: @button-hover-bg !important;
 }
 .input-group-btn {
     position: relative;

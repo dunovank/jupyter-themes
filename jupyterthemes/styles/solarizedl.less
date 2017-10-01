@@ -12,6 +12,15 @@ http://ethanschoonover.com/solarized
 @blue:                  #268bd2;
 @cyan:                  #2aa198;
 @green:                 #859900;
+@code-gray:             #6a737d;
+@code-fg:               #B5C2D9;
+@code-yellow:           @yellow;
+@code-red:              @red;
+@code-violet:           @violet;
+@code-green:            @green;
+@code-blue:             @blue;
+@code-orange:           @orange;
+@code-cyan:             @cyan;
 
 @solar-base03:          #002b36;
 @solar-base02:          #073642;
@@ -36,8 +45,8 @@ http://ethanschoonover.com/solarized
 @gridColor:             #D6D6D6;
 
 /* selection, hover, prompts, brackets colors */
-@selected-bg:           darken(@solar-base2, 5%);
-@selected-half:         darken(@solar-base2, 5%);
+@selected-bg:           darken(@solar-base2, 15%);
+@selected-half:         darken(@solar-base2, 9%);
 @selected-third:        darken(@solar-base2, 3%);
 @selected-tenth:        darken(@solar-base2, 2%);
 @selected-error:        @red;
@@ -50,12 +59,11 @@ http://ethanschoonover.com/solarized
 /* code, text, markdown, & tooltip colors */
 @cc-input-bg:           @solar-base3;
 @cc-input-fg:           @notebook-fg;
-@cc-input-border:       @solar-base1;
 @cc-output-bg-default:  @solar-base2;
 @cc-output-fg:          @solar-base01;
 @text-cell-fg:          @notebook-fg;
-@unrendered-text:       @yellow;
-@header-fg:             @yellow;
+@unrendered-text:       @orange;
+@header-fg:             @orange;
 @tooltip-bg-color:      @solar-base2;
 @tooltip-fg-color:      @solar-base;
 @nb-name-fg:            @item-theme;
@@ -66,15 +74,21 @@ http://ethanschoonover.com/solarized
 @cc-border-edit:        #bbc4c5;
 @tc-border-selected:    @yellow;
 @tc-border-edit:        rgba(181, 137, 0, .4);
-@cell-selected-border-width: thin;
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               @selected-half;
 @disabled:              @solar-base1;
 @input-prompt:          @disabled;
+@input-hover-bg:        @cc-input-bg;
+@prompt-hover-color:    @disabled;
 @prompt-line:           #bbc4c5;
 @tc-prompt-std:         rgba(181, 137, 0, .4);
 @matching-bracket:      @solar-base3;
+@menubar-bg:            darken(@notebook-bg, 3%);
+@menubar-fg:            @notebook-fg;
+@menubar-hover:         @dropdown-bg;
+@nb-header-bg:          @item-theme;
+@nb-header-fg:          @notebook-fg;
 @dropdown-bg:           #f5f2e7;
 @dropdown-border:       #e4dabd;
 @dropdown-hover:        #efeada;
@@ -85,6 +99,7 @@ http://ethanschoonover.com/solarized
 @modal-bg:              #ffffff;
 @alert-info-bg:         #fdfdfd;
 @form-input-bg:         #ffffff;
+@form-input-border:     @codeblock-bg;
 @cmd-palette-bg:        @form-input-bg;
 @cmd-palette-form:      @panel-header-bg;
 @cmd-palette-hover:     @panel-bg;
@@ -96,7 +111,6 @@ http://ethanschoonover.com/solarized
 @item-green:            @green;
 @item-red:              @red;
 @item-orange:           @orange;
-@item-danger:           #a8524c;
 
 @item-danger:           @red;
 @item-success:          @green;
@@ -117,14 +131,21 @@ http://ethanschoonover.com/solarized
 /* btn, scrollbar and shadow colors */
 @button-bg:             #d2d8d8;
 @button-border:         #cfd6d6;
-@button-color:          @item-theme;
-@button-hover:          #c7cfcf;
+@button-color:          @notebook-fg;
+@button-hover:          darken(@button-color, 3%);
+@button-hover-bg:       darken(@button-bg, 2%);
+@button-hover-border:   @button-hover-bg;
+@button-focus-bg:       darken(desaturate(@orange, 40%), 3%);
+@button-focus-fg:       @orange;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    #e5dcc0;
 @scrollbar:             @item-theme;
 @scroll-trough:         #e1d5b6;
 @scrollbar-inactive:    @solar-base1;
 @box-shadow:            #e8e0c7;
+@md-header-link:        rgba(0,0,0,.32);
+@nb-name-fg:            @button-bg;
+@nb-name-hover:         @divider;
 
 /* solarized ansi colors */
 @ansiblack:             @solar-base03;

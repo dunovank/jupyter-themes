@@ -10,6 +10,15 @@
 @cyan:                  #8ec07c;
 @green:                 #b8bb26;
 @gray:					#928374;
+@code-gray:             @gray;
+@code-fg:               #d5c4a1;
+@code-yellow:           @yellow;
+@code-red:              @red;
+@code-violet:           @violet;
+@code-green:            @green;
+@code-blue:             @blue;
+@code-orange:           @orange;
+@code-cyan:             @cyan;
 
 @gruv-base03:           #1d2021;
 @gruv-base02:           #282828;
@@ -24,7 +33,7 @@
 /* gruvized notebook colors */
 @notebook-bg:           @gruv-base03;
 @notebook-fg:           @gruv-base1;
-@notebook-base:         @notebook-bg;
+@notebook-base:         @gruv-base02;
 
 /* jtplot figure style */
 @axisFace:              #282828;
@@ -35,9 +44,9 @@
 
 /* selection, hover, prompts, brackets colors */
 @selected-bg:           @gruv-base02;
-@selected-half:         rgba(40, 40, 40, .5);
-@selected-third:        rgba(40, 40, 40, .3);
-@selected-tenth:        rgba(40, 40, 40, .1);
+@selected-half:         rgba(70, 70, 70, .5);
+@selected-third:        rgba(70, 70, 70, .4);
+@selected-tenth:        rgba(70, 70, 70, .2);
 @selected-error:        @red;
 @selected-active:       @selected-half;
 @navbar-selected:       @selected-third;
@@ -48,7 +57,6 @@
 /* code, text, markdown, & tooltip colors */
 @cc-input-bg:           @gruv-base02;
 @cc-input-fg:           @notebook-fg;
-@cc-input-border:       @gruv-base2;
 @cc-output-bg:          @notebook-bg;
 @cc-output-bg-default:  @notebook-bg;
 @cc-output-fg:          @notebook-fg;
@@ -71,10 +79,17 @@
 @divider:               @selected-half;
 @disabled:              @gruv-base01;
 @input-prompt:          @gruv-base3;
+@input-hover-bg:        @gruv-base3;
+@prompt-hover-color:    @gruv-base01;
 @prompt-line:           @cc-border-edit;
 @tc-prompt-std:         rgba(215, 153, 33, .50);
 @matching-bracket:      @gruv-base3;
-@dropdown-bg:           @notebook-bg;
+@menubar-bg:            darken(@notebook-bg, 3%);
+@menubar-fg:            @notebook-fg;
+@menubar-hover:         @dropdown-bg;
+@nb-header-bg:          @item-theme;
+@nb-header-fg:          @notebook-fg;
+@dropdown-bg:           @notebook-base;
 @dropdown-border:       @selected-half;
 @dropdown-hover:        @selected-third;
 
@@ -84,6 +99,7 @@
 @modal-bg:              lighten(@cc-input-bg, 0%);
 @alert-info-bg:         lighten(@cc-input-bg, 0%);
 @form-input-bg:         lighten(@cc-input-bg, 3%);
+@form-input-border:     @codeblock-bg;
 @cmd-palette-bg:        @form-input-bg;
 @cmd-palette-form:      @panel-header-bg;
 @cmd-palette-hover:     @panel-bg;
@@ -94,6 +110,7 @@
 @item-cyan:             @cyan;
 @item-green:            @green;
 @item-red:              @red;
+@item-orange:           @orange;
 
 @item-danger:           @red;
 @item-success:          @green;
@@ -115,13 +132,20 @@
 @button-bg:             @selected-half;
 @button-border:         @selected-half;
 @button-color:          @item-theme;
-@button-hover:          rgba(40, 40, 40, .9);
+@button-hover:          @orange;
+@button-hover-bg:       darken(@button-bg, 2%);
+@button-hover-border:   @button-hover-bg;
+@button-focus-bg:       @blue;
+@button-focus-fg:       @orange;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    darken(@panel-header-bg, 2%);
 @scrollbar:             @item-theme;
 @scroll-trough:         lighten(@notebook-bg, 6%);
 @scrollbar-inactive:    @gruv-base1;
 @box-shadow:            @gray;
+@md-header-link:        rgba(0,0,0,.32);
+@nb-name-fg:            @button-bg;
+@nb-name-hover:         @divider;
 
 /* gruvized ansi colors */
 @ansiblack:             @gruv-base03;

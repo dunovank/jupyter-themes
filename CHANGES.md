@@ -1,5 +1,9 @@
 ### Release Notes
 
+#### **v0.18.0**
+- updated all styles (fixed broken themes)
+- misc. style updates
+
 #### **v0.17.9**
 - merged [PR #180](https://github.com/dunovank/jupyter-themes/pull/180) submitted by  [fry95116](https://github.com/fry95116) fixing str formatting issue with `-mathfs` arg
 - misc. style updates

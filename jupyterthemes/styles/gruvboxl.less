@@ -10,6 +10,16 @@
 @cyan:                  #689d6a;
 @green:                 #98971a;
 @gray:					#928374;
+@code-gray:             #6a737d;
+@code-fg:               #3f3d46;
+@code-yellow:           #FCB83D;
+@code-red:              #d3305e;
+@code-violet:           #7d4bb3;
+@code-green:            #488f0c;
+@code-blue:             #007dc5;
+@code-orange:           #f65d22;
+@code-cyan:             #3275d5;
+
 
 @gruv-base0:           #1d2021;
 @gruv-base1:           #282828;
@@ -34,21 +44,21 @@
 @gridColor:             #bdae93;
 
 /* selection, hover, prompts, brackets colors */
-@selected-bg:           @gruv-base02;
-@selected-half:         rgba(235, 219, 178, .5);
-@selected-third:        rgba(235, 219, 178, .3);
-@selected-tenth:        rgba(235, 219, 178, .1);
+@selected-bg:           @gruv-base00;
+@selected-half:         rgba(185, 165, 113, .5);
+@selected-third:        rgba(185, 165, 113, .3);
+@selected-tenth:        rgba(185, 165, 113, .1);
 @selected-error:        @red;
-@selected-active:       @selected-half;
-@navbar-selected:       @selected-third;
+@selected-active:       @dropdown-bg;
+@navbar-selected:       @dropdown-bg;
 @selected-fg:           @gruv-base0;
-@selected-fg-bright:    @blue;
+@selected-fg-bright:    @orange;
 @unemphasize-fg:        @gruv-base1;
 
 /* code, text, markdown, & tooltip colors */
 @cc-input-bg:           @gruv-base02;
 @cc-input-fg:           @notebook-fg;
-@cc-input-border:       @gruv-base2;
+// @cc-input-border:       @gruv-base2;
 @cc-output-bg:          @notebook-bg;
 @cc-output-bg-default:  @notebook-bg;
 @cc-output-fg:          @notebook-fg;
@@ -69,14 +79,22 @@
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               @selected-half;
-@disabled:              @gruv-base01;
+@disabled:              darken(@gruv-base00, 4%);
 @input-prompt:          @gruv-base3;
+@input-hover-bg:        darken(@cc-input-bg, 1%);
+@prompt-hover-color:    darken(@input-prompt, 2%);
 @prompt-line:           @cc-border-edit;
 @tc-prompt-std:         rgba(215, 153, 33, .50);
-@matching-bracket:      @gruv-base3;
-@dropdown-bg:           @notebook-bg;
-@dropdown-border:       @selected-half;
-@dropdown-hover:        @selected-third;
+@prompt-line:           rgba(215, 153, 33, .50);
+@nb-header-bg:          @item-theme;
+@nb-header-fg:          @notebook-fg;
+@menubar-bg:            darken(@notebook-base, 5%);
+@menubar-fg:            @notebook-fg;
+@matching-bracket:      @blue;
+@menubar-hover:         #DEDEDE;
+@dropdown-bg:           @menubar-bg;
+@dropdown-border:       darken(@notebook-base, 5%);
+@dropdown-hover:        darken(@dropdown-border, 5%);
 
 /* panels and form-control styles */
 @panel-header-bg:       darken(@gruv-base03, 1%);
@@ -84,6 +102,7 @@
 @modal-bg:              lighten(@cc-input-bg, 0%);
 @alert-info-bg:         lighten(@cc-input-bg, 0%);
 @form-input-bg:         lighten(@cc-input-bg, 3%);
+@form-input-border:     darken(@gruv-base03, 1%);
 @cmd-palette-bg:        @form-input-bg;
 @cmd-palette-form:      @panel-header-bg;
 @cmd-palette-hover:     @panel-bg;
@@ -94,6 +113,7 @@
 @item-cyan:             @cyan;
 @item-green:            @green;
 @item-red:              @red;
+@item-orange:           #FF7823;
 
 @item-danger:           @red;
 @item-success:          @green;
@@ -110,12 +130,19 @@
 @df-cell-bg:            @table-bg;
 @codeblock-bg:          lighten(@cc-input-bg, 4%);
 @codeblock-border:      @codeblock-bg;
+@md-header-link:        rgba(0,0,0,.32);
+@nb-name-fg:            @button-bg;
+@nb-name-hover:         @divider;
 
 /* btn, scrollbar and shadow colors */
 @button-bg:             @selected-half;
 @button-border:         @selected-half;
 @button-color:          @item-theme;
-@button-hover:          rgba(235, 219, 178, .9);
+@button-hover:          @orange;
+@button-hover-bg:       @dropdown-hover;
+@button-hover-border:   @button-hover-bg;
+@button-focus-bg:       @dropdown-hover;
+@button-focus-fg:       @button-hover;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    darken(@panel-header-bg, 2%);
 @scrollbar:             @item-theme;

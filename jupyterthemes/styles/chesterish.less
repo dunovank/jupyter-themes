@@ -1,4 +1,3 @@
-
 /* chesterish base colors */
 @yellow:                #FFEC8E;
 @orange:                #fea47f;
@@ -8,6 +7,15 @@
 @blue:                  #51c0ef;
 @cyan:                  #4cb2ff;
 @green:                 #61ba86;
+@code-gray:             #6a737d;
+@code-fg:               #B5C2D9;
+@code-yellow:           @yellow;
+@code-red:              @red;
+@code-violet:           @violet;
+@code-green:            @green;
+@code-blue:             @blue;
+@code-orange:           @orange;
+@code-cyan:             @cyan;
 
 /* chesterish notebook colors */
 @notebook-bg:           #1A2028;
@@ -27,7 +35,7 @@
 @selected-third:        rgba(75, 95, 118,.30);
 @selected-tenth:        rgba(75, 95, 118,.10);
 @selected-error:        rgba(191, 97, 106,.4);
-@selected-active:       #007aa4;
+@selected-active:       #009cd1;
 @navbar-selected:       @selected-active;
 @selected-fg:           #DBE1EA;
 @selected-fg-bright:    #FEFEFE;
@@ -56,23 +64,30 @@
 @divider:               rgba(0, 156, 209, .3);
 @disabled:              #546386;
 @input-prompt:          @disabled;
+@input-hover-bg:        #2a2e39;
+@prompt-hover-color:    #576a8d;
 @prompt-line:           rgba(0, 156, 209, .5);
 @tc-prompt-std:         rgba(0, 156, 209, .5);
 @matching-bracket:      #4C8BE2;
+@menubar-bg:            #242931;
+@menubar-fg:            @notebook-fg;
+@menubar-hover:         @dropdown-bg;
+@nb-header-bg:          @item-theme;
+@nb-header-fg:          #899ab8;
 @dropdown-bg:           desaturate(@notebook-base, 5%);
 @dropdown-border:       rgba(63, 83, 105, 0.55);
 @dropdown-hover:        @dropdown-border;
 
 /* panels and form-control styles */
-@panel-header-bg:       #27313d;
+@panel-header-bg:       #252b35;
 @panel-bg:              #2D3846;
 @modal-bg:              @panel-bg;
 @alert-info-bg:         #323f50;
-@form-input-bg:         #1C212B;
+@form-input-bg:         #252b35;
+@form-input-border:     @codeblock-bg;
 @cmd-palette-bg:        #202937;
 @cmd-palette-form:      lighten(@cmd-palette-bg, 5%);
 @cmd-palette-hover:     #2b3850;
-
 
 /* buttons, widgets, kernels colors */
 @item-theme:            #0b98c8;
@@ -81,7 +96,6 @@
 @item-green:            #48a667;
 @item-red:              #dc6972;
 @item-orange:           #fea47f;
-@item-danger:           #a8524c;
 
 @item-danger:           #e74c3c;
 @item-success:          #83a83b;
@@ -102,14 +116,21 @@
 /* btn, scrollbar and shadow colors */
 @button-bg:             #252E3A;
 @button-border:         darken(@button-bg, 2%);
-@button-color:          @selected-active;
-@button-hover:          lighten(@button-bg, 2%);
+@button-color:          @notebook-fg;
+@button-hover:          #009cd1;
+@button-hover-bg:       lighten(@button-bg, 2%);
+@button-hover-border:   @button-hover-bg;
+@button-focus-bg:       #33517c;
+@button-focus-fg:       #009cd1;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    darken(@panel-header-bg, 2%);
 @scrollbar:             #3f4555;
 @scroll-trough:         #292d3a;
 @scrollbar-inactive:    #464e60;
 @box-shadow:            #374556;
+@md-header-link:        rgba(0,0,0,.32);
+@nb-name-fg:            @button-bg;
+@nb-name-hover:         @divider;
 
 /* chesterish ansi colors */
 @ansiblack:             #2b303b;
