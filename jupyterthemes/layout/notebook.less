@@ -544,8 +544,8 @@ p.navbar-text.indicator_area {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
     color: @selected-fg-bright;
-    background-color: @navbar-selected;
-    border-color: @navbar-selected;
+    background-color: @dropdown-bg; //@navbar-selected;
+    border-color: @dropdown-bg; //@navbar-selected;
     line-height: 1.5em;
     transition: 200ms ease;
 }
@@ -590,12 +590,31 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
 .notification_widget {
     color: @item-blue;
     z-index: -500;
-    font-size: 8pt;
+    font-size: 9pt;
     background: transparent;
     background-color: transparent;
     margin-right: 3px;
     border: none;
 }
+.notification_widget,
+div.notification_widget {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-right: 0px;
+    vertical-align: text-top !important;
+    margin-top: 6px !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    font-size: 9pt !important;
+    border: none;
+}
+.navbar-btn.btn-xs:hover {
+    border: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    color: @button-color !important;
+}
+
 /* COMMENT OUT TO RESTORE START-UP NOTIFICATIONS */
 div.notification_widget.info,
 .notification_widget.info {
@@ -604,22 +623,22 @@ div.notification_widget.info,
 .edit_mode .modal_indicator:before {
     font-size: 18px;
     color: @item-theme;
-    content: "E";
-    opacity: 0.35;
+    opacity: 1.0;
     padding-bottom: 0px;
     vertical-align: -webkit-baseline-middle;
     margin-left: 1px;
     margin-bottom: 0px;
+    // content: "E";
 }
 .command_mode .modal_indicator:before {
     font-family: @notebook-fontfamily;
     font-size: 18px;
     color: @item-theme;
-    content: "C";
     padding-bottom: 0px;
     vertical-align: -webkit-baseline-middle;
     margin-left: 1px;
     margin-bottom: 0px;
+    // content: "C";
 }
 .item_icon {
     color: @item-blue;
