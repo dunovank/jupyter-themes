@@ -84,6 +84,16 @@ div.cell.code_cell.selected .input {
     border-left: 5px solid @cc-border-edit !important;
     border-radius: 3px;
 }
+div.cell.selected:before, div.cell.selected.jupyter-soft-selected:before {
+    position: absolute;
+    display: block;
+    top: -1px;
+    left: -1px;
+    width: 5px;
+    height: calc(100% + 2px);
+    content: '';
+    background: transparent !important;
+}
 
 
 /*********** JUPYTER CELLS SOFT-SELECTED ************/
