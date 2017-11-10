@@ -19,7 +19,7 @@
 
 /* oceans16 notebook colors */
 @notebook-bg:           #262931;
-@notebook-fg:           #93A2BE;
+@notebook-fg:           #A2B0C7; 
 @notebook-base:         #373e4b;
 
 /* jtplot figure style */
@@ -33,7 +33,7 @@
 @selected-bg:           #3572C6;
 @selected-half:         rgba(80, 92, 133,.45);
 @selected-third:        rgba(80, 92, 133,.22);
-@selected-tenth:        rgba(80, 92, 133,.06);
+@selected-tenth:        rgba(80, 92, 133,.05);
 @selected-error:        rgba(191, 97, 106,.4);
 @selected-active:       @selected-bg;
 @navbar-selected:       @selected-active;
@@ -61,7 +61,7 @@
 @tc-border-edit:        #33517c;
 
 /* menus, dividers, prompt-borders, brackets */
-@divider:               rgba(53, 114, 198,.3);
+@divider:               rgba(53, 114, 198,.2);
 @disabled:              #546379;
 @input-prompt:          #446489;
 @input-hover-bg:        #2a2e39;
@@ -74,9 +74,9 @@
 @menubar-hover:         @dropdown-bg;
 @nb-header-bg:          @item-theme;
 @nb-header-fg:          #899ab8;
-@dropdown-bg:           #171a20;
+@dropdown-bg:           lighten(#2E3642, 5%);
 @dropdown-border:       @selected-third;
-@dropdown-hover:        @dropdown-border;
+@dropdown-hover:        darken(@dropdown-bg, 2%);
 
 /* panels and form-control styles */
 @panel-header-bg:       #2E3642;
@@ -118,7 +118,7 @@
 @button-border:         @button-bg;
 @button-color:          @notebook-fg;
 @button-hover:          @item-theme;
-@button-hover-bg:       #2a2e39;
+@button-hover-bg:       darken(@button-bg, 2%); //#2a2e39;
 @button-hover-border:   @button-hover-bg;
 @button-focus-bg:       #33517c;
 @button-focus-fg:       #157bff;

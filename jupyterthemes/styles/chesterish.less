@@ -74,9 +74,10 @@
 @menubar-hover:         @dropdown-bg;
 @nb-header-bg:          @item-theme;
 @nb-header-fg:          #899ab8;
-@dropdown-bg:           desaturate(@notebook-base, 5%);
-@dropdown-border:       rgba(63, 83, 105, 0.55);
-@dropdown-hover:        @dropdown-border;
+@dropdown-bg:           lighten(#2E3642, 4%); 
+@dropdown-border:       @selected-third;
+@dropdown-hover:        darken(@dropdown-bg, 2%);
+
 
 /* panels and form-control styles */
 @panel-header-bg:       #252b35;

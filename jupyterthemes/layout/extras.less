@@ -281,13 +281,13 @@ span.rendered_html code {
     padding-right: 0px;
 }
 .nbext-filter-menu {
-    max-height: 50vh;
+    max-height: 55vh !important;
     overflow-y: auto;
     outline: none;
-    border: 2px solid @dropdown-border;
+    border: none;
 }
 .nbext-filter-menu:hover {
-    border: 2px solid @dropdown-border;
+    border: none ;
 }
 .alert-warning {
     background-color: @panel-bg;
@@ -636,6 +636,19 @@ body > div.modal.cmd-palette.in > div {
     background-color: @item-green;
     border-color: @item-green;
     border-radius: 0px;
+}
+
+/******************************************/
+/*************** DASHBOARDS ***************/
+/******************************************/
+.jupyter-dashboard-menu-item.selected::before {
+    font-family: 'FontAwesome' !important;
+    content: '\f00c' !important;
+    position: absolute !important;
+    color: @item-theme !important;
+    left: 0px !important;
+    top: 13px !important;
+    font-size: 12px !important;
 }
 
 /******************************************/

@@ -538,7 +538,7 @@ p.navbar-text.indicator_area {
     background-color: @selected-third;
     border-color: @dropdown-hover;
     line-height: 1.5em;
-    transition: 200ms ease;
+    transition: 80ms ease;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -547,7 +547,6 @@ p.navbar-text.indicator_area {
     background-color: @dropdown-bg; //@navbar-selected;
     border-color: @dropdown-bg; //@navbar-selected;
     line-height: 1.5em;
-    transition: 200ms ease;
 }
 .navbar-nav > li > .dropdown-menu {
     margin-top: 0px;
@@ -811,7 +810,7 @@ i.fa.fa-icon {
     box-shadow: none;
     padding: 0px;
     text-align: left;
-    border: 2px solid @dropdown-border;
+    border: none;
     background-color: @dropdown-bg;
     background: @dropdown-bg;
     line-height: 1;
@@ -823,7 +822,7 @@ i.fa.fa-icon {
     box-shadow: none;
     padding: 0px;
     text-align: left;
-    border: 2px solid @dropdown-border;
+    border: none;
     background-color: @dropdown-bg;
     box-shadow: none;
     line-height: 1;
@@ -831,7 +830,7 @@ i.fa.fa-icon {
 .dropdown-menu > li > a {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize-sub;
-    line-height: 1.1;
+    // line-height: 1.1;
     display: block;
     padding: 10px 20px 9px 10px;
     color: @notebook-fg;
@@ -853,7 +852,8 @@ i.fa.fa-icon {
     background-color: @selected-half;
 }
 .dropdown-submenu > .dropdown-menu {
-    top: 0px;
+    display: none;
+    top: 2px !important;
     left: 100%;
     margin-top: -2px;
     margin-left: 0px;
@@ -870,13 +870,14 @@ i.fa.fa-icon {
     padding: none;
     display: block;
     clear: both;
-    line-height: 1.1;
+    // line-height: 1.1;
     white-space: nowrap;
 }
 .dropdown-submenu > a:after {
     color: @notebook-fg;
     margin-right: -16px;
     margin-top: 0px;
+    display: inline-block;
 }
 .dropdown-submenu:hover > a:after,
 .dropdown-submenu:active > a:after,
@@ -884,6 +885,7 @@ i.fa.fa-icon {
 .dropdown-submenu:visited > a:after {
     color: @item-theme;
     margin-right: -16px;
+    display: inline-block !important;
 }
 div.kse-dropdown > .dropdown-menu,
 .kse-dropdown > .dropdown-menu {
@@ -1443,3 +1445,137 @@ HTML, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
 }
+
+
+//
+// .navbar-default .navbar-nav > li > a {
+//     font-family: @notebook-fontfamily;
+//     font-size: @nb-fontsize;
+//     color: @notebook-fg;
+//     display: block;
+//     line-height: 1.5em;
+//     padding-top: 14px;
+//     padding-bottom: 11px;
+//     text-decoration: none;
+//     -webkit-transition: all .25s ease !important;
+//        -moz-transition: all .25s ease !important;
+//         -ms-transition: all .25s ease !important;
+//          -o-transition: all .25s ease !important;
+//             transition: all .25s ease !important;
+// }
+// .navbar-default .navbar-nav > li > a:hover,
+// .navbar-default .navbar-nav > li > a:focus {
+//     color: @selected-fg;
+//     background-color: @selected-third;
+//     border-color: @dropdown-hover;
+//     line-height: 1.5em;
+//     transition: 80ms ease;
+// }
+// .navbar-default .navbar-nav > .open > a,
+// .navbar-default .navbar-nav > .open > a:hover,
+// .navbar-default .navbar-nav > .open > a:focus {
+//     color: @selected-fg-bright;
+//     background-color: @dropdown-bg; //@navbar-selected;
+//     border-color: @dropdown-bg; //@navbar-selected;
+//     line-height: 1.5em;
+//     // transition: 80ms ease;
+// }
+// .navbar-nav ul {
+// 	-webkit-font-smoothing:antialiased;
+// 	text-shadow:0 1px 0 #FFF;
+//     background: #ddd;
+//     // list-style: none;
+//     margin: 0;
+//     padding: 0;
+//     width: 100%;
+// }
+// .navbar-nav li {
+//     float: left;
+//     margin: 0;
+//     padding: 0;
+//     position: relative;
+//     min-width: 25%;
+// }
+// .navbar-nav a {
+//     // background: #ddd;
+//     color: #444;
+//     // display: inline-block;
+//     // font: bold 16px/50px sans-serif;
+//     // padding: 0 25px;
+//     text-decoration: none;
+//     -webkit-transition: all .25s ease !important;
+//        -moz-transition: all .25s ease !important;
+//         -ms-transition: all .25s ease !important;
+//          -o-transition: all .25s ease !important;
+//             transition: all .25s ease !important;
+// }
+// // nav .dropdown:after {
+// //     content: '';
+// // }
+// // nav .dropdown:hover:after{
+// // 	content:'\25bc';
+// // }
+// .navbar-nav li:hover a {
+//     background: #ccc;
+// }
+// .navbar-nav li.dropdown-submenu ul {
+//     display: none !important;
+// }
+// // .navbar-default .navbar-nav > .open > a,
+// // .navbar-default .navbar-nav li ul,
+// // .navbar-nav > .open > a,
+// .navbar-nav li ul {
+//     float: left;
+//     left: 0;
+//     opacity: 0;
+//     position: absolute;
+//     top: 35px;
+//     // top: 0em;
+//     visibility: hidden;
+//     z-index: 1;
+//     -webkit-transition: all .25s ease !important;
+//        -moz-transition: all .25s ease !important;
+//         -ms-transition: all .25s ease !important;
+//          -o-transition: all .25s ease !important;
+//             transition: all .25s ease !important;
+// }
+// .navbar-nav li.dropdown-submenu:hover ul {
+//     display: flow-root !important;
+//     top: 2px !important;
+//     left: 100%;
+//     margin-top: -2px;
+//     margin-left: 0px;
+//     padding-top: 0px;
+//     /* transition: 200ms ease; */
+// }
+// // .navbar-default .navbar-nav > .open > a,
+// // .navbar-default .navbar-nav > .open > a:hover,
+// // .navbar-default .navbar-nav > .open > a:focus,
+// // .navbar-nav > .open > a:hover,
+// // .navbar-nav > .open > a:focus,
+// .navbar-nav li:hover ul {
+//     opacity: 1;
+//     top: 50px;
+//     visibility: visible;
+//     display: inline-grid;
+// }
+// .navbar-nav li ul li {
+//     float: none;
+//     // width: 100%;
+// }
+// .navbar-navbar-nav li ul a:hover {
+//     background: #bbb;
+// }
+
+/* Clearfix */
+//
+// .cf:after, .cf:before {
+//     // content:"";
+//     display:table;
+// }
+// .cf:after {
+//     clear:both;
+// }
+// .cf {
+//     zoom:1;
+// }​

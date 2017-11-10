@@ -139,8 +139,12 @@ def set_font_properties(style_less,
         else:
             tcfont='sans-serif'
         if nbfont is not None:
-            nbfont, nbfontpath = stored_font_dicts(nbfont)
-            style_less = import_fonts(style_less, nbfont, nbfontpath)
+            if nbfont == 'proxima':
+                nbfont, tcfont = ["'Proxima Nova'"]*2
+                style_less = proxima_nova_imports(style_less)
+            else:
+                nbfont, nbfontpath = stored_font_dicts(nbfont)
+                style_less = import_fonts(style_less, nbfont, nbfontpath)
         else:
             nbfont='sans-serif'
 
@@ -160,7 +164,6 @@ def set_font_properties(style_less,
     style_less += '@output-font-size: {}pt; \n'.format(outfontsize)
     style_less += '@prompt-fontsize: {}pt; \n'.format(prfontsize)
     style_less += '@mathfontsize: {}%; \n'.format(mathfontsize)
-    # style_less += '@mathfontsize-str: "{}pt"; \n'.format(mathfontsize)
     style_less += '\n\n'
     style_less += '/* Import Theme Colors and Define Layout Variables */\n'
     return style_less
@@ -174,7 +177,8 @@ def import_fonts(style_less, fontname, font_subdir):
     ftype_dict = {'woff2': 'woff2',
                   'woff': 'woff',
                   'ttf': 'truetype',
-                  'otf': 'opentype'}
+                  'otf': 'opentype',
+                  'svg': 'svg'}
 
     define_font = (
         "@font-face {{font-family: {fontname};\n\tfont-weight:"
@@ -339,6 +343,39 @@ def toggle_settings(toolbar=False, nbname=False, hideprompt=False):
     return toggle
 
 
+def proxima_nova_imports(style_less):
+
+    style_less += """@font-face {
+        font-family: 'Proxima Nova Bold';
+        src: url('fonts/Proxima Nova Alt Bold-webfont.eot');
+        src: url('fonts/Proxima Nova Alt Bold-webfont.eot?#iefix') format('embedded-opentype'),
+             url('fonts/Proxima Nova Alt Bold-webfont.woff2') format('woff2'),
+             url('fonts/Proxima Nova Alt Bold-webfont.woff') format('woff'),
+             url('fonts/Proxima Nova Alt Bold-webfont.ttf') format('truetype'),
+             url('fonts/Proxima Nova Alt Bold-webfont.svg#proxima_nova_altbold') format('svg');
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Proxima Nova';
+        src: url('fonts/Proxima Nova Alt Regular-webfont.eot');
+        src: url('fonts/Proxima Nova Alt Regular-webfont.eot?#iefix') format('embedded-opentype'),
+             url('fonts/Proxima Nova Alt Regular-webfont.woff') format('woff'),
+             url('fonts/Proxima Nova Alt Regular-webfont.ttf') format('truetype'),
+             url('fonts/Proxima Nova Alt Regular-webfont.svg#proxima_nova_altregular') format('svg');
+        font-weight: 400;
+        font-style: normal;
+    }"""
+
+    font_subdir = os.path.join(fonts_dir, "sans-serif/proximasans")
+    fontpath = os.path.join(fonts_dir, font_subdir)
+    for fontfile in os.listdir(font_subdir):
+        send_fonts_to_jupyter(os.path.join(fontpath, fontfile))
+
+    return style_less
+
+
 def set_mathjax_style(style_css, mathfontsize):
     """Write mathjax settings, set math fontsize
     """
@@ -487,7 +524,8 @@ def stored_font_dicts(fontcode, get_all=False):
               'sourcesans': ['Source Sans Pro', 'sourcesans'],
               'robotosans': ['Roboto', 'robotosans'],
               'latosans': ['Lato', 'latosans'],
-              'exosans': ['Exo_2', 'exosans']},
+              'exosans': ['Exo_2', 'exosans'],
+              'proxima': ['Proxima Nova', 'proximasans']},
              'serif':
              {'ptserif': ['PT Serif', 'ptserif'],
               'ebserif': ['EB Garamond', 'ebserif'],

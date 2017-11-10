@@ -48,19 +48,11 @@ div.CodeMirror-sizer {
     padding-bottom: 0px;
     margin-top: 0px;
 }
-div.cell.selected:before {
+div.cell.selected:before,
+.edit_mode div.cell.selected:before,
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before  {
     background: @cc-input-bg;
-    border: none;
-    border-radius: 3px;
-    position: absolute;
-    display: block;
-    top: 0px;
-    left: 0px;
-    width: 0px;
-    height: 100%;
-}
-.edit_mode div.cell.selected:before {
-    background: @notebook-bg;
     border: none;
     border-radius: 3px;
     position: absolute;
@@ -84,18 +76,11 @@ div.cell.code_cell.selected .input {
     border-left: 5px solid @cc-border-edit !important;
     border-radius: 3px;
 }
-div.cell.selected:before, div.cell.selected.jupyter-soft-selected:before {
-    position: absolute;
-    display: block;
-    top: -1px;
-    left: -1px;
-    width: 5px;
-    height: calc(100% + 2px);
-    content: '';
-    background: transparent !important;
+.edit_mode div.cell.selected:before {
+    height: 100%;
+    border-left: 5px solid @cc-border-edit !important;
+    border-radius: 3px;
 }
-
-
 /*********** JUPYTER CELLS SOFT-SELECTED ************/
 div.cell.jupyter-soft-selected,
 div.cell.selected.jupyter-soft-selected {
@@ -109,19 +94,6 @@ div.cell.selected.jupyter-soft-selected {
 }
 div.cell.selected.jupyter-soft-selected .input {
     border-left: 5px solid @cc-input-bg !important;
-}
-
-div.cell.selected.jupyter-soft-selected:before,
-.edit_mode div.cell.selected:before .input {
-    background: @cc-border-edit  !important;
-    border: 2px solid @cc-border-edit !important;
-    border-radius: 6px !important;
-    position: absolute !important;
-    display: block !important;
-    top: 0px !important;
-    left: 0px !important;
-    width: 6px !important;
-    height: 100% !important;
 }
 div.cell.selected.jupyter-soft-selected {
     border-left-color: @cc-border-selected;
@@ -141,17 +113,6 @@ div.cell.text_cell.selected.jupyter-soft-selected .prompt {
 }
 div.cell.text_cell.selected.jupyter-soft-selected .input_prompt {
     border-left: none !important;
-}
-div.cell.text_cell.selected.jupyter-soft-selected:before {
-    background: @tc-border-edit !important;
-    border: 2px solid @tc-border-edit !important;
-    border-radius: 6px !important;
-    position: absolute !important;
-    display: block !important;
-    top: 0px !important;
-    left: 0px !important;
-    width: 6px !important;
-    height: 100% !important;
 }
 div.cell.text_cell.jupyter-soft-selected,
 div.cell.text_cell.selected.jupyter-soft-selected {
@@ -395,30 +356,7 @@ div.edit_mode div.text_cell.unrendered {
     background-color: @text-cell-bg;
     border-radius: 0px;
 }
-div.cell.text_cell.selected:before {
-    background: @tc-border-selected;
-    border: 2px solid @tc-border-selected;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-    position: absolute;
-    display: block;
-    top: 0px;
-    left: 0px;
-    width: 5px;
-    height: 100%;
-}
-.edit_mode div.cell.text_cell.selected:before {
-    background: @tc-border-edit;
-    border: 2px solid @tc-border-edit;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-    position: absolute;
-    display: block;
-    top: 0px;
-    left: 0px;
-    width: 5px;
-    height: 100%;
-}
+
 
 /********** TEXT & MD PROMPT **********/
 div.cell.text_cell .prompt {
@@ -434,7 +372,6 @@ div.cell.text_cell.rendered .prompt {
     width: @tc-prompt-width !important;
     background-color: @text-cell-bg;
     border-right: @tc-prompt-border;
-    // border-left: 5px solid @tc-border-selected;
     border-left: 5px solid @text-cell-bg;
 }
 div.cell.text_cell.unrendered .prompt {
@@ -583,7 +520,7 @@ div.rendered_html h5 {
     font-size: 200%;
     text-align: center;
     font-style: normal;
-    font-weight: lighter;
+    font-weight: normal;
 }
 .rendered_html h2,
 .text_cell_render h2 {
@@ -591,28 +528,28 @@ div.rendered_html h5 {
     font-size: 170%;
     color: @code-fg;
     font-style: normal;
-    font-weight: lighter;
+    font-weight: normal;
 }
 .rendered_html h3,
 .text_cell_render h3 {
     font-size: 140%;
     color: @code-fg;
     font-style: normal;
-    font-weight: lighter;
+    font-weight: normal;
 }
 .rendered_html h4,
 .text_cell_render h4 {
     font-size: 110%;
     color: @code-fg;
     font-style: normal;
-    font-weight: lighter;
+    font-weight: normal;
 }
 .rendered_html h5,
 .text_cell_render h5 {
     font-size: 100%;
     color: @selected-fg;
     font-style: normal;
-    font-weight: lighter;
+    font-weight: normal;
 }
 hr {
     margin-top: 8px;
