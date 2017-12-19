@@ -1,0 +1,19 @@
+[I 10:19:58.586 NotebookApp] Serving notebooks from local directory: /home/bob/notebooks
+[I 10:19:58.586 NotebookApp] 0 active kernels
+[I 10:19:58.586 NotebookApp] The Jupyter Notebook is running at:
+[I 10:19:58.586 NotebookApp] http://0.0.0.0:8888/
+[I 10:19:58.586 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 10:19:59.585 NotebookApp] 404 GET /api/kernels/06c934ee-3ac7-4b0e-afbd-15564e4ffdb8/channels?session_id=B3EFE184DFF84DF4824B20150EC5C353 (10.1.10.163): Kernel does not exist: 06c934ee-3ac7-4b0e-afbd-15564e4ffdb8
+[W 10:19:59.624 NotebookApp] 404 GET /api/kernels/06c934ee-3ac7-4b0e-afbd-15564e4ffdb8/channels?session_id=B3EFE184DFF84DF4824B20150EC5C353 (10.1.10.163) 48.72ms referer=None
+[W 10:20:01.659 NotebookApp] Replacing stale connection: 06c934ee-3ac7-4b0e-afbd-15564e4ffdb8:B3EFE184DFF84DF4824B20150EC5C353
+[I 10:20:09.176 NotebookApp] Interrupted...
+[I 10:20:09.176 NotebookApp] Shutting down 0 kernels
+[I 10:20:21.661 NotebookApp] Serving notebooks from local directory: /home/bob/notebooks
+[I 10:20:21.661 NotebookApp] 0 active kernels
+[I 10:20:21.661 NotebookApp] The Jupyter Notebook is running at:
+[I 10:20:21.661 NotebookApp] http://0.0.0.0:8888/
+[I 10:20:21.661 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 10:20:27.310 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20171219102021 (10.1.10.163) 10.87ms referer=http://bigd:8888/notebooks/Untitled.ipynb
+[I 10:20:27.454 NotebookApp] Kernel started: 111400ee-df7d-42f8-94a7-66fde7942d11
+Loading required package: JuniperKernel
+[I 10:22:27.435 NotebookApp] Saving file at /Untitled.ipynb

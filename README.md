@@ -201,6 +201,7 @@ jtplot.reset()
 | droidmono   | Droid Sans Mono          |
 | fira        | Fira Mono                |
 | firacode    | Fira Code                |
+| iosevka     | Iosevka                  |
 | generic     | Generic Mono             |
 | hack        | Hack                     |
 | hasklig     | Hasklig                  |
