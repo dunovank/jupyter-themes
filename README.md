@@ -201,12 +201,12 @@ jtplot.reset()
 | droidmono   | Droid Sans Mono          |
 | fira        | Fira Mono                |
 | firacode    | Fira Code                |
-| iosevka     | Iosevka                  |
 | generic     | Generic Mono             |
 | hack        | Hack                     |
 | hasklig     | Hasklig                  |
 | inconsolata | Inconsolata-g            |
 | inputmono   | Input Mono               |
+| iosevka     | Iosevka                  |
 | liberation  | Liberation Mono          |
 | meslo       | Meslo                    |
 | office      | Office Code Pro          |
