@@ -1,4 +1,4 @@
 jupyter_core
 ipython>=5.4.1
 matplotlib>=1.4.3
-lesscpy>=0.12.0
+lesscpy>=0.11.2
