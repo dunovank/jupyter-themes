@@ -1,5 +1,9 @@
 ### Release Notes
 
+#### **v0.18.3**
+- merged [PR #215](https://github.com/dunovank/jupyter-themes/pull/215) submitted by [PegasusWithoutWings](https://github.com/PegasusWithoutWings) fixing lesscpy dependency
+- updated setup.py dependencies to fix Travis checks
+
 #### **v0.18.2**
 - fixed soft-selected cell border style
 - misc. style updates

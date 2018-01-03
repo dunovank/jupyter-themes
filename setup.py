@@ -6,7 +6,7 @@ from itertools import chain
 pkgname = 'jupyterthemes'
 major = 0
 minor = 18
-patch = 2
+patch = 3
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v' + version])
@@ -45,7 +45,7 @@ fontsdata = chain.from_iterable([[os.sep.join(f.split(os.sep)[1:])
                                  for fsub in fsubdirs])
 datafiles[pkgname].extend(list(fontsdata))
 
-install_requires = ['jupyter_core', 'ipython>=5.4.1', 'matplotlib>=1.4.3', 'lesscpy>=0.12.0']
+install_requires = ['jupyter_core', 'ipython>=5.4.1', 'matplotlib>=1.4.3', 'lesscpy>=0.11.2']
 
 setup(
     name='jupyterthemes',
