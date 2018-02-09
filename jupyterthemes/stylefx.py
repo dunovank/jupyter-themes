@@ -57,7 +57,7 @@ def check_directories():
 def less_to_css(style_less):
     """ write less-compiled css file to jupyter_customcss in jupyter_dir
     """
-    with open(tempfile, 'w') as f:
+    with open(tempfile, 'w', encoding='utf8', errors='ignore') as f:
         f.write(style_less)
     os.chdir(package_dir)
     style_css = lesscpy.compile(tempfile)
@@ -287,11 +287,11 @@ def style_layout(style_less,
     style_less += '\n\n'
 
     # read-in notebook.less (general nb style)
-    with open(nb_style, 'r') as notebook:
+    with open(nb_style, 'r', encoding='utf8', errors='ignore') as notebook:
         style_less += notebook.read() + '\n'
 
     # read-in cells.less (cell layout)
-    with open(cl_style, 'r') as cells:
+    with open(cl_style, 'r', encoding='utf8', errors='ignore') as cells:
         style_less += cells.read() + '\n'
 
     # read-in extras.less (misc layout)
