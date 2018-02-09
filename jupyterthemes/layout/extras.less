@@ -455,6 +455,35 @@ div.collapsible_headings_toggle .fa-caret-right:before {
     padding-right: 0px !important;
 }
 
+/********** SIDEBAR NBEXT **********/
+#toc-wrapper {
+    z-index: 90;
+    position: fixed !important;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px;
+    border-style: solid;
+    border-width: thin;
+    border-right-width: medium !important;
+    background-color: @notebook-bg !important;
+}
+#toc-wrapper.ui-draggable.ui-resizable.sidebar-wrapper {
+  border-color: @selected-third !important;
+}
+#toc a, #navigate_menu a, .toc {
+  color: @notebook-fg !important;
+}
+#toc li > span:hover {
+  background-color: @dropdown-hover !important;
+}
+#toc a:hover, #navigate_menu a:hover, .toc {
+  color: @selected-fg-bright !important;
+}
+#toc-wrapper .toc-item-num {
+  color: @item-theme !important;
+}
+
 /********** DEBUGGER PATCH **********/
 input.raw_input {
     font-family: @monofont, monospace;

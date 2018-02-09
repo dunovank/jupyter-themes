@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.18.5**
+- apply style to table-of-contents sidebar
+
 #### **v0.18.4**
 - merged [PR #227](https://github.com/dunovank/jupyter-themes/pull/227) submitted by [rightx2](https://github.com/rightx2) fixing encoding error
 
