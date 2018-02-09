@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.18.4**
+- merged [PR #227](https://github.com/dunovank/jupyter-themes/pull/227) submitted by [rightx2](https://github.com/rightx2) fixing encoding error
+
 #### **v0.18.3**
 - merged [PR #215](https://github.com/dunovank/jupyter-themes/pull/215) submitted by [PegasusWithoutWings](https://github.com/PegasusWithoutWings) fixing lesscpy dependency
 - updated setup.py dependencies to fix Travis checks
