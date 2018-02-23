@@ -206,6 +206,7 @@ jtplot.reset()
 | hasklig     | Hasklig                  |
 | inconsolata | Inconsolata-g            |
 | inputmono   | Input Mono               |
+| iosevka     | Iosevka                  |
 | liberation  | Liberation Mono          |
 | meslo       | Meslo                    |
 | office      | Office Code Pro          |
