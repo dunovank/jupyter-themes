@@ -244,7 +244,7 @@ def style_layout(style_less,
     promptPadding = '.25em'
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
-    promptMinWidth = 12.5
+    promptMinWidth = 13.5
     tcPromptWidth = promptMinWidth
     tcPromptFontsize = "@prompt-fontsize"
     ccOutputBG = '@cc-output-bg-default'
@@ -253,8 +253,8 @@ def style_layout(style_less,
         textcell_bg = '@notebook-bg'
     if altprompt:
         promptPadding = '.1em'
-        promptMinWidth = 8
-        tcPromptWidth = 8
+        promptMinWidth = 9.5
+        tcPromptWidth = 9.5
         promptText = 'transparent'
         tcPromptBorder = '2px solid transparent'
     if altmd:
