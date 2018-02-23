@@ -1,6 +1,6 @@
 ### Release Notes
 
-#### **v0.18.7**
+#### **v0.18.8**
 - add defaults folder to tar
 
 #### **v0.18.6**
