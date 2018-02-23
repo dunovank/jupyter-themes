@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.18.7**
+- add defaults folder to tar
+
 #### **v0.18.6**
 - hopefully encoding error is fixed for Python2* users.
 - added defaults folder with custom.css/js files to override JT on reset
