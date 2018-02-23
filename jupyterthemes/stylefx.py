@@ -235,7 +235,7 @@ def style_layout(style_less,
     """Set general layout and style properties of text and code cells"""
 
     # write theme name to ~/.jupyter/custom/ (referenced by jtplot.py)
-    with fileOpen(os.path.join(jupyter_custom, 'current_theme.txt'), 'w') as f:
+    with fileOpen(theme_name_file, 'w') as f:
         f.write(theme)
 
     if (os.path.isdir(styles_dir_user) and
@@ -437,6 +437,7 @@ def set_vim_style(theme):
 def reset_default(verbose=False):
     """Remove custom.css and custom fonts"""
     paths = [jupyter_custom, jupyter_nbext]
+
     for fpath in paths:
         custom = '{0}{1}{2}.css'.format(fpath, os.sep, 'custom')
         try:
@@ -448,8 +449,13 @@ def reset_default(verbose=False):
     except Exception:
         check_directories()
         delete_font_files()
-    with fileOpen(jupyter_customcss, 'w') as custom_css:
-        custom_css.write('')
+
+    copyfile(defaultCSS, jupyter_customcss)
+    copyfile(defaultJS, jupyter_customjs)
+
+    if os.path.exists(theme_name_file):
+        os.remove(theme_name_file)
+
     if verbose:
         print("Reset css and font defaults in:\n{} &\n{}".format(*paths))
 
