@@ -42,7 +42,7 @@ theme_name_file = os.path.join(jupyter_custom, 'current_theme.txt')
 
 def fileOpen(filename, mode):
     if sys.version_info[0]==3:
-        open(filename, mode, encoding='utf8', errors='ignore')
+        return open(filename, mode, encoding='utf8', errors='ignore')
     else:
         return open(filename, mode)
 
