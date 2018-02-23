@@ -22,6 +22,7 @@ jupyter_data = jupyter_data_dir()
 jupyter_custom = os.path.join(jupyter_home, 'custom')
 jupyter_custom_fonts = os.path.join(jupyter_custom, 'fonts')
 jupyter_customcss = os.path.join(jupyter_custom, 'custom.css')
+jupyter_customjs = os.path.join(jupyter_custom, 'custom.js')
 jupyter_nbext = os.path.join(jupyter_data, 'nbextensions')
 
 # theme colors, layout, and font directories
@@ -29,6 +30,11 @@ layouts_dir = os.path.join(package_dir, 'layout')
 styles_dir = os.path.join(package_dir, 'styles')
 styles_dir_user = os.path.join(user_dir, 'styles')
 fonts_dir = os.path.join(package_dir, 'fonts')
+defaults_dir = os.path.join(package_dir, 'defaults')
+
+# default custom.css/js files to override JT on reset
+defaultCSS = os.path.join(defaults_dir, 'custom.css')
+defaultJS = os.path.join(defaults_dir, 'custom.js')
 
 # layout files for notebook, codemirror, cells, mathjax, & vim ext
 nb_style = os.path.join(layouts_dir, 'notebook.less')
@@ -59,18 +65,16 @@ def check_directories():
     if not os.path.isdir(jupyter_nbext):
         os.makedirs(jupyter_nbext)
 
+
 def less_to_css(style_less):
     """ write less-compiled css file to jupyter_customcss in jupyter_dir
     """
     with fileOpen(tempfile, 'w') as f:
             f.write(style_less)
-
     os.chdir(package_dir)
     style_css = lesscpy.compile(tempfile)
     style_css += '\n\n'
-
     return style_css
-
 
 def write_final_css(style_css):
     # install style_css to .jupyter/custom/custom.css
@@ -90,7 +94,6 @@ def install_precompiled_theme(theme):
         theme_src = os.path.join(compiled_dir, '{}.css'.format(theme))
     theme_dst = os.path.join(jupyter_custom, 'custom.css')
     copyfile(theme_src, theme_dst)
-
 
 def send_fonts_to_jupyter(font_file_path):
     fname = font_file_path.split(os.sep)[-1]
@@ -445,7 +448,7 @@ def reset_default(verbose=False):
     except Exception:
         check_directories()
         delete_font_files()
-    with open(jupyter_customcss, 'w') as custom_css:
+    with fileOpen(jupyter_customcss, 'w') as custom_css:
         custom_css.write('')
     if verbose:
         print("Reset css and font defaults in:\n{} &\n{}".format(*paths))

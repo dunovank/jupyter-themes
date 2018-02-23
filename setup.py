@@ -6,7 +6,7 @@ from itertools import chain
 pkgname = 'jupyterthemes'
 major = 0
 minor = 18
-patch = 5
+patch = 6
 version = '.'.join([str(v) for v in [major, minor, patch]])
 url = 'https://github.com/dunovank/jupyter-themes'
 download_url = '/'.join([url, 'tarball', 'v' + version])
@@ -32,7 +32,7 @@ styles = os.path.join(pkgname, 'styles')
 stylesCompiled = os.path.join(styles, 'compiled')
 
 datafiles = {pkgname: []}
-for subdir in ['layout', 'styles', 'styles/compiled']:
+for subdir in ['defaults', 'layout', 'styles', 'styles/compiled']:
     files = glob(os.path.join(pkgname, subdir, '*.*ss'))
     filesLocalPath = [os.sep.join(f.split(os.sep)[1:]) for f in files]
     datafiles[pkgname].extend(filesLocalPath)

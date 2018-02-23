@@ -1,5 +1,10 @@
 ### Release Notes
 
+#### **v0.18.6**
+- hopefully encoding error is fixed for Python2* users.
+- added defaults folder with custom.css/js files to override JT on reset
+- Several PR merged including new fonts, Markdown headers fixed, etc.
+
 #### **v0.18.5**
 - apply style to table-of-contents sidebar
 
