@@ -1,5 +1,4 @@
-import os
-import sys
+import os, sys
 import lesscpy
 from shutil import copyfile, rmtree
 from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
@@ -41,6 +40,12 @@ comp_style = os.path.join(layouts_dir, 'completer.less')
 theme_name_file = os.path.join(jupyter_custom, 'current_theme.txt')
 
 
+def fileOpen(filename, mode):
+    if sys.version_info[0]==3:
+        open(filename, mode, encoding='utf8', errors='ignore')
+    else:
+        return open(filename, mode)
+
 def check_directories():
     # Ensure all install dirs exist
     if not os.path.isdir(jupyter_home):
@@ -57,17 +62,19 @@ def check_directories():
 def less_to_css(style_less):
     """ write less-compiled css file to jupyter_customcss in jupyter_dir
     """
-    with open(tempfile, 'w', encoding='utf8', errors='ignore') as f:
-        f.write(style_less)
+    with fileOpen(tempfile, 'w') as f:
+            f.write(style_less)
+
     os.chdir(package_dir)
     style_css = lesscpy.compile(tempfile)
     style_css += '\n\n'
+
     return style_css
 
 
 def write_final_css(style_css):
     # install style_css to .jupyter/custom/custom.css
-    with open(jupyter_customcss, 'w') as custom_css:
+    with fileOpen(jupyter_customcss, 'w') as custom_css:
         custom_css.write(style_css)
 
 
@@ -225,7 +232,7 @@ def style_layout(style_less,
     """Set general layout and style properties of text and code cells"""
 
     # write theme name to ~/.jupyter/custom/ (referenced by jtplot.py)
-    with open(os.path.join(jupyter_custom, 'current_theme.txt'), 'w') as f:
+    with fileOpen(os.path.join(jupyter_custom, 'current_theme.txt'), 'w') as f:
         f.write(theme)
 
     if (os.path.isdir(styles_dir_user) and
@@ -287,21 +294,21 @@ def style_layout(style_less,
     style_less += '\n\n'
 
     # read-in notebook.less (general nb style)
-    with open(nb_style, 'r', encoding='utf8', errors='ignore') as notebook:
+    with fileOpen(nb_style, 'r') as notebook:
         style_less += notebook.read() + '\n'
 
     # read-in cells.less (cell layout)
-    with open(cl_style, 'r', encoding='utf8', errors='ignore') as cells:
+    with fileOpen(cl_style, 'r') as cells:
         style_less += cells.read() + '\n'
 
     # read-in extras.less (misc layout)
-    with open(ex_style, 'r') as extras:
+    with fileOpen(ex_style, 'r') as extras:
         style_less += extras.read() + '\n'
 
     # read-in codemirror.less (syntax-highlighting)
-    with open(cm_style, 'r') as codemirror:
+    with fileOpen(cm_style, 'r') as codemirror:
         style_less += codemirror.read() + '\n'
-    with open(comp_style, 'r') as codemirror:
+    with fileOpen(comp_style, 'r') as codemirror:
         style_less += codemirror.read() + '\n'
 
     style_less += toggle_settings(toolbar, nbname, hideprompt) + '\n'
