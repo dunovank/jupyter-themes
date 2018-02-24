@@ -1,6 +1,7 @@
 import os
 import sys
 import re
+from glob import glob
 import matplotlib as mpl
 from jupyter_core.paths import jupyter_config_dir
 

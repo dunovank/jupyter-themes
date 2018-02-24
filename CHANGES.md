@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.18.9**
+- added glob import to jtplot
+
 #### **v0.18.8**
 - add defaults folder to tar
 
