@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.19.0**
+- merged [PR #190](https://github.com/dunovank/jupyter-themes/pull/190/files) submitted by [tnilanon](https://github.com/tnilanon)
+
 #### **v0.18.9**
 - added glob import to jtplot
 
