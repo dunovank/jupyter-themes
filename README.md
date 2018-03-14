@@ -8,7 +8,7 @@
 
 #### Help support me
 While I love my job as a researcher, it doesn't exactly bring home the bacon. I mean.. it brings home *some* bacon... but like... not *enough* bacon? Right.
-Anyway, a colleague suggested I set up an optional donation badge page where users can help support projects like `jupyter-themes` (and the forthcoming `lab-themes` which will give users similar control over the look and feel of Jupyter Lab. Currently in early stages of development).
+Anyway, a colleague suggested I add an optional donation badge so users can help support projects like `jupyter-themes` (and the forthcoming `lab-themes` which will give users similar control over the look and feel of Jupyter Lab. Currently in early stages of development).
 
 I firmly believe that software is best served open and, as such, am committed to providing free and easy access to all my code. So if you can't make a financial contribution, then don't and `pip install` it anyway! But if you're sitting on some extra cash and enjoy using a package I've developed, then any amount helps and I *greatly* appreciate it.
 
