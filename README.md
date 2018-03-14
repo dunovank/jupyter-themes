@@ -5,29 +5,31 @@
 | :----------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
 | Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=master) | [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dunovank/jupyter-themes) |
 
-###### *plotting style*
+
+#### Help support me
+While I love my job as a researcher, it doesn't exactly bring home the bacon. I mean.. it brings home *some* bacon... but like... not *enough* bacon? Right.
+Anyway, a colleague suggested I set up an optional donation badge page where users can help support projects like `jupyter-themes` (and the forthcoming `lab-themes` which will give users similar control over the look and feel of Jupyter Lab. Currently in early stages of development).
+
+I firmly believe that software is best served open and, as such, am committed to providing free and easy access to all my code. So if you can't make a financial contribution, then don't and `pip install` it anyway! But if you're sitting on some extra cash and enjoy using a package I've developed, then any amount helps and I *greatly* appreciate it.
+
+Click here to make a quick donation --> [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FVXYJTEBMDE7W)
+
+
+
+#### JT Customizable Features
+
+#### **plotting style**
 ![image](screens/onedork_reach_plots.png)
 
-###### *markdown/equations*
+#### **markdown/equations**
 ![image](screens/oceans16_markdown.png)
 
-###### *pandas dataframes*
+#### **pandas dataframes**
 ![image](screens/grade3_table.png)
 
-###### *command palette*
+#### **command palette**
 ![image](screens/oceans16_command_palette.png)
 
-###### *oceans16 syntax*
-![image](screens/oceans16_code_headers.png)
-
-###### *grade3 syntax*
-![image](screens/grade3_code_headers.png)
-
-###### *onedork syntax*
-![image](screens/onedork_code_headers.png)
-
-###### *chesterish syntax*
-![image](screens/chesterish_code_headers.png)
 
 ### Links
 * [jupyterthemes on PyPI](https://pypi.python.org/pypi/jupyterthemes/)
