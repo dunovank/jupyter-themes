@@ -47,6 +47,7 @@ def install_theme(theme=None,
                 vimext=False,
                 toolbar=False,
                 nbname=False,
+                kernellogo=False,
                 dfonts=False):
 
     """ Install theme to jupyter_customcss with specified font, fontsize,
@@ -95,7 +96,8 @@ def install_theme(theme=None,
             cursorcolor=cursorcolor,
             vimext=vimext,
             toolbar=toolbar,
-            nbname=nbname)
+            nbname=nbname,
+            kernellogo=kernellogo)
 
     # compile tempfile.less to css code and append to style_css
     style_css = stylefx.less_to_css(style_less)
@@ -243,6 +245,12 @@ def main():
         default=False,
         help="nb name/logo visible")
     parser.add_argument(
+        '-kl',
+        "--kernellogo",
+        action='store_true',
+        default=False,
+        help="kernel logo visible")
+    parser.add_argument(
         '-vim',
         "--vimext",
         action='store_true',
@@ -302,4 +310,5 @@ def main():
         vimext=args.vimext,
         toolbar=args.toolbar,
         nbname=args.nbname,
+        kernellogo=args.kernellogo,
         dfonts=args.defaultfonts)
