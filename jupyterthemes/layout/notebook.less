@@ -619,25 +619,31 @@ div.notification_widget.info,
 .notification_widget.info {
     display: none !important;
 }
+// .edit_mode .modal_indicator:before {
+//     font-size: 18px;
+//     color: @item-theme;
+//     opacity: 1.0;
+//     padding-bottom: 0px;
+//     vertical-align: -webkit-baseline-middle;
+//     margin-left: 1px;
+//     margin-bottom: 0px;
+//     // content: "E";
+// }
+// .command_mode .modal_indicator:before {
+//     font-family: @notebook-fontfamily;
+//     font-size: 18px;
+//     color: @item-theme;
+//     padding-bottom: 0px;
+//     vertical-align: -webkit-baseline-middle;
+//     margin-left: 1px;
+//     margin-bottom: 0px;
+//     // content: "C";
+// }
 .edit_mode .modal_indicator:before {
-    font-size: 18px;
-    color: @item-theme;
-    opacity: 1.0;
-    padding-bottom: 0px;
-    vertical-align: -webkit-baseline-middle;
-    margin-left: 1px;
-    margin-bottom: 0px;
-    // content: "E";
+    display: none;
 }
 .command_mode .modal_indicator:before {
-    font-family: @notebook-fontfamily;
-    font-size: 18px;
-    color: @item-theme;
-    padding-bottom: 0px;
-    vertical-align: -webkit-baseline-middle;
-    margin-left: 1px;
-    margin-bottom: 0px;
-    // content: "C";
+    display: none;
 }
 .item_icon {
     color: @item-blue;
@@ -668,15 +674,27 @@ div.notification_widget.info,
 #notification_trusted {
     font-family: @notebook-fontfamily;
     font-size: 17px !important;
-    color: @item-blue;
     border: none;
     background: transparent;
     background-color: transparent;
     margin-bottom: 0px !important;
-    margin-top: 8px !important;
-    vertical-align: middle !important;
+    // margin-top: 12px !important;
+    vertical-align: bottom !important;
+    color: @disabled !important;
+    cursor: default !important;
 }
-
+#notification_area, div.notification_area {
+    float: right !important;
+    position: static;
+    cursor: pointer;
+    padding-top: 7px;
+    padding-right: 4px;
+}
+div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
+    font-size: 9pt !important;
+    z-index: 0;
+    margin-top: -5px !important;
+}
 #modal_indicator {
     float: right !important;
     color: #4c8be2;
@@ -720,7 +738,7 @@ div.notification_widget.info,
     cursor: pointer;
     margin-left: 0px !important;
     opacity: 0.7;
-    vertical-align: middle;
+    vertical-align: bottom;
     margin-top: 1px;
     content: "\f1db";
 }
@@ -734,7 +752,7 @@ div.notification_widget.info,
     -webkit-font-smoothing: antialiased;
     cursor: pointer;
     margin-left: 0px !important;
-    vertical-align: middle;
+    vertical-align: bottom;
     margin-top: 1px;
     content: "\f111";
 }
@@ -1114,7 +1132,8 @@ div.dynamic-buttons > button,
     margin: 6px 6px 0px !important;
 }
 span#last-modified.btn.btn-xs.btn-default.sort-action,
-span#sort-name.btn.btn-xs.btn-default.sort-action {
+span#sort-name.btn.btn-xs.btn-default.sort-action,
+span#file-size.btn.btn-xs.btn-default.sort-action {
     font-family: @notebook-fontfamily;
     font-size: 16px;
     background-color: transparent;

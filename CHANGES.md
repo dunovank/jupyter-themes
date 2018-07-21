@@ -1,5 +1,11 @@
 ### Release Notes
 
+#### **v0.19.2**
+- Apply theme to run code-cell button (input prompt)
+- Fixed notification area alignment with kernel, modal_indicators
+- disabled command/edit mode indicators in notification_area
+- Markdown: align left for h1
+
 #### **v0.19.1**
 - fixed header alignment (align center for h1; left for h<=h2)
 

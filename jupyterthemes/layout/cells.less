@@ -9,35 +9,37 @@ div.input_area {
     padding-right: 1.2em;
     border: 0px;
     border-radius: 0px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 div.cell {
     padding: 0px;
-    background: @notebook-bg;
-    background-color: @notebook-bg;
+    background: @cc-input-bg; //@notebook-bg;
+    background-color: @cc-input-bg; //@notebook-bg;
     border: medium solid @notebook-bg;
-    border-radius: 0px;
+    border-radius: 4px;
     top: 0;
 }
+
 div.cell.selected {
-    background: @notebook-bg;
-    background-color: @notebook-bg;
+    background: @cc-input-bg; //@notebook-bg;
+    background-color: @cc-input-bg; //@notebook-bg;
     border: medium solid @notebook-bg;
     padding: 0px;
-    border-radius: 3px;
+    border-radius: 5px;
 }
+
 .edit_mode div.cell.selected {
     padding: 0px;
-    background: @notebook-bg;
-    background-color: @notebook-bg;
+    background: @cc-input-bg; //@notebook-bg;
+    background-color: @cc-input-bg; //@notebook-bg;
     border: medium solid @notebook-bg;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 div.cell.edit_mode {
     padding: 0px;
-    background: @notebook-bg;
-    background-color: @notebook-bg;
+    background: @cc-input-bg; //@notebook-bg;
+    background-color: @cc-input-bg; //@notebook-bg;
 }
 div.CodeMirror-sizer {
     margin-left: 0px;
@@ -81,6 +83,7 @@ div.cell.code_cell.selected .input {
     border-left: 5px solid @cc-border-edit !important;
     border-radius: 3px;
 }
+
 /*********** JUPYTER CELLS SOFT-SELECTED ************/
 div.cell.jupyter-soft-selected,
 div.cell.selected.jupyter-soft-selected {
@@ -125,7 +128,6 @@ div.cell.text_cell.selected.jupyter-soft-selected {
     border-radius: 6px !important;
 }
 
-
 /*********** CODE CELL INPUT PROMPT ************/
 div.prompt, .prompt {
     font-family: @monofont, monospace;
@@ -166,6 +168,37 @@ div.cell.selected .prompt {
 }
 .edit_mode div.cell.selected .prompt {
     top: 0;
+}
+
+
+.run_this_cell {
+    visibility: hidden;
+    color: @cc-border-selected;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 3px;
+    padding-right: 12px;
+    width: 1.5ex;
+    width: 0ex;
+    background: @cc-input-bg !important;
+    background-color: @cc-input-bg !important;
+}
+
+div.cell.code_cell.rendered.selected .run_this_cell:hover {
+    background-color: darken(@cc-input-bg, 4%) !important;
+    background: darken(@cc-input-bg, 4%) !important;
+}
+div.cell.code_cell.rendered.unselected .run_this_cell:hover {
+    background-color: darken(@cc-input-bg, 4%) !important;
+    background: darken(@cc-input-bg, 4%) !important;
+}
+
+i.fa-step-forward.fa {
+    display: inline-block;
+    font: normal normal normal 9px "FontAwesome";
+}
+.fa-step-forward:before {
+    content: "\f04b";
 }
 
 
@@ -357,14 +390,15 @@ div.edit_mode div.text_cell.unrendered {
     border-radius: 0px;
 }
 
-
 /********** TEXT & MD PROMPT **********/
 div.cell.text_cell .prompt {
     border-right: 0;
+    min-width: @prompt-min-width !important;
+    width: @prompt-min-width !important;
 }
 div.cell.text_cell.rendered .prompt {
     font-family: @monofont, monospace;
-    font-size: @tc-prompt-fontsize;
+    font-size: 9pt !important;
     font-weight: normal;
     color: @prompt-text !important;
     text-align: right !important;
@@ -372,33 +406,37 @@ div.cell.text_cell.rendered .prompt {
     width: @tc-prompt-width !important;
     background-color: @text-cell-bg;
     border-right: @tc-prompt-border;
-    border-left: 5px solid @text-cell-bg;
+    // border-left: 4px solid @tc-border-selected;
+    border-left: 4px solid @text-cell-bg;
 }
 div.cell.text_cell.unrendered .prompt {
     font-family: @monofont, monospace;
-    font-size: @tc-prompt-fontsize;
+    font-size: 9pt !important;
     font-weight: normal;
     color: @prompt-text !important;
     text-align: right !important;
     min-width: @tc-prompt-width !important;
     width: @tc-prompt-width !important;
     border-right: @tc-prompt-border;
-    border-left: 5px solid @text-cell-bg;
+    border-left: 4px solid @text-cell-bg;
+    background-color: @text-cell-bg;
 }
 div.cell.text_cell.rendered .prompt {
     border-right: @tc-prompt-border;
 }
 div.cell.text_cell.rendered.selected .prompt {
     top: 0;
-    border-left: 5px solid @tc-border-selected;
+    border-left: 4px solid @tc-border-selected;
     border-right: @tc-prompt-border;
 }
-div.text_cell.unrendered.selected .prompt {
+div.text_cell.unrendered.selected .prompt,
+div.text_cell.rendered.selected .prompt {
     top: 0;
     background: @text-cell-bg;
-    border-left: 5px solid @tc-border-edit;
+    border-left: 4px solid @tc-border-edit;
     border-right: @tc-prompt-border;
 }
+
 
 /******** MD PRE, CODE, KEYBIND, SAMP **********/
 div.rendered_html code {
@@ -518,7 +556,7 @@ div.rendered_html h5 {
 .text_cell_render h1 {
     color: @header-fg;
     font-size: 200%;
-    text-align: center;
+    text-align: left;
     font-style: normal;
     font-weight: normal;
 }

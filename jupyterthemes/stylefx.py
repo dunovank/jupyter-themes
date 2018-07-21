@@ -263,8 +263,8 @@ def style_layout(style_less,
         textcell_bg = '@notebook-bg'
     if altprompt:
         promptPadding = '.1em'
-        promptMinWidth = 9.5
-        tcPromptWidth = 9.5
+        promptMinWidth = 8
+        tcPromptWidth = 11
         promptText = 'transparent'
         tcPromptBorder = '2px solid transparent'
     if altmd:
