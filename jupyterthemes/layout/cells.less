@@ -128,6 +128,11 @@ div.cell.text_cell.selected.jupyter-soft-selected {
     border-radius: 6px !important;
 }
 
+div.cell.jupyter-soft-selected .input,
+div.cell.selected.jupyter-soft-selected .input {
+    border-left-color: @cc-border-edit !important;
+}
+
 /*********** CODE CELL INPUT PROMPT ************/
 div.prompt, .prompt {
     font-family: @monofont, monospace;
@@ -170,26 +175,33 @@ div.cell.selected .prompt {
     top: 0;
 }
 
+
 .run_this_cell {
     visibility: hidden;
-    color: @cc-border-selected;
+    color: transparent;
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 3px;
     padding-right: 12px;
     width: 1.5ex;
     width: 0ex;
-    background: @cc-input-bg !important;
-    background-color: @cc-input-bg !important;
+    background: transparent;
+    background-color: transparent;
+}
+
+div.code_cell:hover div.input .run_this_cell {
+    visibility: visible;
 }
 
 div.cell.code_cell.rendered.selected .run_this_cell:hover {
-    background-color: darken(@cc-input-bg, 4%) !important;
-    background: darken(@cc-input-bg, 4%) !important;
+    background-color: darken(@cc-input-bg, 4%);
+    background: darken(@cc-input-bg, 4%);
+    color: @cc-border-selected !important;
 }
 div.cell.code_cell.rendered.unselected .run_this_cell:hover {
-    background-color: darken(@cc-input-bg, 4%) !important;
-    background: darken(@cc-input-bg, 4%) !important;
+    background-color: darken(@cc-input-bg, 4%);
+    background: darken(@cc-input-bg, 4%);
+    color: @cc-border-selected !important;
 }
 
 i.fa-step-forward.fa {
@@ -200,6 +212,15 @@ i.fa-step-forward.fa {
     content: "\f04b";
 }
 
+div.cell.selected.jupyter-soft-selected .run_this_cell,
+div.cell.selected.jupyter-soft-selected .run_this_cell:hover,
+div.cell.unselected.jupyter-soft-selected .run_this_cell:hover,
+div.cell.code_cell.rendered.selected.jupyter-soft-selected .run_this_cell:hover,
+div.cell.code_cell.rendered.unselected.jupyter-soft-selected .run_this_cell:hover {
+    background-color: @cc-border-edit !important;
+    background: @cc-border-edit !important;
+    color: @cc-border-edit !important;
+}
 
 /********** CODE CELL OUTPUT AREA **********/
 div.output_wrapper {

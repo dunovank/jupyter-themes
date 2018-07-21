@@ -1,5 +1,9 @@
 ### Release Notes
 
+#### **v0.19.3**
+- only display run code-cell button on prompt hover
+- fixed code cell soft-selected prompt style
+
 #### **v0.19.2**
 - Apply theme to run code-cell button (input prompt)
 - Fixed notification area alignment with kernel, modal_indicators
