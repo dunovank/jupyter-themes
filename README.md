@@ -91,6 +91,7 @@ jt  [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Style Vim NBExt*      |  -vim   |     --     |
 | Toolbar Visible       |   -T    |     --     |
 | Name & Logo Visible   |   -N    |     --     |
+| Kernel Logo Visible   |   -kl   |     --     |
 | Reset Default Theme   |   -r    |     --     |
 | Force Default Fonts   | -dfonts |     --     |
 
@@ -111,6 +112,11 @@ jt -r
 
 # toggle toolbar ON and notebook name ON
 jt -t grade3 -T -N
+
+# toggle kernel logo.  kernel logo is in same container as name
+# toggled with -N.  That means that making the kernel logo visible is
+# pointless without also making the name visible
+jt -t grade3 -N -kl
 
 # set code font to 'Roboto Mono' 12pt
 # (see monospace font table below)

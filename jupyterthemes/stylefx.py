@@ -228,6 +228,7 @@ def style_layout(style_less,
                  vimext=False,
                  toolbar=False,
                  nbname=False,
+                 kernellogo=False,
                  altprompt=False,
                  altmd=False,
                  altout=False,
@@ -314,15 +315,18 @@ def style_layout(style_less,
     with fileOpen(comp_style, 'r') as codemirror:
         style_less += codemirror.read() + '\n'
 
-    style_less += toggle_settings(toolbar, nbname, hideprompt) + '\n'
+    style_less += toggle_settings(
+        toolbar, nbname, hideprompt, kernellogo) + '\n'
     if vimext:
         set_vim_style(theme)
 
     return style_less
 
 
-def toggle_settings(toolbar=False, nbname=False, hideprompt=False):
-    """Toggle main notebook toolbar (e.g., buttons) & filename"""
+def toggle_settings(
+        toolbar=False, nbname=False, hideprompt=False, kernellogo=False):
+    """Toggle main notebook toolbar (e.g., buttons), filename,
+    and kernel logo."""
 
     toggle = ''
     if toolbar:
@@ -349,6 +353,10 @@ def toggle_settings(toolbar=False, nbname=False, hideprompt=False):
             '{ position: absolute; left: 0; top: 0; z-index: 3; width: 2em; '
             'display: inline-block !important; }\n')
         toggle += ('div.cell.code_cell .input { border-left: 5px solid @cm-gutters !important; border-bottom-left-radius: 5px; border-top-left-radius: 5px; }\n')
+    if kernellogo:
+        toggle += '@kernel-logo-display: block;'
+    else:
+        toggle += '@kernel-logo-display: none;'
 
     return toggle
 
