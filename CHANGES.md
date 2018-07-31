@@ -1,5 +1,10 @@
 ### Release Notes
 
+
+#### **v0.19.4**
+- binder update
+- fixed prompt alignment across cell types 
+
 #### **v0.19.3**
 - only display run code-cell button on prompt hover
 - fixed code cell soft-selected prompt style

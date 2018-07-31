@@ -256,7 +256,8 @@ def style_layout(style_less,
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
     promptMinWidth = 13.5
-    tcPromptWidth = promptMinWidth
+    outpromptMinWidth = promptMinWidth
+    tcPromptWidth = promptMinWidth + 1
     tcPromptFontsize = "@prompt-fontsize"
     ccOutputBG = '@cc-output-bg-default'
 
@@ -265,6 +266,7 @@ def style_layout(style_less,
     if altprompt:
         promptPadding = '.1em'
         promptMinWidth = 8
+        outpromptMinWidth = promptMinWidth + 2
         tcPromptWidth = 11
         promptText = 'transparent'
         tcPromptBorder = '2px solid transparent'
@@ -289,8 +291,9 @@ def style_layout(style_less,
     style_less += '@prompt-padding: {}; \n'.format(promptPadding)
     style_less += '@prompt-border: {}; \n'.format(promptBorder)
     style_less += '@prompt-min-width: {}ex; \n'.format(promptMinWidth)
-    style_less += '@tc-prompt-border: {}; \n'.format(tcPromptBorder)
+    style_less += '@out-prompt-min-width: {}ex; \n'.format(outpromptMinWidth)
     style_less += '@tc-prompt-width: {}ex; \n'.format(tcPromptWidth)
+    style_less += '@tc-prompt-border: {}; \n'.format(tcPromptBorder)
     style_less += '@cursor-width: {}px; \n'.format(cursorwidth)
     style_less += '@cursor-info: @cursor-width solid {}; \n'.format(
         cursorcolor)
