@@ -1,5 +1,8 @@
 ### Release Notes
 
+#### **v0.19.6**
+- added notebook>=5.6.0 as dependency
+
 #### **v0.19.5**
 - added style compatibility with `notebook 5.6.0`
 
