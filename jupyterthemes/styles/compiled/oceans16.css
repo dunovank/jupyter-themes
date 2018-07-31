@@ -526,9 +526,9 @@ p.navbar-text.indicator_area {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
- color: #d8dcee;
- background-color: rgba(80,92,133,.22);
- border-color: #343d4b;
+ color: #d8dcee !important;
+ background-color: rgba(80,92,133,.22) !important;
+ border-color: #343d4b !important;
  line-height: 1.5em;
  transition: 80ms ease;
 }
@@ -677,6 +677,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
  padding-bottom: 4px;
  margin-top: 8px !important;
  margin-left: -2px;
+ padding-left: 5px !important;
 }
 #kernel_indicator .kernel_indicator_name {
  font-size: 17px;
@@ -686,7 +687,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
  padding-left: 5px;
  padding-right: 5px;
  margin-top: 4px;
- vertical-align: -webkit-baseline-middle;
+ vertical-align: text-top;
  padding-bottom: 0px;
 }
 .kernel_idle_icon:before {
@@ -1488,7 +1489,7 @@ div.cell.selected:before,
 .edit_mode div.cell.selected:before,
 div.cell.selected:before,
 div.cell.selected.jupyter-soft-selected:before {
- background: #303845;
+ background: #303845 !important;
  border: none;
  border-radius: 3px;
  position: absolute;
@@ -1497,6 +1498,14 @@ div.cell.selected.jupyter-soft-selected:before {
  left: 0px;
  width: 0px;
  height: 100%;
+}
+div.cell.text_cell.selected::before,
+.edit_mode div.cell.text_cell.selected:before,
+div.cell.text_cell.selected:before,
+div.cell.text_cell.selected.jupyter-soft-selected:before {
+ background: #303845 !important;
+ background-color: #303845 !important;
+ border-color: #2769c3 !important;
 }
 div.cell.code_cell .input {
  border-left: 5px solid #303845 !important;
@@ -1575,8 +1584,8 @@ div.prompt,
  padding-left: 0px;
  padding-right: 1px;
  text-align: right !important;
- min-width: 13.5ex !important;
- width: 13.5ex !important;
+ min-width: 11.5ex !important;
+ width: 11.5ex !important;
 }
 div.prompt.input_prompt {
  font-size: 9pt !important;
@@ -1586,8 +1595,8 @@ div.prompt.input_prompt {
  border-bottom-left-radius: 0px;
  border-bottom-right-radius: 0px;
  padding-right: 3px;
- min-width: 13.5ex;
- width: 13.5ex !important;
+ min-width: 11.5ex;
+ width: 11.5ex !important;
 }
 div.cell.code_cell .input_prompt {
  border-right: 2px solid #3572c6;
@@ -1707,8 +1716,8 @@ div.prompt.output_prompt {
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
  border-bottom-right-radius: 0px;
- min-width: 13.5ex !important;
- width: 13.5ex !important;
+ min-width: 14.5ex !important;
+ width: 14.5ex !important;
  border-right: 2px solid transparent;
 }
 div.out_prompt_overlay.prompt {
@@ -1720,8 +1729,8 @@ div.out_prompt_overlay.prompt {
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
  border-bottom-right-radius: 0px;
- min-width: 13.5ex !important;
- width: 13.5ex !important;
+ min-width: 14.5ex !important;
+ width: 14.5ex !important;
  border-right: 2px solid transparent;
  color: transparent;
 }
@@ -1734,8 +1743,8 @@ div.out_prompt_overlay.prompt:hover {
  -moz-border-radius: 2px;
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
- min-width: 13.5ex !important;
- width: 13.5ex !important;
+ min-width: 14.5ex !important;
+ width: 14.5ex !important;
  border-right: 2px solid #3e4458 !important;
 }
 div.cell.code_cell .output_prompt {
@@ -1826,12 +1835,12 @@ div.edit_mode div.text_cell.unrendered {
 }
 div.cell.text_cell .prompt {
  border-right: 0;
- min-width: 13.5ex !important;
- width: 13.5ex !important;
+ min-width: 11.5ex !important;
+ width: 11.5ex !important;
 }
 div.cell.text_cell.rendered .prompt {
  font-family: monospace, monospace;
- font-size: 9pt !important;
+ font-size: 9.5pt !important;
  font-weight: normal;
  color: #446489 !important;
  text-align: right !important;
@@ -1843,7 +1852,7 @@ div.cell.text_cell.rendered .prompt {
 }
 div.cell.text_cell.unrendered .prompt {
  font-family: monospace, monospace;
- font-size: 9pt !important;
+ font-size: 9.5pt !important;
  font-weight: normal;
  color: #446489 !important;
  text-align: right !important;
@@ -1928,7 +1937,7 @@ div.rendered_html pre {
  font-family: monospace, monospace;
  font-size: 11pt !important;
  line-height: 170% !important;
- color: #abc1e2;
+ color: #abc1e2 !important;
  background: #2a313c;
  background-color: #2a313c;
  max-width: 80%;
@@ -1982,7 +1991,7 @@ div.rendered_html h5 {
 }
 .rendered_html h1,
 .text_cell_render h1 {
- color: #4c8be2;
+ color: #4c8be2 !important;
  font-size: 200%;
  text-align: left;
  font-style: normal;
@@ -1990,28 +1999,28 @@ div.rendered_html h5 {
 }
 .rendered_html h2,
 .text_cell_render h2 {
- color: #4c8be2;
+ color: #4c8be2 !important;
  font-size: 170%;
  font-style: normal;
  font-weight: normal;
 }
 .rendered_html h3,
 .text_cell_render h3 {
- color: #4c8be2;
+ color: #4c8be2 !important;
  font-size: 140%;
  font-style: normal;
  font-weight: normal;
 }
 .rendered_html h4,
 .text_cell_render h4 {
- color: #4c8be2;
+ color: #4c8be2 !important;
  font-size: 110%;
  font-style: normal;
  font-weight: normal;
 }
 .rendered_html h5,
 .text_cell_render h5 {
- color: #4c8be2;
+ color: #4c8be2 !important;
  font-size: 100%;
  font-style: normal;
  font-weight: normal;
@@ -3106,18 +3115,18 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 div.cell.text_cell .cm-s-default .cm-header {
  font-family: sans-serif;
  font-weight: normal;
- color: #4c8be2;
+ color: #4c8be2 !important;
  margin-top: 0.3em !important;
  margin-bottom: 0.3em !important;
 }
 div.cell.text_cell .cm-s-default span.cm-variable-2 {
- color: #abc1e2;
+ color: #abc1e2 !important;
 }
 div.cell.text_cell .cm-s-default span.cm-variable-3 {
- color: #ddd7a3;
+ color: #ddd7a3 !important;
 }
 .cm-s-default span.cm-comment {
- color: #667fb1;
+ color: #667fb1 !important;
 }
 .cm-s-default .cm-tag {
  color: #8fb36a;

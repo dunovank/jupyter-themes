@@ -54,7 +54,7 @@ div.cell.selected:before,
 .edit_mode div.cell.selected:before,
 div.cell.selected:before,
 div.cell.selected.jupyter-soft-selected:before  {
-    background: @cc-input-bg;
+    background: @cc-input-bg !important;
     border: none;
     border-radius: 3px;
     position: absolute;
@@ -64,6 +64,16 @@ div.cell.selected.jupyter-soft-selected:before  {
     width: 0px;
     height: 100%;
 }
+
+div.cell.text_cell.selected::before,
+.edit_mode div.cell.text_cell.selected:before,
+div.cell.text_cell.selected:before,
+div.cell.text_cell.selected.jupyter-soft-selected:before {
+  background: @text-cell-bg !important;
+  background-color: @text-cell-bg !important;
+  border-color: @tc-border-selected !important;
+}
+
 div.cell.code_cell .input {
     border-left: 5px solid @cc-input-bg !important;
     border-radius: 3px;
@@ -418,7 +428,7 @@ div.cell.text_cell .prompt {
 }
 div.cell.text_cell.rendered .prompt {
     font-family: @monofont, monospace;
-    font-size: 9pt !important;
+    font-size: 9.5pt !important;
     font-weight: normal;
     color: @prompt-text !important;
     text-align: right !important;
@@ -431,7 +441,7 @@ div.cell.text_cell.rendered .prompt {
 }
 div.cell.text_cell.unrendered .prompt {
     font-family: @monofont, monospace;
-    font-size: 9pt !important;
+    font-size: 9.5pt !important;
     font-weight: normal;
     color: @prompt-text !important;
     text-align: right !important;
@@ -518,7 +528,7 @@ div.rendered_html pre {
     font-family: @monofont, monospace;
     font-size: @monofontsize !important;
     line-height: @cc-line-height !important;
-    color: @text-cell-fg;
+    color: @text-cell-fg !important;
     background: @codeblock-bg;
     background-color: @codeblock-bg;
     max-width: 80%;
@@ -574,7 +584,7 @@ div.rendered_html h5 {
 }
 .rendered_html h1,
 .text_cell_render h1 {
-    color: @header-fg;
+    color: @header-fg !important;
     font-size: 200%;
     text-align: left;
     font-style: normal;
@@ -582,28 +592,28 @@ div.rendered_html h5 {
 }
 .rendered_html h2,
 .text_cell_render h2 {
-    color: @header-fg;
+    color: @header-fg !important;
     font-size: 170%;
     font-style: normal;
     font-weight: normal;
 }
 .rendered_html h3,
 .text_cell_render h3 {
-    color: @header-fg;
+    color: @header-fg !important;
     font-size: 140%;
     font-style: normal;
     font-weight: normal;
 }
 .rendered_html h4,
 .text_cell_render h4 {
-    color: @header-fg;
+    color: @header-fg !important;
     font-size: 110%;
     font-style: normal;
     font-weight: normal;
 }
 .rendered_html h5,
 .text_cell_render h5 {
-    color: @header-fg;
+    color: @header-fg !important;
     font-size: 100%;
     font-style: normal;
     font-weight: normal;

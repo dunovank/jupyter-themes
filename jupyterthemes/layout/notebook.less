@@ -534,9 +534,9 @@ p.navbar-text.indicator_area {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: @selected-fg;
-    background-color: @selected-third;
-    border-color: @dropdown-hover;
+    color: @selected-fg !important;
+    background-color: @selected-third !important;
+    border-color: @dropdown-hover !important;
     line-height: 1.5em;
     transition: 80ms ease;
 }
@@ -694,6 +694,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
     padding-bottom: 4px;
     margin-top: 8px !important;
     margin-left: -2px;
+    padding-left: 5px !important;
 }
 #kernel_indicator .kernel_indicator_name {
     font-size: 17px;
@@ -703,7 +704,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
     padding-left: 5px;
     padding-right: 5px;
     margin-top: 4px;
-    vertical-align: -webkit-baseline-middle;
+    vertical-align: text-top;
     padding-bottom: 0px;
 }
 

@@ -50,10 +50,10 @@ pip install --upgrade jupyterthemes
 ```
 
 ### Known issues
+- **for best results:** use notebook>=5.6.0 (`pip install --upgrade notebook`)
 - **refreshing / removing / resetting:** depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)). At the very least you'll need to refresh your browser window (usually `cmd+r` or `ctrl+r`).
 - **install issue:** if you get an error saying `jt` is not recognized, try [this](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-300688587) fix.
 - **slow render when scrolling:** fix available [here](https://github.com/dunovank/jupyter-themes/issues/117#issuecomment-296391443)
-- **for best results:** use notebook>=5.0 (`pip install --upgrade notebook`)
 
 
 ### Command Line Usage

@@ -1,9 +1,11 @@
 ### Release Notes
 
+#### **v0.19.5**
+- added style compatibility with `notebook 5.6.0`
 
 #### **v0.19.4**
 - binder update
-- fixed prompt alignment across cell types 
+- fixed prompt alignment across cell types
 
 #### **v0.19.3**
 - only display run code-cell button on prompt hover

@@ -12,7 +12,7 @@ __all__ = [os.path.basename(f)[:-3] for f in modules]
 
 major = 0
 minor = 19
-patch = 4
+patch = 5
 
 __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
