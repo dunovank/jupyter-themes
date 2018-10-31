@@ -167,6 +167,13 @@ def set_style(rcdict, theme=None, grid=True, gridlines=u'-', ticks=False, spines
     # update matplotlib with rcdict (incl. context, font, & style)
     mpl.rcParams.update(rcdict)
 
+    # update seaborn with rcdict (incl. context, font, & style)
+    try:
+        import seaborn as sns
+        sns.set_style(rc=rcdict)
+    except Exception:
+        pass
+
     try:
         from cycler import cycler
         # set color cycle to jt-style color list
