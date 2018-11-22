@@ -338,8 +338,8 @@ def toggle_settings(
     else:
         toggle += 'div#maintoolbar {display: none !important;}\n'
     if nbname:
-        toggle += ('span.save_widget span.filename {margin-left: 8px;'
-                   'font-size: 120%; color: @nb-name-fg; background-color:'
+        toggle += ('span.save_widget span.filename {margin-left: 8px; height: initial;'
+                   'font-size: 100%; color: @nb-name-fg; background-color:'
                    '@cc-input-bg;}\n')
         toggle += ('span.save_widget span.filename:hover {color:'
                    '@nb-name-hover; background-color: @cc-input-bg;}\n')

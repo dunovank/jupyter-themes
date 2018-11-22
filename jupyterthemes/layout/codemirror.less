@@ -225,13 +225,24 @@ div.CodeMirror-gutter.CodeMirror-linenumber {
     color: @cm-string;
 }
 div.CodeMirror span.CodeMirror-matchingbracket {
-    color: @selected-fg-bright;
+    color: @theme-flavor-inverse;
+    font-weight: bold;
     background-color: @matching-bracket;
 }
 div.CodeMirror span.CodeMirror-nonmatchingbracket {
-    color: @selected-fg-bright;
+    color: @theme-flavor-inverse;
+    font-weight: bold;
     background: @selected-error !important;
 }
+//
+// div.CodeMirror span.CodeMirror-matchingbracket {
+//     color: @selected-fg-bright;
+//     background-color: @matching-bracket;
+// }
+// div.CodeMirror span.CodeMirror-nonmatchingbracket {
+//     color: @selected-fg-bright;
+//     background: @selected-error !important;
+// }
 
 /***********************************************/
 /**** TXT, HEADER, & MD SYNTAX HIGHLIGHTING ****/

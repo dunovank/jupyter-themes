@@ -7,6 +7,7 @@ div#notebook {
     line-height: @cc-line-height;
     color: @cc-input-fg;
     -webkit-font-smoothing: antialiased !important;
+    padding-top: 25px !important;
 }
 body,
 div.body {
@@ -33,7 +34,27 @@ a:hover, a:focus {
     color: @selected-fg;
     -webkit-font-smoothing: antialiased !important;
 }
-
+div#maintoolbar {
+    position: absolute;
+    width: 90%;
+    margin-left: -10%;
+    padding-right: 8%;
+    float: left;
+    background: transparent !important;
+}
+#maintoolbar {
+    margin-bottom: -3px;
+    margin-top: 0px;
+    border: 0px;
+    min-height: 27px;
+    padding-top: 2px;
+    padding-bottom: 0px;
+}
+#maintoolbar .container {
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+}
 /*********************************************************/
 /*** INTRO-PAGE TOOLBAR, LIST CONTAINERS, AND NAV TABS ***/
 /*********************************************************/
@@ -654,7 +675,7 @@ div.notification_widget.info,
 }
 #notification_trusted {
     font-family: @notebook-fontfamily;
-    font-size: 17px !important;
+    // font-size: 17px !important;
     border: none;
     background: transparent;
     background-color: transparent;
@@ -668,9 +689,10 @@ div.notification_widget.info,
     float: right !important;
     position: static;
     cursor: pointer;
-    padding-top: 7px;
+    padding-top: 6px;
     padding-right: 4px;
 }
+
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
     font-size: 9pt !important;
     z-index: 0;
@@ -692,7 +714,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
     border-left: 2px solid @item-theme;
     padding-top: 0px;
     padding-bottom: 4px;
-    margin-top: 8px !important;
+    margin-top: 10px !important;
     margin-left: -2px;
     padding-left: 5px !important;
 }
@@ -1446,8 +1468,9 @@ div.output.output_scroll {
 
 /******* Smooth Fonts ********/
 HTML, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, span, a {
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-weight: 400;
 }
 
 
