@@ -4,6 +4,7 @@ div#notebook {
  line-height: 170%;
  color: #f8f8f0;
  -webkit-font-smoothing: antialiased !important;
+ padding-top: 25px !important;
 }
 body,
 div.body {
@@ -30,6 +31,27 @@ a:hover,
 a:focus {
  color: #f8f8f0;
  -webkit-font-smoothing: antialiased !important;
+}
+div#maintoolbar {
+ position: absolute;
+ width: 90%;
+ margin-left: -10%;
+ padding-right: 8%;
+ float: left;
+ background: transparent !important;
+}
+#maintoolbar {
+ margin-bottom: -3px;
+ margin-top: 0px;
+ border: 0px;
+ min-height: 27px;
+ padding-top: 2px;
+ padding-bottom: 0px;
+}
+#maintoolbar .container {
+ width: 75%;
+ margin-right: auto;
+ margin-left: auto;
 }
 .list_header,
 div#notebook_list_header.row.list_header {
@@ -637,7 +659,6 @@ div.notification_widget.info,
 }
 #notification_trusted {
  font-family: sans-serif;
- font-size: 17px !important;
  border: none;
  background: transparent;
  background-color: transparent;
@@ -651,7 +672,7 @@ div.notification_area {
  float: right !important;
  position: static;
  cursor: pointer;
- padding-top: 7px;
+ padding-top: 6px;
  padding-right: 4px;
 }
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
@@ -675,7 +696,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
  border-left: 2px solid #a6e22e;
  padding-top: 0px;
  padding-bottom: 4px;
- margin-top: 8px !important;
+ margin-top: 10px !important;
  margin-left: -2px;
  padding-left: 5px !important;
 }
@@ -1437,8 +1458,9 @@ th,
 td,
 span,
 a {
- text-rendering: auto;
- -webkit-font-smoothing: antialiased;
+ text-rendering: geometricPrecision;
+ -webkit-font-smoothing: subpixel-antialiased;
+ font-weight: 400;
 }
 div.input_area {
  background-color: #282828;
@@ -1562,11 +1584,11 @@ div.cell.text_cell.jupyter-soft-selected,
 div.cell.text_cell.selected.jupyter-soft-selected {
  border-left-color: #33322b !important;
  border-left-width: 0px !important;
- padding-left: 7px !important;
+ padding-left: 26px !important;
  border-right-color: #33322b !important;
  border-right-width: 0px !important;
  background: #33322b !important;
- border-radius: 6px !important;
+ border-radius: 5px !important;
 }
 div.cell.jupyter-soft-selected .input,
 div.cell.selected.jupyter-soft-selected .input {
@@ -1669,6 +1691,7 @@ div.output_subarea.output_text {
  color: #cccccc;
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
+ margin-left: 11.5px;
 }
 div.output_area pre {
  font-family: monospace, monospace;
@@ -1690,7 +1713,7 @@ div.output_html {
 }
 div.output_subarea {
  overflow-x: auto;
- padding: 0.8em !important;
+ padding: 1.2em !important;
  -webkit-box-flex: 1;
  -moz-box-flex: 1;
  box-flex: 1;
@@ -1708,7 +1731,6 @@ div.btn.btn-default.output_collapsed:hover {
 }
 div.prompt.output_prompt {
  font-family: monospace, monospace;
- font-size: 9.5pt !important;
  font-weight: bold !important;
  background-color: #232323;
  color: transparent;
@@ -1716,13 +1738,12 @@ div.prompt.output_prompt {
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
  border-bottom-right-radius: 0px;
- min-width: 14.5ex !important;
- width: 14.5ex !important;
+ min-width: 11.5ex !important;
+ width: 11.5ex !important;
  border-right: 2px solid transparent;
 }
 div.out_prompt_overlay.prompt {
  font-family: monospace, monospace;
- font-size: 9.5pt !important;
  font-weight: bold !important;
  background-color: #232323;
  border-bottom-left-radius: 2px;
@@ -2761,6 +2782,9 @@ div#short-key-bindings-intro.well,
 .terminal-app {
  background: #1e1e1e;
 }
+.terminal-app > #header {
+ background: #1e1e1e;
+}
 .terminal-app .terminal {
  font-family: monospace, monospace;
  font-size: 11pt;
@@ -3087,11 +3111,13 @@ div.CodeMirror-linenumber,
  color: #e6db74;
 }
 div.CodeMirror span.CodeMirror-matchingbracket {
- color: #f8f8f2;
+ color: #ffffff;
+ font-weight: bold;
  background-color: #49483e;
 }
 div.CodeMirror span.CodeMirror-nonmatchingbracket {
- color: #f8f8f2;
+ color: #ffffff;
+ font-weight: bold;
  background: rgba(249,38,114,.4) !important;
 }
 .cm-header-1 {

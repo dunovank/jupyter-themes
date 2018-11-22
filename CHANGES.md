@@ -1,5 +1,10 @@
 ### Release Notes
 
+#### **v0.20.0**
+- fixed output display (no longer clips output)
+- added seaborn style update
+- fix toolbar style in terminal mode
+
 #### **v0.19.6**
 - added notebook>=5.6.0 as dependency
 
