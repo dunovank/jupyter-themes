@@ -14,17 +14,13 @@ download_url = '/'.join([url, 'tarball', 'v' + version])
 
 # get readme content after screenshots for pypi site
 README = os.path.join(os.path.dirname(__file__), 'README.md')
-with open(README) as read_me:
-    longdescr = ''
-    startReading = False
-    for line in read_me:
-        if "Travis" in line.strip():
-            startReading = True
-        if "Monospace Fonts" in line.strip():
-            break
-        if startReading:
-            longdescr += line
 
+longdescr = ''
+with open(README) as read_me:
+    for line in read_me:
+        if "Monospace Fonts" in line:
+            break
+        longdescr += line
 
 # add layout, .less styles, and compiled .css files to pkg data
 layout = os.path.join(pkgname, 'layout')
