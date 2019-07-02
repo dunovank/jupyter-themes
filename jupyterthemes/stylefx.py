@@ -321,7 +321,7 @@ def style_layout(style_less,
     style_less += toggle_settings(
         toolbar, nbname, hideprompt, kernellogo) + '\n'
     if vimext:
-        set_vim_style(theme)
+        set_vim_style(theme, cursorcolor=cursorcolor)
 
     return style_less
 
@@ -421,7 +421,7 @@ def set_mathjax_style(style_css, mathfontsize):
 
 
 
-def set_vim_style(theme):
+def set_vim_style(theme, cursorcolor='default'):
     """Add style and compatibility with vim notebook extension"""
 
     vim_jupyter_nbext = os.path.join(jupyter_nbext, 'vim_binding')
@@ -430,7 +430,7 @@ def set_vim_style(theme):
         os.makedirs(vim_jupyter_nbext)
 
     vim_less = '@import "styles{}";\n'.format(''.join([os.sep, theme]))
-
+    vim_less += '@cursor-color: {}; \n'.format(cursorcolor)
     with open(vim_style, 'r') as vimstyle:
         vim_less += vimstyle.read() + '\n'
     with open(vimtemp, 'w') as vtemp:
