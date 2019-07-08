@@ -19,9 +19,12 @@ __version__ = '.'.join([str(v) for v in [major, minor, patch]])
 
 def get_themes():
     """ return list of available themes """
-    styles_dir = os.path.join(package_dir, 'styles')
+    styles_dir = stylefx.styles_dir
+    styles_dir_user = stylefx.styles_dir_user
     themes = [os.path.basename(theme).replace('.less', '')
               for theme in glob('{0}/*.less'.format(styles_dir))]
+    themes += [os.path.basename(theme).replace('.less', '')
+               for theme in glob('{0}/*.less'.format(styles_dir_user))]
     return themes
 
 
