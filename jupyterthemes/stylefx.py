@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 import lesscpy
 from shutil import copyfile, rmtree
 from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
@@ -47,10 +48,11 @@ theme_name_file = os.path.join(jupyter_custom, 'current_theme.txt')
 
 
 def fileOpen(filename, mode):
-    if sys.version_info[0]==3:
+    if sys.version_info[0] == 3:
         return open(filename, mode, encoding='utf8', errors='ignore')
     else:
         return open(filename, mode)
+
 
 def check_directories():
     # Ensure all install dirs exist
@@ -70,11 +72,12 @@ def less_to_css(style_less):
     """ write less-compiled css file to jupyter_customcss in jupyter_dir
     """
     with fileOpen(tempfile, 'w') as f:
-            f.write(style_less)
+        f.write(style_less)
     os.chdir(package_dir)
     style_css = lesscpy.compile(tempfile)
     style_css += '\n\n'
     return style_css
+
 
 def write_final_css(style_css):
     # install style_css to .jupyter/custom/custom.css
@@ -94,6 +97,7 @@ def install_precompiled_theme(theme):
         theme_src = os.path.join(compiled_dir, '{}.css'.format(theme))
     theme_dst = os.path.join(jupyter_custom, 'custom.css')
     copyfile(theme_src, theme_dst)
+
 
 def send_fonts_to_jupyter(font_file_path):
     fname = font_file_path.split(os.sep)[-1]
@@ -133,21 +137,23 @@ def set_font_properties(style_less,
     codecell font-properties
     """
 
-    fontsizes = [monosize, nbfontsize, tcfontsize, prfontsize, dffontsize, outfontsize]
-    monosize, nbfontsize, tcfontsize, prfontsize, dffontsize, outfontsize = convert_fontsizes(fontsizes)
-    if dfonts==True:
+    fontsizes = [monosize, nbfontsize, tcfontsize,
+                 prfontsize, dffontsize, outfontsize]
+    monosize, nbfontsize, tcfontsize, prfontsize, dffontsize, outfontsize = convert_fontsizes(
+        fontsizes)
+    if dfonts == True:
         monofont, tcfont, nbfont = ['monospace', 'sans-serif', 'sans-serif']
     else:
         if monofont is not None:
             monofont, monofpath = stored_font_dicts(monofont)
             style_less = import_fonts(style_less, monofont, monofpath)
         else:
-            monofont='monospace'
+            monofont = 'monospace'
         if tcfont is not None:
             tcfont, tcfontpath = stored_font_dicts(tcfont)
             style_less = import_fonts(style_less, tcfont, tcfontpath)
         else:
-            tcfont='sans-serif'
+            tcfont = 'sans-serif'
         if nbfont is not None:
             if nbfont == 'proxima':
                 nbfont, tcfont = ["'Proxima Nova'"]*2
@@ -156,7 +162,7 @@ def set_font_properties(style_less,
                 nbfont, nbfontpath = stored_font_dicts(nbfont)
                 style_less = import_fonts(style_less, nbfont, nbfontpath)
         else:
-            nbfont='sans-serif'
+            nbfont = 'sans-serif'
 
     style_less += '/* Set Font-Type and Font-Size Variables  */\n'
     # font names and fontfamily info for codecells, notebook & textcells
@@ -256,7 +262,8 @@ def style_layout(style_less,
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
     promptMinWidth = 11.5
-    outpromptMinWidth = promptMinWidth # remove + 3 since it will overlay output print() text
+    # remove + 3 since it will overlay output print() text
+    outpromptMinWidth = promptMinWidth
     tcPromptWidth = promptMinWidth + 3
     tcPromptFontsize = "@prompt-fontsize"
     ccOutputBG = '@cc-output-bg-default'
@@ -420,7 +427,6 @@ def set_mathjax_style(style_css, mathfontsize):
     return style_css
 
 
-
 def set_vim_style(theme):
     """Add style and compatibility with vim notebook extension"""
 
@@ -522,17 +528,20 @@ def stored_font_dicts(fontcode, get_all=False):
               'aurulent': ['Aurulent Sans Mono', 'aurulent'],
               'bitstream': ['Bitstream Vera Sans Mono', 'bitstream-vera'],
               'bpmono': ['BPmono', 'bpmono'],
+              'cascadia': ['Cascadia Code' 'cascadia-code'],
               'code': ['Code New Roman', 'code-new-roman'],
               'consolamono': ['Consolamono', 'consolamono'],
               'cousine': ['Cousine', 'cousine'],
               'dejavu': ['DejaVu Sans Mono', 'dejavu'],
               'droidmono': ['Droid Sans Mono', 'droidmono'],
+              'envycode': ['Envy Code', 'envycode'],
+              'envycode-bold': ['Envy Code Bold', 'envycode-bold'],
               'fira': ['Fira Mono', 'fira'],
               'firacode': ['Fira Code', 'firacode'],
               'generic': ['Generic Mono', 'generic'],
               'hack': ['Hack', 'hack'],
               'hasklig': ['Hasklig', 'hasklig'],
-              'iosevka' : ['Iosevka', 'iosevka'],
+              'iosevka': ['Iosevka', 'iosevka'],
               'inputmono': ['Input Mono', 'inputmono'],
               'inconsolata': ['Inconsolata-g', 'inconsolata-g'],
               'liberation': ['Liberation Mono', 'liberation'],
@@ -546,24 +555,34 @@ def stored_font_dicts(fontcode, get_all=False):
               'ptmono': ['PT Mono', 'ptmono'],
               'ubuntu': ['Ubuntu Mono', 'ubuntu']},
              'sans':
-             {'droidsans': ['Droid Sans', 'droidsans'],
+             {'cabin': ['Cabin', 'cabin'],
+              'cabin-medium': ['Cabin Medium', 'cabin-medium'],
+              'cabin-bold': ['Cabin Bold', 'cabin-bold'],
+              'droidsans': ['Droid Sans', 'droidsans'],
               'opensans': ['Open Sans', 'opensans'],
               'ptsans': ['PT Sans', 'ptsans'],
+              'rubik': ['Rubik', 'rubik'],
+              'rubik-bold': ['Rubik Bold', 'rubik-bold'],
+              'rubik-medium': ['Rubik Medium', 'rubik-medium'],
               'sourcesans': ['Source Sans Pro', 'sourcesans'],
               'robotosans': ['Roboto', 'robotosans'],
               'latosans': ['Lato', 'latosans'],
               'exosans': ['Exo_2', 'exosans'],
               'proxima': ['Proxima Nova', 'proximasans']},
              'serif':
-             {'ptserif': ['PT Serif', 'ptserif'],
-              'ebserif': ['EB Garamond', 'ebserif'],
-              'loraserif': ['Lora', 'loraserif'],
-              'merriserif': ['Merriweather', 'merriserif'],
-              'crimsonserif': ['Crimson Text', 'crimsonserif'],
-              'georgiaserif': ['Georgia', 'georgiaserif'],
-              'neutonserif': ['Neuton', 'neutonserif'],
-              'cardoserif': ['Cardo Serif', 'cardoserif'],
-              'goudyserif': ['Goudy Serif', 'goudyserif']}}
+
+             {
+                'bitter': ['Bitter', 'bitter'],
+                'bitter-bold': ['Bitter Bold', 'bitter-bold'],
+                'ptserif': ['PT Serif', 'ptserif'],
+                'ebserif': ['EB Garamond', 'ebserif'],
+                'loraserif': ['Lora', 'loraserif'],
+                'merriserif': ['Merriweather', 'merriserif'],
+                'crimsonserif': ['Crimson Text', 'crimsonserif'],
+                'georgiaserif': ['Georgia', 'georgiaserif'],
+                'neutonserif': ['Neuton', 'neutonserif'],
+                'cardoserif': ['Cardo Serif', 'cardoserif'],
+                'goudyserif': ['Goudy Serif', 'goudyserif']}}
     if get_all:
         return fonts
     if fontcode in list(fonts['mono']):
