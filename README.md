@@ -41,7 +41,7 @@ Click here to make a quick donation --> [![Donate](https://img.shields.io/badge/
 * [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
 
 ### Requirements
-* Python 2.7, 3.4, 3.5, 3.6
+* Python 3.4, 3.5, 3.6, 3.7
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 * matplotlib
 
