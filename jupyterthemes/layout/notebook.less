@@ -40,11 +40,13 @@ div#maintoolbar {
     margin-left: -10%;
     padding-right: 8%;
     float: left;
-    background: transparent !important;
+    // background: transparent !important;
+    background: @notebook-bg !important;
+    background-color: @notebook-bg !important;
 }
 #maintoolbar {
     margin-bottom: -3px;
-    margin-top: 0px;
+    margin-top: 2px !important;
     border: 0px;
     min-height: 27px;
     padding-top: 2px;
@@ -929,7 +931,7 @@ div.kse-dropdown > .dropdown-menu,
     box-shadow: none;
     text-shadow: none;
     border-radius: 3px;
-    font-size: initial;
+    font-size: @nb-fontsize !important;
 }
 .btn:hover,
 .btn:active:hover,
@@ -1036,7 +1038,7 @@ div.kse-dropdown > .dropdown-menu,
     min-width: 11ex;
 }
 .btn-group > .btn:first-child {
-    margin-left: 3px;
+    margin-left: 0px;
 }
 .btn-group > .btn-mini,
 .btn-sm,
@@ -1060,9 +1062,9 @@ div.kse-dropdown > .dropdown-menu,
     padding: 2px 5px;
     line-height: 1.45;
 }
-.btn-group > .btn:first-child {
-    margin-left: 3px;
-}
+// .btn-group > .btn:first-child {
+//     margin-left: 3px;
+// }
 div#new-buttons > button,
 #new-buttons > button,
 div#refresh_notebook_list,
@@ -1390,12 +1392,12 @@ input, button, select, textarea {
     border: 1px solid @dropdown-border;
 }
 select.form-control.select-xs {
-    height: 33px;
+    height: 30px;
     font-size: @nb-fontsize;
 }
 .toolbar select, .toolbar label {
     width: auto;
-    vertical-align: middle;
+    vertical-align: top;
     margin-right: 0px;
     margin-bottom: 0px;
     display: inline;
@@ -1406,6 +1408,11 @@ select.form-control.select-xs {
     background-color: @button-bg !important;
     border: 2px solid @button-border !important;
 }
+
+.toolbar .btn {
+    padding: 3px 8px;
+}
+
 .form-control:focus {
     border-color: @item-theme;
     outline: 2px solid @prompt-line;
@@ -1468,8 +1475,8 @@ div.output.output_scroll {
 
 /******* Smooth Fonts ********/
 HTML, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, span, a {
-    text-rendering: geometricPrecision;
-    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
     font-weight: 400;
 }
 

@@ -6,11 +6,16 @@
 | Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=master) | [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/dunovank/jupyter-themes/master?filepath=index.ipynb) |
 
 
-#### Help support me
-While I love my job as a researcher, it doesn't exactly bring home the bacon. I mean.. it brings home *some* bacon... but like... not *enough* bacon? Right.
-Anyway, a colleague suggested I add an optional donation badge so users can help support projects like `jupyter-themes` (and the forthcoming `lab-themes` which will give users similar control over the look and feel of Jupyter Lab. Currently in early stages of development).
+#### Themes for Jupyter Lab?
 
-I firmly believe that software is best served open and, as such, am committed to providing free and easy access to all my code. So if you can't make a financial contribution, then don't and `pip install` it anyway! But if you're sitting on some extra cash and enjoy using a package I've developed, then any amount helps and I *greatly* appreciate it.
+Aforementioned plans to develop a CLI for customizing themes in Jupyter *Lab* are presently stalled. However, a poor-man's solution can be found [**here**](https://userstyles.org/styles/178898/jupyter-lab-legos-light) - a basic light theme that reflects many of the same and style and design properties as in the original *jupyter-themes*. 
+
+To install this theme you'll need to install the [**Stylish**](https://userstyles.org/) browser extension (available for [**Chrome**](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=en), [**Firefox**](https://addons.mozilla.org/en-US/firefox/addon/stylish/)).
+
+
+#### Help support me
+
+I firmly believe that software is best served open and, as such, am committed to providing free and easy access to all my code. So if you can't make a financial contribution then `pip install` it anyway! But if you're sitting on some extra cash and enjoy using a package I've developed, then any amount helps and is greatly appreciated.
 
 Click here to make a quick donation --> [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FVXYJTEBMDE7W)
 
