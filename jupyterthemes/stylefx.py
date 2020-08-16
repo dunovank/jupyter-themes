@@ -232,7 +232,8 @@ def style_layout(style_less,
                  altprompt=False,
                  altmd=False,
                  altout=False,
-                 hideprompt=False):
+                 hideprompt=False,
+                 verticalcells=True):
     """Set general layout and style properties of text and code cells"""
 
     # write theme name to ~/.jupyter/custom/ (referenced by jtplot.py)
@@ -298,6 +299,11 @@ def style_layout(style_less,
     style_less += '@cursor-info: @cursor-width solid {}; \n'.format(
         cursorcolor)
     style_less += '@tc-prompt-fontsize: {}; \n'.format(tcPromptFontsize)
+    style_less += '@code-cell-direction: {}; \n'.format('column'
+        if verticalcells else 'row')
+    style_less += '@code-cell-input-width: {}; \n'.format('100%'
+        if verticalcells else '50%')
+
     style_less += '\n\n'
 
     # read-in notebook.less (general nb style)
