@@ -257,7 +257,7 @@ def style_layout(style_less,
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
     promptMinWidth = 11.5
-    outpromptMinWidth = promptMinWidth +.5 # remove + 3 since it will overlay output print() text
+    outpromptMinWidth = promptMinWidth + .5 if verticalcells else 0  # remove + 3 since it will overlay output print() text
     tcPromptWidth = promptMinWidth + .5
     tcPromptFontsize = "@prompt-fontsize"
     ccOutputBG = '@cc-output-bg-default'
