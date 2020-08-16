@@ -233,7 +233,8 @@ def style_layout(style_less,
                  altmd=False,
                  altout=False,
                  hideprompt=False,
-                 verticalcells=True):
+                 verticalcells=True,
+                 inputcodecellwidth="50%"):
     """Set general layout and style properties of text and code cells"""
 
     # write theme name to ~/.jupyter/custom/ (referenced by jtplot.py)
@@ -257,7 +258,7 @@ def style_layout(style_less,
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
     promptMinWidth = 11.5
-    outpromptMinWidth = promptMinWidth + .5 if verticalcells else 0  # remove + 3 since it will overlay output print() text
+    outpromptMinWidth = promptMinWidth + (.5 if verticalcells else -8)  # remove + 3 since it will overlay output print() text
     tcPromptWidth = promptMinWidth + .5
     tcPromptFontsize = "@prompt-fontsize"
     ccOutputBG = '@cc-output-bg-default'
@@ -280,6 +281,8 @@ def style_layout(style_less,
         margins = '{}px'.format(margins)
     if '%' not in cellwidth:
         cellwidth = str(cellwidth) + 'px'
+    if '%' not in inputcodecellwidth:
+        inputcodecellwidth = str(inputcodecellwidth) + 'px'
 
     style_less += '@container-margins: {};\n'.format(margins)
     style_less += '@cell-width: {}; \n'.format(cellwidth)
@@ -302,7 +305,7 @@ def style_layout(style_less,
     style_less += '@code-cell-direction: {}; \n'.format('column'
         if verticalcells else 'row')
     style_less += '@code-cell-input-width: {}; \n'.format('100%'
-        if verticalcells else '50%')
+        if verticalcells else inputcodecellwidth)
 
     style_less += '\n\n'
 
