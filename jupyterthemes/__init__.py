@@ -49,7 +49,7 @@ def install_theme(theme=None,
                 nbname=False,
                 kernellogo=False,
                 dfonts=False,
-                verticalcells=True,
+                lateralcells=True,
                 inputcodecellwidth="50%"):
 
     """ Install theme to jupyter_customcss with specified font, fontsize,
@@ -100,7 +100,7 @@ def install_theme(theme=None,
             toolbar=toolbar,
             nbname=nbname,
             kernellogo=kernellogo,
-            verticalcells=verticalcells,
+            lateralcells=lateralcells,
             inputcodecellwidth=inputcodecellwidth)
 
     # compile tempfile.less to css code and append to style_css
@@ -255,17 +255,17 @@ def main():
         default=False,
         help="kernel logo visible")
     parser.add_argument(
-        '-vc',
-        "--verticalcells",
-        action='store_false',
-        default=True,
+        '-lc',
+        "--lateralcells",
+        action='store_true',
+        default=False,
         help="switch vertical cell layout off")
     parser.add_argument(
         '-iccw',
         "--inputcodecellwidth",
         action='store',
         default='50%',
-        help="the width of the input code-cell (only with -vl)")
+        help="the width of the input code-cell (only with -lc)")
     parser.add_argument(
         '-vim',
         "--vimext",
@@ -328,5 +328,5 @@ def main():
         nbname=args.nbname,
         kernellogo=args.kernellogo,
         dfonts=args.defaultfonts,
-        verticalcells=args.verticalcells,
+        lateralcells=args.lateralcells,
         inputcodecellwidth=args.inputcodecellwidth)

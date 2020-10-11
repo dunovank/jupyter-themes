@@ -233,7 +233,7 @@ def style_layout(style_less,
                  altmd=False,
                  altout=False,
                  hideprompt=False,
-                 verticalcells=True,
+                 lateralcells=False,
                  inputcodecellwidth="50%"):
     """Set general layout and style properties of text and code cells"""
 
@@ -258,7 +258,7 @@ def style_layout(style_less,
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
     promptMinWidth = 11.5
-    outpromptMinWidth = promptMinWidth + (.5 if verticalcells else -8)  # remove + 3 since it will overlay output print() text
+    outpromptMinWidth = promptMinWidth + (-8 if lateralcells else .5)  # remove + 3 since it will overlay output print() text
     tcPromptWidth = promptMinWidth + .5
     tcPromptFontsize = "@prompt-fontsize"
     ccOutputBG = '@cc-output-bg-default'
@@ -302,10 +302,16 @@ def style_layout(style_less,
     style_less += '@cursor-info: @cursor-width solid {}; \n'.format(
         cursorcolor)
     style_less += '@tc-prompt-fontsize: {}; \n'.format(tcPromptFontsize)
-    style_less += '@code-cell-direction: {}; \n'.format('column'
-        if verticalcells else 'row')
-    style_less += '@code-cell-input-width: {}; \n'.format('100%'
-        if verticalcells else inputcodecellwidth)
+    style_less += '@code-cell-direction: {}; \n'.format('row'
+        if lateralcells else 'column')
+    style_less += '@code-cell-input-width: {}; \n'.format(inputcodecellwidth
+        if lateralcells else '100%')
+    style_less += '@selected-prompt-right-border-width: {}px; \n'.format(0)
+    style_less += '@@selected-prompt-right-border-radius: {}px; \n'.format(0)
+    style_less += '@selected-prompt-left-border-width: {}px; \n'.format(5)
+    style_less += '@@selected-prompt-left-border-radius: {}px; \n'.format(3)
+    style_less += '@code-cell-border-left-width: {}px; \n'.format(5)
+    style_less += '@code-cell-border-radius: {}px; \n'.format(3)
 
     style_less += '\n\n'
 
