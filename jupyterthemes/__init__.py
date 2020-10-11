@@ -265,7 +265,7 @@ def main():
         "--inputcodecellwidth",
         action='store',
         default='50%',
-        help="the width of the input code-cell (only with -lc)")
+        help="the width of the input code-cell (only with -lc): as a %% it is relative to -cellwidth")
     parser.add_argument(
         '-vim',
         "--vimext",
