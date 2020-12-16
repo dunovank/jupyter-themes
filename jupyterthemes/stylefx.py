@@ -36,6 +36,9 @@ defaults_dir = os.path.join(package_dir, 'defaults')
 defaultCSS = os.path.join(defaults_dir, 'custom.css')
 defaultJS = os.path.join(defaults_dir, 'custom.js')
 
+# custom.js before use of JT, use in restoring customizations
+temp_customjs = os.path.join(jupyter_custom, 'temp_custom.js')
+
 # layout files for notebook, codemirror, cells, mathjax, & vim ext
 nb_style = os.path.join(layouts_dir, 'notebook.less')
 cm_style = os.path.join(layouts_dir, 'codemirror.less')
@@ -469,6 +472,16 @@ def reset_default(verbose=False):
 
     if verbose:
         print("Reset css and font defaults in:\n{} &\n{}".format(*paths))
+
+
+def save_customizations():
+    print('saving custom.js for restoring')
+    os.rename(jupyter_customjs, temp_customjs)
+
+
+def restore_customizations():
+    print('restoring customization in custom.js')
+    os.rename(temp_customjs, jupyter_customjs)
 
 
 def set_nb_theme(name):
