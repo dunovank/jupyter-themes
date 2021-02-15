@@ -6,20 +6,25 @@
 | Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=master) | [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/dunovank/jupyter-themes/master?filepath=index.ipynb) |
 
 
-#### Themes for Jupyter Lab?
 
-Aforementioned plans to develop a CLI for customizing themes in Jupyter *Lab* are presently stalled. However, a poor-man's solution can be found [**here**](https://userstyles.org/styles/178898/jupyter-lab-legos-light) - a basic light theme that reflects many of the same and style and design properties as in the original *jupyter-themes*. 
+---
+#### *JupyterLab Update*:
 
-To install this theme you'll need to install the [**Stylish**](https://userstyles.org/) browser extension (available for [**Chrome**](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=en), [**Firefox**](https://addons.mozilla.org/en-US/firefox/addon/stylish/)).
+Okay, so I finally got around to publishing a light theme for JupyterLab that borrows various style conventions from the `jupyter-themes` package. You can see a preview of the style here: [**JupyterLab Legos UI & Syntax theme**](https://github.com/dunovank/jupyterlab_legos_ui). 
 
+* The theme can be installed with pip: 
 
-#### Help support me
+```bash 
+pip install jupyterlab_legos_ui
+```
 
-I firmly believe that software is best served open and, as such, am committed to providing free and easy access to all my code. So if you can't make a financial contribution then `pip install` it anyway! But if you're sitting on some extra cash and enjoy using a package I've developed, then any amount helps and is greatly appreciated.
+* If you decide you're not a fan you can uninstall with the following commands.
 
-Click here to make a quick donation --> [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FVXYJTEBMDE7W)
-
-
+```bash
+pip uninstall jupyterlab_legos_ui
+jupyter labextension uninstall @dunovank/jupyterlab_legos_ui
+```
+---
 
 #### JT Customizable Features
 
@@ -59,6 +64,14 @@ pip install --upgrade jupyterthemes
 - **refreshing / removing / resetting:** depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)). At the very least you'll need to refresh your browser window (usually `cmd+r` or `ctrl+r`).
 - **install issue:** if you get an error saying `jt` is not recognized, try [this](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-300688587) fix.
 - **slow render when scrolling:** fix available [here](https://github.com/dunovank/jupyter-themes/issues/117#issuecomment-296391443)
+
+
+#### Help support me
+
+I firmly believe that software is best served open and, as such, am committed to providing free and easy access to all my code. So if you can't make a financial contribution then `pip install` it anyway! But if you're sitting on some extra cash and enjoy using a package I've developed, then any amount helps and is greatly appreciated.
+
+Click here to make a quick donation --> [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FVXYJTEBMDE7W)
+
 
 
 ### Command Line Usage
