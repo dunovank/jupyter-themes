@@ -10,21 +10,13 @@
 ---
 #### *JupyterLab Update*:
 
-Okay, so I finally got around to publishing a light theme for JupyterLab that borrows various style conventions from the `jupyter-themes` package. You can see a preview of the style here: [**JupyterLab Legos UI & Syntax theme**](https://github.com/dunovank/jupyterlab_legos_ui). 
+Finally got around to creating a pair of themes for JupyterLab with similar style and design conventions to the `jupyter-themes` package:
 
-* The theme can be installed with pip (***NOTE:*** After installing and launching `jupyter lab`, the theme still needs to be enabled: *Settings > JupyterLab Theme > @dunovank/jupyterlab_legos_ui*)
+* [**Legos UI & Syntax**](https://github.com/dunovank/jupyterlab_legos_ui). 
+* [**Darkside UI & Syntax**](https://github.com/dunovank/jupyterlab_darkside_ui). 
 
-```bash 
-pip install jupyterlab_legos_ui
-```
+* The theme can be installed with pip (***NOTE:*** After installing and launching `jupyter lab`, the theme still needs to be enabled: *Settings > JupyterLab Theme > @dunovank/jupyterlab_\[legos|darkside\]_ui*)
 
-
-* If you decide you're not a fan you can uninstall with the following commands.
-
-```bash
-pip uninstall jupyterlab_legos_ui
-jupyter labextension uninstall @dunovank/jupyterlab_legos_ui
-```
 ---
 
 #### JT Customizable Features
