@@ -11,11 +11,8 @@
 #### *JupyterLab Update*:
 
 Finally got around to creating a pair of themes for JupyterLab with similar style and design conventions to the `jupyter-themes` package:
-
 * [**Legos UI & Syntax**](https://github.com/dunovank/jupyterlab_legos_ui). 
 * [**Darkside UI & Syntax**](https://github.com/dunovank/jupyterlab_darkside_ui). 
-
-* The theme can be installed with pip (***NOTE:*** After installing and launching `jupyter lab`, the theme still needs to be enabled: *Settings > JupyterLab Theme > @dunovank/jupyterlab_\[legos|darkside\]_ui*)
 
 ---
 
