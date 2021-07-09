@@ -543,6 +543,7 @@ def stored_font_dicts(fontcode, get_all=False):
               'saxmono': ['saxMono', 'saxmono'],
               'source': ['Source Code Pro', 'source-code-pro'],
               'sourcemed': ['Source Code Pro Medium', 'source-code-medium'],
+              'sudovar': ['Sudo Variable', 'sudo-variable'],
               'ptmono': ['PT Mono', 'ptmono'],
               'ubuntu': ['Ubuntu Mono', 'ubuntu']},
              'sans':
