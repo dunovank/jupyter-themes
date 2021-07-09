@@ -11,8 +11,8 @@
 #### *JupyterLab Update*:
 
 Finally got around to creating a pair of themes for JupyterLab with similar style and design conventions to the `jupyter-themes` package:
-* [**Legos UI & Syntax**](https://github.com/dunovank/jupyterlab_legos_ui). 
-* [**Darkside UI & Syntax**](https://github.com/dunovank/jupyterlab_darkside_ui). 
+* [**Legos UI & Syntax**](https://github.com/dunovank/jupyterlab_legos_ui).
+* [**Darkside UI & Syntax**](https://github.com/dunovank/jupyterlab_darkside_ui).
 
 ---
 
@@ -231,6 +231,7 @@ jtplot.reset()
 | saxmono     | saxMono                  |
 | source      | Source Code Pro          |
 | sourcemed   | Source Code Pro Medium   |
+| sudovar     | Sudo Variable            |
 | ptmono      | PT Mono                  |
 | ubuntu      | Ubuntu Mono              |
 
