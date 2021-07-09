@@ -1,53 +1,46 @@
 # jupyterthemes
-
 ## Theme-ify your Jupyter Notebooks!
 
-|    Author    |                          Version                          |                                  Status                                   |                                                            Demo                                                            |
-| :----------: | :-------------------------------------------------------: | :-----------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+|    Author    |                 Version                  |                  Status                  |                   Demo                   |
+| :----------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
 | Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=master) | [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/dunovank/jupyter-themes/master?filepath=index.ipynb) |
 
----
 
-#### _JupyterLab Update_:
+
+---
+#### *JupyterLab Update*:
 
 Finally got around to creating a pair of themes for JupyterLab with similar style and design conventions to the `jupyter-themes` package:
-
-- [**Legos UI & Syntax**](https://github.com/dunovank/jupyterlab_legos_ui).
-- [**Darkside UI & Syntax**](https://github.com/dunovank/jupyterlab_darkside_ui).
+* [**Legos UI & Syntax**](https://github.com/dunovank/jupyterlab_legos_ui).
+* [**Darkside UI & Syntax**](https://github.com/dunovank/jupyterlab_darkside_ui).
 
 ---
 
 #### JT Customizable Features
 
 #### **plotting style**
-
 ![image](screens/onedork_reach_plots.png)
 
 #### **markdown/equations**
-
 ![image](screens/oceans16_markdown.png)
 
 #### **pandas dataframes**
-
 ![image](screens/grade3_table.png)
 
 #### **command palette**
-
 ![image](screens/oceans16_command_palette.png)
 
-### Links
 
-- [jupyterthemes on PyPI](https://pypi.python.org/pypi/jupyterthemes/)
-- [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
+### Links
+* [jupyterthemes on PyPI](https://pypi.python.org/pypi/jupyterthemes/)
+* [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
 
 ### Requirements
-
-- Python 3.4, 3.5, 3.6, 3.7
-- Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
-- matplotlib
+* Python 3.4, 3.5, 3.6, 3.7
+* Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
+* matplotlib
 
 ### Install with pip
-
 ```sh
 # install jupyterthemes
 pip install jupyterthemes
@@ -57,11 +50,11 @@ pip install --upgrade jupyterthemes
 ```
 
 ### Known issues
-
 - **for best results:** use notebook>=5.6.0 (`pip install --upgrade notebook`)
 - **refreshing / removing / resetting:** depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)). At the very least you'll need to refresh your browser window (usually `cmd+r` or `ctrl+r`).
 - **install issue:** if you get an error saying `jt` is not recognized, try [this](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-300688587) fix.
 - **slow render when scrolling:** fix available [here](https://github.com/dunovank/jupyter-themes/issues/117#issuecomment-296391443)
+
 
 #### Help support me
 
@@ -69,8 +62,9 @@ I firmly believe that software is best served open and, as such, am committed to
 
 Click here to make a quick donation --> [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FVXYJTEBMDE7W)
 
-### Command Line Usage
 
+
+### Command Line Usage
 ```
 jt  [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
     [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-dfs DFFONTSIZE]
@@ -80,38 +74,37 @@ jt  [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 ```
 
 #### Description of Command Line options
+| cl options            |   arg   |  default   |
+| :-------------------- | :-----: | :--------: |
+| Usage help            |   -h    |     --     |
+| List Themes           |   -l    |     --     |
+| Theme Name to Install |   -t    |     --     |
+| Code Font             |   -f    |     --     |
+| Code Font-Size        |   -fs   |     11     |
+| Notebook Font         |   -nf   |     --     |
+| Notebook Font Size    |  -nfs   |     13     |
+| Text/MD Cell Font     |   -tf   |     --     |
+| Text/MD Cell Fontsize |  -tfs   |     13     |
+| Pandas DF Fontsize    |  -dfs   |     9      |
+| Output Area Fontsize  |  -ofs   |    8.5     |
+| Mathjax Fontsize (%)  | -mathfs |    100     |
+| Intro Page Margins    |   -m    |    auto    |
+| Cell Width            | -cellw  |    980     |
+| Line Height           | -lineh  |    170     |
+| Cursor Width          | -cursw  |     2      |
+| Cursor Color          | -cursc  |     --     |
+| Alt Prompt Layout     |  -altp  |     --     |
+| Alt Markdown BG Color | -altmd  |     --     |
+| Alt Output BG Color   | -altout |     --     |
+| Style Vim NBExt*      |  -vim   |     --     |
+| Toolbar Visible       |   -T    |     --     |
+| Name & Logo Visible   |   -N    |     --     |
+| Kernel Logo Visible   |   -kl   |     --     |
+| Reset Default Theme   |   -r    |     --     |
+| Force Default Fonts   | -dfonts |     --     |
 
-| cl options            |   arg   | default |
-| :-------------------- | :-----: | :-----: |
-| Usage help            |   -h    |   --    |
-| List Themes           |   -l    |   --    |
-| Theme Name to Install |   -t    |   --    |
-| Code Font             |   -f    |   --    |
-| Code Font-Size        |   -fs   |   11    |
-| Notebook Font         |   -nf   |   --    |
-| Notebook Font Size    |  -nfs   |   13    |
-| Text/MD Cell Font     |   -tf   |   --    |
-| Text/MD Cell Fontsize |  -tfs   |   13    |
-| Pandas DF Fontsize    |  -dfs   |    9    |
-| Output Area Fontsize  |  -ofs   |   8.5   |
-| Mathjax Fontsize (%)  | -mathfs |   100   |
-| Intro Page Margins    |   -m    |  auto   |
-| Cell Width            | -cellw  |   980   |
-| Line Height           | -lineh  |   170   |
-| Cursor Width          | -cursw  |    2    |
-| Cursor Color          | -cursc  |   --    |
-| Alt Prompt Layout     |  -altp  |   --    |
-| Alt Markdown BG Color | -altmd  |   --    |
-| Alt Output BG Color   | -altout |   --    |
-| Style Vim NBExt\*     |  -vim   |   --    |
-| Toolbar Visible       |   -T    |   --    |
-| Name & Logo Visible   |   -N    |   --    |
-| Kernel Logo Visible   |   -kl   |   --    |
-| Reset Default Theme   |   -r    |   --    |
-| Force Default Fonts   | -dfonts |   --    |
 
 ### Command Line Examples
-
 ```sh
 # list available themes
 # onedork | grade3 | oceans16 | chesterish | monokai | solarizedl | solarizedd
@@ -169,14 +162,13 @@ jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T
 jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T
 ```
 
-### Set Plotting Style (from within notebook)
 
+### Set Plotting Style (from within notebook)
 `jtplot.style()` makes changes to matplotlib's rcParams dictionary so that figure aesthetics match those of a chosen jupyterthemes style. In addition to setting the color scheme, `jtplot.style()` allows you to control various figure properties (spines, grid, font scale, etc.) as well as the plotting "context" (borrowed from [seaborn](https://seaborn.pydata.org/tutorial/aesthetics.html#scaling-plot-elements-with-plotting-context-and-set-context)).
 
 Note, these commands do not need to be re-run every time you generate a new plot, just once at the beginning of your notebook or whenever style changes are desired after that.
 
 **Pro-tip**: Include the following two lines in `~/.ipython/profile_default/startup/startup.ipy` file to set plotting style automatically whenever you start a notebook:
-
 ```py
 # import jtplot submodule from jupyterthemes
 from jupyterthemes import jtplot
@@ -187,7 +179,6 @@ jtplot.style()
 ```
 
 ### jtplot.style() Examples
-
 ```py
 # import jtplot module in notebook
 from jupyterthemes import jtplot
@@ -210,8 +201,8 @@ jtplot.style(ticks=True, grid=False, figsize=(6, 4.5))
 jtplot.reset()
 ```
 
-#### Monospace Fonts (code cells)
 
+#### Monospace Fonts (code cells)
 | -f arg      | Monospace Font           |
 | :---------- | :----------------------- |
 | anka        | Anka/Coder               |
@@ -245,27 +236,25 @@ jtplot.reset()
 | ubuntu      | Ubuntu Mono              |
 
 #### Sans-Serif Fonts
-
-| -nf/-tf arg | Sans-Serif Font |
-| :---------- | :-------------- |
-| opensans    | Open Sans       |
-| droidsans   | Droid Sans      |
-| exosans     | Exo_2           |
-| latosans    | Lato            |
-| ptsans      | PT Sans         |
-| robotosans  | Roboto          |
-| sourcesans  | Source Sans Pro |
+| -nf/-tf arg   | Sans-Serif Font   |
+| :------------ | :---------------- |
+| opensans      | Open Sans         |
+| droidsans     | Droid Sans        |
+| exosans       | Exo_2             |
+| latosans      | Lato              |
+| ptsans        | PT Sans           |
+| robotosans    | Roboto            |
+| sourcesans    | Source Sans Pro   |
 
 #### Serif Fonts
-
-| -nf/-tf arg  | Serif Font       |
-| :----------- | :--------------- |
-| loraserif    | Lora             |
-| ptserif      | PT Serif         |
-| georgiaserif | Georgia          |
-| cardoserif   | Cardo            |
-| crimsonserif | Crimson Text     |
-| ebserif      | EB Garamond      |
-| merriserif   | Merriweather     |
-| neutonserif  | Neuton           |
-| goudyserif   | Sorts Mill Goudy |
+| -nf/-tf arg   | Serif Font       |
+| :------------ | :--------------- |
+| loraserif     | Lora             |
+| ptserif       | PT Serif         |
+| georgiaserif  | Georgia          |
+| cardoserif    | Cardo            |
+| crimsonserif  | Crimson Text     |
+| ebserif       | EB Garamond      |
+| merriserif    | Merriweather     |
+| neutonserif   | Neuton           |
+| goudyserif    | Sorts Mill Goudy |
