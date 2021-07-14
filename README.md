@@ -36,7 +36,7 @@ Finally got around to creating a pair of themes for JupyterLab with similar styl
 * [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
 
 ### Requirements
-* Python 3.4, 3.5, 3.6, 3.7
+* Python 3.4, 3.5, 3.6, 3.7 and 3.8
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 * matplotlib
 
