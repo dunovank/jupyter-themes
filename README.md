@@ -77,9 +77,10 @@ Click here to make a quick donation --> [![Donate](https://img.shields.io/badge/
 ```
 jt  [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
     [-nfs NBFONTSIZE] [-tf TCFONT] [-tfs TCFONTSIZE] [-dfs DFFONTSIZE]
-    [-m MARGINS] [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-vim]
-    [-cellw CELLWIDTH] [-lineh LINEHEIGHT] [-altp] [-altmd] [-altout]
-    [-P] [-T] [-N] [-r] [-dfonts]
+    [-ofs OUTFONTSIZE] [-mathfs MATHFONTSIZE] [-m MARGINS]
+    [-cursw CURSORWIDTH] [-cursc CURSORCOLOR] [-cellw CELLWIDTH]
+    [-lineh LINEHEIGHT] [-altp] [-altmd] [-altout] [-P] [-T] [-N] [-kl]
+    [-lc] [-iccw INPUTCODECELLWIDTH] [-vim] [-r] [-dfonts]
 ```
 
 #### Description of Command Line options
@@ -109,6 +110,8 @@ jt  [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
 | Toolbar Visible       |   -T    |     --     |
 | Name & Logo Visible   |   -N    |     --     |
 | Kernel Logo Visible   |   -kl   |     --     |
+| Lateral Cells         |   -lc   |     --     |
+| Input Code-Cell Width | -iccw   |    50%     |
 | Reset Default Theme   |   -r    |     --     |
 | Force Default Fonts   | -dfonts |     --     |
 
@@ -163,6 +166,9 @@ jt -t oceans16 -cursc r -cursw 5
 
 # choose alternate prompt layout (narrower/no numbers)
 jt -t grade3 -altp
+
+# setup lateral cell layout, with input-cells being 55% of the cell-width, which is 90% of the window
+jt -t solarizedl -lc -iccw 55% -cellw 90%
 
 # my two go-to styles
 # dark

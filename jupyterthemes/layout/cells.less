@@ -74,7 +74,14 @@ div.cell.text_cell.selected.jupyter-soft-selected:before {
   border-color: @tc-border-selected !important;
 }
 
+div.code_cell {
+    display: flex;
+    flex-direction: @code-cell-direction;
+}
+
 div.cell.code_cell .input {
+    width : @code-cell-input-width;
+    min-width : @code-cell-input-width;
     border-left: 5px solid @cc-input-bg !important;
     border-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -242,6 +249,7 @@ div.cell.code_cell.rendered.unselected.jupyter-soft-selected .run_this_cell:hove
 
 /********** CODE CELL OUTPUT AREA **********/
 div.output_wrapper {
+    width: 100%;
     background-color: @cc-output-bg;
     border: 0px;
     left: 0px;

@@ -232,7 +232,9 @@ def style_layout(style_less,
                  altprompt=False,
                  altmd=False,
                  altout=False,
-                 hideprompt=False):
+                 hideprompt=False,
+                 lateralcells=False,
+                 inputcodecellwidth="50%"):
     """Set general layout and style properties of text and code cells"""
 
     # write theme name to ~/.jupyter/custom/ (referenced by jtplot.py)
@@ -256,7 +258,7 @@ def style_layout(style_less,
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
     promptMinWidth = 11.5
-    outpromptMinWidth = promptMinWidth +.5 # remove + 3 since it will overlay output print() text
+    outpromptMinWidth = promptMinWidth + (-8 if lateralcells else .5)  # remove + 3 since it will overlay output print() text
     tcPromptWidth = promptMinWidth + .5
     tcPromptFontsize = "@prompt-fontsize"
     ccOutputBG = '@cc-output-bg-default'
@@ -279,6 +281,8 @@ def style_layout(style_less,
         margins = '{}px'.format(margins)
     if '%' not in cellwidth:
         cellwidth = str(cellwidth) + 'px'
+    if '%' not in inputcodecellwidth:
+        inputcodecellwidth = str(inputcodecellwidth) + 'px'
 
     style_less += '@container-margins: {};\n'.format(margins)
     style_less += '@cell-width: {}; \n'.format(cellwidth)
@@ -298,6 +302,17 @@ def style_layout(style_less,
     style_less += '@cursor-info: @cursor-width solid {}; \n'.format(
         cursorcolor)
     style_less += '@tc-prompt-fontsize: {}; \n'.format(tcPromptFontsize)
+    style_less += '@code-cell-direction: {}; \n'.format('row'
+        if lateralcells else 'column')
+    style_less += '@code-cell-input-width: {}; \n'.format(inputcodecellwidth
+        if lateralcells else '100%')
+    style_less += '@selected-prompt-right-border-width: {}px; \n'.format(0)
+    style_less += '@@selected-prompt-right-border-radius: {}px; \n'.format(0)
+    style_less += '@selected-prompt-left-border-width: {}px; \n'.format(5)
+    style_less += '@@selected-prompt-left-border-radius: {}px; \n'.format(3)
+    style_less += '@code-cell-border-left-width: {}px; \n'.format(5)
+    style_less += '@code-cell-border-radius: {}px; \n'.format(3)
+
     style_less += '\n\n'
 
     # read-in notebook.less (general nb style)
