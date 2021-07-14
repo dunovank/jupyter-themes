@@ -558,7 +558,9 @@ def stored_font_dicts(fontcode, get_all=False):
               'sourcemed': ['Source Code Pro Medium', 'source-code-medium'],
               'sudovar': ['Sudo Variable', 'sudo-variable'],
               'ptmono': ['PT Mono', 'ptmono'],
-              'ubuntu': ['Ubuntu Mono', 'ubuntu']},
+              'ubuntu': ['Ubuntu Mono', 'ubuntu'],
+              'jetbrains' : ['JetBrains Mono', 'jetbrains']
+             },
              'sans':
              {'droidsans': ['Droid Sans', 'droidsans'],
               'opensans': ['Open Sans', 'opensans'],
