@@ -48,13 +48,17 @@ def install_theme(theme=None,
                 toolbar=False,
                 nbname=False,
                 kernellogo=False,
-                dfonts=False):
+                dfonts=False,
+                keepcustom=False):
 
     """ Install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
     """
     # get working directory
     wkdir = os.path.abspath('./')
+
+    if keepcustom:
+        stylefx.save_customizations()
 
     stylefx.reset_default(False)
     stylefx.check_directories()
@@ -110,6 +114,11 @@ def install_theme(theme=None,
 
     # change back to original working directory
     os.chdir(wkdir)
+
+    # restore customization from custom.js
+    if keepcustom:
+        stylefx.restore_customizations()
+
 
 def main():
     parser = ArgumentParser()
@@ -267,6 +276,12 @@ def main():
         action='store_true',
         default=False,
         help="force fonts to browser default")
+    parser.add_argument(
+        '-kc',
+        "--keepcustom",
+        default=False,
+        action='store_true',
+        help="keep customization: do not reset jupyter notebook custom.js")
 
     args = parser.parse_args()
     themes = get_themes()
@@ -311,4 +326,5 @@ def main():
         toolbar=args.toolbar,
         nbname=args.nbname,
         kernellogo=args.kernellogo,
-        dfonts=args.defaultfonts)
+        dfonts=args.defaultfonts,
+        keepcustom=args.keepcustom)
