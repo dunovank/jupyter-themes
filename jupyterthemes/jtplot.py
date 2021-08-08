@@ -44,6 +44,7 @@ base_context = {
     "xtick.minor.size": 0,
     "ytick.minor.size": 0}
 
+
 # base font params
 base_font = {
     "font.size": 11,
