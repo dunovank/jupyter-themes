@@ -36,6 +36,9 @@ defaults_dir = os.path.join(package_dir, 'defaults')
 defaultCSS = os.path.join(defaults_dir, 'custom.css')
 defaultJS = os.path.join(defaults_dir, 'custom.js')
 
+# custom.js before use of JT, use in restoring customizations
+temp_customjs = os.path.join(jupyter_custom, 'temp_custom.js')
+
 # layout files for notebook, codemirror, cells, mathjax, & vim ext
 nb_style = os.path.join(layouts_dir, 'notebook.less')
 cm_style = os.path.join(layouts_dir, 'codemirror.less')
@@ -321,7 +324,7 @@ def style_layout(style_less,
     style_less += toggle_settings(
         toolbar, nbname, hideprompt, kernellogo) + '\n'
     if vimext:
-        set_vim_style(theme)
+        set_vim_style(theme, cursorcolor=cursorcolor)
 
     return style_less
 
@@ -421,7 +424,7 @@ def set_mathjax_style(style_css, mathfontsize):
 
 
 
-def set_vim_style(theme):
+def set_vim_style(theme, cursorcolor='default'):
     """Add style and compatibility with vim notebook extension"""
 
     vim_jupyter_nbext = os.path.join(jupyter_nbext, 'vim_binding')
@@ -430,7 +433,7 @@ def set_vim_style(theme):
         os.makedirs(vim_jupyter_nbext)
 
     vim_less = '@import "styles{}";\n'.format(''.join([os.sep, theme]))
-
+    vim_less += '@cursor-color: {}; \n'.format(cursorcolor)
     with open(vim_style, 'r') as vimstyle:
         vim_less += vimstyle.read() + '\n'
     with open(vimtemp, 'w') as vtemp:
@@ -469,6 +472,16 @@ def reset_default(verbose=False):
 
     if verbose:
         print("Reset css and font defaults in:\n{} &\n{}".format(*paths))
+
+
+def save_customizations():
+    print('saving custom.js for restoring')
+    os.rename(jupyter_customjs, temp_customjs)
+
+
+def restore_customizations():
+    print('restoring customization in custom.js')
+    os.rename(temp_customjs, jupyter_customjs)
 
 
 def set_nb_theme(name):
@@ -545,7 +558,9 @@ def stored_font_dicts(fontcode, get_all=False):
               'sourcemed': ['Source Code Pro Medium', 'source-code-medium'],
               'sudovar': ['Sudo Variable', 'sudo-variable'],
               'ptmono': ['PT Mono', 'ptmono'],
-              'ubuntu': ['Ubuntu Mono', 'ubuntu']},
+              'ubuntu': ['Ubuntu Mono', 'ubuntu'],
+              'jetbrains' : ['JetBrains Mono', 'jetbrains']
+             },
              'sans':
              {'droidsans': ['Droid Sans', 'droidsans'],
               'opensans': ['Open Sans', 'opensans'],

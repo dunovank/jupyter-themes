@@ -36,7 +36,7 @@ Finally got around to creating a pair of themes for JupyterLab with similar styl
 * [jupyterthemes on GitHub](https://github.com/dunovank/jupyter-themes)
 
 ### Requirements
-* Python 3.4, 3.5, 3.6, 3.7
+* Python 3.4, 3.5, 3.6, 3.7 and 3.8
 * Jupyter ([Anaconda](https://www.continuum.io/downloads) recommended)
 * matplotlib
 
@@ -49,19 +49,20 @@ pip install jupyterthemes
 pip install --upgrade jupyterthemes
 ```
 
+### Install with conda
+```sh
+# install jupyterthemes
+conda install -c conda-forge jupyterthemes
+
+# update to latest version
+conda update jupyterthemes
+```
+
 ### Known issues
 - **for best results:** use notebook>=5.6.0 (`pip install --upgrade notebook`)
 - **refreshing / removing / resetting:** depending on your system, browser, etc., you may need to empty your browser cache after installing a new theme (`-t`) or attempting to restore the default (`-r`) in order for those changes to take effect. (see discussion [here](https://github.com/dunovank/jupyter-themes/issues/86)). At the very least you'll need to refresh your browser window (usually `cmd+r` or `ctrl+r`).
 - **install issue:** if you get an error saying `jt` is not recognized, try [this](https://github.com/dunovank/jupyter-themes/issues/92#issuecomment-300688587) fix.
 - **slow render when scrolling:** fix available [here](https://github.com/dunovank/jupyter-themes/issues/117#issuecomment-296391443)
-
-
-#### Help support me
-
-I firmly believe that software is best served open and, as such, am committed to providing free and easy access to all my code. So if you can't make a financial contribution then `pip install` it anyway! But if you're sitting on some extra cash and enjoy using a package I've developed, then any amount helps and is greatly appreciated.
-
-Click here to make a quick donation --> [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FVXYJTEBMDE7W)
-
 
 
 ### Command Line Usage
