@@ -6,9 +6,21 @@
 | Kyle Dunovan | ![image](https://img.shields.io/pypi/v/jupyterthemes.svg) | ![image](https://travis-ci.org/dunovank/jupyter-themes.svg?branch=master) | [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/dunovank/jupyter-themes/master?filepath=index.ipynb) |
 
 
+## Updates
 
 ---
-#### *JupyterLab Update*:
+
+### *Scaling Back Support*:
+
+As anyone who has opened a bug report or feature request in the last several years can attest, I have begun scaling back support for the `jupyter-themes` package - mostly due to my personal preference for using Jupyter Lab over Jupyter Notebook classic (see update below for two of my JupyterLab theme repos).
+
+For those with continued interest in using `jupyter-themes` I am planning to write up a tutorial for how to add your own custom themes to your local `jt` installation as well as a contributing guide for those who would like submit pull-requests to the official pacakge.
+
+I'll also take this opportunity to say ***thank you*** to everyone who regularly used, expressed appreciation for, and contributed to `jupyter-themes`. I'm particularly grateful to those of you who bothered to submit pull requests - adding many excellent features that I was either too short-sighted to anticipate or simply incapable of implementing on my own. So, thank you, sincerely.
+
+
+
+### *JupyterLab Themes*:
 
 Finally got around to creating a pair of themes for JupyterLab with similar style and design conventions to the `jupyter-themes` package:
 * [**Legos UI & Syntax**](https://github.com/dunovank/jupyterlab_legos_ui).
