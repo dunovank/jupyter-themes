@@ -12,17 +12,12 @@
 
 ### *Scaling Back Support*:
 
-As anyone who has opened a bug report or feature request in the last several years can attest, I have begun scaling back support for the `jupyter-themes` package - mostly due to my personal preference for using Jupyter Lab over Jupyter Notebook classic (see update below for two of my JupyterLab theme repos).
-
-For those with continued interest in using `jupyter-themes` I am planning to write up a tutorial for how to add your own custom themes to your local `jt` installation as well as a contributing guide for those who would like submit pull-requests to the official pacakge.
-
-I'll also take this opportunity to say ***thank you*** to everyone who regularly used, expressed appreciation for, and contributed to `jupyter-themes`. I'm particularly grateful to those of you who bothered to submit pull requests - adding many excellent features that I was either too short-sighted to anticipate or simply incapable of implementing on my own. So, thank you, sincerely.
-
-
+As anyone who has opened a bug report or feature request in the last several years can attest, I have begun scaling back support for the `jupyter-themes` package - mostly due to my personal preference for using Jupyter Lab over Jupyter Notebook classic (see update below for two of my JupyterLab theme repos). ***Thank you*** to everyone who contributed to `jupyter-themes`.  
 
 ### *JupyterLab Themes*:
 
-Finally got around to creating a pair of themes for JupyterLab with similar style and design conventions to the `jupyter-themes` package:
+JupyterLab themes with similar style/design conventions to `jupyter-themes`:
+
 * [**Legos UI & Syntax**](https://github.com/dunovank/jupyterlab_legos_ui).
 * [**Darkside UI & Syntax**](https://github.com/dunovank/jupyterlab_darkside_ui).
 
