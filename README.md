@@ -25,6 +25,66 @@ JupyterLab themes with similar style/design conventions to `jupyter-themes`:
 
 #### JT Customizable Features
 
+#### **theme screenshots**
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <code>jt --theme chesterish</code>
+      </br>
+      <img width="400" src="screens/chesterish_preview.png" />
+    </td>
+    <td align="center">
+      <code>jt --theme grade3</code>
+      </br>
+      <img width="400" src="screens/grade3_preview.png" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <code>jt --theme gruvboxd</code>
+      </br>
+      <img width="400" src="screens/gruvboxd_preview.png" />
+    </td>
+    <td align="center">
+      <code>jt --theme gruvboxl</code>
+      </br>
+      <img width="400" src="screens/gruvboxl_preview.png" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <code>jt --theme monokai</code>
+      </br>
+      <img width="400" src="screens/monokai_preview.png" />
+    </td>
+    <td align="center">
+      <code>jt --theme oceans16</code>
+      </br>
+      <img width="400" src="screens/oceans16_preview.png" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <code>jt --theme onedork</code>
+      </br>
+      <img width="400" src="screens/onedork_preview.png" />
+    </td>
+    <td align="center">
+      <code>jt --theme solarizedd</code>
+      </br>
+      <img width="400" src="screens/solarizedd_preview.png" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <code>jt --theme solarizedl</code>
+      </br>
+      <img width="400" src="screens/solarizedl_preview.png" />
+    </td>
+  </tr>
+</table>
+
 #### **plotting style**
 ![image](screens/onedork_reach_plots.png)
 
