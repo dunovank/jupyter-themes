@@ -18,8 +18,12 @@ As anyone who has opened a bug report or feature request in the last several yea
 
 JupyterLab themes with similar style/design conventions to `jupyter-themes`:
 
-* [**Legos UI & Syntax**](https://github.com/dunovank/jupyterlab_legos_ui).
-* [**Darkside UI & Syntax**](https://github.com/dunovank/jupyterlab_darkside_ui).
+##### JupyterLab v3.0
+* [**Legos Theme**](https://github.com/dunovank/jupyterlab_legos_ui).
+* [**Darkside Theme**](https://github.com/dunovank/jupyterlab_darkside_ui).
+
+##### JupyterLab v4.0
+* [**Darkside Theme**](https://github.com/dunovank/jupyterlab_darkside_theme).
 
 ---
 
