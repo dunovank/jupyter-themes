@@ -1,9 +1,11 @@
 import os
-import sys
 from argparse import ArgumentParser
+from collections import ChainMap
 from glob import glob
+
+import argcomplete
+
 from . import stylefx
-from . import jtplot
 
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -125,6 +127,9 @@ def install_theme(theme=None,
 
 def main():
     parser = ArgumentParser()
+    themes = get_themes()
+    themes.sort()
+    say_themes = "Available Themes: \n   {}".format('\n   '.join(themes))
     parser.add_argument(
         '-l',
         "--list",
@@ -135,13 +140,15 @@ def main():
         "--theme",
         default=None,
         action='store',
-        help="theme name to install")
+        help="theme name to install",
+        choices=themes)
     parser.add_argument(
         '-f',
         "--monofont",
         action='store',
         default=None,
-        help='monospace code font')
+        help='monospace code font',
+        choices=stylefx.fonts['mono'])
     parser.add_argument(
         '-fs',
         "--monosize",
@@ -153,7 +160,8 @@ def main():
         "--nbfont",
         action='store',
         default=None,
-        help='notebook font')
+        help='notebook font',
+        choices=ChainMap(*stylefx.fonts.values()))
     parser.add_argument(
         '-nfs',
         "--nbfontsize",
@@ -165,7 +173,8 @@ def main():
         "--tcfont",
         action='store',
         default=None,
-        help='txtcell font')
+        help='txtcell font',
+        choices=ChainMap(*stylefx.fonts.values()))
     parser.add_argument(
         '-tfs',
         "--tcfontsize",
@@ -286,10 +295,8 @@ def main():
         action='store_true',
         help="keep customization: do not reset jupyter notebook custom.js")
 
+    argcomplete.autocomplete(parser)
     args = parser.parse_args()
-    themes = get_themes()
-    themes.sort()
-    say_themes = "Available Themes: \n   {}".format('\n   '.join(themes))
 
     if args.reset:
         stylefx.reset_default(verbose=True)

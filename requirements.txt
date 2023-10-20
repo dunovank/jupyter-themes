@@ -3,3 +3,4 @@ notebook>=5.6.0
 ipython>=5.4.1
 matplotlib>=1.4.3
 lesscpy>=0.11.2
+argcomplete>=2.0.0

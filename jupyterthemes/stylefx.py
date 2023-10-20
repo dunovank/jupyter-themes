@@ -48,6 +48,57 @@ vim_style = os.path.join(layouts_dir, 'vim.less')
 comp_style = os.path.join(layouts_dir, 'completer.less')
 theme_name_file = os.path.join(jupyter_custom, 'current_theme.txt')
 
+fonts = {'mono':
+         {'anka': ['Anka/Coder', 'anka-coder'],
+          'anonymous': ['Anonymous Pro', 'anonymous-pro'],
+          'aurulent': ['Aurulent Sans Mono', 'aurulent'],
+          'bitstream': ['Bitstream Vera Sans Mono', 'bitstream-vera'],
+          'bpmono': ['BPmono', 'bpmono'],
+          'code': ['Code New Roman', 'code-new-roman'],
+          'consolamono': ['Consolamono', 'consolamono'],
+          'cousine': ['Cousine', 'cousine'],
+          'dejavu': ['DejaVu Sans Mono', 'dejavu'],
+          'droidmono': ['Droid Sans Mono', 'droidmono'],
+          'fira': ['Fira Mono', 'fira'],
+          'firacode': ['Fira Code', 'firacode'],
+          'generic': ['Generic Mono', 'generic'],
+          'hack': ['Hack', 'hack'],
+          'hasklig': ['Hasklig', 'hasklig'],
+          'iosevka' : ['Iosevka', 'iosevka'],
+          'inputmono': ['Input Mono', 'inputmono'],
+          'inconsolata': ['Inconsolata-g', 'inconsolata-g'],
+          'liberation': ['Liberation Mono', 'liberation'],
+          'meslo': ['Meslo', 'meslo'],
+          'office': ['Office Code Pro', 'office-code-pro'],
+          'oxygen': ['Oxygen Mono', 'oxygen'],
+          'roboto': ['Roboto Mono', 'roboto'],
+          'saxmono': ['saxMono', 'saxmono'],
+          'source': ['Source Code Pro', 'source-code-pro'],
+          'sourcemed': ['Source Code Pro Medium', 'source-code-medium'],
+          'sudovar': ['Sudo Variable', 'sudo-variable'],
+          'ptmono': ['PT Mono', 'ptmono'],
+          'ubuntu': ['Ubuntu Mono', 'ubuntu'],
+          'jetbrains' : ['JetBrains Mono', 'jetbrains']
+         },
+         'sans':
+         {'droidsans': ['Droid Sans', 'droidsans'],
+          'opensans': ['Open Sans', 'opensans'],
+          'ptsans': ['PT Sans', 'ptsans'],
+          'sourcesans': ['Source Sans Pro', 'sourcesans'],
+          'robotosans': ['Roboto', 'robotosans'],
+          'latosans': ['Lato', 'latosans'],
+          'exosans': ['Exo_2', 'exosans'],
+          'proxima': ['Proxima Nova', 'proximasans']},
+         'serif':
+         {'ptserif': ['PT Serif', 'ptserif'],
+          'ebserif': ['EB Garamond', 'ebserif'],
+          'loraserif': ['Lora', 'loraserif'],
+          'merriserif': ['Merriweather', 'merriserif'],
+          'crimsonserif': ['Crimson Text', 'crimsonserif'],
+          'georgiaserif': ['Georgia', 'georgiaserif'],
+          'neutonserif': ['Neuton', 'neutonserif'],
+          'cardoserif': ['Cardo Serif', 'cardoserif'],
+          'goudyserif': ['Goudy Serif', 'goudyserif']}}
 
 def fileOpen(filename, mode):
     if sys.version_info[0]==3:
@@ -529,57 +580,6 @@ def get_alt_prompt_text_color(theme):
 
 
 def stored_font_dicts(fontcode, get_all=False):
-    fonts = {'mono':
-             {'anka': ['Anka/Coder', 'anka-coder'],
-              'anonymous': ['Anonymous Pro', 'anonymous-pro'],
-              'aurulent': ['Aurulent Sans Mono', 'aurulent'],
-              'bitstream': ['Bitstream Vera Sans Mono', 'bitstream-vera'],
-              'bpmono': ['BPmono', 'bpmono'],
-              'code': ['Code New Roman', 'code-new-roman'],
-              'consolamono': ['Consolamono', 'consolamono'],
-              'cousine': ['Cousine', 'cousine'],
-              'dejavu': ['DejaVu Sans Mono', 'dejavu'],
-              'droidmono': ['Droid Sans Mono', 'droidmono'],
-              'fira': ['Fira Mono', 'fira'],
-              'firacode': ['Fira Code', 'firacode'],
-              'generic': ['Generic Mono', 'generic'],
-              'hack': ['Hack', 'hack'],
-              'hasklig': ['Hasklig', 'hasklig'],
-              'iosevka' : ['Iosevka', 'iosevka'],
-              'inputmono': ['Input Mono', 'inputmono'],
-              'inconsolata': ['Inconsolata-g', 'inconsolata-g'],
-              'liberation': ['Liberation Mono', 'liberation'],
-              'meslo': ['Meslo', 'meslo'],
-              'office': ['Office Code Pro', 'office-code-pro'],
-              'oxygen': ['Oxygen Mono', 'oxygen'],
-              'roboto': ['Roboto Mono', 'roboto'],
-              'saxmono': ['saxMono', 'saxmono'],
-              'source': ['Source Code Pro', 'source-code-pro'],
-              'sourcemed': ['Source Code Pro Medium', 'source-code-medium'],
-              'sudovar': ['Sudo Variable', 'sudo-variable'],
-              'ptmono': ['PT Mono', 'ptmono'],
-              'ubuntu': ['Ubuntu Mono', 'ubuntu'],
-              'jetbrains' : ['JetBrains Mono', 'jetbrains']
-             },
-             'sans':
-             {'droidsans': ['Droid Sans', 'droidsans'],
-              'opensans': ['Open Sans', 'opensans'],
-              'ptsans': ['PT Sans', 'ptsans'],
-              'sourcesans': ['Source Sans Pro', 'sourcesans'],
-              'robotosans': ['Roboto', 'robotosans'],
-              'latosans': ['Lato', 'latosans'],
-              'exosans': ['Exo_2', 'exosans'],
-              'proxima': ['Proxima Nova', 'proximasans']},
-             'serif':
-             {'ptserif': ['PT Serif', 'ptserif'],
-              'ebserif': ['EB Garamond', 'ebserif'],
-              'loraserif': ['Lora', 'loraserif'],
-              'merriserif': ['Merriweather', 'merriserif'],
-              'crimsonserif': ['Crimson Text', 'crimsonserif'],
-              'georgiaserif': ['Georgia', 'georgiaserif'],
-              'neutonserif': ['Neuton', 'neutonserif'],
-              'cardoserif': ['Cardo Serif', 'cardoserif'],
-              'goudyserif': ['Goudy Serif', 'goudyserif']}}
     if get_all:
         return fonts
     if fontcode in list(fonts['mono']):

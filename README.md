@@ -84,6 +84,7 @@ jt  [-h] [-l] [-t THEME] [-f MONOFONT] [-fs MONOSIZE] [-nf NBFONT]
     [-cellw CELLWIDTH] [-lineh LINEHEIGHT] [-altp] [-altmd] [-altout]
     [-P] [-T] [-N] [-r] [-dfonts]
 ```
+Tab completion are available thanks to [argcomplete](https://kislyuk.github.io/argcomplete/#). Following the docs you can enable tab completion for your shell (bash, zsh, fish or tcsh).
 
 #### Description of Command Line options
 | cl options            |   arg   |  default   |
